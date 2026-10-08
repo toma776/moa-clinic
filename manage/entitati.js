@@ -48,6 +48,7 @@ function render(d) {
       ['homepage', 'Evidențiate pe homepage', d.evidentiatePeHomepage.length],
       ['tehnologii', 'Tehnologii & aparatură', d.tehnologii.length],
       ['produse', 'Produse & mărci', d.produse.length],
+      ['concepte', 'Concepte', (d.concepte || []).length],
       ['proprii', 'Produse proprii MOA', d.produseProprii.length],
       ['preturi', 'Prețuri', nServPret],
       ['oferte', 'Oferte & abonamente', d.oferte.length],
@@ -143,6 +144,8 @@ function render(d) {
   html.push(section('tehnologii', 'Tehnologii & aparatură', 'Mențiuni numărate pe homepage + /preturi/', `<div class="grid">${d.tehnologii.map(prodCard).join('')}</div>`));
   html.push(section('produse', 'Produse & mărci folosite', 'Producătorul e cunoaștere generală – nu apare pe site', `<div class="grid">${d.produse.sort((a, b) => b.mentiuni - a.mentiuni).map(prodCard).join('')}</div>`));
 
+  html.push(section('concepte', 'Concepte de brand', 'Teme recurente în conținut · mențiuni pe homepage + /preturi/', `<div class="grid">${(d.concepte || []).sort((a, b) => b.mentiuni - a.mentiuni).map((t) => `<div class="panel card item"><h3>${esc(t.nume)}</h3><div class="role">${esc(t.tip)}</div><div class="row">${tag(t.mentiuni + ' mențiuni', 'gold')}</div></div>`).join('')}</div>`));
+
   html.push(section('proprii', 'Produse proprii MOA', 'Terapii intravenoase cu nume de brand', `<div class="panel"><div class="table-wrap"><table><thead><tr><th>Nume</th><th>Tip</th><th style="text-align:right">Preț</th></tr></thead><tbody>${d.produseProprii.map((p) => `<tr class="item"><td><strong>${esc(p.nume)}</strong></td><td>${esc(p.tip)}</td><td class="num">${lei(p.pret)}</td></tr>`).join('')}</tbody></table></div></div>`));
 
   const priceCell = (p) => p.map((x) => (x.valoare != null ? `<div>${lei(x.valoare)}${x.pretInitial ? `<span class="old">${lei(x.pretInitial)}</span>` : ''} <span class="tag">${esc(x.tip)}</span></div>` : `<div>${esc(x.text)}</div>`)).join('');
@@ -186,6 +189,216 @@ function render(d) {
   $('#app').innerHTML = html.join('');
 }
 
+// ---------- Entități pe categorii (sertarul din stânga) ----------
+const ACCENTS = {
+  gold: '--accent:var(--gold);--accent-soft:var(--gold-soft)',
+  blue: '--accent:var(--blue);--accent-soft:var(--blue-soft)',
+  green: '--accent:var(--green);--accent-soft:var(--green-soft)',
+  amber: '--accent:var(--amber);--accent-soft:var(--amber-soft)',
+};
+const e = (nume, sub, target, match) => ({ nume, sub, target, match: match || nume });
+
+function entityCategories(d) {
+  const b = d.brand;
+  const c = d.contact;
+  const groupBy = (arr, key) => arr.reduce((m, x) => ((m[key(x) || 'Altele'] ??= []).push(x), m), {});
+
+  const team = groupBy(d.echipa, (p) => p.specialitate);
+  const specialitati = [...new Set([...b.specialitatiMedicale, ...d.echipa.map((p) => p.specialitate).filter((s) => s && !/asisten/i.test(s))])];
+  const oferte = groupBy(d.oferte, (o) => o.grup);
+  const reviews = d.reputatie.trustindex;
+
+  return [
+    {
+      id: 'organizatie', nume: 'Organizație', schema: 'MedicalClinic · Organization', ico: '🏛', accent: 'gold',
+      desc: 'Entitatea principală și brandul părinte',
+      grupuri: [
+        { entitati: [e(b.nume, b.tip.join(' + '), 'prezentare'), e(b.brandParinte.nume, 'brand părinte', 'prezentare', 'Brand părinte')] },
+        { titlu: 'Denumiri folosite', entitati: b.variante.filter((v) => v !== b.nume).map((v) => e(v, 'variantă', 'prezentare', 'Variante folosite')) },
+      ],
+    },
+    {
+      id: 'locatie', nume: 'Locație', schema: 'Place · PostalAddress', ico: '📍', accent: 'blue',
+      desc: 'Unde se află clinica',
+      grupuri: [{
+        entitati: [
+          e(`${c.adresa.streetAddress}, ${c.adresa.addressLocality}`, 'adresă', 'contact', c.adresa.streetAddress),
+          e(c.adresa.addressLocality, 'oraș / zonă deservită', 'contact', c.adresa.streetAddress),
+          ...(c.geo ? [e(`${c.geo.latitude}, ${c.geo.longitude}`, 'coordonate', 'contact', 'Coordonate')] : []),
+          ...c.googleMaps.map((u) => e('Google Maps', 'pin', 'contact', 'Google Maps')),
+        ],
+      }],
+    },
+    {
+      id: 'persoane', nume: 'Persoane', schema: 'Person · Physician', ico: '👤', accent: 'green',
+      desc: 'Echipa medicală, grupată pe specialitate',
+      grupuri: Object.entries(team).map(([spec, people]) => ({
+        titlu: spec,
+        entitati: people.map((p) => e(p.nume, p.grad ? p.grad.replace('Medic ', '') : p.rol, 'echipa')),
+      })),
+    },
+    {
+      id: 'specialitati', nume: 'Specialități medicale', schema: 'MedicalSpecialty', ico: '🩺', accent: 'blue',
+      desc: 'Din schema.org și din echipă',
+      grupuri: [{ entitati: specialitati.map((s) => e(s, b.specialitatiMedicale.includes(s) ? 'schema' : 'echipă', b.specialitatiMedicale.includes(s) ? 'prezentare' : 'echipa', b.specialitatiMedicale.includes(s) ? 'Specialități medicale' : s)) }],
+    },
+    {
+      id: 'servicii', nume: 'Servicii & proceduri', schema: 'MedicalProcedure · Service', ico: '💉', accent: 'gold',
+      desc: 'Din meniul site-ului, pe categorii',
+      grupuri: d.categoriiServicii.map((cat) => ({
+        titlu: cat.nume,
+        entitati: (cat.copii?.length ? cat.copii : [cat]).map((s) => e(s.nume, null, 'servicii')),
+      })),
+    },
+    {
+      id: 'tehnologii', nume: 'Tehnologii & aparatură', schema: 'MedicalDevice', ico: '⚙️', accent: 'blue',
+      desc: 'Echipamente folosite în clinică',
+      grupuri: [{ entitati: d.tehnologii.map((t) => e(t.nume, t.producator, 'tehnologii')) }],
+    },
+    {
+      id: 'produse', nume: 'Produse & mărci', schema: 'Product · Brand', ico: '🧴', accent: 'green',
+      desc: 'Mărci terțe menționate',
+      grupuri: [{ entitati: [...d.produse].sort((a, b) => b.mentiuni - a.mentiuni).map((p) => e(p.nume, p.producator, 'produse')) }],
+    },
+    {
+      id: 'proprii', nume: 'Produse proprii MOA', schema: 'Product (brand MOA)', ico: '✦', accent: 'gold',
+      desc: 'Terapii intravenoase cu nume de brand',
+      grupuri: [{ entitati: d.produseProprii.map((p) => e(p.nume, lei(p.pret), 'proprii')) }],
+    },
+    {
+      id: 'concepte', nume: 'Concepte', schema: 'DefinedTerm', ico: '💡', accent: 'amber',
+      desc: 'Temele cu care se asociază brandul',
+      grupuri: [{ entitati: [...(d.concepte || [])].sort((a, b) => b.mentiuni - a.mentiuni).map((t) => e(t.nume, `${t.mentiuni}×`, 'concepte')) }],
+    },
+    {
+      id: 'oferte', nume: 'Oferte', schema: 'Offer', ico: '🏷', accent: 'amber',
+      desc: 'Ofertele lunii și abonamente',
+      grupuri: Object.entries(oferte).map(([g, list]) => ({ titlu: g, entitati: list.map((o) => e(o.nume, lei(o.pret), 'oferte')) })),
+    },
+    {
+      id: 'catalog', nume: 'Catalog de prețuri', schema: 'OfferCatalog', ico: '📋', accent: 'gold',
+      desc: 'Categoriile din /preturi/',
+      grupuri: [{ entitati: d.preturi.map((p) => e(p.categorie, `${p.servicii.length} servicii`, 'preturi')) }],
+    },
+    {
+      id: 'afilieri', nume: 'Afilieri & instituții', schema: 'Organization', ico: '🤝', accent: 'blue',
+      desc: 'Entități externe asociate brandului',
+      grupuri: [{ entitati: d.afilieri.map((a) => e(a.nume, a.tip.split(/[(–]/)[0].trim(), 'afilieri')) }],
+    },
+    {
+      id: 'canale', nume: 'Canale digitale', schema: 'WebSite · SocialProfile', ico: '🌐', accent: 'green',
+      desc: 'Prezența online a brandului',
+      grupuri: [{
+        entitati: [
+          e(b.url.replace(/^https?:\/\//, ''), 'website', 'prezentare', 'Website'),
+          ...d.social.map((s) => e(s.url.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, ''), s.retea, 'reputatie', s.url.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, ''))),
+          ...(reviews ? [e('Google Reviews', `${reviews.recenzii} recenzii`, 'reputatie', 'Recenzii Google')] : []),
+        ],
+      }],
+    },
+  ].map((cat) => ({ ...cat, grupuri: cat.grupuri.filter((g) => g.entitati.length) })).filter((cat) => cat.grupuri.length);
+}
+
+function renderDrawer(d) {
+  const cats = entityCategories(d);
+  const total = cats.reduce((n, c) => n + c.grupuri.reduce((m, g) => m + g.entitati.length, 0), 0);
+  $('#entities-count').textContent = total;
+  $('#drawer-sub').textContent = `${total} entități în ${cats.length} categorii · click pe o entitate ca să sari la ea`;
+  $('#cats').innerHTML = cats.map((c) => {
+    const n = c.grupuri.reduce((m, g) => m + g.entitati.length, 0);
+    return `<div class="cat" style="${ACCENTS[c.accent]}" data-cat="${c.id}">
+      <div class="cat-head" role="button" tabindex="0" aria-expanded="true">
+        <span class="cat-ico" aria-hidden="true">${c.ico}</span>
+        <div><h3>${esc(c.nume)} <span class="n">${n}</span></h3><div class="schema">${esc(c.schema)}</div><div class="desc">${esc(c.desc)}</div></div>
+        <span class="chev" aria-hidden="true">▾</span>
+      </div>
+      <div class="cat-body">${c.grupuri.map((g) => `<div class="cat-group">${g.titlu ? `<div class="cat-group-t">${esc(g.titlu)}</div>` : ''}<div class="chips">${g.entitati
+        .map((x) => `<button type="button" class="chip" data-target="${x.target}" data-match="${esc(x.match)}">${esc(x.nume)}${x.sub ? ` <small>${esc(x.sub)}</small>` : ''}</button>`)
+        .join('')}</div></div>`).join('')}</div>
+    </div>`;
+  }).join('');
+}
+
+function setDrawer(open) {
+  const drawer = $('#drawer');
+  const scrim = $('#scrim');
+  drawer.classList.toggle('open', open);
+  drawer.setAttribute('aria-hidden', String(!open));
+  $('#open-entities').setAttribute('aria-expanded', String(open));
+  if (open) {
+    scrim.hidden = false;
+    requestAnimationFrame(() => scrim.classList.add('on'));
+    setTimeout(() => $('#dq').focus(), 50);
+  } else {
+    scrim.classList.remove('on');
+    setTimeout(() => (scrim.hidden = true), 200);
+  }
+}
+
+function filterDrawer(q) {
+  q = q.trim().toLowerCase();
+  document.querySelectorAll('#cats .cat').forEach((cat) => {
+    const catMatch = !!q && cat.querySelector('.cat-head').textContent.toLowerCase().includes(q);
+    let any = false;
+    cat.querySelectorAll('.cat-group').forEach((g) => {
+      let gAny = false;
+      g.querySelectorAll('.chip').forEach((ch) => {
+        const show = !q || catMatch || ch.textContent.toLowerCase().includes(q);
+        ch.classList.toggle('hidden', !show);
+        gAny ||= show;
+      });
+      g.classList.toggle('hidden', !gAny);
+      any ||= gAny;
+    });
+    cat.classList.toggle('hidden', !any);
+    if (q && any) cat.classList.remove('collapsed');
+  });
+}
+
+// Sare la entitate în panoul principal și o evidențiază.
+function jumpTo(target, match) {
+  setDrawer(false);
+  const q = $('#q');
+  if (q.value) {
+    q.value = '';
+    search('');
+  }
+  const sec = document.getElementById(target);
+  if (!sec) return;
+  const m = match.toLowerCase();
+  const el = [...sec.querySelectorAll('.item, details > summary, dt')].find((x) => x.textContent.toLowerCase().includes(m)) || sec;
+  const det = el.closest('details');
+  if (det) det.open = true;
+  const row = el.matches('dt') ? el.nextElementSibling : el;
+  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  row.classList.remove('flash');
+  void row.offsetWidth;
+  row.classList.add('flash');
+}
+
+function initDrawer() {
+  $('#open-entities').addEventListener('click', () => setDrawer(!$('#drawer').classList.contains('open')));
+  $('#close-entities').addEventListener('click', () => setDrawer(false));
+  $('#scrim').addEventListener('click', () => setDrawer(false));
+  $('#dq').addEventListener('input', (ev) => filterDrawer(ev.target.value));
+  $('#cats').addEventListener('click', (ev) => {
+    const chip = ev.target.closest('.chip');
+    if (chip) return jumpTo(chip.dataset.target, chip.dataset.match);
+    const head = ev.target.closest('.cat-head');
+    if (head) {
+      const cat = head.parentElement;
+      cat.classList.toggle('collapsed');
+      head.setAttribute('aria-expanded', String(!cat.classList.contains('collapsed')));
+    }
+  });
+  $('#cats').addEventListener('keydown', (ev) => {
+    if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('.cat-head')) {
+      ev.preventDefault();
+      ev.target.click();
+    }
+  });
+}
+
 // ---------- Căutare ----------
 function search(q) {
   q = q.trim().toLowerCase();
@@ -224,15 +437,20 @@ fetch('/api/entitati')
   })
   .then((d) => {
     render(d);
+    renderDrawer(d);
+    initDrawer();
     spy();
     const q = $('#q');
     q.addEventListener('input', () => search(q.value));
     document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement !== q) {
+      const typing = /INPUT|TEXTAREA/.test(document.activeElement.tagName);
+      if (e.key === '/' && !typing) {
         e.preventDefault();
         q.focus();
       }
+      if ((e.key === 'e' || e.key === 'E') && !typing && !e.ctrlKey && !e.metaKey) setDrawer(!$('#drawer').classList.contains('open'));
       if (e.key === 'Escape') {
+        if ($('#drawer').classList.contains('open')) return setDrawer(false);
         q.value = '';
         search('');
       }

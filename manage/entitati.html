@@ -21,8 +21,24 @@
     <input id="q" type="search" placeholder="Caută în toate entitățile…  ( / )" autocomplete="off">
     <a class="btn" href="/" target="_blank">Vezi site-ul local</a>
     <a class="btn" href="/api/entitati" download="entitati-moa-clinic.json">Export JSON</a>
+    <button class="btn primary" id="open-entities" type="button" aria-controls="drawer" aria-expanded="false">
+      Entități <span class="badge" id="entities-count"></span>
+    </button>
   </div>
 </header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Categorii de entități">
+  <div class="drawer-head">
+    <div>
+      <h2>Entități pe categorii</h2>
+      <p class="sub" id="drawer-sub"></p>
+    </div>
+    <button class="icon-btn" id="close-entities" type="button" aria-label="Închide">✕</button>
+  </div>
+  <input id="dq" type="search" placeholder="Filtrează entitățile…" autocomplete="off">
+  <div class="cats" id="cats"></div>
+</aside>
 
 <div class="layout">
   <nav class="side" id="nav"></nav>

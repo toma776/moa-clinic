@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-08T09:14:08.804Z",
+    "generat": "2026-10-08T09:22:49.496Z",
     "sursa": "https://moaclinic.ro",
     "paginiAnalizate": [
       "https://moaclinic.ro/",
@@ -695,6 +695,58 @@
       "producator": null,
       "mentiuni": 1,
       "sursaProducator": null
+    }
+  ],
+  "concepte": [
+    {
+      "nume": "Global Antiaging",
+      "tip": "Conceptul central al brandului – „vârsta nu va mai avea nicio importanță”",
+      "mentiuni": 2
+    },
+    {
+      "nume": "Medicină regenerativă",
+      "tip": "Activarea resurselor proprii de regenerare ale organismului",
+      "mentiuni": 32
+    },
+    {
+      "nume": "Antiaging intern",
+      "tip": "Încetinirea îmbătrânirii celulare, din interior",
+      "mentiuni": 2
+    },
+    {
+      "nume": "Longevitate",
+      "tip": "Sirtuine („moleculele longevității”), teste genetice longevity",
+      "mentiuni": 7
+    },
+    {
+      "nume": "Vârstă biologică",
+      "tip": "Determinată în consultația antiaging",
+      "mentiuni": 3
+    },
+    {
+      "nume": "Terapii antioxidante",
+      "tip": "Reducerea radicalilor liberi (ROS), capacitate totală antioxidantă",
+      "mentiuni": 11
+    },
+    {
+      "nume": "Ozonoterapie",
+      "tip": "Autohemoterapie majoră, saună cu ozon, insuflații",
+      "mentiuni": 16
+    },
+    {
+      "nume": "Nutrigenomică & epigenetică",
+      "tip": "Nutriție antiaging pe baza profilului genetic",
+      "mentiuni": 6
+    },
+    {
+      "nume": "Dermatoestetică",
+      "tip": "Estetică medicală realizată de medic dermatolog",
+      "mentiuni": 4
+    },
+    {
+      "nume": "Gerontologie",
+      "tip": "Școala Ana Aslan – specialitatea fondatorului",
+      "mentiuni": 8
     }
   ],
   "evidentiatePeHomepage": [

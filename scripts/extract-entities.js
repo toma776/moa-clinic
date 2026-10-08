@@ -226,6 +226,18 @@ const TEHNOLOGII = [
   { nume: 'TMS', tip: 'Stimulare magnetică transcraniană (aprobat FDA – depresie, burnout, anxietate)', producator: null, alias: ['tms', 'transcranian'] },
   { nume: 'Sauna cu ozon', tip: 'Ozonoterapie – căldură umedă la ~40°C', producator: null, alias: ['sauna cu ozon', 'saună cu ozon'] },
 ];
+const CONCEPTE = [
+  { nume: 'Global Antiaging', tip: 'Conceptul central al brandului – „vârsta nu va mai avea nicio importanță”', producator: null, alias: ['global antiaging'] },
+  { nume: 'Medicină regenerativă', tip: 'Activarea resurselor proprii de regenerare ale organismului', producator: null, alias: ['regenerativ', 'regenerare'] },
+  { nume: 'Antiaging intern', tip: 'Încetinirea îmbătrânirii celulare, din interior', producator: null, alias: ['antiaging intern'] },
+  { nume: 'Longevitate', tip: 'Sirtuine („moleculele longevității”), teste genetice longevity', producator: null, alias: ['longevit'] },
+  { nume: 'Vârstă biologică', tip: 'Determinată în consultația antiaging', producator: null, alias: ['vârst biologic', 'vârsta biologic', 'vârstei biologice', 'vârstă biologică'] },
+  { nume: 'Terapii antioxidante', tip: 'Reducerea radicalilor liberi (ROS), capacitate totală antioxidantă', producator: null, alias: ['antioxidant'] },
+  { nume: 'Ozonoterapie', tip: 'Autohemoterapie majoră, saună cu ozon, insuflații', producator: null, alias: ['ozon'] },
+  { nume: 'Nutrigenomică & epigenetică', tip: 'Nutriție antiaging pe baza profilului genetic', producator: null, alias: ['nutrigen', 'epigenetic'] },
+  { nume: 'Dermatoestetică', tip: 'Estetică medicală realizată de medic dermatolog', producator: null, alias: ['dermatoestetic'] },
+  { nume: 'Gerontologie', tip: 'Școala Ana Aslan – specialitatea fondatorului', producator: null, alias: ['gerontolog'] },
+];
 
 function mentions(list, corpus) {
   const low = corpus.toLowerCase();
@@ -437,6 +449,7 @@ async function main() {
       return { ...t, ...(acc && { descriere: acc.descriere, url: acc.url }) };
     }),
     produse: mentions(PRODUSE, corpus),
+    concepte: mentions(CONCEPTE, corpus).map(({ producator, sursaProducator, ...c }) => c),
     evidentiatePeHomepage: accordions,
     produseProprii: (preturi.find((c) => /INTRAVENOASE/i.test(c.categorie))?.servicii || [])
       .filter((s) => /MOA|BY MOA|APHRODITE/i.test(s.nume))
