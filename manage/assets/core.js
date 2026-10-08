@@ -84,7 +84,6 @@ routes.dashboard = function renderDashboard() {
   P?.pages.forEach((p) => p.probleme.forEach((i) => { const k = issueKey(i); counts[k] = (counts[k] || 0) + 1; }));
   const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
   const max = top[0]?.[1] || 1;
-  const obsOpen = E ? openObs(E) : [];
 
   $('#view').innerHTML = `
     <div class="head"><div><div class="crumb">manage</div><h1>Dashboard</h1></div></div>
@@ -101,14 +100,6 @@ routes.dashboard = function renderDashboard() {
           <div class="kpi"><b>${E.preturi.reduce((n, c) => n + c.servicii.length, 0)}</b><span>prețuri</span></div>
           <div class="kpi"><b>${E.articole.length}</b><span>articole</span></div>
         </div><p>Extras din ${link(E.meta.sursa, "moaclinic.ro")} la ${esc(E.meta.extras_la)} · ${E.meta.pagini} pagini citite</p>` : '<p>Lipsește data/entitati.json</p>'}
-      </div>
-      <div class="card">
-        <h3><a href="/manage/entitati/seo/observatii" data-go="entitati/seo/observatii">Observații entity SEO →</a></h3>
-        ${E ? `<div class="kpis" style="margin:10px 0 0">
-          ${['critic', 'mediu', 'minor'].map((n) => `<div class="kpi"><b>${obsOpen.filter((o) => o.nivel === n).length}</b><span>${n === 'critic' ? 'critice' : n === 'mediu' ? 'medii' : 'minore'}</span></div>`).join('')}
-          <div class="kpi"><b>${E.observatii.length - obsOpen.length}</b><span>rezolvate</span></div>
-        </div>
-        <p>${obsOpen.filter((o) => o.nivel === 'critic').slice(0, 3).map((o) => '• ' + esc(cut(o.text, 110))).join('<br>')}</p>` : ''}
       </div>
       <div class="card">
         <h3><a href="/manage/leads" data-go="leads">Leads →</a></h3>

@@ -197,7 +197,6 @@ function entitySections(D) {
         <dt>Folosită pe</dt><dd>${m.folosita.map((p) => `<code>${esc(p)}</code>`).join(' ')}</dd></dl></div>`).join('')}</div>`);
 
   // ---- Audit SEO ----
-  add('observatii', 'Observații entity SEO', openObs(D).length, obsHtml(D));
   add('schema', 'Schema JSON-LD', null, `
     <div class="card" style="margin-bottom:12px"><b>Existentă pe homepage:</b> ${tags(D.schema_existenta, '')}
       <p>Două blocuri descriu aceeași clinică cu date diferite (program, rating, logo, tip). Mai jos: un singur bloc <code>MedicalClinic</code> generat din entități, de validat înainte de implementare.</p></div>
@@ -271,8 +270,8 @@ function entityCategories(D) {
       sections: ['intrebari'] },
     { id: 'media', icon: 'media', title: 'Media', desc: 'Imaginile homepage-ului: fișier, text alternativ, unde apar.',
       sections: ['media'] },
-    { id: 'seo', icon: 'seo', title: 'Audit SEO', audit: true, desc: 'Nu sunt entități: observațiile de entity SEO, schema JSON-LD propusă și datele legale.',
-      sections: ['observatii', 'schema', 'legale'] },
+    { id: 'seo', icon: 'seo', title: 'Audit SEO', audit: true, desc: 'Nu sunt entități: schema JSON-LD propusă și datele legale.',
+      sections: ['schema', 'legale'] },
   ];
 }
 
@@ -296,7 +295,7 @@ routes.entitati = function renderEntitati() {
       </div>
       <div class="cats" id="cats">${CATS.map((c) => `
         <a class="cat ${c.audit ? 'audit' : ''}" href="/manage/entitati/${c.id}" data-cat="${c.id}">
-          <div class="cat-top"><span class="cat-ico">${icon(c.icon)}</span>${c.audit ? `<span class="tag bad">${openObs(D).length} deschise</span>` : `<span class="cat-total">${total(c)}</span>`}</div>
+          <div class="cat-top"><span class="cat-ico">${icon(c.icon)}</span>${c.audit ? '' : `<span class="cat-total">${total(c)}</span>`}</div>
           <h3>${esc(c.title)}</h3>
           <p>${esc(c.desc)}</p>
           <div class="cat-subs">${c.sections.map((id) => `<span>${esc(S[id].title)}${S[id].count != null ? ` <b>${S[id].count}</b>` : ''}</span>`).join('')}</div>
