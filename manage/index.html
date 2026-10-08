@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administrare · MOA Clinic</title>
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="stylesheet" href="/manage/assets/app.css">
+</head>
+<body>
+<div class="app">
+  <aside>
+    <a class="logo" href="/manage" data-route="dashboard">
+      <img src="/wp-content/uploads/2024/09/cropped-Instagram-logo-192x192.png" alt="">
+      <span>MOA Clinic<small>Panou de administrare</small></span>
+    </a>
+    <nav id="nav">
+      <a href="/manage" data-route="dashboard">Dashboard</a>
+      <a href="/manage/brand" data-route="brand">Brand</a>
+      <a href="/manage/entitati" data-route="entitati">Entități <span class="n" id="n-entitati"></span></a>
+      <a href="/manage/legaturi" data-route="legaturi">Legături</a>
+      <a href="/manage/leads" data-route="leads">Leads <span class="n" id="n-leads"></span></a>
+      <a href="/manage/pages" data-route="pages">Pages <span class="n" id="n-pages"></span></a>
+      <a href="/manage/health" data-route="health">Site health <span class="n" id="n-health"></span></a>
+    </nav>
+    <div class="foot"><a href="/" target="_blank">↗ homepage local</a> · <a href="https://moaclinic.ro" target="_blank" rel="noopener">moaclinic.ro</a></div>
+  </aside>
+  <main id="view"><div class="empty">Se încarcă…</div></main>
+</div>
+
+<dialog id="leadDlg"><form id="leadForm" method="dialog"></form></dialog>
+<dialog id="brandDlg" class="wide"><form id="brandForm" method="dialog"></form></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/manage/assets/core.js"></script>
+<script src="/manage/assets/entitati.js"></script>
+<script src="/manage/assets/legaturi.js"></script>
+<script src="/manage/assets/brand.js"></script>
+<script src="/manage/assets/leads.js"></script>
+<script src="/manage/assets/pages.js"></script>
+<script src="/manage/assets/health.js"></script>
+<script src="/manage/assets/main.js"></script>
+</body>
+</html>

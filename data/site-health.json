@@ -1,0 +1,6692 @@
+{
+ "site": "https://moaclinic.ro",
+ "generat_la": "2026-10-08 09:58",
+ "crawl_la": "2026-10-08 09:57",
+ "durata_ms": 38775,
+ "pagini": [
+  {
+   "path": "/",
+   "url": "https://moaclinic.ro/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2215,
+   "kb": 259.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "SearchAction",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "12 din 29 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-corporale/venus-legacy/, /tratamente-cosmetologice/dermalinfusion/, /laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/, /ozonoterapie/sistemica-autohemoterapia-majora/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2215 ms"
+    },
+    {
+     "arie": "performanta",
+     "cod": "html-mare",
+     "nivel": "optim",
+     "mesaj": "259.7 KB"
+    }
+   ]
+  },
+  {
+   "path": "/abonamente/",
+   "url": "https://moaclinic.ro/abonamente/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1735,
+   "kb": 125.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "description-scurt",
+     "nivel": "optim",
+     "mesaj": "32 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 1 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-corporale/venus-legacy/, /tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "197 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1735 ms"
+    }
+   ]
+  },
+  {
+   "path": "/acid-hialuronic-in-buze-cat-dureaza/",
+   "url": "https://moaclinic.ro/acid-hialuronic-in-buze-cat-dureaza/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1799,
+   "kb": 121.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1799 ms"
+    }
+   ]
+  },
+  {
+   "path": "/acid-in-buze-exagerat/",
+   "url": "https://moaclinic.ro/acid-in-buze-exagerat/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1671,
+   "kb": 139,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1671 ms"
+    }
+   ]
+  },
+  {
+   "path": "/adevarul-despre-glutation/",
+   "url": "https://moaclinic.ro/adevarul-despre-glutation/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1798,
+   "kb": 156.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 5 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-regenerative-perfuzabile/glutation/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1798 ms"
+    }
+   ]
+  },
+  {
+   "path": "/alunite-rosii/",
+   "url": "https://moaclinic.ro/alunite-rosii/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1904,
+   "kb": 149.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1904 ms"
+    }
+   ]
+  },
+  {
+   "path": "/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
+   "url": "https://moaclinic.ro/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1718,
+   "kb": 117.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "81 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1718 ms"
+    }
+   ]
+  },
+  {
+   "path": "/blefaroplastie/",
+   "url": "https://moaclinic.ro/blefaroplastie/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2299,
+   "kb": 156.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2299 ms"
+    }
+   ]
+  },
+  {
+   "path": "/blog/",
+   "url": "https://moaclinic.ro/blog/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2209,
+   "kb": 135.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "18 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "description-scurt",
+     "nivel": "optim",
+     "mesaj": "4 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "7 din 8 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "120 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2209 ms"
+    }
+   ]
+  },
+  {
+   "path": "/bunny-lines/",
+   "url": "https://moaclinic.ro/bunny-lines/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1797,
+   "kb": 133.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "description-lung",
+     "nivel": "optim",
+     "mesaj": "166 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "4 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1797 ms"
+    }
+   ]
+  },
+  {
+   "path": "/buze-uscate/",
+   "url": "https://moaclinic.ro/buze-uscate/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1709,
+   "kb": 137.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1709 ms"
+    }
+   ]
+  },
+  {
+   "path": "/category/blog/",
+   "url": "https://moaclinic.ro/category/blog/",
+   "tip": "Categorie",
+   "status": 200,
+   "ms": 1291,
+   "kb": 145.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "CollectionPage",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "fara-description",
+     "nivel": "grav",
+     "mesaj": "lipsește meta description"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "9 din 10 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1291 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ce-inseamna-prp/",
+   "url": "https://moaclinic.ro/ce-inseamna-prp/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1893,
+   "kb": 133.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1893 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+   "url": "https://moaclinic.ro/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2105,
+   "kb": 153.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2105 ms"
+    }
+   ]
+  },
+  {
+   "path": "/cea-mai-buna-toxina-botulinica/",
+   "url": "https://moaclinic.ro/cea-mai-buna-toxina-botulinica/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1977,
+   "kb": 152.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1977 ms"
+    }
+   ]
+  },
+  {
+   "path": "/cearcane/",
+   "url": "https://moaclinic.ro/cearcane/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1801,
+   "kb": 150.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "7 din 7 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1801 ms"
+    }
+   ]
+  },
+  {
+   "path": "/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+   "url": "https://moaclinic.ro/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1638,
+   "kb": 116.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "133 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1638 ms"
+    }
+   ]
+  },
+  {
+   "path": "/confirmare/",
+   "url": "https://moaclinic.ro/confirmare/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1784,
+   "kb": 106.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "24 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "17 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1784 ms"
+    }
+   ]
+  },
+  {
+   "path": "/consultatii/",
+   "url": "https://moaclinic.ro/consultatii/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2075,
+   "kb": 142,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2075 ms"
+    }
+   ]
+  },
+  {
+   "path": "/consultatii/consultatie-antiaging/",
+   "url": "https://moaclinic.ro/consultatii/consultatie-antiaging/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2297,
+   "kb": 151,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2297 ms"
+    }
+   ]
+  },
+  {
+   "path": "/consultatii/consultatie-chirurgie-plastica/",
+   "url": "https://moaclinic.ro/consultatii/consultatie-chirurgie-plastica/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1917,
+   "kb": 118.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "119 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1917 ms"
+    }
+   ]
+  },
+  {
+   "path": "/consultatii/consultatie-dermatoestetica-dermatologie/",
+   "url": "https://moaclinic.ro/consultatii/consultatie-dermatoestetica-dermatologie/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1709,
+   "kb": 118.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "119 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1709 ms"
+    }
+   ]
+  },
+  {
+   "path": "/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
+   "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1883,
+   "kb": 120.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1883 ms"
+    }
+   ]
+  },
+  {
+   "path": "/contact/",
+   "url": "https://moaclinic.ro/contact/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1535,
+   "kb": 110.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "ContactPage",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "21 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 2 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "69 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1535 ms"
+    }
+   ]
+  },
+  {
+   "path": "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
+   "url": "https://moaclinic.ro/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1497,
+   "kb": 120,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "113 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1497 ms"
+    }
+   ]
+  },
+  {
+   "path": "/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+   "url": "https://moaclinic.ro/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1979,
+   "kb": 153.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1979 ms"
+    }
+   ]
+  },
+  {
+   "path": "/dermalinfusion/",
+   "url": "https://moaclinic.ro/dermalinfusion/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1900,
+   "kb": 160.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 5 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1900 ms"
+    }
+   ]
+  },
+  {
+   "path": "/documente-legale-clinica-moa/",
+   "url": "https://moaclinic.ro/documente-legale-clinica-moa/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1492,
+   "kb": 102.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "description-scurt",
+     "nivel": "optim",
+     "mesaj": "1 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "brand",
+     "cod": "domeniu",
+     "nivel": "grav",
+     "mesaj": "www.moa.ro"
+    },
+    {
+     "arie": "brand",
+     "cod": "email",
+     "nivel": "optim",
+     "mesaj": "moaclinic2024@gmail.com"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1492 ms"
+    }
+   ]
+  },
+  {
+   "path": "/echipa/",
+   "url": "https://moaclinic.ro/echipa/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1830,
+   "kb": 145.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "20 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "description-scurt",
+     "nivel": "optim",
+     "mesaj": "23 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 10 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "63 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1830 ms"
+    }
+   ]
+  },
+  {
+   "path": "/echipa/dr-adrian-stanescu/",
+   "url": "https://moaclinic.ro/echipa/dr-adrian-stanescu/",
+   "tip": "Pagina",
+   "status": 301,
+   "ms": 987,
+   "kb": 0,
+   "schema": [],
+   "probleme": []
+  },
+  {
+   "path": "/efecte-botox/",
+   "url": "https://moaclinic.ro/efecte-botox/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1894,
+   "kb": 158.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1894 ms"
+    }
+   ]
+  },
+  {
+   "path": "/eliminare-papiloame/",
+   "url": "https://moaclinic.ro/eliminare-papiloame/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2590,
+   "kb": 188.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "19 din 19 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "grav",
+     "mesaj": "2590 ms"
+    }
+   ]
+  },
+  {
+   "path": "/epilare-definitiva-pareri/",
+   "url": "https://moaclinic.ro/epilare-definitiva-pareri/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1915,
+   "kb": 161.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1915 ms"
+    }
+   ]
+  },
+  {
+   "path": "/epilat-interfesier-ce-inseamna/",
+   "url": "https://moaclinic.ro/epilat-interfesier-ce-inseamna/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1782,
+   "kb": 153.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1782 ms"
+    }
+   ]
+  },
+  {
+   "path": "/forme-de-buze-cu-acid-hialuronic/",
+   "url": "https://moaclinic.ro/forme-de-buze-cu-acid-hialuronic/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2007,
+   "kb": 150.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2007 ms"
+    }
+   ]
+  },
+  {
+   "path": "/fotobiomodulare-vielight/",
+   "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2088,
+   "kb": 156.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "3 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim",
+     "mesaj": "Clinica MOA"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2088 ms"
+    }
+   ]
+  },
+  {
+   "path": "/glutation-beneficii-si-contraindicatii-ce-este/",
+   "url": "https://moaclinic.ro/glutation-beneficii-si-contraindicatii-ce-este/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2108,
+   "kb": 143.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2108 ms"
+    }
+   ]
+  },
+  {
+   "path": "/glutation/",
+   "url": "https://moaclinic.ro/glutation/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1892,
+   "kb": 162.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "4 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1892 ms"
+    }
+   ]
+  },
+  {
+   "path": "/hialuronidaza/",
+   "url": "https://moaclinic.ro/hialuronidaza/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1901,
+   "kb": 133.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1901 ms"
+    }
+   ]
+  },
+  {
+   "path": "/jalupro-young-eye/",
+   "url": "https://moaclinic.ro/jalupro-young-eye/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2496,
+   "kb": 171.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "15 din 15 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2496 ms"
+    }
+   ]
+  },
+  {
+   "path": "/laser-terapie/",
+   "url": "https://moaclinic.ro/laser-terapie/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1709,
+   "kb": 135.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 3 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/, /laserterapie-laser-vascular-epilare-laser/laser-vascular/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1709 ms"
+    }
+   ]
+  },
+  {
+   "path": "/laser-terapie/epilare-definitiva-bucuresti/",
+   "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2396,
+   "kb": 206.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "16 din 20 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2396 ms"
+    }
+   ]
+  },
+  {
+   "path": "/laser-terapie/laser-vascular/",
+   "url": "https://moaclinic.ro/laser-terapie/laser-vascular/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2093,
+   "kb": 165.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "9 din 11 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2093 ms"
+    }
+   ]
+  },
+  {
+   "path": "/nad-perfuzabil/",
+   "url": "https://moaclinic.ro/nad-perfuzabil/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1923,
+   "kb": 135,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-regenerative-perfuzabile__trashed/terapia-nad/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "4 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1923 ms"
+    }
+   ]
+  },
+  {
+   "path": "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
+   "url": "https://moaclinic.ro/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1394,
+   "kb": 125.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "70 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 3 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1394 ms"
+    }
+   ]
+  },
+  {
+   "path": "/nevi-pigmentari/",
+   "url": "https://moaclinic.ro/nevi-pigmentari/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1980,
+   "kb": 123.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1980 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ozonoterapie/",
+   "url": "https://moaclinic.ro/ozonoterapie/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1797,
+   "kb": 134.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 3 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1797 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ozonoterapie/autohemoterapia/",
+   "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1992,
+   "kb": 157.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1992 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ozonoterapie/sauna-cu-ozon/",
+   "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2288,
+   "kb": 155.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2288 ms"
+    }
+   ]
+  },
+  {
+   "path": "/pori-dilatati/",
+   "url": "https://moaclinic.ro/pori-dilatati/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1527,
+   "kb": 143.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1527 ms"
+    }
+   ]
+  },
+  {
+   "path": "/preturi/",
+   "url": "https://moaclinic.ro/preturi/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1698,
+   "kb": 156.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "21 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "description-scurt",
+     "nivel": "optim",
+     "mesaj": "38 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1698 ms"
+    }
+   ]
+  },
+  {
+   "path": "/prima-injectare-cu-acid-hialuronic-in-buze/",
+   "url": "https://moaclinic.ro/prima-injectare-cu-acid-hialuronic-in-buze/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1779,
+   "kb": 153.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1779 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-microchirurgicale/",
+   "url": "https://moaclinic.ro/proceduri-microchirurgicale/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1699,
+   "kb": 139.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "3 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1699 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2120,
+   "kb": 180.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "11 din 15 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2120 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/augmentare-buze/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2287,
+   "kb": 241.2,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "30 din 35 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "3 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2287 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/harmonyca/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2085,
+   "kb": 216.2,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "29 din 29 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2085 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/hiperhidroza-axilara/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1609,
+   "kb": 159.2,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "7 din 7 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1609 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/injectare-botox/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2135,
+   "kb": 197.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 19 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "3 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2135 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/injectari-acid-hialuronic/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1900,
+   "kb": 200,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "10 din 17 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "3 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1900 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2008,
+   "kb": 154.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 2 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2008 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/mezoterapie/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1813,
+   "kb": 186.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "17 din 17 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1813 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/microneedeling/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2312,
+   "kb": 248.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "45 din 45 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2312 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/nefertiti-lift/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1675,
+   "kb": 187.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "18 din 18 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1675 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/polinucleotide/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1796,
+   "kb": 195.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "21 din 21 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1796 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/prp-scalp/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1813,
+   "kb": 182.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "15 din 15 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1813 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/sculptra/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2190,
+   "kb": 210.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "28 din 28 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2190 ms"
+    }
+   ]
+  },
+  {
+   "path": "/proceduri-minim-invazive/skinbooster-vital/",
+   "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1597,
+   "kb": 150.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1597 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ptoza-palpebrala/",
+   "url": "https://moaclinic.ro/ptoza-palpebrala/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1807,
+   "kb": 164.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "10 din 10 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1807 ms"
+    }
+   ]
+  },
+  {
+   "path": "/pungi-sub-ochi/",
+   "url": "https://moaclinic.ro/pungi-sub-ochi/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2090,
+   "kb": 135,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2090 ms"
+    }
+   ]
+  },
+  {
+   "path": "/recomandari-dupa-botox/",
+   "url": "https://moaclinic.ro/recomandari-dupa-botox/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1699,
+   "kb": 126.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1699 ms"
+    }
+   ]
+  },
+  {
+   "path": "/recuperare-dupa-dermapen/",
+   "url": "https://moaclinic.ro/recuperare-dupa-dermapen/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1504,
+   "kb": 132.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "71 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1504 ms"
+    }
+   ]
+  },
+  {
+   "path": "/rejuvenare-faciala/",
+   "url": "https://moaclinic.ro/rejuvenare-faciala/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2290,
+   "kb": 182.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "11 din 14 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/rejuvenare-faciala/venus-viva//"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2290 ms"
+    }
+   ]
+  },
+  {
+   "path": "/rejuvenare-faciala/lip-lifting/",
+   "url": "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2180,
+   "kb": 155.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2180 ms"
+    }
+   ]
+  },
+  {
+   "path": "/rejuvenare-faciala/venus-viva/",
+   "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2016,
+   "kb": 156.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2016 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-de-expresie/",
+   "url": "https://moaclinic.ro/riduri-de-expresie/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1991,
+   "kb": 200.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1991 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-frunte/",
+   "url": "https://moaclinic.ro/riduri-frunte/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2179,
+   "kb": 169.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "3 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2179 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-in-jurul-gurii/",
+   "url": "https://moaclinic.ro/riduri-in-jurul-gurii/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1596,
+   "kb": 141.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1596 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-intre-sprancene/",
+   "url": "https://moaclinic.ro/riduri-intre-sprancene/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1704,
+   "kb": 142.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1704 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-laba-gastei/",
+   "url": "https://moaclinic.ro/riduri-laba-gastei/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1599,
+   "kb": 141.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1599 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-marioneta/",
+   "url": "https://moaclinic.ro/riduri-marioneta/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1802,
+   "kb": 155.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1802 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri-pe-gat-tratament-cu-botox/",
+   "url": "https://moaclinic.ro/riduri-pe-gat-tratament-cu-botox/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1899,
+   "kb": 141.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1899 ms"
+    }
+   ]
+  },
+  {
+   "path": "/riduri/",
+   "url": "https://moaclinic.ro/riduri/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2402,
+   "kb": 208.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2402 ms"
+    }
+   ]
+  },
+  {
+   "path": "/ridurile-fumatorului/",
+   "url": "https://moaclinic.ro/ridurile-fumatorului/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1896,
+   "kb": 152.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "75 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1896 ms"
+    }
+   ]
+  },
+  {
+   "path": "/russian-lips-vs-butterfly-lips/",
+   "url": "https://moaclinic.ro/russian-lips-vs-butterfly-lips/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1790,
+   "kb": 155.8,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1790 ms"
+    }
+   ]
+  },
+  {
+   "path": "/sitemap/",
+   "url": "https://moaclinic.ro/sitemap/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1806,
+   "kb": 103.2,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "24 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "fara-description",
+     "nivel": "grav",
+     "mesaj": "lipsește meta description"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "149 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1806 ms"
+    }
+   ]
+  },
+  {
+   "path": "/terapia-nad/",
+   "url": "https://moaclinic.ro/terapia-nad/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1505,
+   "kb": 156.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "23 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "5 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1505 ms"
+    }
+   ]
+  },
+  {
+   "path": "/terapia-vampir-pareri/",
+   "url": "https://moaclinic.ro/terapia-vampir-pareri/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1708,
+   "kb": 149.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "9 din 9 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1708 ms"
+    }
+   ]
+  },
+  {
+   "path": "/terapii-intravenoase/",
+   "url": "https://moaclinic.ro/terapii-intravenoase/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1790,
+   "kb": 131.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "description-lung",
+     "nivel": "optim",
+     "mesaj": "176 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1790 ms"
+    }
+   ]
+  },
+  {
+   "path": "/terapii-regenerative/",
+   "url": "https://moaclinic.ro/terapii-regenerative/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1798,
+   "kb": 113.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 1 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "continut-subtire",
+     "nivel": "optim",
+     "mesaj": "219 cuvinte"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1798 ms"
+    }
+   ]
+  },
+  {
+   "path": "/teste-genetice-longevity/",
+   "url": "https://moaclinic.ro/teste-genetice-longevity/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1527,
+   "kb": 137.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 3 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1527 ms"
+    }
+   ]
+  },
+  {
+   "path": "/teste-genetice-longevity/nutrigenetica-epigenetica/",
+   "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1797,
+   "kb": 199.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "22 din 22 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1797 ms"
+    }
+   ]
+  },
+  {
+   "path": "/teste-genetice-longevity/skin-care-dna/",
+   "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1770,
+   "kb": 146.6,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 5 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1770 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tms-stimulare-magnetica-transcraniana/",
+   "url": "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2435,
+   "kb": 256,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "39 din 39 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2435 ms"
+    },
+    {
+     "arie": "performanta",
+     "cod": "html-mare",
+     "nivel": "optim",
+     "mesaj": "256 KB"
+    }
+   ]
+  },
+  {
+   "path": "/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+   "url": "https://moaclinic.ro/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1701,
+   "kb": 112.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-lung",
+     "nivel": "optim",
+     "mesaj": "119 caractere"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1701 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratament-burnout-tms/",
+   "url": "https://moaclinic.ro/tratament-burnout-tms/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1909,
+   "kb": 154.2,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "7 din 7 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1909 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratament-cearcane/",
+   "url": "https://moaclinic.ro/tratament-cearcane/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1580,
+   "kb": 131.9,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "link-redirect",
+     "nivel": "optim",
+     "mesaj": "/proceduri-microchirurgicale/blefaroplastie/"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1580 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratament-riduri-profunde/",
+   "url": "https://moaclinic.ro/tratament-riduri-profunde/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2201,
+   "kb": 144.5,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2201 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratamente-corporale/",
+   "url": "https://moaclinic.ro/tratamente-corporale/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1612,
+   "kb": 133.1,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "1 din 2 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1612 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratamente-cosmetologice/",
+   "url": "https://moaclinic.ro/tratamente-cosmetologice/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1891,
+   "kb": 138.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "3 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1891 ms"
+    }
+   ]
+  },
+  {
+   "path": "/tratamente-regenerative-perfuzabile/",
+   "url": "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 1598,
+   "kb": 136.3,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "2 din 3 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "cta",
+     "nivel": "info",
+     "mesaj": "Programeaza-te!"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1598 ms"
+    }
+   ]
+  },
+  {
+   "path": "/unde-se-pune-botox/",
+   "url": "https://moaclinic.ro/unde-se-pune-botox/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 2014,
+   "kb": 150.4,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume-incomplet",
+     "nivel": "info",
+     "mesaj": "„MOA Regenerative” fără „by Oxxygene”"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2014 ms"
+    }
+   ]
+  },
+  {
+   "path": "/venus-legacy/",
+   "url": "https://moaclinic.ro/venus-legacy/",
+   "tip": "Pagina",
+   "status": 200,
+   "ms": 2312,
+   "kb": 166.7,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "Article",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "title-scurt",
+     "nivel": "optim",
+     "mesaj": "24 caractere"
+    },
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "6 din 6 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
+     "arie": "schema",
+     "cod": "fara-faq",
+     "nivel": "info",
+     "mesaj": "3 întrebări în conținut, fără FAQPage"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "2312 ms"
+    }
+   ]
+  },
+  {
+   "path": "/vergeturi-pe-sani-2/",
+   "url": "https://moaclinic.ro/vergeturi-pe-sani-2/",
+   "tip": "Articol",
+   "status": 200,
+   "ms": 1888,
+   "kb": 154,
+   "schema": [
+    "Place",
+    "PostalAddress",
+    "MedicalClinic",
+    "Organization",
+    "ImageObject",
+    "WebSite",
+    "BreadcrumbList",
+    "ListItem",
+    "WebPage",
+    "Person",
+    "BlogPosting",
+    "Service",
+    "MedicalOrganization",
+    "OfferCatalog",
+    "Offer",
+    "City",
+    "MedicalBusiness",
+    "AdministrativeArea",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "AggregateRating"
+   ],
+   "probleme": [
+    {
+     "arie": "tehnic",
+     "cod": "img-alt",
+     "nivel": "optim",
+     "mesaj": "4 din 4 imagini"
+    },
+    {
+     "arie": "schema",
+     "cod": "schema-straina",
+     "nivel": "grav",
+     "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
+    },
+    {
+     "arie": "continut",
+     "cod": "fara-autor",
+     "nivel": "info",
+     "mesaj": "articol fără autor"
+    },
+    {
+     "arie": "brand",
+     "cod": "nume",
+     "nivel": "optim"
+    },
+    {
+     "arie": "performanta",
+     "cod": "lent",
+     "nivel": "optim",
+     "mesaj": "1888 ms"
+    }
+   ]
+  }
+ ],
+ "lipsa": [],
+ "redirecturi": [
+  {
+   "path": "/tratamente-corporale/venus-legacy/",
+   "spre": "https://moaclinic.ro/venus-legacy/",
+   "din": [
+    "/abonamente/",
+    "/"
+   ]
+  },
+  {
+   "path": "/tratamente-cosmetologice/dermalinfusion/",
+   "spre": "https://moaclinic.ro/dermalinfusion/",
+   "din": [
+    "/abonamente/",
+    "/",
+    "/dermalinfusion/",
+    "/riduri-marioneta/",
+    "/riduri-de-expresie/"
+   ]
+  },
+  {
+   "path": "/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/",
+   "spre": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+   "din": [
+    "/",
+    "/laser-terapie/",
+    "/epilat-interfesier-ce-inseamna/"
+   ]
+  },
+  {
+   "path": "/ozonoterapie/sistemica-autohemoterapia-majora/",
+   "spre": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+   "din": [
+    "/"
+   ]
+  },
+  {
+   "path": "/laserterapie-laser-vascular-epilare-laser/laser-vascular/",
+   "spre": "https://moaclinic.ro/laser-terapie/laser-vascular/",
+   "din": [
+    "/laser-terapie/"
+   ]
+  },
+  {
+   "path": "/rejuvenare-faciala/venus-viva//",
+   "spre": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+   "din": [
+    "/rejuvenare-faciala/"
+   ]
+  },
+  {
+   "path": "/tratamente-regenerative-perfuzabile/glutation/",
+   "spre": "https://moaclinic.ro/glutation/",
+   "din": [
+    "/adevarul-despre-glutation/"
+   ]
+  },
+  {
+   "path": "/proceduri-microchirurgicale/blefaroplastie/",
+   "spre": "https://moaclinic.ro/blefaroplastie/",
+   "din": [
+    "/tratament-cearcane/"
+   ]
+  },
+  {
+   "path": "/tratamente-regenerative-perfuzabile__trashed/terapia-nad/",
+   "spre": "https://moaclinic.ro/terapia-nad/",
+   "din": [
+    "/nad-perfuzabil/"
+   ]
+  }
+ ],
+ "blog": {
+  "total": 46,
+  "fara_autor": [
+   {
+    "path": "/glutation-beneficii-si-contraindicatii-ce-este/",
+    "data": "2026-03-26"
+   },
+   {
+    "path": "/riduri-pe-gat-tratament-cu-botox/",
+    "data": "2026-03-26"
+   },
+   {
+    "path": "/tratament-riduri-profunde/",
+    "data": "2026-03-26"
+   },
+   {
+    "path": "/cearcane/",
+    "data": "2026-03-04"
+   },
+   {
+    "path": "/ptoza-palpebrala/",
+    "data": "2026-03-04"
+   },
+   {
+    "path": "/tratament-burnout-tms/",
+    "data": "2026-03-03"
+   },
+   {
+    "path": "/ridurile-fumatorului/",
+    "data": "2026-01-23"
+   },
+   {
+    "path": "/hialuronidaza/",
+    "data": "2026-01-22"
+   },
+   {
+    "path": "/pori-dilatati/",
+    "data": "2026-01-22"
+   },
+   {
+    "path": "/recuperare-dupa-dermapen/",
+    "data": "2026-01-22"
+   },
+   {
+    "path": "/ce-inseamna-prp/",
+    "data": "2026-01-08"
+   },
+   {
+    "path": "/recomandari-dupa-botox/",
+    "data": "2026-01-08"
+   },
+   {
+    "path": "/pungi-sub-ochi/",
+    "data": "2025-12-23"
+   },
+   {
+    "path": "/buze-uscate/",
+    "data": "2025-12-22"
+   },
+   {
+    "path": "/acid-in-buze-exagerat/",
+    "data": "2025-12-02"
+   },
+   {
+    "path": "/nad-perfuzabil/",
+    "data": "2025-12-02"
+   },
+   {
+    "path": "/terapia-vampir-pareri/",
+    "data": "2025-12-02"
+   },
+   {
+    "path": "/tratament-cearcane/",
+    "data": "2025-12-02"
+   },
+   {
+    "path": "/bunny-lines/",
+    "data": "2025-10-28"
+   },
+   {
+    "path": "/riduri-in-jurul-gurii/",
+    "data": "2025-10-28"
+   },
+   {
+    "path": "/riduri-intre-sprancene/",
+    "data": "2025-10-28"
+   },
+   {
+    "path": "/terapii-intravenoase/",
+    "data": "2025-10-28"
+   },
+   {
+    "path": "/epilare-definitiva-pareri/",
+    "data": "2025-10-02"
+   },
+   {
+    "path": "/riduri-de-expresie/",
+    "data": "2025-10-02"
+   },
+   {
+    "path": "/riduri-marioneta/",
+    "data": "2025-10-02"
+   },
+   {
+    "path": "/riduri/",
+    "data": "2025-10-02"
+   },
+   {
+    "path": "/alunite-rosii/",
+    "data": "2025-08-26"
+   },
+   {
+    "path": "/epilat-interfesier-ce-inseamna/",
+    "data": "2025-08-26"
+   },
+   {
+    "path": "/unde-se-pune-botox/",
+    "data": "2025-08-26"
+   },
+   {
+    "path": "/adevarul-despre-glutation/",
+    "data": "2025-08-05"
+   },
+   {
+    "path": "/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+    "data": "2025-08-05"
+   },
+   {
+    "path": "/riduri-frunte/",
+    "data": "2025-08-05"
+   },
+   {
+    "path": "/vergeturi-pe-sani-2/",
+    "data": "2025-08-05"
+   },
+   {
+    "path": "/forme-de-buze-cu-acid-hialuronic/",
+    "data": "2025-07-01"
+   },
+   {
+    "path": "/prima-injectare-cu-acid-hialuronic-in-buze/",
+    "data": "2025-07-01"
+   },
+   {
+    "path": "/riduri-laba-gastei/",
+    "data": "2025-07-01"
+   },
+   {
+    "path": "/russian-lips-vs-butterfly-lips/",
+    "data": "2025-07-01"
+   },
+   {
+    "path": "/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+    "data": "2025-06-03"
+   },
+   {
+    "path": "/cea-mai-buna-toxina-botulinica/",
+    "data": "2025-06-03"
+   },
+   {
+    "path": "/efecte-botox/",
+    "data": "2025-06-03"
+   }
+  ],
+  "invechite": []
+ },
+ "servicii_fara_pret": [
+  {
+   "nume": "Consultație nutriție antiaging / nutrigenomica",
+   "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/"
+  },
+  {
+   "nume": "Nevi pigmentari",
+   "url": "https://moaclinic.ro/nevi-pigmentari/"
+  },
+  {
+   "nume": "Laser Terapie",
+   "url": "https://moaclinic.ro/laser-terapie/"
+  },
+  {
+   "nume": "DNA SKIN",
+   "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/"
+  },
+  {
+   "nume": "Nutrigenetică și epigenetică",
+   "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/"
+  }
+ ],
+ "lansare": [
+  {
+   "ok": true,
+   "mesaj": "robots.txt accesibil",
+   "detaliu": "HTTP 200"
+  },
+  {
+   "ok": true,
+   "mesaj": "robots.txt indică sitemap-ul",
+   "detaliu": "da"
+  },
+  {
+   "ok": true,
+   "mesaj": "Sitemap index (Rank Math)",
+   "detaliu": "HTTP 200 · 103 URL-uri"
+  },
+  {
+   "ok": false,
+   "mesaj": "Toate URL-urile din sitemap răspund 200",
+   "detaliu": "/echipa/dr-adrian-stanescu/ → 301"
+  },
+  {
+   "ok": true,
+   "mesaj": "HTTP → HTTPS cu 301",
+   "detaliu": "301 → https://moaclinic.ro/"
+  },
+  {
+   "ok": true,
+   "mesaj": "www → fără www cu 301",
+   "detaliu": "301 → https://moaclinic.ro/"
+  },
+  {
+   "ok": true,
+   "mesaj": "Favicon",
+   "detaliu": "cropped-Instagram-logo"
+  },
+  {
+   "ok": true,
+   "mesaj": "Google Tag Manager",
+   "detaliu": "GTM-KPSPLD9M"
+  },
+  {
+   "ok": true,
+   "mesaj": "Banner de cookies (GDPR)",
+   "detaliu": "CookieYes, încărcat prin GTM (GTM-KPSPLD9M) – legat de domeniu, nu apare pe localhost"
+  },
+  {
+   "ok": true,
+   "mesaj": "Schema MedicalClinic pe homepage",
+   "detaliu": "două blocuri, cu date diferite (vezi Entități › Observații)"
+  },
+  {
+   "ok": true,
+   "mesaj": "Fără linkuri interne rupte",
+   "detaliu": "0 rupte · 9 cu redirect"
+  },
+  {
+   "ok": true,
+   "mesaj": "Linkuri ANPC / SOL în footer",
+   "detaliu": "obligatorii pentru comerț online"
+  }
+ ]
+}

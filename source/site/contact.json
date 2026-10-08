@@ -1,0 +1,44 @@
+{
+ "url": "https://moaclinic.ro/contact/",
+ "path": "/contact/",
+ "tip": "Pagina",
+ "title": "Contact - Moa Clinica",
+ "h1": "Contactează-ne",
+ "description": "Echipa noastră de specialiști este pregătită să îți ofere suportul necesar pentru a-ți atinge obiectivele de sănătate și frumusețe. Ne poți găsi la adresa",
+ "publicat": null,
+ "modificat": null,
+ "autor": null,
+ "titluri": [
+  {
+   "n": 2,
+   "t": "Contactează Moa Clinic pentru programări, informații despre tratamente sau orice alte întrebări ai avea!"
+  },
+  {
+   "n": 2,
+   "t": "Date de contact"
+  }
+ ],
+ "intrebari": [],
+ "imagini": [
+  {
+   "src": "https://moaclinic.ro/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-03-at-16.08.55-scaled.jpeg",
+   "alt": "",
+   "w": "2560",
+   "h": "1920"
+  },
+  {
+   "src": "https://moaclinic.ro/wp-content/uploads/2024/08/alexander-krivitskiy-yIitNO2Bgdo-unsplash-scaled.jpg",
+   "alt": "",
+   "w": "1707",
+   "h": "2560"
+  }
+ ],
+ "linkuri": [],
+ "cta": [
+  "Programează-te",
+  "Programează-te acum!",
+  "Spre pagina de contact",
+  "Programează-te"
+ ],
+ "text": "Contactează-ne Contactează Moa Clinic pentru programări, informații despre tratamente sau orice alte întrebări ai avea! Echipa noastră de specialiști este pregătită să îți ofere suportul necesar pentru a-ți atinge obiectivele de sănătate și frumusețe. Ne poți găsi la adresa noastră, prin telefon, email sau completând formularul de mai jos. Așteptăm cu drag să te ajutăm! Programează-te acum! Date de contact Str. Stefan Mihaileanu, 35 0743 056 605 [email protected]"
+}

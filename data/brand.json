@@ -1,0 +1,609 @@
+{
+  "meta": {
+    "sursa": "https://moaclinic.ro/ (CSS-ul temei, logo-urile, textul celor 102 pagini din sitemap)",
+    "extras_la": "2026-10-08",
+    "tema": "WordPress, tema Flatsome, Rank Math SEO",
+    "nota": "„Găsit pe site” = ce folosește site-ul azi. „Recomandare” = propunere de aliniere. Toate secțiunile se pot edita din panou."
+  },
+  "esenta": {
+    "nume": "MOA Clinic",
+    "denumire_legala": "Start Clinic Boost SRL · MOA Estetic SRL",
+    "categorie": "Clinică de estetică medicală, chirurgie plastică și medicină regenerativă (antiaging)",
+    "tagline": "Frumusețea vine din interior și se desăvârșește la exterior",
+    "tagline_nota": "Apare ca titlu de secțiune pe homepage. Brandul nu are un slogan declarat în schema (slogan lipsește).",
+    "pozitionare_recomandata": "Prima clinică Global Antiaging din România: estetică, chirurgie și regenerare celulară, sub coordonarea unui medic gerontolog din școala Ana Aslan.",
+    "pozitionare_variante": [
+      {
+        "text": "Clinica ta premium pentru estetică din București, chirurgie și regenerare celulară",
+        "unde": "meta description homepage + schema"
+      },
+      {
+        "text": "Prima clinică Global Antiaging din România",
+        "unde": "homepage, primul paragraf"
+      },
+      {
+        "text": "Un concept în care vârsta nu va mai avea nicio importanță",
+        "unde": "homepage"
+      },
+      {
+        "text": "Estetică, Chirurgie si Regenerare Celulara | Bucuresti",
+        "unde": "title homepage (fără diacritice)"
+      }
+    ],
+    "promisiune": [
+      "Prima clinică Global Antiaging din România: estetică, chirurgie și regenerare celulară într-un singur loc",
+      "Concept creat de un medic format la Academia de gerontologie a prof. Ana Aslan",
+      "Rezultate estetice naturale, într-un mediu prietenos, cu expertiză profesională internațională",
+      "Aparatură de ultimă generație: Splendor X, Venus Viva, Venus Legacy, Dermalinfusion",
+      "Tratamente personalizate pentru îngrijirea pielii, alese în consultația cu medicul dermatolog",
+      "Terapii regenerative non-invazive pentru antiaging intern, cu teste înainte și după (vârstă biologică)"
+    ],
+    "valori": [
+      {
+        "nume": "Naturalețe",
+        "dovada": "„rezultate estetice naturale” (homepage), „punem accent pe naturalețe și siguranță” (pagini de proceduri)"
+      },
+      {
+        "nume": "Siguranță",
+        "dovada": "„siguranța pacientului este prioritatea absolută” – apare pe paginile de proceduri injectabile"
+      },
+      {
+        "nume": "Personalizare",
+        "dovada": "„fiecare pacient primește un plan personalizat” – formulă repetată pe paginile de servicii"
+      },
+      {
+        "nume": "Inovație",
+        "dovada": "aparatură de ultimă generație, terapii regenerative, „tehnologie revoluționară”"
+      }
+    ],
+    "dovezi": [
+      "91 – recenzii Google, calificativ „EXCELENT” (widget Trustindex)",
+      "5.0 – rating declarat în schema (60 recenzii) – diferă de widget",
+      "25+ ani – de când Dr. Adrian Stănescu urmărește conceptul MOA („un vis de peste 25 de ani”)",
+      "Prima – clinică Global Antiaging din România",
+      "755 + 1064 nm – Splendor X: „singurul laser din lume” care emite simultan ambele lungimi de undă",
+      "FDA – aprobare menționată pentru Sculptra și pentru programele TMS",
+      "12 – oameni în echipă (homepage + /echipa/)"
+    ],
+    "public": [
+      "Femei 30+ interesate de estetică facială",
+      "Bărbați (epilare, augmentare, Botox)",
+      "Pacienți antiaging / longevitate",
+      "Persoane cu burnout, depresie, anxietate (TMS)",
+      "Pacienți dermatologie (nevi, papiloame)",
+      "București și împrejurimi"
+    ],
+    "oameni": [
+      {
+        "nume": "Dr. Adrian Stănescu",
+        "rol": "Fondator, medic primar gerontolog, director medical, coordonator departament TMS"
+      }
+    ],
+    "vechime": {
+      "gasit": [
+        "„un vis de peste 25 de ani” – al fondatorului (homepage)",
+        "site publicat în 2024-08",
+        "înregistrare Start Clinic Boost SRL: J23/5823/26.08.2022"
+      ],
+      "fapt": "Site-ul nu declară un an de înființare a clinicii. Firma Start Clinic Boost SRL e înregistrată în 2022."
+    }
+  },
+  "logo": {
+    "descriere": "Monogramă din literele M, O și A suprapuse, cu linii subțiri, aurii (logo-ul de pe fundal deschis) sau albe (header-ul site-ului, pe fundal închis).",
+    "variante": [
+      {
+        "nume": "Logo complet alb (header)",
+        "url": "https://moaclinic.ro/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg",
+        "dimensiuni": "SVG 1492×2434",
+        "fundal": "închis",
+        "folosit": "Header-ul site-ului (alt „Moa Clinica”), schema MedicalClinic custom"
+      },
+      {
+        "nume": "Monogramă aurie",
+        "url": "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+        "dimensiuni": "PNG 1338×1658",
+        "fundal": "deschis",
+        "folosit": "Logo în schema Rank Math, imagine de profil Instagram"
+      },
+      {
+        "nume": "Favicon",
+        "url": "https://moaclinic.ro/wp-content/uploads/2024/09/cropped-Instagram-logo-192x192.png",
+        "dimensiuni": "PNG 32 / 180 / 192 / 270",
+        "fundal": "alb",
+        "folosit": "Iconița din browser și de pe telefon"
+      }
+    ],
+    "culori": [
+      "#947547",
+      "#ffffff"
+    ],
+    "probleme": [
+      "Logo-ul din schema Rank Math se numește „Instagram-logo.png” – un fișier de social media folosit ca logo oficial.",
+      "Textul alternativ al logo-ului din header e „Moa Clinica”, altă formă a numelui.",
+      "Nu există o variantă orizontală a logo-ului (monograma e foarte înaltă: 1492×2434).",
+      "Lipsește o variantă aurie în SVG (doar PNG)."
+    ]
+  },
+  "culori": [
+    {
+      "grup": "Paleta brandului",
+      "culori": [
+        {
+          "nume": "Auriu MOA",
+          "hex": "#947547",
+          "rol": "Culoarea principală: fundaluri de secțiune, hover pe butoane, logo",
+          "gasit": "CSS temă · 18 folosiri"
+        },
+        {
+          "nume": "Bronz închis",
+          "hex": "#a98755",
+          "rol": "Rânduri de titlu în tabelele de prețuri",
+          "gasit": "pagina /preturi/"
+        },
+        {
+          "nume": "Ocru (hover)",
+          "hex": "#bd871f",
+          "rol": "Conturul butoanelor la hover",
+          "gasit": "CSS temă · 5 folosiri"
+        },
+        {
+          "nume": "Crem",
+          "hex": "#fff8ee",
+          "rol": "Fundaluri calde de secțiune",
+          "gasit": "CSS temă · 2 folosiri"
+        }
+      ]
+    },
+    {
+      "grup": "Neutre",
+      "culori": [
+        {
+          "nume": "Antracit",
+          "hex": "#1f2020",
+          "rol": "Fundal închis, text principal",
+          "gasit": "CSS temă · 8 folosiri"
+        },
+        {
+          "nume": "Alb",
+          "hex": "#ffffff",
+          "rol": "Text pe fundal auriu / închis, logo",
+          "gasit": "CSS temă"
+        },
+        {
+          "nume": "Negru",
+          "hex": "#000000",
+          "rol": "Textul butoanelor",
+          "gasit": "CSS .button"
+        }
+      ]
+    },
+    {
+      "grup": "Accente de sistem",
+      "culori": [
+        {
+          "nume": "Roșu „alert”",
+          "hex": "#dd3333",
+          "rol": "Clasa „alert” a butonului Programează-te (tema Flatsome)",
+          "gasit": "CSS temă · 6 folosiri"
+        }
+      ]
+    }
+  ],
+  "tipografie": {
+    "fonturi": [
+      {
+        "nume": "Montserrat",
+        "set": "Site actual",
+        "tip": "text",
+        "greutati": "400, 500, 600, 700",
+        "rol": "Tot textul: titluri, paragrafe, meniu, butoane",
+        "fallback": "sans-serif",
+        "sursa": "găzduit local (wp-content/fonts/montserrat)",
+        "google": "Montserrat:wght@400;500;600;700"
+      },
+      {
+        "nume": "Dancing Script",
+        "set": "Site actual",
+        "tip": "titluri",
+        "greutati": "400–700",
+        "rol": "Accente decorative (scris de mână)",
+        "fallback": "cursive",
+        "sursa": "găzduit local (wp-content/fonts/dancing-script)",
+        "google": "Dancing+Script:wght@400;700"
+      },
+      {
+        "nume": "Cormorant Garamond",
+        "set": "Recomandare",
+        "tip": "titluri",
+        "greutati": "500, 600",
+        "rol": "Serif elegant pentru titluri, în ton cu monograma cu linii subțiri",
+        "fallback": "Georgia, serif",
+        "sursa": "Google Fonts",
+        "google": "Cormorant+Garamond:wght@500;600"
+      }
+    ],
+    "baza": "16 px (tema Flatsome), Montserrat",
+    "scara": [
+      {
+        "nivel": "H1",
+        "rem": 2.4,
+        "px": 38
+      },
+      {
+        "nivel": "H2",
+        "rem": 1.8,
+        "px": 29
+      },
+      {
+        "nivel": "H3",
+        "rem": 1.4,
+        "px": 22
+      },
+      {
+        "nivel": "H4",
+        "rem": 1.2,
+        "px": 19
+      },
+      {
+        "nivel": "Text",
+        "rem": 1,
+        "px": 16
+      },
+      {
+        "nivel": "Mic",
+        "rem": 0.85,
+        "px": 14
+      }
+    ],
+    "nota": "Un singur font (Montserrat) face tot; Dancing Script apare rar. O pereche serif + sans ar comunica mai bine „premium”.",
+    "site": {
+      "titluri": "Montserrat",
+      "text": "Montserrat",
+      "nota": "Fonturile folosite acum pe site."
+    }
+  },
+  "ui": {
+    "butoane": [
+      {
+        "nume": "Contur (principal)",
+        "bg": "#ffffff",
+        "text": "#000000",
+        "hover": "#947547",
+        "exemplu": "Programează-te",
+        "folosit": "Butonul din header și din fiecare secțiune"
+      },
+      {
+        "nume": "Contur pe fundal închis",
+        "bg": "#1f2020",
+        "text": "#ffffff",
+        "hover": "#947547",
+        "exemplu": "Vezi detalii",
+        "folosit": "Acordeoanele de pe homepage"
+      },
+      {
+        "nume": "Plin auriu",
+        "bg": "#947547",
+        "text": "#ffffff",
+        "hover": "#bd871f",
+        "exemplu": "Vezi toate ofertele MOA",
+        "folosit": "Secțiunea de oferte"
+      }
+    ],
+    "stil_butoane": "Formă de pastilă (border-radius 99px), contur de 1px, text 16px greutate 500, padding .5rem 2rem, tranziție 0,5 s.",
+    "iconite": {
+      "set": "Font Awesome 6 + fl-icons (Flatsome)",
+      "folosite": [
+        "fa-phone",
+        "fa-envelope",
+        "fa-location-dot",
+        "fa-facebook",
+        "fa-instagram",
+        "fa-whatsapp",
+        "fa-chevron-right",
+        "fa-chevron-up"
+      ]
+    },
+    "componente": [
+      "Header transparent peste video (Moa-Clinic-hero.mp4), logo alb centrat",
+      "Acordeoane „Vezi detalii” pe fundal închis, pentru tehnologii și terapii",
+      "Carduri de proceduri cu imagine (4 categorii pe homepage)",
+      "Widget de recenzii Google (Trustindex) cu insignă verificată",
+      "Buton WhatsApp flotant",
+      "Tabele de prețuri în acordeon pe /preturi/"
+    ]
+  },
+  "imagini": {
+    "stiluri": [
+      {
+        "nume": "Clinica și echipa",
+        "descriere": "Fotografii reale din clinică și portrete ale medicilor, verticale, lumină caldă.",
+        "exemple": [
+          "https://moaclinic.ro/wp-content/uploads/2024/10/Clinica-moa-829x1024.jpeg",
+          "https://moaclinic.ro/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg",
+          "https://moaclinic.ro/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.19-768x1024.jpeg",
+          "https://moaclinic.ro/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.20-2-768x1024.jpeg"
+        ]
+      },
+      {
+        "nume": "Pictograme aurii",
+        "descriere": "Iconițe albe/aurii pentru cele 4 categorii de proceduri.",
+        "exemple": [
+          "https://moaclinic.ro/wp-content/uploads/2024/09/1.svg",
+          "https://moaclinic.ro/wp-content/uploads/2024/09/2.svg",
+          "https://moaclinic.ro/wp-content/uploads/2024/09/3.svg"
+        ]
+      }
+    ],
+    "reguli_gasite": [
+      "Video de fundal în hero",
+      "Portrete medici în format vertical",
+      "Imagini încărcate leneș (lazy load) și servite WebP de EWWW"
+    ],
+    "probleme": [
+      "8 din 24 imagini de pe homepage nu au text alternativ.",
+      "Multe fișiere au nume generice („WhatsApp-Image-2024-10-09…”, „image00002”) – nu descriu conținutul.",
+      "Portretul Dr. Irina Amolioaie e salvat ca „dr-irina-amolioaiei”."
+    ]
+  },
+  "voce": {
+    "adresare": {
+      "gasit": "Predominant „tu” (1740 apariții de tine/ție/tău/te) față de 28 de „dumneavoastră/dvs.”",
+      "recomandare": "„Tu”, cald și liniștitor, peste tot. „Dumneavoastră” doar în documentele legale."
+    },
+    "ton": [
+      "Entuziast, uneori promoțional („tratament revoluționar”, „rezultate uimitoare”)",
+      "Liniștitor despre siguranță („siguranța pacientului este prioritatea absolută”)",
+      "Educativ pe blog: explică problema, apoi soluția",
+      "Medical-științific la terapiile regenerative (sirtuine, radicali liberi, vârstă biologică)"
+    ],
+    "fraze_semnatura": [
+      "Frumusețea vine din interior și se desăvârșește la exterior",
+      "Un concept în care vârsta nu va mai avea nicio importanță",
+      "Te-ai gândit vreodată că secretul longevității ar putea sta, de fapt, în tine?",
+      "Rezultate estetice naturale și îngrijire de specialitate"
+    ],
+    "vocabular": [
+      "tratament (1139)",
+      "rezultate (459)",
+      "natural (402)",
+      "clinica (236)",
+      "personalizat (177)",
+      "colagen (156)",
+      "hidratare (147)",
+      "siguranta (146)",
+      "regenerare (105)",
+      "antiaging (54)"
+    ],
+    "cta": [
+      {
+        "text": "Programează-te",
+        "aparitii": 272,
+        "pagini": 102,
+        "nota": ""
+      },
+      {
+        "text": "Spre pagina de contact",
+        "aparitii": 93,
+        "pagini": 93,
+        "nota": ""
+      },
+      {
+        "text": "Programeaza-te!",
+        "aparitii": 26,
+        "pagini": 17,
+        "nota": "fără diacritice, cu „!”"
+      },
+      {
+        "text": "Vezi detalii",
+        "aparitii": 12,
+        "pagini": 1,
+        "nota": ""
+      },
+      {
+        "text": "Continue reading →",
+        "aparitii": 10,
+        "pagini": 1,
+        "nota": "în engleză"
+      },
+      {
+        "text": "programeaza-te!",
+        "aparitii": 9,
+        "pagini": 9,
+        "nota": "literă mică, fără diacritice"
+      },
+      {
+        "text": "Citește mai mult",
+        "aparitii": 8,
+        "pagini": 1,
+        "nota": ""
+      },
+      {
+        "text": "Vezi profilul",
+        "aparitii": 2,
+        "pagini": 2,
+        "nota": ""
+      },
+      {
+        "text": "Home",
+        "aparitii": 1,
+        "pagini": 1,
+        "nota": ""
+      },
+      {
+        "text": "Abonamentele lunii",
+        "aparitii": 1,
+        "pagini": 1,
+        "nota": ""
+      }
+    ],
+    "cta_recomandat": [
+      "Programează-te",
+      "Vezi detalii",
+      "Vezi prețurile",
+      "Vezi ofertele lunii",
+      "Citește articolul"
+    ]
+  },
+  "naming": {
+    "corect": "MOA Clinic",
+    "legal": "Start Clinic Boost SRL · MOA Estetic SRL",
+    "variante_gasite": [
+      "MOA Regenerative by Oxxygene",
+      "MOA Clinic",
+      "Moa Clinic",
+      "MOA by Oxxygene",
+      "Moa Clinica",
+      "Clinica MOA",
+      "MOA Regenerative",
+      "Moa Regenerative by Oxxygene"
+    ],
+    "reguli": [
+      "„MOA Clinic” în text curent; „MOA Regenerative by Oxxygene” doar ca nume complet (prima mențiune, schema, documente)",
+      "MOA întotdeauna cu majuscule (e o monogramă)",
+      "„by Oxxygene” nu se traduce și nu se scrie „Oxygene”"
+    ]
+  },
+  "contact": {
+    "legal": [
+      {
+        "camp": "Start Clinic Boost SRL",
+        "valoare": "Str. Ștefan Mihăileanu nr. 25, Sector 2, București"
+      },
+      {
+        "camp": "CUI",
+        "valoare": "46730062"
+      },
+      {
+        "camp": "Registrul Comerțului",
+        "valoare": "J23/5823/26.08.2022"
+      },
+      {
+        "camp": "MOA Estetic SRL",
+        "valoare": "Str. Ștefan Mihăileanu nr. 35, Sector 2, București"
+      }
+    ],
+    "canale": [
+      {
+        "rol": "Programări",
+        "telefon": "0743 056 605",
+        "email": "office@moaclinic.ro"
+      },
+      {
+        "rol": "Contact general",
+        "telefon": "0743 056 605",
+        "email": "contact@moaclinic.ro"
+      },
+      {
+        "rol": "Documente legale (GDPR)",
+        "telefon": "0743 056 605",
+        "email": "moaclinic2024@gmail.com"
+      }
+    ],
+    "program": "Neclar: schema declară Lu–Du 09:00–17:00 și Lu–Vi 09:00–19:00",
+    "raspuns": "Nedeclarat pe site",
+    "social": [
+      {
+        "retea": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61565584852692"
+      },
+      {
+        "retea": "Instagram",
+        "url": "https://www.instagram.com/moaclinic"
+      },
+      {
+        "retea": "Facebook",
+        "url": "https://www.facebook.com/MoaClinicByOxxygene/"
+      }
+    ]
+  },
+  "parteneri": {
+    "nota": "Mărcile ale căror produse și aparate apar pe site. Brandul părinte: Oxxygene.",
+    "logo": [
+      {
+        "nume": "Oxxygene",
+        "url": "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+        "nota": "brand părinte – fără logo propriu pe site"
+      },
+      {
+        "nume": "Splendor X",
+        "url": "",
+        "nota": "Lumenis"
+      },
+      {
+        "nume": "Venus Viva",
+        "url": "",
+        "nota": "Venus Concept"
+      },
+      {
+        "nume": "Venus Legacy",
+        "url": "",
+        "nota": "Venus Concept"
+      },
+      {
+        "nume": "Dermalinfusion",
+        "url": "",
+        "nota": "Envy Medical"
+      },
+      {
+        "nume": "Dermapen 4",
+        "url": "",
+        "nota": "Dermapen World"
+      },
+      {
+        "nume": "Vielight",
+        "url": "",
+        "nota": "Vielight Inc."
+      }
+    ]
+  },
+  "inconsecvente": [
+    {
+      "nivel": "critic",
+      "text": "Două blocuri schema.org declară programe diferite (Lu–Du 09–17 vs Lu–Vi 09–19). Google poate afișa programul greșit."
+    },
+    {
+      "nivel": "mediu",
+      "text": "Două profiluri Facebook diferite pe homepage (MoaClinicByOxxygene și profile.php?id=61565584852692)."
+    },
+    {
+      "nivel": "mediu",
+      "text": "Brandul apare sub 4 denumiri (MOA Regenerative by Oxxygene, MOA Clinic, Moa Clinic, MOA by Oxxygene). Lipsește alternateName în schema."
+    },
+    {
+      "nivel": "critic",
+      "text": "Termenii și condițiile spun că site-ul este „www.moa.ro”, nu moaclinic.ro."
+    },
+    {
+      "nivel": "critic",
+      "text": "Start Clinic Boost SRL are în documentele legale adresa „Str. Ștefan Mihăileanu nr. 25, Sector 2, București” – clinica e la nr. 35."
+    },
+    {
+      "nivel": "mediu",
+      "text": "Documentele legale folosesc moaclinic2024@gmail.com în loc de office@moaclinic.ro."
+    },
+    {
+      "nivel": "mediu",
+      "text": "Lipsesc CUI-ul și nr. de registru pentru MOA Estetic SRL."
+    },
+    {
+      "nivel": "minor",
+      "text": "Telefonul din schema conține cratime speciale (U+2011): +40‑743‑056‑605. Formatul corect: +40743056605."
+    },
+    {
+      "nivel": "minor",
+      "text": "Schema Rank Math folosește ca logo „Instagram-logo.png”, schema custom folosește SVG-ul alb."
+    },
+    {
+      "nivel": "minor",
+      "text": "CTA-ul de programare apare în 4 forme: „Programează-te”, „Programeaza-te!”, „Programează-te acum!”, „programeaza-te!”."
+    },
+    {
+      "nivel": "minor",
+      "text": "Butonul „Continue reading →” e în engleză pe pagina categoriei de blog."
+    },
+    {
+      "nivel": "minor",
+      "text": "Numele „Irina Amolioaie” apare în fișierele imaginilor ca „amolioaiei”."
+    }
+  ]
+}

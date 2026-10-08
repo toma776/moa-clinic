@@ -1,0 +1,33 @@
+{
+ "url": "https://moaclinic.ro/confirmare/",
+ "path": "/confirmare/",
+ "tip": "Pagina",
+ "title": "Confirmare - Moa Clinica",
+ "h1": "Confirmare",
+ "description": "Confirmare Mulțumim că ne-ați contactat! Vom reveni în scurt timp cu un răspuns.",
+ "publicat": "2024-09-17",
+ "modificat": "2024-09-17",
+ "autor": null,
+ "titluri": [
+  {
+   "n": 2,
+   "t": "Mulțumim că ne-ați contactat! Vom reveni în scurt timp cu un răspuns."
+  }
+ ],
+ "intrebari": [],
+ "imagini": [],
+ "linkuri": [
+  "/",
+  "/abonamente/",
+  "/preturi/"
+ ],
+ "cta": [
+  "Programează-te",
+  "Home",
+  "Abonamentele lunii",
+  "Prețuri",
+  "Spre pagina de contact",
+  "Programează-te"
+ ],
+ "text": "Confirmare Mulțumim că ne-ați contactat! Vom reveni în scurt timp cu un răspuns. Home Abonamentele lunii Prețuri"
+}

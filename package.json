@@ -2,12 +2,16 @@
   "name": "moa-clinic",
   "version": "1.0.0",
   "private": true,
-  "description": "Copie locală a homepage-ului moaclinic.ro + panou de administrare a entităților brandului",
+  "description": "Copie locală a homepage-ului moaclinic.ro + panou de administrare (brand, entități, legături, leads, pages, site health)",
   "scripts": {
     "start": "node server.js",
     "mirror": "node scripts/mirror-homepage.js",
+    "crawl": "node scripts/crawl-pages.js",
     "extract": "node scripts/extract-entities.js",
-    "sync": "npm run mirror && npm run extract"
+    "enrich": "node scripts/enrich-entities.js",
+    "brand": "node scripts/build-brand.js",
+    "health": "node scripts/site-health.js",
+    "sync": "npm run mirror && npm run crawl && npm run extract && npm run enrich && npm run brand && npm run health"
   },
   "engines": {
     "node": ">=18"
