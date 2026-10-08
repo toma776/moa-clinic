@@ -68,7 +68,9 @@ const lastSeg = (u) => new URL(u).pathname.split('/').filter(Boolean).pop() || '
 // ---------- servicii (din meniu) ----------
 const servicii = [];
 for (const cat of D.categoriiServicii) {
-  const leaves = cat.copii?.length ? cat.copii : [cat];
+  // toate nodurile cu URL de sub categorie, inclusiv nivelul 3 din meniu (ex. Laser Terapie › Epilare definitivă)
+  const flat = (nodes) => nodes.flatMap((n) => [n, ...flat(n.copii || [])]);
+  const leaves = cat.copii?.length ? flat(cat.copii) : [cat];
   for (const s of leaves) {
     if (!s.url || servicii.some((x) => x.url === s.url)) continue;
     const id = lastSeg(s.url);
@@ -286,6 +288,43 @@ D.media = uniq((home?.imagini || []).map((i) => i.src.split('?')[0].replace(/^ht
       folosita: [...(imgUse.get(f) || [])],
     };
   });
+
+// ---------- video (toate paginile) ----------
+// Fiecare video cu paginile pe care apare și secțiunea (titlul) sub care e pus acum: de acolo știm unde trebuie pus pe site-ul nou.
+const vids = new Map();
+for (const s of SRC) {
+  (s.video || []).forEach((v, i) => {
+    if (!vids.has(v.src)) vids.set(v.src, { ...v, pagini: [] });
+    const serv = servicii.find((x) => x.url === s.url);
+    vids.get(v.src).pagini.push({ path: s.path, url: s.url, titlu_pagina: s.h1 || s.title, sectiune: v.sectiune, ordine: i + 1, serviciu: serv?.id || null });
+  });
+}
+const prettyFile = (f) => decodeURIComponent(path.basename(f)).replace(/\.\w+$/, '').replace(/[-_]+/g, ' ').replace(/\s+\d+$/, '').trim();
+D.video = [...vids.values()].map((v) => {
+  const generic = /whatsapp|^v\d|adobe express|^copy |^[0-9a-f-]{20,}/i.test(prettyFile(v.src));
+  const vertical = v.latime && v.inaltime ? v.inaltime > v.latime : null;
+  const probleme = [];
+  if (generic) probleme.push('nume de fișier generic');
+  if (!v.poster && !v.fundal) probleme.push('fără imagine de previzualizare (poster)');
+  if (v.mb > 20) probleme.push(`fișier mare (${v.mb} MB)`);
+  if (v.status && v.status !== 200) probleme.push(`HTTP ${v.status}`);
+  return {
+    id: slug(path.basename(v.src)),
+    titlu: v.fundal ? 'Video de fundal (hero homepage)' : generic ? `Video – ${v.pagini[0].sectiune || v.pagini[0].titlu_pagina}` : prettyFile(v.src),
+    fisier: v.src,
+    url: v.sursa === 'site' ? ORIGIN + v.src : v.src,
+    sursa: v.sursa,
+    fundal: v.fundal,
+    mb: v.mb ?? null,
+    format: v.tip || (/\.mp4$/i.test(v.src) ? 'video/mp4' : null),
+    dimensiuni: v.latime && v.inaltime ? `${v.latime}×${v.inaltime}` : null,
+    orientare: vertical == null ? null : vertical ? 'vertical' : 'orizontal',
+    poster: v.poster,
+    pagini: v.pagini,
+    probleme,
+  };
+}).sort((a, b) => b.fundal - a.fundal || a.pagini[0].path.localeCompare(b.pagini[0].path));
+for (const s of servicii) s.video = D.video.filter((v) => v.pagini.some((p) => p.serviciu === s.id)).map((v) => v.id);
 
 // ---------- date legale (din /documente-legale-clinica-moa/) ----------
 const legalSrc = byPath.get('/documente-legale-clinica-moa/');

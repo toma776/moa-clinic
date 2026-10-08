@@ -177,6 +177,20 @@
    "h": "151"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-12.00.38.mp4",
+   "poster": null,
+   "latime": 720,
+   "inaltime": 1280,
+   "fundal": false,
+   "sectiune": "ALEXANDRITE și ND:YAG – Secretul unei Epilări Perfecte cu SPLENDOR x, Laserul Unic în Lume!",
+   "status": 200,
+   "mb": 20.3,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [
   "/contact/"
  ],

@@ -332,6 +332,32 @@
    "h": "300"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2026/01/Micronedling-cu-dermapen-1-1.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": 440,
+   "fundal": false,
+   "sectiune": "Beneficiile tratamentului microneedling cu Dermapen 4",
+   "status": 200,
+   "mb": 23.1,
+   "tip": "video/mp4"
+  },
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2025/12/dermapen-cum-decurge-o-sedinta.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": 440,
+   "fundal": false,
+   "sectiune": "Cum decurge procedura de microneedling cu Dermapen 4?",
+   "status": 200,
+   "mb": 7.9,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [],
  "cta": [
   "Programează-te",

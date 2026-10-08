@@ -75,6 +75,39 @@ function schemaInfo(html) {
   return { types: [...types], services };
 }
 
+// Video-urile din pagină: <video> găzduite pe site (src / <source>, poster) + embed-uri externe (YouTube, Vimeo, TikTok, Instagram, Facebook).
+// Pentru fiecare: titlul secțiunii în care apare (ultimul H1–H4 de dinainte), ca să știm unde trebuie pus la loc.
+const EMBED_RE = /(youtube\.com|youtu\.be|vimeo\.com|tiktok\.com|instagram\.com\/(?:p|reel)|facebook\.com\/[^"']*video)/i;
+function videos(html) {
+  const out = [];
+  const headingBefore = (idx) => {
+    const hs = [...html.slice(0, idx).matchAll(/<h([1-4])[^>]*>([\s\S]*?)<\/h\1>/g)];
+    return hs.length ? text(hs.at(-1)[2]) : null;
+  };
+  for (const m of html.matchAll(/<video\b([^>]*)>([\s\S]*?)<\/video>/g)) {
+    const tag = m[1], inner = m[2];
+    const src = attr(tag, 'src') || attr(inner.match(/<source\b[^>]*>/)?.[0] || '', 'src') || attr(inner.match(/<a\b[^>]*>/)?.[0] || '', 'href');
+    if (!src) continue;
+    out.push({
+      sursa: 'site',
+      src: decodeEntities(src).split('?')[0].replace(/^https?:\/\/(www\.)?moaclinic\.ro/, ''),
+      poster: attr(tag, 'poster') || null,
+      latime: +attr(tag, 'width') || null,
+      inaltime: +attr(tag, 'height') || null,
+      fundal: /video-bg|autoplay/.test(tag) && /muted/.test(tag),
+      sectiune: headingBefore(m.index),
+    });
+  }
+  for (const m of html.matchAll(/<iframe\b[^>]*>/g)) {
+    const src = attr(m[0], 'data-src') || attr(m[0], 'src') || '';
+    if (EMBED_RE.test(src)) out.push({ sursa: 'embed', src: decodeEntities(src), poster: null, latime: +attr(m[0], 'width') || null, inaltime: +attr(m[0], 'height') || null, fundal: false, sectiune: headingBefore(m.index) });
+  }
+  for (const m of html.matchAll(/<a\b[^>]*href="(https?:\/\/(?:www\.)?(?:youtube\.com\/watch[^"]+|youtu\.be\/[^"]+|vimeo\.com\/\d+[^"]*))"/g)) {
+    out.push({ sursa: 'link', src: decodeEntities(m[1]), poster: null, latime: null, inaltime: null, fundal: false, sectiune: headingBefore(m.index) });
+  }
+  return out.filter((v, i, a) => a.findIndex((x) => x.src === v.src) === i);
+}
+
 async function fetchPage(url) {
   const t0 = Date.now();
   try {
@@ -162,6 +195,7 @@ function analyze(entry, r) {
     titluri: [...m.matchAll(/<h([2-4])[^>]*>([\s\S]*?)<\/h\1>/g)].map((x) => ({ n: +x[1], t: text(x[2]) })).filter((x) => x.t),
     intrebari: questions(m),
     imagini: imgs,
+    video: videos(h),
     linkuri: links,
     // textele butoanelor (CTA) din toată pagina, inclusiv header/footer
     cta: [...h.matchAll(/<a\b[^>]*class="[^"]*\bbutton\b[^"]*"[^>]*>([\s\S]*?)<\/a>/g)].map((x) => text(x[1])).filter((t) => t && t.length < 60),
@@ -199,6 +233,23 @@ async function main() {
     }
   }
   await Promise.all(Array.from({ length: CONC }, worker));
+
+  // Mărimea fiecărui video găzduit pe site (HEAD), scrisă înapoi în source/site/*.json
+  const vidFiles = fs.readdirSync(SRC).map((f) => [f, JSON.parse(fs.readFileSync(path.join(SRC, f), 'utf8'))]).filter(([, s]) => s.video?.length);
+  const sizes = new Map();
+  for (const v of new Set(vidFiles.flatMap(([, s]) => s.video.filter((x) => x.sursa === 'site').map((x) => x.src)))) {
+    try {
+      const r = await fetch(ORIGIN + encodeURI(v), { method: 'HEAD', headers: { 'User-Agent': UA } });
+      sizes.set(v, { status: r.status, mb: Math.round((+r.headers.get('content-length') / 1048576) * 10) / 10 || null, tip: r.headers.get('content-type') });
+    } catch (e) {
+      sizes.set(v, { status: 0 });
+    }
+  }
+  for (const [f, s] of vidFiles) {
+    s.video = s.video.map((v) => ({ ...v, ...(sizes.get(v.src) || {}) }));
+    fs.writeFileSync(path.join(SRC, f), JSON.stringify(s, null, 1));
+  }
+  console.log(`Video: ${sizes.size} fișiere pe ${vidFiles.length} pagini`);
 
   // Duplicate de title / description
   for (const field of ['title', 'description']) {

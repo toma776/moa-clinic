@@ -98,6 +98,44 @@
    "h": "21"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2025/12/Adobe-Express-d147583d89c54d68abb2b8dcf8c8a2da-1.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": null,
+   "fundal": false,
+   "sectiune": "Cum funcționează fotobiomodularea?",
+   "status": 200,
+   "mb": 36.4,
+   "tip": "video/mp4"
+  },
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2025/12/v24044gl0000d306aavog65i7m7prvjg.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": null,
+   "fundal": false,
+   "sectiune": "Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+   "status": 200,
+   "mb": 2.6,
+   "tip": "video/mp4"
+  },
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2025/12/v24044gl0000d37ehsvog65jo034up00.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": null,
+   "fundal": false,
+   "sectiune": "Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+   "status": 200,
+   "mb": 1.5,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [],
  "cta": [
   "Programează-te",

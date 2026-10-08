@@ -283,6 +283,20 @@
    "h": "1024"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2025/12/acidbuze-video-2.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": null,
+   "fundal": false,
+   "sectiune": "Ce înseamnă augmentarea buzelor și cui i se adresează?",
+   "status": 200,
+   "mb": 2.6,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [],
  "cta": [
   "Programează-te",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-08T09:58:17.393Z",
+    "generat": "2026-10-08T12:14:03.329Z",
     "sursa": "https://moaclinic.ro",
     "paginiAnalizate": [
       "https://moaclinic.ro/",
@@ -552,6 +552,8 @@
         "glutation",
         "terapia-nad",
         "laser-terapie",
+        "epilare-definitiva-bucuresti",
+        "laser-vascular",
         "venus-legacy",
         "skin-care-dna",
         "nutrigenetica-epigenetica"
@@ -899,7 +901,10 @@
         "https://moaclinic.ro/laser-terapie/laser-vascular/",
         "https://moaclinic.ro/preturi/"
       ],
-      "servicii": []
+      "servicii": [
+        "epilare-definitiva-bucuresti",
+        "laser-vascular"
+      ]
     },
     {
       "nume": "Venus Viva",
@@ -6070,7 +6075,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "consultatie-chirurgie-plastica",
@@ -6104,7 +6110,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "consultatie-dermatoestetica-dermatologie",
@@ -6150,7 +6157,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "consultatie-nutritie-antiaging-nutrigenomica",
@@ -6180,7 +6188,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "fotobiomodulare-vielight",
@@ -6217,6 +6226,11 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
+      ],
+      "video": [
+        "adobe-express-d147583d89c54d68abb2b8dcf8c8a2da-1-mp4",
+        "v24044gl0000d306aavog65i7m7prvjg-mp4",
+        "v24044gl0000d37ehsvog65jo034up00-mp4"
       ]
     },
     {
@@ -6285,7 +6299,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "eliminare-papiloame",
@@ -6327,7 +6342,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "nevi-pigmentari",
@@ -6356,7 +6372,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "blefaroplastie",
@@ -6402,7 +6419,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "injectari-acid-hialuronic",
@@ -6525,7 +6543,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "jalupro-young-eye",
@@ -6571,7 +6590,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "augmentare-buze",
@@ -6628,6 +6648,9 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
+      ],
+      "video": [
+        "acidbuze-video-2-mp4"
       ]
     },
     {
@@ -6705,7 +6728,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "prp-scalp",
@@ -6769,7 +6793,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "microneedeling",
@@ -6861,6 +6886,10 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
+      ],
+      "video": [
+        "micronedling-cu-dermapen-1-1-mp4",
+        "dermapen-cum-decurge-o-sedinta-mp4"
       ]
     },
     {
@@ -6980,7 +7009,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "skinbooster-vital",
@@ -7041,7 +7071,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "sculptra",
@@ -7090,6 +7121,10 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
+      ],
+      "video": [
+        "sculptra-cum-functioneaza-mp4",
+        "sculptra-ce-este-mp4"
       ]
     },
     {
@@ -7142,7 +7177,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "nefertiti-lift",
@@ -7188,7 +7224,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "hiperhidroza-axilara",
@@ -7227,7 +7264,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "marirea-penisului-acid-hialuronic",
@@ -7271,7 +7309,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "polinucleotide",
@@ -7339,7 +7378,8 @@
         "Dr. Matei Gheorghiu Branaru",
         "Dr. Vali Dijmarescu",
         "Dr. Andrei Rugina"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "venus-viva",
@@ -7403,6 +7443,9 @@
       ],
       "medici": [
         "Dr. Iulia Nedelcu"
+      ],
+      "video": [
+        "venusviva-mp4"
       ]
     },
     {
@@ -7436,7 +7479,8 @@
       ],
       "medici": [
         "Dr. Iulia Nedelcu"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "dermalinfusion",
@@ -7484,7 +7528,10 @@
         "https://moaclinic.ro/sitemap/",
         "https://moaclinic.ro/tratamente-cosmetologice/"
       ],
-      "medici": []
+      "medici": [],
+      "video": [
+        "whatsapp-video-2024-11-27-at-15-27-24-mp4"
+      ]
     },
     {
       "id": "autohemoterapia",
@@ -7532,6 +7579,9 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
+      ],
+      "video": [
+        "copy-495cdce1-2a4a-472c-9d08-4e1edf8375b3-mp4"
       ]
     },
     {
@@ -7579,7 +7629,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "glutation",
@@ -7633,7 +7684,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "terapia-nad",
@@ -7731,7 +7783,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "laser-terapie",
@@ -7754,7 +7807,240 @@
         "https://moaclinic.ro/laser-terapie/",
         "https://moaclinic.ro/sitemap/"
       ],
-      "medici": []
+      "medici": [],
+      "video": []
+    },
+    {
+      "id": "epilare-definitiva-bucuresti",
+      "nume": "Epilare definitiva Bucuresti",
+      "categorie": "Tratamente corporale",
+      "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+      "h1": "Epilare definitiva Bucuresti",
+      "descriere": "Epilare definitiva Bucuresti ✓ Epilare cu laser Splendor X ✓ Procedura de durata ✓ Rezerva acum o sedinta la MoaClinic!",
+      "cuvinte": 1764,
+      "status": 200,
+      "intrebari": 0,
+      "tehnologii": [
+        "Splendor X"
+      ],
+      "produse": [],
+      "concepte": [],
+      "echipa": [
+        "Dr. Iulia Nedelcu"
+      ],
+      "preturi": [
+        {
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 999
+        },
+        {
+          "nume": "OFERTĂ Axilă + Inghinal Integral + Linie Bikini + Interfesier",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 350
+        },
+        {
+          "nume": "OFERTĂ Axilă + Gambă + Inghinal Integral + Linie Bikini + Interfesier",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 500
+        },
+        {
+          "nume": "OFERTĂ Picioare integral (coapse+gambe)",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 750
+        },
+        {
+          "nume": "Față",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 250
+        },
+        {
+          "nume": "Bărbie / perciuni / mustață",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 200
+        },
+        {
+          "nume": "Axile",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 250
+        },
+        {
+          "nume": "Mâini integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 450
+        },
+        {
+          "nume": "Antebrațe / brațe / abdomen",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 350
+        },
+        {
+          "nume": "Linie bikini",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 250
+        },
+        {
+          "nume": "Inghinal Integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 450
+        },
+        {
+          "nume": "Fese",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 250
+        },
+        {
+          "nume": "Gambe / coapse",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 550
+        },
+        {
+          "nume": "Picioare integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 1000
+        },
+        {
+          "nume": "Piept",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 500
+        },
+        {
+          "nume": "Umeri",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 500
+        },
+        {
+          "nume": "Spate integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "valoare": 1000
+        },
+        {
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 2000
+        },
+        {
+          "nume": "OFERTĂ Spate integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 850
+        },
+        {
+          "nume": "OFERTĂ Piept",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 650
+        },
+        {
+          "nume": "Față",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 400
+        },
+        {
+          "nume": "Contur barbă",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 300
+        },
+        {
+          "nume": "Bărbie / perciuni / mustață",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 350
+        },
+        {
+          "nume": "Axile",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 400
+        },
+        {
+          "nume": "Brațe integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 850
+        },
+        {
+          "nume": "Antebrațe / abdomen",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 650
+        },
+        {
+          "nume": "Linie bikini",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 400
+        },
+        {
+          "nume": "Inghinal Integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 850
+        },
+        {
+          "nume": "Fese",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 400
+        },
+        {
+          "nume": "Gambe / coapse",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 1000
+        },
+        {
+          "nume": "Picioare integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 1950
+        },
+        {
+          "nume": "Piept",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 900
+        },
+        {
+          "nume": "Umeri",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 700
+        },
+        {
+          "nume": "Spate integral",
+          "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "valoare": 1100
+        }
+      ],
+      "surse": [
+        "https://moaclinic.ro/abonamente/",
+        "https://moaclinic.ro/epilare-definitiva-pareri/",
+        "https://moaclinic.ro/epilat-interfesier-ce-inseamna/",
+        "https://moaclinic.ro/laser-terapie/",
+        "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+        "https://moaclinic.ro/preturi/",
+        "https://moaclinic.ro/sitemap/"
+      ],
+      "medici": [],
+      "video": [
+        "whatsapp-video-2024-11-21-at-12-00-38-mp4"
+      ]
+    },
+    {
+      "id": "laser-vascular",
+      "nume": "Laser vascular",
+      "categorie": "Tratamente corporale",
+      "url": "https://moaclinic.ro/laser-terapie/laser-vascular/",
+      "h1": "Laser vascular",
+      "descriere": "Laser vascular Bucuresti ✓ Leziuni vasculare ✓ Laser rozacee ✓ Rezerva acum o sedinta la MoaClinic!",
+      "cuvinte": 995,
+      "status": 200,
+      "intrebari": 0,
+      "tehnologii": [
+        "Splendor X"
+      ],
+      "produse": [],
+      "concepte": [],
+      "echipa": [
+        "Dr. Iulia Nedelcu"
+      ],
+      "preturi": [],
+      "surse": [
+        "https://moaclinic.ro/alunite-rosii/",
+        "https://moaclinic.ro/laser-terapie/",
+        "https://moaclinic.ro/laser-terapie/laser-vascular/",
+        "https://moaclinic.ro/sitemap/"
+      ],
+      "medici": [],
+      "video": []
     },
     {
       "id": "venus-legacy",
@@ -7815,7 +8101,8 @@
         "https://moaclinic.ro/tratamente-corporale/",
         "https://moaclinic.ro/venus-legacy/"
       ],
-      "medici": []
+      "medici": [],
+      "video": []
     },
     {
       "id": "skin-care-dna",
@@ -7844,7 +8131,8 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
-      ]
+      ],
+      "video": []
     },
     {
       "id": "nutrigenetica-epigenetica",
@@ -7879,6 +8167,9 @@
         "Dr. Irina Amolioaie",
         "Dr. Doina Caraman",
         "Dr. Florentina Matei"
+      ],
+      "video": [
+        "whatsapp-video-2024-11-21-at-16-07-16-27dfce4a-mp4"
       ]
     }
   ],
@@ -8286,6 +8577,7 @@
       "entitati": [
         "Injectare toxină botulinică în București",
         "Terapia NAD",
+        "Epilare definitiva Bucuresti",
         "Splendor X",
         "Dr. Iulia Nedelcu"
       ],
@@ -8390,6 +8682,7 @@
       "entitati": [
         "Nevi pigmentari",
         "Terapia NAD",
+        "Laser vascular",
         "Dr. Iulia Nedelcu"
       ],
       "cuvinte": 1342
@@ -8406,6 +8699,7 @@
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
         "Terapia NAD",
+        "Epilare definitiva Bucuresti",
         "Splendor X",
         "Dr. Iulia Nedelcu"
       ],
@@ -9717,7 +10011,9 @@
         "https://moaclinic.ro/epilat-interfesier-ce-inseamna/"
       ],
       "legaturi": {
-        "servicii": [],
+        "servicii": [
+          "epilare-definitiva-bucuresti"
+        ],
         "glosar": [],
         "echipa": []
       }
@@ -11348,6 +11644,381 @@
       "folosita": [
         "/echipa/",
         "/"
+      ]
+    }
+  ],
+  "video": [
+    {
+      "id": "moa-clinic-hero-mp4",
+      "titlu": "Video de fundal (hero homepage)",
+      "fisier": "/wp-content/uploads/2024/09/Moa-Clinic-hero.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2024/09/Moa-Clinic-hero.mp4",
+      "sursa": "site",
+      "fundal": true,
+      "mb": 1.2,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/",
+          "url": "https://moaclinic.ro/",
+          "titlu_pagina": "MOA by Oxxygene",
+          "sectiune": null,
+          "ordine": 1,
+          "serviciu": null
+        }
+      ],
+      "probleme": []
+    },
+    {
+      "id": "whatsapp-video-2024-11-27-at-15-27-24-mp4",
+      "titlu": "Video – Cum se desfasoara o sedinta de Dermalinfusion?",
+      "fisier": "/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-27-at-15.27.24.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-27-at-15.27.24.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 9.1,
+      "format": "video/mp4",
+      "dimensiuni": "720×1280",
+      "orientare": "vertical",
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/dermalinfusion/",
+          "url": "https://moaclinic.ro/dermalinfusion/",
+          "titlu_pagina": "Dermalinfusion",
+          "sectiune": "Cum se desfasoara o sedinta de Dermalinfusion?",
+          "ordine": 1,
+          "serviciu": "dermalinfusion"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "adobe-express-d147583d89c54d68abb2b8dcf8c8a2da-1-mp4",
+      "titlu": "Video – Cum funcționează fotobiomodularea?",
+      "fisier": "/wp-content/uploads/2025/12/Adobe-Express-d147583d89c54d68abb2b8dcf8c8a2da-1.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/Adobe-Express-d147583d89c54d68abb2b8dcf8c8a2da-1.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 36.4,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/fotobiomodulare-vielight/",
+          "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+          "titlu_pagina": "Terapia Vielight",
+          "sectiune": "Cum funcționează fotobiomodularea?",
+          "ordine": 1,
+          "serviciu": "fotobiomodulare-vielight"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)",
+        "fișier mare (36.4 MB)"
+      ]
+    },
+    {
+      "id": "v24044gl0000d306aavog65i7m7prvjg-mp4",
+      "titlu": "Video – Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+      "fisier": "/wp-content/uploads/2025/12/v24044gl0000d306aavog65i7m7prvjg.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/v24044gl0000d306aavog65i7m7prvjg.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 2.6,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/fotobiomodulare-vielight/",
+          "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+          "titlu_pagina": "Terapia Vielight",
+          "sectiune": "Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+          "ordine": 2,
+          "serviciu": "fotobiomodulare-vielight"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "v24044gl0000d37ehsvog65jo034up00-mp4",
+      "titlu": "Video – Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+      "fisier": "/wp-content/uploads/2025/12/v24044gl0000d37ehsvog65jo034up00.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/v24044gl0000d37ehsvog65jo034up00.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 1.5,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/fotobiomodulare-vielight/",
+          "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+          "titlu_pagina": "Terapia Vielight",
+          "sectiune": "Cum să începi terapia de fotobiomodulare Vielight la Clinica MOA",
+          "ordine": 3,
+          "serviciu": "fotobiomodulare-vielight"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "whatsapp-video-2024-11-21-at-12-00-38-mp4",
+      "titlu": "Video – ALEXANDRITE și ND:YAG – Secretul unei Epilări Perfecte cu SPLENDOR x, Laserul Unic în Lume!",
+      "fisier": "/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-12.00.38.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-12.00.38.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 20.3,
+      "format": "video/mp4",
+      "dimensiuni": "720×1280",
+      "orientare": "vertical",
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/laser-terapie/epilare-definitiva-bucuresti/",
+          "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+          "titlu_pagina": "Epilare definitiva Bucuresti",
+          "sectiune": "ALEXANDRITE și ND:YAG – Secretul unei Epilări Perfecte cu SPLENDOR x, Laserul Unic în Lume!",
+          "ordine": 1,
+          "serviciu": "epilare-definitiva-bucuresti"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)",
+        "fișier mare (20.3 MB)"
+      ]
+    },
+    {
+      "id": "copy-495cdce1-2a4a-472c-9d08-4e1edf8375b3-mp4",
+      "titlu": "Video – Cum decurge o sedinta de Autohemoterapie?",
+      "fisier": "/wp-content/uploads/2025/12/copy_495CDCE1-2A4A-472C-9D08-4E1EDF8375B3.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/copy_495CDCE1-2A4A-472C-9D08-4E1EDF8375B3.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 16.1,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/ozonoterapie/autohemoterapia/",
+          "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+          "titlu_pagina": "Autohemoterapia",
+          "sectiune": "Cum decurge o sedinta de Autohemoterapie?",
+          "ordine": 1,
+          "serviciu": "autohemoterapia"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "acidbuze-video-2-mp4",
+      "titlu": "acidbuze video",
+      "fisier": "/wp-content/uploads/2025/12/acidbuze-video-2.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/acidbuze-video-2.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 2.6,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/proceduri-minim-invazive/augmentare-buze/",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+          "titlu_pagina": "Augmentare buze cu acid hialuronic",
+          "sectiune": "Ce înseamnă augmentarea buzelor și cui i se adresează?",
+          "ordine": 1,
+          "serviciu": "augmentare-buze"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "micronedling-cu-dermapen-1-1-mp4",
+      "titlu": "Micronedling cu dermapen 1",
+      "fisier": "/wp-content/uploads/2026/01/Micronedling-cu-dermapen-1-1.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2026/01/Micronedling-cu-dermapen-1-1.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 23.1,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/proceduri-minim-invazive/microneedeling/",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
+          "titlu_pagina": "Microneedling cu Dermapen 4",
+          "sectiune": "Beneficiile tratamentului microneedling cu Dermapen 4",
+          "ordine": 1,
+          "serviciu": "microneedeling"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)",
+        "fișier mare (23.1 MB)"
+      ]
+    },
+    {
+      "id": "dermapen-cum-decurge-o-sedinta-mp4",
+      "titlu": "dermapen cum decurge o sedinta",
+      "fisier": "/wp-content/uploads/2025/12/dermapen-cum-decurge-o-sedinta.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/dermapen-cum-decurge-o-sedinta.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 7.9,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/proceduri-minim-invazive/microneedeling/",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
+          "titlu_pagina": "Microneedling cu Dermapen 4",
+          "sectiune": "Cum decurge procedura de microneedling cu Dermapen 4?",
+          "ordine": 2,
+          "serviciu": "microneedeling"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "sculptra-cum-functioneaza-mp4",
+      "titlu": "Sculptra cum functioneaza",
+      "fisier": "/wp-content/uploads/2025/12/Sculptra-cum-functioneaza.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/Sculptra-cum-functioneaza.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 19.1,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/proceduri-minim-invazive/sculptra/",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+          "titlu_pagina": "Sculptra",
+          "sectiune": "Cum acționează Sculptra?",
+          "ordine": 1,
+          "serviciu": "sculptra"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "sculptra-ce-este-mp4",
+      "titlu": "Sculptra ce este",
+      "fisier": "/wp-content/uploads/2025/12/Sculptra-ce-este.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2025/12/Sculptra-ce-este.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 1.2,
+      "format": "video/mp4",
+      "dimensiuni": null,
+      "orientare": null,
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/proceduri-minim-invazive/sculptra/",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+          "titlu_pagina": "Sculptra",
+          "sectiune": "Beneficiile tratamentului Sculptra",
+          "ordine": 2,
+          "serviciu": "sculptra"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)"
+      ]
+    },
+    {
+      "id": "venusviva-mp4",
+      "titlu": "venusviva",
+      "fisier": "/wp-content/uploads/2024/09/venusviva.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2024/09/venusviva.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 35.1,
+      "format": "video/mp4",
+      "dimensiuni": "1020×574",
+      "orientare": "orizontal",
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/rejuvenare-faciala/venus-viva/",
+          "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+          "titlu_pagina": "Venus Viva",
+          "sectiune": "Cum decurge o sedinta de tratament cu Venus Viva?",
+          "ordine": 1,
+          "serviciu": "venus-viva"
+        }
+      ],
+      "probleme": [
+        "fără imagine de previzualizare (poster)",
+        "fișier mare (35.1 MB)"
+      ]
+    },
+    {
+      "id": "whatsapp-video-2024-11-21-at-16-07-16-27dfce4a-mp4",
+      "titlu": "Video – Testare nutrigenetica - când se recomandă?",
+      "fisier": "/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-16.07.16_27dfce4a.mp4",
+      "url": "https://moaclinic.ro/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-16.07.16_27dfce4a.mp4",
+      "sursa": "site",
+      "fundal": false,
+      "mb": 6.3,
+      "format": "video/mp4",
+      "dimensiuni": "480×848",
+      "orientare": "vertical",
+      "poster": null,
+      "pagini": [
+        {
+          "path": "/teste-genetice-longevity/nutrigenetica-epigenetica/",
+          "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
+          "titlu_pagina": "Test nutrigenetica",
+          "sectiune": "Testare nutrigenetica - când se recomandă?",
+          "ordine": 1,
+          "serviciu": "nutrigenetica-epigenetica"
+        }
+      ],
+      "probleme": [
+        "nume de fișier generic",
+        "fără imagine de previzualizare (poster)"
       ]
     }
   ],

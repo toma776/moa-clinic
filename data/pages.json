@@ -1,7 +1,7 @@
 {
  "site": "https://moaclinic.ro",
- "crawled_at": "2026-10-08 09:57",
- "durata_ms": 37673,
+ "crawled_at": "2026-10-08 12:12",
+ "durata_ms": 34356,
  "pages": [
   {
    "url": "https://moaclinic.ro/",
@@ -11,8 +11,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-24",
    "status": 200,
-   "ms": 2215,
-   "kb": 259.7,
+   "ms": 2391,
+   "kb": 259.6,
    "probleme": [
     "Imagini fara alt (12)"
    ],
@@ -80,8 +80,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-09-09",
    "status": 200,
-   "ms": 1735,
-   "kb": 125.5,
+   "ms": 1589,
+   "kb": 125.4,
    "probleme": [
     "Description scurta (32)",
     "Imagini fara alt (1)",
@@ -152,8 +152,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1799,
-   "kb": 121.7,
+   "ms": 1413,
+   "kb": 121.6,
    "probleme": [],
    "title": "Acid hialuronic in buze - cat dureaza?",
    "description": "Obține buze voluminoase și hidratate! Află cât durează efectul acidului hialuronic și dacă este alegerea potrivită pentru tine. Citește acum!",
@@ -220,7 +220,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1671,
+   "ms": 1789,
    "kb": 139,
    "probleme": [
     "Imagini fara alt (5)"
@@ -290,7 +290,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1798,
+   "ms": 1602,
    "kb": 156.8,
    "probleme": [
     "Imagini fara alt (2)"
@@ -360,7 +360,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1904,
+   "ms": 1587,
    "kb": 149.4,
    "probleme": [],
    "title": "Alunite rosii - Cum sa le identifici pe cele periculoase",
@@ -428,8 +428,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1718,
-   "kb": 117.6,
+   "ms": 1394,
+   "kb": 117.5,
    "probleme": [
     "Title lung (81)"
    ],
@@ -498,8 +498,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 2299,
-   "kb": 156.8,
+   "ms": 1730,
+   "kb": 156.9,
    "probleme": [
     "Imagini fara alt (4)"
    ],
@@ -568,7 +568,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-15",
    "status": 200,
-   "ms": 2209,
+   "ms": 1695,
    "kb": 135.7,
    "probleme": [
     "Title scurt (18)",
@@ -641,7 +641,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1797,
+   "ms": 1706,
    "kb": 133.8,
    "probleme": [
     "Description lunga (166)",
@@ -712,7 +712,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1709,
+   "ms": 1802,
    "kb": 137.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -782,7 +782,7 @@
    "sitemap": "category-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1291,
+   "ms": 1195,
    "kb": 145.6,
    "probleme": [
     "Fara meta description",
@@ -850,7 +850,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1893,
+   "ms": 1595,
    "kb": 133.1,
    "probleme": [
     "Imagini fara alt (4)"
@@ -920,8 +920,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 2105,
-   "kb": 153.5,
+   "ms": 1522,
+   "kb": 153.4,
    "probleme": [],
    "title": "Ce nu e permis dupa injectarea cu botox",
    "description": "Evită expunerea la căldură intensă, efortul fizic și masajul zonei injectate după Botox. Află toate recomandările pentru rezultate perfecte! Citește acum!",
@@ -988,7 +988,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1977,
+   "ms": 1504,
    "kb": 152.1,
    "probleme": [],
    "title": "Cea mai buna toxina botulinica: rezultate dupa 6 luni de studiu",
@@ -1056,7 +1056,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-04",
    "status": 200,
-   "ms": 1801,
+   "ms": 1699,
    "kb": 150.6,
    "probleme": [
     "Imagini fara alt (7)"
@@ -1126,7 +1126,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1638,
+   "ms": 1268,
    "kb": 116.8,
    "probleme": [
     "Title lung (133)"
@@ -1196,8 +1196,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-17",
    "status": 200,
-   "ms": 1784,
-   "kb": 106.5,
+   "ms": 1578,
+   "kb": 106.6,
    "probleme": [
     "Title scurt (24)",
     "Continut subtire (17)"
@@ -1267,7 +1267,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 2075,
+   "ms": 1611,
    "kb": 142,
    "probleme": [
     "Imagini fara alt (2)"
@@ -1337,7 +1337,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 2297,
+   "ms": 1793,
    "kb": 151,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1407,7 +1407,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1917,
+   "ms": 1484,
    "kb": 118.3,
    "probleme": [
     "Imagini fara alt (4)",
@@ -1478,7 +1478,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1709,
+   "ms": 1288,
    "kb": 118.6,
    "probleme": [
     "Imagini fara alt (4)",
@@ -1549,7 +1549,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1883,
+   "ms": 1404,
    "kb": 120.4,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1619,7 +1619,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-05",
    "status": 200,
-   "ms": 1535,
+   "ms": 1485,
    "kb": 110.7,
    "probleme": [
     "Title scurt (21)",
@@ -1689,7 +1689,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1497,
+   "ms": 1294,
    "kb": 120,
    "probleme": [
     "Title lung (113)"
@@ -1759,7 +1759,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1979,
+   "ms": 1795,
    "kb": 153.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1829,7 +1829,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 1900,
+   "ms": 2097,
    "kb": 160.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1899,7 +1899,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1492,
+   "ms": 1504,
    "kb": 102.8,
    "probleme": [
     "Description scurta (1)"
@@ -1969,7 +1969,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-18",
    "status": 200,
-   "ms": 1830,
+   "ms": 1699,
    "kb": 145.9,
    "probleme": [
     "Title scurt (20)",
@@ -2042,7 +2042,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-08",
    "status": 301,
-   "ms": 987,
+   "ms": 686,
    "kb": 0,
    "probleme": [
     "HTTP 301 → https://moaclinic.ro/dr-adrian-stanescu/"
@@ -2056,7 +2056,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1894,
+   "ms": 1597,
    "kb": 158.7,
    "probleme": [],
    "title": "Efecte botox: ghidul complet explicat de medici specialisti",
@@ -2124,7 +2124,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 2590,
+   "ms": 1906,
    "kb": 188.7,
    "probleme": [
     "Imagini fara alt (19)"
@@ -2194,7 +2194,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1915,
+   "ms": 1582,
    "kb": 161.1,
    "probleme": [],
    "title": "Epilare definitiva pareri reale de la clienti",
@@ -2262,7 +2262,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1782,
+   "ms": 1883,
    "kb": 153.1,
    "probleme": [],
    "title": "Epilat interfesier - Ce inseamna ?",
@@ -2330,7 +2330,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 2007,
+   "ms": 1599,
    "kb": 150.9,
    "probleme": [
     "Imagini fara alt (1)"
@@ -2400,7 +2400,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-09",
    "status": 200,
-   "ms": 2088,
+   "ms": 1804,
    "kb": 156.8,
    "probleme": [
     "Imagini fara alt (3)"
@@ -2470,7 +2470,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 2108,
+   "ms": 1814,
    "kb": 143.8,
    "probleme": [
     "Imagini fara alt (6)"
@@ -2540,7 +2540,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1892,
+   "ms": 2180,
    "kb": 162.8,
    "probleme": [
     "Imagini fara alt (6)"
@@ -2610,7 +2610,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1901,
+   "ms": 1519,
    "kb": 133.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -2680,7 +2680,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-12-04",
    "status": 200,
-   "ms": 2496,
+   "ms": 1666,
    "kb": 171.4,
    "probleme": [
     "Imagini fara alt (15)"
@@ -2750,7 +2750,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1709,
+   "ms": 1497,
    "kb": 135.1,
    "probleme": [
     "Imagini fara alt (2)"
@@ -2820,7 +2820,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 2396,
+   "ms": 1771,
    "kb": 206.1,
    "probleme": [
     "Imagini fara alt (16)"
@@ -2890,7 +2890,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 2093,
+   "ms": 1587,
    "kb": 165.9,
    "probleme": [
     "Imagini fara alt (9)"
@@ -2960,7 +2960,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1923,
+   "ms": 1294,
    "kb": 135,
    "probleme": [
     "Imagini fara alt (5)"
@@ -3030,7 +3030,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1394,
+   "ms": 1398,
    "kb": 125.7,
    "probleme": [
     "Title lung (70)",
@@ -3101,7 +3101,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 1980,
+   "ms": 1492,
    "kb": 123.8,
    "probleme": [
     "Imagini fara alt (4)"
@@ -3171,8 +3171,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1797,
-   "kb": 134.7,
+   "ms": 1629,
+   "kb": 134.6,
    "probleme": [
     "Imagini fara alt (2)"
    ],
@@ -3241,7 +3241,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1992,
+   "ms": 1691,
    "kb": 157.3,
    "probleme": [
     "Imagini fara alt (5)"
@@ -3311,7 +3311,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 2288,
+   "ms": 1701,
    "kb": 155.1,
    "probleme": [
     "Imagini fara alt (6)"
@@ -3381,7 +3381,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1527,
+   "ms": 1319,
    "kb": 143.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -3451,7 +3451,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-18",
    "status": 200,
-   "ms": 1698,
+   "ms": 1618,
    "kb": 156.5,
    "probleme": [
     "Title scurt (21)",
@@ -3522,7 +3522,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1779,
+   "ms": 1609,
    "kb": 153.5,
    "probleme": [],
    "title": "Prima injectare cu acid hialuronic in buze: Ghid 2026",
@@ -3590,7 +3590,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1699,
+   "ms": 1597,
    "kb": 139.3,
    "probleme": [
     "Imagini fara alt (3)"
@@ -3660,7 +3660,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2120,
+   "ms": 1892,
    "kb": 180.4,
    "probleme": [
     "Imagini fara alt (11)"
@@ -3730,7 +3730,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 2287,
+   "ms": 2189,
    "kb": 241.2,
    "probleme": [
     "Imagini fara alt (30)"
@@ -3800,7 +3800,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2085,
+   "ms": 2199,
    "kb": 216.2,
    "probleme": [
     "Imagini fara alt (29)"
@@ -3870,7 +3870,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1609,
+   "ms": 1615,
    "kb": 159.2,
    "probleme": [
     "Imagini fara alt (7)"
@@ -3940,8 +3940,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-09-09",
    "status": 200,
-   "ms": 2135,
-   "kb": 197.3,
+   "ms": 2188,
+   "kb": 197.2,
    "probleme": [
     "Imagini fara alt (4)"
    ],
@@ -4010,7 +4010,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 1900,
+   "ms": 1981,
    "kb": 200,
    "probleme": [
     "Imagini fara alt (10)"
@@ -4080,7 +4080,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2008,
+   "ms": 1486,
    "kb": 154.3,
    "probleme": [
     "Imagini fara alt (2)"
@@ -4150,7 +4150,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1813,
+   "ms": 1980,
    "kb": 186.5,
    "probleme": [
     "Imagini fara alt (17)"
@@ -4220,7 +4220,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2312,
+   "ms": 2194,
    "kb": 248.9,
    "probleme": [
     "Imagini fara alt (45)"
@@ -4290,7 +4290,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1675,
+   "ms": 1799,
    "kb": 187.5,
    "probleme": [
     "Imagini fara alt (18)"
@@ -4360,7 +4360,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1796,
+   "ms": 2369,
    "kb": 195.8,
    "probleme": [
     "Imagini fara alt (21)"
@@ -4430,7 +4430,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1813,
+   "ms": 2102,
    "kb": 182.1,
    "probleme": [
     "Imagini fara alt (15)"
@@ -4500,8 +4500,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2190,
-   "kb": 210.5,
+   "ms": 2207,
+   "kb": 210.4,
    "probleme": [
     "Imagini fara alt (28)"
    ],
@@ -4570,7 +4570,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1597,
+   "ms": 1698,
    "kb": 150.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -4640,7 +4640,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-04",
    "status": 200,
-   "ms": 1807,
+   "ms": 1905,
    "kb": 164.1,
    "probleme": [
     "Imagini fara alt (10)"
@@ -4710,7 +4710,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 2090,
+   "ms": 1882,
    "kb": 135,
    "probleme": [
     "Imagini fara alt (5)"
@@ -4780,7 +4780,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1699,
+   "ms": 1427,
    "kb": 126.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -4850,8 +4850,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1504,
-   "kb": 132.8,
+   "ms": 1387,
+   "kb": 132.9,
    "probleme": [
     "Title lung (71)",
     "Imagini fara alt (4)"
@@ -4921,7 +4921,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-07-29",
    "status": 200,
-   "ms": 2290,
+   "ms": 1887,
    "kb": 182.4,
    "probleme": [
     "Imagini fara alt (11)"
@@ -4991,7 +4991,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 2180,
+   "ms": 1699,
    "kb": 155.5,
    "probleme": [
     "Imagini fara alt (5)"
@@ -5061,7 +5061,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 2016,
+   "ms": 1707,
    "kb": 156.1,
    "probleme": [
     "Imagini fara alt (4)"
@@ -5131,7 +5131,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1991,
+   "ms": 2025,
    "kb": 200.6,
    "probleme": [],
    "title": "Riduri de expresie: cauze, prevenție și tratamente eficiente",
@@ -5199,7 +5199,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 2179,
+   "ms": 1791,
    "kb": 169.9,
    "probleme": [
     "Imagini fara alt (3)"
@@ -5269,7 +5269,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1596,
+   "ms": 1703,
    "kb": 141.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -5339,7 +5339,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1704,
+   "ms": 1607,
    "kb": 142.4,
    "probleme": [
     "Imagini fara alt (5)"
@@ -5409,7 +5409,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1599,
+   "ms": 1790,
    "kb": 141.5,
    "probleme": [],
    "title": "Riduri laba gastei? Secretele expertilor anti-aging",
@@ -5477,7 +5477,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1802,
+   "ms": 1797,
    "kb": 155.5,
    "probleme": [],
    "title": "Riduri marioneta - cauze si tratamente",
@@ -5545,7 +5545,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1899,
+   "ms": 1604,
    "kb": 141.9,
    "probleme": [
     "Imagini fara alt (6)"
@@ -5615,7 +5615,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 2402,
+   "ms": 2111,
    "kb": 208.4,
    "probleme": [],
    "title": "Riduri si metode de estompare eficiente",
@@ -5683,7 +5683,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1896,
+   "ms": 1981,
    "kb": 152.9,
    "probleme": [
     "Title lung (75)",
@@ -5754,7 +5754,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1790,
+   "ms": 1598,
    "kb": 155.8,
    "probleme": [],
    "title": "Russian lips: tot ce trebuie sa stii inainte de procedura",
@@ -5822,7 +5822,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 1806,
+   "ms": 1484,
    "kb": 103.2,
    "probleme": [
     "Title scurt (24)",
@@ -5894,7 +5894,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-07",
    "status": 200,
-   "ms": 1505,
+   "ms": 1591,
    "kb": 156.9,
    "probleme": [
     "Title scurt (23)",
@@ -5965,7 +5965,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1708,
+   "ms": 1420,
    "kb": 149.4,
    "probleme": [
     "Imagini fara alt (9)"
@@ -6035,7 +6035,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1790,
+   "ms": 1793,
    "kb": 131.9,
    "probleme": [
     "Description lunga (176)",
@@ -6106,7 +6106,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-08",
    "status": 200,
-   "ms": 1798,
+   "ms": 1310,
    "kb": 113.1,
    "probleme": [
     "Imagini fara alt (1)",
@@ -6177,7 +6177,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1527,
+   "ms": 1610,
    "kb": 137.9,
    "probleme": [
     "Imagini fara alt (1)"
@@ -6247,7 +6247,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1797,
+   "ms": 1813,
    "kb": 199.3,
    "probleme": [
     "Imagini fara alt (22)"
@@ -6317,7 +6317,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1770,
+   "ms": 1508,
    "kb": 146.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -6387,7 +6387,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 2435,
+   "ms": 2870,
    "kb": 256,
    "probleme": [
     "Imagini fara alt (39)"
@@ -6457,7 +6457,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1701,
+   "ms": 1482,
    "kb": 112.1,
    "probleme": [
     "Title lung (119)"
@@ -6527,7 +6527,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-03",
    "status": 200,
-   "ms": 1909,
+   "ms": 1773,
    "kb": 154.2,
    "probleme": [
     "Imagini fara alt (7)"
@@ -6597,7 +6597,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1580,
+   "ms": 1316,
    "kb": 131.9,
    "probleme": [
     "Imagini fara alt (4)"
@@ -6667,7 +6667,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 2201,
+   "ms": 1699,
    "kb": 144.5,
    "probleme": [
     "Imagini fara alt (6)"
@@ -6737,8 +6737,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1612,
-   "kb": 133.1,
+   "ms": 1415,
+   "kb": 133,
    "probleme": [
     "Imagini fara alt (1)"
    ],
@@ -6807,7 +6807,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1891,
+   "ms": 1510,
    "kb": 138.7,
    "probleme": [
     "Imagini fara alt (3)"
@@ -6877,7 +6877,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1598,
+   "ms": 1397,
    "kb": 136.3,
    "probleme": [
     "Imagini fara alt (2)"
@@ -6947,7 +6947,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 2014,
+   "ms": 1688,
    "kb": 150.4,
    "probleme": [],
    "title": "Unde se pune botox - Ghid 2026",
@@ -7015,7 +7015,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-09-05",
    "status": 200,
-   "ms": 2312,
+   "ms": 1616,
    "kb": 166.7,
    "probleme": [
     "Title scurt (24)",
@@ -7086,7 +7086,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1888,
+   "ms": 1602,
    "kb": 154,
    "probleme": [
     "Imagini fara alt (4)"
@@ -7235,10 +7235,10 @@
    "redirect": null,
    "din": [
     "/",
-    "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
-    "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
     "/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+    "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
     "/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+    "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
     "/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
     "/acid-hialuronic-in-buze-cat-dureaza/",
     "/category/blog/"

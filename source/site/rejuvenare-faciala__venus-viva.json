@@ -86,6 +86,20 @@
    "h": "21"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2024/09/venusviva.mp4",
+   "poster": null,
+   "latime": 1020,
+   "inaltime": 574,
+   "fundal": false,
+   "sectiune": "Cum decurge o sedinta de tratament cu Venus Viva?",
+   "status": 200,
+   "mb": 35.1,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [],
  "cta": [
   "Programează-te",

@@ -177,6 +177,20 @@
    "h": "300"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2024/11/WhatsApp-Video-2024-11-21-at-16.07.16_27dfce4a.mp4",
+   "poster": null,
+   "latime": 480,
+   "inaltime": 848,
+   "fundal": false,
+   "sectiune": "Testare nutrigenetica - când se recomandă?",
+   "status": 200,
+   "mb": 6.3,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [],
  "cta": [
   "Programează-te",

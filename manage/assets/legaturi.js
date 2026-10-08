@@ -13,6 +13,7 @@ const GRAPH_CATS = {
   intrebari: ['Întrebări', '#ffd6a5', 'intrebari'],
   dovezi: ['Recenzii', '#ff8f7a', 'dovezi'],
   oferte: ['Oferte', '#c9b79c', 'preturi'],
+  video: ['Video', '#7ad3d6', 'media'],
 };
 const loadScript = (id, url) => new Promise((ok, err) => {
   if (document.getElementById(id)) return ok();
@@ -68,6 +69,9 @@ function graphData(D) {
     }
     for (const t of D.tehnologii) if (n.includes(normTxt(t.nume))) rel(id, find(t.nume));
   });
+
+  // video -> serviciul paginii pe care apare
+  for (const v of D.video || []) { const id = add('v:' + v.id, v.titlu, 'video'); for (const p of v.pagini) rel(id, p.serviciu ? 's:' + p.serviciu : null); }
 
   const deg = new Map();
   for (const l of links) if (l.tip !== 'lob') for (const k of [l.source, l.target]) deg.set(k, (deg.get(k) || 0) + 1);

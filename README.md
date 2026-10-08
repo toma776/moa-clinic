@@ -34,7 +34,7 @@ Portul se schimbă cu variabila `PORT`.
 | Glosar | termeni medicali cu definiția găsită pe site |
 | Dovezi | recenzii pacienți, cifre și afirmații cu sursa |
 | Întrebări frecvente | extrase din conținut; se validează / editează / resping din panou (`data/intrebari-status.json`) |
-| Media | imaginile homepage-ului, cu alt și paginile pe care apar |
+| Media | imaginile homepage-ului (cu alt) și video-urile de pe tot site-ul: fișier, mărime, pagina și secțiunea în care apar (export CSV) |
 | Audit SEO | observații entity SEO cu verificare pe site-ul live, schema `MedicalClinic` propusă, date legale |
 
 ### Observații SEO: rezolvare cu verificare

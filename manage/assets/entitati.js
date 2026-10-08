@@ -188,12 +188,25 @@ function entitySections(D) {
 
   // ---- Media ----
   const M = D.media || [];
-  add('media', 'Imaginile homepage-ului', M.length, `<p class="lead">Fișierele folosite pe homepage, cu textul alternativ și paginile pe care mai apar. ${M.filter((m) => !m.alt).length} din ${M.length} nu au alt.</p>
+  add('media', 'Imagini', M.length, `<p class="lead">Fișierele folosite pe homepage, cu textul alternativ și paginile pe care mai apar. ${M.filter((m) => !m.alt).length} din ${M.length} nu au alt.</p>
     <div class="media-grid">${M.map((m) => `<div class="card media-card" data-s>
       <a href="${esc(SITE + m.fisier)}" target="_blank" rel="noopener"><img src="${esc(m.fisier)}" alt="${esc(m.alt)}" loading="lazy"></a>
       <h3 style="overflow-wrap:anywhere">${esc(cut(m.titlu, 60))}</h3>
       <dl class="kv small"><dt>Alt</dt><dd>${m.alt ? esc(m.alt) : '<span class="tag bad">lipsă</span>'}</dd><dt>Fișier</dt><dd>${m.kb != null ? `${m.kb} KB` : '—'}${m.dimensiuni ? ` · ${esc(m.dimensiuni)}` : ''}</dd>
         <dt>Folosită pe</dt><dd>${m.folosita.map((p) => `<code>${esc(p)}</code>`).join(' ')}</dd></dl></div>`).join('')}</div>`);
+
+  const V = D.video || [];
+  add('video', 'Video', V.length, `<p class="lead">${V.filter((v) => !v.fundal).length} în conținut, ${V.filter((v) => v.fundal).length} de fundal · ${V.reduce((n, v) => n + (v.mb || 0), 0).toFixed(0)} MB în total.</p>
+    <div class="toolbar"><span class="grow"></span><button class="sm" id="csvVideo">Export CSV (video → pagină → secțiune)</button></div>
+    <div class="media-grid">${V.map((v) => `<div class="card media-card" data-s>
+      <video src="${esc(v.url)}" controls preload="none" playsinline style="width:100%;aspect-ratio:${v.orientare === 'vertical' ? '9 / 16' : '16 / 9'};max-height:340px;background:#1f2020;border-radius:8px;margin-bottom:10px;display:block"${v.poster ? ` poster="${esc(v.poster)}"` : ''}></video>
+      <h3>${esc(v.titlu)}</h3>
+      <p>${v.fundal ? '<span class="tag">fundal hero</span>' : ''}${v.orientare ? `<span class="tag grey">${esc(v.orientare)}</span>` : ''}${v.mb != null ? `<span class="tag ${v.mb > 20 ? 'warn' : 'grey'}">${v.mb} MB</span>` : ''}${v.dimensiuni ? `<span class="tag grey">${esc(v.dimensiuni)}</span>` : ''}</p>
+      <h4 class="bh4">Unde trebuie pus</h4>
+      <ul class="clean small">${v.pagini.map((p) => `<li>${link(p.url, p.path)}${p.sectiune ? ` › <b>${esc(p.sectiune)}</b>` : ' › începutul paginii'}${p.serviciu ? ` <span class="tag">${esc(prettyCat(servById[p.serviciu]?.nume || p.serviciu))}</span>` : ''}</li>`).join('')}</ul>
+      <dl class="kv small" style="margin-top:8px"><dt>Fișier</dt><dd>${link(v.url, v.fisier.split('/').pop())}</dd></dl>
+      ${v.probleme.length ? `<p>${tags(v.probleme, 'warn')}</p>` : ''}
+    </div>`).join('')}</div>`);
 
   // ---- Audit SEO ----
   add('schema', 'Schema JSON-LD', null, `
@@ -235,6 +248,7 @@ function groupMeta(D) {
     cifre: 'Cifrele și afirmațiile de tip „prima”, „singurul”, „aprobat FDA”, fiecare cu pagina-sursă.',
     intrebari: 'Întrebările din conținutul site-ului, cu răspuns, legate de servicii, glosar și medici. Se validează înainte de folosire.',
     media: 'Imaginile homepage-ului: fișier, text alternativ, unde mai apar.',
+    video: 'Video-urile de pe tot site-ul, cu pagina și secțiunea în care apar: unde trebuie puse pe site-ul nou.',
     observatii: 'Problemele de entity SEO găsite pe site, cu verificare pe site-ul live la rezolvare.',
     schema: 'Schema JSON-LD existentă și propunerea MedicalClinic generată din entități.',
     legale: 'Firmele care operează clinica (CUI, registru, adrese) și paginile legale/utile.',
@@ -266,8 +280,8 @@ function entityCategories(D) {
       sections: ['testimoniale', 'cifre'] },
     { id: 'intrebari', icon: 'intrebari', title: 'Întrebări frecvente', desc: 'Întrebările din conținutul site-ului, cu răspunsuri și legături. Se validează înainte de folosire.',
       sections: ['intrebari'] },
-    { id: 'media', icon: 'media', title: 'Media', desc: 'Imaginile homepage-ului: fișier, text alternativ, unde apar.',
-      sections: ['media'] },
+    { id: 'media', icon: 'media', title: 'Media', desc: 'Imaginile homepage-ului și video-urile de pe tot site-ul, cu paginile unde apar.',
+      sections: ['media', 'video'] },
     { id: 'seo', icon: 'seo', title: 'Audit SEO', audit: true, desc: 'Nu sunt entități: schema JSON-LD propusă și datele legale.',
       sections: ['schema', 'legale'] },
   ];
@@ -338,6 +352,10 @@ routes.entitati = function renderEntitati() {
 
   $$('#view [data-cat]').forEach((a) => (a.onclick = (e) => { e.preventDefault(); open(a.dataset.cat); }));
   bindObs();
+  const cv = $('#csvVideo');
+  if (cv) cv.onclick = () => download('moa-video.csv', csv((D.video || []).flatMap((v) => v.pagini.map((p) => ({ v, p }))), [
+    ['Video', (r) => r.v.titlu], ['Fisier', (r) => r.v.url], ['MB', (r) => r.v.mb], ['Orientare', (r) => r.v.orientare], ['Fundal', (r) => (r.v.fundal ? 'da' : '')],
+    ['Pagina', (r) => r.p.url], ['Sectiune (titlul de deasupra)', (r) => r.p.sectiune || 'începutul paginii'], ['Ordine pe pagina', (r) => r.p.ordine], ['Probleme', (r) => r.v.probleme.join(', ')]]), 'text/csv;charset=utf-8');
   $$('#view .cp-schema').forEach((b) => (b.onclick = () => { navigator.clipboard.writeText(`<script type="application/ld+json">\n${JSON.stringify(buildSchema(D), null, 2)}\n<\/script>`); toast('JSON-LD copiat'); }));
 };
 

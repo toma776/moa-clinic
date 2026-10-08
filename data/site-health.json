@@ -1,16 +1,16 @@
 {
  "site": "https://moaclinic.ro",
- "generat_la": "2026-10-08 09:58",
- "crawl_la": "2026-10-08 09:57",
- "durata_ms": 38775,
+ "generat_la": "2026-10-08 12:14",
+ "crawl_la": "2026-10-08 12:12",
+ "durata_ms": 35583,
  "pagini": [
   {
    "path": "/",
    "url": "https://moaclinic.ro/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2215,
-   "kb": 259.7,
+   "ms": 2391,
+   "kb": 259.6,
    "schema": [
     "Place",
     "PostalAddress",
@@ -67,13 +67,13 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2215 ms"
+     "mesaj": "2391 ms"
     },
     {
      "arie": "performanta",
      "cod": "html-mare",
      "nivel": "optim",
-     "mesaj": "259.7 KB"
+     "mesaj": "259.6 KB"
     }
    ]
   },
@@ -82,8 +82,8 @@
    "url": "https://moaclinic.ro/abonamente/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1735,
-   "kb": 125.5,
+   "ms": 1589,
+   "kb": 125.4,
    "schema": [
     "Place",
     "PostalAddress",
@@ -142,7 +142,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1735 ms"
+     "mesaj": "1589 ms"
     }
    ]
   },
@@ -151,8 +151,8 @@
    "url": "https://moaclinic.ro/acid-hialuronic-in-buze-cat-dureaza/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1799,
-   "kb": 121.7,
+   "ms": 1413,
+   "kb": 121.6,
    "schema": [
     "Place",
     "PostalAddress",
@@ -187,7 +187,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1799 ms"
+     "mesaj": "1413 ms"
     }
    ]
   },
@@ -196,7 +196,7 @@
    "url": "https://moaclinic.ro/acid-in-buze-exagerat/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1671,
+   "ms": 1789,
    "kb": 139,
    "schema": [
     "Place",
@@ -244,7 +244,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1671 ms"
+     "mesaj": "1789 ms"
     }
    ]
   },
@@ -253,7 +253,7 @@
    "url": "https://moaclinic.ro/adevarul-despre-glutation/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1798,
+   "ms": 1602,
    "kb": 156.8,
    "schema": [
     "Place",
@@ -312,7 +312,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1798 ms"
+     "mesaj": "1602 ms"
     }
    ]
   },
@@ -321,7 +321,7 @@
    "url": "https://moaclinic.ro/alunite-rosii/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1904,
+   "ms": 1587,
    "kb": 149.4,
    "schema": [
     "Place",
@@ -368,7 +368,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1904 ms"
+     "mesaj": "1587 ms"
     }
    ]
   },
@@ -377,8 +377,8 @@
    "url": "https://moaclinic.ro/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1718,
-   "kb": 117.6,
+   "ms": 1394,
+   "kb": 117.5,
    "schema": [
     "Place",
     "PostalAddress",
@@ -425,7 +425,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1718 ms"
+     "mesaj": "1394 ms"
     }
    ]
   },
@@ -434,8 +434,8 @@
    "url": "https://moaclinic.ro/blefaroplastie/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2299,
-   "kb": 156.8,
+   "ms": 1730,
+   "kb": 156.9,
    "schema": [
     "Place",
     "PostalAddress",
@@ -494,7 +494,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2299 ms"
+     "mesaj": "1730 ms"
     }
    ]
   },
@@ -503,7 +503,7 @@
    "url": "https://moaclinic.ro/blog/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2209,
+   "ms": 1695,
    "kb": 135.7,
    "schema": [
     "Place",
@@ -563,7 +563,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2209 ms"
+     "mesaj": "1695 ms"
     }
    ]
   },
@@ -572,7 +572,7 @@
    "url": "https://moaclinic.ro/bunny-lines/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1797,
+   "ms": 1706,
    "kb": 133.8,
    "schema": [
     "Place",
@@ -632,7 +632,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1797 ms"
+     "mesaj": "1706 ms"
     }
    ]
   },
@@ -641,7 +641,7 @@
    "url": "https://moaclinic.ro/buze-uscate/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1709,
+   "ms": 1802,
    "kb": 137.6,
    "schema": [
     "Place",
@@ -689,7 +689,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1709 ms"
+     "mesaj": "1802 ms"
     }
    ]
   },
@@ -698,7 +698,7 @@
    "url": "https://moaclinic.ro/category/blog/",
    "tip": "Categorie",
    "status": 200,
-   "ms": 1291,
+   "ms": 1195,
    "kb": 145.6,
    "schema": [
     "Place",
@@ -738,12 +738,6 @@
      "cod": "schema-straina",
      "nivel": "grav",
      "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
-    },
-    {
-     "arie": "performanta",
-     "cod": "lent",
-     "nivel": "optim",
-     "mesaj": "1291 ms"
     }
    ]
   },
@@ -752,7 +746,7 @@
    "url": "https://moaclinic.ro/ce-inseamna-prp/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1893,
+   "ms": 1595,
    "kb": 133.1,
    "schema": [
     "Place",
@@ -800,7 +794,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1893 ms"
+     "mesaj": "1595 ms"
     }
    ]
   },
@@ -809,8 +803,8 @@
    "url": "https://moaclinic.ro/ce-nu-e-permis-dupa-injectarea-cu-botox/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2105,
-   "kb": 153.5,
+   "ms": 1522,
+   "kb": 153.4,
    "schema": [
     "Place",
     "PostalAddress",
@@ -856,7 +850,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2105 ms"
+     "mesaj": "1522 ms"
     }
    ]
   },
@@ -865,7 +859,7 @@
    "url": "https://moaclinic.ro/cea-mai-buna-toxina-botulinica/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1977,
+   "ms": 1504,
    "kb": 152.1,
    "schema": [
     "Place",
@@ -912,7 +906,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1977 ms"
+     "mesaj": "1504 ms"
     }
    ]
   },
@@ -921,7 +915,7 @@
    "url": "https://moaclinic.ro/cearcane/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1801,
+   "ms": 1699,
    "kb": 150.6,
    "schema": [
     "Place",
@@ -975,7 +969,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1801 ms"
+     "mesaj": "1699 ms"
     }
    ]
   },
@@ -984,7 +978,7 @@
    "url": "https://moaclinic.ro/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1638,
+   "ms": 1268,
    "kb": 116.8,
    "schema": [
     "Place",
@@ -1026,7 +1020,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1638 ms"
+     "mesaj": "1268 ms"
     }
    ]
   },
@@ -1035,8 +1029,8 @@
    "url": "https://moaclinic.ro/confirmare/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1784,
-   "kb": 106.5,
+   "ms": 1578,
+   "kb": 106.6,
    "schema": [
     "Place",
     "PostalAddress",
@@ -1083,7 +1077,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1784 ms"
+     "mesaj": "1578 ms"
     }
    ]
   },
@@ -1092,7 +1086,7 @@
    "url": "https://moaclinic.ro/consultatii/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2075,
+   "ms": 1611,
    "kb": 142,
    "schema": [
     "Place",
@@ -1145,7 +1139,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2075 ms"
+     "mesaj": "1611 ms"
     }
    ]
   },
@@ -1154,7 +1148,7 @@
    "url": "https://moaclinic.ro/consultatii/consultatie-antiaging/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2297,
+   "ms": 1793,
    "kb": 151,
    "schema": [
     "Place",
@@ -1208,7 +1202,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2297 ms"
+     "mesaj": "1793 ms"
     }
    ]
   },
@@ -1217,7 +1211,7 @@
    "url": "https://moaclinic.ro/consultatii/consultatie-chirurgie-plastica/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1917,
+   "ms": 1484,
    "kb": 118.3,
    "schema": [
     "Place",
@@ -1271,7 +1265,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1917 ms"
+     "mesaj": "1484 ms"
     }
    ]
   },
@@ -1280,7 +1274,7 @@
    "url": "https://moaclinic.ro/consultatii/consultatie-dermatoestetica-dermatologie/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1709,
+   "ms": 1288,
    "kb": 118.6,
    "schema": [
     "Place",
@@ -1334,7 +1328,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1709 ms"
+     "mesaj": "1288 ms"
     }
    ]
   },
@@ -1343,7 +1337,7 @@
    "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1883,
+   "ms": 1404,
    "kb": 120.4,
    "schema": [
     "Place",
@@ -1391,7 +1385,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1883 ms"
+     "mesaj": "1404 ms"
     }
    ]
   },
@@ -1400,7 +1394,7 @@
    "url": "https://moaclinic.ro/contact/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1535,
+   "ms": 1485,
    "kb": 110.7,
    "schema": [
     "Place",
@@ -1452,7 +1446,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1535 ms"
+     "mesaj": "1485 ms"
     }
    ]
   },
@@ -1461,7 +1455,7 @@
    "url": "https://moaclinic.ro/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1497,
+   "ms": 1294,
    "kb": 120,
    "schema": [
     "Place",
@@ -1508,7 +1502,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1497 ms"
+     "mesaj": "1294 ms"
     }
    ]
   },
@@ -1517,7 +1511,7 @@
    "url": "https://moaclinic.ro/de-ce-nu-imi-tine-acidul-hialuronic-2/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1979,
+   "ms": 1795,
    "kb": 153.3,
    "schema": [
     "Place",
@@ -1570,7 +1564,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1979 ms"
+     "mesaj": "1795 ms"
     }
    ]
   },
@@ -1579,7 +1573,7 @@
    "url": "https://moaclinic.ro/dermalinfusion/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1900,
+   "ms": 2097,
    "kb": 160.7,
    "schema": [
     "Place",
@@ -1644,7 +1638,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1900 ms"
+     "mesaj": "2097 ms"
     }
    ]
   },
@@ -1653,7 +1647,7 @@
    "url": "https://moaclinic.ro/documente-legale-clinica-moa/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1492,
+   "ms": 1504,
    "kb": 102.8,
    "schema": [
     "Place",
@@ -1713,7 +1707,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1492 ms"
+     "mesaj": "1504 ms"
     }
    ]
   },
@@ -1722,7 +1716,7 @@
    "url": "https://moaclinic.ro/echipa/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1830,
+   "ms": 1699,
    "kb": 145.9,
    "schema": [
     "Place",
@@ -1782,7 +1776,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1830 ms"
+     "mesaj": "1699 ms"
     }
    ]
   },
@@ -1791,7 +1785,7 @@
    "url": "https://moaclinic.ro/echipa/dr-adrian-stanescu/",
    "tip": "Pagina",
    "status": 301,
-   "ms": 987,
+   "ms": 686,
    "kb": 0,
    "schema": [],
    "probleme": []
@@ -1801,7 +1795,7 @@
    "url": "https://moaclinic.ro/efecte-botox/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1894,
+   "ms": 1597,
    "kb": 158.7,
    "schema": [
     "Place",
@@ -1848,7 +1842,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1894 ms"
+     "mesaj": "1597 ms"
     }
    ]
   },
@@ -1857,7 +1851,7 @@
    "url": "https://moaclinic.ro/eliminare-papiloame/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2590,
+   "ms": 1906,
    "kb": 188.7,
    "schema": [
     "Place",
@@ -1910,8 +1904,8 @@
     {
      "arie": "performanta",
      "cod": "lent",
-     "nivel": "grav",
-     "mesaj": "2590 ms"
+     "nivel": "optim",
+     "mesaj": "1906 ms"
     }
    ]
   },
@@ -1920,7 +1914,7 @@
    "url": "https://moaclinic.ro/epilare-definitiva-pareri/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1915,
+   "ms": 1582,
    "kb": 161.1,
    "schema": [
     "Place",
@@ -1967,7 +1961,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1915 ms"
+     "mesaj": "1582 ms"
     }
    ]
   },
@@ -1976,7 +1970,7 @@
    "url": "https://moaclinic.ro/epilat-interfesier-ce-inseamna/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1782,
+   "ms": 1883,
    "kb": 153.1,
    "schema": [
     "Place",
@@ -2029,7 +2023,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1782 ms"
+     "mesaj": "1883 ms"
     }
    ]
   },
@@ -2038,7 +2032,7 @@
    "url": "https://moaclinic.ro/forme-de-buze-cu-acid-hialuronic/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2007,
+   "ms": 1599,
    "kb": 150.9,
    "schema": [
     "Place",
@@ -2091,7 +2085,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2007 ms"
+     "mesaj": "1599 ms"
     }
    ]
   },
@@ -2100,7 +2094,7 @@
    "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2088,
+   "ms": 1804,
    "kb": 156.8,
    "schema": [
     "Place",
@@ -2160,7 +2154,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2088 ms"
+     "mesaj": "1804 ms"
     }
    ]
   },
@@ -2169,7 +2163,7 @@
    "url": "https://moaclinic.ro/glutation-beneficii-si-contraindicatii-ce-este/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2108,
+   "ms": 1814,
    "kb": 143.8,
    "schema": [
     "Place",
@@ -2217,7 +2211,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2108 ms"
+     "mesaj": "1814 ms"
     }
    ]
   },
@@ -2226,7 +2220,7 @@
    "url": "https://moaclinic.ro/glutation/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1892,
+   "ms": 2180,
    "kb": 162.8,
    "schema": [
     "Place",
@@ -2285,7 +2279,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1892 ms"
+     "mesaj": "2180 ms"
     }
    ]
   },
@@ -2294,7 +2288,7 @@
    "url": "https://moaclinic.ro/hialuronidaza/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1901,
+   "ms": 1519,
    "kb": 133.7,
    "schema": [
     "Place",
@@ -2342,7 +2336,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1901 ms"
+     "mesaj": "1519 ms"
     }
    ]
   },
@@ -2351,7 +2345,7 @@
    "url": "https://moaclinic.ro/jalupro-young-eye/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2496,
+   "ms": 1666,
    "kb": 171.4,
    "schema": [
     "Place",
@@ -2404,7 +2398,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2496 ms"
+     "mesaj": "1666 ms"
     }
    ]
   },
@@ -2413,7 +2407,7 @@
    "url": "https://moaclinic.ro/laser-terapie/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1709,
+   "ms": 1497,
    "kb": 135.1,
    "schema": [
     "Place",
@@ -2478,7 +2472,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1709 ms"
+     "mesaj": "1497 ms"
     }
    ]
   },
@@ -2487,7 +2481,7 @@
    "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2396,
+   "ms": 1771,
    "kb": 206.1,
    "schema": [
     "Place",
@@ -2526,6 +2520,12 @@
      "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
     },
     {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
      "arie": "brand",
      "cod": "nume",
      "nivel": "optim"
@@ -2540,7 +2540,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2396 ms"
+     "mesaj": "1771 ms"
     }
    ]
   },
@@ -2549,7 +2549,7 @@
    "url": "https://moaclinic.ro/laser-terapie/laser-vascular/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2093,
+   "ms": 1587,
    "kb": 165.9,
    "schema": [
     "Place",
@@ -2588,6 +2588,12 @@
      "mesaj": "4 blocuri Service ale altor pagini: TMS - Stimulare Magnetica Transcraniana, Injectari cu acid hialuronic, Corecție riduri de expresie cu Botox, Augmentare buze cu acid hialuronic"
     },
     {
+     "arie": "schema",
+     "cod": "serviciu-fara-schema",
+     "nivel": "optim",
+     "mesaj": "pagina e marcată ca Article, fără Service propriu"
+    },
+    {
      "arie": "brand",
      "cod": "nume",
      "nivel": "optim"
@@ -2608,7 +2614,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2093 ms"
+     "mesaj": "1587 ms"
     }
    ]
   },
@@ -2617,7 +2623,7 @@
    "url": "https://moaclinic.ro/nad-perfuzabil/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1923,
+   "ms": 1294,
    "kb": 135,
    "schema": [
     "Place",
@@ -2677,7 +2683,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1923 ms"
+     "mesaj": "1294 ms"
     }
    ]
   },
@@ -2686,7 +2692,7 @@
    "url": "https://moaclinic.ro/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1394,
+   "ms": 1398,
    "kb": 125.7,
    "schema": [
     "Place",
@@ -2734,7 +2740,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1394 ms"
+     "mesaj": "1398 ms"
     }
    ]
   },
@@ -2743,7 +2749,7 @@
    "url": "https://moaclinic.ro/nevi-pigmentari/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1980,
+   "ms": 1492,
    "kb": 123.8,
    "schema": [
     "Place",
@@ -2802,7 +2808,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1980 ms"
+     "mesaj": "1492 ms"
     }
    ]
   },
@@ -2811,8 +2817,8 @@
    "url": "https://moaclinic.ro/ozonoterapie/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1797,
-   "kb": 134.7,
+   "ms": 1629,
+   "kb": 134.6,
    "schema": [
     "Place",
     "PostalAddress",
@@ -2864,7 +2870,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1797 ms"
+     "mesaj": "1629 ms"
     }
    ]
   },
@@ -2873,7 +2879,7 @@
    "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1992,
+   "ms": 1691,
    "kb": 157.3,
    "schema": [
     "Place",
@@ -2926,7 +2932,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1992 ms"
+     "mesaj": "1691 ms"
     }
    ]
   },
@@ -2935,7 +2941,7 @@
    "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2288,
+   "ms": 1701,
    "kb": 155.1,
    "schema": [
     "Place",
@@ -2988,7 +2994,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2288 ms"
+     "mesaj": "1701 ms"
     }
    ]
   },
@@ -2997,7 +3003,7 @@
    "url": "https://moaclinic.ro/pori-dilatati/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1527,
+   "ms": 1319,
    "kb": 143.7,
    "schema": [
     "Place",
@@ -3045,7 +3051,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1527 ms"
+     "mesaj": "1319 ms"
     }
    ]
   },
@@ -3054,7 +3060,7 @@
    "url": "https://moaclinic.ro/preturi/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1698,
+   "ms": 1618,
    "kb": 156.5,
    "schema": [
     "Place",
@@ -3102,7 +3108,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1698 ms"
+     "mesaj": "1618 ms"
     }
    ]
   },
@@ -3111,7 +3117,7 @@
    "url": "https://moaclinic.ro/prima-injectare-cu-acid-hialuronic-in-buze/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1779,
+   "ms": 1609,
    "kb": 153.5,
    "schema": [
     "Place",
@@ -3158,7 +3164,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1779 ms"
+     "mesaj": "1609 ms"
     }
    ]
   },
@@ -3167,7 +3173,7 @@
    "url": "https://moaclinic.ro/proceduri-microchirurgicale/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1699,
+   "ms": 1597,
    "kb": 139.3,
    "schema": [
     "Place",
@@ -3220,7 +3226,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1699 ms"
+     "mesaj": "1597 ms"
     }
    ]
   },
@@ -3229,7 +3235,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2120,
+   "ms": 1892,
    "kb": 180.4,
    "schema": [
     "Place",
@@ -3282,7 +3288,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2120 ms"
+     "mesaj": "1892 ms"
     }
    ]
   },
@@ -3291,7 +3297,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2287,
+   "ms": 2189,
    "kb": 241.2,
    "schema": [
     "Place",
@@ -3344,7 +3350,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2287 ms"
+     "mesaj": "2189 ms"
     }
    ]
   },
@@ -3353,7 +3359,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2085,
+   "ms": 2199,
    "kb": 216.2,
    "schema": [
     "Place",
@@ -3406,7 +3412,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2085 ms"
+     "mesaj": "2199 ms"
     }
    ]
   },
@@ -3415,7 +3421,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1609,
+   "ms": 1615,
    "kb": 159.2,
    "schema": [
     "Place",
@@ -3480,7 +3486,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1609 ms"
+     "mesaj": "1615 ms"
     }
    ]
   },
@@ -3489,8 +3495,8 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2135,
-   "kb": 197.3,
+   "ms": 2188,
+   "kb": 197.2,
    "schema": [
     "Place",
     "PostalAddress",
@@ -3536,7 +3542,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2135 ms"
+     "mesaj": "2188 ms"
     }
    ]
   },
@@ -3545,7 +3551,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1900,
+   "ms": 1981,
    "kb": 200,
    "schema": [
     "Place",
@@ -3604,7 +3610,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1900 ms"
+     "mesaj": "1981 ms"
     }
    ]
   },
@@ -3613,7 +3619,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2008,
+   "ms": 1486,
    "kb": 154.3,
    "schema": [
     "Place",
@@ -3666,7 +3672,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2008 ms"
+     "mesaj": "1486 ms"
     }
    ]
   },
@@ -3675,7 +3681,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1813,
+   "ms": 1980,
    "kb": 186.5,
    "schema": [
     "Place",
@@ -3740,7 +3746,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1813 ms"
+     "mesaj": "1980 ms"
     }
    ]
   },
@@ -3749,7 +3755,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2312,
+   "ms": 2194,
    "kb": 248.9,
    "schema": [
     "Place",
@@ -3797,7 +3803,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2312 ms"
+     "mesaj": "2194 ms"
     }
    ]
   },
@@ -3806,7 +3812,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1675,
+   "ms": 1799,
    "kb": 187.5,
    "schema": [
     "Place",
@@ -3859,7 +3865,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1675 ms"
+     "mesaj": "1799 ms"
     }
    ]
   },
@@ -3868,7 +3874,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1796,
+   "ms": 2369,
    "kb": 195.8,
    "schema": [
     "Place",
@@ -3933,7 +3939,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1796 ms"
+     "mesaj": "2369 ms"
     }
    ]
   },
@@ -3942,7 +3948,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1813,
+   "ms": 2102,
    "kb": 182.1,
    "schema": [
     "Place",
@@ -4007,7 +4013,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1813 ms"
+     "mesaj": "2102 ms"
     }
    ]
   },
@@ -4016,8 +4022,8 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2190,
-   "kb": 210.5,
+   "ms": 2207,
+   "kb": 210.4,
    "schema": [
     "Place",
     "PostalAddress",
@@ -4069,7 +4075,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2190 ms"
+     "mesaj": "2207 ms"
     }
    ]
   },
@@ -4078,7 +4084,7 @@
    "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1597,
+   "ms": 1698,
    "kb": 150.3,
    "schema": [
     "Place",
@@ -4131,7 +4137,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1597 ms"
+     "mesaj": "1698 ms"
     }
    ]
   },
@@ -4140,7 +4146,7 @@
    "url": "https://moaclinic.ro/ptoza-palpebrala/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1807,
+   "ms": 1905,
    "kb": 164.1,
    "schema": [
     "Place",
@@ -4188,7 +4194,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1807 ms"
+     "mesaj": "1905 ms"
     }
    ]
   },
@@ -4197,7 +4203,7 @@
    "url": "https://moaclinic.ro/pungi-sub-ochi/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2090,
+   "ms": 1882,
    "kb": 135,
    "schema": [
     "Place",
@@ -4245,7 +4251,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2090 ms"
+     "mesaj": "1882 ms"
     }
    ]
   },
@@ -4254,7 +4260,7 @@
    "url": "https://moaclinic.ro/recomandari-dupa-botox/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1699,
+   "ms": 1427,
    "kb": 126.6,
    "schema": [
     "Place",
@@ -4302,7 +4308,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1699 ms"
+     "mesaj": "1427 ms"
     }
    ]
   },
@@ -4311,8 +4317,8 @@
    "url": "https://moaclinic.ro/recuperare-dupa-dermapen/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1504,
-   "kb": 132.8,
+   "ms": 1387,
+   "kb": 132.9,
    "schema": [
     "Place",
     "PostalAddress",
@@ -4371,7 +4377,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1504 ms"
+     "mesaj": "1387 ms"
     }
    ]
   },
@@ -4380,7 +4386,7 @@
    "url": "https://moaclinic.ro/rejuvenare-faciala/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2290,
+   "ms": 1887,
    "kb": 182.4,
    "schema": [
     "Place",
@@ -4445,7 +4451,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2290 ms"
+     "mesaj": "1887 ms"
     }
    ]
   },
@@ -4454,7 +4460,7 @@
    "url": "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2180,
+   "ms": 1699,
    "kb": 155.5,
    "schema": [
     "Place",
@@ -4513,7 +4519,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2180 ms"
+     "mesaj": "1699 ms"
     }
    ]
   },
@@ -4522,7 +4528,7 @@
    "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2016,
+   "ms": 1707,
    "kb": 156.1,
    "schema": [
     "Place",
@@ -4581,7 +4587,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2016 ms"
+     "mesaj": "1707 ms"
     }
    ]
   },
@@ -4590,7 +4596,7 @@
    "url": "https://moaclinic.ro/riduri-de-expresie/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1991,
+   "ms": 2025,
    "kb": 200.6,
    "schema": [
     "Place",
@@ -4643,7 +4649,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1991 ms"
+     "mesaj": "2025 ms"
     }
    ]
   },
@@ -4652,7 +4658,7 @@
    "url": "https://moaclinic.ro/riduri-frunte/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2179,
+   "ms": 1791,
    "kb": 169.9,
    "schema": [
     "Place",
@@ -4705,7 +4711,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2179 ms"
+     "mesaj": "1791 ms"
     }
    ]
   },
@@ -4714,7 +4720,7 @@
    "url": "https://moaclinic.ro/riduri-in-jurul-gurii/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1596,
+   "ms": 1703,
    "kb": 141.3,
    "schema": [
     "Place",
@@ -4762,7 +4768,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1596 ms"
+     "mesaj": "1703 ms"
     }
    ]
   },
@@ -4771,7 +4777,7 @@
    "url": "https://moaclinic.ro/riduri-intre-sprancene/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1704,
+   "ms": 1607,
    "kb": 142.4,
    "schema": [
     "Place",
@@ -4819,7 +4825,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1704 ms"
+     "mesaj": "1607 ms"
     }
    ]
   },
@@ -4828,7 +4834,7 @@
    "url": "https://moaclinic.ro/riduri-laba-gastei/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1599,
+   "ms": 1790,
    "kb": 141.5,
    "schema": [
     "Place",
@@ -4875,7 +4881,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1599 ms"
+     "mesaj": "1790 ms"
     }
    ]
   },
@@ -4884,7 +4890,7 @@
    "url": "https://moaclinic.ro/riduri-marioneta/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1802,
+   "ms": 1797,
    "kb": 155.5,
    "schema": [
     "Place",
@@ -4937,7 +4943,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1802 ms"
+     "mesaj": "1797 ms"
     }
    ]
   },
@@ -4946,7 +4952,7 @@
    "url": "https://moaclinic.ro/riduri-pe-gat-tratament-cu-botox/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1899,
+   "ms": 1604,
    "kb": 141.9,
    "schema": [
     "Place",
@@ -4994,7 +5000,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1899 ms"
+     "mesaj": "1604 ms"
     }
    ]
   },
@@ -5003,7 +5009,7 @@
    "url": "https://moaclinic.ro/riduri/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2402,
+   "ms": 2111,
    "kb": 208.4,
    "schema": [
     "Place",
@@ -5050,7 +5056,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2402 ms"
+     "mesaj": "2111 ms"
     }
    ]
   },
@@ -5059,7 +5065,7 @@
    "url": "https://moaclinic.ro/ridurile-fumatorului/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1896,
+   "ms": 1981,
    "kb": 152.9,
    "schema": [
     "Place",
@@ -5119,7 +5125,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1896 ms"
+     "mesaj": "1981 ms"
     }
    ]
   },
@@ -5128,7 +5134,7 @@
    "url": "https://moaclinic.ro/russian-lips-vs-butterfly-lips/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1790,
+   "ms": 1598,
    "kb": 155.8,
    "schema": [
     "Place",
@@ -5175,7 +5181,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1790 ms"
+     "mesaj": "1598 ms"
     }
    ]
   },
@@ -5184,7 +5190,7 @@
    "url": "https://moaclinic.ro/sitemap/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1806,
+   "ms": 1484,
    "kb": 103.2,
    "schema": [
     "Place",
@@ -5238,7 +5244,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1806 ms"
+     "mesaj": "1484 ms"
     }
    ]
   },
@@ -5247,7 +5253,7 @@
    "url": "https://moaclinic.ro/terapia-nad/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1505,
+   "ms": 1591,
    "kb": 156.9,
    "schema": [
     "Place",
@@ -5306,7 +5312,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1505 ms"
+     "mesaj": "1591 ms"
     }
    ]
   },
@@ -5315,7 +5321,7 @@
    "url": "https://moaclinic.ro/terapia-vampir-pareri/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1708,
+   "ms": 1420,
    "kb": 149.4,
    "schema": [
     "Place",
@@ -5363,7 +5369,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1708 ms"
+     "mesaj": "1420 ms"
     }
    ]
   },
@@ -5372,7 +5378,7 @@
    "url": "https://moaclinic.ro/terapii-intravenoase/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1790,
+   "ms": 1793,
    "kb": 131.9,
    "schema": [
     "Place",
@@ -5426,7 +5432,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1790 ms"
+     "mesaj": "1793 ms"
     }
    ]
   },
@@ -5435,7 +5441,7 @@
    "url": "https://moaclinic.ro/terapii-regenerative/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1798,
+   "ms": 1310,
    "kb": 113.1,
    "schema": [
     "Place",
@@ -5483,7 +5489,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1798 ms"
+     "mesaj": "1310 ms"
     }
    ]
   },
@@ -5492,7 +5498,7 @@
    "url": "https://moaclinic.ro/teste-genetice-longevity/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1527,
+   "ms": 1610,
    "kb": 137.9,
    "schema": [
     "Place",
@@ -5545,7 +5551,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1527 ms"
+     "mesaj": "1610 ms"
     }
    ]
   },
@@ -5554,7 +5560,7 @@
    "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1797,
+   "ms": 1813,
    "kb": 199.3,
    "schema": [
     "Place",
@@ -5613,7 +5619,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1797 ms"
+     "mesaj": "1813 ms"
     }
    ]
   },
@@ -5622,7 +5628,7 @@
    "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1770,
+   "ms": 1508,
    "kb": 146.6,
    "schema": [
     "Place",
@@ -5681,7 +5687,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1770 ms"
+     "mesaj": "1508 ms"
     }
    ]
   },
@@ -5690,7 +5696,7 @@
    "url": "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2435,
+   "ms": 2870,
    "kb": 256,
    "schema": [
     "Place",
@@ -5742,8 +5748,8 @@
     {
      "arie": "performanta",
      "cod": "lent",
-     "nivel": "optim",
-     "mesaj": "2435 ms"
+     "nivel": "grav",
+     "mesaj": "2870 ms"
     },
     {
      "arie": "performanta",
@@ -5758,7 +5764,7 @@
    "url": "https://moaclinic.ro/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1701,
+   "ms": 1482,
    "kb": 112.1,
    "schema": [
     "Place",
@@ -5800,7 +5806,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1701 ms"
+     "mesaj": "1482 ms"
     }
    ]
   },
@@ -5809,7 +5815,7 @@
    "url": "https://moaclinic.ro/tratament-burnout-tms/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1909,
+   "ms": 1773,
    "kb": 154.2,
    "schema": [
     "Place",
@@ -5857,7 +5863,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1909 ms"
+     "mesaj": "1773 ms"
     }
    ]
   },
@@ -5866,7 +5872,7 @@
    "url": "https://moaclinic.ro/tratament-cearcane/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1580,
+   "ms": 1316,
    "kb": 131.9,
    "schema": [
     "Place",
@@ -5920,7 +5926,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1580 ms"
+     "mesaj": "1316 ms"
     }
    ]
   },
@@ -5929,7 +5935,7 @@
    "url": "https://moaclinic.ro/tratament-riduri-profunde/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2201,
+   "ms": 1699,
    "kb": 144.5,
    "schema": [
     "Place",
@@ -5977,7 +5983,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2201 ms"
+     "mesaj": "1699 ms"
     }
    ]
   },
@@ -5986,8 +5992,8 @@
    "url": "https://moaclinic.ro/tratamente-corporale/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1612,
-   "kb": 133.1,
+   "ms": 1415,
+   "kb": 133,
    "schema": [
     "Place",
     "PostalAddress",
@@ -6039,7 +6045,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1612 ms"
+     "mesaj": "1415 ms"
     }
    ]
   },
@@ -6048,7 +6054,7 @@
    "url": "https://moaclinic.ro/tratamente-cosmetologice/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1891,
+   "ms": 1510,
    "kb": 138.7,
    "schema": [
     "Place",
@@ -6101,7 +6107,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1891 ms"
+     "mesaj": "1510 ms"
     }
    ]
   },
@@ -6110,7 +6116,7 @@
    "url": "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 1598,
+   "ms": 1397,
    "kb": 136.3,
    "schema": [
     "Place",
@@ -6163,7 +6169,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1598 ms"
+     "mesaj": "1397 ms"
     }
    ]
   },
@@ -6172,7 +6178,7 @@
    "url": "https://moaclinic.ro/unde-se-pune-botox/",
    "tip": "Articol",
    "status": 200,
-   "ms": 2014,
+   "ms": 1688,
    "kb": 150.4,
    "schema": [
     "Place",
@@ -6225,7 +6231,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2014 ms"
+     "mesaj": "1688 ms"
     }
    ]
   },
@@ -6234,7 +6240,7 @@
    "url": "https://moaclinic.ro/venus-legacy/",
    "tip": "Pagina",
    "status": 200,
-   "ms": 2312,
+   "ms": 1616,
    "kb": 166.7,
    "schema": [
     "Place",
@@ -6299,7 +6305,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "2312 ms"
+     "mesaj": "1616 ms"
     }
    ]
   },
@@ -6308,7 +6314,7 @@
    "url": "https://moaclinic.ro/vergeturi-pe-sani-2/",
    "tip": "Articol",
    "status": 200,
-   "ms": 1888,
+   "ms": 1602,
    "kb": 154,
    "schema": [
     "Place",
@@ -6361,7 +6367,7 @@
      "arie": "performanta",
      "cod": "lent",
      "nivel": "optim",
-     "mesaj": "1888 ms"
+     "mesaj": "1602 ms"
     }
    ]
   }
@@ -6617,6 +6623,10 @@
   {
    "nume": "Laser Terapie",
    "url": "https://moaclinic.ro/laser-terapie/"
+  },
+  {
+   "nume": "Laser vascular",
+   "url": "https://moaclinic.ro/laser-terapie/laser-vascular/"
   },
   {
    "nume": "DNA SKIN",

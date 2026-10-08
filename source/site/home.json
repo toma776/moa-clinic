@@ -263,6 +263,20 @@
    "h": "2048"
   }
  ],
+ "video": [
+  {
+   "sursa": "site",
+   "src": "/wp-content/uploads/2024/09/Moa-Clinic-hero.mp4",
+   "poster": null,
+   "latime": null,
+   "inaltime": null,
+   "fundal": true,
+   "sectiune": null,
+   "status": 200,
+   "mb": 1.2,
+   "tip": "video/mp4"
+  }
+ ],
  "linkuri": [
   "/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/",
   "/rejuvenare-faciala/venus-viva/",
