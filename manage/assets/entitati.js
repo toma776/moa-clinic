@@ -57,7 +57,6 @@ function entitySections(D) {
   add('concepte', 'Concepte de brand', (D.concepte || []).length, `<div class="grid">${(D.concepte || []).slice().sort((a, b) => b.mentiuni - a.mentiuni).map((c) => `
     <div class="card" data-s><h3>${esc(c.nume)}</h3><p>${esc(c.tip)}</p><p>${tags([`${c.mentiuni} mențiuni pe homepage + prețuri`], '')}</p>${src(c.surse)}</div>`).join('')}</div>`);
 
-  add('afilieri', 'Afilieri & instituții', D.afilieri.length, `<div class="grid">${D.afilieri.map((a) => `<div class="card" data-s><h3>${esc(a.nume)}</h3><p>${esc(a.tip)}</p></div>`).join('')}</div>`);
 
   add('relatii', 'Graf de relații', null, `<div class="card tree">
     <details open><summary><b>${esc(B.nume)}</b> <span class="muted">— MedicalClinic, ${esc(D.contact.adresa.addressLocality)}</span></summary>
@@ -225,7 +224,6 @@ function groupMeta(D) {
     valoare: 'Promisiunile brandului adunate într-un singur loc.',
     contact: 'Adresă, telefon, emailuri, program, profile sociale, recenzii și logo-uri.',
     concepte: 'Temele cu care se asociază brandul (Global Antiaging, regenerare, longevitate…), cu paginile unde apar.',
-    afilieri: 'Organizațiile de care se leagă brandul: Oxxygene, Institutul Ana Aslan, FDA, Trustindex.',
     relatii: 'Cum se leagă clinica de firme, fondator, echipă, servicii, tehnologii și profile.',
     tehnologii: 'Aparatele clinicii, cu producătorul și paginile de servicii pe care apar.',
     produse: 'Mărcile terțe (fillere, toxine, cosmetice) menționate pe site.',
@@ -250,8 +248,8 @@ function groupMeta(D) {
 function entityCategories(D) {
   const specs = [...SPEC_ORDER, ...new Set(D.echipa.map((p) => p.specialitate))].filter((s, i, a) => a.indexOf(s) === i && D.echipa.some((p) => p.specialitate === s));
   return [
-    { id: 'brand', icon: 'brand', title: 'MOA Clinic', desc: 'Cine este MOA: identitate, ce spune site-ul despre clinică, propunerea de valoare, contactul, conceptele și afilierile.',
-      sections: ['identitate', 'fapte', 'valoare', 'contact', 'concepte', 'afilieri', 'relatii'] },
+    { id: 'brand', icon: 'brand', title: 'MOA Clinic', desc: 'Cine este MOA: identitate, ce spune site-ul despre clinică, propunerea de valoare, contactul și conceptele.',
+      sections: ['identitate', 'fapte', 'valoare', 'contact', 'concepte', 'relatii'] },
     { id: 'echipa', icon: 'echipa', title: 'Echipa', desc: 'Medicii și specialiștii clinicii, pe specialități, cu paginile pe care apar și serviciile de care se leagă.',
       sections: specs.map(specId) },
     { id: 'servicii', icon: 'servicii', title: 'Servicii', desc: 'Toate serviciile din meniu, pe categorii: pagina, tehnologiile și produsele folosite, medicii, prețurile.',
