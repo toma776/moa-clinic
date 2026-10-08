@@ -1,0 +1,15 @@
+{
+  "name": "moa-clinic",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Copie locală a homepage-ului moaclinic.ro + panou de administrare a entităților brandului",
+  "scripts": {
+    "start": "node server.js",
+    "mirror": "node scripts/mirror-homepage.js",
+    "extract": "node scripts/extract-entities.js",
+    "sync": "npm run mirror && npm run extract"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

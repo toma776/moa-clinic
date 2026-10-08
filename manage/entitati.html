@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entități brand · MOA Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/manage/entitati.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">MOA</span>
+    <div>
+      <h1>Entități brand</h1>
+      <p class="sub" id="meta">Se încarcă…</p>
+    </div>
+  </div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Caută în toate entitățile…  ( / )" autocomplete="off">
+    <a class="btn" href="/" target="_blank">Vezi site-ul local</a>
+    <a class="btn" href="/api/entitati" download="entitati-moa-clinic.json">Export JSON</a>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="side" id="nav"></nav>
+  <main id="app"></main>
+</div>
+
+<script src="/manage/entitati.js"></script>
+</body>
+</html>

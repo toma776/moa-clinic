@@ -1,0 +1,5280 @@
+{
+  "meta": {
+    "generat": "2026-10-08T09:14:08.804Z",
+    "sursa": "https://moaclinic.ro",
+    "paginiAnalizate": [
+      "https://moaclinic.ro/",
+      "https://moaclinic.ro/preturi/",
+      "https://moaclinic.ro/echipa/",
+      "https://moaclinic.ro/abonamente/",
+      "page-sitemap.xml",
+      "post-sitemap.xml"
+    ]
+  },
+  "brand": {
+    "nume": "MOA Regenerative by Oxxygene",
+    "numeScurt": "MOA Clinic",
+    "variante": [
+      "MOA Regenerative by Oxxygene",
+      "MOA Clinic",
+      "Moa Clinic",
+      "MOA by Oxxygene"
+    ],
+    "brandParinte": {
+      "nume": "Oxxygene",
+      "relatie": "MOA Regenerative este „by Oxxygene” – textul menționează „clinicile Oxxygene” și „Terapii intravenoase by Oxxygene”."
+    },
+    "tip": [
+      "MedicalClinic",
+      "Organization"
+    ],
+    "slogan": "Frumusețea vine din interior și se desăvârșește la exterior",
+    "descriere": "Alege Moa Regenerative by Oxxygene - clinica ta premium pentru estetică din București, chirurgie și regenerare celulară.",
+    "pozitionare": "Prima clinică Global Antiaging din România – estetică, chirurgie și regenerare celulară, București.",
+    "fondator": {
+      "nume": "Dr. Adrian Stănescu",
+      "rol": "Medic primar gerontolog, director medical, coordonator departament TMS"
+    },
+    "concept": "Global Antiaging – „un concept în care vârsta nu va mai avea nicio importanță”",
+    "specialitatiMedicale": [
+      "Dermatology",
+      "PlasticSurgery",
+      "Gerontology"
+    ],
+    "url": "https://moaclinic.ro",
+    "logo": [
+      "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+      "https://moaclinic.ro/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg"
+    ],
+    "titluSEO": "Estetică, Chirurgie si Regenerare Celulara | Bucuresti",
+    "dataPublicareSite": "2024-08-23T15:26:45+00:00",
+    "ultimaModificareHomepage": "2026-06-24T16:41:25+00:00"
+  },
+  "contact": {
+    "telefon": [
+      "+40743056605"
+    ],
+    "email": [
+      "office@moaclinic.ro",
+      "contact@moaclinic.ro"
+    ],
+    "adresa": {
+      "@type": "PostalAddress",
+      "streetAddress": "Str. Ștefan Mihăileanu 35",
+      "addressLocality": "București",
+      "addressCountry": "RO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.43,
+      "longitude": 26.11
+    },
+    "googleMaps": [
+      "https://maps.app.goo.gl/RHMvPm3KMHYY7BEG6"
+    ],
+    "program": {
+      "Rank Math": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "custom": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ]
+    },
+    "paginaContact": "https://moaclinic.ro/contact/",
+    "programareOnline": "Formular #programare (pe fiecare pagină)"
+  },
+  "social": [
+    {
+      "retea": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61565584852692"
+    },
+    {
+      "retea": "Instagram",
+      "url": "https://www.instagram.com/moaclinic"
+    },
+    {
+      "retea": "Facebook",
+      "url": "https://www.facebook.com/MoaClinicByOxxygene/"
+    }
+  ],
+  "reputatie": {
+    "rating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "60"
+    },
+    "trustindex": {
+      "platforma": "Google (prin Trustindex)",
+      "calificativ": "EXCELENT",
+      "recenzii": 91,
+      "insignaVerificata": true
+    },
+    "exempleRecenzii": [
+      {
+        "autor": "Andreea Radu",
+        "text": "Am avut o experiență excelentă cu doamna doctor Iulia Nedelcu. Este un medic foarte atent și răbdător, care explică totul clar și te face să te simți în siguranță. Întreaga echipă este prietenoasă, iar clinica este curată și bine organizată. Recomand cu încredere pentru profesionalism și grijă față de pacient."
+      },
+      {
+        "autor": "Alina Floroiu",
+        "text": "Excelenta. Personal de exceptie. Medici de exceptie.Terapii revolutionare. Locul unde cele mai ascunse probleme isi gasesc rezolvarea."
+      },
+      {
+        "autor": "cristiana toma",
+        "text": "Totul a fost perfect!"
+      },
+      {
+        "autor": "Martionmytwo Water",
+        "text": "Injecting NAD+ is feeling very nice"
+      },
+      {
+        "autor": "Cost Cristina",
+        "text": "Recomand cu drag clinica MOA! Curatenie, rabdare si profesionalism!"
+      },
+      {
+        "autor": "Cristina Loghin",
+        "text": "Profesionalism, empatie,si personal foarte amabil"
+      },
+      {
+        "autor": "Emil Ranca",
+        "text": "Exceptional, profesionalism, empatie si tot ce-ți dorești pe linie de tratament. Mulțumesc 🤩"
+      }
+    ]
+  },
+  "afilieri": [
+    {
+      "nume": "Oxxygene",
+      "tip": "Rețea de clinici / brand părinte"
+    },
+    {
+      "nume": "Institutul Național de Geriatrie și Gerontologie „Ana Aslan”",
+      "tip": "Formarea fondatorului (Academia de gerontologie a prof. Ana Aslan)"
+    },
+    {
+      "nume": "Trustindex",
+      "tip": "Verificare recenzii Google"
+    },
+    {
+      "nume": "ANPC / SAL / SOL (UE)",
+      "tip": "Linkuri legale protecția consumatorului"
+    },
+    {
+      "nume": "FDA",
+      "tip": "Aprobări menționate: Sculptra, programe TMS"
+    }
+  ],
+  "echipa": [
+    {
+      "id": "adrian-stanescu",
+      "nume": "Dr. Adrian Stănescu",
+      "rol": "Medic primar gerontolog",
+      "profil": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic primar",
+      "specialitate": "Gerontologie"
+    },
+    {
+      "id": "romana-cristina-manescu-obreja",
+      "nume": "Dr. Romana Cristina Manescu Obreja",
+      "rol": "Medic specialist chirurgie plastică",
+      "surse": [
+        "homepage"
+      ],
+      "tip": "Medic",
+      "grad": "Medic specialist",
+      "specialitate": "Chirurgie plastică"
+    },
+    {
+      "id": "iulia-nedelcu",
+      "nume": "Dr. Iulia Nedelcu",
+      "rol": "Medic specialist dermatovenerologie",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic specialist",
+      "specialitate": "Dermatovenerologie"
+    },
+    {
+      "id": "matei-gheorghiu-branaru",
+      "nume": "Dr. Matei Gheorghiu Branaru",
+      "rol": "Medic primar chirurgie plastică",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic primar",
+      "specialitate": "Chirurgie plastică"
+    },
+    {
+      "id": "irina-amolioaie",
+      "nume": "Dr. Irina Amolioaie",
+      "rol": "Medic specialist gerontolog",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic specialist",
+      "specialitate": "Gerontologie"
+    },
+    {
+      "id": "vali-dijmarescu",
+      "nume": "Dr. Vali Dijmarescu",
+      "rol": "Medic rezident chirurgie plastică",
+      "surse": [
+        "homepage"
+      ],
+      "tip": "Medic",
+      "grad": "Medic rezident",
+      "specialitate": "Chirurgie plastică"
+    },
+    {
+      "id": "irina-tudoran",
+      "nume": "Irina Tudoran",
+      "rol": "Asistentă",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Asistent medical",
+      "grad": null,
+      "specialitate": "Asistență medicală"
+    },
+    {
+      "id": "angi-hortopan",
+      "nume": "Angi Hortopan",
+      "rol": "Asistentă",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Asistent medical",
+      "grad": null,
+      "specialitate": "Asistență medicală"
+    },
+    {
+      "id": "doina-caraman",
+      "nume": "Dr. Doina Caraman",
+      "rol": "Medic specialist gerontolog",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic specialist",
+      "specialitate": "Gerontologie"
+    },
+    {
+      "id": "florentina-matei",
+      "nume": "Dr. Florentina Matei",
+      "rol": "Medic primar gerontolog",
+      "surse": [
+        "homepage",
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic primar",
+      "specialitate": "Gerontologie"
+    },
+    {
+      "id": "andrei-rugina",
+      "nume": "Dr. Andrei Rugina",
+      "rol": "Medic specialist chirurgie plastică",
+      "surse": [
+        "/echipa/"
+      ],
+      "tip": "Medic",
+      "grad": "Medic specialist",
+      "specialitate": "Chirurgie plastică"
+    },
+    {
+      "id": "madalina-olteanu",
+      "nume": "Mădălina Olteanu",
+      "rol": "Expert estetică facială și corporală",
+      "surse": [
+        "/echipa/"
+      ],
+      "tip": "Specialist estetică",
+      "grad": null,
+      "specialitate": "Estetică facială și corporală"
+    }
+  ],
+  "categoriiServicii": [
+    {
+      "nume": "Consultații",
+      "url": "https://moaclinic.ro/consultatii/",
+      "copii": [
+        {
+          "nume": "Antiaging – consultație profesională",
+          "url": "https://moaclinic.ro/consultatii/consultatie-antiaging/"
+        },
+        {
+          "nume": "Consultație chirurgie plastică",
+          "url": "https://moaclinic.ro/consultatii/consultatie-chirurgie-plastica/"
+        },
+        {
+          "nume": "Consultație dermatoestetică / dermatologie",
+          "url": "https://moaclinic.ro/consultatii/consultatie-dermatoestetica-dermatologie/"
+        },
+        {
+          "nume": "Consultație nutriție antiaging / nutrigenomica",
+          "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/"
+        }
+      ]
+    },
+    {
+      "nume": "TERAPIA VIELIGHT",
+      "url": "https://moaclinic.ro/fotobiomodulare-vielight/"
+    },
+    {
+      "nume": "STIMULARE MAGNETICĂ TRANSCRANIANĂ",
+      "url": "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/"
+    },
+    {
+      "nume": "Proceduri microchirurgicale",
+      "url": "https://moaclinic.ro/proceduri-microchirurgicale/",
+      "copii": [
+        {
+          "nume": "Eliminare papiloame",
+          "url": "https://moaclinic.ro/eliminare-papiloame/"
+        },
+        {
+          "nume": "Nevi pigmentari",
+          "url": "https://moaclinic.ro/nevi-pigmentari/"
+        },
+        {
+          "nume": "Blefaroplastie",
+          "url": "https://moaclinic.ro/blefaroplastie/"
+        }
+      ]
+    },
+    {
+      "nume": "Proceduri minim-invazive",
+      "url": "https://moaclinic.ro/proceduri-minim-invazive/",
+      "copii": [
+        {
+          "nume": "Injectări cu acid hialuronic",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/"
+        },
+        {
+          "nume": "Jalupro Young Eye",
+          "url": "https://moaclinic.ro/jalupro-young-eye/"
+        },
+        {
+          "nume": "Acid hialuronic buze",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/"
+        },
+        {
+          "nume": "Mezoterapie faciala cu acid hialuronic",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/"
+        },
+        {
+          "nume": "Prp scalp – terapia vampir",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/"
+        },
+        {
+          "nume": "Microneedling cu Dermapen 4",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/"
+        },
+        {
+          "nume": "Injectare toxină botulinică în București",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/"
+        },
+        {
+          "nume": "Skinbooster Restylane",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/"
+        },
+        {
+          "nume": "Sculptra",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/"
+        },
+        {
+          "nume": "Harmonyca",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/"
+        },
+        {
+          "nume": "Nefertiti Lift",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/"
+        },
+        {
+          "nume": "Tratament hiperhidroza axilara cu Botox",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/"
+        },
+        {
+          "nume": "Marirea penisului – injectare cu acid hialuronic",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/"
+        },
+        {
+          "nume": "Polinucleotide – un tratament pentru orice varsta",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/"
+        }
+      ]
+    },
+    {
+      "nume": "Rejuvenare facială",
+      "url": "https://moaclinic.ro/rejuvenare-faciala/",
+      "copii": [
+        {
+          "nume": "Mezoterapie faciala cu acid hialuronic",
+          "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/"
+        },
+        {
+          "nume": "Venus Viva",
+          "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/"
+        },
+        {
+          "nume": "Lip lifting",
+          "url": "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/"
+        }
+      ]
+    },
+    {
+      "nume": "Tratamente cosmetologice",
+      "url": "https://moaclinic.ro/tratamente-cosmetologice/",
+      "copii": [
+        {
+          "nume": "Dermalinfusion",
+          "url": "https://moaclinic.ro/dermalinfusion/"
+        }
+      ]
+    },
+    {
+      "nume": "Ozonoterapie",
+      "url": "https://moaclinic.ro/ozonoterapie/",
+      "copii": [
+        {
+          "nume": "Autohemoterapia",
+          "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/"
+        },
+        {
+          "nume": "Sauna cu ozon",
+          "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/"
+        }
+      ]
+    },
+    {
+      "nume": "Tratamente regenerative perfuzabile",
+      "url": "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
+      "copii": [
+        {
+          "nume": "Perfuzii cu glutation",
+          "url": "https://moaclinic.ro/glutation/"
+        },
+        {
+          "nume": "Terapia NAD",
+          "url": "https://moaclinic.ro/terapia-nad/"
+        }
+      ]
+    },
+    {
+      "nume": "Tratamente corporale",
+      "url": "https://moaclinic.ro/tratamente-corporale/",
+      "copii": [
+        {
+          "nume": "Laser Terapie",
+          "url": "https://moaclinic.ro/laser-terapie/",
+          "copii": [
+            {
+              "nume": "Epilare definitiva Bucuresti",
+              "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/"
+            },
+            {
+              "nume": "Laser vascular",
+              "url": "https://moaclinic.ro/laser-terapie/laser-vascular/"
+            }
+          ]
+        },
+        {
+          "nume": "Venus Legacy",
+          "url": "https://moaclinic.ro/venus-legacy/"
+        }
+      ]
+    },
+    {
+      "nume": "TESTE GENETICE LONGEVITY",
+      "url": "https://moaclinic.ro/teste-genetice-longevity/",
+      "copii": [
+        {
+          "nume": "DNA SKIN",
+          "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/"
+        },
+        {
+          "nume": "Nutrigenetică și epigenetică",
+          "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/"
+        }
+      ]
+    }
+  ],
+  "tehnologii": [
+    {
+      "nume": "Splendor X",
+      "tip": "Laser Alexandrite 755 nm + Nd:YAG 1064 nm (tehnologia Blend X)",
+      "producator": "Lumenis",
+      "mentiuni": 4,
+      "sursaProducator": "cunoaștere generală – de verificat",
+      "descriere": "Splendor X este o platformă laser de ultimă generație, care înglobează 2 tipuri de laser – laserul Alexandrite (755nm) și laserul ND:Yag (1064 nm), fiind singurul laser din lume care poate emite simultan, în același flash, ambele lungimi de undă (tehnologia Blend X), implicit puterea sa este net superioară celorlalte lasere care folosesc aceste 2 lungimi de undă, dar care emit separate, ori laser Alexandrite, ori laser ND:Yag.",
+      "url": "https://moaclinic.ro/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/"
+    },
+    {
+      "nume": "Venus Viva",
+      "tip": "Radiofrecvență fracționată (NanoFractional RF)",
+      "producator": "Venus Concept",
+      "mentiuni": 11,
+      "sursaProducator": "cunoaștere generală – de verificat",
+      "descriere": "Îți dorești o piele mai tânără, mai netedă și mai luminoasă? Ei bine, tratamentul Venus Viva realizat de cosmetologii din cadrul MOA Regenerative by Oxxygene ar putea fi răspunsul pe care îl căutai! Descoperă efectele uimitoare ale acestui tratament revoluționar asupra pielii tale și bucură-te de rezultate vizibile și durabile.",
+      "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/"
+    },
+    {
+      "nume": "Venus Legacy",
+      "tip": "Radiofrecvență multipolară + PEMF (corporal & facial)",
+      "producator": "Venus Concept",
+      "mentiuni": 9,
+      "sursaProducator": "cunoaștere generală – de verificat",
+      "descriere": "Descoperă toate secretele tratamentului cu Venus Legacy in cadrul clinicii MOA regenerative by Oxxygene și bucură-te de o piele perfectă! Indiferent de vârstă sau tip de piele, acest tratament inovator îți poate oferi rezultate remarcabile în ceea ce privește tonusul și elasticitatea pielii.",
+      "url": "https://moaclinic.ro/tratamente-corporale/venus-legacy/"
+    },
+    {
+      "nume": "Dermalinfusion",
+      "tip": "Exfoliere + extracție + infuzare simultană",
+      "producator": "Envy Medical",
+      "mentiuni": 6,
+      "sursaProducator": "cunoaștere generală – de verificat",
+      "descriere": "Te-ai întrebat vreodată cum poți obține o piele perfectă, fără imperfecțiuni și strălucitoare? DERMALINFUSION este răspunsul pentru tine! Această tehnologie revoluționară cu 3 acțiuni simultane – exfoliere, extracție și infuzare – promite să transforme complet aspectul și textura pielii tale.",
+      "url": "https://moaclinic.ro/tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+      "nume": "Dermapen 4",
+      "tip": "Microneedling",
+      "producator": "Dermapen World",
+      "mentiuni": 9,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Vielight",
+      "tip": "Fotobiomodulare (near-infrared)",
+      "producator": "Vielight Inc.",
+      "mentiuni": 6,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "TMS",
+      "tip": "Stimulare magnetică transcraniană (aprobat FDA – depresie, burnout, anxietate)",
+      "producator": null,
+      "mentiuni": 18,
+      "sursaProducator": null
+    },
+    {
+      "nume": "Sauna cu ozon",
+      "tip": "Ozonoterapie – căldură umedă la ~40°C",
+      "producator": null,
+      "mentiuni": 6,
+      "sursaProducator": null,
+      "descriere": "SAUNA CU OZON este o procedură cu efect regenerativ care utilizează căldură umedă (spre deosebire de sauna obișnuită care este o sauna uscată) cu o temperatură mai mică, de 40 de grade (dar mai mare decât temperatura obișnuită a corpului) care facilitează acțiunea ozonului la nivelul epidermei și a dermului și secundar la nivelul intregului organism, având in special un efect detox celular.",
+      "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/"
+    }
+  ],
+  "produse": [
+    {
+      "nume": "Stylage",
+      "tip": "Filler acid hialuronic",
+      "producator": "Vivacy",
+      "mentiuni": 3,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Restylane",
+      "tip": "Filler / skinbooster acid hialuronic",
+      "producator": "Galderma",
+      "mentiuni": 7,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Juvéderm",
+      "tip": "Filler acid hialuronic",
+      "producator": "Allergan Aesthetics (AbbVie)",
+      "mentiuni": 4,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Jalupro",
+      "tip": "Biorevitalizant (aminoacizi + acid hialuronic)",
+      "producator": "Professional Derma",
+      "mentiuni": 4,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Sculptra",
+      "tip": "Biostimulator (acid poli-L-lactic)",
+      "producator": "Galderma",
+      "mentiuni": 6,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "HArmonyCa",
+      "tip": "Filler hibrid (acid hialuronic + hidroxiapatită de calciu)",
+      "producator": "Allergan Aesthetics (menționat pe site)",
+      "mentiuni": 6,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Profhilo Structura",
+      "tip": "Biostimulator acid hialuronic",
+      "producator": "IBSA",
+      "mentiuni": 1,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Rejuran",
+      "tip": "Polinucleotide (ADN de somon)",
+      "producator": "PharmaResearch",
+      "mentiuni": 3,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Azzalure",
+      "tip": "Toxină botulinică",
+      "producator": "Galderma",
+      "mentiuni": 3,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Vistabel",
+      "tip": "Toxină botulinică",
+      "producator": "Allergan Aesthetics (AbbVie)",
+      "mentiuni": 4,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "NCTF",
+      "tip": "Cocktail mezoterapie",
+      "producator": "Filorga",
+      "mentiuni": 3,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "PRX Plus",
+      "tip": "Peeling medical",
+      "producator": null,
+      "mentiuni": 2,
+      "sursaProducator": null
+    },
+    {
+      "nume": "KLAPP",
+      "tip": "Cosmetice profesionale (ASA Peel, Caviar Power, Diamond Glow)",
+      "producator": "KLAPP Cosmetics",
+      "mentiuni": 3,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Bruno Vassari",
+      "tip": "Cosmetice profesionale (Oily Control)",
+      "producator": "Bruno Vassari",
+      "mentiuni": 1,
+      "sursaProducator": "cunoaștere generală – de verificat"
+    },
+    {
+      "nume": "Gerovital",
+      "tip": "Terapie Gerovital (Ana Aslan)",
+      "producator": null,
+      "mentiuni": 1,
+      "sursaProducator": null
+    }
+  ],
+  "evidentiatePeHomepage": [
+    {
+      "id": "splendor-x",
+      "nume": "Splendor X",
+      "sectiune": "Aparatură de Ultimă Generație pentru Rezultate Excepționale: Tehnologie Avansată la MOA Clinic",
+      "descriere": "Splendor X este o platformă laser de ultimă generație, care înglobează 2 tipuri de laser – laserul Alexandrite (755nm) și laserul ND:Yag (1064 nm), fiind singurul laser din lume care poate emite simultan, în același flash, ambele lungimi de undă (tehnologia Blend X), implicit puterea sa este net superioară celorlalte lasere care folosesc aceste 2 lungimi de undă, dar care emit separate, ori laser Alexandrite, ori laser ND:Yag.",
+      "url": "https://moaclinic.ro/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/"
+    },
+    {
+      "id": "venus-viva",
+      "nume": "Venus Viva",
+      "sectiune": "Aparatură de Ultimă Generație pentru Rezultate Excepționale: Tehnologie Avansată la MOA Clinic",
+      "descriere": "Îți dorești o piele mai tânără, mai netedă și mai luminoasă? Ei bine, tratamentul Venus Viva realizat de cosmetologii din cadrul MOA Regenerative by Oxxygene ar putea fi răspunsul pe care îl căutai! Descoperă efectele uimitoare ale acestui tratament revoluționar asupra pielii tale și bucură-te de rezultate vizibile și durabile.",
+      "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/"
+    },
+    {
+      "id": "venus-legacy",
+      "nume": "Venus Legacy",
+      "sectiune": "Aparatură de Ultimă Generație pentru Rezultate Excepționale: Tehnologie Avansată la MOA Clinic",
+      "descriere": "Descoperă toate secretele tratamentului cu Venus Legacy in cadrul clinicii MOA regenerative by Oxxygene și bucură-te de o piele perfectă! Indiferent de vârstă sau tip de piele, acest tratament inovator îți poate oferi rezultate remarcabile în ceea ce privește tonusul și elasticitatea pielii.",
+      "url": "https://moaclinic.ro/tratamente-corporale/venus-legacy/"
+    },
+    {
+      "id": "dermalinfusion",
+      "nume": "Dermalinfusion",
+      "sectiune": "Aparatură de Ultimă Generație pentru Rezultate Excepționale: Tehnologie Avansată la MOA Clinic",
+      "descriere": "Te-ai întrebat vreodată cum poți obține o piele perfectă, fără imperfecțiuni și strălucitoare? DERMALINFUSION este răspunsul pentru tine! Această tehnologie revoluționară cu 3 acțiuni simultane – exfoliere, extracție și infuzare – promite să transforme complet aspectul și textura pielii tale.",
+      "url": "https://moaclinic.ro/tratamente-cosmetologice/dermalinfusion/"
+    },
+    {
+      "id": "skinbooster-vital",
+      "nume": "Skinbooster Vital",
+      "sectiune": "Tratamente Personalizate pentru Îngrijirea Pielii: Soluții Complete la MOA Clinic",
+      "descriere": "Skinboosterul vital este un procedeu non-invaziv ce ajută la îmbunătățirea elasticității pielii, la refacerea aspectului sănătos și la hidratarea pielii deteriorate de factorii externi, precum expunerea excesivă la soare, poluarea sau stresul. Formula sa inovatoare, bazată pe ingrediente naturale, stimulează producția de colagen și acid hialuronic, elemente esențiale pentru o piele sănătoasă și frumoasă.",
+      "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/"
+    },
+    {
+      "id": "sculptra",
+      "nume": "Sculptra",
+      "sectiune": "Tratamente Personalizate pentru Îngrijirea Pielii: Soluții Complete la MOA Clinic",
+      "descriere": "Ai riduri adânci, pielea își pierde din volum și aspectul său tânăr? Ei bine, avem o veste bună pentru tine! Sculptra este secretul MOA Regenerative by Oxxygene pentru umplerea ridurilor adânci, volumizarea și liftingul facial care a primit și aprobarea FDA. Dacă ești curios să afli mai multe despre acest tratament revoluționar, ai ajuns la locul potrivit. La MOA Regenerative vei găsi tot ce trebuie să știi despre Sculptra și modul în care poate transforma aspectul tău facial.",
+      "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/"
+    },
+    {
+      "id": "harmonyca",
+      "nume": "HArmonyCa",
+      "sectiune": "Tratamente Personalizate pentru Îngrijirea Pielii: Soluții Complete la MOA Clinic",
+      "descriere": "Află secretul unei umpleri faciale impecabile cu HArmonyCa de la laboratoarele Allergan. Este alegerea perfectă pentru a obține rezultate uimitoare și naturale în estetica feței tale. Indiferent dacă dorești să reduci aspectul liniilor fine și al ridurilor sau să-ți definești și să-ți conturezi anumite trăsături faciale, acest produs inovator te va ajuta să obții rezultatele dorite.",
+      "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/"
+    },
+    {
+      "id": "nefertiti-lift",
+      "nume": "Nefertiti Lift",
+      "sectiune": "Tratamente Personalizate pentru Îngrijirea Pielii: Soluții Complete la MOA Clinic",
+      "descriere": "Cu toții căutăm mereu modalități de a ne menține tenul proaspăt și tânăr, iar Nefertiti Lift pare să ofere secretul străvechi către un aspect impecabil. Acest tratament non-invaziv a devenit din ce în ce mai popular în rândul celor pasionați de frumusețe și nu este de mirare de ce.",
+      "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/"
+    },
+    {
+      "id": "terapii-regenerative",
+      "nume": "Terapii regenerative",
+      "sectiune": "Inovație în Terapii Regenerative",
+      "descriere": "Viziunea în ansamblu a medicinei regenerative reprezintă un concept revoluționar în domeniul sănătății, care merge dincolo de abordarea tradițională a tratamentelor medicale. Prin activarea propriilor resurse de regenerare ale organismului, medicina regenerativă are capacitatea de a vindeca și a restabili funcții fiziologice în mod natural. Această abordare holistă și inovatoare ne permite să tratăm rădăcina problemei, nu doar simptomele, iar prin acțiunea directă asupra mecanismelor celulare ale inflamației, toxicității și a imunității intregul organism revine la o formă mai tânără, demonstrabil prin testele pe care le putem efectua la Clinicile Oxxygene inainte și după terapii.",
+      "url": "https://moaclinic.ro/terapii-regenerative/"
+    },
+    {
+      "id": "autohemoterapia-majoră",
+      "nume": "Autohemoterapia majoră",
+      "sectiune": "Inovație în Terapii Regenerative",
+      "descriere": "Autohemoterapia majoră este un tratament revoluționar care are potențialul de a te intineri din interior și de a-ți întări sistemul imunitar. Această procedură implică recoltarea unei cantități relativ mică de sânge care apoi este oxigenată și ozonificată in cadrul unui dispozitiv special de unică folosință și apoi reintrodusă în corpul tău.",
+      "url": "https://moaclinic.ro/ozonoterapie/sistemica-autohemoterapia-majora/"
+    },
+    {
+      "id": "sauna-cu-ozon",
+      "nume": "Sauna cu ozon",
+      "sectiune": "Inovație în Terapii Regenerative",
+      "descriere": "SAUNA CU OZON este o procedură cu efect regenerativ care utilizează căldură umedă (spre deosebire de sauna obișnuită care este o sauna uscată) cu o temperatură mai mică, de 40 de grade (dar mai mare decât temperatura obișnuită a corpului) care facilitează acțiunea ozonului la nivelul epidermei și a dermului și secundar la nivelul intregului organism, având in special un efect detox celular.",
+      "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/"
+    },
+    {
+      "id": "terapii-antioxidante",
+      "nume": "Terapii antioxidante",
+      "sectiune": "Inovație în Terapii Regenerative",
+      "descriere": "Terapiile antioxidante sunt acele terapii care scad nivelul de radicali liberi din celulele corpului nostru. Radicalii liberi (cei mai frecvenți sunt radicalii liberi de oxigen -ROS) sunt de fapt deșeurile rezultate din metabolismul celular și care până la vărsta de 35-40 de ani sunt eliminate de echipamentele noastre enzimatice antioxidante, dar pe măsură ce îmbătrânim capacitatea de epurare a acestor echipamente scade, celulele îmbătrânesc și apar semnele atât de caracteristice imbătrânirii (păr alb, riduri, etc.). Terapiile antioxidante aduc suplimente perfuzabile de antioxidanți, refac capacitatea totală antioxidantă a organismului și încetinesc îmbătrânirea celulară. Aceste terapii sunt utile atât utilizate individual cât și in cadrul unor combinații cu terapiile corporale sau de rejuvenare facială efectuate in clinica MOA by Oxxygene. Ca rezultat al expertizei deosebite a specialiș",
+      "url": null,
+      "butonFaraLink": true
+    }
+  ],
+  "produseProprii": [
+    {
+      "nume": "MOA COCKTAIL ENERGY (CEO)",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 440
+    },
+    {
+      "nume": "MOA HEPATOPROTECTOR VITAMIN",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 550
+    },
+    {
+      "nume": "MOA IMUNOPROTECT THERAPY",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 360
+    },
+    {
+      "nume": "MOA BURNOUT THERAPY",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 380
+    },
+    {
+      "nume": "MOA ANTIOXIDANT THERAPY",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 370
+    },
+    {
+      "nume": "MOA ENERGETIC BOOST ANTIOXIDANT",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 470
+    },
+    {
+      "nume": "MOA IMUNOBOOST ANTIOXIDANT",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 535
+    },
+    {
+      "nume": "MOA LONGEVITY BOOST (conține NAD+)",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 600
+    },
+    {
+      "nume": "BEAUTY ELIXIR BY MOA",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 800
+    },
+    {
+      "nume": "SKIN BRIGHT SHOT BY MOA",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 800
+    },
+    {
+      "nume": "APHRODITE'S SECRET",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 750
+    },
+    {
+      "nume": "GLOW UP BY MOA",
+      "tip": "Terapie intravenoasă cu nume de brand",
+      "pret": 750
+    }
+  ],
+  "preturi": [
+    {
+      "categorie": "REJUVENARE FACIALĂ",
+      "servicii": [
+        {
+          "nume": "Skin Booster Vital Restylane - 1 ml",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Skin Booster Vital Restylane - 2 ml",
+          "preturi": [
+            {
+              "valoare": 2100,
+              "moneda": "RON",
+              "text": "2100 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Cearcane Jalupro",
+          "preturi": [
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Peeling PRX Plus",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Sculptra, o fiolă",
+          "preturi": [
+            {
+              "valoare": 3000,
+              "moneda": "RON",
+              "text": "3000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Profhilo Structura",
+          "preturi": [
+            {
+              "valoare": 2100,
+              "moneda": "RON",
+              "text": "2100 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Harmonyca 1,25 ml",
+          "preturi": [
+            {
+              "valoare": 2200,
+              "moneda": "RON",
+              "text": "2200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Harmonyca 2 seringi x 1,25 ml",
+          "preturi": [
+            {
+              "valoare": 3750,
+              "moneda": "RON",
+              "text": "3750 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Aplicare Exosomi dupa tratamentul cu microneedling/ RF",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2250,
+              "moneda": "RON",
+              "text": "2250 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Aplicare masca Exosomi dupa tratamentul cu microneedling/ RF",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "PRP – Terapia Vampir 1 eprubetă (față & gât, decolteu, mâini sau în funcție de nevoile specifice)",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2550,
+              "moneda": "RON",
+              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "PRP (1 flacon) + Microneedling prin Dermapen și substanțe de mezoterapie",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 7000,
+              "moneda": "RON",
+              "text": "7000 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Microneedling Dermapen față",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Microneedling Dermapen față + gât",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Microneedling Dermapen și cocktail substanțe nutritive față",
+          "preturi": [
+            {
+              "valoare": 1050,
+              "moneda": "RON",
+              "text": "1050 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2800,
+              "moneda": "RON",
+              "text": "2800 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Microneedling Dermapen și cocktail substanțe nutritive față + gât",
+          "preturi": [
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 4000,
+              "moneda": "RON",
+              "text": "4000 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Mască Dermapen cu Cocktail Acid Hialuronic și Vitamine",
+          "preturi": [
+            {
+              "valoare": 150,
+              "moneda": "RON",
+              "text": "150 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Polinucleotide cu ADN de somon față/gât/decolteu/periocular 1 ședintă Medium",
+          "preturi": [
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Polinucleotide cu ADN de somon față/gât/decolteu/periocular 1 ședintă Strong",
+          "preturi": [
+            {
+              "valoare": 1350,
+              "moneda": "RON",
+              "text": "1350 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Rejuran periocular (1 mL)",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Rejuran față/gât/decolteu (1 mL)",
+          "preturi": [
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Rejuran full face/alte zone (2mL)",
+          "preturi": [
+            {
+              "valoare": 2400,
+              "moneda": "RON",
+              "text": "2400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "servicii": [
+        {
+          "nume": "Nefertiti Lift",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI - ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie 1 zonă: frunte/ ochi/intre sprâncene",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI (DE LA 900 LEI) – ȘEDINȚĂ",
+              "pretInitial": 900,
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie: tratament 2 zone",
+          "preturi": [
+            {
+              "valoare": 999,
+              "moneda": "RON",
+              "text": "999 LEI (DE LA 1250 LEI)– ȘEDINȚĂ",
+              "pretInitial": 1250,
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone- femei",
+          "preturi": [
+            {
+              "valoare": 1099,
+              "moneda": "RON",
+              "text": "1099 LEI (DE LA 1500 LEI)– ȘEDINȚĂ",
+              "pretInitial": 1500,
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone- bărbați",
+          "preturi": [
+            {
+              "valoare": 1300,
+              "moneda": "RON",
+              "text": "1300 LEI (DE LA 1700 LEI)– ȘEDINȚĂ",
+              "pretInitial": 1700,
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie 1 zonă: frunte/ ochi/intre sprâncene cu toxina Azzalure/Vistabel",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie: tratament 2 zone cu toxina Azzalure/Vistabel",
+          "preturi": [
+            {
+              "valoare": 1450,
+              "moneda": "RON",
+              "text": "1450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone cu toxina Azzalure/Vistabel",
+          "preturi": [
+            {
+              "valoare": 1800,
+              "moneda": "RON",
+              "text": "1800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Baby Botox 3 Zone Vistabel",
+          "preturi": [
+            {
+              "valoare": 1199,
+              "moneda": "RON",
+              "text": "1199 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament hiperhidroza/transpirație excesiva cu toxină botulinică (axile/palme/tălpi)",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Slimming Face/ Tratament bruxism cu toxină botulinică",
+          "preturi": [
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "INJECTĂRI ACID HIALURONIC",
+      "servicii": [
+        {
+          "nume": "1 mL STYLAGE",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "preturi": [
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI (de la 1400 LEI)",
+              "pretInitial": 1400,
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "0,55 mL JUVÉDERM ULTRA SMILE",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "preturi": [
+            {
+              "valoare": 1150,
+              "moneda": "RON",
+              "text": "1150 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL STYLAGE",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "preturi": [
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL STYLAGE",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "preturi": [
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "preturi": [
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Topire acid hialuronic – hialuronidază – Zona mica (1 flacon)",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Topire acid hialuronic – hialuronidază – Zona mare (2 flacoane)",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Augmentare peniană – 10 mL acid hialuronic",
+          "subgrup": "AUGMENTARE PENIANĂ",
+          "preturi": [
+            {
+              "valoare": 4000,
+              "moneda": "RON",
+              "text": "4000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Augmentare peniană – 20 mL acid hialuronic",
+          "subgrup": "AUGMENTARE PENIANĂ",
+          "preturi": [
+            {
+              "valoare": 5500,
+              "moneda": "RON",
+              "text": "5500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENT REVITALIZARE PĂR",
+      "servicii": [
+        {
+          "nume": "PRP SCALP, 1 eprubetă",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2550,
+              "moneda": "RON",
+              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "PRP SCALP, 2 eprubete",
+          "preturi": [
+            {
+              "valoare": 990,
+              "moneda": "RON",
+              "text": "990 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2820,
+              "moneda": "RON",
+              "text": "2820 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "PRP SCALP, 1 eprubetă și Biotina",
+          "preturi": [
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 3300,
+              "moneda": "RON",
+              "text": "3300 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Microneedling Dermapen scalp cu exozomi și cocktail de vitamine",
+          "preturi": [
+            {
+              "valoare": 1190,
+              "moneda": "RON",
+              "text": "1190 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 3370,
+              "moneda": "RON",
+              "text": "3370 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Mezoterapie injectabilă NCTC+ biotină",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2550,
+              "moneda": "RON",
+              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Mezoterapie injectabilă NCTC",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1950,
+              "moneda": "RON",
+              "text": "1950 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Mezoterapie injectabilă cu biotină",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1950,
+              "moneda": "RON",
+              "text": "1950 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "PEELING",
+      "servicii": [
+        {
+          "nume": "Peeling PRX Plus",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Peeling anti-acnee + extracții",
+          "preturi": [
+            {
+              "valoare": 650,
+              "moneda": "RON",
+              "text": "650 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1800,
+              "moneda": "RON",
+              "text": "1800 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Peeling anti-aging cu metale prețioase/ carbon activ",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "DERMATOLOGIE",
+      "servicii": [
+        {
+          "nume": "Consultație Dermatologie",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Control Dermatologie (în termen de 30 zile de la consultația inițială)",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Dermatoscopie 1 leziune",
+          "preturi": [
+            {
+              "valoare": 100,
+              "moneda": "RON",
+              "text": "100 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Dermatoscopie 2 – 4 leziuni",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Dermatoscopie 5 – 10 leziuni",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Dermatoscopie 11 – 20 leziuni",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Dermatoscopie 21 – 30 leziuni",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Electrocauterizare (papiloame, condiloame, granulom piogenic, keratoză seboreică, molluscum contagiosum/pendulum, veruci) 1 – 4 leziuni",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Electrocauterizare (papiloame, condiloame, granulom piogenic, keratoză seboreică, molluscum contagiosum/pendulum, veruci) 5 – 10 leziuni",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Anestezie locală",
+          "preturi": [
+            {
+              "valoare": 100,
+              "moneda": "RON",
+              "text": "100 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Mezoterapie NCTF/cearcăne",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
+          "nume": "Subcizie Cicatrici de Acnee",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ",
+      "servicii": [
+        {
+          "nume": "Otoplastie (cu anestezie locala)",
+          "preturi": [
+            {
+              "valoare": 8000,
+              "moneda": "RON",
+              "text": "8000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Labioplastie",
+          "preturi": [
+            {
+              "valoare": 8000,
+              "moneda": "RON",
+              "text": "8000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Bichectomie",
+          "preturi": [
+            {
+              "valoare": 6000,
+              "moneda": "RON",
+              "text": "6000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Blefaroplastie superioară",
+          "preturi": [
+            {
+              "valoare": 7000,
+              "moneda": "RON",
+              "text": "7000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Blefaroplastie inferioară",
+          "preturi": [
+            {
+              "valoare": 8000,
+              "moneda": "RON",
+              "text": "8000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Lip Lift Lifting bază surerioară",
+          "preturi": [
+            {
+              "valoare": 7000,
+              "moneda": "RON",
+              "text": "7000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Reconstrucție lob ureche",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI / lob",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie leziune cutanata sau de parti moi < 1 cm",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie leziune cutanata sau de parti moi 2-3 cm",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie leziune cutanata sau de parti moi > 3 cm",
+          "preturi": [
+            {
+              "valoare": 2500,
+              "moneda": "RON",
+              "text": "2500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie lipom intre 2-4 cm",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie lipom intre 4-8 cm",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie lipom sub 2 cm",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Excizie lipom intramuscular",
+          "preturi": [
+            {
+              "valoare": 5000,
+              "moneda": "RON",
+              "text": "5000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Recupa melanom malign si inchidere cu lambou",
+          "preturi": [
+            {
+              "valoare": 6000,
+              "moneda": "RON",
+              "text": "6000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Recupa melanom malign si inchidere prin sutura directa",
+          "preturi": [
+            {
+              "valoare": 3500,
+              "moneda": "RON",
+              "text": "3500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie ganglion santinela",
+          "preturi": [
+            {
+              "valoare": 4000,
+              "moneda": "RON",
+              "text": "4000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie excizionala <1 cm",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie excizionala 1-2 cm",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie excizionala >2 cm",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie incizionala",
+          "preturi": [
+            {
+              "valoare": 750,
+              "moneda": "RON",
+              "text": "750 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie punch",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Indepartare corp strain",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Cura chirurgicala sindrom de canal carpian",
+          "preturi": [
+            {
+              "valoare": 4000,
+              "moneda": "RON",
+              "text": "4000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Cura chirurgicala deget in resort",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Cura chirugicala maladie Dupuytren / raza",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultatie chirurgie plastică",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Control la 6 luni",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Control la mai mult de 1 an",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE COSMETOLOGICE",
+      "servicii": [
+        {
+          "nume": "Tratament DERMALINFUSION Facial",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1197,
+              "moneda": "RON",
+              "text": "1197 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament DERMALINFUSION Față + Gât",
+          "preturi": [
+            {
+              "valoare": 690,
+              "moneda": "RON",
+              "text": "690 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1497,
+              "moneda": "RON",
+              "text": "1497 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament profesional intens hidratant față - Rehydra",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament profesional anti-aging Botox Like Delay Inifinity",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Profesional Ten Sensibil Emozioni Plus",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Profesional Depigmentare Bright și Luminozitate",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament profesional anti-aging 75.15",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Acnee ASA Peel by KLAPP",
+          "preturi": [
+            {
+              "valoare": 550,
+              "moneda": "RON",
+              "text": "550 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Calmant Aloe Vera SN",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Gold A Classic",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1350,
+              "moneda": "RON",
+              "text": "1350 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Caviar Power by KLAPP",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1650,
+              "moneda": "RON",
+              "text": "1650 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Diamond Glow by KLAPP",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1650,
+              "moneda": "RON",
+              "text": "1650 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Peeling anti-acnee + extracții",
+          "preturi": [
+            {
+              "valoare": 650,
+              "moneda": "RON",
+              "text": "650 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1800,
+              "moneda": "RON",
+              "text": "1800 LEI – PACHET 3 ȘEDINȚE",
+              "tip": "pachet 3 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Bruno Vassari OILY CONTROL",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "LIFTING FACIAL NON INVAZIV VENUS LEGACY",
+      "servicii": [
+        {
+          "nume": "VENUS LEGACY 1 zonă: Față/gât/Decolteu",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "VENUS LEGACY 2 zone: Față+gât/Decolteu",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1600,
+              "moneda": "RON",
+              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Venus Legacy 3 zone: Față, gât, Decolteu",
+          "preturi": [
+            {
+              "valoare": 690,
+              "moneda": "RON",
+              "text": "690 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2400,
+              "moneda": "RON",
+              "text": "2400 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE CORPORALE VENUS LEGACY",
+      "servicii": [
+        {
+          "nume": "Zona Mică ( La alegere Brațe /Zona Lombară /Gambe) – 20 min",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1200,
+              "moneda": "RON",
+              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Zonă Medie ( La alegere Abdomen/ Brațe /Zonă Lombară /Gambe) – 30 min",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Zonă Mare ( La alegere Coapse Față /Spate + Fese / Două zone medii) – 1h",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2800,
+              "moneda": "RON",
+              "text": "2800 LEI – PACHET 4 ȘEDINȚE",
+              "tip": "pachet 4 ședințe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "servicii": [
+        {
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 999,
+              "moneda": "RON",
+              "text": "999LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 2000
+            }
+          ]
+        },
+        {
+          "nume": "OFERTĂ Axilă + Inghinal Integral + Linie Bikini + Interfesier",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 700
+            }
+          ]
+        },
+        {
+          "nume": "OFERTĂ Axilă + Gambă + Inghinal Integral + Linie Bikini + Interfesier",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 1000
+            }
+          ]
+        },
+        {
+          "nume": "OFERTĂ Picioare integral (coapse+gambe)",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 750,
+              "moneda": "RON",
+              "text": "750 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 1000
+            }
+          ]
+        },
+        {
+          "nume": "Față",
+          "subgrup": "Epilare definitivă facială",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Bărbie / perciuni / mustață",
+          "subgrup": "Epilare definitivă facială",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Axile",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Mâini integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2250,
+              "moneda": "RON",
+              "text": "2250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Antebrațe / brațe / abdomen",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1750,
+              "moneda": "RON",
+              "text": "1750 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Linie bikini",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Inghinal Integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2250,
+              "moneda": "RON",
+              "text": "2250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Fese",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1250,
+              "moneda": "RON",
+              "text": "1250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Gambe / coapse",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 550,
+              "moneda": "RON",
+              "text": "550 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2750,
+              "moneda": "RON",
+              "text": "2750 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Picioare integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 5000,
+              "moneda": "RON",
+              "text": "5000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Piept",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2500,
+              "moneda": "RON",
+              "text": "2500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Umeri",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2500,
+              "moneda": "RON",
+              "text": "2500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Spate integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 5000,
+              "moneda": "RON",
+              "text": "5000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+      "servicii": [
+        {
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 4000
+            }
+          ]
+        },
+        {
+          "nume": "OFERTĂ Spate integral",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 850,
+              "moneda": "RON",
+              "text": "850 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 1100
+            }
+          ]
+        },
+        {
+          "nume": "OFERTĂ Piept",
+          "subgrup": "Oferte",
+          "preturi": [
+            {
+              "valoare": 650,
+              "moneda": "RON",
+              "text": "650 LEI – ȘEDINȚĂ",
+              "tip": "ședință",
+              "pretInitial": 900
+            }
+          ]
+        },
+        {
+          "nume": "Față",
+          "subgrup": "Epilare definitivă facială",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Contur barbă",
+          "subgrup": "Epilare definitivă facială",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Bărbie / perciuni / mustață",
+          "subgrup": "Epilare definitivă facială",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1750,
+              "moneda": "RON",
+              "text": "1750 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Axile",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Brațe integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 850,
+              "moneda": "RON",
+              "text": "850 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 4250,
+              "moneda": "RON",
+              "text": "4250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Antebrațe / abdomen",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 650,
+              "moneda": "RON",
+              "text": "650 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 3250,
+              "moneda": "RON",
+              "text": "3250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Linie bikini",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Inghinal Integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 850,
+              "moneda": "RON",
+              "text": "850 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 4250,
+              "moneda": "RON",
+              "text": "4250 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Fese",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Gambe / coapse",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 5000,
+              "moneda": "RON",
+              "text": "5000 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Picioare integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 1950,
+              "moneda": "RON",
+              "text": "1950 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 9750,
+              "moneda": "RON",
+              "text": "9750 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Piept",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 900,
+              "moneda": "RON",
+              "text": "900 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 4500,
+              "moneda": "RON",
+              "text": "4500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Umeri",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 3500,
+              "moneda": "RON",
+              "text": "3500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        },
+        {
+          "nume": "Spate integral",
+          "subgrup": "Epilare definitivă corporală",
+          "preturi": [
+            {
+              "valoare": 1100,
+              "moneda": "RON",
+              "text": "1100 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 5500,
+              "moneda": "RON",
+              "text": "5500 LEI – PACHET 5+1 GRATUIT",
+              "tip": "pachet 5+1 gratuit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE ESTETICE VENUS VIVA",
+      "servicii": [
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2100,
+              "moneda": "RON",
+              "text": "2100 LEI – PACHET 2 ȘEDINȚE",
+              "tip": "pachet 2 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față și gat",
+          "preturi": [
+            {
+              "valoare": 2000,
+              "moneda": "RON",
+              "text": "2000 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 3100,
+              "moneda": "RON",
+              "text": "3100 LEI – PACHET 2 ȘEDINȚE",
+              "tip": "pachet 2 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată gat",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 1400,
+              "moneda": "RON",
+              "text": "1400 LEI – PACHET 2 ȘEDINȚE",
+              "tip": "pachet 2 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată decolteu",
+          "preturi": [
+            {
+              "valoare": 1500,
+              "moneda": "RON",
+              "text": "1500 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 2600,
+              "moneda": "RON",
+              "text": "2600 LEI – PACHET 2 ȘEDINȚE",
+              "tip": "pachet 2 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față, gat, decolteu",
+          "preturi": [
+            {
+              "valoare": 2800,
+              "moneda": "RON",
+              "text": "2800 LEI – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 4800,
+              "moneda": "RON",
+              "text": "4800 LEI – PACHET 2 ȘEDINȚE",
+              "tip": "pachet 2 ședințe"
+            }
+          ]
+        },
+        {
+          "nume": "Tratament Venus Viva cu Radiofrecvență pentru cicatrici/vergeturi",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI (Zonă mică 5 cm2)– ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 650,
+              "moneda": "RON",
+              "text": "650 LEI (Zonă medie 10 cm2) – ȘEDINȚĂ",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI (Zonă mare 15 cm2) – ȘEDINȚĂ",
+              "tip": "ședință"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "ANALIZĂ ANATOMIE PATOLOGICĂ",
+      "servicii": [
+        {
+          "nume": "Biopsie prin prelucrare la parafină și dgn. HP-piesă mică sub 4cm/piesă",
+          "preturi": [
+            {
+              "valoare": 450,
+              "moneda": "RON",
+              "text": "450 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Biopsie prin prelucrare la parafină și dgn. HP-piesă mare peste 4 cm/piesă",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Examen imunohistochimie",
+          "preturi": [
+            {
+              "valoare": 700,
+              "moneda": "RON",
+              "text": "700 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Interpretare lame biopsie – a 2 a opinie/caz",
+          "preturi": [
+            {
+              "valoare": 150,
+              "moneda": "RON",
+              "text": "150 LEI",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "OZONOTERAPIE",
+      "servicii": [
+        {
+          "nume": "Autohemoterapia majoră",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Pachet 10 ședințe autohemoterapie majoră",
+          "preturi": [
+            {
+              "valoare": 2800,
+              "moneda": "RON",
+              "text": "2800 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Saună cu ozon",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Pachet 10 sesiuni saună cu ozon",
+          "preturi": [
+            {
+              "valoare": 2800,
+              "moneda": "RON",
+              "text": "2800 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Insuflație vaginală cu ozon",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Pachet 10 sesiuni insuflație vaginală cu ozon",
+          "preturi": [
+            {
+              "valoare": 1800,
+              "moneda": "RON",
+              "text": "1800 LEI",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "CONSULTAȚII",
+      "servicii": [
+        {
+          "nume": "Consultații antiaging medic primar (include determinarea vârstei biologice)",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultație antiaging medic specialist (include determinarea vârstei biologice)",
+          "preturi": [
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultație ozonoterapie",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultație terapii i.v. medic specialist (include analiza de sange – PCR – test inflamație)",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultație estetică Medic Specialist Dermatologie",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consultație estetică Medic Primar Chirurgie Plastică",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TMS – Stimulare Magnetică Transcraniană",
+      "servicii": [
+        {
+          "nume": "Consultație TMS – dr. Adrian Stănescu, medic primar gerontolog, specialist TMS, director medical și coordonator departament TMS",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 RON",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Ședință TMS durează 20–30 minute în funcție de program",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 RON",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Consolidare TMS",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 RON",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Program TMS Depresie – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 1900,
+              "moneda": "RON",
+              "text": "1900 RON",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Program TMS Burnout – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 1900,
+              "moneda": "RON",
+              "text": "1900 RON",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "Program TMS Anxietate – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "preturi": [
+            {
+              "valoare": 1900,
+              "moneda": "RON",
+              "text": "1900 RON",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TERAPII INTRAVENOASE",
+      "servicii": [
+        {
+          "nume": "MULTIVITAMIN REGENERATIVE",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MULTIVAMIN & MINERAL THERAPY",
+          "preturi": [
+            {
+              "valoare": 440,
+              "moneda": "RON",
+              "text": "440 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA COCKTAIL ENERGY (CEO)",
+          "preturi": [
+            {
+              "valoare": 440,
+              "moneda": "RON",
+              "text": "440 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA HEPATOPROTECTOR VITAMIN",
+          "preturi": [
+            {
+              "valoare": 550,
+              "moneda": "RON",
+              "text": "550 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA IMUNOPROTECT THERAPY",
+          "preturi": [
+            {
+              "valoare": 360,
+              "moneda": "RON",
+              "text": "360 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA BURNOUT THERAPY",
+          "preturi": [
+            {
+              "valoare": 380,
+              "moneda": "RON",
+              "text": "380 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA ANTIOXIDANT THERAPY",
+          "preturi": [
+            {
+              "valoare": 370,
+              "moneda": "RON",
+              "text": "370 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA ENERGETIC BOOST ANTIOXIDANT",
+          "preturi": [
+            {
+              "valoare": 470,
+              "moneda": "RON",
+              "text": "470 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA IMUNOBOOST ANTIOXIDANT",
+          "preturi": [
+            {
+              "valoare": 535,
+              "moneda": "RON",
+              "text": "535 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "GLUTATION DETOX BOOST",
+          "preturi": [
+            {
+              "valoare": 380,
+              "moneda": "RON",
+              "text": "380 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "VITAL VITAMIN C 1,5 g",
+          "preturi": [
+            {
+              "valoare": 200,
+              "moneda": "RON",
+              "text": "200 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "VITAL VITAMIN C 3 g",
+          "preturi": [
+            {
+              "valoare": 300,
+              "moneda": "RON",
+              "text": "300 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "VITAL VITAMIN C 7,5 g",
+          "preturi": [
+            {
+              "valoare": 480,
+              "moneda": "RON",
+              "text": "480 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "ESSENTIAL AMINOACIDS INFUSION",
+          "preturi": [
+            {
+              "valoare": 350,
+              "moneda": "RON",
+              "text": "350 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "ALPHA LYPOIC ACID ACTION",
+          "preturi": [
+            {
+              "valoare": 210,
+              "moneda": "RON",
+              "text": "210 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "GEROVITAL THERAPY (2 teste + 10 injecții)",
+          "preturi": [
+            {
+              "valoare": 1000,
+              "moneda": "RON",
+              "text": "1000 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "COENZYME Q10 METABOLIC REGENERATIVE",
+          "preturi": [
+            {
+              "valoare": 190,
+              "moneda": "RON",
+              "text": "190 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "ARGININ THERAPY",
+          "preturi": [
+            {
+              "valoare": 250,
+              "moneda": "RON",
+              "text": "250 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MAGNESIUM ACCES",
+          "preturi": [
+            {
+              "valoare": 180,
+              "moneda": "RON",
+              "text": "180 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "VITAMIN C BOOST 7,5 gr.",
+          "preturi": [
+            {
+              "valoare": 480,
+              "moneda": "RON",
+              "text": "480 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "ZINC – SULPHATE RESERVOIR",
+          "preturi": [
+            {
+              "valoare": 230,
+              "moneda": "RON",
+              "text": "230 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "MOA LONGEVITY BOOST (conține NAD+)",
+          "preturi": [
+            {
+              "valoare": 600,
+              "moneda": "RON",
+              "text": "600 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "PERFECT ANTIOXIDANT (conține Resveratrol)",
+          "preturi": [
+            {
+              "valoare": 500,
+              "moneda": "RON",
+              "text": "500 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "SUPERMIND (conține Fosfatidilcolină)",
+          "preturi": [
+            {
+              "valoare": 480,
+              "moneda": "RON",
+              "text": "480 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "PERFECT ACTION (conține Seleniu)",
+          "preturi": [
+            {
+              "valoare": 280,
+              "moneda": "RON",
+              "text": "280 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "VITAMIN D DEPOT (Tratament injectabil cu vitamina D 3- 100000 U.I.)",
+          "preturi": [
+            {
+              "valoare": 150,
+              "moneda": "RON",
+              "text": "150 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "GLUTATION THERAPY",
+          "preturi": [
+            {
+              "valoare": 220,
+              "moneda": "RON",
+              "text": "220 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "SEROTONINA THERAPY",
+          "preturi": [
+            {
+              "valoare": 150,
+              "moneda": "RON",
+              "text": "150 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "BEAUTY ELIXIR BY MOA",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "SKIN BRIGHT SHOT BY MOA",
+          "preturi": [
+            {
+              "valoare": 800,
+              "moneda": "RON",
+              "text": "800 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "APHRODITE'S SECRET",
+          "preturi": [
+            {
+              "valoare": 750,
+              "moneda": "RON",
+              "text": "750 LEI",
+              "tip": "preț"
+            }
+          ]
+        },
+        {
+          "nume": "GLOW UP BY MOA",
+          "preturi": [
+            {
+              "valoare": 750,
+              "moneda": "RON",
+              "text": "750 LEI",
+              "tip": "preț"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TERAPIA VIELIGHT",
+      "servicii": [
+        {
+          "nume": "Terapia Vielight",
+          "preturi": [
+            {
+              "valoare": 150,
+              "moneda": "RON",
+              "text": "150 LEI PER SEDINTA",
+              "tip": "ședință"
+            },
+            {
+              "valoare": 400,
+              "moneda": "RON",
+              "text": "400 LEI PACHET 3 SEDINTE",
+              "tip": "pachet 3 sedinte"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "oferte": [
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "TOXINA BOTULINICA 3 ZONE",
+      "detalii": null,
+      "pret": 1099,
+      "pretInitial": 1500,
+      "discountProcent": 27,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "SCULPTRA 1 Fiola",
+      "detalii": null,
+      "pret": 2500,
+      "pretInitial": 3000,
+      "discountProcent": 17,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "REJURAN – POLINUCLEOTIDE (1 mL)",
+      "detalii": null,
+      "pret": 1500,
+      "pretInitial": 1600,
+      "discountProcent": 6,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "Blefaroplastie Superioara",
+      "detalii": null,
+      "pret": 5000,
+      "pretInitial": 7000,
+      "discountProcent": 29,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "Pachet Dermalinfusion + Venus Legacy (Facial)",
+      "detalii": "1 SEDINTA",
+      "pret": 499,
+      "pretInitial": 900,
+      "discountProcent": 45,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "1 SEDINTA TRATAMENT DERMALINFUSION (Facial)",
+      "detalii": "1 SEDINTA",
+      "pret": 399,
+      "pretInitial": 600,
+      "discountProcent": 34,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "AUGMENTARE BUZE",
+      "detalii": "Cu Acid Hialuronic 1 mL Stylage",
+      "pret": 1250,
+      "pretInitial": 1400,
+      "discountProcent": 11,
+      "moneda": "RON"
+    },
+    {
+      "grup": "OFERTELE LUNII",
+      "nume": "AUGMENTARE PENIS",
+      "detalii": "Cu Acid Hialuronic 10 mL",
+      "pret": 3500,
+      "pretInitial": 4000,
+      "discountProcent": 13,
+      "moneda": "RON"
+    },
+    {
+      "grup": "Terapii intravenoase by Oxxygene",
+      "nume": "GLUTATION THERAPY",
+      "detalii": null,
+      "pret": 220,
+      "pretInitial": 300,
+      "discountProcent": 27,
+      "moneda": "RON"
+    },
+    {
+      "grup": "Terapii intravenoase by Oxxygene",
+      "nume": "NAD+ LONGEVITY BOOST",
+      "detalii": null,
+      "pret": 600,
+      "pretInitial": 900,
+      "discountProcent": 33,
+      "moneda": "RON"
+    },
+    {
+      "grup": "Oferte Epilare Definitiva SplendorX",
+      "nume": "Full Body | 6 zone la alegere",
+      "detalii": null,
+      "pret": 999,
+      "pretInitial": 2000,
+      "discountProcent": 50,
+      "moneda": "RON"
+    },
+    {
+      "grup": "Oferte Epilare Definitiva SplendorX",
+      "nume": "Gambă | Axilă | Inghinal integral | Linie bikini | Interfesier",
+      "detalii": null,
+      "pret": 500,
+      "pretInitial": 1000,
+      "discountProcent": 50,
+      "moneda": "RON"
+    },
+    {
+      "grup": "Oferte Epilare Definitiva SplendorX",
+      "nume": "Axilă | Inghinal integral | Linie bikini | Interfesier",
+      "detalii": null,
+      "pret": 350,
+      "pretInitial": 700,
+      "discountProcent": 50,
+      "moneda": "RON"
+    }
+  ],
+  "schemaOrg": {
+    "blocuri": 6,
+    "tipuri": [
+      "Place",
+      "MedicalClinic+Organization",
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "Service",
+      "MedicalClinic"
+    ],
+    "servicii": [
+      {
+        "nume": "TMS - Stimulare Magnetica Transcraniana",
+        "url": null,
+        "oferte": 6
+      },
+      {
+        "nume": "Injectari cu acid hialuronic",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+        "oferte": 7
+      },
+      {
+        "nume": "Corecție riduri de expresie cu Botox",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+        "oferte": 3
+      },
+      {
+        "nume": "Augmentare buze cu acid hialuronic",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+        "oferte": 3
+      }
+    ],
+    "raw": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Place",
+            "@id": "https://moaclinic.ro/#place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Str. Ștefan Mihăileanu 35",
+              "addressLocality": "București",
+              "addressRegion": "București",
+              "addressCountry": "RO"
+            }
+          },
+          {
+            "@type": [
+              "MedicalClinic",
+              "Organization"
+            ],
+            "@id": "https://moaclinic.ro/#organization",
+            "name": "MOA Regenerative by Oxxygene",
+            "url": "https://moaclinic.ro",
+            "email": "office@moaclinic.ro",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Str. Ștefan Mihăileanu 35",
+              "addressLocality": "București",
+              "addressRegion": "București",
+              "addressCountry": "RO"
+            },
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://moaclinic.ro/#logo",
+              "url": "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+              "contentUrl": "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+              "caption": "MOA Regenerative by Oxxygene",
+              "inLanguage": "ro-RO",
+              "width": "1338",
+              "height": "1658"
+            },
+            "openingHours": [
+              "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+            ],
+            "description": "lege Moa Regenerative by Oxxygene - clinica ta premium pentru estetică din București, chirurgie și regenerare celulară.",
+            "location": {
+              "@id": "https://moaclinic.ro/#place"
+            },
+            "image": {
+              "@id": "https://moaclinic.ro/#logo"
+            },
+            "telephone": "+40‑743‑056‑605"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://moaclinic.ro/#website",
+            "url": "https://moaclinic.ro",
+            "name": "MOA Regenerative by Oxxygene",
+            "publisher": {
+              "@id": "https://moaclinic.ro/#organization"
+            },
+            "inLanguage": "ro-RO",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://moaclinic.ro/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://moaclinic.ro/wp-content/uploads/2024/09/3.svg",
+            "url": "https://moaclinic.ro/wp-content/uploads/2024/09/3.svg",
+            "width": "200",
+            "height": "200",
+            "inLanguage": "ro-RO"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://moaclinic.ro/#webpage",
+            "url": "https://moaclinic.ro/",
+            "name": "Estetică, Chirurgie si Regenerare Celulara | Bucuresti",
+            "datePublished": "2024-08-23T15:26:45+00:00",
+            "dateModified": "2026-06-24T16:41:25+00:00",
+            "about": {
+              "@id": "https://moaclinic.ro/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://moaclinic.ro/#website"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://moaclinic.ro/wp-content/uploads/2024/09/3.svg"
+            },
+            "inLanguage": "ro-RO"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://moaclinic.ro/author/moaclinic/",
+            "name": "Dr. Adrian Stănescu",
+            "url": "https://moaclinic.ro/author/moaclinic/",
+            "image": {
+              "@type": "ImageObject",
+              "@id": "https://secure.gravatar.com/avatar/50448c87a569ab3331191c110cd6eb3f2da13da5c1e631582718ba588d7bcc30?s=96&amp;d=mm&amp;r=g",
+              "url": "https://secure.gravatar.com/avatar/50448c87a569ab3331191c110cd6eb3f2da13da5c1e631582718ba588d7bcc30?s=96&amp;d=mm&amp;r=g",
+              "caption": "Dr. Adrian Stănescu",
+              "inLanguage": "ro-RO"
+            },
+            "sameAs": [
+              "https://moaclinic.ro"
+            ],
+            "worksFor": {
+              "@id": "https://moaclinic.ro/#organization"
+            }
+          },
+          {
+            "@type": "Article",
+            "headline": "Estetică, Chirurgie si Regenerare Celulara | Bucuresti",
+            "datePublished": "2024-08-23T15:26:45+00:00",
+            "dateModified": "2026-06-24T16:41:25+00:00",
+            "author": {
+              "@id": "https://moaclinic.ro/author/moaclinic/",
+              "name": "Dr. Adrian Stănescu"
+            },
+            "publisher": {
+              "@id": "https://moaclinic.ro/#organization"
+            },
+            "description": "Alege Moa Regenerative by Oxxygene - clinica ta premium pentru estetică din București, chirurgie și regenerare celulară.",
+            "name": "Estetică, Chirurgie si Regenerare Celulara | Bucuresti",
+            "@id": "https://moaclinic.ro/#richSnippet",
+            "isPartOf": {
+              "@id": "https://moaclinic.ro/#webpage"
+            },
+            "image": {
+              "@id": "https://moaclinic.ro/wp-content/uploads/2024/09/3.svg"
+            },
+            "inLanguage": "ro-RO",
+            "mainEntityOfPage": {
+              "@id": "https://moaclinic.ro/#webpage"
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+          "@type": "MedicalOrganization",
+          "name": "MOA Clinic",
+          "url": "https://www.moaclinic.ro"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "TMS - Stimulare Magnetica Transcraniana",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Consultatie TMS – dr. Adrian Stanescu",
+              "description": "Consultatie TMS cu medic primar gerontolog, specialist TMS, director medical",
+              "price": "350",
+              "priceCurrency": "RON"
+            },
+            {
+              "@type": "Offer",
+              "name": "Sedinta TMS",
+              "description": "Sedinta de stimulare magnetica transcraniana, 20–30 minute",
+              "price": "250",
+              "priceCurrency": "RON"
+            },
+            {
+              "@type": "Offer",
+              "name": "Consolidare TMS",
+              "price": "250",
+              "priceCurrency": "RON"
+            },
+            {
+              "@type": "Offer",
+              "name": "Program TMS Depresie – Pachet 10 sedinte + EKG",
+              "price": "1900",
+              "priceCurrency": "RON"
+            },
+            {
+              "@type": "Offer",
+              "name": "Program TMS Burnout – Pachet 10 sedinte + EKG",
+              "price": "1900",
+              "priceCurrency": "RON"
+            },
+            {
+              "@type": "Offer",
+              "name": "Program TMS Anxietate – Pachet 10 sedinte + EKG",
+              "price": "1900",
+              "priceCurrency": "RON"
+            }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Injectari cu acid hialuronic",
+        "description": "Proceduri estetice cu acid hialuronic pentru volumizare buze, umplere riduri si contur facial realizate la Moa Clinic Bucuresti.",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+        "areaServed": {
+          "@type": "City",
+          "name": "Bucuresti"
+        },
+        "provider": {
+          "@type": "MedicalBusiness",
+          "name": "Moa Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bucuresti",
+            "addressCountry": "RO"
+          }
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Contur buze / volum buze – 1 ml Stylage",
+            "price": "1200",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Contur buze – 1 ml Restylane / Juvederm",
+            "price": "1500",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Juvederm Ultra Smile 0.55 ml",
+            "price": "1150",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Umplere riduri fine sau nazogeniene",
+            "price": "1300",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Umplere riduri profunde / pometi / contur facial",
+            "price": "1400",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Tratament cearcane cu acid hialuronic Jalupro",
+            "price": "1000",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Topire acid hialuronic – hialuronidaza",
+            "price": "700",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Corecție riduri de expresie cu Botox",
+        "description": "Procedură minim invazivă pentru corectarea ridurilor de expresie cu Botox, realizată la Moa Clinic București.",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+        "areaServed": {
+          "@type": "City",
+          "name": "București"
+        },
+        "provider": {
+          "@type": "MedicalBusiness",
+          "name": "Moa Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "București",
+            "addressCountry": "RO"
+          }
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Corecție riduri de expresie - 1 zonă",
+            "price": "750",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Corecție riduri de expresie - 2 zone",
+            "price": "950",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Corecție riduri de expresie - 3 zone",
+            "price": "999",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Augmentare buze cu acid hialuronic",
+        "description": "Procedură minim invazivă de contur și volumizare a buzelor cu acid hialuronic realizată la Moa Clinic București.",
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "București"
+        },
+        "provider": {
+          "@type": "MedicalBusiness",
+          "name": "Moa Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "București",
+            "addressCountry": "RO"
+          }
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Contur sau volum buze - 1 mL Stylage",
+            "price": "1200",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Contur sau volum buze - 1 mL Restylane / Juvederm",
+            "price": "1500",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Augmentare buze - 0.55 mL Juvederm Ultra Smile",
+            "price": "1150",
+            "priceCurrency": "RON",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "MOA Regenerative by Oxxygene",
+        "url": "https://moaclinic.ro/",
+        "logo": "https://moaclinic.ro/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg",
+        "description": "Alege Moa Regenerative by Oxxygene - clinica ta premium pentru estetică din București, chirurgie și regenerare celulară.",
+        "telephone": "+40‑743‑056‑605",
+        "email": "office@moaclinic.ro",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Str. Ștefan Mihăileanu 35",
+          "addressLocality": "București",
+          "addressCountry": "RO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.43,
+          "longitude": 26.11
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "19:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "60"
+        },
+        "medicalSpecialty": [
+          "Dermatology",
+          "PlasticSurgery",
+          "Gerontology"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicii MOA",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Consultație dermatoestetică"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Injectări acid hialuronic"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Epilare definitivă Splendor X"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tratament facial Venus Viva"
+              }
+            }
+          ]
+        },
+        "sameAs": [
+          "https://www.facebook.com/MoaClinicByOxxygene/",
+          "https://www.instagram.com/moaclinic/"
+        ]
+      }
+    ]
+  },
+  "continut": {
+    "pagini": [
+      {
+        "url": "https://moaclinic.ro/",
+        "lastmod": "2026-06-24T16:41:25+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/abonamente/",
+        "lastmod": "2026-09-09T20:35:29+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+        "lastmod": "2026-09-09T20:30:18+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/echipa/",
+        "lastmod": "2026-06-18T18:22:59+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/contact/",
+        "lastmod": "2026-06-05T11:59:06+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
+        "lastmod": "2026-03-25T11:39:08+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/dermalinfusion/",
+        "lastmod": "2026-03-25T11:38:05+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+        "lastmod": "2026-03-25T11:33:32+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+        "lastmod": "2026-03-25T11:07:18+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/glutation/",
+        "lastmod": "2026-03-19T10:12:55+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-corporale/",
+        "lastmod": "2026-03-19T10:11:47+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/preturi/",
+        "lastmod": "2026-03-18T15:50:32+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
+        "lastmod": "2026-02-20T12:05:01+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/documente-legale-clinica-moa/",
+        "lastmod": "2026-02-20T12:04:27+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/terapia-nad/",
+        "lastmod": "2026-02-07T15:53:42+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/",
+        "lastmod": "2026-02-03T07:23:42+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/",
+        "lastmod": "2026-02-03T07:23:17+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+        "lastmod": "2026-02-03T07:22:20+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/",
+        "lastmod": "2026-02-03T07:21:48+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/",
+        "lastmod": "2026-02-03T07:20:51+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/",
+        "lastmod": "2026-02-03T07:20:22+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
+        "lastmod": "2026-02-03T07:19:38+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/",
+        "lastmod": "2026-02-03T07:19:05+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+        "lastmod": "2026-02-03T07:18:12+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/",
+        "lastmod": "2026-02-03T07:15:36+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/",
+        "lastmod": "2026-02-03T07:15:08+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/",
+        "lastmod": "2026-02-02T15:09:44+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-microchirurgicale/",
+        "lastmod": "2026-02-02T15:08:32+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/",
+        "lastmod": "2026-02-02T14:08:08+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
+        "lastmod": "2026-02-02T14:07:14+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/",
+        "lastmod": "2026-02-02T14:06:16+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/",
+        "lastmod": "2026-02-02T14:05:19+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-cosmetologice/",
+        "lastmod": "2026-02-02T14:03:47+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+        "lastmod": "2026-02-02T13:46:13+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/",
+        "lastmod": "2026-02-02T13:43:14+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/laser-vascular/",
+        "lastmod": "2026-02-02T13:40:18+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+        "lastmod": "2026-02-02T13:39:52+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/",
+        "lastmod": "2026-02-02T13:30:03+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
+        "lastmod": "2026-02-02T10:32:07+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-dermatoestetica-dermatologie/",
+        "lastmod": "2026-02-02T10:31:46+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-chirurgie-plastica/",
+        "lastmod": "2026-02-02T10:31:19+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-antiaging/",
+        "lastmod": "2026-02-02T10:31:00+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/blefaroplastie/",
+        "lastmod": "2026-01-15T08:34:35+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/eliminare-papiloame/",
+        "lastmod": "2026-01-15T08:34:20+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/nevi-pigmentari/",
+        "lastmod": "2026-01-15T08:33:56+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+        "lastmod": "2026-01-09T13:10:06+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/jalupro-young-eye/",
+        "lastmod": "2025-12-04T14:38:56+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/",
+        "lastmod": "2025-11-22T14:43:16+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+        "lastmod": "2025-11-22T14:42:52+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/sitemap/",
+        "lastmod": "2025-11-22T14:12:08+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/venus-legacy/",
+        "lastmod": "2025-09-05T17:18:28+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/",
+        "lastmod": "2025-07-29T13:45:03+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/confirmare/",
+        "lastmod": "2024-09-17T08:36:22+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/blog/",
+        "lastmod": "2024-09-15T20:53:57+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/echipa/dr-adrian-stanescu/",
+        "lastmod": "2024-09-08T19:26:29+00:00"
+      },
+      {
+        "url": "https://moaclinic.ro/terapii-regenerative/",
+        "lastmod": "2024-09-08T19:05:27+00:00"
+      }
+    ],
+    "articoleBlog": [
+      {
+        "url": "https://moaclinic.ro/tratament-riduri-profunde/",
+        "lastmod": "2026-03-26T15:15:02+00:00",
+        "titlu": "Tratament riduri profunde"
+      },
+      {
+        "url": "https://moaclinic.ro/glutation-beneficii-si-contraindicatii-ce-este/",
+        "lastmod": "2026-03-26T10:55:39+00:00",
+        "titlu": "Glutation beneficii si contraindicatii ce este"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-pe-gat-tratament-cu-botox/",
+        "lastmod": "2026-03-26T10:45:28+00:00",
+        "titlu": "Riduri pe gat tratament cu botox"
+      },
+      {
+        "url": "https://moaclinic.ro/hialuronidaza/",
+        "lastmod": "2026-03-19T10:34:26+00:00",
+        "titlu": "Hialuronidaza"
+      },
+      {
+        "url": "https://moaclinic.ro/buze-uscate/",
+        "lastmod": "2026-03-19T10:33:15+00:00",
+        "titlu": "Buze uscate"
+      },
+      {
+        "url": "https://moaclinic.ro/pungi-sub-ochi/",
+        "lastmod": "2026-03-19T10:31:56+00:00",
+        "titlu": "Pungi sub ochi"
+      },
+      {
+        "url": "https://moaclinic.ro/ce-inseamna-prp/",
+        "lastmod": "2026-03-19T10:29:33+00:00",
+        "titlu": "Ce inseamna prp"
+      },
+      {
+        "url": "https://moaclinic.ro/cearcane/",
+        "lastmod": "2026-03-04T10:02:36+00:00",
+        "titlu": "Cearcane"
+      },
+      {
+        "url": "https://moaclinic.ro/ptoza-palpebrala/",
+        "lastmod": "2026-03-04T09:50:37+00:00",
+        "titlu": "Ptoza palpebrala"
+      },
+      {
+        "url": "https://moaclinic.ro/tratament-burnout-tms/",
+        "lastmod": "2026-03-03T12:56:15+00:00",
+        "titlu": "Tratament burnout tms"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-in-jurul-gurii/",
+        "lastmod": "2026-02-24T13:17:25+00:00",
+        "titlu": "Riduri in jurul gurii"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-intre-sprancene/",
+        "lastmod": "2026-02-24T13:16:51+00:00",
+        "titlu": "Riduri intre sprancene"
+      },
+      {
+        "url": "https://moaclinic.ro/ridurile-fumatorului/",
+        "lastmod": "2026-02-24T13:16:20+00:00",
+        "titlu": "Ridurile fumatorului"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-marioneta/",
+        "lastmod": "2026-02-24T13:14:56+00:00",
+        "titlu": "Riduri marioneta"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-de-expresie/",
+        "lastmod": "2026-02-24T13:13:47+00:00",
+        "titlu": "Riduri de expresie"
+      },
+      {
+        "url": "https://moaclinic.ro/acid-in-buze-exagerat/",
+        "lastmod": "2026-02-20T11:15:32+00:00",
+        "titlu": "Acid in buze exagerat"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-laba-gastei/",
+        "lastmod": "2026-02-20T11:10:27+00:00",
+        "titlu": "Riduri laba gastei"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri-frunte/",
+        "lastmod": "2026-02-20T11:09:00+00:00",
+        "titlu": "Riduri frunte"
+      },
+      {
+        "url": "https://moaclinic.ro/riduri/",
+        "lastmod": "2026-02-20T11:05:40+00:00",
+        "titlu": "Riduri"
+      },
+      {
+        "url": "https://moaclinic.ro/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+        "lastmod": "2026-02-09T16:23:10+00:00",
+        "titlu": "Tot ce trebuie sa stii despre consultarea nutrigenomica descopera secretele genetice ale sanatatii tale"
+      },
+      {
+        "url": "https://moaclinic.ro/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
+        "lastmod": "2026-02-09T16:23:09+00:00",
+        "titlu": "Cum sa ti imbunatatesti sanatatea si bunastarea cu un tratament regenerativ perfuzabil cu glutation"
+      },
+      {
+        "url": "https://moaclinic.ro/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+        "lastmod": "2026-02-09T16:23:08+00:00",
+        "titlu": "Cele mai eficiente metode de combinare a tratamentelor venus legacy si detoxifierii intravenoase pentru un corp perfect"
+      },
+      {
+        "url": "https://moaclinic.ro/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
+        "lastmod": "2026-02-09T16:23:08+00:00",
+        "titlu": "Nadh cheia catre rezolvarea problemei de infertilitate"
+      },
+      {
+        "url": "https://moaclinic.ro/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
+        "lastmod": "2026-02-09T16:23:07+00:00",
+        "titlu": "Beneficiile uimitoare ale saunei cu ozon pentru antiaging ul intern"
+      },
+      {
+        "url": "https://moaclinic.ro/acid-hialuronic-in-buze-cat-dureaza/",
+        "lastmod": "2026-02-09T16:23:06+00:00",
+        "titlu": "Acid hialuronic in buze cat dureaza"
+      },
+      {
+        "url": "https://moaclinic.ro/efecte-botox/",
+        "lastmod": "2026-02-09T16:23:06+00:00",
+        "titlu": "Efecte botox"
+      },
+      {
+        "url": "https://moaclinic.ro/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+        "lastmod": "2026-02-09T16:23:05+00:00",
+        "titlu": "Ce nu e permis dupa injectarea cu botox"
+      },
+      {
+        "url": "https://moaclinic.ro/cea-mai-buna-toxina-botulinica/",
+        "lastmod": "2026-02-09T16:23:04+00:00",
+        "titlu": "Cea mai buna toxina botulinica"
+      },
+      {
+        "url": "https://moaclinic.ro/forme-de-buze-cu-acid-hialuronic/",
+        "lastmod": "2026-02-09T16:23:04+00:00",
+        "titlu": "Forme de buze cu acid hialuronic"
+      },
+      {
+        "url": "https://moaclinic.ro/prima-injectare-cu-acid-hialuronic-in-buze/",
+        "lastmod": "2026-02-09T16:23:03+00:00",
+        "titlu": "Prima injectare cu acid hialuronic in buze"
+      },
+      {
+        "url": "https://moaclinic.ro/russian-lips-vs-butterfly-lips/",
+        "lastmod": "2026-02-09T16:23:02+00:00",
+        "titlu": "Russian lips vs butterfly lips"
+      },
+      {
+        "url": "https://moaclinic.ro/adevarul-despre-glutation/",
+        "lastmod": "2026-02-09T16:23:00+00:00",
+        "titlu": "Adevarul despre glutation"
+      },
+      {
+        "url": "https://moaclinic.ro/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+        "lastmod": "2026-02-09T16:23:00+00:00",
+        "titlu": "De ce nu imi tine acidul hialuronic"
+      },
+      {
+        "url": "https://moaclinic.ro/vergeturi-pe-sani-2/",
+        "lastmod": "2026-02-09T16:22:59+00:00",
+        "titlu": "Vergeturi pe sani"
+      },
+      {
+        "url": "https://moaclinic.ro/alunite-rosii/",
+        "lastmod": "2026-02-09T16:22:58+00:00",
+        "titlu": "Alunite rosii"
+      },
+      {
+        "url": "https://moaclinic.ro/unde-se-pune-botox/",
+        "lastmod": "2026-02-09T16:22:58+00:00",
+        "titlu": "Unde se pune botox"
+      },
+      {
+        "url": "https://moaclinic.ro/epilat-interfesier-ce-inseamna/",
+        "lastmod": "2026-02-09T16:22:57+00:00",
+        "titlu": "Epilat interfesier ce inseamna"
+      },
+      {
+        "url": "https://moaclinic.ro/epilare-definitiva-pareri/",
+        "lastmod": "2026-02-09T16:22:57+00:00",
+        "titlu": "Epilare definitiva pareri"
+      },
+      {
+        "url": "https://moaclinic.ro/bunny-lines/",
+        "lastmod": "2026-02-09T16:22:53+00:00",
+        "titlu": "Bunny lines"
+      },
+      {
+        "url": "https://moaclinic.ro/terapii-intravenoase/",
+        "lastmod": "2026-02-09T16:22:52+00:00",
+        "titlu": "Terapii intravenoase"
+      },
+      {
+        "url": "https://moaclinic.ro/tratament-cearcane/",
+        "lastmod": "2026-02-09T16:22:51+00:00",
+        "titlu": "Tratament cearcane"
+      },
+      {
+        "url": "https://moaclinic.ro/nad-perfuzabil/",
+        "lastmod": "2026-02-09T16:22:50+00:00",
+        "titlu": "Nad perfuzabil"
+      },
+      {
+        "url": "https://moaclinic.ro/terapia-vampir-pareri/",
+        "lastmod": "2026-02-09T16:22:49+00:00",
+        "titlu": "Terapia vampir pareri"
+      },
+      {
+        "url": "https://moaclinic.ro/recomandari-dupa-botox/",
+        "lastmod": "2026-02-09T16:22:46+00:00",
+        "titlu": "Recomandari dupa botox"
+      },
+      {
+        "url": "https://moaclinic.ro/recuperare-dupa-dermapen/",
+        "lastmod": "2026-02-09T16:22:46+00:00",
+        "titlu": "Recuperare dupa dermapen"
+      },
+      {
+        "url": "https://moaclinic.ro/pori-dilatati/",
+        "lastmod": "2026-02-09T16:22:44+00:00",
+        "titlu": "Pori dilatati"
+      }
+    ],
+    "linkuriHomepage": [
+      {
+        "url": "https://moaclinic.ro/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/feed/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/comments/feed/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/"
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-corporale/venus-legacy/",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/venus-legacy/"
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-cosmetologice/dermalinfusion/",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/dermalinfusion/"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/"
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/terapii-regenerative/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/sistemica-autohemoterapia-majora/",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/ozonoterapie/autohemoterapia/"
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-microchirurgicale/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-cosmetologice/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/abonamente/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/contact/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/sitemap/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/fotobiomodulare-vielight/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-corporale",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/tratamente-corporale/"
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/tratamente-corporale",
+        "status": 301,
+        "redirect": "https://moaclinic.ro/tratamente-corporale/"
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-antiaging/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-chirurgie-plastica/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-dermatoestetica-dermatologie/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/eliminare-papiloame/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/nevi-pigmentari/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/blefaroplastie/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/jalupro-young-eye/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/microneedeling/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/dermalinfusion/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/glutation/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/terapia-nad/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/tratamente-corporale/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/laser-terapie/laser-vascular/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/venus-legacy/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/preturi/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/echipa/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/blog/",
+        "status": 200
+      },
+      {
+        "url": "https://moaclinic.ro/documente-legale-clinica-moa/",
+        "status": 200
+      }
+    ]
+  },
+  "inconsistente": [
+    {
+      "severitate": "mare",
+      "zona": "Program",
+      "descriere": "Două blocuri schema.org declară programe diferite.",
+      "valori": {
+        "Rank Math (Organization)": "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00",
+        "Schema custom (MedicalClinic)": "Monday,Tuesday,Wednesday,Thursday,Friday 09:00-19:00"
+      }
+    },
+    {
+      "severitate": "mare",
+      "zona": "Echipă",
+      "descriere": "Echipa afișată pe homepage diferă de pagina /echipa/.",
+      "valori": {
+        "doar pe homepage": [
+          "Dr. Romana Cristina Manescu Obreja",
+          "Dr. Vali Dijmarescu"
+        ],
+        "doar pe /echipa/": [
+          "Dr. Andrei Rugina",
+          "Mădălina Olteanu"
+        ]
+      }
+    },
+    {
+      "severitate": "mare",
+      "zona": "Prețuri",
+      "descriere": "Prețurile din schema Service (homepage) nu corespund cu /preturi/.",
+      "valori": {
+        "diferente": [
+          {
+            "oferta": "Corecție riduri de expresie - 1 zonă",
+            "schema": 750,
+            "preturi": 800
+          },
+          {
+            "oferta": "Corecție riduri de expresie - 2 zone",
+            "schema": 950,
+            "preturi": 999
+          },
+          {
+            "oferta": "Corecție riduri de expresie - 3 zone",
+            "schema": 999,
+            "preturi": 1099
+          },
+          {
+            "oferta": "Contur buze / volum buze – 1 ml Stylage",
+            "schema": 1200,
+            "preturi": 1250
+          },
+          {
+            "oferta": "Umplere riduri fine sau nazogeniene",
+            "schema": 1300,
+            "preturi": 1400
+          },
+          {
+            "oferta": "Umplere riduri profunde / pometi / contur facial",
+            "schema": 1400,
+            "preturi": 1500
+          },
+          {
+            "oferta": "Tratament cearcane cu acid hialuronic Jalupro",
+            "schema": 1000,
+            "preturi": 1200
+          }
+        ]
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Recenzii",
+      "descriere": "Numărul de recenzii din schema nu corespunde cu widgetul Trustindex/Google.",
+      "valori": {
+        "schema aggregateRating.reviewCount": "60",
+        "Trustindex (homepage)": "91"
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Social",
+      "descriere": "Pe homepage apar mai multe URL-uri Facebook diferite.",
+      "valori": {
+        "facebook": [
+          "https://www.facebook.com/profile.php?id=61565584852692",
+          "https://www.facebook.com/MoaClinicByOxxygene/"
+        ]
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Nume brand",
+      "descriere": "Brandul apare sub mai multe denumiri în schema și conținut.",
+      "valori": {
+        "variante": [
+          "MOA Regenerative by Oxxygene",
+          "MOA Clinic",
+          "Moa Clinic",
+          "MOA by Oxxygene"
+        ]
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Dr. Adrian Stănescu",
+      "descriere": "Persoana are mai multe URL-uri de profil (autor schema vs link „Vezi profilul” vs pagina din echipă).",
+      "valori": {
+        "url": [
+          "https://moaclinic.ro/author/moaclinic/",
+          "https://moaclinic.ro/author/dr-adrian-stanescu/",
+          "https://moaclinic.ro/echipa/dr-adrian-stanescu/"
+        ]
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Linkuri",
+      "descriere": "Linkuri interne din homepage care trec printr-un redirect.",
+      "valori": {
+        "linkuri": [
+          "https://moaclinic.ro/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/ → https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+          "https://moaclinic.ro/tratamente-corporale/venus-legacy/ → https://moaclinic.ro/venus-legacy/",
+          "https://moaclinic.ro/tratamente-cosmetologice/dermalinfusion/ → https://moaclinic.ro/dermalinfusion/",
+          "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze → https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+          "https://moaclinic.ro/ozonoterapie/sistemica-autohemoterapia-majora/ → https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+          "https://moaclinic.ro/tratamente-corporale → https://moaclinic.ro/tratamente-corporale/",
+          "https://moaclinic.ro/consultatii/tratamente-corporale → https://moaclinic.ro/tratamente-corporale/"
+        ]
+      }
+    },
+    {
+      "severitate": "medie",
+      "zona": "Conținut",
+      "descriere": "Butoane „Vezi detalii” fără link pe homepage.",
+      "valori": {
+        "sectiuni": [
+          "Terapii antioxidante"
+        ]
+      }
+    },
+    {
+      "severitate": "mică",
+      "zona": "Schema",
+      "descriere": "Tipul entității furnizor diferă între blocurile Service (și nu e legat prin @id de organizația principală).",
+      "valori": {
+        "tipuri": [
+          "MedicalClinic",
+          "Organization",
+          "MedicalOrganization",
+          "MedicalBusiness"
+        ],
+        "url": [
+          "https://www.moaclinic.ro",
+          "https://moaclinic.ro"
+        ]
+      }
+    },
+    {
+      "severitate": "mică",
+      "zona": "Telefon",
+      "descriere": "Telefonul din schema conține cratime non-breaking (U+2011) în loc de format E.164.",
+      "valori": {
+        "schema": "+40‑743‑056‑605",
+        "recomandat": "+40743056605"
+      }
+    },
+    {
+      "severitate": "mică",
+      "zona": "Schema",
+      "descriere": "Descrierea organizației din schema Rank Math e trunchiată.",
+      "valori": {
+        "descriere": "lege Moa Regenerative by Oxxygene - clin…"
+      }
+    },
+    {
+      "severitate": "mică",
+      "zona": "Logo",
+      "descriere": "Logo diferit în cele două blocuri schema.",
+      "valori": {
+        "Rank Math": "https://moaclinic.ro/wp-content/uploads/2024/09/Instagram-logo.png",
+        "custom": "https://moaclinic.ro/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg"
+      }
+    },
+    {
+      "severitate": "mică",
+      "zona": "Conținut",
+      "descriere": "Typo în footer: „Simulare magnetica Transcraniana” (corect: Stimulare).",
+      "valori": {}
+    },
+    {
+      "severitate": "mică",
+      "zona": "Schema",
+      "descriere": "Homepage-ul e marcat ca Article (Rank Math) – nepotrivit pentru o pagină de brand.",
+      "valori": {}
+    },
+    {
+      "severitate": "mică",
+      "zona": "Locație",
+      "descriere": "Coordonatele geo din schema au precizie redusă (2 zecimale ≈ 1 km).",
+      "valori": {
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.43,
+          "longitude": 26.11
+        }
+      }
+    }
+  ]
+}
