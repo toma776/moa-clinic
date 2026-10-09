@@ -63,6 +63,12 @@ const SERVICE_ALIAS = {
   'skin-care-dna': ['dna skin', 'skin care dna'],
   'nutrigenetica-epigenetica': ['nutrigenetic', 'epigenetic'],
 };
+// rânduri de preț prinse de alias, dar care țin de alt serviciu (ex. „Botox Like” e un tratament cosmetic)
+const PRICE_EXCLUDE = {
+  'injectare-botox': /botox like/,
+  'injectari-acid-hialuronic': /hialuronidaz|topire/,
+  microneedeling: /^masca|^aplicare/,
+};
 const lastSeg = (u) => new URL(u).pathname.split('/').filter(Boolean).pop() || '';
 
 // ---------- servicii (din meniu) ----------
@@ -122,6 +128,7 @@ for (const s of servicii) {
     echipa: mentions(txt, echipaAlias),
     preturi: priceItems
       .filter((i) => s.alias.some((a) => reOf(a).test(norm(`${i.categorie} ${i.subgrup || ''} ${i.nume}`))))
+      .filter((i) => !PRICE_EXCLUDE[s.id]?.test(norm(i.nume)))
       .map((i) => ({ nume: i.nume, categorie: i.categorie, valoare: i.preturi[0]?.valoare ?? null })),
     surse: pagesWith(s.alias),
   });

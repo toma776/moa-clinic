@@ -608,7 +608,7 @@
                 {
                   "nume": "Injectare toxină botulinică în București",
                   "url": "/tratamente/injectabile/botox/",
-                  "pret_de_la": 450
+                  "pret_de_la": 800
                 },
                 {
                   "nume": "Nefertiti Lift",
@@ -666,7 +666,7 @@
                 {
                   "nume": "Injectări cu acid hialuronic",
                   "url": "/tratamente/injectabile/acid-hialuronic/",
-                  "pret_de_la": 700
+                  "pret_de_la": 1150
                 },
                 {
                   "nume": "Sculptra",
@@ -825,7 +825,7 @@
                 {
                   "nume": "Microneedling cu Dermapen 4",
                   "url": "/tratamente/aparatura/microneedling/",
-                  "pret_de_la": 150
+                  "pret_de_la": 800
                 },
                 {
                   "nume": "Mezoterapie faciala cu acid hialuronic",
@@ -918,7 +918,7 @@
                 {
                   "nume": "Microneedling cu Dermapen 4",
                   "url": "/tratamente/aparatura/microneedling/",
-                  "pret_de_la": 150
+                  "pret_de_la": 800
                 }
               ],
               "ghiduri": [
@@ -993,7 +993,7 @@
                 {
                   "nume": "Microneedling cu Dermapen 4",
                   "url": "/tratamente/aparatura/microneedling/",
-                  "pret_de_la": 150
+                  "pret_de_la": 800
                 }
               ],
               "ghiduri": [
@@ -1185,8 +1185,8 @@
                 "/proceduri-minim-invazive/injectare-botox/"
               ],
               "continut": {
-                "pret_de_la": 450,
-                "preturi": 12,
+                "pret_de_la": 800,
+                "preturi": 11,
                 "video": 0,
                 "intrebari": 2,
                 "medici": [
@@ -1210,8 +1210,8 @@
                 "/proceduri-minim-invazive/injectari-acid-hialuronic/"
               ],
               "continut": {
-                "pret_de_la": 700,
-                "preturi": 12,
+                "pret_de_la": 1150,
+                "preturi": 10,
                 "video": 0,
                 "intrebari": 3,
                 "medici": [
@@ -1651,8 +1651,8 @@
                 "/proceduri-minim-invazive/microneedeling/"
               ],
               "continut": {
-                "pret_de_la": 150,
-                "preturi": 9,
+                "pret_de_la": 800,
+                "preturi": 6,
                 "video": 2,
                 "intrebari": 1,
                 "medici": [

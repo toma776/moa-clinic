@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-08T12:14:03.329Z",
+    "generat": "2026-10-09T09:46:58.330Z",
     "sursa": "https://moaclinic.ro",
     "paginiAnalizate": [
       "https://moaclinic.ro/",
@@ -10,7 +10,7 @@
       "page-sitemap.xml",
       "post-sitemap.xml"
     ],
-    "extras_la": "2026-10-08",
+    "extras_la": "2026-10-09",
     "pagini": 102,
     "metoda": "homepage + /preturi/ + /echipa/ + /abonamente/ + toate paginile din sitemap"
   },
@@ -6487,16 +6487,6 @@
           "valoare": 1200
         },
         {
-          "nume": "Topire acid hialuronic – hialuronidază – Zona mica (1 flacon)",
-          "categorie": "INJECTĂRI ACID HIALURONIC",
-          "valoare": 700
-        },
-        {
-          "nume": "Topire acid hialuronic – hialuronidază – Zona mare (2 flacoane)",
-          "categorie": "INJECTĂRI ACID HIALURONIC",
-          "valoare": 900
-        },
-        {
           "nume": "Augmentare peniană – 10 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
           "valoare": 4000
@@ -6815,16 +6805,6 @@
       "echipa": [],
       "preturi": [
         {
-          "nume": "Aplicare Exosomi dupa tratamentul cu microneedling/ RF",
-          "categorie": "REJUVENARE FACIALĂ",
-          "valoare": 800
-        },
-        {
-          "nume": "Aplicare masca Exosomi dupa tratamentul cu microneedling/ RF",
-          "categorie": "REJUVENARE FACIALĂ",
-          "valoare": 600
-        },
-        {
           "nume": "PRP (1 flacon) + Microneedling prin Dermapen și substanțe de mezoterapie",
           "categorie": "REJUVENARE FACIALĂ",
           "valoare": 2000
@@ -6848,11 +6828,6 @@
           "nume": "Microneedling Dermapen și cocktail substanțe nutritive față + gât",
           "categorie": "REJUVENARE FACIALĂ",
           "valoare": 1400
-        },
-        {
-          "nume": "Mască Dermapen cu Cocktail Acid Hialuronic și Vitamine",
-          "categorie": "REJUVENARE FACIALĂ",
-          "valoare": 150
         },
         {
           "nume": "Microneedling Dermapen scalp cu exozomi și cocktail de vitamine",
@@ -6963,11 +6938,6 @@
           "nume": "Tratament Slimming Face/ Tratament bruxism cu toxină botulinică",
           "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
           "valoare": 1400
-        },
-        {
-          "nume": "Tratament profesional anti-aging Botox Like Delay Inifinity",
-          "categorie": "TRATAMENTE COSMETOLOGICE",
-          "valoare": 450
         }
       ],
       "surse": [

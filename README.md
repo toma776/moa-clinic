@@ -11,6 +11,7 @@ npm start
 ```
 
 - `http://localhost:3100/` – homepage-ul copiat (HTML + CSS/JS/imagini/fonturi în `site/`)
+- `http://localhost:3100/nou/` – propunerea de homepage nou (premium), generată din date (`npm run homepage`); formularul trimite lead-uri în panou
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).
   - `/manage/entitati` – entitățile brandului pe 3 niveluri: categorie → grup → entități, fiecare cu paginile pe care apare
