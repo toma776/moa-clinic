@@ -214,15 +214,15 @@ function entitySections(D) {
         <dt>Folosită pe</dt><dd>${m.folosita.map((p) => `<code>${esc(p)}</code>`).join(' ')}</dd></dl></div>`).join('')}</div>`);
 
   const V = D.video || [];
-  add('video', 'Video', V.length, `<p class="lead">${V.filter((v) => !v.fundal).length} în conținut, ${V.filter((v) => v.fundal).length} de fundal · ${V.reduce((n, v) => n + (v.mb || 0), 0).toFixed(0)} MB în total.</p>
+  add('video', 'Video', V.length, `<p class="lead">${V.filter((v) => !v.fundal).length} în conținut, ${V.filter((v) => v.fundal).length} de fundal · ${V.reduce((n, v) => n + (v.mb || 0), 0).toFixed(0)} MB în total${V.some((v) => v.mobil) ? ` · versiunile pentru mobil: <b>${V.reduce((n, v) => n + (v.mobil?.mobil_mb || 0), 0).toFixed(1)} MB</b> (${V.filter((v) => v.mobil).length} video, cu cadru de previzualizare)` : ''}.</p>
     <div class="toolbar"><span class="grow"></span><button class="sm" id="csvVideo">Export CSV (video → pagină → secțiune)</button></div>
     <div class="media-grid">${V.map((v) => `<div class="card media-card" data-s>
-      <video src="${esc(v.url)}" controls preload="none" playsinline style="width:100%;aspect-ratio:${v.orientare === 'vertical' ? '9 / 16' : '16 / 9'};max-height:340px;background:#1f2020;border-radius:8px;margin-bottom:10px;display:block"${v.poster ? ` poster="${esc(v.poster)}"` : ''}></video>
+      <video src="${esc(v.mobil?.mobil || v.url)}" controls preload="none" playsinline style="width:100%;aspect-ratio:${v.orientare === 'vertical' ? '9 / 16' : '16 / 9'};max-height:340px;background:#1f2020;border-radius:8px;margin-bottom:10px;display:block"${v.mobil?.poster || v.poster ? ` poster="${esc(v.mobil?.poster || v.poster)}"` : ''}></video>
       <h3>${esc(v.titlu)}</h3>
       <p>${v.fundal ? '<span class="tag">fundal hero</span>' : ''}${v.orientare ? `<span class="tag grey">${esc(v.orientare)}</span>` : ''}${v.mb != null ? `<span class="tag ${v.mb > 20 ? 'warn' : 'grey'}">${v.mb} MB</span>` : ''}${v.dimensiuni ? `<span class="tag grey">${esc(v.dimensiuni)}</span>` : ''}</p>
       <h4 class="bh4">Unde trebuie pus</h4>
       <ul class="clean small">${v.pagini.map((p) => `<li>${link(p.url, p.path)}${p.sectiune ? ` › <b>${esc(p.sectiune)}</b>` : ' › începutul paginii'}${p.serviciu ? ` <span class="tag">${esc(prettyCat(servById[p.serviciu]?.nume || p.serviciu))}</span>` : ''}</li>`).join('')}</ul>
-      <dl class="kv small" style="margin-top:8px"><dt>Fișier</dt><dd>${link(v.url, v.fisier.split('/').pop())}</dd></dl>
+      <dl class="kv small" style="margin-top:8px"><dt>Fișier</dt><dd>${link(v.url, v.fisier.split('/').pop())}</dd>${v.mobil ? `<dt>Mobil</dt><dd>${link(v.mobil.mobil, v.mobil.mobil.split('/').pop())} · ${v.mobil.mobil_mb} MB · ${esc(v.mobil.dimensiuni)} · ${v.mobil.durata_s} s</dd><dt>Poster</dt><dd>${link(v.mobil.poster, v.mobil.poster.split('/').pop())} · ${v.mobil.poster_kb} KB</dd>` : ''}</dl>
       ${v.probleme.length ? `<p>${tags(v.probleme, 'warn')}</p>` : ''}
     </div>`).join('')}</div>`);
 
@@ -372,7 +372,7 @@ routes.entitati = function renderEntitati() {
   bindObs();
   const cv = $('#csvVideo');
   if (cv) cv.onclick = () => download('moa-video.csv', csv((D.video || []).flatMap((v) => v.pagini.map((p) => ({ v, p }))), [
-    ['Video', (r) => r.v.titlu], ['Fisier', (r) => r.v.url], ['MB', (r) => r.v.mb], ['Orientare', (r) => r.v.orientare], ['Fundal', (r) => (r.v.fundal ? 'da' : '')],
+    ['Video', (r) => r.v.titlu], ['Fisier', (r) => r.v.url], ['MB', (r) => r.v.mb], ['Mobil', (r) => r.v.mobil?.mobil || ''], ['MB mobil', (r) => r.v.mobil?.mobil_mb ?? ''], ['Poster', (r) => r.v.mobil?.poster || ''], ['Orientare', (r) => r.v.orientare], ['Fundal', (r) => (r.v.fundal ? 'da' : '')],
     ['Pagina', (r) => r.p.url], ['Sectiune (titlul de deasupra)', (r) => r.p.sectiune || 'începutul paginii'], ['Ordine pe pagina', (r) => r.p.ordine], ['Probleme', (r) => r.v.probleme.join(', ')]]), 'text/csv;charset=utf-8');
   $$('#view .cp-schema').forEach((b) => (b.onclick = () => { navigator.clipboard.writeText(`<script type="application/ld+json">\n${JSON.stringify(buildSchema(D), null, 2)}\n<\/script>`); toast('JSON-LD copiat'); }));
 };

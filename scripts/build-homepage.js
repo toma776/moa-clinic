@@ -67,12 +67,10 @@ const FOUNDER_QUOTE = D.echipa.find((p) => /Stănescu/.test(p.nume))?.profil_det
 
 // lista de servicii pentru formulare (pagina + panoul de jos de pe mobil)
 const SRV_OPTIONS = '<option value="">Nu știu încă – vreau o consultație</option>' + S.arbore.find((n) => n.url === '/tratamente/').copii.map((c) => `<optgroup label="${esc(c.nume)}">${c.copii.filter((t) => t.continut).map((t) => `<option>${esc(t.nume)}</option>`).join('')}</optgroup>`).join('') + `<optgroup label="Consultații">${S.arbore.find((n) => n.url === '/consultatii/').copii.map((c) => `<option>${esc(c.nume)}</option>`).join('')}</optgroup>`;
-// imaginile de previzualizare ale video-urilor (fotografii existente, potrivite tratamentului)
-const VIDEO_POSTER = {
-  dermalinfusion: '/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg',
-  'epilare-definitiva-bucuresti': '/wp-content/uploads/2024/08/farhad-ibrahimzade-quaIM4h-u5E-unsplash-768x960.jpg',
-  'nutrigenetica-epigenetica': '/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg',
-};
+// video: versiunile comprimate pentru mobil + cadrele de previzualizare (npm run video → data/video-media.json)
+const VM = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'video-media.json'), 'utf8')).video; } catch { return {}; } })();
+const vSrc = (v) => VM[v.id]?.mobil || v.url;
+const vPoster = (v) => VM[v.id]?.poster || '';
 
 // slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
 const HERO_SLIDES = [
@@ -366,7 +364,7 @@ ${mobileNav}
     </div>
     <div class="v-grid">${VID.map((v) => {
       const p = v.pagini[0];
-      return `<div class="v-card rv"><div class="vb"><video src="${esc(v.url)}" preload="none" playsinline controls${VIDEO_POSTER[p.serviciu] ? ` poster="${esc(VIDEO_POSTER[p.serviciu])}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+      return `<div class="v-card rv"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
         <h3>${esc(p.sectiune || v.titlu)}</h3><p>${esc(serv[p.serviciu]?.nume || '')}</p></div>`; }).join('')}
     <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>

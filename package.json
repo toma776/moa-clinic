@@ -14,7 +14,8 @@
     "sync": "npm run mirror && npm run crawl && npm run extract && npm run profiles && npm run enrich && npm run brand && npm run health && npm run structura && npm run homepage",
     "structura": "node scripts/build-structura.js",
     "homepage": "node scripts/build-homepage.js",
-    "profiles": "node scripts/extract-profiles.js"
+    "profiles": "node scripts/extract-profiles.js",
+    "video": "node scripts/build-video.js"
   },
   "engines": {
     "node": ">=18"

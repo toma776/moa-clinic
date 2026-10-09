@@ -332,6 +332,12 @@ D.video = [...vids.values()].map((v) => {
     probleme,
   };
 }).sort((a, b) => b.fundal - a.fundal || a.pagini[0].path.localeCompare(b.pagini[0].path));
+// versiunile pentru mobil + cadrele de previzualizare generate de npm run video
+{
+  let vm = {};
+  try { vm = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'video-media.json'), 'utf8')).video; } catch {}
+  for (const v of D.video) if (vm[v.id]) v.mobil = vm[v.id];
+}
 for (const s of servicii) s.video = D.video.filter((v) => v.pagini.some((p) => p.serviciu === s.id)).map((v) => v.id);
 
 // ---------- date legale (din /documente-legale-clinica-moa/) ----------

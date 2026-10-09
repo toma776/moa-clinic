@@ -65,6 +65,7 @@ npm run sync
 | `npm run enrich` | `scripts/enrich-entities.js` | leagă entitățile de paginile din crawl; servicii, articole, glosar, întrebări, dovezi, media, date legale, observații |
 | `npm run brand` | `scripts/build-brand.js` | brand book-ul (`data/brand.json`); nu suprascrie unul editat din panou decât cu `-- --force` |
 | `npm run health` | `scripts/site-health.js` | analiza site-ului → `data/site-health.json` (și din panou: „Rulează analiza acum”) |
+| `npm run video` | `scripts/build-video.js` | versiunile pentru mobil ale video-urilor (H.264, max 540px, ≤ 3 MB și ≤ 85% din original) + un cadru de previzualizare luminos din fiecare → `nou/media/video/`, `data/video-media.json`. Necesită ffmpeg (`winget install Gyan.FFmpeg`); refă doar ce lipsește (`-- --force` pentru toate). Nu face parte din `sync`; după el rulează `npm run enrich && npm run homepage` |
 
 Producătorii produselor și tehnologiilor nu apar pe site. Sunt cunoaștere generală, marcată „de verificat”.
 
