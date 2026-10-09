@@ -11,7 +11,8 @@
     "enrich": "node scripts/enrich-entities.js",
     "brand": "node scripts/build-brand.js",
     "health": "node scripts/site-health.js",
-    "sync": "npm run mirror && npm run crawl && npm run extract && npm run enrich && npm run brand && npm run health"
+    "sync": "npm run mirror && npm run crawl && npm run extract && npm run enrich && npm run brand && npm run health && npm run structura",
+    "structura": "node scripts/build-structura.js"
   },
   "engines": {
     "node": ">=18"

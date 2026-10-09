@@ -394,3 +394,21 @@ dialog h2 { margin: 0 0 14px; font-size: 17px; }
   .brain-stage { height: 440px; }
 }
 @media (prefers-reduced-motion: reduce) { .cat, .toast { transition: none; } }
+
+/* structură: journey + meniu propus */
+.journey { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr)); }
+.jstep { border-top: 4px solid var(--st); }
+.jnum { width: 26px; height: 26px; border-radius: 50%; background: var(--st); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+.jq { font-style: italic; }
+.menu-mock { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #1f2020; color: #f4efe6; }
+.mm-util { display: flex; gap: 18px; justify-content: flex-end; padding: 6px 16px; font-size: 12px; background: #947547; color: #fff; flex-wrap: wrap; }
+.mm-bar { display: flex; align-items: center; gap: 14px; padding: 10px 16px; flex-wrap: wrap; }
+.mm-logo { height: 42px; }
+.mm-bar nav { display: flex; gap: 2px; flex: 1; flex-wrap: wrap; }
+.mm-item { background: transparent; border: 0; color: #e8e1d5; padding: 8px 10px; border-radius: 6px; font-family: Montserrat, system-ui, sans-serif; font-size: 13.5px; }
+.mm-item:hover, .mm-item.on { background: rgba(201, 165, 109, .18); color: #fff; }
+.mm-cta { border: 1px solid #fff; border-radius: 99px; padding: 7px 20px; font-family: Montserrat, system-ui, sans-serif; font-size: 13.5px; font-weight: 500; }
+.mm-panel { background: #fff; color: #1f2020; padding: 16px 18px; border-top: 3px solid #947547; }
+.mm-cols { display: grid; gap: 14px 20px; grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr)); }
+.mm-cols b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #947547; margin-bottom: 6px; }
+.mm-cols a { display: block; color: #1f2020; font-size: 13.5px; padding: 3px 0; }

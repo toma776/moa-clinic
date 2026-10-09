@@ -1,0 +1,3095 @@
+{
+  "meta": {
+    "generat": "2026-10-09",
+    "sursa": "data/entitati.json",
+    "nota": "Propunere – de discutat. URL-urile noi sunt orientative; redirecturile se aplică la lansarea site-ului nou."
+  },
+  "principii": [
+    "Pacientul pornește de la o problemă („am cearcăne”), nu de la numele unui produs („Jalupro”): meniul are două intrări paralele – „Ce te supără?” și „Tratamente”.",
+    "Categoriile din limbajul clinicii („proceduri minim-invazive”, „microchirurgicale”) devin categorii pe care pacientul le înțelege („injectabile”, „cu aparatură”).",
+    "Global Antiaging, diferențiatorul MOA, primește loc propriu în meniu (Longevitate), nu e împrăștiat în 4 categorii.",
+    "Încrederea (medici, recenzii, tehnologie) stă la un click din orice pagină de tratament, nu doar în „Despre”.",
+    "Un singur CTA principal, același text peste tot: Programează-te. Pe mobil: bară fixă Sună · WhatsApp · Programează-te.",
+    "Prețul „de la” apare pe fiecare pagină de tratament și de problemă; lista completă rămâne pe /preturi/.",
+    "Fiecare articol de blog se leagă de o problemă și de tratamentele ei, ca să ducă spre programare.",
+    "URL-uri ierarhice și scurte (/tratamente/injectabile/botox/), cu redirect 301 de la fiecare URL actual."
+  ],
+  "etape": [
+    {
+      "id": "constientizare",
+      "nume": "Conștientizare",
+      "intrebare": "„Am riduri / cearcăne / sunt mereu obosit. Ce pot face?”",
+      "canal": "Google (căutări pe probleme), Instagram, recomandări",
+      "pagini": [
+        "Pagini de probleme",
+        "Ghiduri",
+        "Acasă"
+      ],
+      "continut": [
+        "problema explicată simplu",
+        "cauze",
+        "ce opțiuni există, de la blând la intens",
+        "întrebări frecvente"
+      ],
+      "cta": "Vezi tratamentele potrivite",
+      "metrica": "trafic organic pe probleme, timp pe pagină"
+    },
+    {
+      "id": "explorare",
+      "nume": "Explorare",
+      "intrebare": "„Ce tratament mi se potrivește? Cum funcționează, doare, cât ține?”",
+      "canal": "pagini de tratament, video",
+      "pagini": [
+        "Pagini de tratament",
+        "Categorii de tratamente",
+        "Longevitate"
+      ],
+      "continut": [
+        "pentru cine e / nu e",
+        "cum decurge (video)",
+        "rezultate și durată",
+        "riscuri și recuperare",
+        "tratamente asociate"
+      ],
+      "cta": "Vezi prețul · Întreabă medicul",
+      "metrica": "vizionări video, click pe preț"
+    },
+    {
+      "id": "incredere",
+      "nume": "Încredere",
+      "intrebare": "„Cine mă tratează? E sigur? Ce spun alții?”",
+      "canal": "medici, recenzii, tehnologie",
+      "pagini": [
+        "Medici",
+        "Recenzii & rezultate",
+        "Tehnologie",
+        "Clinica"
+      ],
+      "continut": [
+        "medicul care face procedura, cu specializarea",
+        "recenzii Google reale",
+        "înainte / după",
+        "aparatura și certificările (FDA)"
+      ],
+      "cta": "Cunoaște medicul · Programează-te",
+      "metrica": "vizite pe profilul medicului înainte de programare"
+    },
+    {
+      "id": "decizie",
+      "nume": "Decizie",
+      "intrebare": "„Cât costă? Merită? Încep cu o consultație?”",
+      "canal": "prețuri, oferte, consultații",
+      "pagini": [
+        "Prețuri",
+        "Oferte",
+        "Consultații",
+        "Întrebări frecvente"
+      ],
+      "continut": [
+        "preț clar „de la”",
+        "ce include",
+        "pachete și oferte cu termen",
+        "consultația ca prim pas, cu prețul ei"
+      ],
+      "cta": "Programează consultația",
+      "metrica": "rata de click pe „Programează-te”"
+    },
+    {
+      "id": "programare",
+      "nume": "Programare & vizită",
+      "intrebare": "„Cum mă programez repede? Unde vin, ce aduc?”",
+      "canal": "formular, telefon, WhatsApp",
+      "pagini": [
+        "Programare",
+        "Pregătirea vizitei",
+        "Contact"
+      ],
+      "continut": [
+        "formular în 3 câmpuri",
+        "WhatsApp / telefon",
+        "ce se întâmplă după",
+        "hartă, parcare, program unic"
+      ],
+      "cta": "Trimite cererea · Sună · WhatsApp",
+      "metrica": "lead-uri (panoul Leads), rata de completare"
+    },
+    {
+      "id": "dupa",
+      "nume": "După tratament & revenire",
+      "intrebare": "„Ce fac după? Când revin? Pot lăsa o recenzie?”",
+      "canal": "email / WhatsApp după vizită, ghiduri de îngrijire",
+      "pagini": [
+        "Ghiduri de îngrijire",
+        "Oferte & abonamente",
+        "Recenzii"
+      ],
+      "continut": [
+        "îngrijire după procedură",
+        "când revii (ex. Botox la 4–6 luni)",
+        "abonamente / pachete",
+        "cerere de recenzie"
+      ],
+      "cta": "Reprogramează-te · Lasă o recenzie",
+      "metrica": "pacienți care revin, recenzii noi"
+    }
+  ],
+  "meniu": {
+    "principal": [
+      {
+        "nume": "Ce te supără?",
+        "url": "/probleme/",
+        "etapa": "constientizare",
+        "tip": "mega",
+        "nota": "Intrarea principală: pacientul pornește de la o problemă, nu de la numele unui produs.",
+        "coloane": [
+          {
+            "titlu": "Față",
+            "linkuri": [
+              {
+                "nume": "Riduri de expresie",
+                "url": "/probleme/riduri-de-expresie/"
+              },
+              {
+                "nume": "Riduri profunde & pierdere de volum",
+                "url": "/probleme/riduri-profunde-volum/"
+              },
+              {
+                "nume": "Buze subțiri sau asimetrice",
+                "url": "/probleme/buze/"
+              },
+              {
+                "nume": "Cearcăne & pungi sub ochi",
+                "url": "/probleme/cearcane-pungi/"
+              },
+              {
+                "nume": "Ten tern, pori dilatați, textură",
+                "url": "/probleme/ten-pori-textura/"
+              }
+            ]
+          },
+          {
+            "titlu": "Corp",
+            "linkuri": [
+              {
+                "nume": "Păr nedorit",
+                "url": "/probleme/par-nedorit/"
+              },
+              {
+                "nume": "Piele lăsată & celulită",
+                "url": "/probleme/tonifiere-celulita/"
+              },
+              {
+                "nume": "Vergeturi & cicatrici",
+                "url": "/probleme/vergeturi-cicatrici/"
+              },
+              {
+                "nume": "Vase de sânge vizibile",
+                "url": "/probleme/vase-vizibile/"
+              },
+              {
+                "nume": "Transpirație excesivă",
+                "url": "/probleme/transpiratie/"
+              }
+            ]
+          },
+          {
+            "titlu": "Păr & piele",
+            "linkuri": [
+              {
+                "nume": "Căderea părului",
+                "url": "/probleme/caderea-parului/"
+              },
+              {
+                "nume": "Alunițe, papiloame, leziuni",
+                "url": "/probleme/alunite-leziuni/"
+              }
+            ]
+          },
+          {
+            "titlu": "Sănătate & longevitate",
+            "linkuri": [
+              {
+                "nume": "Oboseală & lipsă de energie",
+                "url": "/probleme/oboseala-energie/"
+              },
+              {
+                "nume": "Burnout, anxietate, depresie",
+                "url": "/probleme/burnout-anxietate/"
+              },
+              {
+                "nume": "Îmbătrânire din interior",
+                "url": "/probleme/imbatranire-interioara/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nume": "Tratamente",
+        "url": "/tratamente/",
+        "etapa": "explorare",
+        "tip": "mega",
+        "nota": "Pentru cine știe deja ce vrea (Botox, Sculptra, epilare). Fiecare link duce direct la pagina tratamentului.",
+        "coloane": [
+          {
+            "titlu": "Tratamente injectabile",
+            "url": "/tratamente/injectabile/",
+            "linkuri": [
+              {
+                "nume": "Toxină botulinică (Botox)",
+                "url": "/tratamente/injectabile/botox/"
+              },
+              {
+                "nume": "Acid hialuronic",
+                "url": "/tratamente/injectabile/acid-hialuronic/"
+              },
+              {
+                "nume": "Augmentare buze",
+                "url": "/tratamente/injectabile/augmentare-buze/"
+              },
+              {
+                "nume": "Sculptra",
+                "url": "/tratamente/injectabile/sculptra/"
+              },
+              {
+                "nume": "HArmonyCa",
+                "url": "/tratamente/injectabile/harmonyca/"
+              },
+              {
+                "nume": "Skinbooster Restylane",
+                "url": "/tratamente/injectabile/skinbooster/"
+              },
+              {
+                "nume": "Polinucleotide (Rejuran)",
+                "url": "/tratamente/injectabile/polinucleotide/"
+              },
+              {
+                "nume": "Jalupro Young Eye",
+                "url": "/tratamente/injectabile/jalupro-cearcane/"
+              }
+            ]
+          },
+          {
+            "titlu": "Tratamente cu aparatură",
+            "url": "/tratamente/aparatura/",
+            "linkuri": [
+              {
+                "nume": "Epilare definitivă Splendor X",
+                "url": "/tratamente/aparatura/epilare-definitiva/"
+              },
+              {
+                "nume": "Laser vascular",
+                "url": "/tratamente/aparatura/laser-vascular/"
+              },
+              {
+                "nume": "Venus Viva – radiofrecvență fracționată",
+                "url": "/tratamente/aparatura/venus-viva/"
+              },
+              {
+                "nume": "Venus Legacy – lifting & remodelare",
+                "url": "/tratamente/aparatura/venus-legacy/"
+              },
+              {
+                "nume": "Dermalinfusion",
+                "url": "/tratamente/aparatura/dermalinfusion/"
+              },
+              {
+                "nume": "Microneedling Dermapen 4",
+                "url": "/tratamente/aparatura/microneedling/"
+              }
+            ]
+          },
+          {
+            "titlu": "Chirurgie & dermatologie",
+            "url": "/tratamente/chirurgie-dermatologie/",
+            "linkuri": [
+              {
+                "nume": "Blefaroplastie",
+                "url": "/tratamente/chirurgie-dermatologie/blefaroplastie/"
+              },
+              {
+                "nume": "Lip lift",
+                "url": "/tratamente/chirurgie-dermatologie/lip-lift/"
+              },
+              {
+                "nume": "Îndepărtare alunițe (nevi)",
+                "url": "/tratamente/chirurgie-dermatologie/indepartare-alunite/"
+              },
+              {
+                "nume": "Eliminare papiloame",
+                "url": "/tratamente/chirurgie-dermatologie/eliminare-papiloame/"
+              }
+            ]
+          },
+          {
+            "titlu": "Medicină regenerativă",
+            "url": "/tratamente/regenerare/",
+            "linkuri": [
+              {
+                "nume": "Terapii intravenoase (perfuzii)",
+                "url": "/tratamente/regenerare/terapii-iv/"
+              },
+              {
+                "nume": "Terapia NAD+",
+                "url": "/tratamente/regenerare/nad/"
+              },
+              {
+                "nume": "Perfuzii cu glutation",
+                "url": "/tratamente/regenerare/glutation/"
+              },
+              {
+                "nume": "Autohemoterapie majoră cu ozon",
+                "url": "/tratamente/regenerare/autohemoterapie/"
+              },
+              {
+                "nume": "Saună cu ozon",
+                "url": "/tratamente/regenerare/sauna-ozon/"
+              },
+              {
+                "nume": "Fotobiomodulare Vielight",
+                "url": "/tratamente/regenerare/vielight/"
+              },
+              {
+                "nume": "Stimulare magnetică transcraniană (TMS)",
+                "url": "/tratamente/regenerare/tms/"
+              }
+            ]
+          },
+          {
+            "titlu": "Tratamente faciale cosmetice",
+            "url": "/tratamente/cosmetica/",
+            "linkuri": [
+              {
+                "nume": "Tratamente faciale profesionale",
+                "url": "/tratamente/cosmetica/tratamente-faciale/"
+              },
+              {
+                "nume": "Peeling medical",
+                "url": "/tratamente/cosmetica/peeling/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nume": "Longevitate",
+        "url": "/longevitate/",
+        "etapa": "explorare",
+        "tip": "dropdown",
+        "nota": "Diferențiatorul MOA (Global Antiaging) primește loc propriu în meniu.",
+        "linkuri": [
+          {
+            "nume": "Ce este Global Antiaging",
+            "url": "/longevitate/"
+          },
+          {
+            "nume": "Consultația antiaging",
+            "url": "/consultatii/antiaging/"
+          },
+          {
+            "nume": "Vârsta biologică",
+            "url": "/longevitate/varsta-biologica/"
+          },
+          {
+            "nume": "Teste genetice",
+            "url": "/tratamente/teste/"
+          },
+          {
+            "nume": "Terapii intravenoase",
+            "url": "/tratamente/regenerare/terapii-iv/"
+          },
+          {
+            "nume": "TMS pentru burnout",
+            "url": "/tratamente/regenerare/tms/"
+          }
+        ]
+      },
+      {
+        "nume": "Prețuri",
+        "url": "/preturi/",
+        "etapa": "decizie",
+        "tip": "dropdown",
+        "linkuri": [
+          {
+            "nume": "Toate prețurile",
+            "url": "/preturi/"
+          },
+          {
+            "nume": "Ofertele lunii",
+            "url": "/oferte/"
+          },
+          {
+            "nume": "Consultații",
+            "url": "/consultatii/"
+          }
+        ]
+      },
+      {
+        "nume": "Medici",
+        "url": "/medici/",
+        "etapa": "incredere",
+        "tip": "link"
+      },
+      {
+        "nume": "Despre MOA",
+        "url": "/clinica/",
+        "etapa": "incredere",
+        "tip": "dropdown",
+        "linkuri": [
+          {
+            "nume": "Clinica și conceptul",
+            "url": "/clinica/"
+          },
+          {
+            "nume": "Tehnologie",
+            "url": "/clinica/tehnologie/"
+          },
+          {
+            "nume": "Recenzii & rezultate",
+            "url": "/clinica/recenzii/"
+          },
+          {
+            "nume": "Ghiduri",
+            "url": "/ghiduri/"
+          },
+          {
+            "nume": "Întrebări frecvente",
+            "url": "/intrebari-frecvente/"
+          },
+          {
+            "nume": "Contact",
+            "url": "/contact/"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Programează-te",
+      "url": "/programare/",
+      "nota": "Un singur buton principal, același text peste tot (azi sunt 3 variante)."
+    },
+    "utilitar": [
+      {
+        "nume": "0743 056 605",
+        "url": "tel:+40743056605"
+      },
+      {
+        "nume": "WhatsApp",
+        "url": "https://wa.me/40743056605"
+      },
+      {
+        "nume": "Str. Ștefan Mihăileanu 35",
+        "url": "https://maps.app.goo.gl/RHMvPm3KMHYY7BEG6"
+      }
+    ],
+    "mobil": [
+      "Bara de jos fixă pe mobil: Sună · WhatsApp · Programează-te",
+      "Meniul mobil deschide întâi „Ce te supără?” și „Tratamente”, ca acordeoane"
+    ],
+    "footer": [
+      {
+        "titlu": "Tratamente",
+        "linkuri": [
+          {
+            "nume": "Tratamente injectabile",
+            "url": "/tratamente/injectabile/"
+          },
+          {
+            "nume": "Tratamente cu aparatură",
+            "url": "/tratamente/aparatura/"
+          },
+          {
+            "nume": "Chirurgie & dermatologie",
+            "url": "/tratamente/chirurgie-dermatologie/"
+          },
+          {
+            "nume": "Medicină regenerativă",
+            "url": "/tratamente/regenerare/"
+          },
+          {
+            "nume": "Teste genetice longevity",
+            "url": "/tratamente/teste/"
+          },
+          {
+            "nume": "Tratamente faciale cosmetice",
+            "url": "/tratamente/cosmetica/"
+          }
+        ]
+      },
+      {
+        "titlu": "Pacienți",
+        "linkuri": [
+          {
+            "nume": "Programare",
+            "url": "/programare/"
+          },
+          {
+            "nume": "Pregătirea vizitei",
+            "url": "/vizita/"
+          },
+          {
+            "nume": "Prețuri",
+            "url": "/preturi/"
+          },
+          {
+            "nume": "Oferte",
+            "url": "/oferte/"
+          },
+          {
+            "nume": "Întrebări frecvente",
+            "url": "/intrebari-frecvente/"
+          }
+        ]
+      },
+      {
+        "titlu": "MOA",
+        "linkuri": [
+          {
+            "nume": "Clinica",
+            "url": "/clinica/"
+          },
+          {
+            "nume": "Medici",
+            "url": "/medici/"
+          },
+          {
+            "nume": "Ghiduri",
+            "url": "/ghiduri/"
+          },
+          {
+            "nume": "Contact",
+            "url": "/contact/"
+          }
+        ]
+      },
+      {
+        "titlu": "Legal",
+        "linkuri": [
+          {
+            "nume": "Documente legale",
+            "url": "/documente-legale/"
+          },
+          {
+            "nume": "ANPC / SAL / SOL",
+            "url": "https://anpc.ro/ce-este-sal/"
+          }
+        ]
+      }
+    ]
+  },
+  "arbore": [
+    {
+      "nume": "Acasă",
+      "url": "/",
+      "tip": "acasa",
+      "etapa": "constientizare",
+      "vechi": [
+        "/"
+      ]
+    },
+    {
+      "nume": "Probleme",
+      "url": "/probleme/",
+      "tip": "hub",
+      "etapa": "constientizare",
+      "copii": [
+        {
+          "nume": "Față",
+          "url": null,
+          "tip": "grup",
+          "copii": [
+            {
+              "nume": "Riduri de expresie",
+              "url": "/probleme/riduri-de-expresie/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Injectare toxină botulinică în București",
+                  "url": "/tratamente/injectabile/botox/",
+                  "pret_de_la": 450
+                },
+                {
+                  "nume": "Nefertiti Lift",
+                  "url": "/tratamente/injectabile/nefertiti-lift/",
+                  "pret_de_la": 1500
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Riduri de expresie: cauze, prevenție și tratamente eficiente",
+                  "url": "/ghiduri/riduri-de-expresie/"
+                },
+                {
+                  "titlu": "Riduri pe frunte? Secretele expertilor anti-aging",
+                  "url": "/ghiduri/riduri-frunte/"
+                },
+                {
+                  "titlu": "Riduri intre sprancene cauze si tratamente eficiente",
+                  "url": "/ghiduri/riduri-intre-sprancene/"
+                },
+                {
+                  "titlu": "Riduri laba gastei? Secretele expertilor anti-aging",
+                  "url": "/ghiduri/riduri-laba-gastei/"
+                },
+                {
+                  "titlu": "Bunny lines ce sunt si cum le poti estompa",
+                  "url": "/ghiduri/bunny-lines/"
+                },
+                {
+                  "titlu": "Riduri pe gât tratament cu botox: ce trebuie să știi",
+                  "url": "/ghiduri/riduri-pe-gat-tratament-cu-botox/"
+                },
+                {
+                  "titlu": "Unde se pune botox – Ghid 2026",
+                  "url": "/ghiduri/unde-se-pune-botox/"
+                },
+                {
+                  "titlu": "Efecte botox: ghidul complet explicat de medici specialiști",
+                  "url": "/ghiduri/efecte-botox/"
+                },
+                {
+                  "titlu": "Cea mai buna toxina botulinica: rezultate dupa 6 luni de studiu",
+                  "url": "/ghiduri/cea-mai-buna-toxina-botulinica/"
+                }
+              ],
+              "intrebari": 4
+            },
+            {
+              "nume": "Riduri profunde & pierdere de volum",
+              "url": "/probleme/riduri-profunde-volum/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Injectări cu acid hialuronic",
+                  "url": "/tratamente/injectabile/acid-hialuronic/",
+                  "pret_de_la": 700
+                },
+                {
+                  "nume": "Sculptra",
+                  "url": "/tratamente/injectabile/sculptra/",
+                  "pret_de_la": 3000
+                },
+                {
+                  "nume": "Harmonyca",
+                  "url": "/tratamente/injectabile/harmonyca/",
+                  "pret_de_la": 2200
+                },
+                {
+                  "nume": "Skinbooster Restylane",
+                  "url": "/tratamente/injectabile/skinbooster/",
+                  "pret_de_la": 1500
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Tratament riduri profunde",
+                  "url": "/ghiduri/tratament-riduri-profunde/"
+                },
+                {
+                  "titlu": "Riduri marioneta – cauze si tratamente",
+                  "url": "/ghiduri/riduri-marioneta/"
+                },
+                {
+                  "titlu": "Riduri in jurul gurii – cauze si tratamente eficiente",
+                  "url": "/ghiduri/riduri-in-jurul-gurii/"
+                },
+                {
+                  "titlu": "Ridurile fumatorului – Soluții de tratament pentru un ten neted și tineresc",
+                  "url": "/ghiduri/ridurile-fumatorului/"
+                },
+                {
+                  "titlu": "Riduri si metode de estompare eficiente",
+                  "url": "/ghiduri/riduri/"
+                },
+                {
+                  "titlu": "Hialuronidaza – Ce este și cum ajută în tratamentele estetice",
+                  "url": "/ghiduri/hialuronidaza/"
+                },
+                {
+                  "titlu": "De ce nu imi tine acidul hialuronic",
+                  "url": "/ghiduri/de-ce-nu-imi-tine-acidul-hialuronic-2/"
+                }
+              ],
+              "intrebari": 5
+            },
+            {
+              "nume": "Buze subțiri sau asimetrice",
+              "url": "/probleme/buze/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Acid hialuronic buze",
+                  "url": "/tratamente/injectabile/augmentare-buze/",
+                  "pret_de_la": 1150
+                },
+                {
+                  "nume": "Lip lifting",
+                  "url": "/tratamente/chirurgie-dermatologie/lip-lift/",
+                  "pret_de_la": 7000
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Buze uscate – Soluții rapide și eficiente",
+                  "url": "/ghiduri/buze-uscate/"
+                },
+                {
+                  "titlu": "Forme de buze cu acid hialuronic: ce nu ti-a spus nimeni",
+                  "url": "/ghiduri/forme-de-buze-cu-acid-hialuronic/"
+                },
+                {
+                  "titlu": "Prima injectare cu acid hialuronic in buze: Ghid 2026",
+                  "url": "/ghiduri/prima-injectare-cu-acid-hialuronic-in-buze/"
+                },
+                {
+                  "titlu": "Russian lips: tot ce trebuie sa stii inainte de procedura",
+                  "url": "/ghiduri/russian-lips-vs-butterfly-lips/"
+                },
+                {
+                  "titlu": "Acid in buze exagerat – Ce trebuie sa stii",
+                  "url": "/ghiduri/acid-in-buze-exagerat/"
+                },
+                {
+                  "titlu": "Acid hialuronic in buze – cat dureaza?",
+                  "url": "/ghiduri/acid-hialuronic-in-buze-cat-dureaza/"
+                }
+              ],
+              "intrebari": 1
+            },
+            {
+              "nume": "Cearcăne & pungi sub ochi",
+              "url": "/probleme/cearcane-pungi/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Jalupro Young Eye",
+                  "url": "/tratamente/injectabile/jalupro-cearcane/",
+                  "pret_de_la": 1200
+                },
+                {
+                  "nume": "Polinucleotide",
+                  "url": "/tratamente/injectabile/polinucleotide/",
+                  "pret_de_la": 1250
+                },
+                {
+                  "nume": "Blefaroplastie",
+                  "url": "/tratamente/chirurgie-dermatologie/blefaroplastie/",
+                  "pret_de_la": 7000
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Cearcane si pungi sub ochi: tratamente eficiente",
+                  "url": "/ghiduri/cearcane/"
+                },
+                {
+                  "titlu": "Tratament cearcane eficient – Solutii rapide",
+                  "url": "/ghiduri/tratament-cearcane/"
+                },
+                {
+                  "titlu": "Pungi sub ochi – Soluții eficiente de reducere",
+                  "url": "/ghiduri/pungi-sub-ochi/"
+                },
+                {
+                  "titlu": "Ptoza palpebrala: cauze, tratament si operatie pleoape cazute",
+                  "url": "/ghiduri/ptoza-palpebrala/"
+                }
+              ],
+              "intrebari": 2
+            },
+            {
+              "nume": "Ten tern, pori dilatați, textură",
+              "url": "/probleme/ten-pori-textura/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Dermalinfusion",
+                  "url": "/tratamente/aparatura/dermalinfusion/",
+                  "pret_de_la": 600
+                },
+                {
+                  "nume": "Venus Viva",
+                  "url": "/tratamente/aparatura/venus-viva/",
+                  "pret_de_la": 500
+                },
+                {
+                  "nume": "Microneedling cu Dermapen 4",
+                  "url": "/tratamente/aparatura/microneedling/",
+                  "pret_de_la": 150
+                },
+                {
+                  "nume": "Mezoterapie faciala cu acid hialuronic",
+                  "url": "/tratamente/injectabile/mezoterapie/",
+                  "pret_de_la": 700
+                },
+                {
+                  "nume": "Polinucleotide",
+                  "url": "/tratamente/injectabile/polinucleotide/",
+                  "pret_de_la": 1250
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Pori dilatati – Cauze și soluții pentru un ten neted",
+                  "url": "/ghiduri/pori-dilatati/"
+                },
+                {
+                  "titlu": "Recuperare dupa Dermapen – Ce trebuie să știi pentru o vindecare rapidă",
+                  "url": "/ghiduri/recuperare-dupa-dermapen/"
+                }
+              ],
+              "intrebari": 11
+            }
+          ]
+        },
+        {
+          "nume": "Corp",
+          "url": null,
+          "tip": "grup",
+          "copii": [
+            {
+              "nume": "Păr nedorit",
+              "url": "/probleme/par-nedorit/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Epilare definitiva Bucuresti",
+                  "url": "/tratamente/aparatura/epilare-definitiva/",
+                  "pret_de_la": 200
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Epilare definitiva pareri reale de la clienti",
+                  "url": "/ghiduri/epilare-definitiva-pareri/"
+                },
+                {
+                  "titlu": "Epilat interfesier – Ce inseamna ?",
+                  "url": "/ghiduri/epilat-interfesier-ce-inseamna/"
+                }
+              ],
+              "intrebari": 1
+            },
+            {
+              "nume": "Piele lăsată & celulită",
+              "url": "/probleme/tonifiere-celulita/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Venus Legacy",
+                  "url": "/tratamente/aparatura/venus-legacy/",
+                  "pret_de_la": 400
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Cele mai eficiente metode de combinare a tratamentelor Venus Legacy și detoxifierii intravenoase pentru un corp perfect",
+                  "url": "/ghiduri/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/"
+                }
+              ],
+              "intrebari": 3
+            },
+            {
+              "nume": "Vergeturi & cicatrici",
+              "url": "/probleme/vergeturi-cicatrici/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Venus Viva",
+                  "url": "/tratamente/aparatura/venus-viva/",
+                  "pret_de_la": 500
+                },
+                {
+                  "nume": "Microneedling cu Dermapen 4",
+                  "url": "/tratamente/aparatura/microneedling/",
+                  "pret_de_la": 150
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Vergeturi pe sâni – Cauze, tratamente și metode de prevenție",
+                  "url": "/ghiduri/vergeturi-pe-sani-2/"
+                }
+              ],
+              "intrebari": 8
+            },
+            {
+              "nume": "Vase de sânge vizibile",
+              "url": "/probleme/vase-vizibile/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Laser vascular",
+                  "url": "/tratamente/aparatura/laser-vascular/",
+                  "pret_de_la": null
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Alunite rosii – Cum sa le identifici pe cele periculoase",
+                  "url": "/ghiduri/alunite-rosii/"
+                }
+              ],
+              "intrebari": 0
+            },
+            {
+              "nume": "Transpirație excesivă",
+              "url": "/probleme/transpiratie/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Tratament hiperhidroza axilara cu Botox",
+                  "url": "/tratamente/injectabile/botox-hiperhidroza/",
+                  "pret_de_la": 2000
+                }
+              ],
+              "ghiduri": [],
+              "intrebari": 0
+            }
+          ]
+        },
+        {
+          "nume": "Păr & piele",
+          "url": null,
+          "tip": "grup",
+          "copii": [
+            {
+              "nume": "Căderea părului",
+              "url": "/probleme/caderea-parului/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Prp scalp",
+                  "url": "/tratamente/injectabile/prp/",
+                  "pret_de_la": 900
+                },
+                {
+                  "nume": "Mezoterapie faciala cu acid hialuronic",
+                  "url": "/tratamente/injectabile/mezoterapie/",
+                  "pret_de_la": 700
+                },
+                {
+                  "nume": "Microneedling cu Dermapen 4",
+                  "url": "/tratamente/aparatura/microneedling/",
+                  "pret_de_la": 150
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Ce inseamna PRP si beneficiile tratamentului",
+                  "url": "/ghiduri/ce-inseamna-prp/"
+                },
+                {
+                  "titlu": "Terapia vampir pareri – Ghid obiectiv",
+                  "url": "/ghiduri/terapia-vampir-pareri/"
+                }
+              ],
+              "intrebari": 6
+            },
+            {
+              "nume": "Alunițe, papiloame, leziuni",
+              "url": "/probleme/alunite-leziuni/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Nevi pigmentari",
+                  "url": "/tratamente/chirurgie-dermatologie/indepartare-alunite/",
+                  "pret_de_la": null
+                },
+                {
+                  "nume": "Eliminare papiloame",
+                  "url": "/tratamente/chirurgie-dermatologie/eliminare-papiloame/",
+                  "pret_de_la": 450
+                },
+                {
+                  "nume": "Consultație dermatoestetică / dermatologie",
+                  "url": "/consultatii/dermatologie/",
+                  "pret_de_la": 300
+                }
+              ],
+              "ghiduri": [],
+              "intrebari": 0
+            }
+          ]
+        },
+        {
+          "nume": "Sănătate & longevitate",
+          "url": null,
+          "tip": "grup",
+          "copii": [
+            {
+              "nume": "Oboseală & lipsă de energie",
+              "url": "/probleme/oboseala-energie/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Terapia NAD",
+                  "url": "/tratamente/regenerare/nad/",
+                  "pret_de_la": 600
+                },
+                {
+                  "nume": "Perfuzii cu glutation",
+                  "url": "/tratamente/regenerare/glutation/",
+                  "pret_de_la": 220
+                },
+                {
+                  "nume": "Autohemoterapia",
+                  "url": "/tratamente/regenerare/autohemoterapie/",
+                  "pret_de_la": 300
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "NAD perfuzabil – informatii si beneficii terapie",
+                  "url": "/ghiduri/nad-perfuzabil/"
+                },
+                {
+                  "titlu": "Terapii intravenoase beneficii si tipuri de tratamente IV",
+                  "url": "/ghiduri/terapii-intravenoase/"
+                },
+                {
+                  "titlu": "Adevarul despre glutation: ce nu ti-a spus nimeni pana acum",
+                  "url": "/ghiduri/adevarul-despre-glutation/"
+                },
+                {
+                  "titlu": "Glutation: Ce este, beneficii si contraindicatii",
+                  "url": "/ghiduri/glutation-beneficii-si-contraindicatii-ce-este/"
+                },
+                {
+                  "titlu": "Cum să-ți îmbunătățești sănătatea și bunăstarea cu un tratament regenerativ perfuzabil cu glutation",
+                  "url": "/ghiduri/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/"
+                },
+                {
+                  "titlu": "NADH – Cheia către rezolvarea problemei de infertilitate",
+                  "url": "/ghiduri/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/"
+                }
+              ],
+              "intrebari": 14
+            },
+            {
+              "nume": "Burnout, anxietate, depresie",
+              "url": "/probleme/burnout-anxietate/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "STIMULARE MAGNETICĂ TRANSCRANIANĂ",
+                  "url": "/tratamente/regenerare/tms/",
+                  "pret_de_la": 250
+                },
+                {
+                  "nume": "TERAPIA VIELIGHT",
+                  "url": "/tratamente/regenerare/vielight/",
+                  "pret_de_la": 150
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Tratament burnout TMS: Solutie moderna pentru stres si epuizare",
+                  "url": "/ghiduri/tratament-burnout-tms/"
+                }
+              ],
+              "intrebari": 2
+            },
+            {
+              "nume": "Îmbătrânire din interior",
+              "url": "/probleme/imbatranire-interioara/",
+              "tip": "problema",
+              "etapa": "constientizare",
+              "vechi": [],
+              "tratamente": [
+                {
+                  "nume": "Antiaging",
+                  "url": "/consultatii/antiaging/",
+                  "pret_de_la": 400
+                },
+                {
+                  "nume": "DNA SKIN",
+                  "url": "/tratamente/teste/dna-skin/",
+                  "pret_de_la": null
+                },
+                {
+                  "nume": "Nutrigenetică și epigenetică",
+                  "url": "/tratamente/teste/nutrigenetica/",
+                  "pret_de_la": null
+                },
+                {
+                  "nume": "Sauna cu ozon",
+                  "url": "/tratamente/regenerare/sauna-ozon/",
+                  "pret_de_la": 300
+                }
+              ],
+              "ghiduri": [
+                {
+                  "titlu": "Beneficiile uimitoare ale saunei cu ozon pentru antiaging-ul intern",
+                  "url": "/ghiduri/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/"
+                },
+                {
+                  "titlu": "Tot ce trebuie să știi despre consultarea nutrigenomică: descoperă secretele genetice ale sănătății tale!",
+                  "url": "/ghiduri/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/"
+                }
+              ],
+              "intrebari": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nume": "Tratamente",
+      "url": "/tratamente/",
+      "tip": "hub",
+      "etapa": "explorare",
+      "copii": [
+        {
+          "nume": "Tratamente injectabile",
+          "url": "/tratamente/injectabile/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Riduri, volum, buze, hidratare – fără bisturiu, cu revenire rapidă.",
+          "vechi": [],
+          "copii": [
+            {
+              "nume": "Toxină botulinică (Botox)",
+              "url": "/tratamente/injectabile/botox/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/injectare-botox/"
+              ],
+              "continut": {
+                "pret_de_la": 450,
+                "preturi": 12,
+                "video": 0,
+                "intrebari": 2,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1511
+              },
+              "nou": false
+            },
+            {
+              "nume": "Acid hialuronic",
+              "url": "/tratamente/injectabile/acid-hialuronic/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/injectari-acid-hialuronic/"
+              ],
+              "continut": {
+                "pret_de_la": 700,
+                "preturi": 12,
+                "video": 0,
+                "intrebari": 3,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Stylage",
+                  "Restylane",
+                  "Juvéderm",
+                  "Jalupro",
+                  "Sculptra",
+                  "HArmonyCa"
+                ],
+                "cuvinte": 1724
+              },
+              "nou": false
+            },
+            {
+              "nume": "Augmentare buze",
+              "url": "/tratamente/injectabile/augmentare-buze/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/augmentare-buze/"
+              ],
+              "continut": {
+                "pret_de_la": 1150,
+                "preturi": 3,
+                "video": 1,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Stylage",
+                  "Restylane",
+                  "Juvéderm"
+                ],
+                "cuvinte": 1972
+              },
+              "nou": false
+            },
+            {
+              "nume": "Sculptra",
+              "url": "/tratamente/injectabile/sculptra/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/sculptra/"
+              ],
+              "continut": {
+                "pret_de_la": 3000,
+                "preturi": 1,
+                "video": 2,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Sculptra"
+                ],
+                "cuvinte": 1179
+              },
+              "nou": false
+            },
+            {
+              "nume": "HArmonyCa",
+              "url": "/tratamente/injectabile/harmonyca/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/harmonyca/"
+              ],
+              "continut": {
+                "pret_de_la": 2200,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "HArmonyCa"
+                ],
+                "cuvinte": 1325
+              },
+              "nou": false
+            },
+            {
+              "nume": "Skinbooster Restylane",
+              "url": "/tratamente/injectabile/skinbooster/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/skinbooster-vital/"
+              ],
+              "continut": {
+                "pret_de_la": 1500,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 2,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Restylane",
+                  "Juvéderm"
+                ],
+                "cuvinte": 1396
+              },
+              "nou": false
+            },
+            {
+              "nume": "Polinucleotide (Rejuran)",
+              "url": "/tratamente/injectabile/polinucleotide/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/polinucleotide/"
+              ],
+              "continut": {
+                "pret_de_la": 1250,
+                "preturi": 5,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1041
+              },
+              "nou": false
+            },
+            {
+              "nume": "Jalupro Young Eye",
+              "url": "/tratamente/injectabile/jalupro-cearcane/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/jalupro-young-eye/"
+              ],
+              "continut": {
+                "pret_de_la": 1200,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Jalupro"
+                ],
+                "cuvinte": 801
+              },
+              "nou": false
+            },
+            {
+              "nume": "Nefertiti Lift",
+              "url": "/tratamente/injectabile/nefertiti-lift/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/nefertiti-lift/"
+              ],
+              "continut": {
+                "pret_de_la": 1500,
+                "preturi": 1,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1535
+              },
+              "nou": false
+            },
+            {
+              "nume": "Mezoterapie",
+              "url": "/tratamente/injectabile/mezoterapie/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/mezoterapie/"
+              ],
+              "continut": {
+                "pret_de_la": 700,
+                "preturi": 5,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Dermapen 4"
+                ],
+                "cuvinte": 1427
+              },
+              "nou": false
+            },
+            {
+              "nume": "PRP – terapia vampir",
+              "url": "/tratamente/injectabile/prp/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/prp-scalp/"
+              ],
+              "continut": {
+                "pret_de_la": 900,
+                "preturi": 5,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1841
+              },
+              "nou": false
+            },
+            {
+              "nume": "Botox pentru transpirație",
+              "url": "/tratamente/injectabile/botox-hiperhidroza/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/hiperhidroza-axilara/"
+              ],
+              "continut": {
+                "pret_de_la": 2000,
+                "preturi": 1,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1458
+              },
+              "nou": false
+            },
+            {
+              "nume": "Augmentare peniană",
+              "url": "/tratamente/injectabile/augmentare-peniana/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/"
+              ],
+              "continut": {
+                "pret_de_la": 4000,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 2142
+              },
+              "nou": false
+            }
+          ]
+        },
+        {
+          "nume": "Tratamente cu aparatură",
+          "url": "/tratamente/aparatura/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Laser, radiofrecvență și microneedling, cu aparate de ultimă generație.",
+          "vechi": [
+            "/laser-terapie/"
+          ],
+          "copii": [
+            {
+              "nume": "Epilare definitivă Splendor X",
+              "url": "/tratamente/aparatura/epilare-definitiva/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/laser-terapie/epilare-definitiva-bucuresti/"
+              ],
+              "continut": {
+                "pret_de_la": 200,
+                "preturi": 34,
+                "video": 1,
+                "intrebari": 0,
+                "medici": [],
+                "tehnologii": [
+                  "Splendor X"
+                ],
+                "cuvinte": 1764
+              },
+              "nou": false
+            },
+            {
+              "nume": "Laser vascular",
+              "url": "/tratamente/aparatura/laser-vascular/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/laser-terapie/laser-vascular/"
+              ],
+              "continut": {
+                "pret_de_la": null,
+                "preturi": 0,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [],
+                "tehnologii": [
+                  "Splendor X"
+                ],
+                "cuvinte": 995
+              },
+              "nou": false
+            },
+            {
+              "nume": "Venus Viva – radiofrecvență fracționată",
+              "url": "/tratamente/aparatura/venus-viva/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/rejuvenare-faciala/venus-viva/"
+              ],
+              "continut": {
+                "pret_de_la": 500,
+                "preturi": 6,
+                "video": 1,
+                "intrebari": 3,
+                "medici": [
+                  "Dr. Iulia Nedelcu"
+                ],
+                "tehnologii": [
+                  "Venus Viva"
+                ],
+                "cuvinte": 1389
+              },
+              "nou": false
+            },
+            {
+              "nume": "Venus Legacy – lifting & remodelare",
+              "url": "/tratamente/aparatura/venus-legacy/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/venus-legacy/"
+              ],
+              "continut": {
+                "pret_de_la": 400,
+                "preturi": 6,
+                "video": 0,
+                "intrebari": 3,
+                "medici": [],
+                "tehnologii": [
+                  "Venus Legacy"
+                ],
+                "cuvinte": 1893
+              },
+              "nou": false
+            },
+            {
+              "nume": "Dermalinfusion",
+              "url": "/tratamente/aparatura/dermalinfusion/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/dermalinfusion/"
+              ],
+              "continut": {
+                "pret_de_la": 600,
+                "preturi": 2,
+                "video": 1,
+                "intrebari": 3,
+                "medici": [],
+                "tehnologii": [
+                  "Dermalinfusion"
+                ],
+                "cuvinte": 1172
+              },
+              "nou": false
+            },
+            {
+              "nume": "Microneedling Dermapen 4",
+              "url": "/tratamente/aparatura/microneedling/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/proceduri-minim-invazive/microneedeling/"
+              ],
+              "continut": {
+                "pret_de_la": 150,
+                "preturi": 9,
+                "video": 2,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [
+                  "Dermalinfusion",
+                  "Dermapen 4"
+                ],
+                "cuvinte": 1736
+              },
+              "nou": false
+            }
+          ]
+        },
+        {
+          "nume": "Chirurgie & dermatologie",
+          "url": "/tratamente/chirurgie-dermatologie/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Intervenții mici, cu anestezie locală, și dermatologie medicală.",
+          "vechi": [],
+          "copii": [
+            {
+              "nume": "Blefaroplastie",
+              "url": "/tratamente/chirurgie-dermatologie/blefaroplastie/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/blefaroplastie/"
+              ],
+              "continut": {
+                "pret_de_la": 7000,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1933
+              },
+              "nou": false
+            },
+            {
+              "nume": "Lip lift",
+              "url": "/tratamente/chirurgie-dermatologie/lip-lift/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/rejuvenare-faciala/lip-lifting/"
+              ],
+              "continut": {
+                "pret_de_la": 7000,
+                "preturi": 1,
+                "video": 0,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Iulia Nedelcu"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1374
+              },
+              "nou": false
+            },
+            {
+              "nume": "Îndepărtare alunițe (nevi)",
+              "url": "/tratamente/chirurgie-dermatologie/indepartare-alunite/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/nevi-pigmentari/"
+              ],
+              "continut": {
+                "pret_de_la": null,
+                "preturi": 0,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 757
+              },
+              "nou": false
+            },
+            {
+              "nume": "Eliminare papiloame",
+              "url": "/tratamente/chirurgie-dermatologie/eliminare-papiloame/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/eliminare-papiloame/"
+              ],
+              "continut": {
+                "pret_de_la": 450,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Romana Cristina Manescu Obreja",
+                  "Dr. Iulia Nedelcu",
+                  "Dr. Matei Gheorghiu Branaru",
+                  "Dr. Vali Dijmarescu",
+                  "Dr. Andrei Rugina"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1073
+              },
+              "nou": false
+            }
+          ]
+        },
+        {
+          "nume": "Medicină regenerativă",
+          "url": "/tratamente/regenerare/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Terapii care lucrează din interior: energie, imunitate, detox, echilibru.",
+          "vechi": [],
+          "copii": [
+            {
+              "nume": "Terapii intravenoase (perfuzii)",
+              "url": "/tratamente/regenerare/terapii-iv/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/tratamente-regenerative-perfuzabile/"
+              ],
+              "continut": null,
+              "nou": false
+            },
+            {
+              "nume": "Terapia NAD+",
+              "url": "/tratamente/regenerare/nad/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/terapia-nad/"
+              ],
+              "continut": {
+                "pret_de_la": 600,
+                "preturi": 1,
+                "video": 0,
+                "intrebari": 2,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1524
+              },
+              "nou": false
+            },
+            {
+              "nume": "Perfuzii cu glutation",
+              "url": "/tratamente/regenerare/glutation/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/glutation/"
+              ],
+              "continut": {
+                "pret_de_la": 220,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 4,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1586
+              },
+              "nou": false
+            },
+            {
+              "nume": "Autohemoterapie majoră cu ozon",
+              "url": "/tratamente/regenerare/autohemoterapie/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/ozonoterapie/autohemoterapia/"
+              ],
+              "continut": {
+                "pret_de_la": 300,
+                "preturi": 2,
+                "video": 1,
+                "intrebari": 2,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [],
+                "cuvinte": 1386
+              },
+              "nou": false
+            },
+            {
+              "nume": "Saună cu ozon",
+              "url": "/tratamente/regenerare/sauna-ozon/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/ozonoterapie/sauna-cu-ozon/"
+              ],
+              "continut": {
+                "pret_de_la": 300,
+                "preturi": 2,
+                "video": 0,
+                "intrebari": 1,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [
+                  "Sauna cu ozon"
+                ],
+                "cuvinte": 1202
+              },
+              "nou": false
+            },
+            {
+              "nume": "Fotobiomodulare Vielight",
+              "url": "/tratamente/regenerare/vielight/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/fotobiomodulare-vielight/"
+              ],
+              "continut": {
+                "pret_de_la": 150,
+                "preturi": 1,
+                "video": 3,
+                "intrebari": 3,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [
+                  "Vielight"
+                ],
+                "cuvinte": 1430
+              },
+              "nou": false
+            },
+            {
+              "nume": "Stimulare magnetică transcraniană (TMS)",
+              "url": "/tratamente/regenerare/tms/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/tms-stimulare-magnetica-transcraniana/"
+              ],
+              "continut": {
+                "pret_de_la": 250,
+                "preturi": 6,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [
+                  "TMS"
+                ],
+                "cuvinte": 1939
+              },
+              "nou": false
+            }
+          ]
+        },
+        {
+          "nume": "Teste genetice longevity",
+          "url": "/tratamente/teste/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Ce spun genele tale despre piele, nutriție și îmbătrânire.",
+          "vechi": [],
+          "copii": [
+            {
+              "nume": "DNA Skin",
+              "url": "/tratamente/teste/dna-skin/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/teste-genetice-longevity/skin-care-dna/"
+              ],
+              "continut": {
+                "pret_de_la": null,
+                "preturi": 0,
+                "video": 0,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [],
+                "cuvinte": 766
+              },
+              "nou": false
+            },
+            {
+              "nume": "Nutrigenetică și epigenetică",
+              "url": "/tratamente/teste/nutrigenetica/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/teste-genetice-longevity/nutrigenetica-epigenetica/"
+              ],
+              "continut": {
+                "pret_de_la": null,
+                "preturi": 0,
+                "video": 1,
+                "intrebari": 0,
+                "medici": [
+                  "Dr. Adrian Stănescu",
+                  "Dr. Irina Amolioaie",
+                  "Dr. Doina Caraman",
+                  "Dr. Florentina Matei"
+                ],
+                "tehnologii": [],
+                "cuvinte": 929
+              },
+              "nou": false
+            }
+          ]
+        },
+        {
+          "nume": "Tratamente faciale cosmetice",
+          "url": "/tratamente/cosmetica/",
+          "tip": "categorie",
+          "etapa": "explorare",
+          "desc": "Curățare, hidratare, peeling și tratamente profesionale pentru ten.",
+          "vechi": [],
+          "copii": [
+            {
+              "nume": "Tratamente faciale profesionale",
+              "url": "/tratamente/cosmetica/tratamente-faciale/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [
+                "/tratamente-cosmetologice/"
+              ],
+              "continut": null,
+              "nou": false
+            },
+            {
+              "nume": "Peeling medical",
+              "url": "/tratamente/cosmetica/peeling/",
+              "tip": "tratament",
+              "etapa": "explorare",
+              "vechi": [],
+              "continut": null,
+              "nou": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nume": "Longevitate · Global Antiaging",
+      "url": "/longevitate/",
+      "tip": "hub",
+      "etapa": "explorare",
+      "desc": "Pagina conceptului MOA: ce înseamnă Global Antiaging, vârsta biologică, cum arată un program, ce terapii include.",
+      "vechi": [
+        "/terapii-regenerative/",
+        "/teste-genetice-longevity/",
+        "/ozonoterapie/",
+        "/tratamente-regenerative-perfuzabile/"
+      ],
+      "copii": [
+        {
+          "nume": "Programul Global Antiaging",
+          "url": "/longevitate/program/",
+          "tip": "pagina",
+          "nou": true
+        },
+        {
+          "nume": "Vârsta biologică",
+          "url": "/longevitate/varsta-biologica/",
+          "tip": "pagina",
+          "nou": true
+        }
+      ]
+    },
+    {
+      "nume": "Consultații",
+      "url": "/consultatii/",
+      "tip": "hub",
+      "etapa": "decizie",
+      "vechi": [
+        "/consultatii/"
+      ],
+      "copii": [
+        {
+          "nume": "Consultație antiaging (cu vârsta biologică)",
+          "url": "/consultatii/antiaging/",
+          "tip": "consultatie",
+          "etapa": "decizie",
+          "vechi": [
+            "/consultatii/consultatie-antiaging/"
+          ],
+          "continut": {
+            "pret_de_la": 400,
+            "preturi": 1,
+            "video": 0,
+            "intrebari": 0,
+            "medici": [
+              "Dr. Adrian Stănescu",
+              "Dr. Irina Amolioaie",
+              "Dr. Doina Caraman",
+              "Dr. Florentina Matei"
+            ],
+            "tehnologii": [],
+            "cuvinte": 1340
+          }
+        },
+        {
+          "nume": "Consultație dermatologie & dermatoestetică",
+          "url": "/consultatii/dermatologie/",
+          "tip": "consultatie",
+          "etapa": "decizie",
+          "vechi": [
+            "/consultatii/consultatie-dermatoestetica-dermatologie/"
+          ],
+          "continut": {
+            "pret_de_la": 300,
+            "preturi": 3,
+            "video": 0,
+            "intrebari": 0,
+            "medici": [
+              "Dr. Adrian Stănescu",
+              "Dr. Irina Amolioaie",
+              "Dr. Doina Caraman",
+              "Dr. Florentina Matei"
+            ],
+            "tehnologii": [],
+            "cuvinte": 119
+          }
+        },
+        {
+          "nume": "Consultație chirurgie plastică",
+          "url": "/consultatii/chirurgie-plastica/",
+          "tip": "consultatie",
+          "etapa": "decizie",
+          "vechi": [
+            "/consultatii/consultatie-chirurgie-plastica/"
+          ],
+          "continut": {
+            "pret_de_la": 400,
+            "preturi": 1,
+            "video": 0,
+            "intrebari": 0,
+            "medici": [
+              "Dr. Adrian Stănescu",
+              "Dr. Irina Amolioaie",
+              "Dr. Doina Caraman",
+              "Dr. Florentina Matei"
+            ],
+            "tehnologii": [],
+            "cuvinte": 119
+          }
+        },
+        {
+          "nume": "Consultație nutriție antiaging / nutrigenomică",
+          "url": "/consultatii/nutritie/",
+          "tip": "consultatie",
+          "etapa": "decizie",
+          "vechi": [
+            "/consultatii/consultatie-nutritie-antiaging-nutrigenomica/"
+          ],
+          "continut": {
+            "pret_de_la": null,
+            "preturi": 0,
+            "video": 0,
+            "intrebari": 0,
+            "medici": [
+              "Dr. Adrian Stănescu",
+              "Dr. Irina Amolioaie",
+              "Dr. Doina Caraman",
+              "Dr. Florentina Matei"
+            ],
+            "tehnologii": [],
+            "cuvinte": 288
+          }
+        }
+      ]
+    },
+    {
+      "nume": "Prețuri",
+      "url": "/preturi/",
+      "tip": "pagina",
+      "etapa": "decizie",
+      "vechi": [
+        "/preturi/"
+      ],
+      "desc": "211 prețuri în 19 categorii, cu link spre fiecare tratament"
+    },
+    {
+      "nume": "Oferte & abonamente",
+      "url": "/oferte/",
+      "tip": "pagina",
+      "etapa": "decizie",
+      "vechi": [
+        "/abonamente/"
+      ],
+      "desc": "13 oferte active"
+    },
+    {
+      "nume": "Medici",
+      "url": "/medici/",
+      "tip": "hub",
+      "etapa": "incredere",
+      "vechi": [
+        "/echipa/"
+      ],
+      "copii": [
+        {
+          "nume": "Dr. Adrian Stănescu",
+          "url": "/medici/adrian-stanescu/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [
+            "/author/dr-adrian-stanescu/"
+          ],
+          "desc": "Medic primar gerontolog",
+          "nou": false
+        },
+        {
+          "nume": "Dr. Romana Cristina Manescu Obreja",
+          "url": "/medici/romana-cristina-manescu-obreja/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic specialist chirurgie plastică",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Iulia Nedelcu",
+          "url": "/medici/iulia-nedelcu/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic specialist dermatovenerologie",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Matei Gheorghiu Branaru",
+          "url": "/medici/matei-gheorghiu-branaru/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic primar chirurgie plastică",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Irina Amolioaie",
+          "url": "/medici/irina-amolioaie/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic specialist gerontolog",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Vali Dijmarescu",
+          "url": "/medici/vali-dijmarescu/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic rezident chirurgie plastică",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Doina Caraman",
+          "url": "/medici/doina-caraman/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic specialist gerontolog",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Florentina Matei",
+          "url": "/medici/florentina-matei/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic primar gerontolog",
+          "nou": true
+        },
+        {
+          "nume": "Dr. Andrei Rugina",
+          "url": "/medici/andrei-rugina/",
+          "tip": "medic",
+          "etapa": "incredere",
+          "vechi": [],
+          "desc": "Medic specialist chirurgie plastică",
+          "nou": true
+        }
+      ]
+    },
+    {
+      "nume": "Clinica",
+      "url": "/clinica/",
+      "tip": "hub",
+      "etapa": "incredere",
+      "vechi": [],
+      "desc": "Conceptul, fondatorul, spațiul, aparatura.",
+      "copii": [
+        {
+          "nume": "Tehnologie",
+          "url": "/clinica/tehnologie/",
+          "tip": "pagina",
+          "etapa": "incredere",
+          "nou": true,
+          "desc": "Splendor X, Venus Viva, Venus Legacy, Dermalinfusion, Dermapen 4, Vielight, TMS, Sauna cu ozon"
+        },
+        {
+          "nume": "Recenzii & rezultate",
+          "url": "/clinica/recenzii/",
+          "tip": "pagina",
+          "etapa": "incredere",
+          "nou": true,
+          "desc": "91 recenzii Google + rezultate înainte/după (de produs)"
+        }
+      ]
+    },
+    {
+      "nume": "Ghiduri",
+      "url": "/ghiduri/",
+      "tip": "hub",
+      "etapa": "constientizare",
+      "vechi": [
+        "/blog/",
+        "/category/blog/"
+      ],
+      "desc": "46 articole: 44 legate de pagini de probleme, 2 doar în ghiduri",
+      "copii": [
+        {
+          "nume": "Întrebări frecvente",
+          "url": "/intrebari-frecvente/",
+          "tip": "pagina",
+          "etapa": "decizie",
+          "nou": true,
+          "desc": "67 întrebări din conținut, de validat în Entități"
+        }
+      ]
+    },
+    {
+      "nume": "Programare",
+      "url": "/programare/",
+      "tip": "pagina",
+      "etapa": "programare",
+      "nou": true,
+      "desc": "Formular scurt (nume, telefon, ce te interesează), WhatsApp, telefon, ce urmează după trimitere"
+    },
+    {
+      "nume": "Pregătirea vizitei",
+      "url": "/vizita/",
+      "tip": "pagina",
+      "etapa": "programare",
+      "nou": true,
+      "desc": "Cum ajungi, parcare, ce aduci, ce durează prima consultație"
+    },
+    {
+      "nume": "Contact",
+      "url": "/contact/",
+      "tip": "pagina",
+      "etapa": "programare",
+      "vechi": [
+        "/contact/"
+      ]
+    },
+    {
+      "nume": "Documente legale",
+      "url": "/documente-legale/",
+      "tip": "pagina",
+      "etapa": "dupa",
+      "vechi": [
+        "/documente-legale-clinica-moa/"
+      ]
+    }
+  ],
+  "sabloane": {
+    "tratament": [
+      [
+        "Hero",
+        "ce rezolvă tratamentul + „de la X lei” + Programează-te",
+        "explorare"
+      ],
+      [
+        "Pentru cine e (și pentru cine nu)",
+        "problemele rezolvate, cu link spre paginile de probleme",
+        "explorare"
+      ],
+      [
+        "Cum funcționează",
+        "pașii ședinței + video-ul existent (vezi Media › Video)",
+        "explorare"
+      ],
+      [
+        "Rezultate & durată",
+        "când se văd, cât țin, câte ședințe",
+        "explorare"
+      ],
+      [
+        "Siguranță & recuperare",
+        "riscuri, contraindicații, ce faci după (link spre ghidul de îngrijire)",
+        "incredere"
+      ],
+      [
+        "Medicul care îl face",
+        "card cu medicul + specializarea",
+        "incredere"
+      ],
+      [
+        "Prețuri",
+        "rândurile din /preturi/ pentru acest tratament + oferta activă",
+        "decizie"
+      ],
+      [
+        "Întrebări frecvente",
+        "validate în Entități, cu schema FAQPage",
+        "decizie"
+      ],
+      [
+        "Recenzii",
+        "recenzii care menționează tratamentul sau medicul",
+        "incredere"
+      ],
+      [
+        "Tratamente asociate",
+        "combinații frecvente (ex. Botox + acid hialuronic)",
+        "explorare"
+      ],
+      [
+        "Programare",
+        "formular scurt / WhatsApp, pe aceeași pagină",
+        "programare"
+      ]
+    ],
+    "problema": [
+      [
+        "Hero",
+        "problema în cuvintele pacientului + „Vezi soluțiile”",
+        "constientizare"
+      ],
+      [
+        "De ce apare",
+        "cauze, pe scurt",
+        "constientizare"
+      ],
+      [
+        "Soluțiile MOA",
+        "cardurile tratamentelor potrivite, de la blând la intens, cu „de la X lei”",
+        "explorare"
+      ],
+      [
+        "Cum alegi",
+        "tabel comparativ: durată, rezultat, recuperare, preț",
+        "decizie"
+      ],
+      [
+        "Ghiduri",
+        "articolele despre problemă",
+        "constientizare"
+      ],
+      [
+        "Întrebări frecvente",
+        "",
+        "decizie"
+      ],
+      [
+        "Consultație",
+        "„Nu știi ce ți se potrivește? Începe cu o consultație”",
+        "decizie"
+      ]
+    ],
+    "medic": [
+      [
+        "Prezentare",
+        "foto, specializare, grad, ce face în clinică",
+        "incredere"
+      ],
+      [
+        "Tratamentele pe care le face",
+        "linkuri spre paginile de tratament",
+        "explorare"
+      ],
+      [
+        "Formare & experiență",
+        "",
+        "incredere"
+      ],
+      [
+        "Recenzii care îl menționează",
+        "",
+        "incredere"
+      ],
+      [
+        "Programare la medic",
+        "",
+        "programare"
+      ]
+    ],
+    "acasa": [
+      [
+        "Hero",
+        "Global Antiaging în 1 frază + Programează-te + Ce te supără?",
+        "constientizare"
+      ],
+      [
+        "Ce te supără?",
+        "cele mai căutate 8 probleme, ca intrări rapide",
+        "constientizare"
+      ],
+      [
+        "Tratamente populare",
+        "Botox, acid hialuronic, epilare, Sculptra, Venus Viva…",
+        "explorare"
+      ],
+      [
+        "Longevitate",
+        "conceptul și programul",
+        "explorare"
+      ],
+      [
+        "Medici",
+        "echipa, cu specializările",
+        "incredere"
+      ],
+      [
+        "Recenzii",
+        "91 recenzii Google",
+        "incredere"
+      ],
+      [
+        "Ofertele lunii",
+        "",
+        "decizie"
+      ],
+      [
+        "Programare + contact",
+        "formular, hartă, program unic",
+        "programare"
+      ]
+    ]
+  },
+  "redirecturi": [
+    {
+      "vechi": "/proceduri-minim-invazive/injectare-botox/",
+      "nou": "/tratamente/injectabile/botox/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/injectari-acid-hialuronic/",
+      "nou": "/tratamente/injectabile/acid-hialuronic/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/augmentare-buze/",
+      "nou": "/tratamente/injectabile/augmentare-buze/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/sculptra/",
+      "nou": "/tratamente/injectabile/sculptra/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/harmonyca/",
+      "nou": "/tratamente/injectabile/harmonyca/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/skinbooster-vital/",
+      "nou": "/tratamente/injectabile/skinbooster/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/polinucleotide/",
+      "nou": "/tratamente/injectabile/polinucleotide/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/jalupro-young-eye/",
+      "nou": "/tratamente/injectabile/jalupro-cearcane/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/nefertiti-lift/",
+      "nou": "/tratamente/injectabile/nefertiti-lift/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/mezoterapie/",
+      "nou": "/tratamente/injectabile/mezoterapie/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/prp-scalp/",
+      "nou": "/tratamente/injectabile/prp/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/hiperhidroza-axilara/",
+      "nou": "/tratamente/injectabile/botox-hiperhidroza/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+      "nou": "/tratamente/injectabile/augmentare-peniana/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/laser-terapie/",
+      "nou": "/tratamente/aparatura/",
+      "motiv": "categorie"
+    },
+    {
+      "vechi": "/laser-terapie/epilare-definitiva-bucuresti/",
+      "nou": "/tratamente/aparatura/epilare-definitiva/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/laser-terapie/laser-vascular/",
+      "nou": "/tratamente/aparatura/laser-vascular/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/rejuvenare-faciala/venus-viva/",
+      "nou": "/tratamente/aparatura/venus-viva/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/venus-legacy/",
+      "nou": "/tratamente/aparatura/venus-legacy/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/dermalinfusion/",
+      "nou": "/tratamente/aparatura/dermalinfusion/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/microneedeling/",
+      "nou": "/tratamente/aparatura/microneedling/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/blefaroplastie/",
+      "nou": "/tratamente/chirurgie-dermatologie/blefaroplastie/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/rejuvenare-faciala/lip-lifting/",
+      "nou": "/tratamente/chirurgie-dermatologie/lip-lift/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/nevi-pigmentari/",
+      "nou": "/tratamente/chirurgie-dermatologie/indepartare-alunite/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/eliminare-papiloame/",
+      "nou": "/tratamente/chirurgie-dermatologie/eliminare-papiloame/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/tratamente-regenerative-perfuzabile/",
+      "nou": "/tratamente/regenerare/terapii-iv/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/terapia-nad/",
+      "nou": "/tratamente/regenerare/nad/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/glutation/",
+      "nou": "/tratamente/regenerare/glutation/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/ozonoterapie/autohemoterapia/",
+      "nou": "/tratamente/regenerare/autohemoterapie/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/ozonoterapie/sauna-cu-ozon/",
+      "nou": "/tratamente/regenerare/sauna-ozon/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/fotobiomodulare-vielight/",
+      "nou": "/tratamente/regenerare/vielight/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/tms-stimulare-magnetica-transcraniana/",
+      "nou": "/tratamente/regenerare/tms/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/teste-genetice-longevity/skin-care-dna/",
+      "nou": "/tratamente/teste/dna-skin/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/teste-genetice-longevity/nutrigenetica-epigenetica/",
+      "nou": "/tratamente/teste/nutrigenetica/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/tratamente-cosmetologice/",
+      "nou": "/tratamente/cosmetica/tratamente-faciale/",
+      "motiv": "tratament"
+    },
+    {
+      "vechi": "/terapii-regenerative/",
+      "nou": "/longevitate/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/teste-genetice-longevity/",
+      "nou": "/longevitate/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/ozonoterapie/",
+      "nou": "/longevitate/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/consultatii/consultatie-antiaging/",
+      "nou": "/consultatii/antiaging/",
+      "motiv": "consultatie"
+    },
+    {
+      "vechi": "/consultatii/consultatie-dermatoestetica-dermatologie/",
+      "nou": "/consultatii/dermatologie/",
+      "motiv": "consultatie"
+    },
+    {
+      "vechi": "/consultatii/consultatie-chirurgie-plastica/",
+      "nou": "/consultatii/chirurgie-plastica/",
+      "motiv": "consultatie"
+    },
+    {
+      "vechi": "/consultatii/consultatie-nutritie-antiaging-nutrigenomica/",
+      "nou": "/consultatii/nutritie/",
+      "motiv": "consultatie"
+    },
+    {
+      "vechi": "/abonamente/",
+      "nou": "/oferte/",
+      "motiv": "pagina"
+    },
+    {
+      "vechi": "/echipa/",
+      "nou": "/medici/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/author/dr-adrian-stanescu/",
+      "nou": "/medici/adrian-stanescu/",
+      "motiv": "medic"
+    },
+    {
+      "vechi": "/blog/",
+      "nou": "/ghiduri/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/category/blog/",
+      "nou": "/ghiduri/",
+      "motiv": "hub"
+    },
+    {
+      "vechi": "/documente-legale-clinica-moa/",
+      "nou": "/documente-legale/",
+      "motiv": "pagina"
+    },
+    {
+      "vechi": "/proceduri-microchirurgicale/",
+      "nou": "/tratamente/chirurgie-dermatologie/",
+      "motiv": "categorie veche"
+    },
+    {
+      "vechi": "/proceduri-minim-invazive/",
+      "nou": "/tratamente/injectabile/",
+      "motiv": "categorie veche"
+    },
+    {
+      "vechi": "/rejuvenare-faciala/",
+      "nou": "/probleme/riduri-profunde-volum/",
+      "motiv": "categorie veche"
+    },
+    {
+      "vechi": "/tratamente-corporale/",
+      "nou": "/tratamente/aparatura/",
+      "motiv": "categorie veche"
+    },
+    {
+      "vechi": "/glutation-beneficii-si-contraindicatii-ce-este/",
+      "nou": "/ghiduri/glutation-beneficii-si-contraindicatii-ce-este/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-pe-gat-tratament-cu-botox/",
+      "nou": "/ghiduri/riduri-pe-gat-tratament-cu-botox/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/tratament-riduri-profunde/",
+      "nou": "/ghiduri/tratament-riduri-profunde/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/cearcane/",
+      "nou": "/ghiduri/cearcane/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/ptoza-palpebrala/",
+      "nou": "/ghiduri/ptoza-palpebrala/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/tratament-burnout-tms/",
+      "nou": "/ghiduri/tratament-burnout-tms/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/ridurile-fumatorului/",
+      "nou": "/ghiduri/ridurile-fumatorului/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/hialuronidaza/",
+      "nou": "/ghiduri/hialuronidaza/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/pori-dilatati/",
+      "nou": "/ghiduri/pori-dilatati/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/recuperare-dupa-dermapen/",
+      "nou": "/ghiduri/recuperare-dupa-dermapen/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/ce-inseamna-prp/",
+      "nou": "/ghiduri/ce-inseamna-prp/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/recomandari-dupa-botox/",
+      "nou": "/ghiduri/recomandari-dupa-botox/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/pungi-sub-ochi/",
+      "nou": "/ghiduri/pungi-sub-ochi/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/buze-uscate/",
+      "nou": "/ghiduri/buze-uscate/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/acid-in-buze-exagerat/",
+      "nou": "/ghiduri/acid-in-buze-exagerat/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/nad-perfuzabil/",
+      "nou": "/ghiduri/nad-perfuzabil/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/terapia-vampir-pareri/",
+      "nou": "/ghiduri/terapia-vampir-pareri/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/tratament-cearcane/",
+      "nou": "/ghiduri/tratament-cearcane/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/bunny-lines/",
+      "nou": "/ghiduri/bunny-lines/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-in-jurul-gurii/",
+      "nou": "/ghiduri/riduri-in-jurul-gurii/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-intre-sprancene/",
+      "nou": "/ghiduri/riduri-intre-sprancene/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/terapii-intravenoase/",
+      "nou": "/ghiduri/terapii-intravenoase/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/epilare-definitiva-pareri/",
+      "nou": "/ghiduri/epilare-definitiva-pareri/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-de-expresie/",
+      "nou": "/ghiduri/riduri-de-expresie/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-marioneta/",
+      "nou": "/ghiduri/riduri-marioneta/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri/",
+      "nou": "/ghiduri/riduri/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/alunite-rosii/",
+      "nou": "/ghiduri/alunite-rosii/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/epilat-interfesier-ce-inseamna/",
+      "nou": "/ghiduri/epilat-interfesier-ce-inseamna/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/unde-se-pune-botox/",
+      "nou": "/ghiduri/unde-se-pune-botox/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/adevarul-despre-glutation/",
+      "nou": "/ghiduri/adevarul-despre-glutation/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+      "nou": "/ghiduri/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-frunte/",
+      "nou": "/ghiduri/riduri-frunte/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/vergeturi-pe-sani-2/",
+      "nou": "/ghiduri/vergeturi-pe-sani-2/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/forme-de-buze-cu-acid-hialuronic/",
+      "nou": "/ghiduri/forme-de-buze-cu-acid-hialuronic/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/prima-injectare-cu-acid-hialuronic-in-buze/",
+      "nou": "/ghiduri/prima-injectare-cu-acid-hialuronic-in-buze/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/riduri-laba-gastei/",
+      "nou": "/ghiduri/riduri-laba-gastei/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/russian-lips-vs-butterfly-lips/",
+      "nou": "/ghiduri/russian-lips-vs-butterfly-lips/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/acid-hialuronic-in-buze-cat-dureaza/",
+      "nou": "/ghiduri/acid-hialuronic-in-buze-cat-dureaza/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+      "nou": "/ghiduri/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/cea-mai-buna-toxina-botulinica/",
+      "nou": "/ghiduri/cea-mai-buna-toxina-botulinica/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/efecte-botox/",
+      "nou": "/ghiduri/efecte-botox/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
+      "nou": "/ghiduri/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
+      "nou": "/ghiduri/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+      "nou": "/ghiduri/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
+      "nou": "/ghiduri/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+      "nou": "/ghiduri/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
+      "motiv": "articol"
+    },
+    {
+      "vechi": "/echipa/dr-adrian-stanescu/",
+      "nou": "/medici/adrian-stanescu/",
+      "motiv": "profil medic"
+    },
+    {
+      "vechi": "/author/moaclinic/",
+      "nou": "/medici/adrian-stanescu/",
+      "motiv": "profil medic"
+    },
+    {
+      "vechi": "/sitemap/",
+      "nou": "/",
+      "motiv": "pagină tehnică"
+    },
+    {
+      "vechi": "/confirmare/",
+      "nou": "/programare/",
+      "motiv": "pagină tehnică"
+    },
+    {
+      "vechi": "/tratamente-corporale/venus-legacy/",
+      "nou": "/tratamente/aparatura/venus-legacy/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/tratamente-cosmetologice/dermalinfusion/",
+      "nou": "/tratamente/aparatura/dermalinfusion/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/laserterapie-laser-vascular-epilare-laser/epilare-definitiva-bucuresti/",
+      "nou": "/tratamente/aparatura/epilare-definitiva/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/ozonoterapie/sistemica-autohemoterapia-majora/",
+      "nou": "/tratamente/regenerare/autohemoterapie/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/laserterapie-laser-vascular-epilare-laser/laser-vascular/",
+      "nou": "/tratamente/aparatura/laser-vascular/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/rejuvenare-faciala/venus-viva//",
+      "nou": "/tratamente/aparatura/venus-viva/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/tratamente-regenerative-perfuzabile/glutation/",
+      "nou": "/tratamente/regenerare/glutation/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/proceduri-microchirurgicale/blefaroplastie/",
+      "nou": "/tratamente/chirurgie-dermatologie/blefaroplastie/",
+      "motiv": "redirect vechi, fără lanț"
+    },
+    {
+      "vechi": "/tratamente-regenerative-perfuzabile__trashed/terapia-nad/",
+      "nou": "/tratamente/regenerare/nad/",
+      "motiv": "redirect vechi, fără lanț"
+    }
+  ],
+  "neacoperite": [],
+  "statistici": {
+    "pagini_noi": 87,
+    "probleme": 15,
+    "tratamente": 34,
+    "de_creat": 16,
+    "redirecturi": 110,
+    "articole_legate": 44
+  },
+  "avertismente": []
+}

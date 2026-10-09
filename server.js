@@ -28,7 +28,7 @@ const TYPES = {
 };
 const JSON_FILES = {
   '/api/entitati': 'entitati.json', '/api/pages': 'pages.json', '/api/brand': 'brand.json', '/api/site-health': 'site-health.json',
-  '/api/intrebari/status': 'intrebari-status.json', '/api/observatii/status': 'observatii-status.json', '/api/leads': 'leads.json',
+  '/api/intrebari/status': 'intrebari-status.json', '/api/structura': 'structura.json', '/api/observatii/status': 'observatii-status.json', '/api/leads': 'leads.json',
 };
 
 const readJson = (f, def) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch { return def; } };
