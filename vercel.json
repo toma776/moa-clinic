@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/manage/legaturi", "destination": "/manage/sinapse", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/site/index.html" },
+    { "source": "/wp-content/:path*", "destination": "/site/wp-content/:path*" },
+    { "source": "/wp-includes/:path*", "destination": "/site/wp-includes/:path*" },
+    { "source": "/nou", "destination": "/nou/index.html" },
+
+    { "source": "/api/entitati", "destination": "/data/entitati.json" },
+    { "source": "/api/pages", "destination": "/data/pages.json" },
+    { "source": "/api/brand", "destination": "/data/brand.json" },
+    { "source": "/api/site-health", "destination": "/data/site-health.json" },
+    { "source": "/api/structura", "destination": "/data/structura.json" },
+    { "source": "/api/intrebari/status", "destination": "/data/intrebari-status.json" },
+    { "source": "/api/observatii/status", "destination": "/data/observatii-status.json" },
+    { "source": "/api/leads", "destination": "/data/leads-public.json" },
+
+    { "source": "/manage", "destination": "/manage/index.html" },
+    { "source": "/manage/:path*", "destination": "/manage/index.html" }
+  ],
+  "headers": [
+    { "source": "/data/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+  ]
+}
