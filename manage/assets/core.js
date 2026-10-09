@@ -68,10 +68,11 @@ document.addEventListener('click', (e) => {
 });
 window.addEventListener('popstate', () => go(routeFromPath()));
 
-// numărul total de entități: suma grupurilor din toate categoriile (fără Audit SEO)
+// numărul total de entități: grupurile tuturor categoriilor, fără Audit SEO și fără atribute (prețuri, afirmații…).
+// Trebuie să fie egal cu numărul de noduri din Sinapse.
 function entityTotal(E) {
   const S = entitySections(E);
-  return entityCategories(E).filter((c) => !c.audit).flatMap((c) => c.sections).reduce((n, id) => n + (S[id]?.count || 0), 0);
+  return entityCategories(E).filter((c) => !c.audit).flatMap((c) => c.sections).filter((id) => !ATRIBUTE.has(id)).reduce((n, id) => n + (S[id]?.count || 0), 0);
 }
 
 function updateCounts() {

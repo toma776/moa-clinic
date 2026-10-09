@@ -126,6 +126,8 @@ pre { background: var(--panel-2); border: 1px solid var(--line); border-radius: 
 .cat-total { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cat-subs { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; }
 .cat-subs b { color: var(--ink); }
+.cat-subs .attr { opacity: .55; font-style: italic; }
+.cat-subs .attr b { font-weight: 400; }
 .cat-open { font-size: 12.5px; color: var(--accent); font-weight: 600; }
 .cat.audit { border-style: dashed; }
 .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }

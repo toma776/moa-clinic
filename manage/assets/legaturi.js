@@ -14,6 +14,8 @@ const GRAPH_CATS = {
   dovezi: ['Recenzii', '#ff8f7a', 'dovezi'],
   oferte: ['Oferte', '#c9b79c', 'preturi'],
   video: ['Video', '#7ad3d6', 'media'],
+  proprii: ['Produse MOA', '#e3c07a', 'tehnologii'],
+  imagini: ['Imagini', '#9fb3c8', 'media'],
 };
 const loadScript = (id, url) => new Promise((ok, err) => {
   if (document.getElementById(id)) return ok();
@@ -72,6 +74,21 @@ function graphData(D) {
 
   // video -> serviciul paginii pe care apare
   for (const v of D.video || []) { const id = add('v:' + v.id, v.titlu, 'video'); for (const p of v.pagini) rel(id, p.serviciu ? 's:' + p.serviciu : null); }
+
+  // produse proprii MOA (terapii IV) -> terapia din numele lor (NAD+, glutation…)
+  const PROD_SERV = [[/nad/, 'terapia-nad'], [/glutation/, 'glutation']];
+  D.produseProprii.forEach((p, i) => {
+    const id = add('pp:' + i, p.nume, 'proprii');
+    for (const [re, sid] of PROD_SERV) if (re.test(normTxt(p.nume))) rel(id, 's:' + sid);
+  });
+  // imagini -> persoana / tehnologia din numele fișierului sau din alt
+  const people = D.echipa.map((p) => ({ id: 'p:' + normTxt(p.nume), keys: p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).filter((w) => w.length > 4 && !/^matei$/i.test(w)).map(normTxt) }));
+  (D.media || []).forEach((m, i) => {
+    const id = add('img:' + i, m.titlu, 'imagini');
+    const t = normTxt(`${m.fisier} ${m.alt}`).replace(/[-_.]/g, ' ');
+    for (const p of people) if (p.keys.some((k) => t.includes(k))) rel(id, p.id);
+    for (const tt of D.tehnologii) if (t.includes(normTxt(tt.nume).split(' ')[0])) rel(id, find(tt.nume));
+  });
 
   const deg = new Map();
   for (const l of links) if (l.tip !== 'lob') for (const k of [l.source, l.target]) deg.set(k, (deg.get(k) || 0) + 1);

@@ -1,6 +1,9 @@
 /* ENTITĂȚI: categorii -> grupuri -> entități, cu pagina pe care apare fiecare (/manage/entitati[/categorie[/grup]]). */
 
 // tipurile de articole, în ordinea afișării: [eticheta, slug în URL, clasa etichetei]
+// grupuri care descriu entitățile (prețuri, afirmații, cifre, promisiuni), dar nu sunt entități: nu intră în total
+const ATRIBUTE = new Set(['lista_preturi', 'fapte', 'valoare', 'cifre']);
+
 const ART_TYPES = [['ghid', 'ghid', ''], ['tratament', 'tratament', 'ok'], ['îngrijire', 'ingrijire', 'warn'], ['comparație', 'comparatie', 'grey'], ['opinii', 'opinii', 'bad']];
 const tipLabel = (t) => (t ? t[0].toUpperCase() + t.slice(1) : 'Ghid');
 const initials = (n) => n.replace(/^Dr\.\s*/, '').split(/\s+/).map((x) => x[0]).slice(0, 2).join('');
@@ -294,14 +297,14 @@ routes.entitati = function renderEntitati() {
   const [catId, grpId] = location.pathname.replace(/^\/manage\/entitati\/?/, '').split('/');
   const cat = CATS.find((c) => c.id === catId);
   const grp = !cat ? null : cat.sections.includes(grpId) ? grpId : cat.sections.length === 1 ? cat.sections[0] : null;
-  const total = (c) => (c.audit ? 0 : c.sections.filter((id) => S[id]?.count != null).reduce((n, id) => n + S[id].count, 0));
+  const total = (c) => (c.audit ? 0 : c.sections.filter((id) => S[id]?.count != null && !ATRIBUTE.has(id)).reduce((n, id) => n + S[id].count, 0));
   const sectionHtml = (s) => `<section id="${s.id}"><h2>${esc(s.title)}${s.count != null ? `<span class="n">${s.count}</span>` : ''}</h2>${s.html}</section>`;
   const open = (path) => { history.pushState({}, '', '/manage/entitati' + (path ? '/' + path : '')); routes.entitati(); window.scrollTo(0, 0); };
 
   if (!cat) {
     $('#view').innerHTML = `
       <div class="head">
-        <div><div class="crumb">manage › entități · sursa: ${link(D.meta.sursa, "moaclinic.ro")} (${esc(D.meta.extras_la)}) · ${D.meta.pagini} pagini citite</div><h1>Entitățile brandului</h1></div>
+        <div><div class="crumb">manage › entități · sursa: ${link(D.meta.sursa, "moaclinic.ro")} (${esc(D.meta.extras_la)}) · ${D.meta.pagini} pagini citite</div><h1>Entitățile brandului</h1><div class="crumb" style="margin-top:4px">${entityTotal(D)} entități · aceleași noduri ca în Sinapse. Grupurile estompate (prețuri, afirmații, cifre, propunerea de valoare) sunt atribute și nu intră în total.</div></div>
         <input type="search" id="q" placeholder="Caută în toate entitățile…" aria-label="Caută în entități">
         <button id="exp">Export JSON</button>
       </div>
@@ -310,7 +313,7 @@ routes.entitati = function renderEntitati() {
           <div class="cat-top"><span class="cat-ico">${icon(c.icon)}</span>${c.audit ? '' : `<span class="cat-total">${total(c)}</span>`}</div>
           <h3>${esc(c.title)}</h3>
           <p>${esc(c.desc)}</p>
-          <div class="cat-subs">${c.sections.map((id) => `<span>${esc(S[id].title)}${S[id].count != null ? ` <b>${S[id].count}</b>` : ''}</span>`).join('')}</div>
+          <div class="cat-subs">${c.sections.map((id) => `<span${ATRIBUTE.has(id) ? ' class="attr" title="Atribute, nu entități: nu intră în total"' : ''}>${esc(S[id].title)}${S[id].count != null ? ` <b>${S[id].count}</b>` : ''}</span>`).join('')}</div>
           <span class="cat-open">Deschide →</span>
         </a>`).join('')}
       </div>
