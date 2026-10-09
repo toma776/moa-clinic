@@ -142,7 +142,7 @@ header.site { position: sticky; top: 0; z-index: 40; background: rgba(248, 244, 
 .hero-badge { position: absolute; left: -34px; bottom: 44px; background: #fff; padding: 18px 22px; box-shadow: 0 24px 50px -24px rgba(22, 21, 20, .45); display: grid; gap: 2px; }
 .hero-badge b { font: 500 30px/1 var(--serif); }
 .hero-badge span { font-size: 12.5px; color: var(--muted); }
-.hero-badge2 { position: absolute; right: -18px; top: 40px; background: var(--night); color: #f1e9dd; padding: 14px 18px; font-size: 12.5px; letter-spacing: .04em; max-width: 210px; }
+.hero-badge2 { position: absolute; z-index: 4; right: -18px; top: 40px; background: var(--night); color: #f1e9dd; padding: 14px 18px; font-size: 12.5px; letter-spacing: .04em; max-width: 210px; }
 .hero-badge2 b { display: block; font: italic 500 20px/1.2 var(--serif); color: var(--gold-soft); margin-bottom: 4px; }
 .stars { color: var(--gold); letter-spacing: 2px; }
 
@@ -354,3 +354,21 @@ footer .legal { border-top: 1px solid rgba(255, 255, 255, .08); padding: 26px 0 
   .rv { opacity: 1; transform: none; transition: none; }
   .sig img, .doc img { transition: none; }
 }
+
+/* slider în hero (aceleași dimensiuni ca imaginea: chenar 4:5) */
+.hs { overflow: visible; }
+.hs-track { position: absolute; inset: 0; overflow: hidden; background: var(--sand); }
+.hs-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.1s var(--ease); }
+.hs-slide.on { opacity: 1; z-index: 1; }
+.hs-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 6s linear; }
+.hs-slide.on img { transform: scale(1); }
+.hs-bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; align-items: center; gap: 14px; padding: 46px 18px 16px; background: linear-gradient(0deg, rgba(14, 13, 12, .62), transparent); color: #fff; }
+.hs-label { flex: 1; font: italic 500 19px/1.2 var(--serif); }
+.hs-count { font: 500 11.5px/1 var(--sans); letter-spacing: .18em; color: rgba(255, 255, 255, .78); }
+.hs-count b { color: #fff; font-weight: 500; }
+.hs-nav { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .6); background: transparent; color: #fff; font-size: 20px; line-height: 1; cursor: pointer; transition: background .25s, color .25s; }
+.hs-nav:hover, .hs-nav:focus-visible { background: #fff; color: var(--ink); outline: none; }
+.hs-dots { position: absolute; left: 0; right: 0; bottom: -30px; display: flex; justify-content: center; gap: 8px; }
+.hs-dots button { width: 22px; height: 2px; padding: 0; border: 0; background: var(--sand); cursor: pointer; transition: background .3s, width .3s; }
+.hs-dots button.on { background: var(--gold); width: 38px; }
+@media (prefers-reduced-motion: reduce) { .hs-slide, .hs-slide img { transition: none; transform: none; } }

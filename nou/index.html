@@ -139,7 +139,22 @@
       </div>
     </div>
     <div class="hero-media">
-      <div class="frame"><img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA din București" fetchpriority="high"></div>
+      <div class="frame hs" id="hs" role="region" aria-roledescription="carusel" aria-label="Clinica MOA, în imagini">
+        <div class="hs-track"><figure class="hs-slide on" data-label="Recepția" role="group" aria-roledescription="imagine" aria-label="1 din 7: Recepția" >
+          <img src="/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg" alt="Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene" fetchpriority="high"></figure><figure class="hs-slide " data-label="Holul" role="group" aria-roledescription="imagine" aria-label="2 din 7: Holul" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Holul clinicii MOA, cu scara și zona de așteptare" loading="lazy"></figure><figure class="hs-slide " data-label="Salonul de așteptare" role="group" aria-roledescription="imagine" aria-label="3 din 7: Salonul de așteptare" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.19-768x1024.jpeg" alt="Salonul de așteptare al clinicii MOA" loading="lazy"></figure><figure class="hs-slide " data-label="Cabinetul de consultații" role="group" aria-roledescription="imagine" aria-label="4 din 7: Cabinetul de consultații" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.20-2-768x1024.jpeg" alt="Cabinetul de consultații și proceduri injectabile" loading="lazy"></figure><figure class="hs-slide " data-label="Cabinetul de tratamente cu aparatură" role="group" aria-roledescription="imagine" aria-label="5 din 7: Cabinetul de tratamente cu aparatură" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-768x1024.jpeg" alt="Cabinet de tratamente cu aparatură de radiofrecvență" loading="lazy"></figure><figure class="hs-slide " data-label="Splendor X" role="group" aria-roledescription="imagine" aria-label="6 din 7: Splendor X" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-1-768x1024.jpeg" alt="Laserul Splendor X pentru epilare definitivă" loading="lazy"></figure><figure class="hs-slide " data-label="Camera de terapii" role="group" aria-roledescription="imagine" aria-label="7 din 7: Camera de terapii" aria-hidden="true">
+          <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.52-768x1024.jpeg" alt="Camera pentru terapii intravenoase" loading="lazy"></figure></div>
+        <div class="hs-bar">
+          <span class="hs-label" aria-live="polite">Recepția</span>
+          <span class="hs-count"><b>01</b> / 07</span>
+          <button class="hs-nav" type="button" data-hs="-1" aria-label="Imaginea anterioară">‹</button><button class="hs-nav" type="button" data-hs="1" aria-label="Imaginea următoare">›</button>
+        </div>
+        <div class="hs-dots"><button type="button" class="on" data-hsi="0" aria-label="Arată: Recepția"></button><button type="button" class="" data-hsi="1" aria-label="Arată: Holul"></button><button type="button" class="" data-hsi="2" aria-label="Arată: Salonul de așteptare"></button><button type="button" class="" data-hsi="3" aria-label="Arată: Cabinetul de consultații"></button><button type="button" class="" data-hsi="4" aria-label="Arată: Cabinetul de tratamente cu aparatură"></button><button type="button" class="" data-hsi="5" aria-label="Arată: Splendor X"></button><button type="button" class="" data-hsi="6" aria-label="Arată: Camera de terapii"></button></div>
+      </div>
       <div class="hero-badge2"><b>Global Antiaging</b>estetică, chirurgie și regenerare, într-un singur loc</div>
     </div>
   </div>
@@ -491,6 +506,36 @@
   mnav.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { stack.push(b.dataset.go); show(); }));
   mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mOpen(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(null); mOpen(false); } });
+
+  // slider-ul din hero: fade, 5 s, pauză la hover / focus, swipe, săgeți de la tastatură
+  const hs = document.getElementById('hs');
+  if (hs) {
+    const slides = [...hs.querySelectorAll('.hs-slide')], dots = [...hs.querySelectorAll('[data-hsi]')];
+    const label = hs.querySelector('.hs-label'), count = hs.querySelector('.hs-count b');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur = 0, timer;
+    const goTo = (n) => {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => { s.classList.toggle('on', i === cur); s.setAttribute('aria-hidden', i !== cur); if (i === cur) s.querySelector('img').loading = 'eager'; });
+      dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+      label.textContent = slides[cur].dataset.label;
+      count.textContent = String(cur + 1).padStart(2, '0');
+    };
+    const play = () => { if (reduce) return; clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000); };
+    const stop = () => clearInterval(timer);
+    hs.querySelectorAll('[data-hs]').forEach((b) => b.addEventListener('click', () => { goTo(cur + Number(b.dataset.hs)); play(); }));
+    dots.forEach((d) => d.addEventListener('click', () => { goTo(Number(d.dataset.hsi)); play(); }));
+    hs.addEventListener('mouseenter', stop); hs.addEventListener('mouseleave', play);
+    hs.addEventListener('focusin', stop); hs.addEventListener('focusout', play);
+    hs.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') goTo(cur - 1); if (e.key === 'ArrowRight') goTo(cur + 1); });
+    let x0 = null;
+    hs.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+    hs.addEventListener('touchend', (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1)); x0 = null; play(); });
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
+    // preîncarcă următoarea imagine
+    slides.slice(1, 2).forEach((s) => (s.querySelector('img').loading = 'eager'));
+    play();
+  }
 
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];

@@ -54,6 +54,18 @@ const SIG = [
   { id: 'sculptra', wide: true, cat: 'Biostimulare', titlu: 'Sculptra: volum care se construiește în timp', text: 'Stimulează colagenul propriu pentru un lifting treptat, natural, care durează.', img: '/wp-content/uploads/2024/09/17-768x768.jpg' },
 ];
 
+// slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
+const HERO_SLIDES = [
+  { src: '/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg', eticheta: 'Recepția', alt: 'Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene' },
+  { src: '/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg', eticheta: 'Holul', alt: 'Holul clinicii MOA, cu scara și zona de așteptare' },
+  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.19-768x1024.jpeg', eticheta: 'Salonul de așteptare', alt: 'Salonul de așteptare al clinicii MOA' },
+  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.20-2-768x1024.jpeg', eticheta: 'Cabinetul de consultații', alt: 'Cabinetul de consultații și proceduri injectabile' },
+  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-768x1024.jpeg', eticheta: 'Cabinetul de tratamente cu aparatură', alt: 'Cabinet de tratamente cu aparatură de radiofrecvență' },
+  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-1-768x1024.jpeg', eticheta: 'Splendor X', alt: 'Laserul Splendor X pentru epilare definitivă' },
+  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.52-768x1024.jpeg', eticheta: 'Camera de terapii', alt: 'Camera pentru terapii intravenoase' },
+];
+for (const s of HERO_SLIDES) if (!fs.existsSync(path.join(ROOT, 'site', s.src))) console.warn('  ! lipsește local:', s.src);
+
 // video din cabinet (verticale, încărcate doar la click)
 const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'nutrigenetica-epigenetica']
   .map((sid) => D.video.find((v) => v.pagini.some((p) => p.serviciu === sid)))
@@ -217,7 +229,16 @@ ${mobileNav}
       </div>
     </div>
     <div class="hero-media">
-      <div class="frame"><img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA din București" fetchpriority="high"></div>
+      <div class="frame hs" id="hs" role="region" aria-roledescription="carusel" aria-label="Clinica MOA, în imagini">
+        <div class="hs-track">${HERO_SLIDES.map((s, i) => `<figure class="hs-slide ${i ? '' : 'on'}" data-label="${esc(s.eticheta)}" role="group" aria-roledescription="imagine" aria-label="${i + 1} din ${HERO_SLIDES.length}: ${esc(s.eticheta)}" ${i ? 'aria-hidden="true"' : ''}>
+          <img src="${esc(s.src)}" alt="${esc(s.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}></figure>`).join('')}</div>
+        <div class="hs-bar">
+          <span class="hs-label" aria-live="polite">${esc(HERO_SLIDES[0].eticheta)}</span>
+          <span class="hs-count"><b>01</b> / ${String(HERO_SLIDES.length).padStart(2, '0')}</span>
+          <button class="hs-nav" type="button" data-hs="-1" aria-label="Imaginea anterioară">‹</button><button class="hs-nav" type="button" data-hs="1" aria-label="Imaginea următoare">›</button>
+        </div>
+        <div class="hs-dots">${HERO_SLIDES.map((s, i) => `<button type="button" class="${i ? '' : 'on'}" data-hsi="${i}" aria-label="Arată: ${esc(s.eticheta)}"></button>`).join('')}</div>
+      </div>
       <div class="hero-badge2"><b>Global Antiaging</b>estetică, chirurgie și regenerare, într-un singur loc</div>
     </div>
   </div>
@@ -465,6 +486,36 @@ ${mobileNav}
   mnav.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { stack.push(b.dataset.go); show(); }));
   mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mOpen(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(null); mOpen(false); } });
+
+  // slider-ul din hero: fade, 5 s, pauză la hover / focus, swipe, săgeți de la tastatură
+  const hs = document.getElementById('hs');
+  if (hs) {
+    const slides = [...hs.querySelectorAll('.hs-slide')], dots = [...hs.querySelectorAll('[data-hsi]')];
+    const label = hs.querySelector('.hs-label'), count = hs.querySelector('.hs-count b');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur = 0, timer;
+    const goTo = (n) => {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => { s.classList.toggle('on', i === cur); s.setAttribute('aria-hidden', i !== cur); if (i === cur) s.querySelector('img').loading = 'eager'; });
+      dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+      label.textContent = slides[cur].dataset.label;
+      count.textContent = String(cur + 1).padStart(2, '0');
+    };
+    const play = () => { if (reduce) return; clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000); };
+    const stop = () => clearInterval(timer);
+    hs.querySelectorAll('[data-hs]').forEach((b) => b.addEventListener('click', () => { goTo(cur + Number(b.dataset.hs)); play(); }));
+    dots.forEach((d) => d.addEventListener('click', () => { goTo(Number(d.dataset.hsi)); play(); }));
+    hs.addEventListener('mouseenter', stop); hs.addEventListener('mouseleave', play);
+    hs.addEventListener('focusin', stop); hs.addEventListener('focusout', play);
+    hs.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') goTo(cur - 1); if (e.key === 'ArrowRight') goTo(cur + 1); });
+    let x0 = null;
+    hs.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+    hs.addEventListener('touchend', (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1)); x0 = null; play(); });
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
+    // preîncarcă următoarea imagine
+    slides.slice(1, 2).forEach((s) => (s.querySelector('img').loading = 'eager'));
+    play();
+  }
 
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];
