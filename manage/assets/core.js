@@ -68,9 +68,15 @@ document.addEventListener('click', (e) => {
 });
 window.addEventListener('popstate', () => go(routeFromPath()));
 
+// numărul total de entități: suma grupurilor din toate categoriile (fără Audit SEO)
+function entityTotal(E) {
+  const S = entitySections(E);
+  return entityCategories(E).filter((c) => !c.audit).flatMap((c) => c.sections).reduce((n, id) => n + (S[id]?.count || 0), 0);
+}
+
 function updateCounts() {
   const E = store.entitati;
-  $('#n-entitati').textContent = E ? entityCategories(E).filter((c) => !c.audit).length : '';
+  $('#n-entitati').textContent = E ? entityTotal(E) : '';
   $('#n-leads').textContent = store.leads.filter((l) => l.status === 'nou').length || store.leads.length || '';
   $('#n-pages').textContent = store.pages ? store.pages.pages.length : '';
   $('#n-health').textContent = healthData()?.total ?? '';
