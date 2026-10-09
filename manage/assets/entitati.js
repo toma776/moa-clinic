@@ -84,7 +84,22 @@ function entitySections(D) {
       ${servPage.length ? `<p class="small">Menționat(ă) pe: ${tags(servPage.map(prettyCat), '')}</p>` : ''}
       ${servSpec.length ? `<p class="small">După specialitate: ${tags([...new Set(servSpec)].map(prettyCat))}</p>` : ''}
       ${p.profil ? `<p class="small">${link(p.profil, 'profil')}</p>` : ''}
+      ${profileBlock(p.profil_detaliat)}
       ${src(p.surse)}</div></div></div>`;
+  };
+  // profilul complet (din pagina de profil / autor), dacă există
+  const profileBlock = (pr) => {
+    if (!pr) return '<p class="small muted">Fără profil detaliat pe site.</p>';
+    const ul = (a) => `<ul class="clean small">${a.map((x) => `<li>${esc(typeof x === 'string' ? x : x.text || x.titlu)}${x.an || x.perioada ? ` <span class="muted">${esc(x.an || x.perioada)}</span>` : ''}${x.editura ? ` <span class="muted">· ${esc(x.editura)}</span>` : ''}</li>`).join('')}</ul>`;
+    const part = (t, a) => (a?.length ? `<h4 class="bh4">${esc(t)} <span class="muted">${a.length}</span></h4>${ul(a)}` : '');
+    return `<details class="src" style="margin-top:10px"><summary style="display:inline">profil complet: ${pr.cifre.map((c) => `${c.valoare} ${c.eticheta}`).join(' · ')}</summary>
+      <div style="margin-top:6px">
+        ${pr.citat ? `<p class="bquote small">„${esc(pr.citat)}”</p>` : ''}
+        ${pr.rezumat ? `<p class="small">${esc(pr.rezumat)}</p>` : ''}
+        ${part('Expertiză', pr.expertiza)}${part('Cărți', pr.carti)}${part('Funcții', pr.functii)}${part('Supraspecializări', pr.supraspecializari)}
+        ${part('Membru în', pr.membru_in)}${part('Distincții', pr.distinctii)}${part('Programe coordonate', pr.programe)}${part('Rol în MOA', pr.rol_moa)}
+        <p class="small muted">Sursa: ${link(pr.url)}</p>
+      </div></details>`;
   };
   for (const s of [...SPEC_ORDER, ...new Set(D.echipa.map((p) => p.specialitate).filter((x) => !SPEC_ORDER.includes(x)))]) {
     const P = D.echipa.filter((p) => p.specialitate === s);

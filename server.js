@@ -168,7 +168,10 @@ http.createServer(async (req, res) => {
   try {
     if (url.startsWith('/api/')) return await api(req, res, url);
     if (url === '/nou') { res.writeHead(301, { Location: '/nou/' }); return res.end(); }
-    if (url.startsWith('/nou/')) return sendFile(res, safe(path.join(ROOT, 'nou'), url.slice('/nou/'.length) || 'index.html') || '');
+    if (url.startsWith('/nou/')) {
+      const f = safe(path.join(ROOT, 'nou'), url.slice('/nou/'.length) || 'index.html');
+      return sendFile(res, f && fs.existsSync(f) && fs.statSync(f).isDirectory() ? path.join(f, 'index.html') : f || '');
+    }
     if (url.startsWith('/manage/assets/')) return sendFile(res, safe(path.join(ROOT, 'manage', 'assets'), url.slice('/manage/assets/'.length)) || '');
     if (url === '/manage' || url.startsWith('/manage/')) return sendFile(res, path.join(ROOT, 'manage', 'index.html'));
     const site = path.join(ROOT, 'site');

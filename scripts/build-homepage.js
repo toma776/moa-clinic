@@ -338,8 +338,8 @@ ${mobileNav}
     </div>
     <div class="team-filter rv" role="tablist" aria-label="Filtrează echipa">${TEAM_GROUPS.map((g, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-team="${g.id}">${esc(g.nume)} <span>${g.id === 'toti' ? team.length : team.filter((p) => p.grup === g.id).length}</span></button>`).join('')}</div>
     <div class="team-grid">${team.map((p) => `
-      <article class="doc rv" data-grup="${p.grup}"><div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
-        <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span></article>`).join('')}
+      <article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}" data-grup="${p.grup}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
+        <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`).join('')}
     </div>
   </div>
 </section>
@@ -570,3 +570,128 @@ ${mobileNav}
 fs.mkdirSync(path.join(ROOT, 'nou'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'nou', 'index.html'), html);
 console.log(`Gata: nou/index.html · ${team.length} oameni în echipă (${doctors.length} cu fotografie) · ${concernZones.reduce((n, z) => n + z.copii.length, 0)} probleme · ${SIG.length} tratamente-semnătură · ${VID.length} video · ${offers.length} oferte · ${reviews.length} recenzii`);
+
+// ---------- paginile de profil ale echipei (/nou/medici/<id>/), din profilurile extrase ----------
+// Refolosesc header-ul, footer-ul, programarea și scriptul homepage-ului; linkurile-ancoră duc înapoi pe homepage.
+const sliceBetween = (a, b) => html.slice(html.indexOf(a), html.indexOf(b, html.indexOf(a)));
+const toHome = (s) => s.replace(/href="#(ce-te-supara|echipa|recenzii|despre)"/g, 'href="/nou/#$1"');
+const TOP = toHome(sliceBetween('<div class="topbar">', '<main>'));
+const BOOK = sliceBetween('<section class="sec book" id="programare">', '</main>');
+const BOTTOM = toHome(html.slice(html.indexOf('</main>')));
+const fmtPer = (x) => String(x || '').replace(/^din\s+/i, '').replace(/\s*până în prezent/, ' – prezent');
+const cutTxt = (s, n) => { s = String(s || ''); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };
+const prettyName = (s) => (s === s.toUpperCase() ? s.charAt(0) + s.slice(1).toLowerCase() : s).replace(/\s+(în|in) Bucure[sș]ti$/i, '');
+
+for (const p of team.filter((x) => x.profil_detaliat)) {
+  const pr = p.profil_detaliat;
+  const photo = pr.imagine && fs.existsSync(path.join(ROOT, 'site', pr.imagine)) ? pr.imagine : photos[p.nume] ? resized(photos[p.nume]) : null;
+  // serviciile din specialitatea lui; consultațiile doar dacă țin de specialitate (antiaging / nutriție la gerontologie)
+  const CONSULT_SPEC = { Gerontologie: /antiaging|nutritie/, 'Chirurgie plastică': /chirurgie/, Dermatovenerologie: /dermato/ };
+  const servP = D.servicii.filter((s) => ((s.medici || []).includes(p.nume) || (p.servicii || []).includes(s.id)) && (s.categorie !== 'Consultații' || (CONSULT_SPEC[p.specialitate] || /./).test(s.id)));
+  const last = p.nume.replace(/^Dr\.\s*/, '').split(' ').pop();
+  const allArts = D.articole.filter((a) => a.autor && a.autor.includes(last));
+  const arts = allArts.slice(0, 6);
+  // cronologie: funcții + supraspecializări, după anul de început (cel mai recent primul)
+  const year = (s) => +((String(s).match(/\d{4}/) || [0])[0]);
+  const timeline = [
+    ...pr.functii.map((f) => ({ per: fmtPer(f.perioada), text: f.text.replace(/\s*\(\d{4}\s*[–-]\s*\d{4}\)/, '').replace(/\s+din \d{4}( până în prezent)?$/, '').replace(/\s*[–-]\s*\d{4},/, ','), tip: 'Funcție' })),
+    ...pr.supraspecializari.map((x) => ({ per: x.an, text: x.text, tip: 'Formare' })),
+  ].sort((a, b) => year(b.per) - year(a.per));
+  const pageUrl = `${ORIGIN}/medici/${p.id}/`;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'ProfilePage', '@id': pageUrl + '#webpage', url: pageUrl, name: `${p.nume} – ${p.rol} | MOA Clinic`, mainEntity: { '@id': pageUrl + '#person' }, inLanguage: 'ro-RO' },
+      {
+        '@type': ['Person', 'Physician'], '@id': pageUrl + '#person', name: p.nume, jobTitle: p.rol, url: pageUrl,
+        ...(photo ? { image: ORIGIN + photo } : {}), description: pr.rezumat,
+        medicalSpecialty: 'Geriatric', worksFor: { '@id': `${ORIGIN}/#organization` },
+        alumniOf: (pr.parcurs || []).filter((l) => /Absolvent/.test(l)).map((l) => ({ '@type': 'CollegeOrUniversity', name: l.replace(/^Absolvent al\s*/, '') })),
+        memberOf: pr.membru_in.map((n) => ({ '@type': 'Organization', name: n.replace(/^Societății/, 'Societatea') })),
+        award: pr.distinctii.map((d) => `${d.titlu}${d.an ? ` (${d.an})` : ''}`),
+        knowsAbout: pr.expertiza,
+        sameAs: [pr.url],
+      },
+      ...pr.carti.map((c) => ({ '@type': 'Book', name: c.titlu, author: { '@id': pageUrl + '#person' }, ...(c.editura && !/www\./.test(c.editura) ? { publisher: { '@type': 'Organization', name: `Editura ${c.editura}` } } : {}), ...(c.an ? { datePublished: String(c.an) } : {}) })),
+    ],
+  };
+  const list = (a, cls = '') => `<ul class="pf-list ${cls}">${a.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(p.nume)} – ${esc(p.rol)} | MOA Clinic</title>
+<meta name="description" content="${esc(cutTxt(pr.rezumat || p.rol, 158))}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#echipa">Echipa</a><span>›</span><span aria-current="page">${esc(p.nume)}</span></nav>
+
+<section class="pf-hero">
+  <div class="wrap pf-grid">
+    <div class="pf-copy">
+      <span class="eyebrow">${p.nume.includes('Stănescu') ? 'Fondator MOA · ' : ''}${esc(p.rol)}</span>
+      <h1>${esc(p.nume)}</h1>
+      <p class="lede">${esc(pr.rezumat || '')}</p>
+      <div class="pf-facts">${pr.cifre.map((c) => `<div><b>${esc(c.valoare)}</b><span>${esc(c.eticheta)}</span></div>`).join('')}</div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
+    </div>
+    ${photo ? `<div class="pf-photo"><div class="frame"><img src="${esc(photo)}" alt="${esc(p.nume)}" fetchpriority="high"></div></div>` : ''}
+  </div>
+</section>
+
+${pr.citat ? `<section class="pf-quote"><div class="wrap"><blockquote>„${esc(pr.citat)}”<cite>${esc(p.nume)} · filosofia sa medicală</cite></blockquote></div></section>` : ''}
+
+<section class="sec">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">În cuvintele lui</span><h2 class="pf-h2">Povestea</h2>
+      <div class="pf-prose">${[...pr.biografie, ...(pr.formare || []), ...(pr.viziune || []).slice(0, 3)].map((t) => `<p>${esc(t)}</p>`).join('')}</div></div>
+    <aside class="pf-side rv">
+      <h3>Domenii de expertiză</h3>${list(pr.expertiza)}
+      ${pr.rol_moa?.length ? `<h3>Rolul în MOA</h3>${list(pr.rol_moa)}` : ''}
+      ${pr.programe?.length ? `<h3>Programe coordonate</h3>${list(pr.programe)}` : ''}
+    </aside>
+  </div>
+</section>
+
+${servP.length ? `<section class="sec" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">La MOA</span><h2 style="margin-top:22px">Tratamente din <em>specialitatea lui</em></h2></div><p class="lede">Serviciile clinicii pe care le coordonează, cu prețul de pornire din lista de prețuri.</p></div>
+    <div class="mm-grid pf-serv">${servP.map((s) => `<a class="mm-card" href="${esc(s.url)}"><b>${esc(prettyName(s.nume))}</b><span>${esc(prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
+  </div>
+</section>` : ''}
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">Parcurs</span><h2>Formare și <em>experiență</em></h2></div>
+    <ol class="pf-timeline">${timeline.map((t) => `<li class="rv"><span class="pf-per">${esc(t.per || '')}</span><div><small>${esc(t.tip)}</small><p>${esc(t.text)}</p></div></li>`).join('')}</ol>
+  </div>
+</section>
+
+<section class="sec safety">
+  <div class="wrap pf-three">
+    ${pr.carti.length ? `<div class="rv"><span class="eyebrow light">Autor</span><h3 class="pf-h3">Cărți</h3>${pr.carti.map((c) => `<div class="pf-book"><b>${esc(c.titlu)}</b><span>${esc([c.editura && !/www\./.test(c.editura) ? 'Editura ' + c.editura : c.editura ? 'carte digitală · ' + c.editura : '', c.an].filter(Boolean).join(' · '))}</span>${c.descriere ? `<p>${esc(c.descriere)}</p>` : ''}</div>`).join('')}</div>` : ''}
+    ${pr.membru_in.length ? `<div class="rv"><span class="eyebrow light">Afilieri</span><h3 class="pf-h3">Membru în</h3>${list(pr.membru_in.map((n) => n.replace(/^Societății/, 'Societatea')), 'light')}${(pr.activitate || []).filter((l) => !/pacienți/.test(l)).map((l) => `<p class="pf-note">${esc(l)}</p>`).join('')}</div>` : ''}
+    ${pr.distinctii.length ? `<div class="rv"><span class="eyebrow light">Recunoaștere</span><h3 class="pf-h3">Distincții</h3>${pr.distinctii.map((d) => `<div class="pf-award"><span>${esc(d.an || '')}</span><p>${esc(d.titlu)}</p></div>`).join('')}</div>` : ''}
+  </div>
+</section>
+
+${arts.length ? `<section class="sec" id="articole">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Articole</span><h2 style="margin-top:22px">Scrise de <em>${esc(p.nume)}</em></h2></div><a class="link-u" href="${esc(pr.url)}" style="justify-self:start">Toate cele ${allArts.length} de articole</a></div>
+    <div class="o-grid">${arts.map((a) => `<a class="o-card rv" href="${esc(a.url)}"><span class="eyebrow">${esc(a.tip)}</span><h3 style="font-size:24px;max-width:none">${esc(a.titlu)}</h3>${a.rezumat ? `<p style="font-size:14px;color:var(--muted)">${esc(cutTxt(a.rezumat, 140))}</p>` : ''}<span class="link-u" style="justify-self:start">Citește</span></a>`).join('')}</div>
+  </div>
+</section>` : ''}
+
+${BOOK}${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'medici', p.id);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), page);
+  console.log(`Profil: nou/medici/${p.id}/ · ${timeline.length} repere · ${pr.carti.length} cărți · ${servP.length} servicii · ${allArts.length} articole`);
+}

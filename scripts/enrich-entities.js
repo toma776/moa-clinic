@@ -449,7 +449,25 @@ if (noAlt.length) ob('imagini-alt', 'mediu', `${noAlt.reduce((n, p) => n + p.img
 if (D.echipa.some((p) => /Amolioaie/.test(p.nume))) ob('nume-amolioaie', 'minor', 'Numele „Irina Amolioaie” apare în fișierele imaginilor ca „amolioaiei”.', ORIGIN + '/echipa/', { tip: 'manual' });
 D.observatii = OBS;
 
-D.schema_existenta = (D.schemaOrg?.tipuri || []).map((t) => t.replace('+', ' + '));
+// ---------- profilurile echipei (data/profiluri.json, din npm run profiles) ----------
+const PROF_FILE = path.join(ROOT, 'data', 'profiluri.json');
+if (fs.existsSync(PROF_FILE)) {
+  const PR = JSON.parse(fs.readFileSync(PROF_FILE, 'utf8')).profiluri || {};
+  for (const p of D.echipa) {
+    const pr = PR[p.id];
+    if (!pr) continue;
+    p.profil_detaliat = pr;
+    const u = pr.url;
+    if (pr.nume_afisat && pr.nume_afisat !== p.nume) ob(`profil-${p.id}-nume`, 'mediu', `Pagina de profil a lui ${p.nume} are ca titlu (H1) și nume de autor „${pr.nume_afisat}”: numele persoanei amestecat cu cuvinte-cheie.`, u, { tip: 'regex_absent', url: u, regex: '<h1[^>]*>[^<]*medic gerontolog', descriere: 'H1-ul profilului să conțină doar numele' });
+    if (!pr.description) ob(`profil-${p.id}-description`, 'mediu', `Pagina de profil a lui ${p.nume} nu are meta description.`, u, { tip: 'meta', url: u, camp: 'description', op: 'exists' });
+    if (pr.redirecturi?.length > 1) ob(`profil-${p.id}-redirect`, 'minor', `Profilul lui ${p.nume} se deschide prin ${pr.redirecturi.length} redirecturi în lanț: ${[pr.redirecturi[0].din, ...pr.redirecturi.map((r) => r.spre)].join(' → ')}.`, ORIGIN + pr.redirecturi[0].din, { tip: 'manual' });
+    if (/Articlole/.test(JSON.stringify(pr.sectiuni)) || pr.sectiuni.some((s) => /Specializari si|medicala$/.test(s))) ob(`profil-${p.id}-typo`, 'minor', `Profilul lui ${p.nume} are titluri cu greșeli sau fără diacritice: ${pr.sectiuni.filter((s) => /Specializari si|medicala$/.test(s)).map((s) => `„${s}”`).join(', ')} și „Articlole de…”.`, u, { tip: 'text_absent', url: u, text: 'Articlole' });
+    if (pr.citat && /nu este o boal/i.test(pr.citat) && (pr.incheiere || []).some((l) => /bătrânețea este o boal/i.test(l))) ob(`profil-${p.id}-contradictie`, 'mediu', `Profilul lui ${p.nume} se contrazice: citatul spune „Vârsta nu este o boală”, iar încheierea „OMS va declara peste câțiva ani că bătrânețea este o boală”.`, u, { tip: 'manual' });
+    if ((pr.biografie || []).some((l) => /^Sunt |am /.test(l)) && /^(Medic|Este)/.test(pr.rezumat || '')) ob(`profil-${p.id}-persoana`, 'minor', `Profilul lui ${p.nume} amestecă persoana a III-a („Este medicul coordonator…”) cu persoana I („Sunt Dr. …”, „am înființat…”).`, u, { tip: 'manual' });
+  }
+}
+
+D.schema_existenta =(D.schemaOrg?.tipuri || []).map((t) => t.replace('+', ' + '));
 D.pagini_legale_utile = PAGES.pages
   .filter((p) => /contact|documente-legale|preturi|echipa|abonamente|sitemap|blog/.test(p.path) && p.tip === 'Pagina' && p.path.split('/').filter(Boolean).length === 1)
   .map((p) => ({ nume: (p.h1 || p.title.split('|')[0]).trim(), url: p.url }));

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-09T12:03:46.709Z",
+    "generat": "2026-10-09T13:08:23.089Z",
     "sursa": "https://moaclinic.ro",
     "paginiAnalizate": [
       "https://moaclinic.ro/",
@@ -442,7 +442,239 @@
       "servicii": [
         "consultatie-antiaging",
         "tms-stimulare-magnetica-transcraniana"
-      ]
+      ],
+      "profil_detaliat": {
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+        "nume_afisat": "Dr. Adrian Stănescu medic gerontolog București",
+        "title": "Dr. Adrian Stănescu medic gerontolog București - Moa Clinica",
+        "description": null,
+        "imagine": "/wp-content/uploads/2024/09/image00005-682x1024.jpeg",
+        "rezumat": "Medic primar gerontolog, cu o experiență de peste 25 de ani în prevenirea, evaluarea și tratamentul afecțiunilor asociate vârstei a treia. Este medicul coordonator al echipei MoaClinic și un promotor al îngrijirii medicale centrate pe pacient.",
+        "sectiuni": [
+          "Specializari si competente",
+          "Domenii de expertiza",
+          "Formare internațională și programe de prevenție",
+          "Autor de literatură medicală",
+          "Viziunea mea asupra longevității",
+          "Afilieri și activitate profesională",
+          "Distincții",
+          "Funcții și parcurs profesional",
+          "Alte supraspecializări",
+          "Domenii principale de interes",
+          "Competențe complementare",
+          "Parcurs profesional",
+          "Rolul său în cadrul MoaClinic",
+          "Filosofia sa medicala",
+          "Programe disponibile sub coordonarea sa"
+        ],
+        "specializari": [],
+        "expertiza": [
+          "Gerontologie",
+          "Prevenție personalizată pentru pacienții 40+",
+          "Evaluarea pacientului de vârstă medie (40–59 ani) pentru tulburări cognitive subiective și deficite cognitive ușoare cu risc de evoluție spre demențe",
+          "Sănătate celulară, metabolică și nutrițională",
+          "Regenerare neuronală",
+          "Specialist TMS – Stimulare Magnetică Transcraniană",
+          "Ozonoterapie (atestat Ministerul Sănătății)"
+        ],
+        "formare": [
+          "De-a lungul anilor am urmat studii postuniversitare la Institutul Apollo Health din Statele Unite și am adus în România programul RECODE – un program avansat de prevenție și tratare precoce a bolii Alzheimer și a altor sindroame demențiale.",
+          "Sunt coordonatorul pentru România al programului Neuroreader, în colaborare cu Brainreader din Danemarca, prin care se realizează volumetria computerizată a ariilor corticale, o metodă de diagnostic precoce în boala Alzheimer și în alte forme de demență.",
+          "Am urmat, de asemenea, studii postuniversitare de perfecționare în Oxigeno-Ozonoterapie (2016, 2024) și specializare în Stimulare Magnetică Transcraniană (TMS), în cadrul Catedrei de Neuroștiințe a Universității din Maastricht, cursuri efectuate la Londra în 2019."
+        ],
+        "carti": [
+          {
+            "titlu": "Totul despre Alzheimer",
+            "editura": "Farmamedia",
+            "an": 2015,
+            "descriere": null
+          },
+          {
+            "titlu": "Hai să trăim mult și bine!",
+            "editura": "Paralela 45",
+            "an": 2018,
+            "descriere": "carte dedicată antiaging-ului intern, fundamentată pe conceptul de Optimal Health și principiile celor 3M: moderație, motivație și meditație"
+          },
+          {
+            "titlu": "Când memoria se stinge – Ghid de prevenție, îngrijire și terapie: de la primele uitări la demență și Alzheimer",
+            "editura": "www.store.oxxygene.ro",
+            "an": 2025,
+            "descriere": null
+          }
+        ],
+        "viziune": [
+          "În 2021 am lansat proiectul „Antiaging Revival by Oxxygene” , prin care am extins medicina longevității în clinicile MOA și Oxxygene din București.",
+          "Astăzi, alături de echipa mea, lucrăm la activarea „codului tinereții” – un set de protocoale medicale care integrează neuroregenerarea, detoxifierea, regenerarea celulară și optimizarea metabolică. Folosim tehnologii de vârf, dar păstrăm o abordare profund umană, empatică și centrată pe pacient.",
+          "Medicina viitorului nu mai tratează doar boala, ci tratează viitorul pacientului. Este o medicină personalizată, predictivă, preventivă și participativă, în care pacientul devine partener activ în procesul de vindecare și regenerare.",
+          "Îmbătrânirea este, în mare parte, o alegere biologică. Medicina modernă are instrumentele necesare pentru a întârzia semnificativ acest proces, dacă intervenția începe devreme și corect. Longevitatea cere coerență, educație și responsabilitate față de propriul corp.",
+          "Sunt onorat să profesez în țara în care s-a înființat primul institut de gerontologie din lume. Brandul Ana Aslan este unul dintre cele mai puternice branduri de țară pe care le-a dat România. Atunci când am pus bazele Spitalului Oxxygene, principala mea dorință a fost să inovez, să merg mai departe pe urma pașilor profesoarei Ana Aslan și să aduc în actualitate această ramură a medicinei atât de complexă, alături de echipa mea."
+        ],
+        "afilieri": [
+          "Sunt membru al Societății Române de Gerontologie și Geriatrie, al Societății Române de Oxigen-Ozonoterapie, al Societății Române de Alzheimer și al European Brainstimulation Academy.",
+          "În peste 25 de ani de carieră medicală am tratat peste 5.000 de pacienți cu sindroame demențiale și am evaluat și tratat peste 10.000 de deficite cognitive ușoare, alături de mii de consultații de antiaging intern.",
+          "Am participat la numeroase cursuri și congrese internaționale și am fost lector și chairman anual la Congresele Naționale de Geriatrie și Gerontologie și la Conferința Națională Alzheimer."
+        ],
+        "distinctii": [
+          {
+            "titlu": "Medalia jubiliară de argint a Societății Române de Gerontologie și Geriatrie „50 de ani de la înființarea Institutului Național de Gerontologie și Geriatrie Ana Aslan”",
+            "an": 2002
+          },
+          {
+            "titlu": "Diploma de merit a Institutului Național de Gerontologie și Geriatrie Ana Aslan pentru contribuții deosebite la dezvoltarea gerontologiei și geriatriei românești",
+            "an": 2002
+          },
+          {
+            "titlu": "Medalia de onoare „125 de ani de la nașterea Academician Prof. Dr. Ana Aslan” pentru contribuția la dezvoltarea geriatriei românești",
+            "an": 2023
+          },
+          {
+            "titlu": "„Premiul pentru crearea unor medii de existență dedicate vârstnicilor”, conferit Spitalului OXXYGENE, în cadrul primei ediții a Galei „Ana Aslan”, organizată de Fundația cu același nume",
+            "an": 2024
+          }
+        ],
+        "functii": [
+          {
+            "text": "Director medical Spitalul și Clinicile Oxxygene din 2008 până în prezent",
+            "perioada": "din 2008 până în prezent"
+          },
+          {
+            "text": "Medic primar în specialitatea Geriatrie și Gerontologie – 2009, titlu obținut prin examen în cadrul Catedrei de Geriatrie a UMF „Carol Davila” București",
+            "perioada": "2009"
+          },
+          {
+            "text": "Coordonator Departamentul de Stimulare Magnetică Transcraniană din cadrul Clinicilor Oxxygene din 2019",
+            "perioada": "din 2019"
+          },
+          {
+            "text": "Medic primar geriatrie și gerontologie – Institutul Național de Gerontologie și Geriatrie Ana Aslan, Secția II Otopeni (2009–2012)",
+            "perioada": "2009–2012"
+          },
+          {
+            "text": "Medic specialist geriatrie și gerontologie – Institutul Național de Gerontologie și Geriatrie Ana Aslan, Secția II Otopeni (2003–2009)",
+            "perioada": "2003–2009"
+          },
+          {
+            "text": "Medic rezident geriatrie și gerontologie – Institutul Național de Gerontologie și Geriatrie Ana Aslan, Otopeni (1999–2003), din care 2001–2003 în Prima Unitate Alzheimer din România",
+            "perioada": "1999–2003"
+          },
+          {
+            "text": "Lector universitar, chairman și speaker la conferințe medicale naționale",
+            "perioada": null
+          }
+        ],
+        "supraspecializari": [
+          {
+            "an": "2024",
+            "text": "Atestat in Ozonoterapie, Universitatea de Medicina și Farmacie, Craiova"
+          },
+          {
+            "an": "2021–2022",
+            "text": "Specializare în Medicina Funcțională și prevenția Bolii Alzheimer – Apollo Health Certified Practitioner, RE-CODE 2.0 Training Programme for Licensed Medical Professionals, Apollo Health Institute, Statele Unite"
+          },
+          {
+            "an": "2019, 2020",
+            "text": "Specializări în Stimulare Magnetică Transcraniană, Catedra de Neuroștiințe, Universitatea Maastricht – Olanda, Londra"
+          },
+          {
+            "an": "2017",
+            "text": "Specializare în Oxigen-Ozonoterapie, UMF „V. Babeș”, Timișoara"
+          },
+          {
+            "an": "2011",
+            "text": "Formator în activitatea profesională, Intratest, Ministerul Educației, București"
+          },
+          {
+            "an": "2004",
+            "text": "Medicines Management in Older Persons, The International Institute on Ageing, United Nations – Malta, St. Julian’s, Malta"
+          },
+          {
+            "an": "2002",
+            "text": "Specializare în Evidence Based Medicine in Dementia and Old Age Depression, Copenhaga, Danemarca"
+          }
+        ],
+        "interes": [
+          "Prevenția și tratarea tulburărilor neurocognitive.",
+          "Studiul îmbătrânirii. Terapii inovative în antiaging, slowaging și “optimal health”",
+          "Programe educaționale în prevenția primară și secundară a proceselor de îmbătrânire.",
+          "Autor de articole și carte medicală."
+        ],
+        "competente": [
+          "Formare în medicina anti-aging.",
+          "Abordare integrată: nutriție, mișcare, echilibru emoțional.",
+          "Comunicarea empatică și ghidajul pacienților și familiilor."
+        ],
+        "parcurs": [
+          "Absolvent al UMF „Carol Davila” București",
+          "Rezidențiat în geriatrie și gerontologie",
+          "Medic specialist si apoi medic primar în cadrul mai multor clinici private și spitale de stat",
+          "Participare constantă la congrese europene și cursuri de formare continuă",
+          "Autor și coautor de studii în domeniul geriatriei aplicate"
+        ],
+        "rol_moa": [
+          "Supervizarea planurilor de tratament interdisciplinare",
+          "Coordonarea protocoalelor pentru pacienții clinicii",
+          "Formarea și susținerea echipei medicale în abordarea holistică",
+          "Participarea activă în elaborarea programelor de prevenție și sănătate a pielii in cadrul echipei multidisciplinare"
+        ],
+        "citat": "Cred în medicina care respectă ritmul fiecărui pacient. Vârsta nu este o boală, iar îmbunătățirea calității vieții este mereu posibilă.",
+        "programe": [
+          "Evaluare gerontologică personalizată",
+          "Program anti-aging medical",
+          "Screening preventiv pentru afecțiuni cronice",
+          "Consiliere nutrițională pentru vârsta a doua si a treia",
+          "Colaborare cu dermatologie, estetică, psihologie și nutriție"
+        ],
+        "biografie": [
+          "Sunt Dr. Adrian Stănescu, medic primar în specialitatea geriatrie și gerontologie, coordonator al Departamentului de Programe de Regenerare Biologică și Neuronală din cadrul Clinicilor Oxxygene, cu o experiență de peste 20 de ani în primul institut de gerontologie din lume – Institutul Național de Gerontologie și Geriatrie „Ana Aslan”, locul unde a început istoria longevității moderne.",
+          "În urmă cu peste 17 ani am înființat primul spital privat de geriatrie și gerontologie din România, Spitalul Oxxygene din Otopeni.",
+          "Drumul profesional a început în anii 2000, când am participat la înființarea primei unități Alzheimer din România, în cadrul Secției I Geriatrie a Institutului Ana Aslan. Încă de atunci am conștientizat gravitatea lipsei de soluții reale pentru pacienții aflați în stadii avansate ale bolii. Această realitate a generat nevoia de a construi nu doar un spital, ci un sistem integrat, o rețea, capabilă să ofere soluții reale în prevenție, tratament și regenerare."
+        ],
+        "membru_in": [
+          "Societății Române de Gerontologie și Geriatrie",
+          "Societății Române de Oxigen-Ozonoterapie",
+          "Societății Române de Alzheimer",
+          "European Brainstimulation Academy"
+        ],
+        "activitate": [
+          "În peste 25 de ani de carieră medicală am tratat peste 5.000 de pacienți cu sindroame demențiale și am evaluat și tratat peste 10.000 de deficite cognitive ușoare, alături de mii de consultații de antiaging intern.",
+          "Am participat la numeroase cursuri și congrese internaționale și am fost lector și chairman anual la Congresele Naționale de Geriatrie și Gerontologie și la Conferința Națională Alzheimer."
+        ],
+        "incheiere": [
+          "Cred cu tărie că OMS va declara peste câțiva ani că bătrânețea este o boală. Cum ar fi să îți încetinești procesul de îmbătrânire și să te simți plin de energie, indiferent de vârstă? Îmbătrânirea nu mai este un proces inevitabil lipsit de soluții. La Clinicile Oxxygene, medicina modernă transformă acest fenomen natural într-o oportunitate de a îmbunătăți calitatea vieții, făcând din îmbătrânire o alegere a fiecăruia dintre noi, iar standardele medicinei regenerative sunt rescrise cu fiecare poveste de succes.",
+          "Sănătatea, vitalitatea și dorința de a trăi o viață lungă și activă sunt acum la îndemâna fiecărui pacient care ne trece pragul.",
+          "Sunt Dr. Adrian Stănescu. Iar misiunea mea este să prelungesc nu doar anii din viața pacienților mei, ci viața din anii lor."
+        ],
+        "cifre": [
+          {
+            "valoare": "25+",
+            "eticheta": "ani de experiență"
+          },
+          {
+            "valoare": "5.000+",
+            "eticheta": "pacienți cu sindroame demențiale"
+          },
+          {
+            "valoare": "10.000+",
+            "eticheta": "deficite cognitive ușoare"
+          },
+          {
+            "valoare": "3",
+            "eticheta": "cărți publicate"
+          }
+        ],
+        "redirecturi": [
+          {
+            "din": "/echipa/dr-adrian-stanescu/",
+            "spre": "/dr-adrian-stanescu/",
+            "status": 301
+          },
+          {
+            "din": "/dr-adrian-stanescu/",
+            "spre": "/author/dr-adrian-stanescu/",
+            "status": 301
+          }
+        ]
+      }
     },
     {
       "id": "romana-cristina-manescu-obreja",
@@ -12802,6 +13034,74 @@
       "nivel": "minor",
       "text": "Numele „Irina Amolioaie” apare în fișierele imaginilor ca „amolioaiei”.",
       "url": "https://moaclinic.ro/echipa/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "manual"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-nume",
+      "nivel": "mediu",
+      "text": "Pagina de profil a lui Dr. Adrian Stănescu are ca titlu (H1) și nume de autor „Dr. Adrian Stănescu medic gerontolog București”: numele persoanei amestecat cu cuvinte-cheie.",
+      "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "regex_absent",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+        "regex": "<h1[^>]*>[^<]*medic gerontolog",
+        "descriere": "H1-ul profilului să conțină doar numele"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-description",
+      "nivel": "mediu",
+      "text": "Pagina de profil a lui Dr. Adrian Stănescu nu are meta description.",
+      "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "meta",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+        "camp": "description",
+        "op": "exists"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-redirect",
+      "nivel": "minor",
+      "text": "Profilul lui Dr. Adrian Stănescu se deschide prin 2 redirecturi în lanț: /echipa/dr-adrian-stanescu/ → /dr-adrian-stanescu/ → /author/dr-adrian-stanescu/.",
+      "url": "https://moaclinic.ro/echipa/dr-adrian-stanescu/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "manual"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-typo",
+      "nivel": "minor",
+      "text": "Profilul lui Dr. Adrian Stănescu are titluri cu greșeli sau fără diacritice: „Specializari si competente”, „Filosofia sa medicala” și „Articlole de…”.",
+      "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "text_absent",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+        "text": "Articlole"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-contradictie",
+      "nivel": "mediu",
+      "text": "Profilul lui Dr. Adrian Stănescu se contrazice: citatul spune „Vârsta nu este o boală”, iar încheierea „OMS va declara peste câțiva ani că bătrânețea este o boală”.",
+      "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "manual"
+      }
+    },
+    {
+      "id": "profil-adrian-stanescu-persoana",
+      "nivel": "minor",
+      "text": "Profilul lui Dr. Adrian Stănescu amestecă persoana a III-a („Este medicul coordonator…”) cu persoana I („Sunt Dr. …”, „am înființat…”).",
+      "url": "https://moaclinic.ro/author/dr-adrian-stanescu/",
       "sursa": "audit automat",
       "check": {
         "tip": "manual"
