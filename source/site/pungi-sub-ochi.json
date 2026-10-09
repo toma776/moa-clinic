@@ -7,7 +7,11 @@
  "description": "Descopera cum sa reduci pungile sub ochi rapid. Vezi tratamente si sfaturi eficiente pentru un aspect odihnit si proaspat!",
  "publicat": "2025-12-23",
  "modificat": "2026-03-19",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

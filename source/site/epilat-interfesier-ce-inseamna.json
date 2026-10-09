@@ -7,7 +7,11 @@
  "description": "Află ce înseamnă epilarea interfesieră, cum se realizează și de ce tot mai multe persoane aleg această metodă pentru igienă și confort.",
  "publicat": "2025-08-26",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

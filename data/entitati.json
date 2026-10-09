@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-09T09:46:58.330Z",
+    "generat": "2026-10-09T12:03:46.709Z",
     "sursa": "https://moaclinic.ro",
     "paginiAnalizate": [
       "https://moaclinic.ro/",
@@ -8158,7 +8158,11 @@
       "data": "2026-03-26",
       "modificat": "2026-03-26",
       "rezumat": "Află ce este glutation, ce beneficii are, ce contraindicații există și unde se găsește Descoperă informațiile esențiale acum",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8174,7 +8178,11 @@
       "data": "2026-03-26",
       "modificat": "2026-03-26",
       "rezumat": "Află cum funcționează tratamentul cu botox pentru riduri pe gat, cât durează efectele și când este recomandat Programează-te informat",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8191,7 +8199,11 @@
       "data": "2026-03-26",
       "modificat": "2026-03-26",
       "rezumat": "Descoperă cele mai eficiente opțiuni de tratament riduri profunde și riduri adanci pentru un ten neted și întinerit. Programează-te acum",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8210,7 +8222,11 @@
       "data": "2026-03-04",
       "modificat": "2026-03-04",
       "rezumat": "Trateaza cearcanele si pungile sub ochi cu mezoterapie NCTF, PRP sau acid hialuronic. Rezultate vizibile rapid!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8229,7 +8245,11 @@
       "data": "2026-03-04",
       "modificat": "2026-03-04",
       "rezumat": "Afla ce este ptoza palpebrala, care sunt cauzele si ce tratament pentru pleoape cazute exista. Descopera solutiile corecte acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8246,7 +8266,11 @@
       "data": "2026-03-03",
       "modificat": "2026-03-03",
       "rezumat": "Afla ce este burnout, de ce apare si cum se manifesta. Descopera cum tratamentul burnout TMS poate reduce stresul si creste energia!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu",
+        "url": "https://moaclinic.ro/author/moaclinic/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8263,7 +8287,11 @@
       "data": "2026-01-23",
       "modificat": "2026-02-24",
       "rezumat": "Afla cum să reduci ridurile fumatorului cu tratamente eficiente. Descoperă soluții de estetică non-chirurgicală și cosmetice pentru o piele revitalizată.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8286,7 +8314,11 @@
       "data": "2026-01-22",
       "modificat": "2026-03-19",
       "rezumat": "Află ce este hialuronidaza și cum se folosește în estetică. Descoperă beneficiile și aplicările acesteia în tratamentele de corectare a dermalelor. Citește acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8302,7 +8334,11 @@
       "data": "2026-01-22",
       "modificat": "2026-02-09",
       "rezumat": "Descoperă cauzele porilor dilatați și cum să îi reduci. Află cele mai bune soluții și tratamente pentru un ten uniform și sănătos.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8320,7 +8356,11 @@
       "data": "2026-01-22",
       "modificat": "2026-02-09",
       "rezumat": "Află cum să te recuperezi eficient după un tratament Dermapen. Urmează sfaturile noastre pentru o recuperare rapidă și un ten perfect. Citește acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "îngrijire",
       "motiv_tip": "titlul vorbește despre ce urmează după procedură",
       "entitati": [
@@ -8336,7 +8376,11 @@
       "data": "2026-01-08",
       "modificat": "2026-03-19",
       "rezumat": "Afla ce inseamna PRP si cum functioneaza tratamentul. Descopera beneficiile si aplicatiile pentru piele si par acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8353,7 +8397,11 @@
       "data": "2026-01-08",
       "modificat": "2026-02-09",
       "rezumat": "Afla cele mai importante recomandari dupa botox pentru rezultate optimale. Urmeaza sfaturi utile si pastreaza efectele mai mult timp!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "îngrijire",
       "motiv_tip": "titlul vorbește despre ce urmează după procedură",
       "entitati": [
@@ -8368,7 +8416,11 @@
       "data": "2025-12-23",
       "modificat": "2026-03-19",
       "rezumat": "Descopera cum sa reduci pungile sub ochi rapid. Vezi tratamente si sfaturi eficiente pentru un aspect odihnit si proaspat!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8385,7 +8437,11 @@
       "data": "2025-12-22",
       "modificat": "2026-03-19",
       "rezumat": "Afla cum sa tratezi buze uscate si crapate. Descopera solutii eficiente si recapata confortul buzelor acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [],
@@ -8398,7 +8454,11 @@
       "data": "2025-12-02",
       "modificat": "2026-02-20",
       "rezumat": "Acid in buze exagerat: riscuri, remedii si cand sa ceri asistenta medicala; actioneaza acum pentru siguranta!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "opinii",
       "motiv_tip": "titlul cere păreri sau demontează mituri",
       "entitati": [
@@ -8414,7 +8474,11 @@
       "data": "2025-12-02",
       "modificat": "2026-02-09",
       "rezumat": "NAD perfuzabil: afla cum functioneaza, beneficii si riscuri; programeaza consultatia si incepe terapia acum",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8429,7 +8493,11 @@
       "data": "2025-12-02",
       "modificat": "2026-02-09",
       "rezumat": "Terapia vampir pareri: afla experiente reale, riscuri si beneficii; cere consultatia si actioneaza acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "opinii",
       "motiv_tip": "titlul cere păreri sau demontează mituri",
       "entitati": [
@@ -8444,7 +8512,11 @@
       "data": "2025-12-02",
       "modificat": "2026-02-09",
       "rezumat": "Tratament cearcane personalizat; programeaza consultatia si vezi rezultate acum",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8464,7 +8536,11 @@
       "data": "2025-10-28",
       "modificat": "2026-02-09",
       "rezumat": "Afla ce inseamna bunny lines, de ce apar aceste riduri fine pe nas si ce tratamente exista pentru a le reduce. Descopera solutii eficiente pentru un aspect intinerit!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8484,7 +8560,11 @@
       "data": "2025-10-28",
       "modificat": "2026-02-24",
       "rezumat": "Afla de ce apar ridurile in jurul gurii si cum le poti estompa. Descopera cauzele, tipurile si cele mai bune tratamente pentru un zambet intinerit si un ten ferm!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8506,7 +8586,11 @@
       "data": "2025-10-28",
       "modificat": "2026-02-24",
       "rezumat": "Afla de ce apar ridurile intre sprancene si cum le poti estompa. Descopera cauzele, tipurile si cele mai bune tratamente pentru un aspect intinerit si relaxat!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8525,7 +8609,11 @@
       "data": "2025-10-28",
       "modificat": "2026-02-09",
       "rezumat": "Afla ce sunt terapiile intravenoase, cand se recomanda si ce beneficii aduc pentru sanatate si vitalitate. Descopera tipurile de perfuzii cu vitamine, minerale si antioxidanti!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8541,7 +8629,11 @@
       "data": "2025-10-02",
       "modificat": "2026-02-09",
       "rezumat": "Citește epilare definitiva pareri si afla daca merita investitia. Descopera experiente reale si ia decizia potrivita!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "opinii",
       "motiv_tip": "titlul cere păreri sau demontează mituri",
       "entitati": [
@@ -8560,7 +8652,11 @@
       "data": "2025-10-02",
       "modificat": "2026-02-24",
       "rezumat": "Redu riduri de expresie si reda prospetimea tenului. Alege tratamente care intineresc vizibil pielea!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8589,7 +8685,11 @@
       "data": "2025-10-02",
       "modificat": "2026-02-24",
       "rezumat": "Elimina riduri marioneta si reda prospetimea chipului tau. Alege tratamente eficiente si actioneaza chiar azi!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8618,7 +8718,11 @@
       "data": "2025-10-02",
       "modificat": "2026-02-20",
       "rezumat": "Combate riduri cu solutii eficiente si redobandeste fermitatea pielii. Descopera metode care chiar functioneaza!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8646,7 +8750,11 @@
       "data": "2025-08-26",
       "modificat": "2026-02-09",
       "rezumat": "Alunite rosii - Află cauzele, simptomele și opțiunile de tratament disponibile.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8664,7 +8772,11 @@
       "data": "2025-08-26",
       "modificat": "2026-02-09",
       "rezumat": "Află ce înseamnă epilarea interfesieră, cum se realizează și de ce tot mai multe persoane aleg această metodă pentru igienă și confort.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8682,7 +8794,11 @@
       "data": "2025-08-26",
       "modificat": "2026-02-09",
       "rezumat": "Afla unde se pune botox pentru un look intinerit: zone cheie ale fetei si efecte spectaculoase explicate clar.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8703,7 +8819,11 @@
       "data": "2025-08-05",
       "modificat": "2026-02-09",
       "rezumat": "Glutationul – antioxidantul „maestru” produs natural de organism, esențial pentru detoxifiere, imunitate și protecția celulară. Descoperă beneficiile",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "opinii",
       "motiv_tip": "titlul cere păreri sau demontează mituri",
       "entitati": [
@@ -8722,7 +8842,11 @@
       "data": "2025-08-05",
       "modificat": "2026-02-09",
       "rezumat": "De ce nu îți ține acidul hialuronic? – cauzele pot fi multiple: metabolism rapid, hidratare insuficientă, expunere la căldură sau efort fizic imediat după procedură.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "îngrijire",
       "motiv_tip": "titlul vorbește despre ce urmează după procedură",
       "entitati": [
@@ -8741,7 +8865,11 @@
       "data": "2025-08-05",
       "modificat": "2026-02-20",
       "rezumat": "Riduri pe frunte – linii de expresie cauzate de mișcări faciale repetate, stres sau îmbătrânire. Află metode eficiente de prevenire și tratament!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8770,7 +8898,11 @@
       "data": "2025-08-05",
       "modificat": "2026-02-09",
       "rezumat": "Vergeturi pe sâni – apar din cauza întinderii rapide a pielii, în pubertate, sarcină sau fluctuații de greutate. Descoperă cauze, tratamente și metode de prevenție!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8788,7 +8920,11 @@
       "data": "2025-07-01",
       "modificat": "2026-02-09",
       "rezumat": "Forme de buze cu acid hialuronic - descopera stilurile populare si cum iti pot accentua frumusetea naturala! Alege forma perfecta pentru un look armonios.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "comparație",
       "motiv_tip": "titlul compară variante",
       "entitati": [
@@ -8805,7 +8941,11 @@
       "data": "2025-07-01",
       "modificat": "2026-02-09",
       "rezumat": "Prima injectare cu acid hialuronic in buze - afla ce trebuie sa stii! Procedura, efecte, ingrijire si sfaturi pentru un rezultat natural si armonios.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8823,7 +8963,11 @@
       "data": "2025-07-01",
       "modificat": "2026-02-20",
       "rezumat": "Riduri laba gastei? Descopera cauzele, metodele de prevenire si tratamentele eficiente pentru un ten neted si intinerit!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8840,7 +8984,11 @@
       "data": "2025-07-01",
       "modificat": "2026-02-09",
       "rezumat": "Russian lips vs butterfly lips - descopera diferenta dintre cele doua tehnici de augmentare a buzelor! Forma, volum si efecte estetice pentru un look perfect.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8862,6 +9010,10 @@
       "modificat": "2026-02-09",
       "rezumat": "Obține buze voluminoase și hidratate! Află cât durează efectul acidului hialuronic și dacă este alegerea potrivită pentru tine. Citește acum!",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "îngrijire",
       "motiv_tip": "titlul vorbește despre ce urmează după procedură",
       "entitati": [
@@ -8878,7 +9030,11 @@
       "data": "2025-06-03",
       "modificat": "2026-02-09",
       "rezumat": "Evită expunerea la căldură intensă, efortul fizic și masajul zonei injectate după Botox. Află toate recomandările pentru rezultate perfecte! Citește acum!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "îngrijire",
       "motiv_tip": "titlul vorbește despre ce urmează după procedură",
       "entitati": [
@@ -8895,7 +9051,11 @@
       "data": "2025-06-03",
       "modificat": "2026-02-09",
       "rezumat": "Alege cea mai bună toxină botulinică pentru rezultate naturale și de durată! Află ce variantă se potrivește nevoilor tale și ce trebuie să știi înainte.",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "comparație",
       "motiv_tip": "titlul compară variante",
       "entitati": [
@@ -8913,7 +9073,11 @@
       "data": "2025-06-03",
       "modificat": "2026-02-09",
       "rezumat": "Descoperă efectele Botox! Află cum îți poate netezi ridurile și reda un aspect întinerit pielii. Intră acum pentru detalii!",
-      "autor": null,
+      "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "opinii",
       "motiv_tip": "titlul cere păreri sau demontează mituri",
       "entitati": [
@@ -8931,6 +9095,10 @@
       "modificat": "2026-02-09",
       "rezumat": "Bine ai venit în lumea saunei cu ozon la terapiile antiaging intern in clinica MOA regenerative by Oxxygene,, un adevărat paradis al sănătății și bunăstării!",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -8950,6 +9118,10 @@
       "modificat": "2026-02-09",
       "rezumat": "Infertilitatea este o problemă de sănătate din ce în ce mai împovărătoare, fiind diagnosticată în aproape 10% din cupluri, la fel de des la bărbați și femei",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8971,6 +9143,10 @@
       "modificat": "2026-02-09",
       "rezumat": "MOA Regenerative by Oxxygene combină inovativ terapiile corporale și faciale cu detoxul celular!",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -8991,6 +9167,10 @@
       "modificat": "2026-02-09",
       "rezumat": "În ziua de astăzi, este din ce în ce mai important să ne concentrăm asupra sănătății și bunăstării noastre. Și ce mod mai bun de a face acest lucru decât prin",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "tratament",
       "motiv_tip": "titlul pornește de la o problemă de rezolvat",
       "entitati": [
@@ -9011,6 +9191,10 @@
       "modificat": "2026-02-09",
       "rezumat": "Descoperă cum consultarea nutrigenomică poate revela secretele genetice ale sănătății tale! În era tehnologiei, cercetările recente demonstrează că ADN-ul tău",
       "autor": "Dr. Adrian Stănescu",
+      "autor_schema": {
+        "nume": "Dr. Adrian Stănescu medic gerontolog București",
+        "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+      },
       "tip": "ghid",
       "motiv_tip": "conținut explicativ, fără o problemă sau o comparație în titlu",
       "entitati": [
@@ -12186,6 +12370,19 @@
         "url": "https://moaclinic.ro/",
         "regex": "\"alternateName\"",
         "descriere": "schema de pe homepage să conțină alternateName"
+      }
+    },
+    {
+      "id": "autor-doua-conturi",
+      "nivel": "mediu",
+      "text": "Articolele de blog sunt semnate de același medic din 2 conturi WordPress diferite: „Dr. Adrian Stănescu medic gerontolog București” (/author/dr-adrian-stanescu/, 40 articole) și „Dr. Adrian Stănescu” (/author/moaclinic/, 6 articole). Numele afișat al unuia conține cuvinte-cheie („medic gerontolog București”).",
+      "url": "https://moaclinic.ro/riduri/",
+      "sursa": "audit automat",
+      "check": {
+        "tip": "text_absent",
+        "url": "https://moaclinic.ro/riduri/",
+        "text": "medic gerontolog București",
+        "descriere": "numele autorului de pe /riduri/ să nu mai conțină „medic gerontolog București”"
       }
     },
     {

@@ -145,7 +145,16 @@ function analyze(entry, r) {
     .filter((i) => i.src && !i.src.startsWith('data:'));
   const links = [...new Set([...m.matchAll(/<a\b[^>]*href="([^"#]+)"/g)].map((x) => x[1]).filter((u) => /^(https?:\/\/(www\.)?moaclinic\.ro)?\/(?!wp-|cdn-cgi)/.test(u)).map((u) => new URL(u, ORIGIN).pathname))];
   const body = text(m);
-  const author = (body.match(/Continut oferit de:\s*(Dr\.\s*[^\s]+\s+[^\s.,]+)/i) || [])[1] || null;
+  // autorul: caseta „Conținut oferit de” stă sub blocul de contact, deci o căutăm în toată pagina;
+  // plus autorul din schema (BlogPosting / Article) și pagina lui de autor din WordPress
+  const author = (text(h).match(/Con[tț]inut oferit de:?\s*(Dr\.\s*[^\s]+\s+[^\s.,]+)/i) || [])[1] || null;
+  let schemaAuthor = null;
+  for (const m of h.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)) {
+    try {
+      const j = JSON.parse(m[1]);
+      for (const o of j['@graph'] || [j]) if (/BlogPosting|Article/.test([].concat(o['@type']).join()) && o.author) schemaAuthor = { nume: o.author.name || null, url: o.author['@id'] || null };
+    } catch {}
+  }
 
   Object.assign(p, {
     title: decodeEntities((h.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '').trim(),
@@ -160,6 +169,7 @@ function analyze(entry, r) {
     publicat: metaProp(h, 'article:published_time').slice(0, 10) || null,
     modificat: metaProp(h, 'article:modified_time').slice(0, 10) || null,
     autor: author,
+    autor_schema: schemaAuthor,
     cuvinte: body.split(/\s+/).filter(Boolean).length,
     schema: schemaInfo(h).types,
     schema_servicii: schemaInfo(h).services,
@@ -192,6 +202,7 @@ function analyze(entry, r) {
     publicat: p.publicat,
     modificat: p.modificat,
     autor: author,
+    autor_schema: schemaAuthor,
     titluri: [...m.matchAll(/<h([2-4])[^>]*>([\s\S]*?)<\/h\1>/g)].map((x) => ({ n: +x[1], t: text(x[2]) })).filter((x) => x.t),
     intrebari: questions(m),
     imagini: imgs,

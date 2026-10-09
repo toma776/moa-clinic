@@ -7,7 +7,11 @@
  "description": "Află ce este glutation, ce beneficii are, ce contraindicații există și unde se găsește Descoperă informațiile esențiale acum",
  "publicat": "2026-03-26",
  "modificat": "2026-03-26",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu",
+  "url": "https://moaclinic.ro/author/moaclinic/"
+ },
  "titluri": [
   {
    "n": 2,

@@ -7,7 +7,11 @@
  "description": "Redu riduri de expresie si reda prospetimea tenului. Alege tratamente care intineresc vizibil pielea!",
  "publicat": "2025-10-02",
  "modificat": "2026-02-24",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

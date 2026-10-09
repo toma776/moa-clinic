@@ -7,7 +7,11 @@
  "description": "Afla de ce apar ridurile in jurul gurii si cum le poti estompa. Descopera cauzele, tipurile si cele mai bune tratamente pentru un zambet intinerit si un ten ferm!",
  "publicat": "2025-10-28",
  "modificat": "2026-02-24",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

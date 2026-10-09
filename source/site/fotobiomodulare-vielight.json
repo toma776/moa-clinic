@@ -8,6 +8,10 @@
  "publicat": "2025-09-10",
  "modificat": "2026-01-09",
  "autor": null,
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu",
+  "url": "https://moaclinic.ro/author/moaclinic/"
+ },
  "titluri": [
   {
    "n": 2,

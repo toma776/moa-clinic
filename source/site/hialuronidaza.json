@@ -7,7 +7,11 @@
  "description": "Află ce este hialuronidaza și cum se folosește în estetică. Descoperă beneficiile și aplicările acesteia în tratamentele de corectare a dermalelor. Citește acum!",
  "publicat": "2026-01-22",
  "modificat": "2026-03-19",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

@@ -90,7 +90,7 @@ routes.health = function renderHealth() {
       <details class="h-det" style="margin-top:8px"><summary>Tipurile de date structurate pe fiecare pagină</summary>
         <div class="tbl"><table><tbody>${ok.map((p) => `<tr><td class="small">${pg(p.path)}</td><td>${tags(p.schema)}</td></tr>`).join('')}</tbody></table></div></details>`)}
     ${sec('continut', 'Conținut', `<div class="grid2" style="margin-bottom:12px">
-        <div class="card"><h3>Articole fără autor <span class="muted">${B.fara_autor?.length ?? 0} din ${B.total ?? 0}</span></h3><p>Doar câteva articole au „Conținut oferit de: Dr. …”. Pentru un site medical (YMYL), autorul medic contează.</p>
+        <div class="card"><h3>Articole fără autor <span class="muted">${B.fara_autor?.length ?? 0} din ${B.total ?? 0}</span></h3><p>Articole fără „Conținut oferit de: Dr. …” și fără autor în schema. Pentru un site medical (YMYL), autorul medic contează.</p>
           <details class="h-det"><summary class="small">vezi articolele</summary><ul class="clean small h-pages">${(B.fara_autor || []).map((a) => `<li><span class="muted">${esc(a.data || '')}</span> ${pg(a.path)}</li>`).join('')}</ul></details></div>
         <div class="card"><h3>Articole învechite <span class="muted">${B.invechite?.length ?? 0}</span></h3><p>Nemodificate de peste 12 luni.</p>
           <details class="h-det"><summary class="small">vezi articolele</summary><ul class="clean small h-pages">${(B.invechite || []).map((a) => `<li><span class="muted">${esc(a.data)}</span> ${pg(a.path)}</li>`).join('') || '<li>niciunul</li>'}</ul></details></div>

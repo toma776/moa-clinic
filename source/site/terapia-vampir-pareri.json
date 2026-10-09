@@ -7,7 +7,11 @@
  "description": "Terapia vampir pareri: afla experiente reale, riscuri si beneficii; cere consultatia si actioneaza acum!",
  "publicat": "2025-12-02",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

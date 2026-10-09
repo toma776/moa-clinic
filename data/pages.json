@@ -1,7 +1,7 @@
 {
  "site": "https://moaclinic.ro",
- "crawled_at": "2026-10-08 12:12",
- "durata_ms": 34356,
+ "crawled_at": "2026-10-09 12:03",
+ "durata_ms": 34512,
  "pages": [
   {
    "url": "https://moaclinic.ro/",
@@ -11,8 +11,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-24",
    "status": 200,
-   "ms": 2391,
-   "kb": 259.6,
+   "ms": 2501,
+   "kb": 259.7,
    "probleme": [
     "Imagini fara alt (12)"
    ],
@@ -28,6 +28,10 @@
    "publicat": "2024-08-23",
    "modificat": "2026-06-24",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1647,
    "schema": [
     "Place",
@@ -80,7 +84,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-09-09",
    "status": 200,
-   "ms": 1589,
+   "ms": 1712,
    "kb": 125.4,
    "probleme": [
     "Description scurta (32)",
@@ -99,6 +103,10 @@
    "publicat": "2024-09-10",
    "modificat": "2026-09-09",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 197,
    "schema": [
     "Place",
@@ -152,7 +160,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1413,
+   "ms": 1592,
    "kb": 121.6,
    "probleme": [],
    "title": "Acid hialuronic in buze - cat dureaza?",
@@ -167,6 +175,10 @@
    "publicat": "2025-06-03",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 892,
    "schema": [
     "Place",
@@ -220,7 +232,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1789,
+   "ms": 1690,
    "kb": 139,
    "probleme": [
     "Imagini fara alt (5)"
@@ -236,7 +248,11 @@
    "og": true,
    "publicat": "2025-12-02",
    "modificat": "2026-02-20",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1804,
    "schema": [
     "Place",
@@ -290,7 +306,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1602,
+   "ms": 1707,
    "kb": 156.8,
    "probleme": [
     "Imagini fara alt (2)"
@@ -306,7 +322,11 @@
    "og": true,
    "publicat": "2025-08-05",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1833,
    "schema": [
     "Place",
@@ -360,7 +380,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1587,
+   "ms": 1690,
    "kb": 149.4,
    "probleme": [],
    "title": "Alunite rosii - Cum sa le identifici pe cele periculoase",
@@ -374,7 +394,11 @@
    "og": true,
    "publicat": "2025-08-26",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1342,
    "schema": [
     "Place",
@@ -428,7 +452,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1394,
+   "ms": 1399,
    "kb": 117.5,
    "probleme": [
     "Title lung (81)"
@@ -445,6 +469,10 @@
    "publicat": "2024-12-15",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1939,
    "schema": [
     "Place",
@@ -498,7 +526,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 1730,
+   "ms": 1396,
    "kb": 156.9,
    "probleme": [
     "Imagini fara alt (4)"
@@ -515,6 +543,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-01-15",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1933,
    "schema": [
     "Place",
@@ -568,7 +600,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-15",
    "status": 200,
-   "ms": 1695,
+   "ms": 1678,
    "kb": 135.7,
    "probleme": [
     "Title scurt (18)",
@@ -588,6 +620,10 @@
    "publicat": "2024-09-15",
    "modificat": "2024-09-15",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 120,
    "schema": [
     "Place",
@@ -641,7 +677,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1706,
+   "ms": 1591,
    "kb": 133.8,
    "probleme": [
     "Description lunga (166)",
@@ -658,7 +694,11 @@
    "og": true,
    "publicat": "2025-10-28",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1303,
    "schema": [
     "Place",
@@ -712,7 +752,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1802,
+   "ms": 1526,
    "kb": 137.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -728,7 +768,11 @@
    "og": true,
    "publicat": "2025-12-22",
    "modificat": "2026-03-19",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1453,
    "schema": [
     "Place",
@@ -782,7 +826,7 @@
    "sitemap": "category-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1195,
+   "ms": 1286,
    "kb": 145.6,
    "probleme": [
     "Fara meta description",
@@ -800,6 +844,7 @@
    "publicat": null,
    "modificat": null,
    "autor": null,
+   "autor_schema": null,
    "cuvinte": 397,
    "schema": [
     "Place",
@@ -866,7 +911,11 @@
    "og": true,
    "publicat": "2026-01-08",
    "modificat": "2026-03-19",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1060,
    "schema": [
     "Place",
@@ -920,7 +969,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1522,
+   "ms": 1699,
    "kb": 153.4,
    "probleme": [],
    "title": "Ce nu e permis dupa injectarea cu botox",
@@ -934,7 +983,11 @@
    "og": true,
    "publicat": "2025-06-03",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1973,
    "schema": [
     "Place",
@@ -988,7 +1041,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1504,
+   "ms": 1700,
    "kb": 152.1,
    "probleme": [],
    "title": "Cea mai buna toxina botulinica: rezultate dupa 6 luni de studiu",
@@ -1002,7 +1055,11 @@
    "og": true,
    "publicat": "2025-06-03",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1383,
    "schema": [
     "Place",
@@ -1056,7 +1113,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-04",
    "status": 200,
-   "ms": 1699,
+   "ms": 1688,
    "kb": 150.6,
    "probleme": [
     "Imagini fara alt (7)"
@@ -1072,7 +1129,11 @@
    "og": true,
    "publicat": "2026-03-04",
    "modificat": "2026-03-04",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 2238,
    "schema": [
     "Place",
@@ -1126,7 +1187,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1268,
+   "ms": 1392,
    "kb": 116.8,
    "probleme": [
     "Title lung (133)"
@@ -1143,6 +1204,10 @@
    "publicat": "2024-09-15",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1533,
    "schema": [
     "Place",
@@ -1196,7 +1261,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-17",
    "status": 200,
-   "ms": 1578,
+   "ms": 1382,
    "kb": 106.6,
    "probleme": [
     "Title scurt (24)",
@@ -1214,6 +1279,10 @@
    "publicat": "2024-09-17",
    "modificat": "2024-09-17",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 17,
    "schema": [
     "Place",
@@ -1267,7 +1336,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1611,
+   "ms": 1416,
    "kb": 142,
    "probleme": [
     "Imagini fara alt (2)"
@@ -1284,6 +1353,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 311,
    "schema": [
     "Place",
@@ -1337,7 +1410,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1793,
+   "ms": 1404,
    "kb": 151,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1354,6 +1427,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1340,
    "schema": [
     "Place",
@@ -1407,7 +1484,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1484,
+   "ms": 1688,
    "kb": 118.3,
    "probleme": [
     "Imagini fara alt (4)",
@@ -1425,6 +1502,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 119,
    "schema": [
     "Place",
@@ -1478,7 +1559,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1288,
+   "ms": 1406,
    "kb": 118.6,
    "probleme": [
     "Imagini fara alt (4)",
@@ -1496,6 +1577,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 119,
    "schema": [
     "Place",
@@ -1549,7 +1634,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1404,
+   "ms": 1785,
    "kb": 120.4,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1566,6 +1651,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 288,
    "schema": [
     "Place",
@@ -1619,7 +1708,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-05",
    "status": 200,
-   "ms": 1485,
+   "ms": 1488,
    "kb": 110.7,
    "probleme": [
     "Title scurt (21)",
@@ -1638,6 +1727,7 @@
    "publicat": null,
    "modificat": null,
    "autor": null,
+   "autor_schema": null,
    "cuvinte": 69,
    "schema": [
     "Place",
@@ -1689,7 +1779,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1294,
+   "ms": 1394,
    "kb": 120,
    "probleme": [
     "Title lung (113)"
@@ -1706,6 +1796,10 @@
    "publicat": "2024-09-15",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1686,
    "schema": [
     "Place",
@@ -1759,7 +1853,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1795,
+   "ms": 1601,
    "kb": 153.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1775,7 +1869,11 @@
    "og": true,
    "publicat": "2025-08-05",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1626,
    "schema": [
     "Place",
@@ -1829,7 +1927,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 2097,
+   "ms": 1702,
    "kb": 160.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -1846,6 +1944,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-03-25",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1172,
    "schema": [
     "Place",
@@ -1899,7 +2001,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1504,
+   "ms": 1494,
    "kb": 102.8,
    "probleme": [
     "Description scurta (1)"
@@ -1916,6 +2018,10 @@
    "publicat": "2025-09-09",
    "modificat": "2026-02-20",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 382,
    "schema": [
     "Place",
@@ -1969,7 +2075,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-06-18",
    "status": 200,
-   "ms": 1699,
+   "ms": 1702,
    "kb": 145.9,
    "probleme": [
     "Title scurt (20)",
@@ -1989,6 +2095,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-06-18",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 63,
    "schema": [
     "Place",
@@ -2042,7 +2152,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-08",
    "status": 301,
-   "ms": 686,
+   "ms": 685,
    "kb": 0,
    "probleme": [
     "HTTP 301 → https://moaclinic.ro/dr-adrian-stanescu/"
@@ -2056,7 +2166,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1597,
+   "ms": 1711,
    "kb": 158.7,
    "probleme": [],
    "title": "Efecte botox: ghidul complet explicat de medici specialisti",
@@ -2070,7 +2180,11 @@
    "og": true,
    "publicat": "2025-06-03",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2393,
    "schema": [
     "Place",
@@ -2124,7 +2238,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 1906,
+   "ms": 1796,
    "kb": 188.7,
    "probleme": [
     "Imagini fara alt (19)"
@@ -2141,6 +2255,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-01-15",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1073,
    "schema": [
     "Place",
@@ -2194,7 +2312,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1582,
+   "ms": 1966,
    "kb": 161.1,
    "probleme": [],
    "title": "Epilare definitiva pareri reale de la clienti",
@@ -2208,7 +2326,11 @@
    "og": true,
    "publicat": "2025-10-02",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 4360,
    "schema": [
     "Place",
@@ -2262,8 +2384,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1883,
-   "kb": 153.1,
+   "ms": 1893,
+   "kb": 152.9,
    "probleme": [],
    "title": "Epilat interfesier - Ce inseamna ?",
    "description": "Află ce înseamnă epilarea interfesieră, cum se realizează și de ce tot mai multe persoane aleg această metodă pentru igienă și confort.",
@@ -2276,7 +2398,11 @@
    "og": true,
    "publicat": "2025-08-26",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1698,
    "schema": [
     "Place",
@@ -2330,7 +2456,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1599,
+   "ms": 1797,
    "kb": 150.9,
    "probleme": [
     "Imagini fara alt (1)"
@@ -2346,7 +2472,11 @@
    "og": true,
    "publicat": "2025-07-01",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1720,
    "schema": [
     "Place",
@@ -2400,7 +2530,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-09",
    "status": 200,
-   "ms": 1804,
+   "ms": 1710,
    "kb": 156.8,
    "probleme": [
     "Imagini fara alt (3)"
@@ -2417,6 +2547,10 @@
    "publicat": "2025-09-10",
    "modificat": "2026-01-09",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1430,
    "schema": [
     "Place",
@@ -2470,7 +2604,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1814,
+   "ms": 1914,
    "kb": 143.8,
    "probleme": [
     "Imagini fara alt (6)"
@@ -2486,7 +2620,11 @@
    "og": true,
    "publicat": "2026-03-26",
    "modificat": "2026-03-26",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1577,
    "schema": [
     "Place",
@@ -2540,7 +2678,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 2180,
+   "ms": 1704,
    "kb": 162.8,
    "probleme": [
     "Imagini fara alt (6)"
@@ -2557,6 +2695,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-03-19",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1586,
    "schema": [
     "Place",
@@ -2610,7 +2752,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1519,
+   "ms": 1603,
    "kb": 133.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -2626,7 +2768,11 @@
    "og": true,
    "publicat": "2026-01-22",
    "modificat": "2026-03-19",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1538,
    "schema": [
     "Place",
@@ -2680,7 +2826,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-12-04",
    "status": 200,
-   "ms": 1666,
+   "ms": 1799,
    "kb": 171.4,
    "probleme": [
     "Imagini fara alt (15)"
@@ -2697,6 +2843,10 @@
    "publicat": "2025-12-03",
    "modificat": "2025-12-04",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 801,
    "schema": [
     "Place",
@@ -2767,6 +2917,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 319,
    "schema": [
     "Place",
@@ -2820,8 +2974,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1771,
-   "kb": 206.1,
+   "ms": 1815,
+   "kb": 205.9,
    "probleme": [
     "Imagini fara alt (16)"
    ],
@@ -2837,6 +2991,10 @@
    "publicat": "2024-09-03",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1764,
    "schema": [
     "Place",
@@ -2890,7 +3048,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1587,
+   "ms": 1594,
    "kb": 165.9,
    "probleme": [
     "Imagini fara alt (9)"
@@ -2907,6 +3065,10 @@
    "publicat": "2025-07-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 995,
    "schema": [
     "Place",
@@ -2960,7 +3122,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1294,
+   "ms": 1501,
    "kb": 135,
    "probleme": [
     "Imagini fara alt (5)"
@@ -2976,7 +3138,11 @@
    "og": true,
    "publicat": "2025-12-02",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1159,
    "schema": [
     "Place",
@@ -3030,8 +3196,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1398,
-   "kb": 125.7,
+   "ms": 1503,
+   "kb": 125.6,
    "probleme": [
     "Title lung (70)",
     "Imagini fara alt (1)"
@@ -3048,6 +3214,10 @@
    "publicat": "2024-10-28",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2468,
    "schema": [
     "Place",
@@ -3101,7 +3271,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-01-15",
    "status": 200,
-   "ms": 1492,
+   "ms": 1630,
    "kb": 123.8,
    "probleme": [
     "Imagini fara alt (4)"
@@ -3118,6 +3288,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-01-15",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 757,
    "schema": [
     "Place",
@@ -3171,7 +3345,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1629,
+   "ms": 1499,
    "kb": 134.6,
    "probleme": [
     "Imagini fara alt (2)"
@@ -3188,6 +3362,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 344,
    "schema": [
     "Place",
@@ -3241,8 +3419,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1691,
-   "kb": 157.3,
+   "ms": 1787,
+   "kb": 156.4,
    "probleme": [
     "Imagini fara alt (5)"
    ],
@@ -3258,6 +3436,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1386,
    "schema": [
     "Place",
@@ -3311,7 +3493,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1701,
+   "ms": 1776,
    "kb": 155.1,
    "probleme": [
     "Imagini fara alt (6)"
@@ -3328,6 +3510,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1202,
    "schema": [
     "Place",
@@ -3381,7 +3567,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1319,
+   "ms": 1353,
    "kb": 143.7,
    "probleme": [
     "Imagini fara alt (4)"
@@ -3397,7 +3583,11 @@
    "og": true,
    "publicat": "2026-01-22",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2691,
    "schema": [
     "Place",
@@ -3451,8 +3641,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-18",
    "status": 200,
-   "ms": 1618,
-   "kb": 156.5,
+   "ms": 1488,
+   "kb": 156.4,
    "probleme": [
     "Title scurt (21)",
     "Description scurta (38)"
@@ -3469,6 +3659,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-03-18",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 2363,
    "schema": [
     "Place",
@@ -3522,7 +3716,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1609,
+   "ms": 1508,
    "kb": 153.5,
    "probleme": [],
    "title": "Prima injectare cu acid hialuronic in buze: Ghid 2026",
@@ -3536,7 +3730,11 @@
    "og": true,
    "publicat": "2025-07-01",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1958,
    "schema": [
     "Place",
@@ -3590,7 +3788,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1597,
+   "ms": 1681,
    "kb": 139.3,
    "probleme": [
     "Imagini fara alt (3)"
@@ -3607,6 +3805,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 334,
    "schema": [
     "Place",
@@ -3660,7 +3862,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1892,
+   "ms": 1894,
    "kb": 180.4,
    "probleme": [
     "Imagini fara alt (11)"
@@ -3677,6 +3879,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 343,
    "schema": [
     "Place",
@@ -3730,8 +3936,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 2189,
-   "kb": 241.2,
+   "ms": 2288,
+   "kb": 241.1,
    "probleme": [
     "Imagini fara alt (30)"
    ],
@@ -3747,6 +3953,10 @@
    "publicat": "2025-06-10",
    "modificat": "2026-03-25",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1972,
    "schema": [
     "Place",
@@ -3800,7 +4010,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2199,
+   "ms": 2096,
    "kb": 216.2,
    "probleme": [
     "Imagini fara alt (29)"
@@ -3817,6 +4027,10 @@
    "publicat": "2024-09-03",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1325,
    "schema": [
     "Place",
@@ -3870,7 +4084,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1615,
+   "ms": 1613,
    "kb": 159.2,
    "probleme": [
     "Imagini fara alt (7)"
@@ -3887,6 +4101,10 @@
    "publicat": "2025-06-10",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1458,
    "schema": [
     "Place",
@@ -3940,8 +4158,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-09-09",
    "status": 200,
-   "ms": 2188,
-   "kb": 197.2,
+   "ms": 2102,
+   "kb": 197.3,
    "probleme": [
     "Imagini fara alt (4)"
    ],
@@ -3957,6 +4175,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-09-09",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1511,
    "schema": [
     "Place",
@@ -4010,7 +4232,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 1981,
+   "ms": 2108,
    "kb": 200,
    "probleme": [
     "Imagini fara alt (10)"
@@ -4027,6 +4249,10 @@
    "publicat": "2025-06-10",
    "modificat": "2026-03-25",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1724,
    "schema": [
     "Place",
@@ -4080,7 +4306,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1486,
+   "ms": 1582,
    "kb": 154.3,
    "probleme": [
     "Imagini fara alt (2)"
@@ -4097,6 +4323,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 2142,
    "schema": [
     "Place",
@@ -4150,7 +4380,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1980,
+   "ms": 1607,
    "kb": 186.5,
    "probleme": [
     "Imagini fara alt (17)"
@@ -4167,6 +4397,10 @@
    "publicat": "2025-06-10",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1427,
    "schema": [
     "Place",
@@ -4220,7 +4454,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2194,
+   "ms": 2683,
    "kb": 248.9,
    "probleme": [
     "Imagini fara alt (45)"
@@ -4237,6 +4471,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1736,
    "schema": [
     "Place",
@@ -4290,7 +4528,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1799,
+   "ms": 1910,
    "kb": 187.5,
    "probleme": [
     "Imagini fara alt (18)"
@@ -4307,6 +4545,10 @@
    "publicat": "2024-09-03",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1535,
    "schema": [
     "Place",
@@ -4360,7 +4602,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2369,
+   "ms": 2166,
    "kb": 195.8,
    "probleme": [
     "Imagini fara alt (21)"
@@ -4377,6 +4619,10 @@
    "publicat": "2025-07-10",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1041,
    "schema": [
     "Place",
@@ -4430,7 +4676,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2102,
+   "ms": 1892,
    "kb": 182.1,
    "probleme": [
     "Imagini fara alt (15)"
@@ -4447,6 +4693,10 @@
    "publicat": "2025-06-10",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1841,
    "schema": [
     "Place",
@@ -4500,8 +4750,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 2207,
-   "kb": 210.4,
+   "ms": 2111,
+   "kb": 210.5,
    "probleme": [
     "Imagini fara alt (28)"
    ],
@@ -4517,6 +4767,10 @@
    "publicat": "2024-09-03",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1179,
    "schema": [
     "Place",
@@ -4570,7 +4824,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-03",
    "status": 200,
-   "ms": 1698,
+   "ms": 1887,
    "kb": 150.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -4587,6 +4841,10 @@
    "publicat": "2024-09-03",
    "modificat": "2026-02-03",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1396,
    "schema": [
     "Place",
@@ -4640,7 +4898,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-04",
    "status": 200,
-   "ms": 1905,
+   "ms": 1791,
    "kb": 164.1,
    "probleme": [
     "Imagini fara alt (10)"
@@ -4656,7 +4914,11 @@
    "og": true,
    "publicat": "2026-03-04",
    "modificat": "2026-03-04",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 2925,
    "schema": [
     "Place",
@@ -4710,7 +4972,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1882,
+   "ms": 1600,
    "kb": 135,
    "probleme": [
     "Imagini fara alt (5)"
@@ -4726,7 +4988,11 @@
    "og": true,
    "publicat": "2025-12-23",
    "modificat": "2026-03-19",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1120,
    "schema": [
     "Place",
@@ -4780,7 +5046,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1427,
+   "ms": 1513,
    "kb": 126.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -4796,7 +5062,11 @@
    "og": true,
    "publicat": "2026-01-08",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1143,
    "schema": [
     "Place",
@@ -4850,7 +5120,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1387,
+   "ms": 1292,
    "kb": 132.9,
    "probleme": [
     "Title lung (71)",
@@ -4867,7 +5137,11 @@
    "og": true,
    "publicat": "2026-01-22",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1364,
    "schema": [
     "Place",
@@ -4921,7 +5195,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-07-29",
    "status": 200,
-   "ms": 1887,
+   "ms": 1792,
    "kb": 182.4,
    "probleme": [
     "Imagini fara alt (11)"
@@ -4938,6 +5212,10 @@
    "publicat": "2025-07-29",
    "modificat": "2025-07-29",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1421,
    "schema": [
     "Place",
@@ -4991,7 +5269,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 1699,
+   "ms": 1588,
    "kb": 155.5,
    "probleme": [
     "Imagini fara alt (5)"
@@ -5008,6 +5286,10 @@
    "publicat": "2024-09-04",
    "modificat": "2025-11-22",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1374,
    "schema": [
     "Place",
@@ -5061,8 +5343,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 1707,
-   "kb": 156.1,
+   "ms": 1597,
+   "kb": 156.2,
    "probleme": [
     "Imagini fara alt (4)"
    ],
@@ -5078,6 +5360,10 @@
    "publicat": "2024-08-29",
    "modificat": "2025-11-22",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1389,
    "schema": [
     "Place",
@@ -5131,7 +5417,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 2025,
+   "ms": 2085,
    "kb": 200.6,
    "probleme": [],
    "title": "Riduri de expresie: cauze, prevenție și tratamente eficiente",
@@ -5145,7 +5431,11 @@
    "og": true,
    "publicat": "2025-10-02",
    "modificat": "2026-02-24",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2797,
    "schema": [
     "Place",
@@ -5199,7 +5489,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1791,
+   "ms": 1883,
    "kb": 169.9,
    "probleme": [
     "Imagini fara alt (3)"
@@ -5215,7 +5505,11 @@
    "og": true,
    "publicat": "2025-08-05",
    "modificat": "2026-02-20",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 3580,
    "schema": [
     "Place",
@@ -5269,7 +5563,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1703,
+   "ms": 1489,
    "kb": 141.3,
    "probleme": [
     "Imagini fara alt (4)"
@@ -5285,7 +5579,11 @@
    "og": true,
    "publicat": "2025-10-28",
    "modificat": "2026-02-24",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2407,
    "schema": [
     "Place",
@@ -5339,7 +5637,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1607,
+   "ms": 1404,
    "kb": 142.4,
    "probleme": [
     "Imagini fara alt (5)"
@@ -5355,7 +5653,11 @@
    "og": true,
    "publicat": "2025-10-28",
    "modificat": "2026-02-24",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1913,
    "schema": [
     "Place",
@@ -5409,7 +5711,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1790,
+   "ms": 1695,
    "kb": 141.5,
    "probleme": [],
    "title": "Riduri laba gastei? Secretele expertilor anti-aging",
@@ -5423,7 +5725,11 @@
    "og": true,
    "publicat": "2025-07-01",
    "modificat": "2026-02-20",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1173,
    "schema": [
     "Place",
@@ -5477,7 +5783,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1797,
+   "ms": 1608,
    "kb": 155.5,
    "probleme": [],
    "title": "Riduri marioneta - cauze si tratamente",
@@ -5491,7 +5797,11 @@
    "og": true,
    "publicat": "2025-10-02",
    "modificat": "2026-02-24",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2633,
    "schema": [
     "Place",
@@ -5545,7 +5855,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1604,
+   "ms": 1914,
    "kb": 141.9,
    "probleme": [
     "Imagini fara alt (6)"
@@ -5561,7 +5871,11 @@
    "og": true,
    "publicat": "2026-03-26",
    "modificat": "2026-03-26",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1614,
    "schema": [
     "Place",
@@ -5615,7 +5929,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 2111,
+   "ms": 2197,
    "kb": 208.4,
    "probleme": [],
    "title": "Riduri si metode de estompare eficiente",
@@ -5629,7 +5943,11 @@
    "og": true,
    "publicat": "2025-10-02",
    "modificat": "2026-02-20",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 3527,
    "schema": [
     "Place",
@@ -5683,8 +6001,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-24",
    "status": 200,
-   "ms": 1981,
-   "kb": 152.9,
+   "ms": 1593,
+   "kb": 152.8,
    "probleme": [
     "Title lung (75)",
     "Imagini fara alt (5)"
@@ -5700,7 +6018,11 @@
    "og": true,
    "publicat": "2026-01-23",
    "modificat": "2026-02-24",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2841,
    "schema": [
     "Place",
@@ -5754,7 +6076,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1598,
+   "ms": 1606,
    "kb": 155.8,
    "probleme": [],
    "title": "Russian lips: tot ce trebuie sa stii inainte de procedura",
@@ -5768,7 +6090,11 @@
    "og": true,
    "publicat": "2025-07-01",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2098,
    "schema": [
     "Place",
@@ -5822,7 +6148,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-11-22",
    "status": 200,
-   "ms": 1484,
+   "ms": 1397,
    "kb": 103.2,
    "probleme": [
     "Title scurt (24)",
@@ -5841,6 +6167,10 @@
    "publicat": "2025-11-22",
    "modificat": "2025-11-22",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 149,
    "schema": [
     "Place",
@@ -5894,7 +6224,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-07",
    "status": 200,
-   "ms": 1591,
+   "ms": 1787,
    "kb": 156.9,
    "probleme": [
     "Title scurt (23)",
@@ -5912,6 +6242,10 @@
    "publicat": "2024-08-29",
    "modificat": "2026-02-07",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1524,
    "schema": [
     "Place",
@@ -5965,7 +6299,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1420,
+   "ms": 1602,
    "kb": 149.4,
    "probleme": [
     "Imagini fara alt (9)"
@@ -5981,7 +6315,11 @@
    "og": true,
    "publicat": "2025-12-02",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1383,
    "schema": [
     "Place",
@@ -6035,7 +6373,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1793,
+   "ms": 1800,
    "kb": 131.9,
    "probleme": [
     "Description lunga (176)",
@@ -6052,7 +6390,11 @@
    "og": true,
    "publicat": "2025-10-28",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1102,
    "schema": [
     "Place",
@@ -6106,7 +6448,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2024-09-08",
    "status": 200,
-   "ms": 1310,
+   "ms": 1390,
    "kb": 113.1,
    "probleme": [
     "Imagini fara alt (1)",
@@ -6124,6 +6466,10 @@
    "publicat": "2024-09-08",
    "modificat": "2024-09-08",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 219,
    "schema": [
     "Place",
@@ -6177,8 +6523,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1610,
-   "kb": 137.9,
+   "ms": 1399,
+   "kb": 137.8,
    "probleme": [
     "Imagini fara alt (1)"
    ],
@@ -6194,6 +6540,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 383,
    "schema": [
     "Place",
@@ -6247,8 +6597,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-20",
    "status": 200,
-   "ms": 1813,
-   "kb": 199.3,
+   "ms": 2110,
+   "kb": 199.4,
    "probleme": [
     "Imagini fara alt (22)"
    ],
@@ -6264,6 +6614,10 @@
    "publicat": "2024-10-10",
    "modificat": "2026-02-20",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 929,
    "schema": [
     "Place",
@@ -6317,7 +6671,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1508,
+   "ms": 1490,
    "kb": 146.6,
    "probleme": [
     "Imagini fara alt (4)"
@@ -6334,6 +6688,10 @@
    "publicat": "2024-10-10",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 766,
    "schema": [
     "Place",
@@ -6387,7 +6745,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-25",
    "status": 200,
-   "ms": 2870,
+   "ms": 2376,
    "kb": 256,
    "probleme": [
     "Imagini fara alt (39)"
@@ -6404,6 +6762,10 @@
    "publicat": "2026-01-08",
    "modificat": "2026-03-25",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1939,
    "schema": [
     "Place",
@@ -6457,7 +6819,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1482,
+   "ms": 1393,
    "kb": 112.1,
    "probleme": [
     "Title lung (119)"
@@ -6474,6 +6836,10 @@
    "publicat": "2024-09-15",
    "modificat": "2026-02-09",
    "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 823,
    "schema": [
     "Place",
@@ -6527,7 +6893,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-03",
    "status": 200,
-   "ms": 1773,
+   "ms": 1704,
    "kb": 154.2,
    "probleme": [
     "Imagini fara alt (7)"
@@ -6543,7 +6909,11 @@
    "og": true,
    "publicat": "2026-03-03",
    "modificat": "2026-03-03",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 2440,
    "schema": [
     "Place",
@@ -6597,7 +6967,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1316,
+   "ms": 1503,
    "kb": 131.9,
    "probleme": [
     "Imagini fara alt (4)"
@@ -6613,7 +6983,11 @@
    "og": true,
    "publicat": "2025-12-02",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1131,
    "schema": [
     "Place",
@@ -6667,8 +7041,8 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-03-26",
    "status": 200,
-   "ms": 1699,
-   "kb": 144.5,
+   "ms": 1721,
+   "kb": 144.7,
    "probleme": [
     "Imagini fara alt (6)"
    ],
@@ -6683,7 +7057,11 @@
    "og": true,
    "publicat": "2026-03-26",
    "modificat": "2026-03-26",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1535,
    "schema": [
     "Place",
@@ -6737,7 +7115,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-03-19",
    "status": 200,
-   "ms": 1415,
+   "ms": 1425,
    "kb": 133,
    "probleme": [
     "Imagini fara alt (1)"
@@ -6754,6 +7132,10 @@
    "publicat": "2026-02-24",
    "modificat": "2026-03-19",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 308,
    "schema": [
     "Place",
@@ -6807,8 +7189,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1510,
-   "kb": 138.7,
+   "ms": 1496,
+   "kb": 138.6,
    "probleme": [
     "Imagini fara alt (3)"
    ],
@@ -6824,6 +7206,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 330,
    "schema": [
     "Place",
@@ -6877,7 +7263,7 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2026-02-02",
    "status": 200,
-   "ms": 1397,
+   "ms": 1602,
    "kb": 136.3,
    "probleme": [
     "Imagini fara alt (2)"
@@ -6894,6 +7280,10 @@
    "publicat": "2026-02-02",
    "modificat": "2026-02-02",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 375,
    "schema": [
     "Place",
@@ -6947,7 +7337,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1688,
+   "ms": 1698,
    "kb": 150.4,
    "probleme": [],
    "title": "Unde se pune botox - Ghid 2026",
@@ -6961,7 +7351,11 @@
    "og": true,
    "publicat": "2025-08-26",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 1485,
    "schema": [
     "Place",
@@ -7015,8 +7409,8 @@
    "sitemap": "page-sitemap.xml",
    "lastmod": "2025-09-05",
    "status": 200,
-   "ms": 1616,
-   "kb": 166.7,
+   "ms": 1881,
+   "kb": 166.6,
    "probleme": [
     "Title scurt (24)",
     "Imagini fara alt (6)"
@@ -7033,6 +7427,10 @@
    "publicat": "2024-08-29",
    "modificat": "2025-09-05",
    "autor": null,
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu",
+    "url": "https://moaclinic.ro/author/moaclinic/"
+   },
    "cuvinte": 1893,
    "schema": [
     "Place",
@@ -7086,7 +7484,7 @@
    "sitemap": "post-sitemap.xml",
    "lastmod": "2026-02-09",
    "status": 200,
-   "ms": 1602,
+   "ms": 1597,
    "kb": 154,
    "probleme": [
     "Imagini fara alt (4)"
@@ -7102,7 +7500,11 @@
    "og": true,
    "publicat": "2025-08-05",
    "modificat": "2026-02-09",
-   "autor": null,
+   "autor": "Dr. Adrian Stănescu",
+   "autor_schema": {
+    "nume": "Dr. Adrian Stănescu medic gerontolog București",
+    "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+   },
    "cuvinte": 2060,
    "schema": [
     "Place",

@@ -7,7 +7,11 @@
  "description": "Glutationul – antioxidantul „maestru” produs natural de organism, esențial pentru detoxifiere, imunitate și protecția celulară. Descoperă beneficiile",
  "publicat": "2025-08-05",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

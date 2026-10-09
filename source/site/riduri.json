@@ -7,7 +7,11 @@
  "description": "Combate riduri cu solutii eficiente si redobandeste fermitatea pielii. Descopera metode care chiar functioneaza!",
  "publicat": "2025-10-02",
  "modificat": "2026-02-20",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

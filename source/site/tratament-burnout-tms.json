@@ -7,7 +7,11 @@
  "description": "Afla ce este burnout, de ce apare si cum se manifesta. Descopera cum tratamentul burnout TMS poate reduce stresul si creste energia!",
  "publicat": "2026-03-03",
  "modificat": "2026-03-03",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu",
+  "url": "https://moaclinic.ro/author/moaclinic/"
+ },
  "titluri": [
   {
    "n": 2,

@@ -7,7 +7,11 @@
  "description": "Afla ce este ptoza palpebrala, care sunt cauzele si ce tratament pentru pleoape cazute exista. Descopera solutiile corecte acum!",
  "publicat": "2026-03-04",
  "modificat": "2026-03-04",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu",
+  "url": "https://moaclinic.ro/author/moaclinic/"
+ },
  "titluri": [
   {
    "n": 2,

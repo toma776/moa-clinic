@@ -7,7 +7,11 @@
  "description": "Afla cele mai importante recomandari dupa botox pentru rezultate optimale. Urmeaza sfaturi utile si pastreaza efectele mai mult timp!",
  "publicat": "2026-01-08",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

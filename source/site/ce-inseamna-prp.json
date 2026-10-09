@@ -7,7 +7,11 @@
  "description": "Afla ce inseamna PRP si cum functioneaza tratamentul. Descopera beneficiile si aplicatiile pentru piele si par acum!",
  "publicat": "2026-01-08",
  "modificat": "2026-03-19",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

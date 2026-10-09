@@ -7,7 +7,11 @@
  "description": "Citește epilare definitiva pareri si afla daca merita investitia. Descopera experiente reale si ia decizia potrivita!",
  "publicat": "2025-10-02",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

@@ -7,7 +7,11 @@
  "description": "Prima injectare cu acid hialuronic in buze - afla ce trebuie sa stii! Procedura, efecte, ingrijire si sfaturi pentru un rezultat natural si armonios.",
  "publicat": "2025-07-01",
  "modificat": "2026-02-09",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

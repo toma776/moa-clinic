@@ -7,7 +7,11 @@
  "description": "Riduri laba gastei? Descopera cauzele, metodele de prevenire si tratamentele eficiente pentru un ten neted si intinerit!",
  "publicat": "2025-07-01",
  "modificat": "2026-02-20",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu medic gerontolog București",
+  "url": "https://moaclinic.ro/author/dr-adrian-stanescu/"
+ },
  "titluri": [
   {
    "n": 2,

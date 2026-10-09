@@ -168,6 +168,7 @@ D.articole = SRC.filter((s) => s.tip === 'Articol').map((s) => {
     modificat: s.modificat,
     rezumat: s.description,
     autor: s.autor,
+    autor_schema: s.autor_schema || null,
     tip: rule ? rule[0] : 'ghid',
     motiv_tip: rule ? rule[2] : 'conținut explicativ, fără o problemă sau o comparație în titlu',
     entitati: ents,
@@ -410,6 +411,15 @@ if (inc('Echipă')) ob('echipa-diferita', 'critic', `Echipa de pe homepage difer
 if (inc('Recenzii')) ob('recenzii-schema', 'mediu', `aggregateRating din schema declară ${inc('Recenzii').valori['schema aggregateRating.reviewCount']} recenzii, widgetul arată ${inc('Recenzii').valori['Trustindex (homepage)']}.`, H, { tip: 'regex_absent', url: H, regex: '"reviewCount"\\s*:\\s*"60"', descriere: 'reviewCount „60” să nu mai apară în schema de pe homepage' });
 if (inc('Social')) ob('facebook-dublu', 'mediu', 'Două profiluri Facebook diferite pe homepage (MoaClinicByOxxygene și profile.php?id=61565584852692).', H, { tip: 'text_absent', url: H, text: 'profile.php?id=61565584852692' });
 ob('nume-brand', 'mediu', `Brandul apare sub ${inc('Nume brand')?.valori.variante.length || 4} denumiri (${(inc('Nume brand')?.valori.variante || []).join(', ')}). Lipsește alternateName în schema.`, H, { tip: 'regex_present', url: H, regex: '"alternateName"', descriere: 'schema de pe homepage să conțină alternateName' });
+{
+  const accounts = {};
+  for (const s of SRC.filter((x) => x.tip === 'Articol' && x.autor_schema)) {
+    const k = s.autor_schema.url || s.autor_schema.nume;
+    (accounts[k] ||= { nume: s.autor_schema.nume, n: 0 }).n++;
+  }
+  const acc = Object.entries(accounts);
+  if (acc.length > 1) ob('autor-doua-conturi', 'mediu', `Articolele de blog sunt semnate de același medic din ${acc.length} conturi WordPress diferite: ${acc.map(([u, a]) => `„${a.nume}” (${u.replace(ORIGIN, '')}, ${a.n} articole)`).join(' și ')}. Numele afișat al unuia conține cuvinte-cheie („medic gerontolog București”).`, ORIGIN + '/riduri/', { tip: 'text_absent', url: ORIGIN + '/riduri/', text: 'medic gerontolog București', descriere: 'numele autorului de pe /riduri/ să nu mai conțină „medic gerontolog București”' });
+}
 ob('autor-urluri', 'mediu', 'Dr. Adrian Stănescu are 3 URL-uri de profil: /author/moaclinic/ (schema), /author/dr-adrian-stanescu/ și /echipa/dr-adrian-stanescu/ (sitemap, face 301).', H, { tip: 'text_absent', url: H, text: '/author/moaclinic/' });
 for (const l of D.continut.linkuriHomepage.filter((x) => x.status >= 300 && x.status < 400 && x.url.endsWith('/')))
   ob(`redirect-${slug(new URL(l.url).pathname)}`, 'minor', `Link intern pe homepage spre ${new URL(l.url).pathname}, care face redirect spre ${new URL(l.redirect, ORIGIN).pathname}.`, H, { tip: 'text_absent', url: H, text: `href="${l.url}"` });

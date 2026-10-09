@@ -7,7 +7,11 @@
  "description": "Află cum funcționează tratamentul cu botox pentru riduri pe gat, cât durează efectele și când este recomandat Programează-te informat",
  "publicat": "2026-03-26",
  "modificat": "2026-03-26",
- "autor": null,
+ "autor": "Dr. Adrian Stănescu",
+ "autor_schema": {
+  "nume": "Dr. Adrian Stănescu",
+  "url": "https://moaclinic.ro/author/moaclinic/"
+ },
  "titluri": [
   {
    "n": 2,
