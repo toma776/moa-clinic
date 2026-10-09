@@ -446,3 +446,7 @@ footer .legal { border-top: 1px solid rgba(255, 255, 255, .08); padding: 26px 0 
   .pf-timeline li::after { left: -5px; top: 20px; }
   .pf-per { text-align: left; padding: 0; }
 }
+
+/* link discret în textul hero-ului */
+.lede-link { color: var(--ink); border-bottom: 1px solid var(--gold-2); transition: color .2s; }
+.lede-link:hover { color: var(--gold); }
