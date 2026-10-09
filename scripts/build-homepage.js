@@ -40,7 +40,15 @@ const resized = (src) => {
   const f = fs.existsSync(dir) && fs.readdirSync(dir).find((x) => x.startsWith(base + '-768x'));
   return f ? path.posix.join(path.posix.dirname(src), f) : src;
 };
-const doctors = D.echipa.filter((p) => p.tip === 'Medic' && photos[p.nume]).sort((a, b) => (a.nume.includes('Stănescu') ? -1 : b.nume.includes('Stănescu') ? 1 : (b.grad === 'Medic primar') - (a.grad === 'Medic primar')));
+// toată echipa (grupul Echipa din entități): fondatorul primul, apoi medicii primari, specialiști, rezidenți, estetică, asistență
+const RANK = { 'Medic primar': 0, 'Medic specialist': 1, 'Medic rezident': 2 };
+const grupOf = (p) => (p.tip === 'Medic' ? 'medici' : p.tip === 'Asistent medical' ? 'asistenta' : 'estetica');
+const team = D.echipa.map((p) => ({ ...p, grup: grupOf(p) })).sort((a, b) =>
+  (b.nume.includes('Stănescu') - a.nume.includes('Stănescu')) ||
+  (['medici', 'estetica', 'asistenta'].indexOf(a.grup) - ['medici', 'estetica', 'asistenta'].indexOf(b.grup)) ||
+  ((RANK[a.grad] ?? 9) - (RANK[b.grad] ?? 9)) || (!!photos[b.nume] - !!photos[a.nume]));
+const TEAM_GROUPS = [{ id: 'toti', nume: 'Toată echipa' }, { id: 'medici', nume: 'Medici' }, { id: 'estetica', nume: 'Estetică' }, { id: 'asistenta', nume: 'Asistență medicală' }];
+const doctors = team.filter((p) => photos[p.nume]);
 
 // problemele, din structură
 const concernZones = S.arbore.find((n) => n.url === '/probleme/').copii;
@@ -157,7 +165,7 @@ const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : ''))
 const mrowLink = (it) => `<a class="mrow" href="${esc(it.href)}"><span><b>${esc(it.nume)}</b>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span>${it.pret != null ? `<em>de la ${lei(it.pret)}</em>` : '<span class="chev">→</span>'}</a>`;
 const mrowGo = (label, sub, screen) => `<button class="mrow" type="button" data-go="${screen}"><span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="chev">›</span></button>`;
 const screens = [];
-screens.push(`<div class="mscreen on" data-screen="root">${M.map((m, i) => (m.tip === 'link' ? mrowLink({ nume: m.nume, href: m.url === '/medici/' ? '#medici' : toLive(m.url) || '#' }) : mrowGo(m.nume, m.nota ? '' : '', `m${i}`))).join('')}
+screens.push(`<div class="mscreen on" data-screen="root">${M.map((m, i) => (m.tip === 'link' ? mrowLink({ nume: m.url === '/medici/' ? 'Echipa' : m.nume, href: m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#' }) : mrowGo(m.nume, m.nota ? '' : '', `m${i}`))).join('')}
   ${mrowLink({ nume: '0743 056 605', sub: 'Sună pentru programare', href: 'tel:+40743056605' })}</div>`);
 M.forEach((m, i) => {
   if (m.nume === 'Ce te supără?') {
@@ -200,7 +208,7 @@ const html = `<!doctype html>
   <div class="wrap hd">
     <a class="logo" href="/nou/" aria-label="MOA Clinic – acasă"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"></a>
     <nav class="nav" aria-label="Meniu principal"><ul>
-      ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '#medici' : toLive(m.url) || '#')}">${esc(m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
+      ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#')}">${esc(m.url === '/medici/' ? 'Echipa' : m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
     </ul></nav>
     <a class="btn btn-gold" href="#programare">Programează-te</a>
     <button class="burger" id="burger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mnav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
@@ -322,14 +330,15 @@ ${mobileNav}
   </div>
 </section>
 
-<section class="sec" id="medici">
+<section class="sec" id="echipa">
   <div class="wrap">
     <div class="sec-head split rv">
-      <div><span class="eyebrow">Medicii MOA</span><h2 style="margin-top:22px">Mâini <em>sigure.</em></h2></div>
-      <p class="lede">Gerontologie, dermatologie și chirurgie plastică, sub același acoperiș. Știi mereu cine te tratează.</p>
+      <div><span class="eyebrow">Echipa MOA</span><h2 style="margin-top:22px">Mâini <em>sigure.</em></h2></div>
+      <p class="lede">Medici gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente – o singură echipă, sub același acoperiș. Știi mereu cine te tratează.</p>
     </div>
-    <div class="team-grid">${doctors.map((p) => `
-      <article class="doc rv"><div class="ph"><img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy"></div>
+    <div class="team-filter rv" role="tablist" aria-label="Filtrează echipa">${TEAM_GROUPS.map((g, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-team="${g.id}">${esc(g.nume)} <span>${g.id === 'toti' ? team.length : team.filter((p) => p.grup === g.id).length}</span></button>`).join('')}</div>
+    <div class="team-grid">${team.map((p) => `
+      <article class="doc rv" data-grup="${p.grup}"><div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span></article>`).join('')}
     </div>
   </div>
@@ -516,6 +525,13 @@ ${mobileNav}
     play();
   }
 
+  // echipa: filtru pe grupuri
+  const tf = [...document.querySelectorAll('[data-team]')];
+  tf.forEach((b) => b.addEventListener('click', () => {
+    tf.forEach((x) => x.setAttribute('aria-selected', x === b));
+    document.querySelectorAll('.doc[data-grup]').forEach((d) => (d.hidden = b.dataset.team !== 'toti' && d.dataset.grup !== b.dataset.team));
+  }));
+
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];
   tabs.forEach((t) => t.addEventListener('click', () => {
@@ -553,4 +569,4 @@ ${mobileNav}
 
 fs.mkdirSync(path.join(ROOT, 'nou'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'nou', 'index.html'), html);
-console.log(`Gata: nou/index.html · ${doctors.length} medici cu fotografie · ${concernZones.reduce((n, z) => n + z.copii.length, 0)} probleme · ${SIG.length} tratamente-semnătură · ${VID.length} video · ${offers.length} oferte · ${reviews.length} recenzii`);
+console.log(`Gata: nou/index.html · ${team.length} oameni în echipă (${doctors.length} cu fotografie) · ${concernZones.reduce((n, z) => n + z.copii.length, 0)} probleme · ${SIG.length} tratamente-semnătură · ${VID.length} video · ${offers.length} oferte · ${reviews.length} recenzii`);
