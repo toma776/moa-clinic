@@ -62,6 +62,9 @@ const SIG = [
   { id: 'sculptra', wide: true, cat: 'Biostimulare', titlu: 'Sculptra: volum care se construiește în timp', text: 'Stimulează colagenul propriu pentru un lifting treptat, natural, care durează.', img: '/wp-content/uploads/2024/09/17-768x768.jpg' },
 ];
 
+// citatul real al fondatorului, din pagina lui de profil (data/profiluri.json → echipa.profil_detaliat)
+const FOUNDER_QUOTE = D.echipa.find((p) => /Stănescu/.test(p.nume))?.profil_detaliat?.citat || null;
+
 // slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
 const HERO_SLIDES = [
   { src: '/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg', eticheta: 'Recepția', alt: 'Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene' },
@@ -302,7 +305,7 @@ ${mobileNav}
     <div class="rv">
       <span class="eyebrow">Global Antiaging</span>
       <h2 style="font-size:clamp(38px,4.6vw,58px);margin-top:22px">Un concept în care vârsta <em style="color:var(--gold)">nu mai contează.</em></h2>
-      <blockquote class="quote">Frumusețea exterioară durează atunci când organismul e tânăr din interior.<cite>Dr. Adrian Stănescu · medic primar gerontolog, fondator</cite></blockquote>
+      ${FOUNDER_QUOTE ? `<blockquote class="quote">„${esc(FOUNDER_QUOTE)}”<cite>Dr. Adrian Stănescu · medic primar gerontolog, fondator</cite></blockquote>` : ''}
       <p class="lede">MOA unește estetica medicală cu medicina regenerativă: îți măsurăm vârsta biologică, apoi lucrăm deodată la cum arăți și la cum te simți.</p>
       <div class="pillars">
         <div><b>Estetică</b><span>injectabile, laser, radiofrecvență</span></div>
