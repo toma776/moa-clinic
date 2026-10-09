@@ -62,7 +62,6 @@ const HERO_SLIDES = [
   { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.20-2-768x1024.jpeg', eticheta: 'Cabinetul de consultații', alt: 'Cabinetul de consultații și proceduri injectabile' },
   { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-768x1024.jpeg', eticheta: 'Cabinetul de tratamente cu aparatură', alt: 'Cabinet de tratamente cu aparatură de radiofrecvență' },
   { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-1-768x1024.jpeg', eticheta: 'Splendor X', alt: 'Laserul Splendor X pentru epilare definitivă' },
-  { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.52-768x1024.jpeg', eticheta: 'Camera de terapii', alt: 'Camera pentru terapii intravenoase' },
 ];
 for (const s of HERO_SLIDES) if (!fs.existsSync(path.join(ROOT, 'site', s.src))) console.warn('  ! lipsește local:', s.src);
 
