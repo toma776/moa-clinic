@@ -65,6 +65,15 @@ const SIG = [
 // citatul real al fondatorului, din pagina lui de profil (data/profiluri.json → echipa.profil_detaliat)
 const FOUNDER_QUOTE = D.echipa.find((p) => /Stănescu/.test(p.nume))?.profil_detaliat?.citat || null;
 
+// lista de servicii pentru formulare (pagina + panoul de jos de pe mobil)
+const SRV_OPTIONS = '<option value="">Nu știu încă – vreau o consultație</option>' + S.arbore.find((n) => n.url === '/tratamente/').copii.map((c) => `<optgroup label="${esc(c.nume)}">${c.copii.filter((t) => t.continut).map((t) => `<option>${esc(t.nume)}</option>`).join('')}</optgroup>`).join('') + `<optgroup label="Consultații">${S.arbore.find((n) => n.url === '/consultatii/').copii.map((c) => `<option>${esc(c.nume)}</option>`).join('')}</optgroup>`;
+// imaginile de previzualizare ale video-urilor (fotografii existente, potrivite tratamentului)
+const VIDEO_POSTER = {
+  dermalinfusion: '/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg',
+  'epilare-definitiva-bucuresti': '/wp-content/uploads/2024/08/farhad-ibrahimzade-quaIM4h-u5E-unsplash-768x960.jpg',
+  'nutrigenetica-epigenetica': '/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg',
+};
+
 // slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
 const HERO_SLIDES = [
   { src: '/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg', eticheta: 'Recepția', alt: 'Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene' },
@@ -295,6 +304,7 @@ ${mobileNav}
         <div class="in"><span class="cat">${esc(s.cat)}</span><h3>${esc(s.titlu)}</h3><p>${esc(s.text)}</p>
           <span class="meta"><span>${esc(serv[s.id]?.nume || '')}</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
       </a>`).join('')}
+    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
@@ -343,6 +353,7 @@ ${mobileNav}
     <div class="team-grid">${team.map((p) => `
       <article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}" data-grup="${p.grup}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`).join('')}
+    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
@@ -355,8 +366,9 @@ ${mobileNav}
     </div>
     <div class="v-grid">${VID.map((v) => {
       const p = v.pagini[0];
-      return `<div class="v-card rv"><div class="vb"><video src="${esc(v.url)}" preload="none" playsinline controls></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+      return `<div class="v-card rv"><div class="vb"><video src="${esc(v.url)}" preload="none" playsinline controls${VIDEO_POSTER[p.serviciu] ? ` poster="${esc(VIDEO_POSTER[p.serviciu])}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
         <h3>${esc(p.sectiune || v.titlu)}</h3><p>${esc(serv[p.serviciu]?.nume || '')}</p></div>`; }).join('')}
+    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
@@ -389,7 +401,7 @@ ${mobileNav}
       <div class="o-card rv"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Ofertă' : o.grup)}</span>
         <h3>${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}</h3>
         <div class="price"><b>${lei(o.pret)}</b><s>${lei(o.pretInitial)}</s></div>
-        <a class="link-u" href="#programare" style="justify-self:start;margin-top:10px">Rezervă</a></div>`).join('')}
+        <a class="link-u" href="#programare" data-srv="Ofertă: ${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}" style="justify-self:start;margin-top:10px">Rezervă</a></div>`).join('')}
     </div>
   </div>
 </section>
@@ -411,11 +423,11 @@ ${mobileNav}
       <h3>Cere o programare</h3>
       <div class="row2">
         <div class="field"><label for="f-nume">Nume</label><input id="f-nume" name="nume" autocomplete="name" required></div>
-        <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
       </div>
-      <div class="field"><label for="f-email">Email (opțional)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      <div class="field"><label for="f-email">Email (opțional)</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
       <div class="field"><label for="f-srv">Ce te interesează?</label>
-        <select id="f-srv" name="serviciu"><option value="">Nu știu încă – vreau o consultație</option>${S.arbore.find((n) => n.url === '/tratamente/').copii.map((c) => `<optgroup label="${esc(c.nume)}">${c.copii.filter((t) => t.continut).map((t) => `<option>${esc(t.nume)}</option>`).join('')}</optgroup>`).join('')}</select></div>
+        <select id="f-srv" name="serviciu">${SRV_OPTIONS}</select></div>
       <div class="field"><label for="f-msg">Mesaj (opțional)</label><textarea id="f-msg" name="mesaj" rows="2"></textarea></div>
       <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
       <button class="btn btn-gold arrow" type="submit" style="justify-self:start">Trimite cererea</button>
@@ -437,7 +449,23 @@ ${mobileNav}
 </footer>
 
 <nav class="mbar" aria-label="Acțiuni rapide"><a href="tel:+40743056605">Sună</a><a href="https://wa.me/40743056605">WhatsApp</a><a href="#programare">Programează-te</a></nav>
-<div class="proto">Propunere de homepage · <a href="/">vezi homepage-ul actual</a></div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <form class="sheet-in booking" id="sheet-form" role="dialog" aria-modal="true" aria-labelledby="sheet-t" novalidate>
+    <span class="sheet-grip" aria-hidden="true"></span>
+    <button class="sheet-x" type="button" data-close aria-label="Închide">✕</button>
+    <h3 id="sheet-t">Cere o programare</h3>
+    <p class="sheet-sub">Lasă numele și telefonul. Te sunăm noi pentru confirmare.</p>
+    <div class="field"><label for="s-nume">Nume</label><input id="s-nume" name="nume" autocomplete="name" required></div>
+    <div class="field"><label for="s-tel">Telefon</label><input id="s-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
+    <div class="field"><label for="s-srv">Ce te interesează?</label><select id="s-srv" name="serviciu">${SRV_OPTIONS}</select></div>
+    <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
+    <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
+    <p class="form-msg" role="status" aria-live="polite"></p>
+  </form>
+</div>
+<div class="proto" id="proto">Propunere de homepage · <a href="/">vezi homepage-ul actual</a><button type="button" aria-label="Ascunde eticheta" id="proto-x">✕</button></div>
 
 <script>
 (() => {
@@ -549,21 +577,59 @@ ${mobileNav}
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
 
-  // formular -> lead în panou (POST /api/leads)
-  const f = document.getElementById('booking'), msg = document.getElementById('form-msg');
-  f.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(f));
-    if (!d.nume.trim() || !d.telefon.trim()) { msg.className = 'form-msg err'; msg.textContent = 'Completează numele și telefonul.'; return; }
-    if (!d.acord) { msg.className = 'form-msg err'; msg.textContent = 'Bifează acordul pentru a putea fi contactat(ă).'; return; }
-    const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
-    try {
-      const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: d.email.trim() || undefined, serviciu: d.serviciu || undefined, mesaj: d.mesaj.trim() || undefined, sursa: 'Formular site' }) });
-      if (!r.ok) throw new Error();
-      f.reset(); msg.className = 'form-msg ok'; msg.textContent = 'Mulțumim! Te sunăm în curând pentru confirmare.';
-    } catch { msg.className = 'form-msg err'; msg.textContent = 'Nu am putut trimite cererea. Sună-ne la 0743 056 605.'; }
-    btn.disabled = false;
+  // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
+  const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
+  document.querySelectorAll('form.booking').forEach((f) => {
+    const msg = f.querySelector('.form-msg');
+    const say = (cls, t) => { msg.className = 'form-msg ' + cls; msg.textContent = t; };
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(f));
+      if (!(d.nume || '').trim()) { say('err', 'Completează numele.'); f.nume.focus(); return; }
+      if (!telOk(d.telefon || '')) { say('err', 'Numărul de telefon pare incomplet (ex. 0743 056 605).'); f.telefon.focus(); return; }
+      if (!d.acord) { say('err', 'Bifează acordul pentru a putea fi contactat(ă).'); return; }
+      const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+      try {
+        const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: (d.email || '').trim() || undefined, serviciu: d.serviciu || undefined, mesaj: (d.mesaj || '').trim() || undefined, sursa: 'Formular site' }) });
+        if (!r.ok) throw new Error();
+        f.reset(); say('ok', 'Mulțumim! Te sunăm în curând pentru confirmare.');
+      } catch { say('err', 'Nu am putut trimite cererea. Sună-ne la 0743 056 605.'); }
+      btn.disabled = false;
+    });
   });
+
+  // mobil: „Programează-te” deschide formularul ca panou de jos, cu serviciul precompletat din context
+  const sheet = document.getElementById('sheet'), sf = document.getElementById('sheet-form');
+  const mobile = () => matchMedia('(max-width:760px)').matches;
+  let lastFocus = null;
+  const openSheet = (srv) => {
+    lastFocus = document.activeElement;
+    const sel = sf.serviciu;
+    if (srv) { if (![...sel.options].some((o) => o.text === srv)) sel.add(new Option(srv, srv), 1); sel.value = [...sel.options].find((o) => o.text === srv).value; }
+    sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('open'));
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => sf.nume.focus({ preventScroll: true }), 320);
+  };
+  const closeSheet = () => { sheet.classList.remove('open'); document.body.style.overflow = ''; setTimeout(() => (sheet.hidden = true), 300); lastFocus?.focus?.({ preventScroll: true }); };
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href="#programare"]');
+    if (!a || !mobile()) return;
+    e.preventDefault(); openSheet(a.dataset.srv || '');
+  });
+  sheet.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', closeSheet));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !sheet.hidden) closeSheet(); });
+
+  // header: se ascunde la scroll în jos, reapare la scroll în sus
+  let lastY = scrollY;
+  addEventListener('scroll', () => {
+    const y = scrollY, menuOpen = !!document.querySelector('.mm.open');
+    if (!menuOpen) hdr.classList.toggle('hide', y > lastY + 4 && y > 240);
+    if (y < lastY - 4 || y < 240) hdr.classList.remove('hide');
+    lastY = y;
+  }, { passive: true });
+
+  // eticheta „Propunere de homepage” se poate ascunde
+  document.getElementById('proto-x')?.addEventListener('click', () => document.getElementById('proto').remove());
 })();
 </script>
 </body>
@@ -643,7 +709,7 @@ ${TOP}<main>
       <h1>${esc(p.nume)}</h1>
       <p class="lede">${esc(pr.rezumat || '')}</p>
       <div class="pf-facts">${pr.cifre.map((c) => `<div><b>${esc(c.valoare)}</b><span>${esc(c.eticheta)}</span></div>`).join('')}</div>
-      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează o consultație</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
     </div>
     ${photo ? `<div class="pf-photo"><div class="frame"><img src="${esc(photo)}" alt="${esc(p.nume)}" fetchpriority="high"></div></div>` : ''}
   </div>
