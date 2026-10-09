@@ -11,8 +11,8 @@
     "Încrederea (medici, recenzii, tehnologie) stă la un click din orice pagină de tratament, nu doar în „Despre”.",
     "Un singur CTA principal, același text peste tot: Programează-te. Pe mobil: bară fixă Sună · WhatsApp · Programează-te.",
     "Prețul „de la” apare pe fiecare pagină de tratament și de problemă; lista completă rămâne pe /preturi/.",
-    "Fiecare articol de blog se leagă de o problemă și de tratamentele ei, ca să ducă spre programare.",
-    "URL-uri ierarhice și scurte (/tratamente/injectabile/botox/), cu redirect 301 de la fiecare URL actual."
+    "Fiecare articol de blog se leagă de o problemă și de tratamentele ei, ca să ducă spre programare. Articolele își păstrează URL-urile actuale.",
+    "URL-uri ierarhice și scurte pentru paginile noi (/tratamente/injectabile/botox/), cu redirect 301 de la URL-urile actuale ale serviciilor; articolele de blog nu se mută."
   ],
   "etape": [
     {
@@ -22,7 +22,7 @@
       "canal": "Google (căutări pe probleme), Instagram, recomandări",
       "pagini": [
         "Pagini de probleme",
-        "Ghiduri",
+        "Articole de blog",
         "Acasă"
       ],
       "continut": [
@@ -117,9 +117,9 @@
       "id": "dupa",
       "nume": "După tratament & revenire",
       "intrebare": "„Ce fac după? Când revin? Pot lăsa o recenzie?”",
-      "canal": "email / WhatsApp după vizită, ghiduri de îngrijire",
+      "canal": "email / WhatsApp după vizită, articole de îngrijire",
       "pagini": [
-        "Ghiduri de îngrijire",
+        "Articole de îngrijire",
         "Oferte & abonamente",
         "Recenzii"
       ],
@@ -449,8 +449,8 @@
             "url": "/clinica/recenzii/"
           },
           {
-            "nume": "Ghiduri",
-            "url": "/ghiduri/"
+            "nume": "Blog",
+            "url": "/blog/"
           },
           {
             "nume": "Întrebări frecvente",
@@ -553,8 +553,8 @@
             "url": "/medici/"
           },
           {
-            "nume": "Ghiduri",
-            "url": "/ghiduri/"
+            "nume": "Blog",
+            "url": "/blog/"
           },
           {
             "nume": "Contact",
@@ -619,39 +619,39 @@
               "ghiduri": [
                 {
                   "titlu": "Riduri de expresie: cauze, prevenție și tratamente eficiente",
-                  "url": "/ghiduri/riduri-de-expresie/"
+                  "url": "/riduri-de-expresie/"
                 },
                 {
                   "titlu": "Riduri pe frunte? Secretele expertilor anti-aging",
-                  "url": "/ghiduri/riduri-frunte/"
+                  "url": "/riduri-frunte/"
                 },
                 {
                   "titlu": "Riduri intre sprancene cauze si tratamente eficiente",
-                  "url": "/ghiduri/riduri-intre-sprancene/"
+                  "url": "/riduri-intre-sprancene/"
                 },
                 {
                   "titlu": "Riduri laba gastei? Secretele expertilor anti-aging",
-                  "url": "/ghiduri/riduri-laba-gastei/"
+                  "url": "/riduri-laba-gastei/"
                 },
                 {
                   "titlu": "Bunny lines ce sunt si cum le poti estompa",
-                  "url": "/ghiduri/bunny-lines/"
+                  "url": "/bunny-lines/"
                 },
                 {
                   "titlu": "Riduri pe gât tratament cu botox: ce trebuie să știi",
-                  "url": "/ghiduri/riduri-pe-gat-tratament-cu-botox/"
+                  "url": "/riduri-pe-gat-tratament-cu-botox/"
                 },
                 {
                   "titlu": "Unde se pune botox – Ghid 2026",
-                  "url": "/ghiduri/unde-se-pune-botox/"
+                  "url": "/unde-se-pune-botox/"
                 },
                 {
                   "titlu": "Efecte botox: ghidul complet explicat de medici specialiști",
-                  "url": "/ghiduri/efecte-botox/"
+                  "url": "/efecte-botox/"
                 },
                 {
                   "titlu": "Cea mai buna toxina botulinica: rezultate dupa 6 luni de studiu",
-                  "url": "/ghiduri/cea-mai-buna-toxina-botulinica/"
+                  "url": "/cea-mai-buna-toxina-botulinica/"
                 }
               ],
               "intrebari": 4
@@ -687,31 +687,31 @@
               "ghiduri": [
                 {
                   "titlu": "Tratament riduri profunde",
-                  "url": "/ghiduri/tratament-riduri-profunde/"
+                  "url": "/tratament-riduri-profunde/"
                 },
                 {
                   "titlu": "Riduri marioneta – cauze si tratamente",
-                  "url": "/ghiduri/riduri-marioneta/"
+                  "url": "/riduri-marioneta/"
                 },
                 {
                   "titlu": "Riduri in jurul gurii – cauze si tratamente eficiente",
-                  "url": "/ghiduri/riduri-in-jurul-gurii/"
+                  "url": "/riduri-in-jurul-gurii/"
                 },
                 {
                   "titlu": "Ridurile fumatorului – Soluții de tratament pentru un ten neted și tineresc",
-                  "url": "/ghiduri/ridurile-fumatorului/"
+                  "url": "/ridurile-fumatorului/"
                 },
                 {
                   "titlu": "Riduri si metode de estompare eficiente",
-                  "url": "/ghiduri/riduri/"
+                  "url": "/riduri/"
                 },
                 {
                   "titlu": "Hialuronidaza – Ce este și cum ajută în tratamentele estetice",
-                  "url": "/ghiduri/hialuronidaza/"
+                  "url": "/hialuronidaza/"
                 },
                 {
                   "titlu": "De ce nu imi tine acidul hialuronic",
-                  "url": "/ghiduri/de-ce-nu-imi-tine-acidul-hialuronic-2/"
+                  "url": "/de-ce-nu-imi-tine-acidul-hialuronic-2/"
                 }
               ],
               "intrebari": 5
@@ -737,27 +737,27 @@
               "ghiduri": [
                 {
                   "titlu": "Buze uscate – Soluții rapide și eficiente",
-                  "url": "/ghiduri/buze-uscate/"
+                  "url": "/buze-uscate/"
                 },
                 {
                   "titlu": "Forme de buze cu acid hialuronic: ce nu ti-a spus nimeni",
-                  "url": "/ghiduri/forme-de-buze-cu-acid-hialuronic/"
+                  "url": "/forme-de-buze-cu-acid-hialuronic/"
                 },
                 {
                   "titlu": "Prima injectare cu acid hialuronic in buze: Ghid 2026",
-                  "url": "/ghiduri/prima-injectare-cu-acid-hialuronic-in-buze/"
+                  "url": "/prima-injectare-cu-acid-hialuronic-in-buze/"
                 },
                 {
                   "titlu": "Russian lips: tot ce trebuie sa stii inainte de procedura",
-                  "url": "/ghiduri/russian-lips-vs-butterfly-lips/"
+                  "url": "/russian-lips-vs-butterfly-lips/"
                 },
                 {
                   "titlu": "Acid in buze exagerat – Ce trebuie sa stii",
-                  "url": "/ghiduri/acid-in-buze-exagerat/"
+                  "url": "/acid-in-buze-exagerat/"
                 },
                 {
                   "titlu": "Acid hialuronic in buze – cat dureaza?",
-                  "url": "/ghiduri/acid-hialuronic-in-buze-cat-dureaza/"
+                  "url": "/acid-hialuronic-in-buze-cat-dureaza/"
                 }
               ],
               "intrebari": 1
@@ -788,19 +788,19 @@
               "ghiduri": [
                 {
                   "titlu": "Cearcane si pungi sub ochi: tratamente eficiente",
-                  "url": "/ghiduri/cearcane/"
+                  "url": "/cearcane/"
                 },
                 {
                   "titlu": "Tratament cearcane eficient – Solutii rapide",
-                  "url": "/ghiduri/tratament-cearcane/"
+                  "url": "/tratament-cearcane/"
                 },
                 {
                   "titlu": "Pungi sub ochi – Soluții eficiente de reducere",
-                  "url": "/ghiduri/pungi-sub-ochi/"
+                  "url": "/pungi-sub-ochi/"
                 },
                 {
                   "titlu": "Ptoza palpebrala: cauze, tratament si operatie pleoape cazute",
-                  "url": "/ghiduri/ptoza-palpebrala/"
+                  "url": "/ptoza-palpebrala/"
                 }
               ],
               "intrebari": 2
@@ -841,11 +841,11 @@
               "ghiduri": [
                 {
                   "titlu": "Pori dilatati – Cauze și soluții pentru un ten neted",
-                  "url": "/ghiduri/pori-dilatati/"
+                  "url": "/pori-dilatati/"
                 },
                 {
                   "titlu": "Recuperare dupa Dermapen – Ce trebuie să știi pentru o vindecare rapidă",
-                  "url": "/ghiduri/recuperare-dupa-dermapen/"
+                  "url": "/recuperare-dupa-dermapen/"
                 }
               ],
               "intrebari": 11
@@ -873,11 +873,11 @@
               "ghiduri": [
                 {
                   "titlu": "Epilare definitiva pareri reale de la clienti",
-                  "url": "/ghiduri/epilare-definitiva-pareri/"
+                  "url": "/epilare-definitiva-pareri/"
                 },
                 {
                   "titlu": "Epilat interfesier – Ce inseamna ?",
-                  "url": "/ghiduri/epilat-interfesier-ce-inseamna/"
+                  "url": "/epilat-interfesier-ce-inseamna/"
                 }
               ],
               "intrebari": 1
@@ -898,7 +898,7 @@
               "ghiduri": [
                 {
                   "titlu": "Cele mai eficiente metode de combinare a tratamentelor Venus Legacy și detoxifierii intravenoase pentru un corp perfect",
-                  "url": "/ghiduri/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/"
+                  "url": "/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/"
                 }
               ],
               "intrebari": 3
@@ -924,7 +924,7 @@
               "ghiduri": [
                 {
                   "titlu": "Vergeturi pe sâni – Cauze, tratamente și metode de prevenție",
-                  "url": "/ghiduri/vergeturi-pe-sani-2/"
+                  "url": "/vergeturi-pe-sani-2/"
                 }
               ],
               "intrebari": 8
@@ -945,7 +945,7 @@
               "ghiduri": [
                 {
                   "titlu": "Alunite rosii – Cum sa le identifici pe cele periculoase",
-                  "url": "/ghiduri/alunite-rosii/"
+                  "url": "/alunite-rosii/"
                 }
               ],
               "intrebari": 0
@@ -999,11 +999,11 @@
               "ghiduri": [
                 {
                   "titlu": "Ce inseamna PRP si beneficiile tratamentului",
-                  "url": "/ghiduri/ce-inseamna-prp/"
+                  "url": "/ce-inseamna-prp/"
                 },
                 {
                   "titlu": "Terapia vampir pareri – Ghid obiectiv",
-                  "url": "/ghiduri/terapia-vampir-pareri/"
+                  "url": "/terapia-vampir-pareri/"
                 }
               ],
               "intrebari": 6
@@ -1067,27 +1067,27 @@
               "ghiduri": [
                 {
                   "titlu": "NAD perfuzabil – informatii si beneficii terapie",
-                  "url": "/ghiduri/nad-perfuzabil/"
+                  "url": "/nad-perfuzabil/"
                 },
                 {
                   "titlu": "Terapii intravenoase beneficii si tipuri de tratamente IV",
-                  "url": "/ghiduri/terapii-intravenoase/"
+                  "url": "/terapii-intravenoase/"
                 },
                 {
                   "titlu": "Adevarul despre glutation: ce nu ti-a spus nimeni pana acum",
-                  "url": "/ghiduri/adevarul-despre-glutation/"
+                  "url": "/adevarul-despre-glutation/"
                 },
                 {
                   "titlu": "Glutation: Ce este, beneficii si contraindicatii",
-                  "url": "/ghiduri/glutation-beneficii-si-contraindicatii-ce-este/"
+                  "url": "/glutation-beneficii-si-contraindicatii-ce-este/"
                 },
                 {
                   "titlu": "Cum să-ți îmbunătățești sănătatea și bunăstarea cu un tratament regenerativ perfuzabil cu glutation",
-                  "url": "/ghiduri/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/"
+                  "url": "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/"
                 },
                 {
                   "titlu": "NADH – Cheia către rezolvarea problemei de infertilitate",
-                  "url": "/ghiduri/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/"
+                  "url": "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/"
                 }
               ],
               "intrebari": 14
@@ -1113,7 +1113,7 @@
               "ghiduri": [
                 {
                   "titlu": "Tratament burnout TMS: Solutie moderna pentru stres si epuizare",
-                  "url": "/ghiduri/tratament-burnout-tms/"
+                  "url": "/tratament-burnout-tms/"
                 }
               ],
               "intrebari": 2
@@ -1149,11 +1149,11 @@
               "ghiduri": [
                 {
                   "titlu": "Beneficiile uimitoare ale saunei cu ozon pentru antiaging-ul intern",
-                  "url": "/ghiduri/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/"
+                  "url": "/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/"
                 },
                 {
                   "titlu": "Tot ce trebuie să știi despre consultarea nutrigenomică: descoperă secretele genetice ale sănătății tale!",
-                  "url": "/ghiduri/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/"
+                  "url": "/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/"
                 }
               ],
               "intrebari": 2
@@ -2310,15 +2310,14 @@
       ]
     },
     {
-      "nume": "Ghiduri",
-      "url": "/ghiduri/",
+      "nume": "Blog",
+      "url": "/blog/",
       "tip": "hub",
       "etapa": "constientizare",
       "vechi": [
-        "/blog/",
         "/category/blog/"
       ],
-      "desc": "46 articole: 44 legate de pagini de probleme, 2 doar în ghiduri",
+      "desc": "46 articole: 44 legate de pagini de probleme, 2 doar în blog · articolele rămân la URL-urile actuale",
       "copii": [
         {
           "nume": "Întrebări frecvente",
@@ -2445,8 +2444,8 @@
         "decizie"
       ],
       [
-        "Ghiduri",
-        "articolele despre problemă",
+        "Articole",
+        "articolele de blog despre problemă (la URL-urile actuale)",
         "constientizare"
       ],
       [
@@ -2752,13 +2751,8 @@
       "motiv": "medic"
     },
     {
-      "vechi": "/blog/",
-      "nou": "/ghiduri/",
-      "motiv": "hub"
-    },
-    {
       "vechi": "/category/blog/",
-      "nou": "/ghiduri/",
+      "nou": "/blog/",
       "motiv": "hub"
     },
     {
@@ -2785,236 +2779,6 @@
       "vechi": "/tratamente-corporale/",
       "nou": "/tratamente/aparatura/",
       "motiv": "categorie veche"
-    },
-    {
-      "vechi": "/glutation-beneficii-si-contraindicatii-ce-este/",
-      "nou": "/ghiduri/glutation-beneficii-si-contraindicatii-ce-este/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-pe-gat-tratament-cu-botox/",
-      "nou": "/ghiduri/riduri-pe-gat-tratament-cu-botox/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/tratament-riduri-profunde/",
-      "nou": "/ghiduri/tratament-riduri-profunde/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/cearcane/",
-      "nou": "/ghiduri/cearcane/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/ptoza-palpebrala/",
-      "nou": "/ghiduri/ptoza-palpebrala/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/tratament-burnout-tms/",
-      "nou": "/ghiduri/tratament-burnout-tms/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/ridurile-fumatorului/",
-      "nou": "/ghiduri/ridurile-fumatorului/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/hialuronidaza/",
-      "nou": "/ghiduri/hialuronidaza/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/pori-dilatati/",
-      "nou": "/ghiduri/pori-dilatati/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/recuperare-dupa-dermapen/",
-      "nou": "/ghiduri/recuperare-dupa-dermapen/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/ce-inseamna-prp/",
-      "nou": "/ghiduri/ce-inseamna-prp/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/recomandari-dupa-botox/",
-      "nou": "/ghiduri/recomandari-dupa-botox/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/pungi-sub-ochi/",
-      "nou": "/ghiduri/pungi-sub-ochi/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/buze-uscate/",
-      "nou": "/ghiduri/buze-uscate/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/acid-in-buze-exagerat/",
-      "nou": "/ghiduri/acid-in-buze-exagerat/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/nad-perfuzabil/",
-      "nou": "/ghiduri/nad-perfuzabil/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/terapia-vampir-pareri/",
-      "nou": "/ghiduri/terapia-vampir-pareri/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/tratament-cearcane/",
-      "nou": "/ghiduri/tratament-cearcane/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/bunny-lines/",
-      "nou": "/ghiduri/bunny-lines/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-in-jurul-gurii/",
-      "nou": "/ghiduri/riduri-in-jurul-gurii/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-intre-sprancene/",
-      "nou": "/ghiduri/riduri-intre-sprancene/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/terapii-intravenoase/",
-      "nou": "/ghiduri/terapii-intravenoase/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/epilare-definitiva-pareri/",
-      "nou": "/ghiduri/epilare-definitiva-pareri/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-de-expresie/",
-      "nou": "/ghiduri/riduri-de-expresie/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-marioneta/",
-      "nou": "/ghiduri/riduri-marioneta/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri/",
-      "nou": "/ghiduri/riduri/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/alunite-rosii/",
-      "nou": "/ghiduri/alunite-rosii/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/epilat-interfesier-ce-inseamna/",
-      "nou": "/ghiduri/epilat-interfesier-ce-inseamna/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/unde-se-pune-botox/",
-      "nou": "/ghiduri/unde-se-pune-botox/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/adevarul-despre-glutation/",
-      "nou": "/ghiduri/adevarul-despre-glutation/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/de-ce-nu-imi-tine-acidul-hialuronic-2/",
-      "nou": "/ghiduri/de-ce-nu-imi-tine-acidul-hialuronic-2/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-frunte/",
-      "nou": "/ghiduri/riduri-frunte/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/vergeturi-pe-sani-2/",
-      "nou": "/ghiduri/vergeturi-pe-sani-2/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/forme-de-buze-cu-acid-hialuronic/",
-      "nou": "/ghiduri/forme-de-buze-cu-acid-hialuronic/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/prima-injectare-cu-acid-hialuronic-in-buze/",
-      "nou": "/ghiduri/prima-injectare-cu-acid-hialuronic-in-buze/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/riduri-laba-gastei/",
-      "nou": "/ghiduri/riduri-laba-gastei/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/russian-lips-vs-butterfly-lips/",
-      "nou": "/ghiduri/russian-lips-vs-butterfly-lips/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/acid-hialuronic-in-buze-cat-dureaza/",
-      "nou": "/ghiduri/acid-hialuronic-in-buze-cat-dureaza/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/ce-nu-e-permis-dupa-injectarea-cu-botox/",
-      "nou": "/ghiduri/ce-nu-e-permis-dupa-injectarea-cu-botox/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/cea-mai-buna-toxina-botulinica/",
-      "nou": "/ghiduri/cea-mai-buna-toxina-botulinica/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/efecte-botox/",
-      "nou": "/ghiduri/efecte-botox/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
-      "nou": "/ghiduri/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
-      "nou": "/ghiduri/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
-      "nou": "/ghiduri/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
-      "nou": "/ghiduri/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/",
-      "motiv": "articol"
-    },
-    {
-      "vechi": "/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
-      "nou": "/ghiduri/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/",
-      "motiv": "articol"
     },
     {
       "vechi": "/echipa/dr-adrian-stanescu/",
@@ -3088,7 +2852,7 @@
     "probleme": 15,
     "tratamente": 34,
     "de_creat": 16,
-    "redirecturi": 110,
+    "redirecturi": 63,
     "articole_legate": 44
   },
   "avertismente": []

@@ -130,7 +130,7 @@ for (const z of PROBLEME) {
       etapa: 'constientizare',
       vechi: [],
       tratamente: sids.filter((s) => serv[s]).map((s) => ({ nume: serv[s].nume, url: tratUrl[s] || null, pret_de_la: minPrice(s) })),
-      ghiduri: aids.filter((a) => art[a]).map((a) => ({ titlu: art[a].titlu, url: `/ghiduri/${a}/` })),
+      ghiduri: aids.filter((a) => art[a]).map((a) => ({ titlu: art[a].titlu, url: path_(art[a].url) })),
       intrebari: D.intrebari.filter((q) => sids.some((s) => q.legaturi.servicii.includes(s))).length,
     }));
   }
@@ -181,8 +181,8 @@ arbore.push(node('Clinica', '/clinica/', 'hub', {
   ],
 }));
 const rest = D.articole.filter((a) => !used.has(a.id));
-arbore.push(node('Ghiduri', '/ghiduri/', 'hub', {
-  etapa: 'constientizare', vechi: ['/blog/', '/category/blog/'], desc: `${D.articole.length} articole: ${D.articole.length - rest.length} legate de pagini de probleme, ${rest.length} doar în ghiduri`,
+arbore.push(node('Blog', '/blog/', 'hub', {
+  etapa: 'constientizare', vechi: ['/category/blog/'], desc: `${D.articole.length} articole: ${D.articole.length - rest.length} legate de pagini de probleme, ${rest.length} doar în blog · articolele rămân la URL-urile actuale`,
   copii: [node('Întrebări frecvente', '/intrebari-frecvente/', 'pagina', { etapa: 'decizie', nou: true, desc: `${D.intrebari.length} întrebări din conținut, de validat în Entități` })],
 }));
 arbore.push(node('Programare', '/programare/', 'pagina', { etapa: 'programare', nou: true, desc: 'Formular scurt (nume, telefon, ce te interesează), WhatsApp, telefon, ce urmează după trimitere' }));
@@ -202,7 +202,7 @@ const meniu = {
       linkuri: [{ nume: 'Ce este Global Antiaging', url: '/longevitate/' }, { nume: 'Consultația antiaging', url: '/consultatii/antiaging/' }, { nume: 'Vârsta biologică', url: '/longevitate/varsta-biologica/' }, { nume: 'Teste genetice', url: '/tratamente/teste/' }, { nume: 'Terapii intravenoase', url: '/tratamente/regenerare/terapii-iv/' }, { nume: 'TMS pentru burnout', url: '/tratamente/regenerare/tms/' }] },
     { nume: 'Prețuri', url: '/preturi/', etapa: 'decizie', tip: 'dropdown', linkuri: [{ nume: 'Toate prețurile', url: '/preturi/' }, { nume: 'Ofertele lunii', url: '/oferte/' }, { nume: 'Consultații', url: '/consultatii/' }] },
     { nume: 'Medici', url: '/medici/', etapa: 'incredere', tip: 'link' },
-    { nume: 'Despre MOA', url: '/clinica/', etapa: 'incredere', tip: 'dropdown', linkuri: [{ nume: 'Clinica și conceptul', url: '/clinica/' }, { nume: 'Tehnologie', url: '/clinica/tehnologie/' }, { nume: 'Recenzii & rezultate', url: '/clinica/recenzii/' }, { nume: 'Ghiduri', url: '/ghiduri/' }, { nume: 'Întrebări frecvente', url: '/intrebari-frecvente/' }, { nume: 'Contact', url: '/contact/' }] },
+    { nume: 'Despre MOA', url: '/clinica/', etapa: 'incredere', tip: 'dropdown', linkuri: [{ nume: 'Clinica și conceptul', url: '/clinica/' }, { nume: 'Tehnologie', url: '/clinica/tehnologie/' }, { nume: 'Recenzii & rezultate', url: '/clinica/recenzii/' }, { nume: 'Blog', url: '/blog/' }, { nume: 'Întrebări frecvente', url: '/intrebari-frecvente/' }, { nume: 'Contact', url: '/contact/' }] },
   ],
   cta: { text: 'Programează-te', url: '/programare/', nota: 'Un singur buton principal, același text peste tot (azi sunt 3 variante).' },
   utilitar: [{ nume: '0743 056 605', url: 'tel:+40743056605' }, { nume: 'WhatsApp', url: 'https://wa.me/40743056605' }, { nume: 'Str. Ștefan Mihăileanu 35', url: D.contact.googleMaps[0] }],
@@ -210,7 +210,7 @@ const meniu = {
   footer: [
     { titlu: 'Tratamente', linkuri: TRATAMENTE.map((c) => ({ nume: c.nume, url: `/tratamente/${c.id}/` })) },
     { titlu: 'Pacienți', linkuri: [{ nume: 'Programare', url: '/programare/' }, { nume: 'Pregătirea vizitei', url: '/vizita/' }, { nume: 'Prețuri', url: '/preturi/' }, { nume: 'Oferte', url: '/oferte/' }, { nume: 'Întrebări frecvente', url: '/intrebari-frecvente/' }] },
-    { titlu: 'MOA', linkuri: [{ nume: 'Clinica', url: '/clinica/' }, { nume: 'Medici', url: '/medici/' }, { nume: 'Ghiduri', url: '/ghiduri/' }, { nume: 'Contact', url: '/contact/' }] },
+    { titlu: 'MOA', linkuri: [{ nume: 'Clinica', url: '/clinica/' }, { nume: 'Medici', url: '/medici/' }, { nume: 'Blog', url: '/blog/' }, { nume: 'Contact', url: '/contact/' }] },
     { titlu: 'Legal', linkuri: [{ nume: 'Documente legale', url: '/documente-legale/' }, { nume: 'ANPC / SAL / SOL', url: 'https://anpc.ro/ce-este-sal/' }] },
   ],
 };
@@ -218,7 +218,7 @@ const meniu = {
 // ---------- etapele journey-ului ----------
 const etape = [
   { id: 'constientizare', nume: 'Conștientizare', intrebare: '„Am riduri / cearcăne / sunt mereu obosit. Ce pot face?”', canal: 'Google (căutări pe probleme), Instagram, recomandări',
-    pagini: ['Pagini de probleme', 'Ghiduri', 'Acasă'], continut: ['problema explicată simplu', 'cauze', 'ce opțiuni există, de la blând la intens', 'întrebări frecvente'], cta: 'Vezi tratamentele potrivite', metrica: 'trafic organic pe probleme, timp pe pagină' },
+    pagini: ['Pagini de probleme', 'Articole de blog', 'Acasă'], continut: ['problema explicată simplu', 'cauze', 'ce opțiuni există, de la blând la intens', 'întrebări frecvente'], cta: 'Vezi tratamentele potrivite', metrica: 'trafic organic pe probleme, timp pe pagină' },
   { id: 'explorare', nume: 'Explorare', intrebare: '„Ce tratament mi se potrivește? Cum funcționează, doare, cât ține?”', canal: 'pagini de tratament, video',
     pagini: ['Pagini de tratament', 'Categorii de tratamente', 'Longevitate'], continut: ['pentru cine e / nu e', 'cum decurge (video)', 'rezultate și durată', 'riscuri și recuperare', 'tratamente asociate'], cta: 'Vezi prețul · Întreabă medicul', metrica: 'vizionări video, click pe preț' },
   { id: 'incredere', nume: 'Încredere', intrebare: '„Cine mă tratează? E sigur? Ce spun alții?”', canal: 'medici, recenzii, tehnologie',
@@ -227,8 +227,8 @@ const etape = [
     pagini: ['Prețuri', 'Oferte', 'Consultații', 'Întrebări frecvente'], continut: ['preț clar „de la”', 'ce include', 'pachete și oferte cu termen', 'consultația ca prim pas, cu prețul ei'], cta: 'Programează consultația', metrica: 'rata de click pe „Programează-te”' },
   { id: 'programare', nume: 'Programare & vizită', intrebare: '„Cum mă programez repede? Unde vin, ce aduc?”', canal: 'formular, telefon, WhatsApp',
     pagini: ['Programare', 'Pregătirea vizitei', 'Contact'], continut: ['formular în 3 câmpuri', 'WhatsApp / telefon', 'ce se întâmplă după', 'hartă, parcare, program unic'], cta: 'Trimite cererea · Sună · WhatsApp', metrica: 'lead-uri (panoul Leads), rata de completare' },
-  { id: 'dupa', nume: 'După tratament & revenire', intrebare: '„Ce fac după? Când revin? Pot lăsa o recenzie?”', canal: 'email / WhatsApp după vizită, ghiduri de îngrijire',
-    pagini: ['Ghiduri de îngrijire', 'Oferte & abonamente', 'Recenzii'], continut: ['îngrijire după procedură', 'când revii (ex. Botox la 4–6 luni)', 'abonamente / pachete', 'cerere de recenzie'], cta: 'Reprogramează-te · Lasă o recenzie', metrica: 'pacienți care revin, recenzii noi' },
+  { id: 'dupa', nume: 'După tratament & revenire', intrebare: '„Ce fac după? Când revin? Pot lăsa o recenzie?”', canal: 'email / WhatsApp după vizită, articole de îngrijire',
+    pagini: ['Articole de îngrijire', 'Oferte & abonamente', 'Recenzii'], continut: ['îngrijire după procedură', 'când revii (ex. Botox la 4–6 luni)', 'abonamente / pachete', 'cerere de recenzie'], cta: 'Reprogramează-te · Lasă o recenzie', metrica: 'pacienți care revin, recenzii noi' },
 ];
 
 // ---------- șabloane de pagină (ordinea blocurilor urmează journey-ul) ----------
@@ -251,7 +251,7 @@ const sabloane = {
     ['De ce apare', 'cauze, pe scurt', 'constientizare'],
     ['Soluțiile MOA', 'cardurile tratamentelor potrivite, de la blând la intens, cu „de la X lei”', 'explorare'],
     ['Cum alegi', 'tabel comparativ: durată, rezultat, recuperare, preț', 'decizie'],
-    ['Ghiduri', 'articolele despre problemă', 'constientizare'],
+    ['Articole', 'articolele de blog despre problemă (la URL-urile actuale)', 'constientizare'],
     ['Întrebări frecvente', '', 'decizie'],
     ['Consultație', '„Nu știi ce ți se potrivește? Începe cu o consultație”', 'decizie'],
   ],
@@ -288,7 +288,7 @@ for (const c of D.categoriiServicii) if (c.url) {
   const m = { '/proceduri-minim-invazive/': '/tratamente/injectabile/', '/proceduri-microchirurgicale/': '/tratamente/chirurgie-dermatologie/', '/rejuvenare-faciala/': '/probleme/riduri-profunde-volum/', '/tratamente-corporale/': '/tratamente/aparatura/', '/teste-genetice-longevity/': '/tratamente/teste/', '/ozonoterapie/': '/tratamente/regenerare/', '/tratamente-regenerative-perfuzabile/': '/tratamente/regenerare/terapii-iv/' }[p];
   if (m) addR(p, m, 'categorie veche');
 }
-for (const a of D.articole) addR(path_(a.url), `/ghiduri/${a.id}/`, 'articol');
+// articolele de blog rămân la URL-urile actuale: fără redirect
 addR('/terapii-regenerative/', '/longevitate/', 'pagină concept');
 for (const p of ['/echipa/dr-adrian-stanescu/', '/author/dr-adrian-stanescu/', '/author/moaclinic/']) addR(p, '/medici/adrian-stanescu/', 'profil medic');
 for (const p of ['/sitemap/', '/confirmare/']) addR(p, p === '/sitemap/' ? '/' : '/programare/', 'pagină tehnică');
@@ -296,10 +296,12 @@ for (const p of ['/sitemap/', '/confirmare/']) addR(p, p === '/sitemap/' ? '/' :
 const pages = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages.json'), 'utf8'));
 for (const l of pages.linkuri.filter((x) => x.status >= 300 && x.status < 400 && x.redirect)) {
   const final = redirecturi.find((r) => r.vechi === path_(l.redirect));
+  if (!final) continue;
   if (final) addR(l.path, final.nou, 'redirect vechi, fără lanț');
 }
 const acoperite = new Set(redirecturi.map((r) => r.vechi));
-const neacoperite = pages.pages.filter((p) => !acoperite.has(p.path) && !['/', '/preturi/', '/contact/', '/consultatii/'].includes(p.path)).map((p) => p.path);
+const pastrate = new Set(['/', '/preturi/', '/contact/', '/consultatii/', '/blog/', ...D.articole.map((a) => path_(a.url))]);
+const neacoperite = pages.pages.filter((p) => !acoperite.has(p.path) && !pastrate.has(p.path)).map((p) => p.path);
 
 const count = (nodes, f) => nodes.reduce((n, x) => n + (f(x) ? 1 : 0) + count(x.copii || [], f), 0);
 const out = {
@@ -311,8 +313,8 @@ const out = {
     'Încrederea (medici, recenzii, tehnologie) stă la un click din orice pagină de tratament, nu doar în „Despre”.',
     'Un singur CTA principal, același text peste tot: Programează-te. Pe mobil: bară fixă Sună · WhatsApp · Programează-te.',
     'Prețul „de la” apare pe fiecare pagină de tratament și de problemă; lista completă rămâne pe /preturi/.',
-    'Fiecare articol de blog se leagă de o problemă și de tratamentele ei, ca să ducă spre programare.',
-    'URL-uri ierarhice și scurte (/tratamente/injectabile/botox/), cu redirect 301 de la fiecare URL actual.',
+    'Fiecare articol de blog se leagă de o problemă și de tratamentele ei, ca să ducă spre programare. Articolele își păstrează URL-urile actuale.',
+    'URL-uri ierarhice și scurte pentru paginile noi (/tratamente/injectabile/botox/), cu redirect 301 de la URL-urile actuale ale serviciilor; articolele de blog nu se mută.',
   ],
   etape,
   meniu,

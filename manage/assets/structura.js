@@ -20,7 +20,7 @@ routes.structura = async function renderStructura() {
       c?.video ? `<span class="tag grey">${plural(c.video, 'video', 'video')}</span>` : '',
       c?.intrebari ? `<span class="tag grey">${c.intrebari} întrebări</span>` : '',
       n.tratamente ? `<span class="tag grey">${plural(n.tratamente.length, 'tratament', 'tratamente')}</span>` : '',
-      n.ghiduri?.length ? `<span class="tag grey">${plural(n.ghiduri.length, 'ghid', 'ghiduri')}</span>` : '',
+      n.ghiduri?.length ? `<span class="tag grey">${plural(n.ghiduri.length, 'articol', 'articole')}</span>` : '',
       n.nou ? '<span class="tag warn">de creat</span>' : '',
     ].join('');
     const match = !strUI.q || JSON.stringify(n).toLowerCase().includes(strUI.q);
