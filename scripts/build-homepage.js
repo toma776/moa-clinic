@@ -218,7 +218,6 @@ ${mobileNav}
     </div>
     <div class="hero-media">
       <div class="frame"><img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA din București" fetchpriority="high"></div>
-      <div class="hero-badge"><b><span class="stars">★★★★★</span></b><span>${esc(nReviews)} recenzii Google · Excelent</span></div>
       <div class="hero-badge2"><b>Global Antiaging</b>estetică, chirurgie și regenerare, într-un singur loc</div>
     </div>
   </div>
