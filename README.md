@@ -15,7 +15,7 @@ npm start
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).
   - `/manage/entitati` – entitățile brandului pe 3 niveluri: categorie → grup → entități, fiecare cu paginile pe care apare
-  - `/manage/legaturi` – graful entităților (d3): ce se leagă de ce și ce e izolat
+  - `/manage/sinapse` – graful entităților (d3): ce se leagă de ce și ce e izolat
   - `/manage/structura` – propunerea de structură și meniu pe user journey: 6 etape, meniul (mega-meniu), arborele cu URL-urile noi, șabloane de pagină, 63 de redirecturi 301; articolele de blog își păstrează URL-urile (`npm run structura`)
   - `/manage/leads` – cereri de programare, cu status, serviciu, medic; export CSV
   - `/manage/pages` – toate URL-urile din sitemap (arbore sau listă) cu title, description, H1, canonical, schema, timp de răspuns și probleme

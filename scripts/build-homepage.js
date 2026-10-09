@@ -74,11 +74,97 @@ const icon = {
 
 // meniul, din structură (cu destinațiile actuale)
 const M = S.meniu.principal;
-const megaHtml = (m) => {
-  if (m.coloane) return `<div class="mega" style="--cols:${Math.min(m.coloane.length, 5)}">${m.coloane.map((c) => `<div><h4>${esc(c.titlu)}</h4>${c.linkuri.map((l) => `<a href="${esc(toLive(l.url) || '#ce-te-supara')}">${esc(l.nume)}</a>`).join('')}</div>`).join('')}</div>`;
-  if (m.linkuri) return `<div class="mega small"><div>${m.linkuri.map((l) => `<a href="${esc(toLive(l.url) || '#')}">${esc(l.nume)}</a>`).join('')}</div></div>`;
-  return '';
+const chev = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>';
+const catNodes = S.arbore.find((n) => n.url === '/tratamente/').copii;
+const ZONE_HINT = { 'Față': 'Riduri, volum, buze, cearcăne, ten', 'Corp': 'Epilare, tonifiere, vergeturi, transpirație', 'Păr & piele': 'Căderea părului, alunițe, leziuni', 'Sănătate & longevitate': 'Energie, burnout, antiaging din interior' };
+const LINK_HINT = {
+  'Ce este Global Antiaging': 'Conceptul MOA, explicat simplu', 'Consultația antiaging': `Cu medicul gerontolog${minPrice('consultatie-antiaging') ? ` · de la ${lei(minPrice('consultatie-antiaging'))}` : ''}`,
+  'Vârsta biologică': 'Cât de tânăr e, de fapt, organismul tău', 'Teste genetice': 'DNA Skin, nutrigenetică și epigenetică',
+  'Terapii intravenoase': 'NAD+, glutation, vitamine', 'TMS pentru burnout': 'Stimulare magnetică transcraniană',
+  'Toate prețurile': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} servicii, pe categorii`, 'Ofertele lunii': `${D.oferte.length} oferte active`,
+  'Consultații': `Primul pas · de la ${lei(Math.min(...['consultatie-dermatoestetica-dermatologie', 'consultatie-antiaging', 'consultatie-chirurgie-plastica'].map(minPrice).filter(Boolean)))}`,
+  'Clinica și conceptul': 'Povestea MOA și fondatorul ei', 'Tehnologie': 'Splendor X, Venus Viva, Venus Legacy, Dermapen 4',
+  'Recenzii & rezultate': `${nReviews} recenzii Google · Excelent`, 'Blog': `${D.articole.length} articole despre tratamente`,
+  'Întrebări frecvente': 'Răspunsuri scurte, înainte să vii', 'Contact': 'Str. Ștefan Mihăileanu 35, București',
 };
+const zoneData = concernZones.map((z) => ({
+  nume: z.nume,
+  hint: ZONE_HINT[z.nume] || z.copii.map((c) => c.nume).slice(0, 3).join(', '),
+  items: z.copii.map((c) => {
+    const prices = c.tratamente.map((t) => t.pret_de_la).filter((x) => x != null);
+    const first = c.tratamente.find((t) => t.url);
+    return { nume: c.nume, sub: c.tratamente.slice(0, 3).map(cleanName).join(' · '), pret: prices.length ? Math.min(...prices) : null, href: (first && toLive(first.url)) || '#programare' };
+  }),
+}));
+const catData = catNodes.map((c) => ({
+  nume: c.nume,
+  hint: c.desc || '',
+  href: toLive(c.url) || (c.copii.find((t) => t.vechi?.[0]) ? ORIGIN + c.copii.find((t) => t.vechi?.[0]).vechi[0] : '#'),
+  items: c.copii.map((t) => ({ nume: t.nume, sub: (t.continut?.tehnologii || []).filter((x) => !t.nume.toLowerCase().includes(x.toLowerCase().split(' ')[0])).slice(0, 2).join(' · '), pret: t.continut?.pret_de_la ?? null, href: t.vechi?.[0] ? ORIGIN + t.vechi[0] : '#programare' })),
+}));
+const priceEm = (p) => (p != null ? `<em><small>de la</small>${lei(p)}</em>` : '<em>→</em>');
+const card = (it) => `<a class="mm-card" href="${esc(it.href)}"><b>${esc(it.nume)}</b>${it.sub ? `<span>${esc(it.sub)}</span>` : ''}${priceEm(it.pret)}</a>`;
+const feature = (img, title, text, btn, href) => `<aside class="mm-feature">${img ? `<div class="ph"><img src="${esc(img)}" alt="" loading="lazy"></div>` : ''}<h4>${title}</h4><p>${text}</p><a class="btn btn-gold" href="${esc(href)}">${esc(btn)}</a></aside>`;
+const topOffer = offers[0];
+const minConsult = Math.min(...['consultatie-dermatoestetica-dermatologie', 'consultatie-antiaging', 'consultatie-chirurgie-plastica'].map(minPrice).filter(Boolean));
+
+// panourile desktop
+const tabbed = (id, title, groups, feat) => `
+  <div class="mm" id="mm-${id}" role="region" aria-label="${esc(title)}">
+    <div class="wrap mm-in">
+      <div class="mm-side" role="tablist" aria-orientation="vertical"><span class="mm-side-t">${esc(title)}</span>
+        ${groups.map((g, i) => `<button class="mm-tab" type="button" role="tab" aria-selected="${i === 0}" data-pane="${id}-${i}"><b>${esc(g.nume)}</b><small>${esc(g.hint)}</small><i>→</i></button>`).join('')}
+      </div>
+      <div class="mm-main">${groups.map((g, i) => `
+        <div class="mm-pane" id="pane-${id}-${i}" ${i ? 'hidden' : ''}>
+          <div class="mm-pane-h"><h3>${esc(g.nume)}</h3>${g.href ? `<a href="${esc(g.href)}">Vezi categoria →</a>` : ''}</div>
+          <div class="mm-grid">${g.items.map(card).join('')}</div>
+        </div>`).join('')}
+      </div>
+      ${feat}
+    </div>
+  </div>`;
+const simple = (id, m, feat) => `
+  <div class="mm" id="mm-${id}" role="region" aria-label="${esc(m.nume)}">
+    <div class="wrap mm-in simple">
+      <div class="mm-main"><div class="mm-pane-h"><h3>${esc(m.nume)}</h3></div>
+        <div class="mm-grid">${m.linkuri.map((l) => card({ nume: l.nume, sub: LINK_HINT[l.nume] || '', pret: null, href: toLive(l.url) || (l.url === '/clinica/recenzii/' ? '#recenzii' : l.url === '/clinica/' ? '#despre' : '#programare') })).join('')}</div>
+      </div>
+      ${feat}
+    </div>
+  </div>`;
+const PANELS = {
+  'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, feature('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-768x511.jpg', 'Nu știi de unde să începi?', `Programează o consultație: medicul te ascultă și îți propune un plan potrivit. De la ${lei(minConsult)}.`, 'Programează consultația', '#programare')),
+  'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? feature('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg', 'Oferta lunii', `${esc(topOffer.nume.charAt(0) + topOffer.nume.slice(1).toLowerCase())}: <b>${lei(topOffer.pret)}</b> în loc de ${lei(topOffer.pretInitial)}.`, 'Rezervă oferta', '#programare') : ''),
+  'Longevitate': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 'Global Antiaging', 'Programul coordonat de Dr. Adrian Stănescu, medic primar gerontolog, format la școala Ana Aslan.', 'Programează-te', '#programare')),
+  'Prețuri': (i, m) => simple(i, m, feature(null, 'Ofertele lunii', offers.map((o) => `${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())} · <b>${lei(o.pret)}</b>`).join('<br>'), 'Toate ofertele', ORIGIN + '/abonamente/')),
+  'Despre MOA': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg', 'Te așteptăm', 'Str. Ștefan Mihăileanu 35, București<br>0743 056 605 · office@moaclinic.ro', 'Vezi pe hartă', D.contact.googleMaps[0])),
+};
+const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : '')).join('');
+
+// meniul mobil: ecrane pe niveluri
+const mrowLink = (it) => `<a class="mrow" href="${esc(it.href)}"><span><b>${esc(it.nume)}</b>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span>${it.pret != null ? `<em>de la ${lei(it.pret)}</em>` : '<span class="chev">→</span>'}</a>`;
+const mrowGo = (label, sub, screen) => `<button class="mrow" type="button" data-go="${screen}"><span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="chev">›</span></button>`;
+const screens = [];
+screens.push(`<div class="mscreen on" data-screen="root">${M.map((m, i) => (m.tip === 'link' ? mrowLink({ nume: m.nume, href: m.url === '/medici/' ? '#medici' : toLive(m.url) || '#' }) : mrowGo(m.nume, m.nota ? '' : '', `m${i}`))).join('')}
+  ${mrowLink({ nume: '0743 056 605', sub: 'Sună pentru programare', href: 'tel:+40743056605' })}</div>`);
+M.forEach((m, i) => {
+  if (m.nume === 'Ce te supără?') {
+    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${zoneData.map((z, j) => mrowGo(z.nume, z.hint, `z${j}`)).join('')}</div>`);
+    zoneData.forEach((z, j) => screens.push(`<div class="mscreen" data-screen="z${j}"><h3>${esc(z.nume)}</h3>${z.items.map(mrowLink).join('')}</div>`));
+  } else if (m.nume === 'Tratamente') {
+    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${catData.map((c, j) => mrowGo(c.nume, c.hint, `c${j}`)).join('')}</div>`);
+    catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}"><h3>${esc(c.nume)}</h3>${c.items.map(mrowLink).join('')}</div>`));
+  } else if (m.linkuri) {
+    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${m.linkuri.map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}</div>`);
+  }
+});
+const mobileNav = `
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Meniu" aria-hidden="true">
+  <div class="mnav-top"><button class="mnav-back" type="button" id="mback" hidden>‹ Înapoi</button><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic" id="mlogo"><button class="mnav-x" type="button" id="mclose">Închide ✕</button></div>
+  <div class="mnav-body">${screens.join('')}</div>
+  <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
+</div>`;
 
 const html = `<!doctype html>
 <html lang="ro">
@@ -101,35 +187,39 @@ const html = `<!doctype html>
 
 <header class="site" id="hdr">
   <div class="wrap hd">
-    <a class="logo" href="/nou/" aria-label="MOA Clinic – acasă">
-      <img class="on-dark" src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic">
-      <img class="on-light" src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic">
-    </a>
-    <ul class="nav" id="nav">
-      ${M.map((m) => `<li>${m.tip === 'link' ? `<a href="${esc(m.url === '/medici/' ? '#medici' : toLive(m.url) || '#')}">${esc(m.nume)}</a>` : `<button type="button" aria-expanded="false">${esc(m.nume)}</button>${megaHtml(m)}`}</li>`).join('')}
-    </ul>
+    <a class="logo" href="/nou/" aria-label="MOA Clinic – acasă"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"></a>
+    <nav class="nav" aria-label="Meniu principal"><ul>
+      ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '#medici' : toLive(m.url) || '#')}">${esc(m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
+    </ul></nav>
     <a class="btn btn-gold" href="#programare">Programează-te</a>
-    <button class="burger" id="burger" aria-label="Meniu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <button class="burger" id="burger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mnav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
   </div>
+  ${panelsHtml}
 </header>
+<div class="mm-scrim" id="scrim"></div>
+${mobileNav}
 
 <main>
 <section class="hero">
-  <video autoplay muted loop playsinline preload="metadata" poster="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" aria-hidden="true">
-    <source src="/wp-content/uploads/2024/09/Moa-Clinic-hero.mp4" type="video/mp4">
-  </video>
-  <div class="wrap">
-    <span class="eyebrow light">MOA Regenerative by Oxxygene · București</span>
-    <h1>Frumusețea vine din interior. <em>Și se desăvârșește aici.</em></h1>
-    <p class="lede">Prima clinică Global Antiaging din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea unui medic gerontolog format la școala Ana Aslan.</p>
-    <div class="hero-cta">
-      <a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>
-      <a class="btn btn-ghost" href="#ce-te-supara">Ce te supără?</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">MOA Regenerative by Oxxygene · București</span>
+      <h1>Frumusețea vine din interior. <em>Și se desăvârșește aici.</em></h1>
+      <p class="lede">Prima clinică Global Antiaging din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea unui medic gerontolog format la școala Ana Aslan.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>
+        <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
+      </div>
+      <div class="hero-proof">
+        <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
+        <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
+        <div><b>3 specialități</b>gerontologie, dermatologie, chirurgie plastică</div>
+      </div>
     </div>
-    <div class="hero-proof">
-      <div><b><span class="stars">★★★★★</span></b>${esc(nReviews)} recenzii Google · Excelent</div>
-      <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
-      <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
+    <div class="hero-media">
+      <div class="frame"><img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA din București" fetchpriority="high"></div>
+      <div class="hero-badge"><b><span class="stars">★★★★★</span></b><span>${esc(nReviews)} recenzii Google · Excelent</span></div>
+      <div class="hero-badge2"><b>Global Antiaging</b>estetică, chirurgie și regenerare, într-un singur loc</div>
     </div>
   </div>
 </section>
@@ -240,14 +330,14 @@ const html = `<!doctype html>
   </div>
 </section>
 
-<section class="sec reviews">
+<section class="sec reviews" id="recenzii">
   <div class="wrap grid">
     <div class="score rv"><span class="eyebrow">Recenzii Google</span><b>5.0</b><span class="stars">★★★★★</span><p class="lede">Din ${esc(nReviews)} de recenzii verificate, calificativ „Excelent”.</p></div>
     <div class="r-grid">${reviews.map((r) => `<figure class="r-card rv" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
   </div>
 </section>
 
-<section class="space">
+<section class="space" id="despre">
   <img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA" loading="lazy">
   <div class="wrap rv">
     <span class="eyebrow light">Clinica</span>
@@ -320,25 +410,62 @@ const html = `<!doctype html>
 
 <script>
 (() => {
-  const hdr = document.getElementById('hdr');
-  const onScroll = () => hdr.classList.toggle('solid', scrollY > 60 && !hdr.classList.contains('menu-open'));
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const hdr = document.getElementById('hdr'), scrim = document.getElementById('scrim');
+  const desk = () => matchMedia('(min-width:1101px)').matches;
 
-  // meniu: dropdown la click (și la hover pe desktop)
-  const items = [...document.querySelectorAll('.nav > li')];
-  const close = () => items.forEach((li) => { li.classList.remove('open'); li.querySelector('button')?.setAttribute('aria-expanded', 'false'); });
-  items.forEach((li) => {
-    const b = li.querySelector('button'); if (!b) return;
-    b.addEventListener('click', (e) => { e.stopPropagation(); const o = !li.classList.contains('open'); close(); li.classList.toggle('open', o); b.setAttribute('aria-expanded', o); });
-    li.addEventListener('mouseenter', () => { if (matchMedia('(min-width:1101px)').matches) { close(); li.classList.add('open'); } });
-    li.addEventListener('mouseleave', () => { if (matchMedia('(min-width:1101px)').matches) li.classList.remove('open'); });
+  // mega-meniu desktop: hover cu mică întârziere, click, Esc, click în afară
+  const btns = [...document.querySelectorAll('[data-mm]')];
+  let openId = null, tOpen, tClose;
+  const setOpen = (id) => {
+    openId = id;
+    btns.forEach((b) => b.setAttribute('aria-expanded', b.dataset.mm === id));
+    document.querySelectorAll('.mm').forEach((p) => p.classList.toggle('open', p.id === 'mm-' + id));
+    scrim.classList.toggle('on', id != null);
+  };
+  btns.forEach((b) => {
+    b.addEventListener('click', (e) => { e.stopPropagation(); setOpen(openId === b.dataset.mm ? null : b.dataset.mm); });
+    b.addEventListener('mouseenter', () => { if (!desk()) return; clearTimeout(tClose); clearTimeout(tOpen); tOpen = setTimeout(() => setOpen(b.dataset.mm), openId ? 0 : 110); });
+    b.addEventListener('mouseleave', () => clearTimeout(tOpen));
   });
-  document.addEventListener('click', close);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { close(); hdr.classList.remove('menu-open'); } });
-  document.getElementById('burger').addEventListener('click', (e) => {
-    const o = hdr.classList.toggle('menu-open'); e.currentTarget.setAttribute('aria-expanded', o); hdr.classList.toggle('solid', !o && scrollY > 60);
+  hdr.addEventListener('mouseleave', () => { if (desk()) tClose = setTimeout(() => setOpen(null), 220); });
+  hdr.addEventListener('mouseenter', () => clearTimeout(tClose));
+  scrim.addEventListener('click', () => setOpen(null));
+  document.addEventListener('click', (e) => { if (!e.target.closest('.mm')) setOpen(null); });
+  document.querySelectorAll('.mm a').forEach((a) => a.addEventListener('click', () => setOpen(null)));
+  // în panou: zona / categoria se schimbă la hover, focus sau click
+  document.querySelectorAll('.mm-tab').forEach((t) => {
+    const show = () => {
+      const side = t.closest('.mm-side');
+      side.querySelectorAll('.mm-tab').forEach((x) => x.setAttribute('aria-selected', x === t));
+      t.closest('.mm-in').querySelectorAll('.mm-pane').forEach((p) => (p.hidden = p.id !== 'pane-' + t.dataset.pane));
+    };
+    t.addEventListener('mouseenter', show); t.addEventListener('focus', show); t.addEventListener('click', show);
   });
-  document.querySelectorAll('.nav a, .hd > .btn').forEach((a) => a.addEventListener('click', () => hdr.classList.remove('menu-open')));
+
+  // meniu mobil: ecrane pe niveluri, cu „Înapoi”
+  const mnav = document.getElementById('mnav'), back = document.getElementById('mback'), mlogo = document.getElementById('mlogo');
+  const stack = ['root'];
+  const show = (dir) => {
+    const cur = stack.at(-1);
+    mnav.querySelectorAll('.mscreen').forEach((s) => {
+      const i = stack.indexOf(s.dataset.screen);
+      s.classList.toggle('on', s.dataset.screen === cur);
+      s.classList.toggle('left', i > -1 && s.dataset.screen !== cur);
+    });
+    back.hidden = stack.length < 2;
+  };
+  const mOpen = (o) => {
+    mnav.classList.toggle('open', o); mnav.setAttribute('aria-hidden', !o);
+    document.getElementById('burger').setAttribute('aria-expanded', o);
+    document.body.style.overflow = o ? 'hidden' : '';
+    if (!o) { stack.length = 1; show(); }
+  };
+  document.getElementById('burger').addEventListener('click', () => mOpen(true));
+  document.getElementById('mclose').addEventListener('click', () => mOpen(false));
+  back.addEventListener('click', () => { stack.pop(); show(); });
+  mnav.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { stack.push(b.dataset.go); show(); }));
+  mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(null); mOpen(false); } });
 
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];

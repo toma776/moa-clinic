@@ -79,11 +79,11 @@ function graphData(D) {
   return { nodes: [...nodes.values()], links };
 }
 
-routes.legaturi = function renderLegaturi() {
+routes.sinapse = function renderSinapse() {
   const D = store.entitati;
   if (!D) { $('#view').innerHTML = '<div class="card empty"><b>Lipsește data/entitati.json</b></div>'; return; }
   $('#view').innerHTML = `
-    <div class="head"><div><div class="crumb">manage › legături · din data/entitati.json</div><h1>Legături</h1></div></div>
+    <div class="head"><div><div class="crumb">manage › sinapse · din data/entitati.json</div><h1>Sinapse</h1></div></div>
     <div class="brain" id="brain"></div>`;
   renderGraph(D, $('#brain'), (cat) => navigate('/manage/entitati/' + cat));
 };
@@ -230,3 +230,5 @@ async function renderGraph(D, el, openCat) {
   sim.on('end', fit);
   setTimeout(fit, 2500);
 }
+// adresa veche /manage/legaturi rămâne valabilă
+routes.legaturi = () => { history.replaceState({}, '', '/manage/sinapse'); go('sinapse'); };
