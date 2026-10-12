@@ -12,6 +12,7 @@ npm start
 
 - `http://localhost:3100/` – homepage-ul copiat (HTML + CSS/JS/imagini/fonturi în `site/`)
 - `http://localhost:3100/nou/medici/adrian-stanescu/` – pagina de profil Dr. Adrian Stănescu (din `npm run profiles` + `npm run homepage`)
+- `http://localhost:3100/nou/tratamente/<categorie>/<tratament>/` – cele 31 de pagini de tratament (ex. `/nou/tratamente/injectabile/botox/`), din `npm run tratamente` + `npm run homepage`
 - `http://localhost:3100/nou/` – propunerea de homepage nou (premium), generată din date (`npm run homepage`); formularul trimite lead-uri în panou
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).
@@ -65,6 +66,7 @@ npm run sync
 | `npm run enrich` | `scripts/enrich-entities.js` | leagă entitățile de paginile din crawl; servicii, articole, glosar, întrebări, dovezi, media, date legale, observații |
 | `npm run brand` | `scripts/build-brand.js` | brand book-ul (`data/brand.json`); nu suprascrie unul editat din panou decât cu `-- --force` |
 | `npm run health` | `scripts/site-health.js` | analiza site-ului → `data/site-health.json` (și din panou: „Rulează analiza acum”) |
+| `npm run tratamente` | `scripts/extract-tratamente.js` | conținutul paginilor de tratament de pe site-ul actual, pe secțiuni (ce este, pentru cine, pași, siguranță, după, rezultate, întrebări, galerii înainte/după) → `data/tratamente.json`; imaginile de conținut se descarcă în `site/wp-content/`. Șablonul paginii e în `build-homepage.js` și nu pierde text: ce nu are bloc dedicat ajunge la „Citește mai mult” sau într-o secțiune simplă |
 | `npm run video` | `scripts/build-video.js` | versiunile pentru mobil ale video-urilor (H.264, max 540px, ≤ 3 MB și ≤ 85% din original) + un cadru de previzualizare luminos din fiecare → `nou/media/video/`, `data/video-media.json`. Necesită ffmpeg (`winget install Gyan.FFmpeg`); refă doar ce lipsește (`-- --force` pentru toate). Nu face parte din `sync`; după el rulează `npm run enrich && npm run homepage` |
 
 Producătorii produselor și tehnologiilor nu apar pe site. Sunt cunoaștere generală, marcată „de verificat”.

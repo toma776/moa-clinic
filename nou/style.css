@@ -632,13 +632,13 @@ header.site.hide { transform: translateY(-100%); }
 .tr-offer s { color: #9d9488; margin-right: 6px; }
 
 /* cuprinsul paginii: rămâne sub header la scroll */
-.tr-toc { position: sticky; top: 72px; z-index: 30; background: rgba(248, 244, 238, .96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tr-toc { position: sticky; top: var(--hd-h, 0px); z-index: 30; transition: top .32s var(--ease); background: rgba(248, 244, 238, .96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .tr-toc .wrap { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
 .tr-toc .wrap::-webkit-scrollbar { display: none; }
 .tr-toc a { flex: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 14px; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
 .tr-toc a:hover, .tr-toc a.on { color: var(--gold); border-color: var(--gold); }
 .tr-hero + .pf-quote + .tr-toc, .tr-hero + .tr-toc { margin-top: 0; }
-#pentru-cine, #cum-decurge, #rezultate, #siguranta, #medici, #preturi, #intrebari { scroll-margin-top: 130px; }
+#pentru-cine, #cum-decurge, #rezultate, #siguranta, #medici, #preturi, #intrebari { scroll-margin-top: calc(var(--hd-h, 0px) + 48px); }
 
 .tr-prose p { margin: 0 0 14px; color: var(--ink-2); font-size: 16.5px; }
 .tr-prose p:last-child { margin-bottom: 0; }
@@ -703,7 +703,6 @@ header.site.hide { transform: translateY(-100%); }
 
 @media (max-width: 1100px) {
   .tr-zones { grid-template-columns: repeat(2, 1fr); }
-  .tr-toc { top: 72px; }
 }
 @media (max-width: 760px) {
   .tr-hero h1 { font-size: 44px; }
@@ -719,8 +718,6 @@ header.site.hide { transform: translateY(-100%); }
   .tr-facts b { font-size: 26px; }
   .tr-hero .pf-copy .hero-cta { order: 3; }
   .tr-hero .pf-copy .tr-facts { order: 4; }
-  .tr-toc { top: 0; }
-  header.site:not(.hide) ~ main .tr-toc { top: 72px; }
   .tr-zones { grid-template-columns: 1fr; }
   .tr-zone { grid-template-columns: 34px 1fr; padding: 18px 18px; gap: 4px 12px; }
   .tr-zone span { grid-row: 1 / span 2; font-size: 20px; padding-top: 2px; }
@@ -755,3 +752,109 @@ footer .top { padding: 68px 0 45px; }
   .pf-grid { padding: 14px 0 42px; }
   .tr-hero .pf-grid { padding-bottom: 42px; }
 }
+
+/* ---------- pagina de tratament, varianta compactă ---------- */
+.tr-zone { padding: 20px 22px; gap: 6px; }
+.tr-zone b { font-size: 22px; }
+.tr-zone p { font-size: 14px; }
+.tr-how .pf-side { padding: 24px 24px; }
+.tr-checks { gap: 9px; }
+.tr-checks li { font-size: 14px; }
+.tr-read summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.tr-read summary::-webkit-details-marker { display: none; }
+.tr-read summary::after { content: '+'; font-size: 16px; letter-spacing: 0; }
+.tr-read[open] summary { display: none; }
+.tr-read p { margin: 0 0 18px; color: var(--ink-2); font-size: 16.5px; }
+.tr-steps { gap: 20px; }
+.tr-steps li { padding-top: 16px; gap: 8px; }
+.tr-steps li::before { font-size: 32px; }
+.tr-steps b { font-size: 21px; }
+.tr-gallery { grid-auto-columns: minmax(200px, 230px); gap: 12px; }
+.tr-safe { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(22px, 3.5vw, 44px); }
+.tr-safe-col { border-top: 1px solid rgba(217, 195, 160, .35); padding-top: 18px; }
+.tr-safe-col h3 { font: 500 23px/1.2 var(--serif); color: #fff; margin-bottom: 12px; }
+.tr-dark p { font-size: 14.5px; margin-bottom: 10px; }
+.tr-dark .pf-list { font-size: 14.5px; gap: 6px; margin-bottom: 10px; }
+.tr-docs { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 20px; }
+.tr-docs .doc { gap: 10px; }
+.tr-docs .doc .ph { aspect-ratio: 1 / 1; }
+.tr-docs .doc h3 { font-size: 21px; }
+.tr-docs .doc .mono span { font-size: 48px; }
+.tr-prices td { padding: 12px 20px; }
+.tr-allprices { margin-top: -1px; }
+.tr-allprices summary { list-style: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 52px; background: #fff; border: 1px solid var(--line); border-top: 0; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.tr-allprices summary::-webkit-details-marker { display: none; }
+.tr-allprices summary::after { content: '+'; font-size: 16px; letter-spacing: 0; }
+.tr-allprices[open] summary { display: none; }
+.tr-allprices .tr-prices { border-top: 0; }
+.tr-faq summary { min-height: 54px; padding: 12px 0; font-size: 20px; }
+.tr-faq summary::after { width: 30px; height: 30px; }
+.tr-reviews .r-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tr-reviews .r-card { padding: 24px 24px; gap: 14px; }
+.tr-reviews .r-card q { font-size: 18px; }
+.tr-related { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 70px); align-items: start; }
+.tr-related .pf-h2 { margin: 14px 0 20px; }
+.tr-asoc { display: grid; gap: 8px; }
+.tr-arts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.tr-arts li { border-bottom: 1px solid var(--line); }
+.tr-arts a { display: grid; gap: 4px; padding: 13px 28px 13px 0; position: relative; }
+.tr-arts a::after { content: '→'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--gold); transition: transform .2s; }
+.tr-arts a:hover::after { transform: translate(4px, -50%); }
+.tr-arts small { font: 500 11.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.tr-arts span { font: 500 19px/1.25 var(--serif); color: var(--ink); }
+.tr-arts a:hover span { color: var(--gold); }
+
+@media (max-width: 1100px) {
+  .tr-reviews .r-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .tr-hero .pf-grid { padding-bottom: 34px; }
+  .tr-hero .lede { font-size: 15.5px; }
+  .tr-zones { grid-template-columns: 1fr 1fr; }
+  .tr-zone { display: grid; grid-template-columns: none; padding: 14px 14px; gap: 4px; }
+  .tr-zone span { grid-row: auto; font-size: 15px; padding: 0; }
+  .tr-zone b { font-size: 18px; }
+  .tr-zone p { font-size: 13px; line-height: 1.4; }
+  .tr-how .pf-side { padding: 18px; }
+  .tr-steps li { padding: 12px 0; }
+  .tr-steps li::before { font-size: 26px; }
+  .tr-steps b { font-size: 19px; }
+  .tr-steps p { font-size: 14px; }
+  .tr-gallery { grid-auto-columns: 56%; }
+  .tr-safe { gap: 18px; }
+  .tr-safe-col { padding-top: 14px; }
+  .tr-safe-col h3 { font-size: 21px; margin-bottom: 8px; }
+  .tr-docs { grid-auto-columns: 44%; gap: 12px; }
+  .tr-docs .doc h3 { font-size: 18px; }
+  .tr-docs .doc span { font-size: 12px; }
+  .tr-prices td { padding: 11px 12px; }
+  .tr-faq summary { font-size: 18px; }
+  .tr-reviews .r-grid { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -16px; padding-right: 16px; scrollbar-width: none; gap: 12px; }
+  .tr-reviews .r-grid::-webkit-scrollbar { display: none; }
+  .tr-reviews .r-card { scroll-snap-align: start; padding: 20px; }
+  .tr-reviews .r-card q { font-size: 17px; }
+  .tr-related { grid-template-columns: 1fr; gap: 34px; }
+  .tr-related .pf-h2 { margin: 12px 0 14px; }
+  .tr-arts span { font-size: 17px; }
+}
+.tr-docs > .doc, .tr-docs .ph { min-width: 0; width: 100%; }
+.tr-docs .ph img { display: block; min-width: 0; }
+.tr-docs .doc { grid-template-columns: minmax(0, 1fr); }
+.tr-docs .doc .mono small { display: none; }
+
+/* oferta lunii: clicabilă, deschide programarea cu oferta selectată */
+.tr-offer, .tr-offer-row { text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s; }
+.tr-offer:hover, .tr-offer-row:hover { transform: translateY(-2px); box-shadow: 0 26px 50px -24px rgba(22, 21, 20, .6); }
+.tr-offer i, .tr-offer-row i { font: 500 12px/1 var(--sans); font-style: normal; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); margin-top: 6px; }
+.tr-offer-row i { margin: 0 0 0 auto; padding: 12px 18px; border: 1px solid var(--gold-soft); border-radius: 999px; }
+.tr-offer-row:hover i { background: var(--gold-soft); color: var(--night); }
+select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: outline-color .4s; }
+@media (max-width: 760px) { .tr-offer i { grid-column: 1 / -1; margin-top: 2px; } .tr-offer-row i { margin: 4px 0 0; flex-basis: 100%; text-align: center; } }
+.tr-after { margin-top: 22px; max-width: 70ch; }
+.tr-after p { font-size: 15px; margin: 0 0 8px; }
+.tr-read-wide { margin-top: 18px; }
+.tr-read-wide .pf-prose p:first-child::first-letter { font: inherit; float: none; margin: 0; color: inherit; }
+.tr-how .tr-read p:first-child::first-letter, .tr-after p:first-child::first-letter { font: inherit; float: none; margin: 0; color: inherit; }
+.tr-who { columns: 2; column-gap: 40px; display: block; }
+.tr-who li { break-inside: avoid; margin-bottom: 10px; }
+@media (max-width: 760px) { .tr-who { columns: 1; } }

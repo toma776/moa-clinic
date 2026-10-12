@@ -30,6 +30,10 @@
       "destination": "/nou/medici/:id/index.html"
     },
     {
+      "source": "/nou/tratamente/:cat/:id",
+      "destination": "/nou/tratamente/:cat/:id/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },
