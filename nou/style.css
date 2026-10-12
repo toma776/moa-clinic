@@ -999,3 +999,22 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .tr-vgrid { grid-template-columns: repeat(auto-fill, minmax(200px, 240px)); }
 .tr-vgrid .vp-card.wide { grid-column: span 2; }
 @media (max-width: 760px) { .tr-vgrid { grid-template-columns: 1fr 1fr; } .tr-vgrid .vp-card.wide { grid-column: 1 / -1; } }
+
+/* =====================================================================
+   Audit UI (desktop + mobil): unitate vizuală, fără goluri
+   ===================================================================== */
+/* 1. „Ce te supără?”: cardurile umplu rândul, fără card rămas singur */
+.c-grid { display: flex; flex-wrap: wrap; }
+.c-grid > .c-card { flex: 1 1 200px; }
+/* 2. tratamentele-semnătură pe tabletă: ultimul card impar pe toată lățimea */
+@media (max-width: 1100px) and (min-width: 761px) { .sig-grid > .sig:last-child:nth-child(odd) { grid-column: span 12; } }
+/* 3. textul de minim 12px */
+.tr-arts small, .pr-p small, .vp-cat, .pr-sub, .tr-hint { font-size: 12px; }
+@media (max-width: 760px) { .hero-top .eyebrow { font-size: 12px; letter-spacing: .2em; } }
+/* 4. o singură scară pentru titlurile de secțiune */
+.pf-h2 { font-size: clamp(38px, 5.2vw, 64px); line-height: 1.08; }
+.pf-two .pf-h2, .tr-related .pf-h2 { font-size: clamp(34px, 4.2vw, 52px); }
+@media (max-width: 760px) { .pf-h2, .pf-two .pf-h2, .tr-related .pf-h2 { font-size: clamp(34px, 9vw, 44px); } }
+/* tratamentele-semnătură: eticheta de categorie lizibilă pe fotografii luminoase */
+.sig::after { background: linear-gradient(0deg, rgba(14, 13, 12, .9) 0%, rgba(14, 13, 12, .55) 45%, rgba(14, 13, 12, .05) 75%); }
+.sig .cat { text-shadow: 0 1px 8px rgba(0, 0, 0, .5); }

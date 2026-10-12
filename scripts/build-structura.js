@@ -211,7 +211,7 @@ const meniu = {
     { titlu: 'Tratamente', linkuri: TRATAMENTE.map((c) => ({ nume: c.nume, url: `/tratamente/${c.id}/` })) },
     { titlu: 'Pacienți', linkuri: [{ nume: 'Programare', url: '/programare/' }, { nume: 'Pregătirea vizitei', url: '/vizita/' }, { nume: 'Prețuri', url: '/preturi/' }, { nume: 'Oferte', url: '/oferte/' }, { nume: 'Întrebări frecvente', url: '/intrebari-frecvente/' }] },
     { titlu: 'MOA', linkuri: [{ nume: 'Clinica', url: '/clinica/' }, { nume: 'Medici', url: '/medici/' }, { nume: 'Blog', url: '/blog/' }, { nume: 'Contact', url: '/contact/' }] },
-    { titlu: 'Legal', linkuri: [{ nume: 'Documente legale', url: '/documente-legale/' }, { nume: 'ANPC / SAL / SOL', url: 'https://anpc.ro/ce-este-sal/' }] },
+    { titlu: 'Legal', linkuri: [{ nume: 'Documente legale', url: '/documente-legale/' }, { nume: 'ANPC – SAL', url: 'https://anpc.ro/sal/' }, { nume: 'SOL – litigii online', url: 'https://consumer-redress.ec.europa.eu/index_ro' }] },
   ],
 };
 

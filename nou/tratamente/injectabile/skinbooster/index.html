@@ -271,7 +271,7 @@
 <footer>
   <div class="wrap top">
     <div class="brand"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"><p>Estetică medicală, chirurgie și medicină regenerativă, într-un singur concept: Global Antiaging.</p></div>
-    <div><h4>Tratamente</h4><ul><li><a href="#">Tratamente injectabile</a></li><li><a href="https://moaclinic.ro/laser-terapie/">Tratamente cu aparatură</a></li><li><a href="#">Chirurgie &amp; dermatologie</a></li><li><a href="#">Medicină regenerativă</a></li><li><a href="#">Teste genetice longevity</a></li><li><a href="#">Tratamente faciale cosmetice</a></li></ul></div><div><h4>Pacienți</h4><ul><li><a href="#">Programare</a></li><li><a href="#">Pregătirea vizitei</a></li><li><a href="/nou/preturi/">Prețuri</a></li><li><a href="https://moaclinic.ro/abonamente/">Oferte</a></li><li><a href="#">Întrebări frecvente</a></li></ul></div><div><h4>MOA</h4><ul><li><a href="#">Clinica</a></li><li><a href="https://moaclinic.ro/echipa/">Medici</a></li><li><a href="https://moaclinic.ro/category/blog/">Blog</a></li><li><a href="https://moaclinic.ro/contact/">Contact</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="https://moaclinic.ro/documente-legale-clinica-moa/">Documente legale</a></li><li><a href="https://anpc.ro/ce-este-sal/">ANPC / SAL / SOL</a></li></ul></div>
+    <div><h4>Tratamente</h4><ul><li><a href="#">Tratamente injectabile</a></li><li><a href="https://moaclinic.ro/laser-terapie/">Tratamente cu aparatură</a></li><li><a href="#">Chirurgie &amp; dermatologie</a></li><li><a href="#">Medicină regenerativă</a></li><li><a href="#">Teste genetice longevity</a></li><li><a href="#">Tratamente faciale cosmetice</a></li></ul></div><div><h4>Pacienți</h4><ul><li><a href="#">Programare</a></li><li><a href="#">Pregătirea vizitei</a></li><li><a href="/nou/preturi/">Prețuri</a></li><li><a href="https://moaclinic.ro/abonamente/">Oferte</a></li><li><a href="#">Întrebări frecvente</a></li></ul></div><div><h4>MOA</h4><ul><li><a href="#">Clinica</a></li><li><a href="https://moaclinic.ro/echipa/">Medici</a></li><li><a href="https://moaclinic.ro/category/blog/">Blog</a></li><li><a href="https://moaclinic.ro/contact/">Contact</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="https://moaclinic.ro/documente-legale-clinica-moa/">Documente legale</a></li><li><a href="https://anpc.ro/sal/">ANPC – SAL</a></li><li><a href="https://consumer-redress.ec.europa.eu/index_ro">SOL – litigii online</a></li></ul></div>
   </div>
   <div class="wrap legal">
     <span>© 2026 MOA Clinic · Start Clinic Boost SRL (CUI 46730062) · MOA Estetic SRL</span>
@@ -402,7 +402,7 @@
   }));
 
   // video: se încarcă doar la click
-  document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.play(); }));
+  document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.controls = true; v.play(); }));
   document.addEventListener('play', (e) => { document.querySelectorAll('.v-card video').forEach((o) => { if (o !== e.target) o.pause(); }); }, true);
 
   // apariție la scroll

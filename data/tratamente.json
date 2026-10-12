@@ -7522,23 +7522,48 @@
       "faq": [
         {
           "q": "Ce probleme tratează laserul vascular?",
-          "blocuri": []
+          "blocuri": [
+            {
+              "t": "p",
+              "x": "Laserul vascular este eficient în tratarea vaselor sparte, capilarelor dilatate (telangiectazii), rozaceei, petelor roșii sau vinete, varicelor mici și venelor reticulare. Este o soluție rapidă pentru leziunile vasculare superficiale de pe față, picioare și alte zone vizibile."
+            }
+          ]
         },
         {
           "q": "Este dureros tratamentul cu laser vascular?",
-          "blocuri": []
+          "blocuri": [
+            {
+              "t": "p",
+              "x": "Senzația resimțită este, în general, suportabilă și poate fi descrisă ca o ușoară înțepătură sau arsură trecătoare. Pentru un confort sporit, se poate aplica o cremă anestezică locală înainte de procedură."
+            }
+          ]
         },
         {
           "q": "Câte ședințe sunt necesare pentru rezultate vizibile?",
-          "blocuri": []
+          "blocuri": [
+            {
+              "t": "p",
+              "x": "Numărul de ședințe variază în funcție de tipul și dimensiunea vaselor tratate. În general, sunt necesare între 1 și 3 ședințe pentru un rezultat optim. Unele leziuni vasculare dispar complet după o singură ședință."
+            }
+          ]
         },
         {
           "q": "Există efecte secundare sau riscuri după tratamentul cu laser vascular?",
-          "blocuri": []
+          "blocuri": [
+            {
+              "t": "p",
+              "x": "Reacțiile adverse sunt rare și ușoare. Pot apărea roșeață locală, umflături sau o senzație de căldură în zona tratată, care dispar în câteva ore sau zile. Tratamentul este sigur atunci când este realizat cu echipamente medicale certificate și de personal specializat."
+            }
+          ]
         },
         {
           "q": "Care este prețul pentru tratamentul cu laser vascular?",
-          "blocuri": []
+          "blocuri": [
+            {
+              "t": "p",
+              "x": "Prețul variază în funcție de zona tratată și de numărul de ședințe necesare. Pentru o estimare exactă, îți recomandăm o consultație inițială, în care medicul va analiza cazul tău și va stabili costurile în mod transparent."
+            }
+          ]
         }
       ],
       "galerie": [],

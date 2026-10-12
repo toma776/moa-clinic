@@ -76,7 +76,7 @@ const SIG = [
   { id: 'augmentare-buze', cat: 'Injectabile', titlu: 'Buze conturate, proporționate', text: 'Acid hialuronic Stylage, Restylane sau Juvéderm, în cantitatea potrivită pentru fața ta.', img: '/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg' },
   { id: 'epilare-definitiva-bucuresti', cat: 'Aparatură', titlu: 'Epilare definitivă Splendor X', text: 'Două lungimi de undă (Alexandrite + Nd:YAG) emise simultan, pentru toate tipurile de piele.', img: '/wp-content/uploads/2024/08/farhad-ibrahimzade-quaIM4h-u5E-unsplash-819x1024.jpg' },
   { id: 'venus-viva', cat: 'Aparatură', titlu: 'Ten refăcut cu Venus Viva', text: 'Radiofrecvență fracționată pentru textură, pori și cicatrici – fără perioadă lungă de recuperare.', img: '/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg' },
-  { id: 'sculptra', wide: true, cat: 'Biostimulare', titlu: 'Sculptra: volum care se construiește în timp', text: 'Stimulează colagenul propriu pentru un lifting treptat, natural, care durează.', img: '/wp-content/uploads/2024/09/17-768x768.jpg' },
+  { id: 'sculptra', cat: 'Biostimulare', titlu: 'Sculptra: volum care se construiește în timp', text: 'Stimulează colagenul propriu pentru un lifting treptat, natural, care durează.', img: '/wp-content/uploads/2024/09/17-768x768.jpg' },
 ];
 
 // citatul real al fondatorului, din pagina lui de profil (data/profiluri.json → echipa.profil_detaliat)
@@ -347,7 +347,7 @@ ${mobileNav}
       <a class="sig ${s.wide ? 'wide' : ''} rv" href="${esc(live(s.id))}">
         <img src="${esc(s.img)}" alt="" loading="lazy">
         <div class="in"><span class="cat">${esc(s.cat)}</span><h3>${esc(s.titlu)}</h3><p>${esc(s.text)}</p>
-          <span class="meta"><span>${esc(serv[s.id]?.nume || '')}</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
+          <span class="meta"><span>${esc(trNode.get(s.id)?.nod.nume || serv[s.id]?.nume || '')}</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
       </a>`).join('')}
     <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
@@ -411,7 +411,7 @@ ${mobileNav}
     </div>
     <div class="v-grid">${VID.map((v) => {
       const p = v.pagini[0];
-      return `<div class="v-card rv"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+      return `<div class="v-card rv"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
         <h3>${esc(vTitle(v))}</h3><p>${p.serviciu ? `<a href="${esc(live(p.serviciu))}">${esc(trNode.get(p.serviciu)?.nod.nume || serv[p.serviciu]?.nume || '')}</a>` : ''}${vDur(v) ? ` · ${vDur(v)}` : ''}</p></div>`; }).join('')}
     <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
@@ -616,7 +616,7 @@ ${mobileNav}
   }));
 
   // video: se încarcă doar la click
-  document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.play(); }));
+  document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.controls = true; v.play(); }));
   document.addEventListener('play', (e) => { document.querySelectorAll('.v-card video').forEach((o) => { if (o !== e.target) o.pause(); }); }, true);
 
   // apariție la scroll
@@ -865,7 +865,10 @@ for (const id of TR_PAGINI) {
   const introP = paras('intro').filter((p) => !SALES.test(p) && !(promisiune && p.includes(promisiune) && p.length < promisiune.length + 40));
   // ce rezolvă, în 1–2 fraze: din „ce este”, altfel din intro (fără formulele de vânzare)
   const ceEste = paras('ce-este').length ? paras('ce-este') : introP;
-  const lede = ceEste[0] || s.descriere || '';
+  const firstP = t.sectiuni.filter((x) => x.rol !== 'pret').flatMap((x) => x.blocuri).find((b) => b.t === 'p' && b.x.length > 60 && !SALES.test(b.x) && !/:$/.test(b.x))?.x;
+  const cleanDesc = String(s.descriere || '').split(/\s*✓\s*/)[0].replace(/\s*(Rezerv[aă] acum|Programeaz[aă]-te acum)[^.]*\.?$/i, '').trim();
+  const faqLede = t.faq.flatMap((q) => q.blocuri).find((b) => b.t === 'p' && b.x.length > 60)?.x;
+  const lede = ceEste[0] || firstP || faqLede || cleanDesc || '';
   // „cum acționează”: restul textului din „ce este” (+ intro, dacă există „ce este”) + beneficiile care nu sunt listă
   const benList = lists('beneficii'), benBl = B('beneficii'), benH3 = [];
   benBl.forEach((b, i) => { if (b.t === 'h3') benH3.push(b.x.replace(/:$/, '') + (benBl[i + 1]?.t === 'p' ? ' – ' + benBl[i + 1].x : '')); });
@@ -970,7 +973,7 @@ for (const id of TR_PAGINI) {
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
   const urmeaza = consult ? [...trNode.entries()].filter(([x, l]) => !l.consult && (serv[x].medici || []).some((n) => (s.medici || []).includes(n))).map(([x]) => serv[x]).slice(0, 9) : [];
   const tVids = VID_ALL.filter((v) => v.pagini.some((p) => p.serviciu === id));
-  const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
+  const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
   const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], t.galerie.length && ['#rezultate', 'Rezultate'],
@@ -1009,7 +1012,7 @@ ${TOP}<main>
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}</div></nav>
+${toc.length >= 3 ? `<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}</div></nav>` : ''}
 
 ${whoItems.length || whoLede || whoMore.length ? `<section class="sec" id="pentru-cine">
   <div class="wrap">
@@ -1363,7 +1366,8 @@ ${TOP}<main>
     <div class="sec-head split"><div><span class="eyebrow">În cabinet</span><h1 style="margin-top:18px">Vezi cum <em>lucrăm.</em></h1></div>
       <p class="lede">${vids.length} video-uri scurte din cabinetele MOA, ${Math.round(totalS / 60)} minute în total. Înainte să vii, știi cum arată clinica, aparatura și o ședință.</p></div>
     <div class="team-filter vp-filter" role="tablist" aria-label="Filtrează după categorie"><button type="button" class="on" data-vcat="">Toate · ${vids.length}</button>${cats.map((c) => `<button type="button" data-vcat="${esc(c)}">${esc(cap(c.replace(/^Tratamente /, '').replace(/^cu /, '')))} · ${vids.filter((x) => x.cat === c).length}</button>`).join('')}</div>
-    <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
+    <h2 class="sr">Toate video-urile</h2>
+    <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
       <small class="vp-cat">${esc(cat)}</small><h3>${esc(vTitle(v))}</h3>${nume ? `<p>${href ? `<a href="${esc(href)}">${esc(nume)} →</a>` : esc(nume)}</p>` : ''}</div>`).join('')}</div>
   </div>
 </section>

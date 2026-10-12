@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generat": "2026-10-09",
+    "generat": "2026-10-12",
     "sursa": "data/entitati.json",
     "nota": "Propunere – de discutat. URL-urile noi sunt orientative; redirecturile se aplică la lansarea site-ului nou."
   },
@@ -570,8 +570,12 @@
             "url": "/documente-legale/"
           },
           {
-            "nume": "ANPC / SAL / SOL",
-            "url": "https://anpc.ro/ce-este-sal/"
+            "nume": "ANPC – SAL",
+            "url": "https://anpc.ro/sal/"
+          },
+          {
+            "nume": "SOL – litigii online",
+            "url": "https://consumer-redress.ec.europa.eu/index_ro"
           }
         ]
       }
@@ -2090,9 +2094,9 @@
             "intrebari": 0,
             "medici": [
               "Dr. Adrian Stănescu",
+              "Dr. Florentina Matei",
               "Dr. Irina Amolioaie",
-              "Dr. Doina Caraman",
-              "Dr. Florentina Matei"
+              "Dr. Doina Caraman"
             ],
             "tehnologii": [],
             "cuvinte": 1340
@@ -2108,14 +2112,11 @@
           ],
           "continut": {
             "pret_de_la": 300,
-            "preturi": 3,
+            "preturi": 2,
             "video": 0,
             "intrebari": 0,
             "medici": [
-              "Dr. Adrian Stănescu",
-              "Dr. Irina Amolioaie",
-              "Dr. Doina Caraman",
-              "Dr. Florentina Matei"
+              "Dr. Iulia Nedelcu"
             ],
             "tehnologii": [],
             "cuvinte": 119
@@ -2130,15 +2131,15 @@
             "/consultatii/consultatie-chirurgie-plastica/"
           ],
           "continut": {
-            "pret_de_la": 400,
-            "preturi": 1,
+            "pret_de_la": 350,
+            "preturi": 2,
             "video": 0,
             "intrebari": 0,
             "medici": [
-              "Dr. Adrian Stănescu",
-              "Dr. Irina Amolioaie",
-              "Dr. Doina Caraman",
-              "Dr. Florentina Matei"
+              "Dr. Matei Gheorghiu Branaru",
+              "Dr. Romana Cristina Manescu Obreja",
+              "Dr. Andrei Rugina",
+              "Dr. Vali Dijmarescu"
             ],
             "tehnologii": [],
             "cuvinte": 119
@@ -2159,9 +2160,9 @@
             "intrebari": 0,
             "medici": [
               "Dr. Adrian Stănescu",
+              "Dr. Florentina Matei",
               "Dr. Irina Amolioaie",
-              "Dr. Doina Caraman",
-              "Dr. Florentina Matei"
+              "Dr. Doina Caraman"
             ],
             "tehnologii": [],
             "cuvinte": 288

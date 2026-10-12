@@ -94,7 +94,9 @@ function parse(html, s) {
   // întrebările frecvente din acordeon
   const faq = [];
   for (const m of h.matchAll(/class="accordion-title[^"]*"[\s\S]*?<span>([\s\S]*?)<\/span>\s*<\/a>\s*<div[^>]*class="accordion-inner"[^>]*>([\s\S]*?)(?=<div[^>]*class="accordion-item"|<\/div>\s*<\/div>\s*<\/div>\s*<\/div>)/g)) {
-    faq.push({ q: T(m[1]), blocuri: blocksOf(m[2]).filter((b) => b.t !== 'img') });
+    const bl = blocksOf(m[2]).filter((b) => b.t !== 'img');
+    // unele răspunsuri sunt text simplu, fără <p>
+    faq.push({ q: T(m[1]), blocuri: bl.length ? bl : T(m[2]) ? [{ t: 'p', x: T(m[2]) }] : [] });
   }
   const noAcc = h.replace(/<div class="accordion">[\s\S]*?(?=<h2)/g, '');
   const h1 = T((noAcc.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || s.h1 || s.nume);
