@@ -806,13 +806,11 @@ document.querySelectorAll('.pf-tabs button').forEach((b) => b.addEventListener('
 </script>`;
 })()}
 
-${servP.length || arts.length ? `<section class="sec alt" id="la-moa">
-  <div class="wrap pf-moa">
-    ${servP.length ? `<div><span class="eyebrow">La MOA</span><h2 class="pf-h2">Tratamente <em>coordonate</em></h2><p class="cs-sub">Serviciile din specialitatea lui, cu prețul de pornire.</p>
-      <div class="pf-serv">${servP.map((s, i) => `<a class="mm-card${i >= 5 ? ' pf-more' : ''}" href="${esc(live(s.id))}"><b>${esc(trNode.get(s.id)?.nod.nume || prettyName(s.nume))}</b><span>${esc(trNode.get(s.id)?.cat.nume || prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>${servP.length > 5 ? `<button type="button" class="pf-serv-all" onclick="this.previousElementSibling.classList.add('open');this.remove()">Toate cele ${servP.length} tratamente +</button>` : ''}</div>` : ''}
-    ${arts.length ? `<div id="articole"><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${allArts.length} articole pe blogul clinicii.</p>
-      <ul class="tr-arts">${arts.map((a) => `<li><a href="${esc(a.url)}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul>
-      <a class="link-u" href="${esc(pr.url)}" style="margin-top:18px;display:inline-flex">Toate cele ${allArts.length} de articole →</a></div>` : ''}
+${arts.length ? `<section class="sec alt" id="articole">
+  <div class="wrap pf-arts">
+    <div><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${allArts.length} articole pe blogul clinicii.</p>
+      <a class="link-u" href="${esc(pr.url)}">Toate cele ${allArts.length} de articole →</a></div>
+    <ul class="tr-arts">${arts.slice(0, 3).map((a) => `<li><a href="${esc(a.url)}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul>
   </div>
 </section>` : ''}
 

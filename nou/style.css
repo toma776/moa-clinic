@@ -1208,3 +1208,9 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   #despre-medic .pf-tabs button.on::after { content: '→'; position: absolute; right: 0; }
   #despre-medic .pf-story { max-width: none; }
 }
+
+/* profil: articolele – titlul în stânga, cele 3 articole în dreapta */
+.pf-arts { display: grid; grid-template-columns: minmax(0, .4fr) minmax(0, .6fr); gap: 24px clamp(40px, 5vw, 80px); align-items: center; }
+.pf-arts .pf-h2 { margin: 14px 0 8px; }
+.pf-arts .tr-arts span { font-size: 21px; }
+@media (max-width: 760px) { .pf-arts { grid-template-columns: 1fr; } .pf-arts .tr-arts span { font-size: 18px; } }
