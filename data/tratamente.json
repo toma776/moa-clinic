@@ -928,40 +928,26 @@
               "x": "Terapia TMS nu este recomandată pacienților care prezintă dispozitive metalice sau electronice implantate, precum:"
             },
             {
-              "t": "p",
-              "x": "clipuri sau sisteme metalice pentru anevrisme cerebrale;"
-            },
-            {
-              "t": "p",
-              "x": "stimulatoare ale nervului vag sau stimulatoare cerebrale profunde;"
-            },
-            {
-              "t": "p",
-              "x": "electrozi implantați pentru monitorizarea activității cerebrale;"
-            },
-            {
-              "t": "p",
-              "x": "implanturi cohleare pentru auz."
+              "t": "ul",
+              "items": [
+                "clipuri sau sisteme metalice pentru anevrisme cerebrale",
+                "stimulatoare ale nervului vag sau stimulatoare cerebrale profunde",
+                "electrozi implantați pentru monitorizarea activității cerebrale",
+                "implanturi cohleare pentru auz"
+              ]
             },
             {
               "t": "p",
               "x": "Contraindicații relative (acestea sunt evaluate individual de medicul coordonator)"
             },
             {
-              "t": "p",
-              "x": "istoric personal de epilepsie sau convulsii;"
-            },
-            {
-              "t": "p",
-              "x": "antecedente familiale de convulsii (inclusiv convulsii febrile);"
-            },
-            {
-              "t": "p",
-              "x": "traumatisme craniene cu pierderea stării de conștiență;"
-            },
-            {
-              "t": "p",
-              "x": "intervenții chirurgicale pe creier sau leziuni cerebrale traumatice."
+              "t": "ul",
+              "items": [
+                "istoric personal de epilepsie sau convulsii",
+                "antecedente familiale de convulsii (inclusiv convulsii febrile)",
+                "traumatisme craniene cu pierderea stării de conștiență",
+                "intervenții chirurgicale pe creier sau leziuni cerebrale traumatice"
+              ]
             },
             {
               "t": "p",
@@ -1888,28 +1874,15 @@
               "x": "Acidul hialuronic poate fi folosit pentru a corecta, contura sau hidrata diferite zone ale feței, oferind un aspect armonios și echilibrat. În funcție de nevoi, tratamentul poate viza:"
             },
             {
-              "t": "p",
-              "x": "Buzele: pentru volum, definirea conturului sau hidratare;"
-            },
-            {
-              "t": "p",
-              "x": "Obrajii: pentru redarea fermității și a volumului pierdut;"
-            },
-            {
-              "t": "p",
-              "x": "Cearcănele: pentru diminuarea aspectului obosit al privirii;"
-            },
-            {
-              "t": "p",
-              "x": "Linia mandibulară și bărbia: pentru o conturare mai clară a feței;"
-            },
-            {
-              "t": "p",
-              "x": "Ridurile nazolabiale și cele din jurul gurii: pentru netezirea și întinerirea expresiei;"
-            },
-            {
-              "t": "p",
-              "x": "Pomeții și tâmplele: pentru echilibrarea proporțiilor faciale."
+              "t": "ul",
+              "items": [
+                "Buzele: pentru volum, definirea conturului sau hidratare",
+                "Obrajii: pentru redarea fermității și a volumului pierdut",
+                "Cearcănele: pentru diminuarea aspectului obosit al privirii",
+                "Linia mandibulară și bărbia: pentru o conturare mai clară a feței",
+                "Ridurile nazolabiale și cele din jurul gurii: pentru netezirea și întinerirea expresiei",
+                "Pomeții și tâmplele: pentru echilibrarea proporțiilor faciale"
+              ]
             },
             {
               "t": "p",
@@ -2226,24 +2199,14 @@
               "x": "Este recomandat atunci când te confrunți cu:"
             },
             {
-              "t": "p",
-              "x": "cearcăne pigmentate ori întunecate;"
-            },
-            {
-              "t": "p",
-              "x": "aspect „scobit” al ochilor sau șanț lacrimal adâncit;"
-            },
-            {
-              "t": "p",
-              "x": "piele subțire și lipsită de tonus;"
-            },
-            {
-              "t": "p",
-              "x": "riduri fine și liniile de expresie din colțul extern al ochilor;"
-            },
-            {
-              "t": "p",
-              "x": "privire obosită, chiar și după odihnă."
+              "t": "ul",
+              "items": [
+                "cearcăne pigmentate ori întunecate",
+                "aspect „scobit” al ochilor sau șanț lacrimal adâncit",
+                "piele subțire și lipsită de tonus",
+                "riduri fine și liniile de expresie din colțul extern al ochilor",
+                "privire obosită, chiar și după odihnă"
+              ]
             },
             {
               "t": "p",
@@ -2260,28 +2223,15 @@
               "x": "Jalupro Young Eye nu promite rezultate exagerate, ci îmbunătățiri clare și vizibile, care se simt natural și se integrează perfect în fizionomie. Printre cele mai importante beneficii se numără:"
             },
             {
-              "t": "p",
-              "x": "luminozitate imediată în zona ochilor, datorită hidratării profunde;"
-            },
-            {
-              "t": "p",
-              "x": "reducerea ridurilor fine și netezirea pielii subțiri;"
-            },
-            {
-              "t": "p",
-              "x": "ameliorarea cearcănelor pigmentate și diminuarea aspectului întunecat;"
-            },
-            {
-              "t": "p",
-              "x": "corectarea șanțului lacrimal și restabilirea volumului pierdut;"
-            },
-            {
-              "t": "p",
-              "x": "privire mai odihnită și mai tânără , fără efect de „umflare”;"
-            },
-            {
-              "t": "p",
-              "x": "rezultate discre­te și naturale , ideale pentru cei care vor un refresh vizibil, dar subtil."
+              "t": "ul",
+              "items": [
+                "luminozitate imediată în zona ochilor, datorită hidratării profunde",
+                "reducerea ridurilor fine și netezirea pielii subțiri",
+                "ameliorarea cearcănelor pigmentate și diminuarea aspectului întunecat",
+                "corectarea șanțului lacrimal și restabilirea volumului pierdut",
+                "privire mai odihnită și mai tânără, fără efect de „umflare”",
+                "rezultate discre­te și naturale, ideale pentru cei care vor un refresh vizibil, dar subtil"
+              ]
             }
           ]
         },
@@ -2396,20 +2346,13 @@
               "x": "Procedura se adresează persoanelor care:"
             },
             {
-              "t": "p",
-              "x": "au buze subțiri sau asimetrice;"
-            },
-            {
-              "t": "p",
-              "x": "doresc o formă mai bine conturată;"
-            },
-            {
-              "t": "p",
-              "x": "își doresc să compenseze pierderea naturală de volum odată cu trecerea timpului;"
-            },
-            {
-              "t": "p",
-              "x": "vor un efect natural, fără rigiditate sau exagerare."
+              "t": "ul",
+              "items": [
+                "au buze subțiri sau asimetrice",
+                "doresc o formă mai bine conturată",
+                "își doresc să compenseze pierderea naturală de volum odată cu trecerea timpului",
+                "vor un efect natural, fără rigiditate sau exagerare"
+              ]
             },
             {
               "t": "p",
@@ -2464,28 +2407,15 @@
               "x": "Este indicată în special atunci când:"
             },
             {
-              "t": "p",
-              "x": "buzele sunt subțiri, plate sau lipsite de contur;"
-            },
-            {
-              "t": "p",
-              "x": "există asimetrii vizibile între buza superioară și cea inferioară;"
-            },
-            {
-              "t": "p",
-              "x": "dorești o hidratare profundă și un aspect mai neted al buzelor;"
-            },
-            {
-              "t": "p",
-              "x": "se observă pierdere de volum odată cu vârsta;"
-            },
-            {
-              "t": "p",
-              "x": "vrei să corectezi liniile fine din jurul buzelor;"
-            },
-            {
-              "t": "p",
-              "x": "îți dorești un rezultat natural, cu buze mai pline, dar proporționate."
+              "t": "ul",
+              "items": [
+                "buzele sunt subțiri, plate sau lipsite de contur",
+                "există asimetrii vizibile între buza superioară și cea inferioară",
+                "dorești o hidratare profundă și un aspect mai neted al buzelor",
+                "se observă pierdere de volum odată cu vârsta",
+                "vrei să corectezi liniile fine din jurul buzelor",
+                "îți dorești un rezultat natural, cu buze mai pline, dar proporționate"
+              ]
             }
           ]
         },
@@ -2502,16 +2432,12 @@
               "x": "La Moa Clinic, folosim doar produse de top din game precum Juvederm, Restylane și Stylage recunoscute pentru calitate, siguranță și rezultate naturale. În cadrul consultației, medicul specialist va alege împreună cu tine tipul potrivit:"
             },
             {
-              "t": "p",
-              "x": "pentru volum, dacă îți dorești buze mai pline;"
-            },
-            {
-              "t": "p",
-              "x": "pentru redefinire, dacă vrei contur delicat și simetrie;"
-            },
-            {
-              "t": "p",
-              "x": "pentru hidratare, dacă urmărești un aspect proaspăt și neted."
+              "t": "ul",
+              "items": [
+                "pentru volum, dacă îți dorești buze mai pline",
+                "pentru redefinire, dacă vrei contur delicat și simetrie",
+                "pentru hidratare, dacă urmărești un aspect proaspăt și neted"
+              ]
             },
             {
               "t": "p",
@@ -2550,16 +2476,12 @@
               "x": "Procedura de augmentare a buzelor este considerată sigură atunci când este efectuată de un medic cu experiență. Totuși, ca orice tratament estetic, pot exista reacții temporare și ușoare:"
             },
             {
-              "t": "p",
-              "x": "roșeață sau ușoară umflare în zona injectată;"
-            },
-            {
-              "t": "p",
-              "x": "mici vânătăi;"
-            },
-            {
-              "t": "p",
-              "x": "sensibilitate locală;"
+              "t": "ul",
+              "items": [
+                "roșeață sau ușoară umflare în zona injectată",
+                "mici vânătăi",
+                "sensibilitate locală"
+              ]
             },
             {
               "t": "p",
@@ -2647,24 +2569,14 @@
               "x": "Recomandări utile:"
             },
             {
-              "t": "p",
-              "x": "evită atingerea sau masarea buzelor timp de 24 de ore;"
-            },
-            {
-              "t": "p",
-              "x": "nu aplica machiaj pe zona tratată în primele 12–24h;"
-            },
-            {
-              "t": "p",
-              "x": "evită sauna, solarul și efortul fizic intens în primele 2–3 zile;"
-            },
-            {
-              "t": "p",
-              "x": "hidratează-te corespunzător și aplică balsamuri neutre pentru buze;"
-            },
-            {
-              "t": "p",
-              "x": "evită expunerea la frig sau căldură excesivă imediat după procedură."
+              "t": "ul",
+              "items": [
+                "evită atingerea sau masarea buzelor timp de 24 de ore",
+                "nu aplica machiaj pe zona tratată în primele 12–24h",
+                "evită sauna, solarul și efortul fizic intens în primele 2–3 zile",
+                "hidratează-te corespunzător și aplică balsamuri neutre pentru buze",
+                "evită expunerea la frig sau căldură excesivă imediat după procedură"
+              ]
             },
             {
               "t": "p",
@@ -3297,35 +3209,18 @@
           "blocuri": [
             {
               "t": "p",
-              "x": "Mărirea buzelor cu acid hialuronic este recomandată atunci când îți dorești un echilibru între volum, formă și expresivitate, fără a schimba trăsăturile naturale ale feței. Procedura poate avea atât scop estetic, cât și de corectare a unor mici imperfecțiuni sau semne ale îmbătrânirii."
-            },
-            {
-              "t": "p",
               "x": "Este indicată în special atunci când:"
             },
             {
-              "t": "p",
-              "x": "riduri fine sau linii de expresie;"
-            },
-            {
-              "t": "p",
-              "x": "pierderea fermității și elasticității pielii;"
-            },
-            {
-              "t": "p",
-              "x": "cicatrici post-acnee, postchirurgicale sau posttraumatice;"
-            },
-            {
-              "t": "p",
-              "x": "pori dilatați sau textură neuniformă;"
-            },
-            {
-              "t": "p",
-              "x": "pete pigmentare și hiperpigmentări;"
-            },
-            {
-              "t": "p",
-              "x": "vergeturi apărute în urma sarcinii sau variațiilor de greutate."
+              "t": "ul",
+              "items": [
+                "riduri fine sau linii de expresie",
+                "pierderea fermității și elasticității pielii",
+                "cicatrici post-acnee, postchirurgicale sau posttraumatice",
+                "pori dilatați sau textură neuniformă",
+                "pete pigmentare și hiperpigmentări",
+                "vergeturi apărute în urma sarcinii sau variațiilor de greutate"
+              ]
             },
             {
               "t": "p",
@@ -3346,24 +3241,14 @@
               "x": "Cele mai frecvente zone tratate sunt:"
             },
             {
-              "t": "p",
-              "x": "fața, pentru reducerea ridurilor, cicatricilor și îmbunătățirea texturii pielii;"
-            },
-            {
-              "t": "p",
-              "x": "gâtul și decolteul, pentru redarea tonusului și fermității;"
-            },
-            {
-              "t": "p",
-              "x": "zona perioculară, pentru atenuarea liniilor fine și a cearcănelor;"
-            },
-            {
-              "t": "p",
-              "x": "mâinile, pentru un aspect întinerit și uniform;"
-            },
-            {
-              "t": "p",
-              "x": "abdomenul, coapsele și fesele, pentru reducerea vergeturilor și stimularea colagenului."
+              "t": "ul",
+              "items": [
+                "fața, pentru reducerea ridurilor, cicatricilor și îmbunătățirea texturii pielii",
+                "gâtul și decolteul, pentru redarea tonusului și fermității",
+                "zona perioculară, pentru atenuarea liniilor fine și a cearcănelor",
+                "mâinile, pentru un aspect întinerit și uniform",
+                "abdomenul, coapsele și fesele, pentru reducerea vergeturilor și stimularea colagenului"
+              ]
             }
           ]
         },
@@ -3380,28 +3265,15 @@
               "x": "Procedura nu se efectuează dacă:"
             },
             {
-              "t": "p",
-              "x": "există infecții active ale pielii (herpes, eczeme, dermatite);"
-            },
-            {
-              "t": "p",
-              "x": "te confrunți cu acnee inflamatorie severă;"
-            },
-            {
-              "t": "p",
-              "x": "ai răni deschise, tăieturi sau arsuri recente în zona de tratament;"
-            },
-            {
-              "t": "p",
-              "x": "suferi de tulburări de coagulare a sângelui sau iei anticoagulante;"
-            },
-            {
-              "t": "p",
-              "x": "ești însărcinată sau alăptezi (decizia se ia împreună cu medicul);"
-            },
-            {
-              "t": "p",
-              "x": "ai fost supusă recent unui tratament cu laser agresiv sau peeling chimic profund."
+              "t": "ul",
+              "items": [
+                "există infecții active ale pielii (herpes, eczeme, dermatite)",
+                "te confrunți cu acnee inflamatorie severă",
+                "ai răni deschise, tăieturi sau arsuri recente în zona de tratament",
+                "suferi de tulburări de coagulare a sângelui sau iei anticoagulante",
+                "ești însărcinată sau alăptezi (decizia se ia împreună cu medicul)",
+                "ai fost supusă recent unui tratament cu laser agresiv sau peeling chimic profund"
+              ]
             }
           ]
         },
@@ -3418,24 +3290,14 @@
               "x": "Noutățile majore includ:"
             },
             {
-              "t": "p",
-              "x": "viteză superioară de perforare până la 120 de inserții pe secundă, ceea ce reduce disconfortul și scurtează durata procedurii;"
-            },
-            {
-              "t": "p",
-              "x": "control digital al adâncimii acelor, ajustare automată, personalizată pentru fiecare zonă tratată;"
-            },
-            {
-              "t": "p",
-              "x": "tehnologie anti-backflow, care previne riscul de contaminare încrucișată și oferă un nivel crescut de siguranță;"
-            },
-            {
-              "t": "p",
-              "x": "tratament mai uniform și cu sângerare mai redusă , datorită sistemului de vibrații verticale controlate;"
-            },
-            {
-              "t": "p",
-              "x": "rezultate mai rapide și mai vizibile chiar și pe cicatrici postacneice adânci, pete pigmentare sau vergeturi vechi."
+              "t": "ul",
+              "items": [
+                "viteză superioară de perforare până la 120 de inserții pe secundă, ceea ce reduce disconfortul și scurtează durata procedurii",
+                "control digital al adâncimii acelor, ajustare automată, personalizată pentru fiecare zonă tratată",
+                "tehnologie anti-backflow, care previne riscul de contaminare încrucișată și oferă un nivel crescut de siguranță",
+                "tratament mai uniform și cu sângerare mai redusă, datorită sistemului de vibrații verticale controlate",
+                "rezultate mai rapide și mai vizibile chiar și pe cicatrici postacneice adânci, pete pigmentare sau vergeturi vechi"
+              ]
             },
             {
               "t": "p",
@@ -3456,28 +3318,15 @@
               "x": "Prin stimularea intensă a colagenului și a elastinei, acest tratament:"
             },
             {
-              "t": "p",
-              "x": "diminuează ridurile și liniile fine, redând pielii un aspect tânăr și uniform;"
-            },
-            {
-              "t": "p",
-              "x": "atenuează cicatricile post-acnee și vergeturile, chiar și pe cele profunde;"
-            },
-            {
-              "t": "p",
-              "x": "uniformizează culoarea pielii, reducând petele pigmentare;"
-            },
-            {
-              "t": "p",
-              "x": "reduce porii dilatați și netezește textura pielii;"
-            },
-            {
-              "t": "p",
-              "x": "îmbunătățește fermitatea și tonusul;"
-            },
-            {
-              "t": "p",
-              "x": "sporește eficiența produselor cosmetice, datorită absorbției profunde prin microcanalele create."
+              "t": "ul",
+              "items": [
+                "diminuează ridurile și liniile fine, redând pielii un aspect tânăr și uniform",
+                "atenuează cicatricile post-acnee și vergeturile, chiar și pe cele profunde",
+                "uniformizează culoarea pielii, reducând petele pigmentare",
+                "reduce porii dilatați și netezește textura pielii",
+                "îmbunătățește fermitatea și tonusul",
+                "sporește eficiența produselor cosmetice, datorită absorbției profunde prin microcanalele create"
+              ]
             }
           ]
         },
@@ -3527,9 +3376,9 @@
               "t": "ul",
               "items": [
                 "Curățarea și dezinfectarea pielii. Se îndepărtează machiajul, se curăță delicat tenul și se aplică o soluție antiseptică pentru a elimina impuritățile.",
-                "A plicarea unui anestezic local timp de 40-50 minute pentru confort maxim.",
-                "Aplicarea unui ser de conducere special cu acid h ialuronic. Acesta facilitează alunecarea dispozitivului și ajută ingredientele active aplicate complementar să pătrundă mai ușor în piele.",
-                "Microneedling propriu-zis. Cu ajutorul dipozitivului Dermapen 4, medicul realizează treceri uniforme pe suprafața pielii. Microacele sterile creează canale fine care stimulează producția naturală de colagen și elastină.",
+                "Aplicarea unui anestezic local timp de 40-50 minute pentru confort maxim.",
+                "Aplicarea unui ser de conducere special cu acid hialuronic. Acesta facilitează alunecarea dispozitivului și ajută ingredientele active aplicate complementar să pătrundă mai ușor în piele.",
+                "Microneedling propriu-zis. Cu ajutorul dispozitivului Dermapen 4, medicul realizează treceri uniforme pe suprafața pielii. Microacele sterile creează canale fine care stimulează producția naturală de colagen și elastină.",
                 "În plus, se poate opta pentru aplicarea serurilor special concepute Dermapen, în funcție de necesitățile țintite ale pacienților (ex. ser intens depigmentant, ser antiaging, ser reparator pentru cicatrici). De asemenea, împreună cu medicul se poate decide aplicarea exozomilor, recunoscuți pentru accelerarea regenerării pielii și îmbunătățirea calității cutanate.",
                 "La finalul procedurii se aplică standard un ser calmant sau se poate alege o mască regenerantă cu acid hialuronic marca Dermapen/ mască cu exozomi și polipeptide. După tratament, pielea este hrănită cu formule speciale care reduc roșeața, accelerează vindecarea și intensifică efectul de hidratare."
               ]
@@ -3604,7 +3453,7 @@
           ]
         },
         {
-          "titlu": "Ingrijirea pielii după microneedling cu Dermapen 4",
+          "titlu": "Îngrijirea pielii după microneedling cu Dermapen 4",
           "rol": "dupa",
           "blocuri": [
             {
@@ -3629,7 +3478,7 @@
             },
             {
               "t": "p",
-              "x": "Nu atinge și nu exfolia pielea. Poate apărea o ușoară descuamare în primele zile este un proces normal de regenerare. Nu smulge cojile și nu te scărpina, pentru a evita iritațiile și eventualele cicatrici."
+              "x": "Nu atinge și nu exfolia pielea. Poate apărea o ușoară descuamare în primele zile; este un proces normal de regenerare. Nu smulge cojile și nu te scărpina, pentru a evita iritațiile și eventualele cicatrici."
             },
             {
               "t": "p",
@@ -3648,7 +3497,7 @@
           "blocuri": [
             {
               "t": "p",
-              "x": "Rezultatele apar în 7–10 zile și se intensifică în următoarele luni, pe măsură ce se formează colagenul nou. După un protocol complet efec tele pot dura între 6 și 12 luni, iar ședințele de întreținere o dată sau de două ori pe an mențin pielea fermă și uniformă."
+              "x": "Rezultatele apar în 7–10 zile și se intensifică în următoarele luni, pe măsură ce se formează colagenul nou. După un protocol complet efectele pot dura între 6 și 12 luni, iar ședințele de întreținere o dată sau de două ori pe an mențin pielea fermă și uniformă."
             }
           ]
         },
@@ -4220,20 +4069,13 @@
               "x": "Cele mai frecvente zone tratate sunt:"
             },
             {
-              "t": "p",
-              "x": "Fața – pentru redarea luminozității și a elasticității;"
-            },
-            {
-              "t": "p",
-              "x": "Gâtul și decolteul – pentru estomparea ridurilor fine și îmbunătățirea texturii pielii;"
-            },
-            {
-              "t": "p",
-              "x": "Mâinile – pentru hidratare intensă și reducerea aspectului de piele subțire sau uscată;"
-            },
-            {
-              "t": "p",
-              "x": "Zona ochilor – pentru diminuarea semnelor de oboseală și a aspectului tern."
+              "t": "ul",
+              "items": [
+                "Fața – pentru redarea luminozității și a elasticității",
+                "Gâtul și decolteul – pentru estomparea ridurilor fine și îmbunătățirea texturii pielii",
+                "Mâinile – pentru hidratare intensă și reducerea aspectului de piele subțire sau uscată",
+                "Zona ochilor – pentru diminuarea semnelor de oboseală și a aspectului tern"
+              ]
             },
             {
               "t": "p",
@@ -4470,24 +4312,14 @@
               "x": "Este recomandat în special atunci când:"
             },
             {
-              "t": "p",
-              "x": "se observă pierderea treptată a fermității și elasticității pielii;"
-            },
-            {
-              "t": "p",
-              "x": "fața și-a pierdut conturul și volumul natural în zona obrajilor, tâmplelor sau mandibulei;"
-            },
-            {
-              "t": "p",
-              "x": "apar riduri și cute profunde, precum pliurile nazolabiale;"
-            },
-            {
-              "t": "p",
-              "x": "pielea are textură neuniformă sau aspect obosit;"
-            },
-            {
-              "t": "p",
-              "x": "îți dorești un rezultat care se construiește treptat, prin stimularea colagenului propriu, nu prin umplere instantanee."
+              "t": "ul",
+              "items": [
+                "se observă pierderea treptată a fermității și elasticității pielii",
+                "fața și-a pierdut conturul și volumul natural în zona obrajilor, tâmplelor sau mandibulei",
+                "apar riduri și cute profunde, precum pliurile nazolabiale",
+                "pielea are textură neuniformă sau aspect obosit",
+                "îți dorești un rezultat care se construiește treptat, prin stimularea colagenului propriu, nu prin umplere instantanee"
+              ]
             },
             {
               "t": "p",
@@ -4521,28 +4353,15 @@
               "x": "Sculptra nu este un simplu filler – este un tratament care acționează din interior, cu efecte vizibile în timp și rezultate care durează."
             },
             {
-              "t": "p",
-              "x": "Stimulează producția naturală de colagen, nu doar umple temporar ridurile;"
-            },
-            {
-              "t": "p",
-              "x": "Redă volumul facial pierdut și conturează armonios trăsăturile feței;"
-            },
-            {
-              "t": "p",
-              "x": "Estompează ridurile adânci și semnele de îmbătrânire cu efecte progresive;"
-            },
-            {
-              "t": "p",
-              "x": "Rezultate naturale și subtile, fără aspect artificial sau „înghețat”;"
-            },
-            {
-              "t": "p",
-              "x": "Durabilitate de până la 2 ani, cu îmbunătățiri vizibile de la o lună la alta;"
-            },
-            {
-              "t": "p",
-              "x": "Tratament minim invaziv, fără timp de recuperare și cu integrare ușoară în rutina ta de îngrijire."
+              "t": "ul",
+              "items": [
+                "Stimulează producția naturală de colagen, nu doar umple temporar ridurile",
+                "Redă volumul facial pierdut și conturează armonios trăsăturile feței",
+                "Estompează ridurile adânci și semnele de îmbătrânire cu efecte progresive",
+                "Rezultate naturale și subtile, fără aspect artificial sau „înghețat”",
+                "Durabilitate de până la 2 ani, cu îmbunătățiri vizibile de la o lună la alta",
+                "Tratament minim invaziv, fără timp de recuperare și cu integrare ușoară în rutina ta de îngrijire"
+              ]
             }
           ]
         },
@@ -4597,24 +4416,14 @@
               "x": "Pregătirea corectă contribuie la confortul procedurii și la obținerea celor mai bune rezultate:"
             },
             {
-              "t": "p",
-              "x": "evită antiinflamatoarele și aspirina cu 2–3 zile înainte (pot crește riscul de vânătăi);"
-            },
-            {
-              "t": "p",
-              "x": "nu consuma alcool în ziua tratamentului;"
-            },
-            {
-              "t": "p",
-              "x": "hidratează-te corespunzător înainte de ședință;"
-            },
-            {
-              "t": "p",
-              "x": "evită alte tratamente injectabile în săptămânile anterioare;"
-            },
-            {
-              "t": "p",
-              "x": "informează medicul despre eventuale tratamente medicale în curs."
+              "t": "ul",
+              "items": [
+                "evită antiinflamatoarele și aspirina cu 2–3 zile înainte (pot crește riscul de vânătăi)",
+                "nu consuma alcool în ziua tratamentului",
+                "hidratează-te corespunzător înainte de ședință",
+                "evită alte tratamente injectabile în săptămânile anterioare",
+                "informează medicul despre eventuale tratamente medicale în curs"
+              ]
             }
           ]
         },
@@ -4627,24 +4436,14 @@
               "x": "După tratament, pielea poate fi ușor roșie sau umflată în zona injectată, reacții normale, care dispar în 1–2 zile. Pentru a obține un rezultat uniform și sigur, respectă recomandările medicului:"
             },
             {
-              "t": "p",
-              "x": "masează zona tratată de 5 ori pe zi, timp de 5 minute, în primele 5 zile după procedură („regula 5×5”) precum te învață medicul dermatolog la finalul procedurii;"
-            },
-            {
-              "t": "p",
-              "x": "evită sauna, solarul și efortul fizic intens timp de 3–5 zile;"
-            },
-            {
-              "t": "p",
-              "x": "aplică intermitent comprese reci pentru a reduce inflamația;"
-            },
-            {
-              "t": "p",
-              "x": "evită machiajul în primele 12–24 de ore;"
-            },
-            {
-              "t": "p",
-              "x": "hidratează-te intens, consumând cel puțin 2 litri de apă zilnic."
+              "t": "ul",
+              "items": [
+                "masează zona tratată de 5 ori pe zi, timp de 5 minute, în primele 5 zile după procedură („regula 5×5”) precum te învață medicul dermatolog la finalul procedurii",
+                "evită sauna, solarul și efortul fizic intens timp de 3–5 zile",
+                "aplică intermitent comprese reci pentru a reduce inflamația",
+                "evită machiajul în primele 12–24 de ore",
+                "hidratează-te intens, consumând cel puțin 2 litri de apă zilnic"
+              ]
             }
           ]
         },
@@ -4657,16 +4456,12 @@
               "x": "Complicațiile sunt rare atunci când tratamentul este efectuat de un medic cu experiență, însă este important ca pacientul să le cunoască. Pot apărea temporar:"
             },
             {
-              "t": "p",
-              "x": "roșeață, umflare sau vânătăi ușoare în zona injectată;"
-            },
-            {
-              "t": "p",
-              "x": "senzație de tensiune sau disconfort local;"
-            },
-            {
-              "t": "p",
-              "x": "mici noduli sub piele, dacă masajul post-tratament nu este efectuat corect."
+              "t": "ul",
+              "items": [
+                "roșeață, umflare sau vânătăi ușoare în zona injectată",
+                "senzație de tensiune sau disconfort local",
+                "mici noduli sub piele, dacă masajul post-tratament nu este efectuat corect"
+              ]
             },
             {
               "t": "p",
@@ -4720,24 +4515,14 @@
               "x": "Este indicat în special atunci când:"
             },
             {
-              "t": "p",
-              "x": "apar riduri fine sau pierdere de volum în zona pomeților, mandibulei sau obrajilor;"
-            },
-            {
-              "t": "p",
-              "x": "pielea își pierde elasticitatea și fermitatea;"
-            },
-            {
-              "t": "p",
-              "x": "conturul feței devine mai puțin definit;"
-            },
-            {
-              "t": "p",
-              "x": "vrei o alternativă naturală la liftingul facial;"
-            },
-            {
-              "t": "p",
-              "x": "îți dorești un tratament cu efecte de lungă durată, care stimulează colagenul propriu."
+              "t": "ul",
+              "items": [
+                "apar riduri fine sau pierdere de volum în zona pomeților, mandibulei sau obrajilor",
+                "pielea își pierde elasticitatea și fermitatea",
+                "conturul feței devine mai puțin definit",
+                "vrei o alternativă naturală la liftingul facial",
+                "îți dorești un tratament cu efecte de lungă durată, care stimulează colagenul propriu"
+              ]
             }
           ]
         },
@@ -4754,24 +4539,14 @@
               "x": "Cele mai frecvent tratate zone sunt:"
             },
             {
-              "t": "p",
-              "x": "pomeții și obrajii – pentru redarea volumului și definirea conturului;"
-            },
-            {
-              "t": "p",
-              "x": "linia mandibulară (jawline) – pentru un efect de lifting discret și o formă mai fermă a feței;"
-            },
-            {
-              "t": "p",
-              "x": "bărbia – pentru echilibrarea proporțiilor faciale;"
-            },
-            {
-              "t": "p",
-              "x": "zonele laterale ale feței – pentru atenuarea aspectului de piele lăsată;"
-            },
-            {
-              "t": "p",
-              "x": "gâtul și decolteul – pentru îmbunătățirea texturii și tonusului pielii."
+              "t": "ul",
+              "items": [
+                "pomeții și obrajii – pentru redarea volumului și definirea conturului",
+                "linia mandibulară (jawline) – pentru un efect de lifting discret și o formă mai fermă a feței",
+                "bărbia – pentru echilibrarea proporțiilor faciale",
+                "zonele laterale ale feței – pentru atenuarea aspectului de piele lăsată",
+                "gâtul și decolteul – pentru îmbunătățirea texturii și tonusului pielii"
+              ]
             },
             {
               "t": "p",
@@ -4788,32 +4563,16 @@
               "x": "HarmonyCa nu oferă doar volum și susținere, ci activează regenerarea pielii din interior, pentru un efect de durată și o transformare vizibil naturală."
             },
             {
-              "t": "p",
-              "x": "Combinație unică de acid hialuronic și hidroxiapatită de calciu – oferă volum imediat și stimulează colagenul pe termen lung;"
-            },
-            {
-              "t": "p",
-              "x": "Redefinirea conturului facial – sprijină liftingul natural și întărește structura pielii;"
-            },
-            {
-              "t": "p",
-              "x": "Netezirea liniilor și a ridurilor – reduce vizibil semnele de îmbătrânire;"
-            },
-            {
-              "t": "p",
-              "x": "Textură mai fermă, piele mai uniformă și revitalizată;"
-            },
-            {
-              "t": "p",
-              "x": "Rezultate progresive și durabile, fără aspect artificial;"
-            },
-            {
-              "t": "p",
-              "x": "Reducerea aspectului celulitei – ideal pentru coapse, abdomen sau alte zone afectate;"
-            },
-            {
-              "t": "p",
-              "x": "Terapie minim invazivă, fără perioadă de recuperare."
+              "t": "ul",
+              "items": [
+                "Combinație unică de acid hialuronic și hidroxiapatită de calciu – oferă volum imediat și stimulează colagenul pe termen lung",
+                "Redefinirea conturului facial – sprijină liftingul natural și întărește structura pielii",
+                "Netezirea liniilor și a ridurilor – reduce vizibil semnele de îmbătrânire",
+                "Textură mai fermă, piele mai uniformă și revitalizată",
+                "Rezultate progresive și durabile, fără aspect artificial",
+                "Reducerea aspectului celulitei – ideal pentru coapse, abdomen sau alte zone afectate",
+                "Terapie minim invazivă, fără perioadă de recuperare"
+              ]
             },
             {
               "t": "p",
@@ -4906,28 +4665,15 @@
               "x": "Recomandări după procedură:"
             },
             {
-              "t": "p",
-              "x": "evită atingerea, masarea sau aplicarea machiajului în zona tratată timp de 12–24 de ore;"
-            },
-            {
-              "t": "p",
-              "x": "nu merge la saună, solar sau sală de fitness timp de 2–3 zile;"
-            },
-            {
-              "t": "p",
-              "x": "evită expunerea directă la soare și temperaturile extreme;"
-            },
-            {
-              "t": "p",
-              "x": "aplică comprese reci dacă apare o ușoară roșeață sau inflamație locală;"
-            },
-            {
-              "t": "p",
-              "x": "hidratează-te corespunzător și folosește creme calmante, dacă este necesar;"
-            },
-            {
-              "t": "p",
-              "x": "respectă vizita de control recomandată de medic, pentru a evalua evoluția rezultatului."
+              "t": "ul",
+              "items": [
+                "evită atingerea, masarea sau aplicarea machiajului în zona tratată timp de 12–24 de ore",
+                "nu merge la saună, solar sau sală de fitness timp de 2–3 zile",
+                "evită expunerea directă la soare și temperaturile extreme",
+                "aplică comprese reci dacă apare o ușoară roșeață sau inflamație locală",
+                "hidratează-te corespunzător și folosește creme calmante, dacă este necesar",
+                "respectă vizita de control recomandată de medic, pentru a evalua evoluția rezultatului"
+              ]
             },
             {
               "t": "p",
@@ -5063,20 +4809,13 @@
               "x": "Liftingul Nefertiti este recomandat atunci când simți că pielea din zona feței inferioare începe să își piardă fermitatea sau când conturul mandibular nu mai este la fel de definit ca înainte. Este o procedură potrivită dacă te confrunți cu:"
             },
             {
-              "t": "p",
-              "x": "laxitate ușoară sau moderată a pielii;"
-            },
-            {
-              "t": "p",
-              "x": "riduri verticale pe gât (benzi platismale);"
-            },
-            {
-              "t": "p",
-              "x": "„căderea” liniei maxilarului;"
-            },
-            {
-              "t": "p",
-              "x": "primele semne de îmbătrânire în partea inferioară a feței."
+              "t": "ul",
+              "items": [
+                "laxitate ușoară sau moderată a pielii",
+                "riduri verticale pe gât (benzi platismale)",
+                "„căderea” liniei maxilarului",
+                "primele semne de îmbătrânire în partea inferioară a feței"
+              ]
             },
             {
               "t": "p",

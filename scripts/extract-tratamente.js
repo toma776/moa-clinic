@@ -67,7 +67,19 @@ function blocksOf(seg) {
     const prev = merged[merged.length - 1];
     if (b.t === 'ul' && prev?.t === 'ul') prev.items.push(...b.items); else merged.push(b);
   }
-  return merged;
+  // liste scrise ca paragrafe: ≥ 2 paragrafe scurte la rând terminate cu „;” (ultimul poate avea „.”) → listă
+  const res = [];
+  for (let i = 0; i < merged.length; i++) {
+    const isItem = (b, last) => b?.t === 'p' && b.x.length <= 220 && (last ? /[;.]$/ : /;$/).test(b.x);
+    if (isItem(merged[i]) && isItem(merged[i + 1], true)) {
+      const items = [];
+      while (isItem(merged[i])) items.push(clean(merged[i++].x));
+      if (isItem(merged[i], true)) items.push(clean(merged[i++].x.replace(/\.$/, '')));
+      i--; res.push({ t: 'ul', items }); continue;
+    }
+    res.push(merged[i]);
+  }
+  return res;
 }
 
 function parse(html, s) {
@@ -103,6 +115,38 @@ function parse(html, s) {
   return { id: s.id, url: s.url, h1, hero: hero?.src || null, sectiuni, faq, galerie, linkuri_tratamente: [...links] };
 }
 
+// Corecturi pe textul paginilor vechi (greșeli de tastare, paragrafe copiate greșit de pe altă pagină).
+// [căutare, înlocuire] se aplică în tot textul tratamentului; [căutare, null] scoate blocul (paragraf / element de listă) care o conține.
+// Rămân aplicate la fiecare sincronizare; de semnalat clinicii, ca să le corecteze și pe site-ul actual.
+const CORECTURI = {
+  microneedeling: [
+    ['A plicarea', 'Aplicarea'],
+    ['acid h ialuronic', 'acid hialuronic'],
+    ['dipozitivului', 'dispozitivului'],
+    ['efec tele', 'efectele'],
+    ['mai redusă , datorită', 'mai redusă, datorită'],
+    ['Ingrijirea pielii', 'Îngrijirea pielii'],
+    ['în primele zile este un proces normal', 'în primele zile; este un proces normal'],
+    ['Mărirea buzelor cu acid hialuronic este recomandată', null], // paragraf copiat din pagina de augmentare a buzelor
+  ],
+};
+function corecteaza(t) {
+  const list = CORECTURI[t.id];
+  if (!list) return { t, n: 0 };
+  let n = 0;
+  const fix = (x) => list.reduce((s, [a, b]) => (b != null && s.includes(a) ? (n++, s.split(a).join(b)) : s), x);
+  const drop = (x) => list.some(([a, b]) => b == null && String(x).includes(a));
+  const blocks = (bl) => bl.filter((b) => !(b.x && drop(b.x) && ++n)).map((b) => ({
+    ...b,
+    ...(b.x ? { x: fix(b.x) } : {}),
+    ...(b.items ? { items: b.items.filter((i) => !(typeof i === 'string' && drop(i) && ++n)).map((i) => (typeof i === 'string' ? fix(i) : { titlu: fix(i.titlu), text: fix(i.text) })) } : {}),
+    ...(b.rows ? { rows: b.rows.map(fix) } : {}),
+  }));
+  t.sectiuni = t.sectiuni.map((s) => ({ ...s, titlu: fix(s.titlu), blocuri: blocks(s.blocuri) }));
+  t.faq = t.faq.map((q) => ({ q: fix(q.q), blocuri: blocks(q.blocuri) }));
+  return { t, n };
+}
+
 // imaginile se servesc local, din aceeași cale ca pe site
 async function localImg(src) {
   if (!src || !src.startsWith(ORIGIN + '/wp-content/')) return src;
@@ -121,7 +165,8 @@ async function localImg(src) {
   const list = D.servicii.filter((s) => s.url?.startsWith(ORIGIN) && s.status === 200 && (!only || only.includes(s.id)));
   for (const s of list) {
     try {
-      const t = parse(await get(s.url), s);
+      const { t, n: nFix } = corecteaza(parse(await get(s.url), s));
+      if (nFix) console.log(`    corecturi aplicate: ${nFix}`);
       t.hero = await localImg(t.hero);
       for (const g of t.galerie) g.src = await localImg(g.src);
       out.tratamente[s.id] = t;

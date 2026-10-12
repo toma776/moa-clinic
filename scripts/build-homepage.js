@@ -880,7 +880,8 @@ for (const id of TR_PAGINI) {
   // „pentru cine”: zonele (sau lista de indicații) devin carduri; primul paragraf e textul de deschidere, restul la „Citește mai mult”
   const zoneItems = lists('zone');
   const whoItems = zoneItems.length ? zoneItems : lists('indicatii');
-  const whoLede = paras('indicatii')[0] || paras('zone')[0] || '';
+  const notIntro = (p) => !(/:$/.test(p) && p.length < 90); // „Este indicată atunci când:” doar introduce o listă
+  const whoLede = paras('indicatii').find(notIntro) || paras('zone').find(notIntro) || '';
   let whoUlUsed = false;
   const whoMore = [...B('indicatii'), ...B('zone')].filter((b) => {
     if (b.t === 'p') return b.x !== whoLede && !colon(b);
