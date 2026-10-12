@@ -1,5 +1,5 @@
 // Server local fără dependențe.
-//   /                         -> copia homepage-ului (site/index.html)
+//   /                         -> site-ul nou (nou/index.html); /vechi/ -> copia homepage-ului vechi (site/index.html)
 //   /manage[/...]             -> panoul de administrare (manage/index.html): dashboard, brand, entități, legături, leads, pages, site health
 //   GET  /api/entitati        -> data/entitati.json
 //   GET  /api/pages           -> data/pages.json (generat de npm run crawl)
@@ -176,8 +176,11 @@ http.createServer(async (req, res) => {
     }
     if (url.startsWith('/manage/assets/')) return sendFile(res, safe(path.join(ROOT, 'manage', 'assets'), url.slice('/manage/assets/'.length)) || '');
     if (url === '/manage' || url.startsWith('/manage/')) return sendFile(res, path.join(ROOT, 'manage', 'index.html'));
+    // „/” deschide site-ul nou; copia site-ului vechi rămâne la /vechi/
+    if (url === '/') return sendFile(res, path.join(ROOT, 'nou', 'index.html'));
+    if (url === '/vechi' || url === '/vechi/') return sendFile(res, path.join(ROOT, 'site', 'index.html'));
     const site = path.join(ROOT, 'site');
-    const file = safe(site, url === '/' ? 'index.html' : url);
+    const file = safe(site, url);
     sendFile(res, file && fs.existsSync(file) && fs.statSync(file).isDirectory() ? path.join(file, 'index.html') : file || '');
   } catch (e) {
     sendJson(res, 500, { error: e.message });

@@ -10,7 +10,7 @@ Fără dependențe, doar Node.js 18+.
 npm start
 ```
 
-- `http://localhost:3100/` – homepage-ul copiat (HTML + CSS/JS/imagini/fonturi în `site/`)
+- `http://localhost:3100/` – site-ul nou (același conținut ca `/nou/`); `http://localhost:3100/vechi/` – homepage-ul copiat de pe site-ul actual (HTML + CSS/JS/imagini/fonturi în `site/`)
 - `http://localhost:3100/nou/medici/adrian-stanescu/` – pagina de profil Dr. Adrian Stănescu (din `npm run profiles` + `npm run homepage`)
 - `http://localhost:3100/nou/video/` – toate cele 13 video-uri din cabinet (versiunile pentru mobil + poster), cu filtru pe categorii și link spre tratament; pe homepage, secțiunea „În cabinet” are 4
 - `http://localhost:3100/nou/preturi/` – lista de prețuri: ofertele lunii (clicabile, cu programarea preselectată), căutare, categorii în ordinea drumului pacientului, fiecare preț legat de pagina tratamentului (căutarea: `nou/preturi.js`)
