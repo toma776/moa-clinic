@@ -58,6 +58,10 @@
       "destination": "/nou/blog/index.html"
     },
     {
+      "source": "/nou/glutation-beneficii-si-contraindicatii-ce-este",
+      "destination": "/nou/glutation-beneficii-si-contraindicatii-ce-este/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },

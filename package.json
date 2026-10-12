@@ -17,7 +17,8 @@
     "profiles": "node scripts/extract-profiles.js",
     "video": "node scripts/build-video.js",
     "tratamente": "node scripts/extract-tratamente.js",
-    "blog-media": "node scripts/blog-media.js"
+    "blog-media": "node scripts/blog-media.js",
+    "articole": "node scripts/extract-articole.js"
   },
   "engines": {
     "node": ">=18"
