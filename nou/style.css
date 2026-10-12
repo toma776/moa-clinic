@@ -992,3 +992,10 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .vp-card h3 { font-size: 20px; line-height: 1.2; margin-top: -4px; }
 @media (max-width: 760px) { .vp-grid { grid-template-columns: 1fr 1fr; gap: 20px 12px; } .vp-card.wide { grid-column: 1 / -1; } .vp-card h3 { font-size: 17px; } .vp-card p { font-size: 13px; } .vp-filter { flex-wrap: nowrap; } }
 @media (max-width: 760px) { .inroom .v-grid { grid-template-columns: none; grid-auto-columns: 62%; } }
+
+/* video-urile pe paginile de tratament */
+.tr-videos { margin-top: clamp(30px, 4vw, 48px); }
+.tr-vh { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+.tr-vgrid { grid-template-columns: repeat(auto-fill, minmax(200px, 240px)); }
+.tr-vgrid .vp-card.wide { grid-column: span 2; }
+@media (max-width: 760px) { .tr-vgrid { grid-template-columns: 1fr 1fr; } .tr-vgrid .vp-card.wide { grid-column: 1 / -1; } }

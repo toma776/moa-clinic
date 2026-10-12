@@ -915,7 +915,12 @@ for (const id of TR_PAGINI) {
   if (!steps.length && pasiBl.filter((b) => b.t === 'h3').length >= 2) {
     pasiBl.forEach((b, i) => { if (b.t !== 'h3') return; const txt = []; for (let j = i + 1; j < pasiBl.length && pasiBl[j].t !== 'h3'; j++) txt.push(flat(pasiBl[j])); steps.push({ titlu: b.x.replace(/:$/, ''), text: txt.join(' ') }); });
   }
-  if (!steps.length) { const ul = pasiBl.find((b) => b.t === 'ul' && b.items.length >= 2 && b.items.every((x) => /^[^:]{3,60}:\s/.test(x) || x.length <= 60)); if (ul) steps = ul.items.map((x) => { const m = x.match(/^([^:]{3,60}):\s*(.+)$/); return m ? { titlu: m[1], text: m[2] } : { titlu: x, text: '' }; }); }
+  // dintr-o listă: „Titlu – text”, „Titlu: text” sau „Titlu. Text” (titlu scurt); o listă de fraze întregi rămâne listă
+  const splitStep = (x) => { const m = x.match(/^(.{3,60}?)(?:\s+[–-]\s+|:\s+|\.\s+)(.+)$/); return m ? { titlu: m[1].replace(/\s+/g, ' ').trim(), text: cap(m[2].trim()) } : x.length <= 60 ? { titlu: x, text: '' } : null; };
+  if (!steps.length) {
+    const ul = pasiBl.find((b) => b.t === 'ul' && b.items.length >= 2 && b.items.filter((x) => splitStep(x)).length >= Math.ceil(b.items.length * 0.5));
+    if (ul) steps = ul.items.map((x) => splitStep(x) || { titlu: '', text: x });
+  }
   const firstStruct = pasiBl.findIndex((b) => b.t !== 'p');
   const stepsLede = (firstStruct > 0 ? pasiBl.slice(0, firstStruct) : pasiBl.slice(0, 1)).find((b) => b.t === 'p' && !colon(b))?.x || '';
   // paragrafele din „cum decurge” care nu au intrat în pași (durata ședinței, recuperarea…) se afișează sub pași
@@ -963,8 +968,11 @@ for (const id of TR_PAGINI) {
   const titleHtml = /\(([^)]+)\)$/.test(nod.nume) ? `${esc(nod.nume.replace(/\s*\([^)]+\)$/, ''))} <em>${esc(nod.nume.match(/\(([^)]+)\)$/)[1])}</em>` : esc(nod.nume);
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
   const urmeaza = consult ? [...trNode.entries()].filter(([x, l]) => !l.consult && (serv[x].medici || []).some((n) => (s.medici || []).includes(n))).map(([x]) => serv[x]).slice(0, 9) : [];
+  const tVids = VID_ALL.filter((v) => v.pagini.some((p) => p.serviciu === id));
+  const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
+  const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
-    (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], t.galerie.length && ['#rezultate', 'Rezultate'],
+    (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], t.galerie.length && ['#rezultate', 'Rezultate'],
     (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], consult && medici.length && ['#medici', 'Cu cine'], consult && urmeaza.length && ['#ce-urmeaza', 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
@@ -1018,12 +1026,20 @@ ${howBl.length || benefits.length ? `<section class="sec" style="background:var(
   </div>
 </section>` : ''}
 
+${tVids.length && !steps.length ? `<section class="sec" id="video">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">În cabinet</span><h2 style="margin-top:18px">Vezi cum <em>decurge</em></h2></div><p class="lede">${tVids.length === 1 ? 'Un video scurt' : `${tVids.length} video-uri scurte`} din cabinetul MOA.</p></div>
+    <div class="vp-grid tr-vgrid">${vidCards}</div>
+  </div>
+</section>` : ''}
+
 ${info.map((x) => `<section class="sec"><div class="wrap pf-two"><div class="rv"><h2 class="pf-h2">${esc(x.titlu)}</h2><div class="pf-prose">${trBlocks(x.blocuri)}</div></div></div></section>`).join('')}
 
 ${steps.length ? `<section class="sec" id="cum-decurge">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2 style="margin-top:18px">Cum decurge <em>${consult ? 'consultația' : 'o ședință'}</em></h2></div>${stepsLede ? `<p class="lede">${esc(stepsLede)}</p>` : ''}</div>
-    <ol class="tr-steps">${steps.map((x) => `<li><b>${esc(cap(x.titlu.replace(/[;.]$/, '')))}</b>${x.text ? `<p>${esc(x.text)}</p>` : ''}</li>`).join('')}</ol>
+    <ol class="tr-steps">${steps.map((x) => `<li>${x.titlu ? `<b>${esc(cap(x.titlu.replace(/[;.]$/, '')))}</b>` : ''}${x.text ? `<p>${esc(x.text)}</p>` : ''}</li>`).join('')}</ol>
+    ${vidBlock}
     ${stepsAfter.length ? `<div class="pf-prose tr-after">${trBlocks(stepsAfter)}</div>` : ''}
   </div>
 </section>` : ''}
@@ -1127,7 +1143,7 @@ ${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', ...nod.url.split('/').filter(Boolean));
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), page);
-  console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
+  console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${tVids.length} video · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
 }
 
 // ---------- pagina-hub /nou/consultatii/: cele patru consultații, cu medicul, prețul și ce urmează ----------
