@@ -781,7 +781,7 @@ ${pr.citat ? `<section class="pf-quote"><div class="wrap"><blockquote>„${esc(p
 <section class="sec">
   <div class="wrap pf-two">
     <div class="rv"><span class="eyebrow">În cuvintele lui</span><h2 class="pf-h2">Povestea</h2>
-      <div class="pf-prose">${[...pr.biografie, ...(pr.formare || []), ...(pr.viziune || []).slice(0, 3)].map((t) => `<p>${esc(t)}</p>`).join('')}</div></div>
+      ${(() => { const ps = [...pr.biografie, ...(pr.formare || []), ...(pr.viziune || []).slice(0, 3)]; return `<div class="pf-prose">${ps.slice(0, 3).map((t) => `<p>${esc(t)}</p>`).join('')}${ps.length > 3 ? `<details class="tr-read"><summary>Citește toată povestea</summary>${ps.slice(3).map((t) => `<p>${esc(t)}</p>`).join('')}</details>` : ''}</div>`; })()}</div>
     <aside class="pf-side rv">
       <h3>Domenii de expertiză</h3>${list(pr.expertiza)}
       ${pr.rol_moa?.length ? `<h3>Rolul în MOA</h3>${list(pr.rol_moa)}` : ''}
@@ -793,14 +793,14 @@ ${pr.citat ? `<section class="pf-quote"><div class="wrap"><blockquote>„${esc(p
 ${servP.length ? `<section class="sec" style="background:var(--cream)">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">La MOA</span><h2 style="margin-top:22px">Tratamente din <em>specialitatea lui</em></h2></div><p class="lede">Serviciile clinicii pe care le coordonează, cu prețul de pornire din lista de prețuri.</p></div>
-    <div class="mm-grid pf-serv">${servP.map((s) => `<a class="mm-card" href="${esc(live(s.id))}"><b>${esc(prettyName(s.nume))}</b><span>${esc(prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
+    <div class="mm-grid pf-serv">${servP.map((s) => `<a class="mm-card" href="${esc(live(s.id))}"><b>${esc(trNode.get(s.id)?.nod.nume || prettyName(s.nume))}</b><span>${esc(trNode.get(s.id)?.cat.nume || prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
   </div>
 </section>` : ''}
 
 <section class="sec">
-  <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">Parcurs</span><h2>Formare și <em>experiență</em></h2></div>
-    <ol class="pf-timeline">${timeline.map((t) => `<li class="rv"><span class="pf-per">${esc(t.per || '')}</span><div><small>${esc(t.tip)}</small><p>${esc(t.text)}</p></div></li>`).join('')}</ol>
+  <div class="wrap pf-tl">
+    <div class="sec-head rv pf-tl-h"><span class="eyebrow">Parcurs</span><h2>Formare și <em>experiență</em></h2><p class="cs-sub">${timeline.length} repere, de la cel mai recent.</p></div>
+    <div><ol class="pf-timeline">${timeline.map((t, i) => `<li class="rv${i >= 6 ? ' pf-more' : ''}"><span class="pf-per">${esc(t.per || '')}</span><div><small>${esc(t.tip)}</small><p>${esc(t.text)}</p></div></li>`).join('')}</ol>${timeline.length > 6 ? `<button type="button" class="pf-tl-all" onclick="this.closest('.pf-tl').classList.add('open');this.remove()">Vezi tot parcursul (${timeline.length}) +</button>` : ''}</div>
   </div>
 </section>
 
@@ -1392,7 +1392,7 @@ ${TOP}<main>
     <div class="team-filter vp-filter" role="tablist" aria-label="Filtrează după categorie"><button type="button" class="on" data-vcat="">Toate · ${vids.length}</button>${cats.map((c) => `<button type="button" data-vcat="${esc(c)}">${esc(cap(c.replace(/^Tratamente /, '').replace(/^cu /, '')))} · ${vids.filter((x) => x.cat === c).length}</button>`).join('')}</div>
     <h2 class="sr">Toate video-urile</h2>
     <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
-      <small class="vp-cat">${esc(cat)}</small><h3>${esc(vTitle(v))}</h3>${nume ? `<p>${href ? `<a href="${esc(href)}">${esc(nume)} →</a>` : esc(nume)}</p>` : ''}</div>`).join('')}</div>
+      <small class="vp-cat">${esc(cap(cat.replace(/^Tratamente (cu )?/, '')))}</small><h3>${esc(vTitle(v))}</h3>${nume ? `<p>${href ? `<a href="${esc(href)}">${esc(nume)} →</a>` : esc(nume)}</p>` : ''}</div>`).join('')}</div>
   </div>
 </section>
 

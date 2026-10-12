@@ -1122,3 +1122,32 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   .cs-two { grid-template-columns: 1fr; gap: 40px; }
   .cs-nextgrid > .mm-card { flex-basis: 100%; }
 }
+
+/* =====================================================================
+   Audit profil + video
+   ===================================================================== */
+/* cronologia: punctul nu mai acoperă anii; titlul în stânga, reperele în dreapta */
+.pf-per { padding-right: 34px; }
+.pf-tl { display: grid; grid-template-columns: minmax(0, .32fr) minmax(0, .68fr); gap: 0 56px; align-items: start; }
+.pf-tl-h { position: sticky; top: calc(var(--hd-h, 0px) + 80px); margin-bottom: 0; }
+.pf-tl .pf-timeline p { max-width: none; }
+.pf-tl-all { display: none; }
+/* tratamentele din specialitate: rândurile se umplu */
+.pf-serv { display: flex; flex-wrap: wrap; gap: 8px; }
+.pf-serv > .mm-card { flex: 1 1 240px; }
+/* video: Venus Viva (orizontal) pe 3 coloane, ca rândurile să se închidă exact */
+@media (min-width: 1101px) { .vp-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-flow: row dense; } .vp-card.wide { grid-column: span 3; } }
+@media (max-width: 760px) {
+  .pf-tl { grid-template-columns: 1fr; }
+  .pf-tl-h { position: static; margin-bottom: 18px; }
+  .pf-tl:not(.open) .pf-more { display: none; }
+  .pf-tl-all { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; background: none; border: 0; padding: 0; cursor: pointer; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  /* portretul din hero: mai mare, pe toată lățimea */
+  .pf-hero:not(.tr-hero) .pf-photo .frame { width: 100%; aspect-ratio: 4 / 3; margin-left: 0; }
+  .pf-hero:not(.tr-hero) .pf-photo .frame::before { display: none; }
+  .pf-hero:not(.tr-hero) .pf-photo img { object-position: 50% 20%; }
+  /* articolele: carusel */
+  #articole .o-grid { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -16px; padding-right: 16px; scrollbar-width: none; gap: 12px; }
+  #articole .o-grid::-webkit-scrollbar { display: none; }
+  #articole .o-card { scroll-snap-align: start; padding: 24px 20px; }
+}
