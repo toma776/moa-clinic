@@ -571,3 +571,47 @@ header.site.hide { transform: translateY(-100%); }
 .space dl { gap: 0 28px; align-items: center; }
 
 @media (max-width: 760px) { .proto { white-space: nowrap; max-width: calc(100% - 24px); } }
+
+/* =====================================================================
+   Hero mobil: imaginea sub text, portretul fondatorului, glisare (A + C + E)
+   Desktop: .hero-top nu există vizual (display: contents), ordinea rămâne titlu → text → butoane
+   ===================================================================== */
+.hero-top { display: contents; }
+.hero-copy > .lede { order: 3; }
+.hero-top .hero-cta { order: 4; }
+.hero-proof { order: 5; }
+.doc-chip { display: none; }
+@media (max-width: 760px) {
+  /* A – imaginea din hero, cu textul peste ea; o bandă de imagine de ~190px deasupra textului */
+  .hero-top { display: grid; gap: 16px; }
+  .hero-grid { gap: 0; padding: 0 0 40px; }
+  .hero-copy { display: contents; }
+  .hero-media { grid-row: 1; grid-column: 1; max-width: none; margin: 0 -16px; }
+  .hero-top { grid-row: 1; grid-column: 1; align-self: end; z-index: 5; padding: 190px 4px 22px; color: #fff; }
+  .hero-copy > .lede { grid-row: 2; margin-top: 30px; }
+  .hero-proof { grid-row: 3; margin-top: 24px; }
+  .hero-grid { align-items: stretch; }
+  .hero-media .frame { aspect-ratio: auto; height: 100%; }
+  .hero-media .frame::before, .hero-badge2, .hs-dots, .hs-nav { display: none; }
+  .hs-track::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(0deg, rgba(14, 13, 12, .9) 0%, rgba(14, 13, 12, .7) 50%, rgba(14, 13, 12, .3) 70%, rgba(14, 13, 12, 0) 86%), linear-gradient(180deg, rgba(14, 13, 12, .38), rgba(14, 13, 12, 0) 22%); }
+  /* E – fără săgeți: se glisează; eticheta camerei sus, discret */
+  .hs-bar { top: 0; bottom: auto; padding: 16px 20px; background: none; gap: 10px; }
+  .hs-label { flex: none; font-size: 15px; }
+  .hs-count { margin-left: auto; }
+  .hero-top .eyebrow { color: #e9d8b8; font-size: 11px; letter-spacing: .22em; }
+  .hero-top .eyebrow::before { background: #e9d8b8; }
+  .hero-top h1 { color: #fff; font-size: clamp(38px, 10.6vw, 46px); line-height: 1.04; text-shadow: 0 2px 24px rgba(0, 0, 0, .25); }
+  .hero-top h1 em { color: #e9d8b8; }
+  /* C – portretul și titlul fondatorului */
+  .doc-chip { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; min-height: 44px; }
+  .doc-chip img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; border: 1px solid rgba(233, 216, 184, .8); flex: none; }
+  .doc-chip span { display: grid; gap: 2px; font-size: 13px; color: rgba(255, 255, 255, .82); letter-spacing: .02em; }
+  .doc-chip b { font: 500 17px/1.15 var(--serif); color: #fff; letter-spacing: 0; }
+  .hero-top .hero-cta { gap: 10px; margin-top: 4px; }
+  .hero-top .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+  .hero-top .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-top .btn-line { align-self: center; border: 0; background: none; color: #fff; padding: 0 8px; min-height: 44px; text-decoration: underline; text-decoration-color: #e9d8b8; text-underline-offset: 6px; }
+  .hero-top .eyebrow { line-height: 1.5; text-shadow: 0 1px 10px rgba(0, 0, 0, .55); }
+  .hero-top .eyebrow::before { display: none; }
+}

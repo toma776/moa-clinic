@@ -232,13 +232,16 @@ ${mobileNav}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
+      <div class="hero-top">
       <span class="eyebrow">MOA Regenerative by Oxxygene · București</span>
       <h1>Frumusețea vine din interior. <em>Și se desăvârșește aici.</em></h1>
-      <p class="lede">Prima clinică Global Antiaging din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar gerontolog format la școala Ana Aslan.</p>
+      <a class="doc-chip" href="/nou/medici/adrian-stanescu/"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="" width="48" height="48" loading="lazy"><span><b>Dr. Adrian Stănescu</b>medic primar gerontolog · fondator</span></a>
       <div class="hero-cta">
         <a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>
         <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
       </div>
+      </div>
+      <p class="lede">Prima clinică Global Antiaging din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar gerontolog format la școala Ana Aslan.</p>
       <div class="hero-proof">
         <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
         <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
