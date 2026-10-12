@@ -42,6 +42,10 @@
       "destination": "/nou/consultatii/:id/index.html"
     },
     {
+      "source": "/nou/preturi",
+      "destination": "/nou/preturi/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },

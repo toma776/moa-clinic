@@ -12,6 +12,7 @@ npm start
 
 - `http://localhost:3100/` – homepage-ul copiat (HTML + CSS/JS/imagini/fonturi în `site/`)
 - `http://localhost:3100/nou/medici/adrian-stanescu/` – pagina de profil Dr. Adrian Stănescu (din `npm run profiles` + `npm run homepage`)
+- `http://localhost:3100/nou/preturi/` – lista de prețuri: ofertele lunii (clicabile, cu programarea preselectată), căutare, categorii în ordinea drumului pacientului, fiecare preț legat de pagina tratamentului (căutarea: `nou/preturi.js`)
 - `http://localhost:3100/nou/consultatii/` – consultațiile: pagina-hub + cele 4 pagini (antiaging, dermatologie, chirurgie plastică, nutriție), din același șablon ca tratamentele, cu medicii specialității și „ce poate urma”
 - `http://localhost:3100/nou/tratamente/<categorie>/<tratament>/` – cele 31 de pagini de tratament (ex. `/nou/tratamente/injectabile/botox/`), din `npm run tratamente` + `npm run homepage`
 - `http://localhost:3100/nou/` – propunerea de homepage nou (premium), generată din date (`npm run homepage`); formularul trimite lead-uri în panou

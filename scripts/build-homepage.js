@@ -28,6 +28,7 @@ for (const n of consHub?.copii || []) {
 }
 const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile noi care există deja ca pagini
 if (consHub) NOU.add(consHub.url);
+NOU.add('/preturi/');
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
@@ -107,6 +108,16 @@ const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'nutrigenetica-ep
 const offers = D.oferte.filter((o) => o.pret && o.pretInitial).sort((a, b) => b.discountProcent - a.discountProcent).slice(0, 3);
 // eticheta grupului de oferte, curățată: „Oferte Epilare Definitiva SplendorX” → „Epilare definitivă Splendor X”
 const offerGroup = (g) => String(g).replace(/^Oferte\s+/i, '').replace(/Definitiva/i, 'definitivă').replace(/SplendorX/i, 'Splendor X');
+// numele ofertelor din lista clinicii: cuvintele scrise integral cu majuscule devin litere mici (fără acronime), diacriticele lipsă se completează
+const OFF_ACR = /^(NAD\+?|PRP|TMS|DNA|IV)$/;
+const OFF_DIACR = { toxina: 'toxină', botulinica: 'botulinică', fiola: 'fiolă', superioara: 'superioară', sedinta: 'ședință', sedinte: 'ședințe', penis: 'peniană', therapy: 'therapy' };
+const offerLabel = (x) => {
+  if (!x) return '';
+  let t = String(x).split(/(\s+)/).map((w) => (/[A-ZĂÂÎȘȚ]{2,}/.test(w) && w === w.toUpperCase() && !OFF_ACR.test(w) ? w.toLowerCase() : w)).join('');
+  t = t.replace(/\b([a-zăâîșț]+)\b/gi, (w) => { const k = w.toLowerCase(); if (!OFF_DIACR[k]) return w; const r = OFF_DIACR[k]; return w[0] === w[0].toUpperCase() ? r[0].toUpperCase() + r.slice(1) : r; });
+  t = t.replace(/\bml\b/gi, 'mL').replace(/\s*\|\s*/g, ' · ');
+  return t.charAt(0).toUpperCase() + t.slice(1);
+};
 const reviews = D.dovezi.testimoniale.filter((r) => r.citat.length > 40).slice(0, 4);
 const nReviews = D.reputatie.trustindex?.recenzii || '';
 const legal = D.legal.firme;
@@ -871,7 +882,7 @@ for (const id of TR_PAGINI) {
   // numele ofertei, cu diacritice: numele tratamentului + ce precizează oferta (ex. „3 zone”)
   const offerZone = offer && offer.nume.match(/\d+\s*zon\w*/i);
   // textul cu care oferta ajunge în formular (și în lead): „Oferta lunii: Toxină botulinică · 3 zone – 1.099 lei”
-  const offerName = offer && (offerZone ? `${nod.nume.replace(/\s*\(.*\)$/, '')} · ${offerZone[0].toLowerCase()}` : cap(offer.nume.toLowerCase()));
+  const offerName = offer && (offerZone ? `${nod.nume.replace(/\s*\(.*\)$/, '')} · ${offerZone[0].toLowerCase()}` : offerLabel(offer.nume));
   const offerSrv = offer ? `Oferta lunii: ${offerName} – ${lei(offer.pret)}` : '';
   const facts = [
     pret && { v: lei(pret), l: consult ? 'consultația' : 'de la, pe zonă' },
@@ -1170,4 +1181,106 @@ ${BOOK}${BOTTOM}`;
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), page);
   console.log(`Hub: nou/consultatii/ · ${cons.length} consultații`);
+}
+
+// ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------
+{
+  const PR_GRUPURI = [
+    ['Consultații', [['CONSULTAȚII', 'Consultații']]],
+    ['Injectabile', [['INJECTĂRI TOXINĂ BOTULINICĂ', 'Toxină botulinică (Botox)'], ['INJECTĂRI ACID HIALURONIC', 'Acid hialuronic'], ['REJUVENARE FACIALĂ', 'Rejuvenare facială'], ['TRATAMENT REVITALIZARE PĂR', 'Revitalizare păr']]],
+    ['Aparatură', [['TRATAMENTE ESTETICE VENUS VIVA', 'Venus Viva'], ['LIFTING FACIAL NON INVAZIV VENUS LEGACY', 'Venus Legacy – lifting facial'], ['TRATAMENTE CORPORALE VENUS LEGACY', 'Venus Legacy – corp'], ['EPILARE DEFINITIVA CU SPLENDOR X FEMEI', 'Epilare Splendor X – femei'], ['EPILARE DEFINITIVA CU SPLENDOR X BARBATI', 'Epilare Splendor X – bărbați']]],
+    ['Cosmetică & dermatologie', [['TRATAMENTE COSMETOLOGICE', 'Tratamente cosmetologice'], ['PEELING', 'Peeling'], ['DERMATOLOGIE', 'Dermatologie']]],
+    ['Chirurgie', [['MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ', 'Microchirurgie și chirurgie plastică'], ['ANALIZĂ ANATOMIE PATOLOGICĂ', 'Analize de anatomie patologică']]],
+    ['Regenerare', [['TERAPII INTRAVENOASE', 'Terapii intravenoase'], ['OZONOTERAPIE', 'Ozonoterapie'], ['TMS – Stimulare Magnetică Transcraniană', 'TMS – stimulare magnetică transcraniană'], ['TERAPIA VIELIGHT', 'Terapia Vielight']]],
+  ];
+  const slugPr = (x) => norm(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // fiecare rând de preț → serviciul (și pagina nouă) căruia îi aparține
+  const rowServ = new Map();
+  for (const sv of D.servicii) for (const p of sv.preturi || []) rowServ.set(`${p.categorie}|${p.nume}`, sv.id);
+  const known = new Set(PR_GRUPURI.flatMap(([, cs]) => cs.map(([c]) => c)));
+  const extra = D.preturi.filter((c) => !known.has(c.categorie)).map((c) => [c.categorie, cap(c.categorie.toLowerCase())]);
+  if (extra.length) PR_GRUPURI.push(['Altele', extra]);
+  const catOf = new Map(D.preturi.map((c) => [c.categorie, c]));
+  const priceCell = (p) => `<span class="pr-p">${p.tip && p.tip !== 'preț' ? `<small>${esc(cap(p.tip))}</small>` : ''}${p.valoare != null ? `<b>${lei(p.valoare)}</b>` : `<b>${esc(p.text)}</b>`}${p.pretInitial ? `<s>${lei(p.pretInitial)}</s>` : ''}</span>`;
+  let nRows = 0;
+  const catHtml = PR_GRUPURI.map(([grup, cs]) => cs.filter(([c]) => catOf.has(c)).map(([c, nume]) => {
+    const cat = catOf.get(c);
+    const ids = cat.servicii.map((x) => rowServ.get(`${c}|${x.nume}`)).filter(Boolean);
+    const top = ids.sort((a, b) => ids.filter((x) => x === b).length - ids.filter((x) => x === a).length)[0];
+    const topHref = top && live(top).startsWith('/nou') ? live(top) : null;
+    let lastSub = null;
+    const rows = cat.servicii.map((x) => {
+      nRows++;
+      const id = rowServ.get(`${c}|${x.nume}`);
+      const href = id && live(id).startsWith('/nou') && id !== top ? live(id) : null;
+      const sub = x.subgrup && x.subgrup !== lastSub ? `<h4 class="pr-sub">${esc(cap(x.subgrup.toLowerCase()))}</h4>` : '';
+      lastSub = x.subgrup || lastSub;
+      return `${sub}<div class="pr-row"><span class="pr-n">${href ? `<a href="${esc(href)}">${esc(x.nume)}</a>` : esc(x.nume)}</span><span class="pr-ps">${(x.preturi || []).map(priceCell).join('')}</span></div>`;
+    }).join('');
+    return `<section class="pr-cat" id="${slugPr(nume)}" data-nume="${esc(nume)} ${esc(grup)}">
+      <div class="pr-cat-h"><div><small>${esc(grup)}</small><h2>${esc(nume)}</h2></div>${c === 'CONSULTAȚII' && consHub ? '<a class="link-u" href="/nou/consultatii/">Toate consultațiile →</a>' : topHref ? `<a class="link-u" href="${esc(topHref)}">Despre tratament →</a>` : ''}</div>
+      <div class="pr-rows">${rows}</div>
+    </section>`;
+  }).join('')).join('');
+  const offGroups = [...new Set(D.oferte.map((o) => o.grup))];
+  const offName = (o) => offerLabel(o.nume);
+  const offHtml = D.oferte.length ? `<section class="sec pr-offers" id="oferte" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Oferte</span><h2 style="margin-top:18px">Ofertele <em>lunii</em></h2></div><p class="lede">${D.oferte.length} oferte active. Alege una și te sunăm noi pentru programare.</p></div>
+    ${offGroups.map((g) => `<h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3><div class="pr-ogrid">${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-off" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span><i>Programează-te →</i></a>`).join('')}</div>`).join('')}
+  </div>
+</section>` : '';
+  const pageUrl = ORIGIN + '/preturi/';
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'WebPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Prețuri | MOA Clinic', inLanguage: 'ro-RO', mainEntity: { '@id': pageUrl + '#catalog' } },
+      { '@type': 'OfferCatalog', '@id': pageUrl + '#catalog', name: 'Lista de prețuri MOA Clinic', itemListElement: D.preturi.map((c) => ({ '@type': 'OfferCatalog', name: c.categorie, itemListElement: c.servicii.filter((x) => x.preturi?.[0]?.valoare != null).map((x) => ({ '@type': 'Offer', name: x.nume, price: x.preturi[0].valoare, priceCurrency: 'RON', seller: { '@id': `${ORIGIN}/#organization` } })) })) },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Prețuri', item: pageUrl }] },
+    ],
+  };
+  const tocCats = PR_GRUPURI.flatMap(([, cs]) => cs.filter(([c]) => catOf.has(c)).map(([, nume]) => nume));
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prețuri MOA Clinic București – lista completă | MOA Clinic</title>
+<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} prețuri în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Prețuri</span></nav>
+
+<section class="pr-hero">
+  <div class="wrap">
+    <div class="sec-head split"><div><span class="eyebrow">Prețuri</span><h1 style="margin-top:18px">Lista de <em>prețuri</em></h1></div>
+      <p class="lede">${nRows} de prețuri în ${D.preturi.length} categorii, din lista oficială MOA Clinic. Pentru tratamente, medicul stabilește la consultație zonele, doza și numărul de ședințe.</p></div>
+    <div class="pr-search"><label for="pr-q" class="sr">Caută în prețuri</label><span class="pr-in"><input id="pr-q" type="search" placeholder="Caută un tratament – ex. botox, epilare, NAD" autocomplete="off"><button type="button" id="pr-x" aria-label="Șterge căutarea">✕</button></span><span id="pr-count" aria-live="polite">${nRows} prețuri</span></div>
+  </div>
+</section>
+
+<nav class="tr-toc" aria-label="Categorii de prețuri"><div class="wrap">${D.oferte.length ? '<a href="#oferte">Oferte</a>' : ''}${tocCats.map((n) => `<a href="#${slugPr(n)}">${esc(n)}</a>`).join('')}</div></nav>
+
+${offHtml}
+
+<section class="sec pr-list">
+  <div class="wrap">
+    ${catHtml}
+    <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
+    <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii.</p>
+  </div>
+</section>
+
+${BOOK}
+<script src="/nou/preturi.js" defer></script>
+${BOTTOM}`;
+  fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
+  console.log(`Prețuri: nou/preturi/ · ${nRows} prețuri · ${D.preturi.length} categorii · ${D.oferte.length} oferte`);
 }
