@@ -34,6 +34,14 @@
       "destination": "/nou/tratamente/:cat/:id/index.html"
     },
     {
+      "source": "/nou/consultatii",
+      "destination": "/nou/consultatii/index.html"
+    },
+    {
+      "source": "/nou/consultatii/:id",
+      "destination": "/nou/consultatii/:id/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },

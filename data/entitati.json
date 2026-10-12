@@ -10,7 +10,7 @@
       "page-sitemap.xml",
       "post-sitemap.xml"
     ],
-    "extras_la": "2026-10-09",
+    "extras_la": "2026-10-12",
     "pagini": 102,
     "metoda": "homepage + /preturi/ + /echipa/ + /abonamente/ + toate paginile din sitemap"
   },
@@ -6304,10 +6304,11 @@
       ],
       "medici": [
         "Dr. Adrian Stănescu",
+        "Dr. Florentina Matei",
         "Dr. Irina Amolioaie",
-        "Dr. Doina Caraman",
-        "Dr. Florentina Matei"
+        "Dr. Doina Caraman"
       ],
+      "specialitate": "Gerontologie",
       "video": []
     },
     {
@@ -6329,6 +6330,11 @@
           "nume": "Consultatie chirurgie plastică",
           "categorie": "MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ",
           "valoare": 400
+        },
+        {
+          "nume": "Consultație estetică Medic Primar Chirurgie Plastică",
+          "categorie": "CONSULTAȚII",
+          "valoare": 350
         }
       ],
       "surse": [
@@ -6338,11 +6344,12 @@
         "https://moaclinic.ro/sitemap/"
       ],
       "medici": [
-        "Dr. Adrian Stănescu",
-        "Dr. Irina Amolioaie",
-        "Dr. Doina Caraman",
-        "Dr. Florentina Matei"
+        "Dr. Matei Gheorghiu Branaru",
+        "Dr. Romana Cristina Manescu Obreja",
+        "Dr. Andrei Rugina",
+        "Dr. Vali Dijmarescu"
       ],
+      "specialitate": "Chirurgie plastică",
       "video": []
     },
     {
@@ -6371,11 +6378,6 @@
           "nume": "Consultație estetică Medic Specialist Dermatologie",
           "categorie": "CONSULTAȚII",
           "valoare": 300
-        },
-        {
-          "nume": "Consultație estetică Medic Primar Chirurgie Plastică",
-          "categorie": "CONSULTAȚII",
-          "valoare": 350
         }
       ],
       "surse": [
@@ -6385,11 +6387,9 @@
         "https://moaclinic.ro/sitemap/"
       ],
       "medici": [
-        "Dr. Adrian Stănescu",
-        "Dr. Irina Amolioaie",
-        "Dr. Doina Caraman",
-        "Dr. Florentina Matei"
+        "Dr. Iulia Nedelcu"
       ],
+      "specialitate": "Dermatovenerologie",
       "video": []
     },
     {
@@ -6417,10 +6417,11 @@
       ],
       "medici": [
         "Dr. Adrian Stănescu",
+        "Dr. Florentina Matei",
         "Dr. Irina Amolioaie",
-        "Dr. Doina Caraman",
-        "Dr. Florentina Matei"
+        "Dr. Doina Caraman"
       ],
+      "specialitate": "Gerontologie",
       "video": []
     },
     {

@@ -28,7 +28,7 @@ const home = byPath.get('/');
 // ---------- aliasuri ----------
 const SERVICE_ALIAS = {
   'consultatie-antiaging': ['consultatie antiaging', 'consultatia antiaging', 'consultatie anti-aging'],
-  'consultatie-chirurgie-plastica': ['consultatie chirurgie plastica', 'consultatie de chirurgie plastica'],
+  'consultatie-chirurgie-plastica': ['consultatie chirurgie plastica', 'consultatie de chirurgie plastica', 'consultatie estetica medic primar chirurgie plastica'],
   'consultatie-dermatoestetica-dermatologie': ['consultatie dermatoestetica', 'consultatie dermatologie', 'consultatie estetica'],
   'consultatie-nutritie-antiaging-nutrigenomica': ['nutrigenomic', 'nutritie antiaging'],
   'fotobiomodulare-vielight': ['vielight', 'fotobiomodulare'],
@@ -68,6 +68,7 @@ const PRICE_EXCLUDE = {
   'injectare-botox': /botox like/,
   'injectari-acid-hialuronic': /hialuronidaz|topire/,
   microneedeling: /^masca|^aplicare/,
+  'consultatie-dermatoestetica-dermatologie': /chirurgie plastic/, // consultația estetică cu chirurgul plastic ține de chirurgie plastică
 };
 const lastSeg = (u) => new URL(u).pathname.split('/').filter(Boolean).pop() || '';
 
@@ -133,6 +134,13 @@ for (const s of servicii) {
     surse: pagesWith(s.alias),
   });
   s.medici = D.echipa.filter((p) => p.tip === 'Medic' && (SPEC_SERV[p.specialitate] || []).includes(s.categorie)).map((p) => p.nume);
+  // consultațiile: medicii specialității consultației (nu toată categoria „Consultații” → gerontologie)
+  const CONSULT_SPEC = [[/dermato/, 'Dermatovenerologie'], [/chirurgie/, 'Chirurgie plastică'], [/antiaging|nutritie/, 'Gerontologie']];
+  const cs = s.categorie === 'Consultații' && CONSULT_SPEC.find(([re]) => re.test(s.id));
+  if (cs) {
+    s.specialitate = cs[1];
+    s.medici = D.echipa.filter((p) => p.tip === 'Medic' && p.specialitate === cs[1]).sort((a, b) => (a.grad === 'Medic primar' ? 0 : a.grad === 'Medic specialist' ? 1 : 2) - (b.grad === 'Medic primar' ? 0 : b.grad === 'Medic specialist' ? 1 : 2)).map((p) => p.nume);
+  }
   delete s.alias;
 }
 for (const t of D.tehnologii) t.servicii = servicii.filter((s) => s.tehnologii.includes(t.nume)).map((s) => s.id);

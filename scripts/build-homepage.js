@@ -20,7 +20,14 @@ for (const cat of S.arbore.find((n) => n.url === '/tratamente/').copii) for (con
   const s = D.servicii.find((x) => n.vechi?.[0] && x.url === ORIGIN + n.vechi[0]);
   if (s && TRD[s.id]) trNode.set(s.id, { nod: n, cat });
 }
+// consultațiile folosesc același șablon (variantă), plus pagina-hub /consultatii/
+const consHub = S.arbore.find((n) => n.url === '/consultatii/');
+for (const n of consHub?.copii || []) {
+  const s = D.servicii.find((x) => n.vechi?.[0] && x.url === ORIGIN + n.vechi[0]);
+  if (s && TRD[s.id]) trNode.set(s.id, { nod: n, cat: consHub, consult: true });
+}
 const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile noi care există deja ca pagini
+if (consHub) NOU.add(consHub.url);
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
@@ -812,7 +819,7 @@ const zoneCards = (items) => items.map((x) => { const [z, ...d] = x.split(/\s+[�
 for (const id of TR_PAGINI) {
   const t = TRD[id], s = serv[id], loc = trNode.get(id);
   if (!t || !s || !loc) { console.warn('  ! tratament fără date/structură:', id); continue; }
-  const { nod, cat } = loc;
+  const { nod, cat, consult } = loc;
   const sec = (rol) => t.sectiuni.filter((x) => x.rol === rol);
   const paras = (rol) => sec(rol).flatMap((x) => x.blocuri.filter((b) => b.t === 'p').map((b) => b.x));
   const lists = (rol) => sec(rol).flatMap((x) => x.blocuri.filter((b) => b.t === 'ul').flatMap((b) => b.items));
@@ -865,7 +872,8 @@ for (const id of TR_PAGINI) {
   const offerName = offer && (offerZone ? `${nod.nume.replace(/\s*\(.*\)$/, '')} · ${offerZone[0].toLowerCase()}` : cap(offer.nume.toLowerCase()));
   const offerSrv = offer ? `Oferta lunii: ${offerName} – ${lei(offer.pret)}` : '';
   const facts = [
-    pret && { v: lei(pret), l: 'de la, pe zonă' },
+    pret && { v: lei(pret), l: consult ? 'consultația' : 'de la, pe zonă' },
+    consult && s.specialitate && { v: s.specialitate, l: 'medic specialist sau primar' },
     mRez && { v: mRez[1].replace(/\s*[–-]\s*/, '–'), l: 'până la primele efecte' },
     mDur && { v: `${mDur[1]}–${mDur[2]} luni`, l: 'cât durează efectul' },
     fara && { v: 'Fără', l: 'timp de recuperare' },
@@ -909,12 +917,12 @@ for (const id of TR_PAGINI) {
   const safeIntro = safeLead.find((b) => b.t === 'p')?.x || '';
   const pageUrl = ORIGIN + nod.url;
   const tel = String(D.contact?.telefon || '0743056605').replace(/^\+?40/, '0').replace(/\s/g, '').replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
-  const crumbs = [['Acasă', '/nou/', ORIGIN + '/'], ['Tratamente', '/nou/#tratamente', ORIGIN + '/tratamente/'], [cat.nume, toLive(cat.url) || '/nou/#tratamente', ORIGIN + cat.url], [nod.nume, null, pageUrl]];
+  const crumbs = consult ? [['Acasă', '/nou/', ORIGIN + '/'], ['Consultații', '/nou/consultatii/', ORIGIN + cat.url], [nod.nume, null, pageUrl]] : [['Acasă', '/nou/', ORIGIN + '/'], ['Tratamente', '/nou/#tratamente', ORIGIN + '/tratamente/'], [cat.nume, toLive(cat.url) || '/nou/#tratamente', ORIGIN + cat.url], [nod.nume, null, pageUrl]];
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'MedicalWebPage', '@id': pageUrl + '#webpage', url: pageUrl, name: `${nod.nume} în București | MOA Clinic`, about: { '@id': pageUrl + '#procedura' }, inLanguage: 'ro-RO' },
-      { '@type': 'MedicalProcedure', '@id': pageUrl + '#procedura', name: nod.nume, alternateName: t.h1, description: lede, procedureType: 'https://schema.org/NoninvasiveProcedure',
+      { '@type': 'MedicalProcedure', '@id': pageUrl + '#procedura', name: nod.nume, alternateName: t.h1, description: lede, ...(consult ? { procedureType: 'https://schema.org/NoninvasiveProcedure', medicalSpecialty: s.specialitate } : { procedureType: 'https://schema.org/NoninvasiveProcedure' }),
         ...(steps.length ? { howPerformed: steps.map((x) => x.titlu + (x.text ? ': ' + x.text : '')).join(' ') } : {}),
         ...(lists('dupa').length ? { followup: lists('dupa').join(' ') } : {}),
         ...(pret ? { offers: { '@type': 'AggregateOffer', priceCurrency: 'RON', lowPrice: pret, highPrice: Math.max(...s.preturi.map((p) => p.valoare).filter(Boolean)), offerCount: s.preturi.length, seller: { '@id': `${ORIGIN}/#organization` } } } : {}) },
@@ -924,9 +932,10 @@ for (const id of TR_PAGINI) {
   };
   const titleHtml = /\(([^)]+)\)$/.test(nod.nume) ? `${esc(nod.nume.replace(/\s*\([^)]+\)$/, ''))} <em>${esc(nod.nume.match(/\(([^)]+)\)$/)[1])}</em>` : esc(nod.nume);
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
+  const urmeaza = consult ? [...trNode.entries()].filter(([x, l]) => !l.consult && (serv[x].medici || []).some((n) => (s.medici || []).includes(n))).map(([x]) => serv[x]).slice(0, 9) : [];
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], t.galerie.length && ['#rezultate', 'Rezultate'],
-    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
+    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], consult && medici.length && ['#medici', 'Cu cine'], consult && urmeaza.length && ['#ce-urmeaza', 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
@@ -973,7 +982,7 @@ ${whoItems.length || whoLede || whoMore.length ? `<section class="sec" id="pentr
 
 ${howBl.length || benefits.length ? `<section class="sec" style="background:var(--cream)">
   <div class="wrap pf-two tr-how">
-    <div class="rv"><span class="eyebrow">Cum acționează</span><h2 class="pf-h2">${esc(((h) => (h.length > 38 ? 'Ce este și cum acționează' : h))((sec('ce-este')[0]?.titlu || (benefits.length && !howBl.length ? 'De ce să alegi acest tratament' : 'Ce este și cum acționează')).replace(/\?$/, '')))}</h2>
+    <div class="rv"><span class="eyebrow">${consult ? 'Despre consultație' : 'Cum acționează'}</span><h2 class="pf-h2">${esc(((h) => (h.length > 38 ? (consult ? ((x) => (x.length <= 38 ? x : 'Despre consultație'))(h.split(' și ')[0]) : 'Ce este și cum acționează') : h))((sec('ce-este')[0]?.titlu || (consult ? 'Despre consultație' : benefits.length && !howBl.length ? 'De ce să alegi acest tratament' : 'Ce este și cum acționează')).replace(/\?$/, '')))}</h2>
       ${howBl.length ? `<div class="pf-prose">${trBlocks(howBl.slice(0, 1))}${howBl.length > 1 ? `<details class="tr-read"><summary>Citește mai mult</summary>${trBlocks(howBl.slice(1))}</details>` : ''}</div>` : ''}</div>
     ${benefits.length ? `<aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks">${benefits.map((x) => `<li>${esc(cap(x.replace(/[;.]$/, '')))}</li>`).join('')}</ul></aside>` : ''}
   </div>
@@ -983,7 +992,7 @@ ${info.map((x) => `<section class="sec"><div class="wrap pf-two"><div class="rv"
 
 ${steps.length ? `<section class="sec" id="cum-decurge">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2 style="margin-top:18px">Cum decurge <em>o ședință</em></h2></div>${stepsLede ? `<p class="lede">${esc(stepsLede)}</p>` : ''}</div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2 style="margin-top:18px">Cum decurge <em>${consult ? 'consultația' : 'o ședință'}</em></h2></div>${stepsLede ? `<p class="lede">${esc(stepsLede)}</p>` : ''}</div>
     <ol class="tr-steps">${steps.map((x) => `<li><b>${esc(cap(x.titlu.replace(/[;.]$/, '')))}</b>${x.text ? `<p>${esc(x.text)}</p>` : ''}</li>`).join('')}</ol>
     ${stepsAfter.length ? `<div class="pf-prose tr-after">${trBlocks(stepsAfter)}</div>` : ''}
   </div>
@@ -1004,9 +1013,23 @@ ${safeCols.length ? `<section class="sec safety" id="siguranta">
   </div>
 </section>` : ''}
 
+${consult && medici.length ? `<section class="sec" id="medici">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Cu cine</span><h2 style="margin-top:18px">Medicii care fac <em>consultația</em></h2></div><p class="lede">${esc(s.specialitate || '')}${medici.length > 1 ? ` · ${medici.length} medici` : ''}. Alegi medicul la programare sau îți recomandăm noi.</p></div>
+    <div class="team-grid tr-docs">${medici.map(docCard).join('')}</div>
+  </div>
+</section>` : ''}
+
+${urmeaza.length ? `<section class="sec" id="ce-urmeaza" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">După consultație</span><h2 style="margin-top:18px">Ce poate <em>urma</em></h2></div><p class="lede">Tratamentele din aceeași specialitate. Medicul îți spune la consultație dacă și ce ți se potrivește.</p></div>
+    <div class="mm-grid pf-serv">${urmeaza.map((x) => `<a class="mm-card" href="${esc(live(x.id))}"><b>${esc(prettyName(trNode.get(x.id).nod.nume))}</b><span>${esc(trNode.get(x.id).cat.nume)}</span>${minPrice(x.id) ? `<em><small>de la</small>${lei(minPrice(x.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
+  </div>
+</section>` : ''}
+
 ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Prețuri</span><h2 style="margin-top:18px">Cât <em>costă</em></h2></div><p class="lede">Din lista oficială de prețuri MOA. Zonele și doza le stabilește medicul la consultație.</p></div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Prețuri</span><h2 style="margin-top:18px">Cât <em>costă</em></h2></div><p class="lede">Din lista oficială de prețuri MOA.${consult ? '' : ' Zonele și doza le stabilește medicul la consultație.'}</p></div>
     ${offer ? `<a class="tr-offer-row" href="#programare" data-srv="${esc(offerSrv)}"><span class="off">-${offer.discountProcent}% · oferta lunii</span><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> <em>${lei(offer.pret)}</em></span><i>Programează-te →</i></a>` : ''}
     ${(() => {
       if (!s.preturi.length) return sec('pret').map((x) => trBlocks(x.blocuri)).join('');
@@ -1035,7 +1058,7 @@ ${asoc.length || arts.length ? `<section class="sec" style="background:var(--cre
   <div class="wrap tr-related">
     ${asoc.length ? `<div><span class="eyebrow">Se combină cu</span><h2 class="pf-h2">Tratamente <em>asociate</em></h2>
     <div class="tr-asoc">${asoc.map((x) => `<a class="mm-card" href="${esc(trHref(x.id))}"><b>${esc(prettyName(trNode.get(x.id)?.nod.nume || x.nume))}</b><span>${esc(trNode.get(x.id)?.cat.nume || prettyName(x.categorie))}</span>${minPrice(x.id) ? `<em><small>de la</small>${lei(minPrice(x.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div></div>` : ''}
-    ${arts.length ? `<div><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește despre <em>${esc((nod.nume.match(/\(([^)]+)\)$/) || [, nod.nume])[1])}</em></h2>
+    ${arts.length ? `<div><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește despre <em>${esc(consult ? nod.nume.replace(/^Consultație\s*/i, '').replace(/\s*\(.*\)$/, '') : (nod.nume.match(/\(([^)]+)\)$/) || [, nod.nume])[1])}</em></h2>
     <ul class="tr-arts">${arts.slice(0, 3).map((a) => `<li><a href="${esc(a.url)}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul></div>` : ''}
   </div>
 </section>` : ''}
@@ -1074,5 +1097,75 @@ ${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', ...nod.url.split('/').filter(Boolean));
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), page);
-  console.log(`Tratament: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
+  console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
+}
+
+// ---------- pagina-hub /nou/consultatii/: cele patru consultații, cu medicul, prețul și ce urmează ----------
+if (consHub) {
+  const cons = [...trNode.entries()].filter(([, l]) => l.consult).map(([id, l]) => {
+    const s = serv[id], t = TRD[id];
+    const ce = t.sectiuni.filter((x) => x.rol === 'ce-este' || x.rol === 'intro').flatMap((x) => x.blocuri.filter((b) => b.t === 'p').map((b) => b.x)).filter((p) => !SALES.test(p));
+    const med = (s.medici || []).map((n) => team.find((p) => p.nume === n)).filter(Boolean);
+    return { id, s, nod: l.nod, desc: cutTxt(ce[0] || s.descriere || '', 190), med, pret: minPrice(id) };
+  });
+  const pageUrl = ORIGIN + consHub.url;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'CollectionPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Consultații | MOA Clinic', inLanguage: 'ro-RO', hasPart: cons.map((c) => ({ '@type': 'MedicalWebPage', name: c.nod.nume, url: ORIGIN + c.nod.url })) },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Consultații', item: pageUrl }] },
+    ],
+  };
+  const rev = D.dovezi.testimoniale.filter((r) => r.citat.length > 25).slice(0, 12);
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultații în București${minConsult ? ` – de la ${minConsult} lei` : ''} | MOA Clinic</title>
+<meta name="description" content="${esc(`Consultații la MOA Clinic: ${cons.map((c) => c.nod.nume.replace(/^Consultație\s*/i, '').replace(/\s*\(.*\)$/, '')).join(', ')}. Cu medicul specialității${minConsult ? `, de la ${minConsult} lei` : ''}.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Consultații</span></nav>
+
+<section class="sec cs-hero">
+  <div class="wrap">
+    <div class="sec-head split"><div><span class="eyebrow">Consultații</span><h1 style="margin-top:18px">Primul pas e <em>o consultație.</em></h1></div>
+      <p class="lede">Fiecare consultație se face cu medicul specialității. Afli ce ți se potrivește înainte de orice tratament${minConsult ? `, de la ${lei(minConsult)}` : ''}.</p></div>
+    <div class="cs-grid">${cons.map((c) => `<article class="cs-card">
+      <span class="eyebrow">${esc(c.s.specialitate || '')}</span>
+      <h2><a href="/nou${esc(c.nod.url)}">${esc(c.nod.nume.replace(/^Consultație\s*/i, (m) => m).replace(/\s*\(([^)]+)\)$/, ''))}</a></h2>
+      ${/\(([^)]+)\)$/.test(c.nod.nume) ? `<small class="cs-incl">Include ${esc(c.nod.nume.match(/\(([^)]+)\)$/)[1].replace(/^cu\s+/i, ''))}</small>` : ''}
+      <p>${esc(c.desc)}</p>
+      ${c.med.length ? `<div class="cs-docs">${c.med.slice(0, 4).map((p) => (photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="" title="${esc(p.nume)}" loading="lazy">` : `<span title="${esc(p.nume)}">${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span>`)).join('')}<i>${c.med.length === 1 ? esc(c.med[0].nume) : `${c.med.length} medici`}</i></div>` : ''}
+      <div class="cs-foot"><b>${c.pret ? `${lei(c.pret)}` : 'Preț la programare'}</b><span><a class="link-u" href="/nou${esc(c.nod.url)}">Detalii</a><a class="btn btn-gold" href="#programare" data-srv="${esc(c.nod.nume)}">Programează-te</a></span></div>
+    </article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Cum alegi</span><h2 style="margin-top:18px">Nu știi cu care <em>să începi?</em></h2></div><p class="lede">Lasă-ne numărul și te sunăm noi, ca să alegem împreună consultația potrivită.</p></div>
+    <table class="tr-prices cs-table">${cons.map((c) => `<tr><td><b>${esc(c.nod.nume)}</b><span>${esc(c.s.specialitate || '')}${c.med.length ? ` · ${c.med.length === 1 ? esc(c.med[0].nume) : `${c.med.length} medici`}` : ''}</span></td><td>${c.pret ? lei(c.pret) : '—'}</td></tr>`).join('')}</table>
+  </div>
+</section>
+
+${rev.length ? `<section class="sec reviews tr-reviews">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Recenzii Google</span><h2 style="margin-top:18px">Ce spun <em>pacienții</em></h2></div><p class="lede">★★★★★ 5.0 din ${esc(nReviews)} de recenzii verificate pe Google.</p></div>
+    <div class="r-grid tr-rev-row" tabindex="0" role="region" aria-label="Recenzii">${rev.map((r) => `<figure class="r-card" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
+  </div>
+</section>` : ''}
+
+${BOOK}${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'consultatii');
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), page);
+  console.log(`Hub: nou/consultatii/ · ${cons.length} consultații`);
 }
