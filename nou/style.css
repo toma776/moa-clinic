@@ -1151,3 +1151,60 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   #articole .o-grid::-webkit-scrollbar { display: none; }
   #articole .o-card { scroll-snap-align: start; padding: 24px 20px; }
 }
+
+/* =====================================================================
+   Profil medic: structură compactă (hero cu citat · „Despre” pe file · La MOA)
+   ===================================================================== */
+.pf-hq { margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid var(--gold-2); font: italic 400 19px/1.45 var(--serif); color: var(--ink); max-width: 56ch; }
+.pf-tabs { justify-self: end; align-self: end; margin: 0; }
+.pf-panel[hidden] { display: none; }
+.pf-story { max-width: 76ch; }
+.pf-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px clamp(28px, 4vw, 56px); }
+.pf-col-h { font: 500 22px/1.2 var(--serif); color: var(--ink); margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-2); }
+.pf-cols .pf-book { border-top: 0; padding: 0 0 12px; display: grid; gap: 2px; }
+.pf-cols .pf-book b { font: 500 17px/1.3 var(--serif); color: var(--ink); }
+.pf-cols .pf-book span { font-size: 12.5px; color: var(--muted); }
+.pf-cols .pf-award { border-top: 0; padding: 0 0 12px; }
+.pf-cols .pf-award span { color: var(--gold); }
+.pf-cols .pf-award p { color: var(--ink-2); font-size: 14px; margin: 0; }
+.pf-cols .pf-note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+.pf-tl2 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(28px, 4vw, 56px); }
+.pf-tl2 li { display: grid; grid-template-columns: 96px 1fr; gap: 2px 14px; padding: 12px 0; border-bottom: 1px solid var(--line); align-content: start; }
+.pf-per2 { grid-row: 1 / span 2; font: italic 500 17px/1.3 var(--serif); color: var(--gold); }
+.pf-tl2 small { font: 500 11.5px/1 var(--sans); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.pf-tl2 p { margin: 0; font-size: 14.5px; color: var(--ink); line-height: 1.5; }
+.pf-panel .pf-tl-all { display: none; align-items: center; min-height: 44px; margin-top: 10px; background: none; border: 0; padding: 0; cursor: pointer; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.pf-moa { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
+.pf-moa .pf-h2 { margin: 14px 0 8px; }
+.pf-moa .pf-serv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pf-moa .pf-serv > .mm-card { flex: none; }
+@media (max-width: 1100px) { .pf-tabs { justify-self: start; } }
+@media (max-width: 760px) {
+  .pf-hq { font-size: 17px; }
+  .pf-tabs { margin-top: 4px; }
+  .pf-tl2 { grid-template-columns: 1fr; }
+  .pf-tl2 li { grid-template-columns: 78px 1fr; }
+  .pf-panel:not(.open) .pf-tl2 .pf-more { display: none; }
+  .pf-panel .pf-tl-all { display: inline-flex; }
+  .pf-moa { grid-template-columns: 1fr; gap: 44px; }
+  .pf-moa .pf-serv { grid-template-columns: 1fr; }
+}
+/* profil: filele se derulează pe orizontală pe ecrane înguste; tratamentele: 5 + „toate” pe mobil */
+#despre-medic .sec-head.split > * { min-width: 0; }
+.pf-tabs { max-width: 100%; min-width: 0; }
+.pf-serv-all { display: none; }
+@media (max-width: 760px) {
+  .pf-moa .pf-serv:not(.open) > .pf-more { display: none; }
+  .pf-serv-all { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; background: none; border: 0; padding: 0; cursor: pointer; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+}
+/* profil, „Despre”: titlul și filele (verticale) în stânga, conținutul filei în dreapta */
+@media (min-width: 1101px) {
+  #despre-medic .wrap { display: grid; grid-template-columns: minmax(0, .3fr) minmax(0, .7fr); gap: 0 clamp(40px, 5vw, 80px); align-items: start; }
+  #despre-medic .sec-head { grid-column: 1; grid-row: 1 / span 4; grid-template-columns: 1fr; gap: 26px; margin: 0; position: sticky; top: calc(var(--hd-h, 0px) + 80px); align-items: start; }
+  #despre-medic .pf-panel { grid-column: 2; grid-row: 1; }
+  #despre-medic .pf-tabs { flex-direction: column; align-items: stretch; gap: 0; justify-self: stretch; border-top: 1px solid var(--line); }
+  #despre-medic .pf-tabs button { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; color: var(--ink-2); text-align: left; justify-content: flex-start; padding: 14px 0; min-height: 0; font-size: 12px; position: relative; }
+  #despre-medic .pf-tabs button.on { background: none; color: var(--gold); }
+  #despre-medic .pf-tabs button.on::after { content: '→'; position: absolute; right: 0; }
+  #despre-medic .pf-story { max-width: none; }
+}

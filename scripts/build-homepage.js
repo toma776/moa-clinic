@@ -769,6 +769,7 @@ ${TOP}<main>
       <span class="eyebrow">${p.nume.includes('Stănescu') ? 'Fondator MOA · ' : ''}${esc(p.rol)}</span>
       <h1>${esc(p.nume)}</h1>
       <p class="lede">${esc(pr.rezumat || '')}</p>
+      ${pr.citat ? `<blockquote class="pf-hq">„${esc(pr.citat)}”</blockquote>` : ''}
       <div class="pf-facts">${pr.cifre.map((c) => `<div><b>${esc(c.valoare)}</b><span>${esc(c.eticheta)}</span></div>`).join('')}</div>
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează o consultație</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
     </div>
@@ -776,46 +777,42 @@ ${TOP}<main>
   </div>
 </section>
 
-${pr.citat ? `<section class="pf-quote"><div class="wrap"><blockquote>„${esc(pr.citat)}”<cite>${esc(p.nume)} · filosofia sa medicală</cite></blockquote></div></section>` : ''}
-
-<section class="sec">
-  <div class="wrap pf-two">
-    <div class="rv"><span class="eyebrow">În cuvintele lui</span><h2 class="pf-h2">Povestea</h2>
-      ${(() => { const ps = [...pr.biografie, ...(pr.formare || []), ...(pr.viziune || []).slice(0, 3)]; return `<div class="pf-prose">${ps.slice(0, 3).map((t) => `<p>${esc(t)}</p>`).join('')}${ps.length > 3 ? `<details class="tr-read"><summary>Citește toată povestea</summary>${ps.slice(3).map((t) => `<p>${esc(t)}</p>`).join('')}</details>` : ''}</div>`; })()}</div>
-    <aside class="pf-side rv">
-      <h3>Domenii de expertiză</h3>${list(pr.expertiza)}
-      ${pr.rol_moa?.length ? `<h3>Rolul în MOA</h3>${list(pr.rol_moa)}` : ''}
-      ${pr.programe?.length ? `<h3>Programe coordonate</h3>${list(pr.programe)}` : ''}
-    </aside>
-  </div>
-</section>
-
-${servP.length ? `<section class="sec" style="background:var(--cream)">
+${(() => {
+  // „Despre”: o singură secțiune cu file (Povestea · Expertiză · Parcurs · Recunoaștere), în loc de patru secțiuni lungi
+  const ps = [...pr.biografie, ...(pr.formare || []), ...(pr.viziune || []).slice(0, 3)];
+  const tabs = [];
+  if (ps.length) tabs.push(['povestea', 'Povestea', `<div class="pf-prose pf-story">${ps.slice(0, 3).map((t) => `<p>${esc(t)}</p>`).join('')}${ps.length > 3 ? `<details class="tr-read"><summary>Citește toată povestea</summary>${ps.slice(3).map((t) => `<p>${esc(t)}</p>`).join('')}</details>` : ''}</div>`]);
+  const exp = [['Domenii de expertiză', pr.expertiza], ['Rolul în MOA', pr.rol_moa || []], ['Programe coordonate', pr.programe || []]].filter(([, l]) => l.length);
+  if (exp.length) tabs.push(['expertiza', 'Expertiză', `<div class="pf-cols">${exp.map(([h, l]) => `<div><h3 class="pf-col-h">${esc(h)}</h3>${list(l)}</div>`).join('')}</div>`]);
+  if (timeline.length) tabs.push(['parcurs', `Parcurs · ${timeline.length}`, `<ol class="pf-tl2">${timeline.map((t, i) => `<li${i >= 6 ? ' class="pf-more"' : ''}><span class="pf-per2">${esc(t.per || '')}</span><small>${esc(t.tip)}</small><p>${esc(t.text)}</p></li>`).join('')}</ol>${timeline.length > 6 ? `<button type="button" class="pf-tl-all" onclick="this.parentElement.classList.add('open');this.remove()">Vezi tot parcursul (${timeline.length}) +</button>` : ''}`]);
+  const rec = [];
+  if (pr.carti.length) rec.push(`<div><h3 class="pf-col-h">Cărți</h3>${pr.carti.map((c) => `<div class="pf-book"><b>${esc(c.titlu)}</b><span>${esc([c.editura && !/www\./.test(c.editura) ? 'Editura ' + c.editura : c.editura ? 'carte digitală · ' + c.editura : '', c.an].filter(Boolean).join(' · '))}</span></div>`).join('')}</div>`);
+  if (pr.membru_in.length) rec.push(`<div><h3 class="pf-col-h">Membru în</h3>${list(pr.membru_in.map((n) => n.replace(/^Societății/, 'Societatea')))}${(pr.activitate || []).filter((l) => !/pacienți/.test(l)).map((l) => `<p class="pf-note">${esc(l)}</p>`).join('')}</div>`);
+  if (pr.distinctii.length) rec.push(`<div><h3 class="pf-col-h">Distincții</h3>${pr.distinctii.map((d) => `<div class="pf-award"><span>${esc(d.an || '')}</span><p>${esc(d.titlu)}</p></div>`).join('')}</div>`);
+  if (rec.length) tabs.push(['recunoastere', 'Recunoaștere', `<div class="pf-cols">${rec.join('')}</div>`]);
+  if (!tabs.length) return '';
+  return `<section class="sec" id="despre-medic">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">La MOA</span><h2 style="margin-top:22px">Tratamente din <em>specialitatea lui</em></h2></div><p class="lede">Serviciile clinicii pe care le coordonează, cu prețul de pornire din lista de prețuri.</p></div>
-    <div class="mm-grid pf-serv">${servP.map((s) => `<a class="mm-card" href="${esc(live(s.id))}"><b>${esc(trNode.get(s.id)?.nod.nume || prettyName(s.nume))}</b><span>${esc(trNode.get(s.id)?.cat.nume || prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
-  </div>
-</section>` : ''}
-
-<section class="sec">
-  <div class="wrap pf-tl">
-    <div class="sec-head rv pf-tl-h"><span class="eyebrow">Parcurs</span><h2>Formare și <em>experiență</em></h2><p class="cs-sub">${timeline.length} repere, de la cel mai recent.</p></div>
-    <div><ol class="pf-timeline">${timeline.map((t, i) => `<li class="rv${i >= 6 ? ' pf-more' : ''}"><span class="pf-per">${esc(t.per || '')}</span><div><small>${esc(t.tip)}</small><p>${esc(t.text)}</p></div></li>`).join('')}</ol>${timeline.length > 6 ? `<button type="button" class="pf-tl-all" onclick="this.closest('.pf-tl').classList.add('open');this.remove()">Vezi tot parcursul (${timeline.length}) +</button>` : ''}</div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Despre</span><h2 style="margin-top:18px">${p.nume.includes('Stănescu') ? 'Fondatorul <em>MOA</em>' : 'Despre <em>medic</em>'}</h2></div>
+      <div class="team-filter pf-tabs" role="tablist">${tabs.map(([id, n], i) => `<button type="button" role="tab" class="${i ? '' : 'on'}" aria-selected="${!i}" data-pf="${id}">${esc(n)}</button>`).join('')}</div></div>
+    ${tabs.map(([id, , html], i) => `<div class="pf-panel" role="tabpanel" data-pf="${id}"${i ? ' hidden' : ''}>${html}</div>`).join('')}
   </div>
 </section>
+<script>
+document.querySelectorAll('.pf-tabs button').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('.pf-tabs button').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+  document.querySelectorAll('.pf-panel').forEach((p) => { p.hidden = p.dataset.pf !== b.dataset.pf; });
+}));
+</script>`;
+})()}
 
-<section class="sec safety">
-  <div class="wrap pf-three">
-    ${pr.carti.length ? `<div class="rv"><span class="eyebrow light">Autor</span><h3 class="pf-h3">Cărți</h3>${pr.carti.map((c) => `<div class="pf-book"><b>${esc(c.titlu)}</b><span>${esc([c.editura && !/www\./.test(c.editura) ? 'Editura ' + c.editura : c.editura ? 'carte digitală · ' + c.editura : '', c.an].filter(Boolean).join(' · '))}</span>${c.descriere ? `<p>${esc(c.descriere)}</p>` : ''}</div>`).join('')}</div>` : ''}
-    ${pr.membru_in.length ? `<div class="rv"><span class="eyebrow light">Afilieri</span><h3 class="pf-h3">Membru în</h3>${list(pr.membru_in.map((n) => n.replace(/^Societății/, 'Societatea')), 'light')}${(pr.activitate || []).filter((l) => !/pacienți/.test(l)).map((l) => `<p class="pf-note">${esc(l)}</p>`).join('')}</div>` : ''}
-    ${pr.distinctii.length ? `<div class="rv"><span class="eyebrow light">Recunoaștere</span><h3 class="pf-h3">Distincții</h3>${pr.distinctii.map((d) => `<div class="pf-award"><span>${esc(d.an || '')}</span><p>${esc(d.titlu)}</p></div>`).join('')}</div>` : ''}
-  </div>
-</section>
-
-${arts.length ? `<section class="sec" id="articole">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Articole</span><h2 style="margin-top:22px">Scrise de <em>${esc(p.nume)}</em></h2></div><a class="link-u" href="${esc(pr.url)}" style="justify-self:start">Toate cele ${allArts.length} de articole</a></div>
-    <div class="o-grid">${arts.map((a) => `<a class="o-card rv" href="${esc(a.url)}"><span class="eyebrow">${esc(a.tip)}</span><h3 style="font-size:24px;max-width:none">${esc(a.titlu)}</h3>${a.rezumat ? `<p style="font-size:14px;color:var(--muted)">${esc(cutTxt(a.rezumat, 140))}</p>` : ''}<span class="link-u" style="justify-self:start">Citește</span></a>`).join('')}</div>
+${servP.length || arts.length ? `<section class="sec alt" id="la-moa">
+  <div class="wrap pf-moa">
+    ${servP.length ? `<div><span class="eyebrow">La MOA</span><h2 class="pf-h2">Tratamente <em>coordonate</em></h2><p class="cs-sub">Serviciile din specialitatea lui, cu prețul de pornire.</p>
+      <div class="pf-serv">${servP.map((s, i) => `<a class="mm-card${i >= 5 ? ' pf-more' : ''}" href="${esc(live(s.id))}"><b>${esc(trNode.get(s.id)?.nod.nume || prettyName(s.nume))}</b><span>${esc(trNode.get(s.id)?.cat.nume || prettyName(s.categorie))}</span>${minPrice(s.id) ? `<em><small>de la</small>${lei(minPrice(s.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>${servP.length > 5 ? `<button type="button" class="pf-serv-all" onclick="this.previousElementSibling.classList.add('open');this.remove()">Toate cele ${servP.length} tratamente +</button>` : ''}</div>` : ''}
+    ${arts.length ? `<div id="articole"><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${allArts.length} articole pe blogul clinicii.</p>
+      <ul class="tr-arts">${arts.map((a) => `<li><a href="${esc(a.url)}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul>
+      <a class="link-u" href="${esc(pr.url)}" style="margin-top:18px;display:inline-flex">Toate cele ${allArts.length} de articole →</a></div>` : ''}
   </div>
 </section>` : ''}
 
