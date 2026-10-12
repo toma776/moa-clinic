@@ -1100,3 +1100,25 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   .pr-orow .pr-off-p { grid-column: 1 / -1; }
 }
 @media (min-width: 761px) { #echipa .doc .mono small { display: none; } }
+
+/* =====================================================================
+   Consultații: „Cu cine” + „Ce poate urma” pe două coloane
+   ===================================================================== */
+.cs-two { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
+.cs-two > :only-child { grid-column: 1 / -1; }
+.cs-two .pf-h2 { margin: 16px 0 10px; font-size: clamp(32px, 3.6vw, 46px); }
+.cs-sub { margin: 0 0 22px; font-size: 15px; color: var(--ink-2); line-height: 1.55; }
+.cs-doclist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.cs-doclist li > a, .cs-doclist li > div { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+.cs-doclist img, .cs-ini { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: top; background: var(--cream); display: grid; place-items: center; font: italic 500 20px/1 var(--serif); color: var(--gold); }
+.cs-doclist b { display: block; font: 500 19px/1.2 var(--serif); color: var(--ink); }
+.cs-doclist small { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.cs-doclist a:hover b { color: var(--gold); }
+.cs-nextgrid { display: flex; flex-wrap: wrap; gap: 8px; }
+.cs-nextgrid > .mm-card { flex: 1 1 220px; }
+/* „Pe larg”: subtitlurile din text lizibile */
+.tr-acc h4 { font: 500 19px/1.3 var(--serif); color: var(--ink); margin: 18px 0 8px; }
+@media (max-width: 760px) {
+  .cs-two { grid-template-columns: 1fr; gap: 40px; }
+  .cs-nextgrid > .mm-card { flex-basis: 100%; }
+}

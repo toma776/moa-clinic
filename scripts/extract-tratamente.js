@@ -139,9 +139,14 @@ const CORECTURI = {
     ['Mărirea buzelor cu acid hialuronic este recomandată', null], // paragraf copiat din pagina de augmentare a buzelor
   ],
 };
+// corecturi pe toate paginile: [căutare, înlocuire|null, [id-uri exceptate]]
+const CORECTURI_TOATE = [
+  // blocul de final al paginii de augmentare peniană, copiat pe site-ul vechi în alte 10 pagini (consultații, Venus, NAD…)
+  ['procedură discretă de mărire a penisului', null, ['marirea-penisului-acid-hialuronic']],
+];
 function corecteaza(t) {
-  const list = CORECTURI[t.id];
-  if (!list) return { t, n: 0 };
+  const list = [...CORECTURI_TOATE.filter(([, , ex]) => !(ex || []).includes(t.id)).map(([a, b]) => [a, b]), ...(CORECTURI[t.id] || [])];
+  if (!list.length) return { t, n: 0 };
   let n = 0;
   const fix = (x) => list.reduce((s, [a, b]) => (b != null && s.includes(a) ? (n++, s.split(a).join(b)) : s), x);
   const drop = (x) => list.some(([a, b]) => b == null && String(x).includes(a));

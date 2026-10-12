@@ -882,13 +882,18 @@ for (const id of TR_PAGINI) {
   const firstP = t.sectiuni.filter((x) => x.rol !== 'pret').flatMap((x) => x.blocuri).find((b) => b.t === 'p' && b.x.length > 60 && !SALES.test(b.x) && !/:$/.test(b.x))?.x;
   const cleanDesc = String(s.descriere || '').split(/\s*✓\s*/)[0].replace(/\s*(Rezerv[aă] acum|Programeaz[aă]-te acum)[^.]*\.?$/i, '').trim();
   const faqLede = t.faq.flatMap((q) => q.blocuri).find((b) => b.t === 'p' && b.x.length > 60)?.x;
-  const lede = ceEste[0] || firstP || faqLede || cleanDesc || '';
+  const ledeFull = ceEste[0] || firstP || faqLede || cleanDesc || '';
+  const ledeShort = (() => { if (ledeFull.length <= 300) return ledeFull; let out = ''; for (const x of sentences(ledeFull)) { if ((out + x).length > 280 && out) break; out += x; } return out.trim() || ledeFull; })();
+  const lede = ledeShort;
+  const ledeRest = ledeFull.slice(ledeShort.length).trim();
+  const notLede = (b) => !(b.t === 'p' && b.x === ledeFull);
   // „cum acționează”: restul textului din „ce este” (+ intro, dacă există „ce este”) + beneficiile care nu sunt listă
   const benList = lists('beneficii'), benBl = B('beneficii'), benH3 = [];
   benBl.forEach((b, i) => { if (b.t === 'h3') benH3.push(b.x.replace(/:$/, '') + (benBl[i + 1]?.t === 'p' ? ' – ' + benBl[i + 1].x : '')); });
   const benefits = benList.length ? benList : benH3;
   const benRest = benBl.filter((b, i) => !colon(b) && (benList.length ? b.t !== 'ul' : b.t !== 'h3' && !(b.t === 'p' && benBl[i - 1]?.t === 'h3')));
   const howBl = [
+    ...(ledeRest ? [P(ledeRest)] : []),
     ...ceEste.slice(1).map(P),
     ...B('ce-este').filter((b) => b.t !== 'p'),
     ...B('intro').filter((b) => b.t !== 'p'), // listele din introducere (ex. „când se recomandă” la nutrigenetică)
@@ -914,7 +919,7 @@ for (const id of TR_PAGINI) {
   const pret = minPrice(id);
   const kw = [...new Set(norm(`${nod.nume} ${t.h1}`.toLowerCase()).split(/[^a-z]+/).filter((w) => w.length >= 5 && !/^(trata|injec|bucur|terap|consu|proce|facia)/.test(w)).map((w) => w.slice(0, 5)))];
   const kwRe = new RegExp(kw.join('|') || '^$', 'i');
-  const offer = D.oferte.find((o) => o.pret && o.pretInitial && kwRe.test(norm(o.nume)));
+  const offer = consult ? null : D.oferte.find((o) => o.pret && o.pretInitial && kwRe.test(norm(o.nume)));
   // numele ofertei, cu diacritice: numele tratamentului + ce precizează oferta (ex. „3 zone”)
   const offerZone = offer && offer.nume.match(/\d+\s*zon\w*/i);
   // textul cu care oferta ajunge în formular (și în lead): „Oferta lunii: Toxină botulinică · 3 zone – 1.099 lei”
@@ -953,8 +958,8 @@ for (const id of TR_PAGINI) {
   const asoc = t.linkuri_tratamente.map((x) => serv[x]).filter(Boolean);
   const showGal = t.galerie.length >= 6;
   // secțiuni simple, cu titlul original: cele neclasificate + pașii fără structură + rezultatele fără galerie
-  const info = [...sec('info'), ...(steps.length ? [] : sec('pasi')), ...(showGal ? [] : sec('rezultate'))].filter((x) => trBlocks(x.blocuri).trim());
-  const hasPrices = s.preturi.length > 0 || sec('pret').some((x) => trBlocks(x.blocuri).trim());
+  const info = [...sec('info'), ...(steps.length ? [] : sec('pasi')), ...(showGal ? [] : sec('rezultate'))].map((x) => ({ ...x, blocuri: x.blocuri.filter(notLede) })).filter((x) => trBlocks(x.blocuri).trim());
+  const hasPrices = consult && s.preturi.length <= 1 ? false : s.preturi.length > 0 || sec('pret').some((x) => trBlocks(x.blocuri).trim());
   // siguranța pe coloane: fiecare „Titlu:” din text devine o coloană; „după tratament” = doar lista de reguli
   const safeCols = [], safeLead = [];
   for (const x of sec('siguranta')) {
@@ -993,7 +998,7 @@ for (const id of TR_PAGINI) {
   const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], showGal && ['#rezultate', 'Rezultate'],
-    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], info.length && ['#pe-larg', 'Pe larg'], consult && medici.length && ['#medici', 'Cu cine'], consult && urmeaza.length && ['#ce-urmeaza', 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
+    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], info.length && ['#pe-larg', 'Pe larg'], consult && (medici.length || urmeaza.length) && ['#medici', medici.length ? 'Cu cine' : 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
@@ -1086,17 +1091,12 @@ ${info.length ? `<section class="sec" id="pe-larg">
   </div>
 </section>` : ''}
 
-${consult && medici.length ? `<section class="sec" id="medici">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Cu cine</span><h2 style="margin-top:18px">Medicii care fac <em>consultația</em></h2></div><p class="lede">${esc(s.specialitate || '')}${medici.length > 1 ? ` · ${medici.length} medici` : ''}. Alegi medicul la programare sau îți recomandăm noi.</p></div>
-    <div class="team-grid tr-docs">${medici.map(docCard).join('')}</div>
-  </div>
-</section>` : ''}
-
-${urmeaza.length ? `<section class="sec" id="ce-urmeaza" style="background:var(--cream)">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">După consultație</span><h2 style="margin-top:18px">Ce poate <em>urma</em></h2></div><p class="lede">Tratamentele din aceeași specialitate. Medicul îți spune la consultație dacă și ce ți se potrivește.</p></div>
-    <div class="mm-grid pf-serv">${urmeaza.map((x) => `<a class="mm-card" href="${esc(live(x.id))}"><b>${esc(prettyName(trNode.get(x.id).nod.nume))}</b><span>${esc(trNode.get(x.id).cat.nume)}</span>${minPrice(x.id) ? `<em><small>de la</small>${lei(minPrice(x.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div>
+${consult && (medici.length || urmeaza.length) ? `<section class="sec" id="medici">
+  <div class="wrap cs-two">
+    ${medici.length ? `<div class="cs-who"><span class="eyebrow">Cu cine</span><h2 class="pf-h2">Medicii care fac <em>consultația</em></h2><p class="cs-sub">${esc(s.specialitate || '')}${medici.length > 1 ? ` · ${medici.length} medici. Alegi medicul la programare sau îți recomandăm noi.` : '.'}</p>
+      <ul class="cs-doclist">${medici.map((p) => `<li>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">` : '<div>'}${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="" loading="lazy">` : `<span class="cs-ini">${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span>`}<span><b>${esc(p.nume)}</b><small>${esc(p.rol)}${p.profil_detaliat ? ' · vezi profilul →' : ''}</small></span>${p.profil_detaliat ? '</a>' : '</div>'}</li>`).join('')}</ul></div>` : ''}
+    ${urmeaza.length ? `<div class="cs-next" id="ce-urmeaza"><span class="eyebrow">După consultație</span><h2 class="pf-h2">Ce poate <em>urma</em></h2><p class="cs-sub">Tratamentele din aceeași specialitate. Medicul îți spune la consultație dacă și ce ți se potrivește.</p>
+      <div class="cs-nextgrid">${urmeaza.map((x) => `<a class="mm-card" href="${esc(live(x.id))}"><b>${esc(prettyName(trNode.get(x.id).nod.nume))}</b><span>${esc(trNode.get(x.id).cat.nume)}</span>${minPrice(x.id) ? `<em><small>de la</small>${lei(minPrice(x.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div></div>` : ''}
   </div>
 </section>` : ''}
 
