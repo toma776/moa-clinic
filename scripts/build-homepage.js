@@ -121,7 +121,8 @@ const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'sculptra', 'nutr
   .filter(Boolean);
 
 // oferte: cele mai mari reduceri din „Ofertele lunii”
-const offers = D.oferte.filter((o) => o.pret && o.pretInitial).sort((a, b) => b.discountProcent - a.discountProcent).slice(0, 3);
+const offers = [...new Set(D.oferte.map((o) => o.grup))].map((g) => D.oferte.filter((o) => o.grup === g && o.pret && o.pretInitial).sort((a, b) => b.discountProcent - a.discountProcent)[0]).filter(Boolean).slice(0, 3);
+const offSrv = (o) => `Ofertă: ${offerLabel(o.nume)} – ${lei(o.pret)}`;
 // eticheta grupului de oferte, curățată: „Oferte Epilare Definitiva SplendorX” → „Epilare definitivă Splendor X”
 const offerGroup = (g) => String(g).replace(/^Oferte\s+/i, '').replace(/Definitiva/i, 'definitivă').replace(/SplendorX/i, 'Splendor X');
 // numele ofertelor din lista clinicii: cuvintele scrise integral cu majuscule devin litere mici (fără acronime), diacriticele lipsă se completează
@@ -208,9 +209,9 @@ const simple = (id, m, feat) => `
   </div>`;
 const PANELS = {
   'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, feature('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-768x511.jpg', 'Nu știi de unde să începi?', `Programează o consultație: medicul te ascultă și îți propune un plan potrivit. De la ${lei(minConsult)}.`, 'Programează consultația', '#programare')),
-  'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? feature('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg', 'Oferta lunii', `${esc(topOffer.nume.charAt(0) + topOffer.nume.slice(1).toLowerCase())}: <b>${lei(topOffer.pret)}</b> în loc de ${lei(topOffer.pretInitial)}.`, 'Rezervă oferta', '#programare') : ''),
+  'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? feature('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg', 'Oferta lunii', `${esc(offerLabel(topOffer.nume))}: <b>${lei(topOffer.pret)}</b> în loc de ${lei(topOffer.pretInitial)}.`, 'Rezervă oferta', '#programare') : ''),
   'Longevitate': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 'Global Antiaging', 'Programul coordonat de Dr. Adrian Stănescu, medic primar gerontolog, format la școala Ana Aslan.', 'Programează-te', '#programare')),
-  'Prețuri': (i, m) => simple(i, m, feature(null, 'Ofertele lunii', offers.map((o) => `${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())} · <b>${lei(o.pret)}</b>`).join('<br>'), 'Toate ofertele', ORIGIN + '/abonamente/')),
+  'Prețuri': (i, m) => simple(i, m, feature(null, 'Ofertele lunii', offers.map((o) => `${esc(offerLabel(o.nume))} · <b>${lei(o.pret)}</b>`).join('<br>'), 'Toate ofertele', '/nou/preturi/#oferte')),
   'Despre MOA': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg', 'Te așteptăm', 'Str. Ștefan Mihăileanu 35, București<br>0743 056 605 · office@moaclinic.ro', 'Vezi pe hartă', D.contact.googleMaps[0])),
 };
 const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : '')).join('');
@@ -440,13 +441,13 @@ ${mobileNav}
   <div class="wrap">
     <div class="sec-head split rv">
       <div><span class="eyebrow">Ofertele lunii</span><h2 style="margin-top:22px">Pentru <em>luna aceasta.</em></h2></div>
-      <a class="link-u" href="${esc(ORIGIN)}/abonamente/" style="justify-self:start">Toate ofertele</a>
+      <a class="link-u" href="/nou/preturi/#oferte" style="justify-self:start">Toate cele ${D.oferte.length} oferte →</a>
     </div>
-    <div class="o-grid">${offers.map((o) => `
-      <div class="o-card rv"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Ofertă' : offerGroup(o.grup))}</span>
-        <h3>${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}</h3>
+    <div class="o-grid hp-offers">${offers.map((o) => `
+      <a class="o-card rv" href="#programare" data-srv="${esc(offSrv(o))}"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Oferta lunii' : offerGroup(o.grup))}</span>
+        <h3>${esc(offerLabel(o.nume))}</h3>${o.detalii ? `<small class="o-det">${esc(offerLabel(o.detalii))}</small>` : ''}
         <div class="price"><b>${lei(o.pret)}</b><s>${lei(o.pretInitial)}</s></div>
-        <a class="link-u" href="#programare" data-srv="Ofertă: ${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}" style="justify-self:start;margin-top:10px">Rezervă</a></div>`).join('')}
+        <span class="link-u" style="justify-self:start;margin-top:6px">Programează-te →</span></a>`).join('')}
     </div>
   </div>
 </section>
@@ -1287,7 +1288,7 @@ ${BOOK}${BOTTOM}`;
   const offHtml = D.oferte.length ? `<section class="sec pr-offers" id="oferte" style="background:var(--cream)">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Oferte</span><h2 style="margin-top:18px">Ofertele <em>lunii</em></h2></div><p class="lede">${D.oferte.length} oferte active. Alege una și te sunăm noi pentru programare.</p></div>
-    ${offGroups.map((g) => `<h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3><div class="pr-ogrid">${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-off" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span><i>Programează-te →</i></a>`).join('')}</div>`).join('')}
+    <div class="pr-olist">${offGroups.map((g) => `<div class="pr-og-block"><h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3>${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-orow" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}"><span class="pr-orow-n"><b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}</span>${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span></a>`).join('')}</div>`).join('')}</div>
   </div>
 </section>` : '';
   const pageUrl = ORIGIN + '/preturi/';

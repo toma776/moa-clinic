@@ -1043,3 +1043,60 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 /* „Pe larg”: listă pe toată lățimea, text lizibil */
 .tr-larg .tr-acc details > div { max-width: 78ch; }
 .tr-psub { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); letter-spacing: .02em; }
+
+/* =====================================================================
+   Audit homepage + prețuri
+   ===================================================================== */
+/* hero: cele 3 cifre pe un rând */
+.hero-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 24px; }
+@media (max-width: 760px) { .hero-proof { gap: 10px 14px; padding-top: 22px; } .hero-proof b { font-size: 22px; } .hero-proof { font-size: 12.5px !important; line-height: 1.35; } }
+/* echipa: 6 pe rând pe desktop, 4 pe tabletă */
+@media (min-width: 1101px) { #echipa .team-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; } #echipa .doc h3 { font-size: 21px; } }
+@media (min-width: 761px) and (max-width: 1100px) { #echipa .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* ofertele de pe homepage: card întreg clicabil */
+.hp-offers .o-card { text-decoration: none; color: inherit; cursor: pointer; }
+.hp-offers .o-card h3 { max-width: none; font-size: 26px; }
+.o-det { font-size: 13px; color: var(--muted); margin-top: -6px; }
+@media (max-width: 760px) {
+  /* „Siguranța ta”: 2 × 2 */
+  .s-grid { grid-template-columns: 1fr 1fr; }
+  .s-item { padding: 20px 16px; gap: 10px; }
+  .s-item .ico { width: 38px; height: 38px; }
+  .s-item h3 { font-size: 19px; }
+  .s-item p { font-size: 13px; line-height: 1.5; }
+  /* recenziile și ofertele: carusel */
+  .reviews .r-grid, .hp-offers { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -16px; padding-right: 16px; scrollbar-width: none; gap: 12px; }
+  .reviews .r-grid::-webkit-scrollbar, .hp-offers::-webkit-scrollbar { display: none; }
+  .reviews .r-grid > *, .hp-offers > * { scroll-snap-align: start; }
+  .reviews .r-card { padding: 22px 20px; }
+  .reviews .r-card q { font-size: 18px; }
+  .hp-offers .o-card { padding: 24px 20px; }
+  .hp-offers .o-card h3 { font-size: 22px; }
+}
+/* PREȚURI — ofertele ca listă pe două coloane */
+.pr-olist { columns: 2; column-gap: 56px; }
+.pr-og-block { break-inside: avoid; margin-bottom: 26px; }
+.pr-orow { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 6px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; break-inside: avoid; transition: background .2s; }
+.pr-orow:first-of-type { border-top: 1px solid var(--line); }
+.pr-orow:hover b { color: var(--gold); }
+.pr-orow-n b { display: block; font: 500 19px/1.25 var(--serif); color: var(--ink); transition: color .2s; }
+.pr-orow-n small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.pr-orow .off { font: 500 12px/1 var(--sans); letter-spacing: .1em; color: var(--gold); border: 1px solid var(--gold); padding: 6px 8px; border-radius: 999px; white-space: nowrap; }
+.pr-orow .pr-off-p { margin: 0; white-space: nowrap; }
+.pr-orow .pr-off-p em { font-size: 22px; }
+/* PREȚURI — fiecare categorie: titlul în stânga, prețurile în dreapta */
+@media (min-width: 761px) {
+  .pr-cat { display: grid; grid-template-columns: minmax(0, .3fr) minmax(0, .7fr); gap: 0 56px; align-items: start; padding-top: 22px; border-top: 1px solid var(--gold-2); }
+  .pr-cat-h { display: grid; gap: 12px; align-items: start; justify-items: start; border-bottom: 0; padding-bottom: 0; position: sticky; top: calc(var(--hd-h, 0px) + 70px); }
+  .pr-rows { border-top: 1px solid var(--line); }
+}
+.pr-n a { text-decoration: none; color: var(--ink); }
+.pr-n a::after { content: ' →'; color: var(--gold); }
+.pr-n a:hover { color: var(--gold); }
+@media (max-width: 760px) {
+  .pr-olist { columns: 1; }
+  .pr-orow { grid-template-columns: 1fr auto; }
+  .pr-orow .off { grid-row: 1; grid-column: 2; justify-self: end; }
+  .pr-orow .pr-off-p { grid-column: 1 / -1; }
+}
+@media (min-width: 761px) { #echipa .doc .mono small { display: none; } }
