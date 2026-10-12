@@ -887,7 +887,7 @@ for (const id of TR_PAGINI) {
   const medici = (s.medici || []).map((n) => team.find((p) => p.nume === n)).filter(Boolean);
   const arts = D.articole.map((a) => ({ a, sc: (kwRe.test(norm(a.titlu)) ? 2 : 0) + ((a.entitati || []).some((e) => kwRe.test(norm(e))) ? 1 : 0) })).filter((x) => x.sc).sort((x, y) => y.sc - x.sc).map((x) => x.a);
   const revs = D.dovezi.testimoniale.filter((r) => medici.some((m) => r.medic === m.nume) || kwRe.test(norm(r.citat)));
-  const rev = [...new Set([...revs, ...D.dovezi.testimoniale])].filter((r) => r.citat.length > 40).slice(0, 3);
+  const rev = [...new Set([...revs, ...D.dovezi.testimoniale])].filter((r) => r.citat.length > 25).slice(0, 12);
   const asoc = t.linkuri_tratamente.map((x) => serv[x]).filter(Boolean);
   // secțiuni simple, cu titlul original: cele neclasificate + pașii fără structură + rezultatele fără galerie
   const info = [...sec('info'), ...(steps.length ? [] : sec('pasi')), ...(t.galerie.length ? [] : sec('rezultate'))].filter((x) => trBlocks(x.blocuri).trim());
@@ -926,7 +926,7 @@ for (const id of TR_PAGINI) {
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], t.galerie.length && ['#rezultate', 'Rezultate'],
-    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], medici.length && ['#medici', 'Medici'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
+    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
@@ -1004,13 +1004,6 @@ ${safeCols.length ? `<section class="sec safety" id="siguranta">
   </div>
 </section>` : ''}
 
-${medici.length ? `<section class="sec" id="medici">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Cine te tratează</span><h2 style="margin-top:18px">Medicii care te pot <em>consulta</em></h2></div><p class="lede">${esc(promisiune || 'Tratamentul îl face doar medicul, după o discuție despre ce vrei să schimbi și ce ți se potrivește.')}</p></div>
-    <div class="team-grid tr-docs">${medici.map(docCard).join('')}</div>
-  </div>
-</section>` : ''}
-
 ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Prețuri</span><h2 style="margin-top:18px">Cât <em>costă</em></h2></div><p class="lede">Din lista oficială de prețuri MOA. Zonele și doza le stabilește medicul la consultație.</p></div>
@@ -1027,14 +1020,14 @@ ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)"
 ${t.faq.length ? `<section class="sec" id="intrebari">
   <div class="wrap pf-two">
     <div class="rv"><span class="eyebrow">Întrebări frecvente</span><h2 class="pf-h2">Ce ne întreabă <em>pacienții</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:${esc(String(tel).replace(/\s/g, ''))}">${esc(tel)}</a> sau scrie-ne pe WhatsApp.</p></div>
-    <div class="tr-faq">${t.faq.map((f) => `<details><summary>${esc(f.q)}</summary><div>${trBlocks(f.blocuri)}</div></details>`).join('')}</div>
+    ${(() => { const q = (f) => `<details><summary>${esc(f.q)}</summary><div>${trBlocks(f.blocuri)}</div></details>`; const N = 3; return `<div class="tr-faq">${t.faq.slice(0, N).map(q).join('')}${t.faq.length > N ? `<details class="tr-faq-more"><summary>Vezi încă ${t.faq.length - N} ${t.faq.length - N === 1 ? 'întrebare' : 'întrebări'}</summary><div class="tr-faq">${t.faq.slice(N).map(q).join('')}</div></details>` : ''}</div>`; })()}
   </div>
 </section>` : ''}
 
 ${rev.length ? `<section class="sec reviews tr-reviews">
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">Recenzii Google</span><h2>Ce spun <em>pacienții</em></h2></div>
-    <div class="r-grid">${rev.map((r) => `<figure class="r-card" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Recenzii Google</span><h2 style="margin-top:18px">Ce spun <em>pacienții</em></h2></div><p class="lede">★★★★★ 5.0 din ${esc(nReviews)} de recenzii verificate pe Google.</p></div>
+    <div class="r-grid tr-rev-row" tabindex="0" role="region" aria-label="Recenzii">${rev.map((r) => `<figure class="r-card" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
   </div>
 </section>` : ''}
 
