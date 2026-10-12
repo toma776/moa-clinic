@@ -46,6 +46,10 @@
       "destination": "/nou/preturi/index.html"
     },
     {
+      "source": "/nou/video",
+      "destination": "/nou/video/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },

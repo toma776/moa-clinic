@@ -369,12 +369,13 @@
   <div class="wrap">
     <div class="sec-head split rv">
       <div><span class="eyebrow">În cabinet</span><h2 style="margin-top:22px">Vezi cum decurge <em>o ședință.</em></h2></div>
-      <p class="lede">Fără surprize: înainte să vii, știi exact ce se întâmplă, cât durează și cum te simți.</p>
+      <div class="inroom-side"><p class="lede">Fără surprize: înainte să vii, știi exact ce se întâmplă, cât durează și cum te simți.</p><a class="link-u" href="/nou/video/">Toate cele 13 video-uri →</a></div>
     </div>
     <div class="v-grid"><div class="v-card rv"><div class="vb"><video src="/nou/media/video/whatsapp-video-2024-11-27-at-15-27-24.mp4" preload="none" playsinline controls poster="/nou/media/video/whatsapp-video-2024-11-27-at-15-27-24.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
-        <h3>Cum se desfasoara o sedinta de Dermalinfusion?</h3><p>Dermalinfusion</p></div><div class="v-card rv"><div class="vb"><video src="/nou/media/video/whatsapp-video-2024-11-21-at-12-00-38.mp4" preload="none" playsinline controls poster="/nou/media/video/whatsapp-video-2024-11-21-at-12-00-38.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
-        <h3>ALEXANDRITE și ND:YAG – Secretul unei Epilări Perfecte cu SPLENDOR x, Laserul Unic în Lume!</h3><p>Epilare definitiva Bucuresti</p></div><div class="v-card rv"><div class="vb"><video src="/nou/media/video/whatsapp-video-2024-11-21-at-16-07-16-27dfce4a.mp4" preload="none" playsinline controls poster="/nou/media/video/whatsapp-video-2024-11-21-at-16-07-16-27dfce4a.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
-        <h3>Testare nutrigenetica - când se recomandă?</h3><p>Nutrigenetică și epigenetică</p></div>
+        <h3>Cum decurge o ședință de Dermalinfusion</h3><p><a href="/nou/tratamente/aparatura/dermalinfusion/">Dermalinfusion</a> · 26 s</p></div><div class="v-card rv"><div class="vb"><video src="/nou/media/video/whatsapp-video-2024-11-21-at-12-00-38.mp4" preload="none" playsinline controls poster="/nou/media/video/whatsapp-video-2024-11-21-at-12-00-38.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+        <h3>Splendor X: Alexandrite și Nd:YAG</h3><p><a href="/nou/tratamente/aparatura/epilare-definitiva/">Epilare definitivă Splendor X</a> · 57 s</p></div><div class="v-card rv"><div class="vb"><video src="/nou/media/video/sculptra-cum-functioneaza.mp4" preload="none" playsinline controls poster="/nou/media/video/sculptra-cum-functioneaza.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+        <h3>Cum acționează Sculptra</h3><p><a href="/nou/tratamente/injectabile/sculptra/">Sculptra</a> · 31 s</p></div><div class="v-card rv"><div class="vb"><video src="/nou/media/video/whatsapp-video-2024-11-21-at-16-07-16-27dfce4a.mp4" preload="none" playsinline controls poster="/nou/media/video/whatsapp-video-2024-11-21-at-16-07-16-27dfce4a.jpg"></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+        <h3>Testarea nutrigenetică: când se recomandă</h3><p><a href="/nou/tratamente/teste/nutrigenetica/">Nutrigenetică și epigenetică</a> · 36 s</p></div>
     <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
@@ -587,6 +588,7 @@
 
   // video: se încarcă doar la click
   document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.play(); }));
+  document.addEventListener('play', (e) => { document.querySelectorAll('.v-card video').forEach((o) => { if (o !== e.target) o.pause(); }); }, true);
 
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });

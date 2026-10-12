@@ -29,6 +29,7 @@ for (const n of consHub?.copii || []) {
 const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile noi care există deja ca pagini
 if (consHub) NOU.add(consHub.url);
 NOU.add('/preturi/');
+NOU.add('/video/');
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
@@ -100,7 +101,22 @@ const HERO_SLIDES = [
 for (const s of HERO_SLIDES) if (!fs.existsSync(path.join(ROOT, 'site', s.src))) console.warn('  ! lipsește local:', s.src);
 
 // video din cabinet (verticale, încărcate doar la click)
-const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'nutrigenetica-epigenetica']
+// titlurile video-urilor: din titlul secțiunii în care stau pe site-ul actual, curățate (fără „?”, fără majuscule, fără mențiuni repetate)
+const V_TITLU = {
+  'whatsapp-video-2024-11-27-at-15-27-24-mp4': 'Cum decurge o ședință de Dermalinfusion',
+  'adobe-express-d147583d89c54d68abb2b8dcf8c8a2da-1-mp4': 'Cum funcționează fotobiomodularea',
+  'v24044gl0000d306aavog65i7m7prvjg-mp4': 'Cum începi terapia Vielight · partea 1',
+  'v24044gl0000d37ehsvog65jo034up00-mp4': 'Cum începi terapia Vielight · partea 2',
+  'whatsapp-video-2024-11-21-at-12-00-38-mp4': 'Splendor X: Alexandrite și Nd:YAG',
+  'acidbuze-video-2-mp4': 'Augmentarea buzelor: ce înseamnă și cui i se adresează',
+  'micronedling-cu-dermapen-1-1-mp4': 'Beneficiile microneedling cu Dermapen 4',
+  'dermapen-cum-decurge-o-sedinta-mp4': 'Cum decurge microneedling cu Dermapen 4',
+  'whatsapp-video-2024-11-21-at-16-07-16-27dfce4a-mp4': 'Testarea nutrigenetică: când se recomandă',
+};
+const vTitle = (v) => V_TITLU[v.id] || String(v.pagini[0]?.sectiune || v.titlu).replace(/\?$/, '').replace(/\s+la Clinica MOA$/i, '').replace(/sedinta/gi, 'ședință').replace(/Autohemoterapie/g, 'autohemoterapie');
+const vDur = (v) => { const d = VM[v.id]?.durata_s; return d ? (d >= 60 ? `${Math.floor(d / 60)}:${String(d % 60).padStart(2, '0')} min` : `${d} s`) : ''; };
+const VID_ALL = D.video.filter((v) => !v.fundal);
+const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'sculptra', 'nutrigenetica-epigenetica']
   .map((sid) => D.video.find((v) => v.pagini.some((p) => p.serviciu === sid)))
   .filter(Boolean);
 
@@ -391,12 +407,12 @@ ${mobileNav}
   <div class="wrap">
     <div class="sec-head split rv">
       <div><span class="eyebrow">În cabinet</span><h2 style="margin-top:22px">Vezi cum decurge <em>o ședință.</em></h2></div>
-      <p class="lede">Fără surprize: înainte să vii, știi exact ce se întâmplă, cât durează și cum te simți.</p>
+      <div class="inroom-side"><p class="lede">Fără surprize: înainte să vii, știi exact ce se întâmplă, cât durează și cum te simți.</p><a class="link-u" href="/nou/video/">Toate cele ${VID_ALL.length} video-uri →</a></div>
     </div>
     <div class="v-grid">${VID.map((v) => {
       const p = v.pagini[0];
       return `<div class="v-card rv"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
-        <h3>${esc(p.sectiune || v.titlu)}</h3><p>${esc(serv[p.serviciu]?.nume || '')}</p></div>`; }).join('')}
+        <h3>${esc(vTitle(v))}</h3><p>${p.serviciu ? `<a href="${esc(live(p.serviciu))}">${esc(trNode.get(p.serviciu)?.nod.nume || serv[p.serviciu]?.nume || '')}</a>` : ''}${vDur(v) ? ` · ${vDur(v)}` : ''}</p></div>`; }).join('')}
     <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
@@ -601,6 +617,7 @@ ${mobileNav}
 
   // video: se încarcă doar la click
   document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.play(); }));
+  document.addEventListener('play', (e) => { document.querySelectorAll('.v-card video').forEach((o) => { if (o !== e.target) o.pause(); }); }, true);
 
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
@@ -1283,4 +1300,70 @@ ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
   console.log(`Prețuri: nou/preturi/ · ${nRows} prețuri · ${D.preturi.length} categorii · ${D.oferte.length} oferte`);
+}
+
+// ---------- pagina /nou/video/: toate video-urile din cabinet, pe categorii de tratament ----------
+{
+  const vids = VID_ALL.map((v) => {
+    const sid = v.pagini.find((p) => p.serviciu)?.serviciu;
+    const loc = sid && trNode.get(sid);
+    return { v, sid, cat: loc?.cat.nume || 'Altele', nume: loc?.nod.nume || serv[sid]?.nume || '', href: sid ? live(sid) : null };
+  });
+  const CAT_ORDER = ['Tratamente injectabile', 'Tratamente cu aparatură', 'Chirurgie & dermatologie', 'Medicină regenerativă', 'Teste genetice longevity', 'Altele'];
+  const cats = [...new Set(vids.map((x) => x.cat))].sort((a, b) => CAT_ORDER.indexOf(a) - CAT_ORDER.indexOf(b));
+  vids.sort((a, b) => cats.indexOf(a.cat) - cats.indexOf(b.cat));
+  const totalS = vids.reduce((n, x) => n + (VM[x.v.id]?.durata_s || 0), 0);
+  // data publicării: luna din calea fișierului pe site (/wp-content/uploads/AAAA/LL/)
+  const upDate = (v) => (String(v.fisier).match(/uploads\/(\d{4})\/(\d{2})\//) || []).slice(1).join('-') || undefined;
+  const pageUrl = ORIGIN + '/video/';
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'CollectionPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Video din cabinet | MOA Clinic', inLanguage: 'ro-RO' },
+      ...vids.map(({ v, nume }) => ({ '@type': 'VideoObject', name: vTitle(v), description: `${vTitle(v)} – ${nume}, la MOA Clinic București.`, thumbnailUrl: ORIGIN + (VM[v.id]?.poster || ''), contentUrl: ORIGIN + (VM[v.id]?.mobil || v.fisier), ...(upDate(v) ? { uploadDate: upDate(v) } : {}), ...(VM[v.id]?.durata_s ? { duration: `PT${VM[v.id].durata_s}S` } : {}) })),
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Video', item: pageUrl }] },
+    ],
+  };
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video din cabinet – cum decurg tratamentele | MOA Clinic</title>
+<meta name="description" content="${esc(`${vids.length} video-uri scurte din cabinetele MOA Clinic: ${[...new Set(vids.map((x) => x.nume))].slice(0, 6).join(', ')} și altele.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Video</span></nav>
+
+<section class="sec vp-sec">
+  <div class="wrap">
+    <div class="sec-head split"><div><span class="eyebrow">În cabinet</span><h1 style="margin-top:18px">Vezi cum <em>lucrăm.</em></h1></div>
+      <p class="lede">${vids.length} video-uri scurte din cabinetele MOA, ${Math.round(totalS / 60)} minute în total. Înainte să vii, știi cum arată clinica, aparatura și o ședință.</p></div>
+    <div class="team-filter vp-filter" role="tablist" aria-label="Filtrează după categorie"><button type="button" class="on" data-vcat="">Toate · ${vids.length}</button>${cats.map((c) => `<button type="button" data-vcat="${esc(c)}">${esc(cap(c.replace(/^Tratamente /, '').replace(/^cu /, '')))} · ${vids.filter((x) => x.cat === c).length}</button>`).join('')}</div>
+    <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline controls${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
+      <small class="vp-cat">${esc(cat)}</small><h3>${esc(vTitle(v))}</h3>${nume ? `<p>${href ? `<a href="${esc(href)}">${esc(nume)} →</a>` : esc(nume)}</p>` : ''}</div>`).join('')}</div>
+  </div>
+</section>
+
+${BOOK}
+<script>
+// filtrul pe categorii
+(() => {
+  const btns = [...document.querySelectorAll('.vp-filter button')], cards = [...document.querySelectorAll('.vp-card')];
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.classList.toggle('on', x === b));
+    cards.forEach((c) => { c.hidden = !!b.dataset.vcat && c.dataset.vcat !== b.dataset.vcat; if (c.hidden) c.querySelector('video').pause(); });
+  }));
+})();
+</script>
+${BOTTOM}`;
+  fs.mkdirSync(path.join(ROOT, 'nou', 'video'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'nou', 'video', 'index.html'), page);
+  console.log(`Video: nou/video/ · ${vids.length} video-uri · ${cats.length} categorii · ${Math.round(totalS / 60)} min`);
 }
