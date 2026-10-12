@@ -615,3 +615,143 @@ header.site.hide { transform: translateY(-100%); }
   .hero-top .eyebrow { line-height: 1.5; text-shadow: 0 1px 10px rgba(0, 0, 0, .55); }
   .hero-top .eyebrow::before { display: none; }
 }
+
+/* =====================================================================
+   Pagina de tratament (șablonul „tratament”: /nou/tratamente/<categorie>/<tratament>/)
+   ===================================================================== */
+.tr-hero h1 { font-size: clamp(46px, 5.4vw, 80px); }
+.tr-hero h1 em { font-style: italic; color: var(--gold); }
+.tr-facts { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+.tr-facts b { font-size: 30px; }
+.tr-photo { position: relative; }
+.tr-photo .frame { aspect-ratio: 4 / 5; }
+.tr-offer { position: absolute; left: -26px; bottom: 34px; z-index: 2; display: grid; gap: 4px; background: var(--night); color: #f1e9dd; padding: 16px 20px; box-shadow: 0 24px 50px -24px rgba(22, 21, 20, .5); }
+.tr-offer small { font: 500 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft); }
+.tr-offer b { font: 500 21px/1.15 var(--serif); }
+.tr-offer span { font-size: 15px; }
+.tr-offer s { color: #9d9488; margin-right: 6px; }
+
+/* cuprinsul paginii: rămâne sub header la scroll */
+.tr-toc { position: sticky; top: 72px; z-index: 30; background: rgba(248, 244, 238, .96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tr-toc .wrap { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.tr-toc .wrap::-webkit-scrollbar { display: none; }
+.tr-toc a { flex: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 14px; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+.tr-toc a:hover, .tr-toc a.on { color: var(--gold); border-color: var(--gold); }
+.tr-hero + .pf-quote + .tr-toc, .tr-hero + .tr-toc { margin-top: 0; }
+#pentru-cine, #cum-decurge, #rezultate, #siguranta, #medici, #preturi, #intrebari { scroll-margin-top: 130px; }
+
+.tr-prose p { margin: 0 0 14px; color: var(--ink-2); font-size: 16.5px; }
+.tr-prose p:last-child { margin-bottom: 0; }
+.tr-note { font-size: 13px !important; color: var(--muted) !important; letter-spacing: .02em; }
+
+.tr-zones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.tr-zone { background: var(--ivory); padding: 30px 28px; display: grid; gap: 10px; align-content: start; }
+.tr-zone span { font: italic 500 22px/1 var(--serif); color: var(--gold); }
+.tr-zone b { font: 500 25px/1.15 var(--serif); color: var(--ink); }
+.tr-zone p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+
+.tr-checks { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 12px; }
+.tr-checks li { position: relative; padding-left: 30px; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+.tr-checks li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--gold-2); color: var(--gold); font-size: 11px; display: grid; place-items: center; }
+
+.tr-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 26px; counter-reset: st; }
+.tr-steps li { counter-increment: st; display: grid; gap: 10px; align-content: start; padding-top: 22px; border-top: 1px solid var(--gold-2); }
+.tr-steps li::before { content: counter(st, decimal-leading-zero); font: italic 500 40px/1 var(--serif); color: var(--gold); }
+.tr-steps b { font: 500 23px/1.15 var(--serif); color: var(--ink); }
+.tr-steps p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
+
+.tr-gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 300px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 14px; scrollbar-width: thin; scrollbar-color: var(--gold-2) transparent; }
+.tr-gallery:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.tr-gallery figure { margin: 0; scroll-snap-align: start; background: var(--night); aspect-ratio: 819 / 1024; overflow: hidden; }
+.tr-gallery img { width: 100%; height: 100%; object-fit: cover; }
+.tr-hint { margin: 12px 0 0; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+.tr-safe { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 70px); }
+.tr-safe .pf-h3 { margin-bottom: 18px; }
+.tr-dark p { margin: 0 0 14px; color: #cfc6b8; font-size: 15.5px; line-height: 1.6; }
+.tr-dark .pf-list { color: #e6dfd3; margin-bottom: 16px; font-size: 15px; }
+.tr-dark .pf-list li::before { background: var(--gold-soft); }
+
+.tr-docs { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+.tr-offer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 22px 26px; margin-bottom: 18px; background: var(--night); color: #f1e9dd; }
+.tr-offer-row .off { font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); border: 1px solid var(--gold-soft); padding: 7px 10px; border-radius: 999px; }
+.tr-offer-row b { font: 500 24px/1.1 var(--serif); flex: 1; }
+.tr-offer-row s { color: #9d9488; margin-right: 8px; }
+.tr-offer-row em { font: italic 500 28px/1 var(--serif); color: #fff; }
+.tr-prices { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); }
+.tr-prices td { padding: 16px 22px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); vertical-align: top; }
+.tr-prices td:last-child { text-align: right; white-space: nowrap; font: 500 20px/1.2 var(--serif); color: var(--ink); }
+.tr-prices tr:last-child td { border-bottom: 0; }
+.tr-table { width: 100%; border-collapse: collapse; }
+.tr-table td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+
+.tr-faq { display: grid; border-top: 1px solid var(--line); }
+.tr-faq details { border-bottom: 1px solid var(--line); }
+.tr-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px; min-height: 64px; padding: 16px 0; font: 500 22px/1.25 var(--serif); color: var(--ink); }
+.tr-faq summary::-webkit-details-marker { display: none; }
+.tr-faq summary::after { content: '+'; flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold-2); color: var(--gold); display: grid; place-items: center; font: 300 20px/1 var(--sans); transition: transform .3s var(--ease); }
+.tr-faq details[open] summary::after { transform: rotate(45deg); }
+.tr-faq details > div { padding: 0 0 22px; }
+.tr-faq details p { margin: 0 0 10px; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; }
+.tr-faq .pf-list { margin-bottom: 10px; }
+
+.tr-more { margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px; }
+.tr-more span { color: var(--muted); margin-right: 4px; }
+.tr-more a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink-2); }
+.tr-more a:hover { border-color: var(--gold-2); color: var(--gold); }
+
+@media (max-width: 1100px) {
+  .tr-zones { grid-template-columns: repeat(2, 1fr); }
+  .tr-toc { top: 72px; }
+}
+@media (max-width: 760px) {
+  .tr-hero h1 { font-size: 44px; }
+  .tr-hero .pf-grid { gap: 22px; }
+  .tr-photo { order: -1; }
+  .tr-photo .frame { width: 100%; aspect-ratio: 16 / 10; margin-left: 0; }
+  .tr-photo .frame::before { display: none; }
+  .tr-offer { left: 12px; right: 12px; bottom: -22px; grid-template-columns: 1fr auto; align-items: end; padding: 12px 16px; }
+  .tr-offer small { grid-column: 1 / -1; }
+  .tr-offer b { font-size: 18px; }
+  .tr-hero .pf-copy { padding-top: 18px; }
+  .tr-facts { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tr-facts b { font-size: 26px; }
+  .tr-hero .pf-copy .hero-cta { order: 3; }
+  .tr-hero .pf-copy .tr-facts { order: 4; }
+  .tr-toc { top: 0; }
+  header.site:not(.hide) ~ main .tr-toc { top: 72px; }
+  .tr-zones { grid-template-columns: 1fr; }
+  .tr-zone { grid-template-columns: 34px 1fr; padding: 18px 18px; gap: 4px 12px; }
+  .tr-zone span { grid-row: 1 / span 2; font-size: 20px; padding-top: 2px; }
+  .tr-zone b { font-size: 21px; }
+  .tr-steps { grid-template-columns: 1fr; gap: 0; }
+  .tr-steps li { grid-template-columns: 46px 1fr; gap: 4px 12px; padding: 18px 0; }
+  .tr-steps li::before { grid-row: 1 / span 2; font-size: 30px; }
+  .tr-gallery { grid-auto-columns: 74%; margin-right: -16px; padding-right: 16px; scrollbar-width: none; }
+  .tr-gallery::-webkit-scrollbar { display: none; }
+  .tr-safe { grid-template-columns: 1fr; }
+  .tr-docs { grid-auto-columns: 62%; }
+  .tr-prices td { padding: 14px 14px; font-size: 14px; }
+  .tr-prices td:last-child { font-size: 18px; }
+  .tr-offer-row { padding: 18px; }
+  .tr-offer-row b { flex-basis: 100%; }
+  .tr-faq summary { font-size: 19px; }
+  .pf-side { position: static; }
+}
+
+/* =====================================================================
+   Ritm vertical mai strâns: spațiile dintre secțiuni −25% (desktop și mobil, minim 40px pe mobil).
+   Neschimbate: hero-ul homepage-ului și spațiile din interiorul cardurilor.
+   ===================================================================== */
+.sec { padding: clamp(60px, 8.25vw, 112px) 0; }
+.sec-head { margin-bottom: clamp(30px, 4.5vw, 52px); }
+.pf-quote { padding: clamp(45px, 6vw, 82px) 0; }
+.pf-grid { padding: clamp(27px, 3.75vw, 52px) 0 clamp(45px, 6vw, 75px); }
+footer .top { padding: 68px 0 45px; }
+@media (max-width: 760px) {
+  .sec { padding: 40px 0; }
+  .sec-head { margin-bottom: 20px; gap: 12px; }
+  .pf-grid { padding: 14px 0 42px; }
+  .tr-hero .pf-grid { padding-bottom: 42px; }
+}
