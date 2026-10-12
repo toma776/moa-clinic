@@ -903,3 +903,4 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   .cs-foot > span { width: 100%; justify-content: space-between; }
   .cs-foot .btn { flex: 1; justify-content: center; }
 }
+.o-card .off + .eyebrow { padding-right: 78px; line-height: 1.5; }

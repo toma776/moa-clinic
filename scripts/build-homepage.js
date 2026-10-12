@@ -105,6 +105,8 @@ const VID = ['dermalinfusion', 'epilare-definitiva-bucuresti', 'nutrigenetica-ep
 
 // oferte: cele mai mari reduceri din „Ofertele lunii”
 const offers = D.oferte.filter((o) => o.pret && o.pretInitial).sort((a, b) => b.discountProcent - a.discountProcent).slice(0, 3);
+// eticheta grupului de oferte, curățată: „Oferte Epilare Definitiva SplendorX” → „Epilare definitivă Splendor X”
+const offerGroup = (g) => String(g).replace(/^Oferte\s+/i, '').replace(/Definitiva/i, 'definitivă').replace(/SplendorX/i, 'Splendor X');
 const reviews = D.dovezi.testimoniale.filter((r) => r.citat.length > 40).slice(0, 4);
 const nReviews = D.reputatie.trustindex?.recenzii || '';
 const legal = D.legal.firme;
@@ -414,7 +416,7 @@ ${mobileNav}
       <a class="link-u" href="${esc(ORIGIN)}/abonamente/" style="justify-self:start">Toate ofertele</a>
     </div>
     <div class="o-grid">${offers.map((o) => `
-      <div class="o-card rv"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Ofertă' : o.grup)}</span>
+      <div class="o-card rv"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Ofertă' : offerGroup(o.grup))}</span>
         <h3>${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}</h3>
         <div class="price"><b>${lei(o.pret)}</b><s>${lei(o.pretInitial)}</s></div>
         <a class="link-u" href="#programare" data-srv="Ofertă: ${esc(o.nume.charAt(0) + o.nume.slice(1).toLowerCase())}" style="justify-self:start;margin-top:10px">Rezervă</a></div>`).join('')}
