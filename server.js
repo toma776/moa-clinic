@@ -164,8 +164,10 @@ async function api(req, res, url) {
 }
 
 http.createServer(async (req, res) => {
-  const url = decodeURIComponent(req.url.split(/[?#]/)[0]);
   try {
+    // o adresă cu „%” invalid nu mai oprește serverul (decodeURIComponent aruncă URIError)
+    let url;
+    try { url = decodeURIComponent(req.url.split(/[?#]/)[0]); } catch { res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' }); return res.end('400 – adresă invalidă'); }
     if (url.startsWith('/api/')) return await api(req, res, url);
     if (url === '/nou') { res.writeHead(301, { Location: '/nou/' }); return res.end(); }
     if (url.startsWith('/nou/')) {
@@ -181,6 +183,9 @@ http.createServer(async (req, res) => {
     sendJson(res, 500, { error: e.message });
   }
 }).listen(PORT, () => {
+  // orice eroare neprevăzută se scrie în consolă, fără să oprească serverul
+  process.on('uncaughtException', (e) => console.error('Eroare neprinsă:', e));
+  process.on('unhandledRejection', (e) => console.error('Promisiune respinsă:', e));
   console.log(`MOA Clinic local:  http://localhost:${PORT}/`);
   console.log(`Panou:             http://localhost:${PORT}/manage`);
 });
