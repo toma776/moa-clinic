@@ -1214,3 +1214,72 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .pf-arts .pf-h2 { margin: 14px 0 8px; }
 .pf-arts .tr-arts span { font-size: 21px; }
 @media (max-width: 760px) { .pf-arts { grid-template-columns: 1fr; } .pf-arts .tr-arts span { font-size: 18px; } }
+
+/* =====================================================================
+   Blog /blog/
+   ===================================================================== */
+.bl-hero { padding: clamp(24px, 3vw, 40px) 0 clamp(40px, 5vw, 64px); }
+.bl-hero h1 { font-size: clamp(44px, 5.2vw, 76px); font-weight: 400; }
+.bl-hero h1 em { font-style: italic; color: var(--gold); }
+.bl-hero .sec-head { margin-bottom: clamp(28px, 3.5vw, 44px); }
+/* articolul cel mai nou */
+.bl-feat { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); background: #fff; border: 1px solid var(--line); text-decoration: none; color: inherit; transition: box-shadow .3s, border-color .3s; }
+.bl-feat:hover { border-color: var(--gold-2); box-shadow: 0 30px 60px -40px rgba(22, 21, 20, .45); }
+.bl-feat .bl-img { aspect-ratio: auto; height: 100%; min-height: 340px; }
+.bl-feat-body { display: grid; gap: 16px; align-content: center; padding: clamp(28px, 4vw, 56px); }
+.bl-feat-body h2 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.1; }
+.bl-feat:hover h2 { color: var(--gold); }
+.bl-feat-body p { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.6; }
+.bl-author { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid var(--line); }
+.bl-author img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: top; }
+.bl-author b { display: block; font: 500 17px/1.2 var(--serif); color: var(--ink); }
+/* imagini și coperte */
+.bl-img { position: relative; overflow: hidden; background: var(--sand); aspect-ratio: 16 / 9; }
+.bl-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.bl-card:hover .bl-img img, .bl-feat:hover .bl-img img { transform: scale(1.04); }
+.bl-noimg { display: grid; place-items: center; background: linear-gradient(150deg, var(--cream), var(--sand)); }
+.bl-noimg::before { content: ''; position: absolute; inset: 14px; border: 1px solid rgba(148, 117, 71, .35); }
+.bl-noimg span { font: italic 500 30px/1 var(--serif); color: var(--gold); }
+/* filtre + căutare */
+.bl-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; margin-bottom: 30px; }
+.bl-filter { margin: 0; }
+.bl-search { max-width: 420px; flex: 1 1 320px; }
+.bl-search #bl-count { flex: none; font: 500 12px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+/* grila */
+.bl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3vw, 40px) clamp(18px, 2vw, 28px); }
+.bl-card { display: grid; grid-template-rows: auto 1fr; text-decoration: none; color: inherit; }
+.bl-card[hidden] { display: none; }
+.bl-body { display: grid; gap: 10px; align-content: start; padding-top: 18px; }
+.bl-body small { font: 500 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.bl-body h3 { font-size: 23px; line-height: 1.2; transition: color .2s; }
+.bl-card:hover h3 { color: var(--gold); }
+.bl-body p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.bl-meta { display: inline-flex; gap: 8px; font-size: 12.5px; letter-spacing: .04em; color: var(--muted); }
+.bl-meta i { font-style: normal; color: var(--gold-2); }
+.bl-more-row { display: flex; justify-content: center; margin-top: clamp(36px, 4vw, 56px); }
+.bl-more-row .btn[hidden] { display: none; }
+@media (max-width: 1100px) { .bl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .bl-feat { grid-template-columns: 1fr; }
+  .bl-feat .bl-img { min-height: 0; aspect-ratio: 16 / 9; height: auto; }
+  .bl-feat-body { padding: 22px 20px 24px; gap: 12px; }
+  .bl-feat-body h2 { font-size: 28px; }
+  .bl-feat-body p { font-size: 15px; }
+  .bl-tools { flex-direction: column; align-items: stretch; gap: 14px; margin-bottom: 22px; }
+  .bl-filter { flex-wrap: nowrap; overflow-x: auto; margin-right: -16px; padding-right: 16px; scrollbar-width: none; }
+  .bl-filter::-webkit-scrollbar { display: none; }
+  .bl-search { max-width: none; flex: none; }
+  .bl-grid { grid-template-columns: 1fr; gap: 28px; }
+  .bl-card { grid-template-columns: 120px 1fr; grid-template-rows: none; gap: 14px; align-items: start; }
+  .bl-card .bl-img { aspect-ratio: 1 / 1; }
+  .bl-card .bl-noimg span { font-size: 16px; }
+  .bl-body { padding-top: 0; gap: 6px; }
+  .bl-body h3 { font-size: 18px; }
+  .bl-body p { display: none; }
+}
+/* blog: lista lipită de articolul principal (același fundal), căutarea mai lată */
+.bl-list { padding-top: 0; }
+.bl-tools { flex-wrap: nowrap; }
+.bl-search { flex: 0 1 360px; min-width: 260px; }
+@media (max-width: 1100px) { .bl-tools { flex-wrap: wrap; } }
+@media (max-width: 760px) { .bl-search { flex: none; min-width: 0; width: 100%; } .bl-search .pr-in { flex-basis: 100%; } }

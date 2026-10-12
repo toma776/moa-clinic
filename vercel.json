@@ -54,6 +54,10 @@
       "destination": "/nou/video/index.html"
     },
     {
+      "source": "/nou/blog",
+      "destination": "/nou/blog/index.html"
+    },
+    {
       "source": "/api/entitati",
       "destination": "/data/entitati.json"
     },

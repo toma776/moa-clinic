@@ -8,6 +8,19 @@ const { ORIGIN } = require('./lib');
 const ROOT = path.join(__dirname, '..');
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'entitati.json'), 'utf8'));
 const S = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'structura.json'), 'utf8'));
+// titlurile articolelor de pe site-ul vechi sunt scrise adesea fără diacritice: le corectez pe cuvinte (cu păstrarea majusculelor)
+const DIACR = {
+  si: 'și', in: 'în', sa: 'să', stii: 'știi', dupa: 'după', inseamna: 'înseamnă', intre: 'între', inainte: 'înainte', pana: 'până', imi: 'îmi', tine: 'ține',
+  'ti-a': 'ți-a', poti: 'poți', cat: 'cât', dureaza: 'durează', contraindicatii: 'contraindicații', cearcane: 'cearcăne', palpebrala: 'palpebrală',
+  operatie: 'operație', cazute: 'căzute', solutie: 'soluție', solutii: 'soluții', moderna: 'modernă', fumatorului: 'fumătorului', dilatati: 'dilatați',
+  recomandari: 'recomandări', ingrijire: 'îngrijire', corecta: 'corectă', informatii: 'informații', pareri: 'păreri', sprancene: 'sprâncene',
+  definitiva: 'definitivă', clienti: 'clienți', marioneta: 'marionetă', alunite: 'alunițe', rosii: 'roșii', adevarul: 'adevărul', expertilor: 'experților',
+  gastei: 'gâștei', buna: 'bună', toxina: 'toxină', botulinica: 'botulinică', procedura: 'procedură',
+};
+const diacritice = (t) => String(t)
+  .replace(/[A-Za-zĂÂÎȘȚăâîșț]+(?:-[a-z]+)?/g, (w) => { const r = DIACR[w.toLowerCase()]; if (!r) return w; return w === w.toUpperCase() && w.length > 1 ? r.toUpperCase() : w[0] === w[0].toUpperCase() ? r[0].toUpperCase() + r.slice(1) : r; })
+  .replace(/\s+([?!:])/g, '$1');
+for (const a of D.articole) a.titlu = diacritice(a.titlu);
 const HOME = fs.readFileSync(path.join(ROOT, 'site', 'index.html'), 'utf8');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
@@ -30,6 +43,7 @@ const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile no
 if (consHub) NOU.add(consHub.url);
 NOU.add('/preturi/');
 NOU.add('/video/');
+NOU.add('/blog/');
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
@@ -1406,4 +1420,83 @@ ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'video'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'nou', 'video', 'index.html'), page);
   console.log(`Video: nou/video/ · ${vids.length} video-uri · ${cats.length} categorii · ${Math.round(totalS / 60)} min`);
+}
+
+// ---------- pagina /nou/blog/: articolele (rămân la URL-urile actuale), cu filtru, căutare și articolul cel mai nou în față ----------
+{
+  const BM = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'blog-media.json'), 'utf8')); } catch { return {}; } })();
+  const LUNI = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'];
+  const dataRo = (d) => { const m = String(d || '').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? `${+m[3]} ${LUNI[+m[2] - 1]} ${m[1]}` : ''; };
+  const minute = (a) => Math.max(2, Math.round((a.cuvinte || 0) / 200));
+  // rezumatul fără îndemnul de la final („… Descoperă informațiile esențiale acum”)
+  const rez = (a) => String(a.rezumat || '').replace(/\s*(Descoper[ăa]|Programeaz[ăa]-te|Rezerv[ăa]|Afl[ăa] mai multe)[^.]*\.?$/i, '').trim().replace(/([^.!?])$/, '$1.');
+  const TIP = { tratament: 'Tratamente', ghid: 'Ghiduri', 'îngrijire': 'Îngrijire', opinii: 'Opinii', 'comparație': 'Comparații' };
+  const arts = [...D.articole].sort((a, b) => String(b.data).localeCompare(String(a.data)));
+  const feat = arts.find((a) => BM[a.id]) || arts[0];
+  const rest = arts.filter((a) => a !== feat);
+  const tips = Object.keys(TIP).filter((t) => arts.some((a) => a.tip === t));
+  const autor = (a) => team.find((p) => p.nume === a.autor);
+  const cover = (a, cls = '') => (BM[a.id]
+    ? `<div class="bl-img ${cls}"><img src="${esc(BM[a.id].img)}" alt="" loading="lazy" width="${BM[a.id].w || 1020}" height="${BM[a.id].h || 571}"></div>`
+    : `<div class="bl-img bl-noimg ${cls}"><span>${esc(TIP[a.tip] || 'Articol')}</span></div>`);
+  const meta = (a) => `<span class="bl-meta">${esc(dataRo(a.data))}<i>·</i>${minute(a)} min de citit</span>`;
+  const card = (a) => `<a class="bl-card" href="${esc(a.url)}" data-tip="${esc(a.tip)}">${cover(a)}<div class="bl-body"><small>${esc(TIP[a.tip] || a.tip)}</small><h3>${esc(a.titlu)}</h3><p>${esc(cutTxt(rez(a), 150))}</p>${meta(a)}</div></a>`;
+  const pageUrl = ORIGIN + '/blog/';
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Blog', '@id': pageUrl + '#blog', url: pageUrl, name: 'Blogul MOA Clinic', inLanguage: 'ro-RO', publisher: { '@id': `${ORIGIN}/#organization` },
+        blogPost: arts.map((a) => ({ '@type': 'BlogPosting', headline: a.titlu, url: a.url, datePublished: a.data, ...(a.modificat ? { dateModified: a.modificat } : {}), author: { '@type': 'Person', name: a.autor }, ...(BM[a.id] ? { image: ORIGIN + BM[a.id].img } : {}) })) },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: pageUrl }] },
+    ],
+  };
+  const fa = autor(feat);
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog – ghiduri despre tratamente, îngrijire și longevitate | MOA Clinic</title>
+<meta name="description" content="${esc(`${arts.length} articole despre tratamente estetice, îngrijire și longevitate, scrise de Dr. Adrian Stănescu, medic primar gerontolog, fondatorul MOA Clinic.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Blog</span></nav>
+
+<section class="bl-hero">
+  <div class="wrap">
+    <div class="sec-head split"><div><span class="eyebrow">Blog</span><h1 style="margin-top:18px">Ce e bine <em>să știi.</em></h1></div>
+      <p class="lede">${arts.length} de articole despre tratamente, îngrijire și longevitate, scrise de ${esc(feat.autor)}${fa ? `, ${esc(fa.rol.toLowerCase())}` : ''}.</p></div>
+    <a class="bl-feat" href="${esc(feat.url)}">
+      ${cover(feat, 'bl-feat-img')}
+      <div class="bl-feat-body"><span class="eyebrow">Cel mai nou · ${esc(TIP[feat.tip] || feat.tip)}</span><h2>${esc(feat.titlu)}</h2><p>${esc(rez(feat))}</p>
+        <div class="bl-author">${fa && photos[fa.nume] ? `<img src="${esc(resized(photos[fa.nume]))}" alt="">` : ''}<span><b>${esc(feat.autor)}</b>${meta(feat)}</span></div>
+        <span class="link-u">Citește articolul →</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="sec bl-list" id="articole">
+  <div class="wrap">
+    <div class="bl-tools">
+      <div class="team-filter bl-filter" role="tablist" aria-label="Tipul articolului"><button type="button" class="on" data-tip="">Toate</button>${tips.map((t) => `<button type="button" data-tip="${esc(t)}">${esc(TIP[t])} · ${arts.filter((a) => a.tip === t && a !== feat).length}</button>`).join('')}</div>
+      <div class="pr-search bl-search"><span class="pr-in"><label for="bl-q" class="sr">Caută în articole</label><input id="bl-q" type="search" placeholder="Caută un subiect…" autocomplete="off"></span><span id="bl-count" aria-live="polite"></span></div>
+    </div>
+    <div class="bl-grid">${rest.map(card).join('')}</div>
+    <p class="pr-empty" id="bl-empty" hidden>Nu am găsit niciun articol. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
+    <div class="bl-more-row"><button type="button" class="btn btn-line" id="bl-more">Încarcă mai multe</button></div>
+  </div>
+</section>
+
+${BOOK}
+<script src="/nou/blog.js" defer></script>
+${BOTTOM}`;
+  fs.mkdirSync(path.join(ROOT, 'nou', 'blog'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'nou', 'blog', 'index.html'), page);
+  console.log(`Blog: nou/blog/ · ${arts.length} articole · ${Object.keys(BM).length} cu imagine · cel mai nou: ${feat.titlu}`);
 }
