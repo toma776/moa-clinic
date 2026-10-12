@@ -130,7 +130,7 @@ for (const s of servicii) {
     preturi: priceItems
       .filter((i) => s.alias.some((a) => reOf(a).test(norm(`${i.categorie} ${i.subgrup || ''} ${i.nume}`))))
       .filter((i) => !PRICE_EXCLUDE[s.id]?.test(norm(i.nume)))
-      .map((i) => ({ nume: i.nume, categorie: i.categorie, valoare: i.preturi[0]?.valoare ?? null })),
+      .map((i) => ({ nume: i.nume, categorie: i.categorie, ...(i.subgrup ? { subgrup: i.subgrup } : {}), valoare: i.preturi[0]?.valoare ?? null })),
     surse: pagesWith(s.alias),
   });
   s.medici = D.echipa.filter((p) => p.tip === 'Medic' && (SPEC_SERV[p.specialitate] || []).includes(s.categorie)).map((p) => p.nume);

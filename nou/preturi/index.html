@@ -379,6 +379,8 @@
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+  // ?static: totul vizibil de la început (capturi de ecran, audit)
+  if (location.search.includes('static')) document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
 
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);

@@ -622,6 +622,8 @@ ${mobileNav}
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+  // ?static: totul vizibil de la început (capturi de ecran, audit)
+  if (location.search.includes('static')) document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
 
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
@@ -844,6 +846,17 @@ function trBlocks(bl) {
   }).join('');
 }
 // „Fruntea – pentru netezirea…” → card cu titlu + descriere
+// fundalurile secțiunilor, alternate: ivoriu / crem; secțiunile închise (siguranță, programare) despart singure
+function alternateBg(html) {
+  let prev = 'ivory';
+  return html.replace(/<section class="(sec(?: [^"]*)?)"([^>]*)>/g, (m, cls, rest) => {
+    rest = rest.replace(/\s*style="background:var\(--cream\)"/, '');
+    if (/\b(safety|book)\b/.test(cls)) { prev = 'dark'; return `<section class="${cls}"${rest}>`; }
+    const bg = prev === 'cream' ? 'ivory' : 'cream';
+    prev = bg;
+    return `<section class="${cls}${bg === 'cream' ? ' alt' : ''}"${rest}>`;
+  });
+}
 const zoneCards = (items) => items.map((x) => { const [z, ...d] = x.split(/\s+[–-]\s+/); return { t: z.trim(), d: d.join(' – ').replace(/^pentru\s+/i, '').replace(/\.$/, '') }; });
 
 for (const id of TR_PAGINI) {
@@ -877,6 +890,7 @@ for (const id of TR_PAGINI) {
   const howBl = [
     ...ceEste.slice(1).map(P),
     ...B('ce-este').filter((b) => b.t !== 'p'),
+    ...B('intro').filter((b) => b.t !== 'p'), // listele din introducere (ex. „când se recomandă” la nutrigenetică)
     ...(paras('ce-este').length ? introP.map(P) : []),
     ...benRest,
   ].filter((b) => !colon(b));
@@ -936,8 +950,9 @@ for (const id of TR_PAGINI) {
   const revs = D.dovezi.testimoniale.filter((r) => medici.some((m) => r.medic === m.nume) || kwRe.test(norm(r.citat)));
   const rev = [...new Set([...revs, ...D.dovezi.testimoniale])].filter((r) => r.citat.length > 25).slice(0, 12);
   const asoc = t.linkuri_tratamente.map((x) => serv[x]).filter(Boolean);
+  const showGal = t.galerie.length >= 6;
   // secțiuni simple, cu titlul original: cele neclasificate + pașii fără structură + rezultatele fără galerie
-  const info = [...sec('info'), ...(steps.length ? [] : sec('pasi')), ...(t.galerie.length ? [] : sec('rezultate'))].filter((x) => trBlocks(x.blocuri).trim());
+  const info = [...sec('info'), ...(steps.length ? [] : sec('pasi')), ...(showGal ? [] : sec('rezultate'))].filter((x) => trBlocks(x.blocuri).trim());
   const hasPrices = s.preturi.length > 0 || sec('pret').some((x) => trBlocks(x.blocuri).trim());
   // siguranța pe coloane: fiecare „Titlu:” din text devine o coloană; „după tratament” = doar lista de reguli
   const safeCols = [], safeLead = [];
@@ -976,13 +991,13 @@ for (const id of TR_PAGINI) {
   const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
   const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
-    (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], t.galerie.length && ['#rezultate', 'Rezultate'],
-    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], consult && medici.length && ['#medici', 'Cu cine'], consult && urmeaza.length && ['#ce-urmeaza', 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
+    (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], showGal && ['#rezultate', 'Rezultate'],
+    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], info.length && ['#pe-larg', 'Pe larg'], consult && medici.length && ['#medici', 'Cu cine'], consult && urmeaza.length && ['#ce-urmeaza', 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
 
-  const page = `<!doctype html>
+  let page = `<!doctype html>
 <html lang="ro">
 <head>
 <meta charset="utf-8">
@@ -1022,8 +1037,8 @@ ${whoItems.length || whoLede || whoMore.length ? `<section class="sec" id="pentr
   </div>
 </section>` : ''}
 
-${howBl.length || benefits.length ? `<section class="sec" style="background:var(--cream)">
-  <div class="wrap pf-two tr-how">
+${howBl.length || benefits.length ? `<section class="sec">
+  <div class="wrap ${benefits.length ? 'pf-two tr-how' : 'tr-split'}">
     <div class="rv"><span class="eyebrow">${consult ? 'Despre consultație' : 'Cum acționează'}</span><h2 class="pf-h2">${esc(((h) => (h.length > 38 ? (consult ? ((x) => (x.length <= 38 ? x : 'Despre consultație'))(h.split(' și ')[0]) : 'Ce este și cum acționează') : h))((sec('ce-este')[0]?.titlu || (consult ? 'Despre consultație' : benefits.length && !howBl.length ? 'De ce să alegi acest tratament' : 'Ce este și cum acționează')).replace(/\?$/, '')))}</h2>
       ${howBl.length ? `<div class="pf-prose">${trBlocks(howBl.slice(0, 1))}${howBl.length > 1 ? `<details class="tr-read"><summary>Citește mai mult</summary>${trBlocks(howBl.slice(1))}</details>` : ''}</div>` : ''}</div>
     ${benefits.length ? `<aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks">${benefits.map((x) => `<li>${esc(cap(x.replace(/[;.]$/, '')))}</li>`).join('')}</ul></aside>` : ''}
@@ -1037,7 +1052,7 @@ ${tVids.length && !steps.length ? `<section class="sec" id="video">
   </div>
 </section>` : ''}
 
-${info.map((x) => `<section class="sec"><div class="wrap pf-two"><div class="rv"><h2 class="pf-h2">${esc(x.titlu)}</h2><div class="pf-prose">${trBlocks(x.blocuri)}</div></div></div></section>`).join('')}
+
 
 ${steps.length ? `<section class="sec" id="cum-decurge">
   <div class="wrap">
@@ -1048,9 +1063,9 @@ ${steps.length ? `<section class="sec" id="cum-decurge">
   </div>
 </section>` : ''}
 
-${t.galerie.length ? `<section class="sec tr-results" id="rezultate" style="background:var(--cream)">
+${showGal ? `<section class="sec tr-results" id="rezultate">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Rezultate reale</span><h2 style="margin-top:18px">Înainte și după, <em>la MOA</em></h2></div><div class="tr-prose">${paras('rezultate').filter((p) => !/alte proceduri|poti descoperi|poți descoperi/i.test(p)).slice(0, 1).map((p) => `<p>${esc(p)}</p>`).join('')}<p class="tr-note">${t.galerie.length} pacienți tratați în clinică. Rezultatele diferă de la o persoană la alta.</p></div></div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Rezultate reale</span><h2 style="margin-top:18px">Înainte și după, <em>la MOA</em></h2></div><div class="tr-prose">${paras('rezultate').filter((p) => !/alte proceduri|poti descoperi|poți descoperi/i.test(p)).slice(0, 1).map((p) => `<p>${esc(p)}</p>`).join('')}<p class="tr-note">Fotografii de la pacienți MOA. Rezultatele diferă de la o persoană la alta.</p></div></div>
     <div class="tr-gallery" tabindex="0" role="region" aria-label="Galerie înainte și după">${t.galerie.map((g, i) => `<figure><img src="${esc(g.src)}" alt="${esc(g.alt || `${nod.nume}: înainte și după, pacient ${i + 1}`)}" loading="lazy" width="819" height="1024"></figure>`).join('')}</div>
     <p class="tr-hint" aria-hidden="true">Glisează pentru mai multe →</p>
   </div>
@@ -1060,6 +1075,13 @@ ${safeCols.length ? `<section class="sec safety" id="siguranta">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow light">Siguranță & recuperare</span><h2 style="margin-top:18px">Ce să știi <em>înainte și după</em></h2></div>${safeIntro ? `<p class="lede">${esc(safeIntro)}</p>` : ''}</div>
     <div class="tr-safe">${safeCols.map((c) => `<div class="tr-safe-col"><h3>${esc(c.titlu)}</h3><div class="tr-dark">${trBlocks(c.blocuri)}</div></div>`).join('')}</div>
+  </div>
+</section>` : ''}
+
+${info.length ? `<section class="sec" id="pe-larg">
+  <div class="wrap tr-larg">
+    <div class="sec-head rv"><span class="eyebrow">Pe larg</span><h2>Tot ce trebuie <em>să știi</em></h2></div>
+    <div class="tr-faq tr-acc">${info.map((x, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(x.titlu)}</summary><div class="pf-prose">${trBlocks(x.blocuri)}</div></details>`).join('')}</div>
   </div>
 </section>` : ''}
 
@@ -1083,7 +1105,7 @@ ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)"
     ${offer ? `<a class="tr-offer-row" href="#programare" data-srv="${esc(offerSrv)}"><span class="off">-${offer.discountProcent}% · oferta lunii</span><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> <em>${lei(offer.pret)}</em></span><i>Programează-te →</i></a>` : ''}
     ${(() => {
       if (!s.preturi.length) return sec('pret').map((x) => trBlocks(x.blocuri)).join('');
-      const rows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9)).map((p) => `<tr><td>${esc(p.nume)}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td></tr>`);
+      const rows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9)).map((p) => `<tr><td>${esc(p.nume)}${p.subgrup ? `<small class="tr-psub">${esc(cap(p.subgrup.toLowerCase()))}</small>` : ''}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td></tr>`);
       const N = 5;
       return `<table class="tr-prices">${rows.slice(0, N).join('')}</table>${rows.length > N ? `<details class="tr-allprices"><summary>Vezi toate cele ${rows.length} prețuri</summary><table class="tr-prices">${rows.slice(N).join('')}</table></details>` : ''}`;
     })()}
@@ -1145,6 +1167,7 @@ ${book}
 </script>
 ${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', ...nod.url.split('/').filter(Boolean));
+  page = alternateBg(page);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), page);
   console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${tVids.length} video · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);

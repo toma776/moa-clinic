@@ -760,32 +760,16 @@
               "x": "TMS poate fi recomandată în următoarele situații medicale:"
             },
             {
-              "t": "p",
-              "x": "Depresie, anxietate și atacuri de panică, în special atunci când aceste afecțiuni se întrețin reciproc sau răspunsul la terapiile clasice este incomplet."
-            },
-            {
-              "t": "p",
-              "x": "Sindrom de burnout și oboseală cronică, asociate cu stres prelungit și dezechilibre emoționale."
-            },
-            {
-              "t": "p",
-              "x": "Tulburări de spectru autist, ca parte a unor programe integrate de susținere a funcțiilor cognitive și emoționale."
-            },
-            {
-              "t": "p",
-              "x": "Durere cronică și durere neuropată (migrenă, cefalee, dureri de coloană), prin modularea circuitelor nervoase implicate în percepția durerii."
-            },
-            {
-              "t": "p",
-              "x": "Boala Alzheimer și alte boli de memorie, ca terapie complementară, alături de tratamentul medicamentos."
-            },
-            {
-              "t": "p",
-              "x": "Reabilitare neuro-motorie, inclusiv în recuperarea după accident vascular cerebral, traumatisme cerebrale sau medulare."
-            },
-            {
-              "t": "p",
-              "x": "Adicții."
+              "t": "ul",
+              "items": [
+                "Depresie, anxietate și atacuri de panică, în special atunci când aceste afecțiuni se întrețin reciproc sau răspunsul la terapiile clasice este incomplet",
+                "Sindrom de burnout și oboseală cronică, asociate cu stres prelungit și dezechilibre emoționale",
+                "Tulburări de spectru autist, ca parte a unor programe integrate de susținere a funcțiilor cognitive și emoționale",
+                "Durere cronică și durere neuropată (migrenă, cefalee, dureri de coloană), prin modularea circuitelor nervoase implicate în percepția durerii",
+                "Boala Alzheimer și alte boli de memorie, ca terapie complementară, alături de tratamentul medicamentos",
+                "Reabilitare neuro-motorie, inclusiv în recuperarea după accident vascular cerebral, traumatisme cerebrale sau medulare",
+                "Adicții"
+              ]
             }
           ]
         },
@@ -802,48 +786,20 @@
               "x": "TMS poate fi indicată în următoarele situații:"
             },
             {
-              "t": "p",
-              "x": "Depresie, inclusiv depresie nou apărută sau depresie rezistentă la tratamentele antidepresive."
-            },
-            {
-              "t": "p",
-              "x": "Anxietate, atacuri de panică și insomnii."
-            },
-            {
-              "t": "p",
-              "x": "Tulburare obsesiv-compulsivă (TOC)."
-            },
-            {
-              "t": "p",
-              "x": "Boala Alzheimer, alte forme de demență și alte afecțiuni neurodegenerative."
-            },
-            {
-              "t": "p",
-              "x": "Recuperare neurologică după accident vascular cerebral, atât în fazele subacute, cât și cronice."
-            },
-            {
-              "t": "p",
-              "x": "Durere neuropată și cefalee."
-            },
-            {
-              "t": "p",
-              "x": "Sindrom de oboseală cronică și stres prelungit."
-            },
-            {
-              "t": "p",
-              "x": "Tinitus și alte afecțiuni din sfera ORL."
-            },
-            {
-              "t": "p",
-              "x": "Tulburări cognitive ușoare, precum afectarea memoriei, atenției și capacității de concentrare."
-            },
-            {
-              "t": "p",
-              "x": "Afecțiuni motorii, inclusiv ataxie și tremor esențial."
-            },
-            {
-              "t": "p",
-              "x": "Stress post-traumatic."
+              "t": "ul",
+              "items": [
+                "Depresie, inclusiv depresie nou apărută sau depresie rezistentă la tratamentele antidepresive",
+                "Anxietate, atacuri de panică și insomnii",
+                "Tulburare obsesiv-compulsivă (TOC)",
+                "Boala Alzheimer, alte forme de demență și alte afecțiuni neurodegenerative",
+                "Recuperare neurologică după accident vascular cerebral, atât în fazele subacute, cât și cronice",
+                "Durere neuropată și cefalee",
+                "Sindrom de oboseală cronică și stres prelungit",
+                "Tinitus și alte afecțiuni din sfera ORL",
+                "Tulburări cognitive ușoare, precum afectarea memoriei, atenției și capacității de concentrare",
+                "Afecțiuni motorii, inclusiv ataxie și tremor esențial",
+                "Stress post-traumatic"
+              ]
             },
             {
               "t": "p",
@@ -856,40 +812,18 @@
           "rol": "beneficii",
           "blocuri": [
             {
-              "t": "p",
-              "x": "Metodă medicală sigură, cu profil ridicat de tolerabilitate."
-            },
-            {
-              "t": "p",
-              "x": "Procedură non-invazivă, fără intervenții chirurgicale sau anestezie."
-            },
-            {
-              "t": "p",
-              "x": "Acțiune focalizată asupra zonelor cerebrale țintă."
-            },
-            {
-              "t": "p",
-              "x": "Terapie nedureroasă, fără disconfort semnificativ."
-            },
-            {
-              "t": "p",
-              "x": "Fără perioadă de recuperare, cu reluarea imediată a activităților zilnice."
-            },
-            {
-              "t": "p",
-              "x": "Răspuns terapeutic progresiv, în funcție de indicația medicală."
-            },
-            {
-              "t": "p",
-              "x": "Efecte susținute pe termen mediu și lung."
-            },
-            {
-              "t": "p",
-              "x": "Posibilitatea reducerii necesarului de medicație, în anumite cazuri."
-            },
-            {
-              "t": "p",
-              "x": "Îmbunătățirea funcțiilor cognitive, emoționale și a calității vieții."
+              "t": "ul",
+              "items": [
+                "Metodă medicală sigură, cu profil ridicat de tolerabilitate",
+                "Procedură non-invazivă, fără intervenții chirurgicale sau anestezie",
+                "Acțiune focalizată asupra zonelor cerebrale țintă",
+                "Terapie nedureroasă, fără disconfort semnificativ",
+                "Fără perioadă de recuperare, cu reluarea imediată a activităților zilnice",
+                "Răspuns terapeutic progresiv, în funcție de indicația medicală",
+                "Efecte susținute pe termen mediu și lung",
+                "Posibilitatea reducerii necesarului de medicație, în anumite cazuri",
+                "Îmbunătățirea funcțiilor cognitive, emoționale și a calității vieții"
+              ]
             }
           ]
         },
@@ -1180,36 +1114,25 @@
               "x": "Motive medicale"
             },
             {
-              "t": "p",
-              "x": "Atunci când papiloamele se inflamează sau sângerează din cauza frecării de haine sau bijuterii."
-            },
-            {
-              "t": "p",
-              "x": "Dacă există risc de infecție prin zgâriere repetată."
-            },
-            {
-              "t": "p",
-              "x": "Când apar în zone sensibile (pleoape, axile, gât) și provoacă iritații sau durere."
-            },
-            {
-              "t": "p",
-              "x": "La recomandarea medicului, pentru excluderea altor afecțiuni cutanate."
+              "t": "ul",
+              "items": [
+                "Atunci când papiloamele se inflamează sau sângerează din cauza frecării de haine sau bijuterii",
+                "Dacă există risc de infecție prin zgâriere repetată",
+                "Când apar în zone sensibile (pleoape, axile, gât) și provoacă iritații sau durere",
+                "La recomandarea medicului, pentru excluderea altor afecțiuni cutanate"
+              ]
             },
             {
               "t": "h3",
               "x": "Motive estetice"
             },
             {
-              "t": "p",
-              "x": "Papiloamele devin vizibile și afectează aspectul pielii."
-            },
-            {
-              "t": "p",
-              "x": "Îți provoacă disconfort psihic sau îți scad încrederea în propria imagine."
-            },
-            {
-              "t": "p",
-              "x": "Îți dorești o piele mai uniformă și lipsită de imperfecțiuni."
+              "t": "ul",
+              "items": [
+                "Papiloamele devin vizibile și afectează aspectul pielii",
+                "Îți provoacă disconfort psihic sau îți scad încrederea în propria imagine",
+                "Îți dorești o piele mai uniformă și lipsită de imperfecțiuni"
+              ]
             }
           ]
         },
@@ -1291,20 +1214,13 @@
               "x": "Prevenirea iritațiilor și a infecțiilor – eliminarea papiloamelor reduce riscul de inflamații, sângerări sau complicații cauzate de frecarea cu hainele ori accesoriile."
             },
             {
-              "t": "p",
-              "x": "Procedură personalizată – fiecare caz este evaluat individual, iar metoda de tratament este adaptată tipului de papiloame și zonei afectate."
-            },
-            {
-              "t": "p",
-              "x": "Timp de recuperare foarte scurt – majoritatea pacienților își pot relua activitățile imediat după intervenție."
-            },
-            {
-              "t": "p",
-              "x": "Rezultate stabile – papiloamele eliminate nu mai reapar în aceeași zonă, ceea ce îți oferă un rezultat pe termen lung."
-            },
-            {
-              "t": "p",
-              "x": "Confort psihologic – pe lângă partea medicală, eliminarea acestor excrescențe aduce un plus de încredere în propria imagine."
+              "t": "ul",
+              "items": [
+                "Procedură personalizată – fiecare caz este evaluat individual, iar metoda de tratament este adaptată tipului de papiloame și zonei afectate",
+                "Timp de recuperare foarte scurt – majoritatea pacienților își pot relua activitățile imediat după intervenție",
+                "Rezultate stabile – papiloamele eliminate nu mai reapar în aceeași zonă, ceea ce îți oferă un rezultat pe termen lung",
+                "Confort psihologic – pe lângă partea medicală, eliminarea acestor excrescențe aduce un plus de încredere în propria imagine"
+              ]
             }
           ]
         },
@@ -1822,32 +1738,16 @@
           "rol": "beneficii",
           "blocuri": [
             {
-              "t": "p",
-              "x": "Umple ridurile fine și profunde, redând pielii un aspect neted și odihnit."
-            },
-            {
-              "t": "p",
-              "x": "Remodelează trăsăturile feței și este ideal pentru volum în obraji, bărbie sau linia mandibulei."
-            },
-            {
-              "t": "p",
-              "x": "Mărește și conturează buzele, fără exagerări, cu un rezultat natural."
-            },
-            {
-              "t": "p",
-              "x": "Hidratează intens pielea, prin capacitatea sa de a reține apa în țesuturi."
-            },
-            {
-              "t": "p",
-              "x": "Stimulează producția de colagen, contribuind la fermitate și elasticitate."
-            },
-            {
-              "t": "p",
-              "x": "Îmbunătățește aspectul cearcănelor și al zonelor obosite ale feței."
-            },
-            {
-              "t": "p",
-              "x": "Conferă luminozitate și un efect vizibil de întinerire, fără intervenții chirurgicale."
+              "t": "ul",
+              "items": [
+                "Umple ridurile fine și profunde, redând pielii un aspect neted și odihnit",
+                "Remodelează trăsăturile feței și este ideal pentru volum în obraji, bărbie sau linia mandibulei",
+                "Mărește și conturează buzele, fără exagerări, cu un rezultat natural",
+                "Hidratează intens pielea, prin capacitatea sa de a reține apa în țesuturi",
+                "Stimulează producția de colagen, contribuind la fermitate și elasticitate",
+                "Îmbunătățește aspectul cearcănelor și al zonelor obosite ale feței",
+                "Conferă luminozitate și un efect vizibil de întinerire, fără intervenții chirurgicale"
+              ]
             }
           ]
         },
@@ -1952,20 +1852,13 @@
               "x": "Evită medicamentele anticoagulante sau antiinflamatoare (precum aspirina, ibuprofenul) cu câteva zile înainte, dacă medicul nu recomandă altfel, pentru a reduce riscul de vânătăi."
             },
             {
-              "t": "p",
-              "x": "Nu consuma alcool și evită fumatul în ziua procedurii."
-            },
-            {
-              "t": "p",
-              "x": "Nu aplica machiaj sau produse iritante pe zona ce urmează a fi tratată."
-            },
-            {
-              "t": "p",
-              "x": "Informează medicul despre eventuale tratamente, afecțiuni sau alergii existente."
-            },
-            {
-              "t": "p",
-              "x": "Odihnește-te bine și hidratează-te corespunzător înainte de procedură."
+              "t": "ul",
+              "items": [
+                "Nu consuma alcool și evită fumatul în ziua procedurii",
+                "Nu aplica machiaj sau produse iritante pe zona ce urmează a fi tratată",
+                "Informează medicul despre eventuale tratamente, afecțiuni sau alergii existente",
+                "Odihnește-te bine și hidratează-te corespunzător înainte de procedură"
+              ]
             }
           ]
         },
@@ -1974,40 +1867,26 @@
           "rol": "info",
           "blocuri": [
             {
-              "t": "p",
-              "x": "Evită alcoolul și efortul fizic intens în primele 2-3 zile pentru a nu agrava inflamația."
-            },
-            {
-              "t": "p",
-              "x": "Nu atinge sau masează zona injectată, mai ales în primele 24 de ore."
-            },
-            {
-              "t": "p",
-              "x": "Fără saună, solar sau băi fierbinți timp de cel puțin 3 zile."
-            },
-            {
-              "t": "p",
-              "x": "Nu aplica produse cosmetice în zona tratată decât dacă sunt recomandate de medic."
+              "t": "ul",
+              "items": [
+                "Evită alcoolul și efortul fizic intens în primele 2-3 zile pentru a nu agrava inflamația",
+                "Nu atinge sau masează zona injectată, mai ales în primele 24 de ore",
+                "Fără saună, solar sau băi fierbinți timp de cel puțin 3 zile",
+                "Nu aplica produse cosmetice în zona tratată decât dacă sunt recomandate de medic"
+              ]
             },
             {
               "t": "p",
               "x": "Sfaturi utile:"
             },
             {
-              "t": "p",
-              "x": "Bea minimum 2 litri de apă pe zi – hidratarea susține integrarea acidului hialuronic."
-            },
-            {
-              "t": "p",
-              "x": "Pentru menținerea volumului, poți repeta tratamentul la 6–8 luni, la recomandarea medicului."
-            },
-            {
-              "t": "p",
-              "x": "Dacă ai avut herpes, cere medicului profilaxie cu Aciclovir înainte și după procedură."
-            },
-            {
-              "t": "p",
-              "x": "Dacă fumezi, încearcă să reduci sau să folosești altă tehnică (ex: țigara ținută pe partea opusă injectării)."
+              "t": "ul",
+              "items": [
+                "Bea minimum 2 litri de apă pe zi – hidratarea susține integrarea acidului hialuronic",
+                "Pentru menținerea volumului, poți repeta tratamentul la 6–8 luni, la recomandarea medicului",
+                "Dacă ai avut herpes, cere medicului profilaxie cu Aciclovir înainte și după procedură",
+                "Dacă fumezi, încearcă să reduci sau să folosești altă tehnică (ex: țigara ținută pe partea opusă injectării)"
+              ]
             }
           ]
         },
@@ -2373,24 +2252,14 @@
               "x": "Rezultate progresive și personalizate : tratamentul poate fi aplicat gradual, în mai multe ședințe, pentru a ajunge la efectul dorit, fără exagerări. tratamentul poate fi aplicat gradual, în mai multe ședințe, pentru a ajunge la efectul dorit, fără exagerări."
             },
             {
-              "t": "p",
-              "x": "Vindecare rapidă și minim disconfort : umflăturile și echimozele sunt reduse, mai ales când se folosesc ace fine sau canule atraumatice."
-            },
-            {
-              "t": "p",
-              "x": "Durată optimă a efectului : în funcție de produsul utilizat, rezultatele pot dura între 6 și 12 luni."
-            },
-            {
-              "t": "p",
-              "x": "Produse premium, cu absorbție lentă: folosim acid hialuronic de ultimă generație, precum Fillmed, cu structură reticulată pentru efecte vizibile mai mult timp."
-            },
-            {
-              "t": "p",
-              "x": "Risc scăzut de reacții alergice : acidul hialuronic este o substanță prezentă în mod natural în organism, bine tolerată și sigură."
-            },
-            {
-              "t": "p",
-              "x": "Timp de recuperare scurt : poți reveni la activitățile obișnuite chiar din ziua tratamentului, fără dureri sau efecte secundare majore."
+              "t": "ul",
+              "items": [
+                "Vindecare rapidă și minim disconfort : umflăturile și echimozele sunt reduse, mai ales când se folosesc ace fine sau canule atraumatice",
+                "Durată optimă a efectului : în funcție de produsul utilizat, rezultatele pot dura între 6 și 12 luni",
+                "Produse premium, cu absorbție lentă: folosim acid hialuronic de ultimă generație, precum Fillmed, cu structură reticulată pentru efecte vizibile mai mult timp",
+                "Risc scăzut de reacții alergice : acidul hialuronic este o substanță prezentă în mod natural în organism, bine tolerată și sigură",
+                "Timp de recuperare scurt : poți reveni la activitățile obișnuite chiar din ziua tratamentului, fără dureri sau efecte secundare majore"
+              ]
             }
           ]
         },
@@ -2944,36 +2813,17 @@
           "rol": "beneficii",
           "blocuri": [
             {
-              "t": "p",
-              "x": "Redă elasticitatea pielii și estompează ridurile fine."
-            },
-            {
-              "t": "p",
-              "x": "Îmbunătățește textura pielii și uniformizează nuanța tenului."
-            },
-            {
-              "t": "p",
-              "x": "Stimulează creșterea părului și oprește căderea excesivă."
-            },
-            {
-              "t": "p",
-              "x": "Reduce aspectul cicatricilor post-acneice sau post-chirurgicale."
-            },
-            {
-              "t": "p",
-              "x": "Accelerează vindecarea leziunilor și calmează inflamațiile locale."
-            },
-            {
-              "t": "p",
-              "x": "Atenuează cearcănele și semnele de oboseală din zona ochilor."
-            },
-            {
-              "t": "p",
-              "x": "Reface fermitatea pielii din zonele delicate: gât, decolteu, scalp, mâini."
-            },
-            {
-              "t": "p",
-              "x": "Nu implică perioadă de recuperare, nu produce reacții adverse și oferă rezultate vizibile chiar după primele ședințe."
+              "t": "ul",
+              "items": [
+                "Redă elasticitatea pielii și estompează ridurile fine",
+                "Îmbunătățește textura pielii și uniformizează nuanța tenului",
+                "Stimulează creșterea părului și oprește căderea excesivă",
+                "Reduce aspectul cicatricilor post-acneice sau post-chirurgicale",
+                "Accelerează vindecarea leziunilor și calmează inflamațiile locale",
+                "Atenuează cearcănele și semnele de oboseală din zona ochilor",
+                "Reface fermitatea pielii din zonele delicate: gât, decolteu, scalp, mâini",
+                "Nu implică perioadă de recuperare, nu produce reacții adverse și oferă rezultate vizibile chiar după primele ședințe"
+              ]
             }
           ]
         },
@@ -2994,24 +2844,14 @@
               "x": "Etapele sunt simple și sigure:"
             },
             {
-              "t": "p",
-              "x": "Se recoltează sângele în eprubete speciale pentru PRP."
-            },
-            {
-              "t": "p",
-              "x": "Sângele este centrifugat timp de aproximativ 10 minute pentru separarea plasmei."
-            },
-            {
-              "t": "p",
-              "x": "Se aplică anestezic local pe zona tratată."
-            },
-            {
-              "t": "p",
-              "x": "Se injectează plasma obținută, în doze mici, direct în zona cu probleme."
-            },
-            {
-              "t": "p",
-              "x": "Procedura durează în total aproximativ 30–45 de minute, nu necesită internare și nu implică perioadă de recuperare."
+              "t": "ul",
+              "items": [
+                "Se recoltează sângele în eprubete speciale pentru PRP",
+                "Sângele este centrifugat timp de aproximativ 10 minute pentru separarea plasmei",
+                "Se aplică anestezic local pe zona tratată",
+                "Se injectează plasma obținută, în doze mici, direct în zona cu probleme",
+                "Procedura durează în total aproximativ 30–45 de minute, nu necesită internare și nu implică perioadă de recuperare"
+              ]
             },
             {
               "t": "p",
@@ -4019,40 +3859,18 @@
               "x": "Iată ce beneficii poți obține:"
             },
             {
-              "t": "p",
-              "x": "Hidratare intensă din interior: acidul hialuronic acționează acolo unde cremele nu pot ajunge, redând elasticitatea pielii."
-            },
-            {
-              "t": "p",
-              "x": "Piele mai luminoasă și netedă, cu un aspect proaspăt și sănătos."
-            },
-            {
-              "t": "p",
-              "x": "Reducerea ridurilor fine și a liniilor de expresie: pielea devine mai fermă, mai suplă și vizibil întinerită."
-            },
-            {
-              "t": "p",
-              "x": "Îmbunătățirea texturii pielii: porii dilatați și aspectul tern sunt atenuați treptat."
-            },
-            {
-              "t": "p",
-              "x": "Rezultate naturale, fără efect de “umflare”: trăsăturile rămân neschimbate, doar mai relaxate și odihnite."
-            },
-            {
-              "t": "p",
-              "x": "Potrivit pentru toate tipurile de piele: inclusiv pentru pielea sensibilă, matură sau afectată de expunerea la soare."
-            },
-            {
-              "t": "p",
-              "x": "Recuperare rapidă: tratamentul este minim invaziv și nu necesită timp de pauză."
-            },
-            {
-              "t": "p",
-              "x": "Dacă îți dorești un ten care arată bine și fără machiaj, Skinboosterul Vital este una dintre cele mai eficiente soluții."
-            },
-            {
-              "t": "p",
-              "x": "La MOA Regenerative by Oxxygene, tratamentul este adaptat nevoilor pielii tale, pentru un rezultat care nu doar se vede, ci se simte."
+              "t": "ul",
+              "items": [
+                "Hidratare intensă din interior: acidul hialuronic acționează acolo unde cremele nu pot ajunge, redând elasticitatea pielii",
+                "Piele mai luminoasă și netedă, cu un aspect proaspăt și sănătos",
+                "Reducerea ridurilor fine și a liniilor de expresie: pielea devine mai fermă, mai suplă și vizibil întinerită",
+                "Îmbunătățirea texturii pielii: porii dilatați și aspectul tern sunt atenuați treptat",
+                "Rezultate naturale, fără efect de “umflare”: trăsăturile rămân neschimbate, doar mai relaxate și odihnite",
+                "Potrivit pentru toate tipurile de piele: inclusiv pentru pielea sensibilă, matură sau afectată de expunerea la soare",
+                "Recuperare rapidă: tratamentul este minim invaziv și nu necesită timp de pauză",
+                "Dacă îți dorești un ten care arată bine și fără machiaj, Skinboosterul Vital este una dintre cele mai eficiente soluții",
+                "La MOA Regenerative by Oxxygene, tratamentul este adaptat nevoilor pielii tale, pentru un rezultat care nu doar se vede, ci se simte"
+              ]
             }
           ]
         },
@@ -4850,28 +4668,15 @@
               "x": "Nefertiti Lift îți oferă mai multe efecte vizibile într-un timp scurt, fără recuperare și fără volum în exces. Printre cele mai importante beneficii se numără:"
             },
             {
-              "t": "p",
-              "x": "Îmbunătățește fermitatea pielii , estompând liniile fine și ridurile din zona feței inferioare și a gâtului."
-            },
-            {
-              "t": "p",
-              "x": "Redefinește linia maxilarului și a bărbiei , oferindu-ți un contur mai clar și mai armonios."
-            },
-            {
-              "t": "p",
-              "x": "Reduce aspectul „dublului bărbie” , subțiind vizual zona gâtului și creând impresia unui gât mai lung și mai elegant."
-            },
-            {
-              "t": "p",
-              "x": "Stimulează circulația sanguină , ceea ce aduce o oxigenare mai bună și o luminozitate naturală a pielii."
-            },
-            {
-              "t": "p",
-              "x": "Uniformizează textura și culoarea tenului , diminuând porii dilatați și petele pigmentare."
-            },
-            {
-              "t": "p",
-              "x": "Revitalizează întregul aspect al feței , oferindu-ți o piele mai netedă, mai luminoasă și vizibil întinerită."
+              "t": "ul",
+              "items": [
+                "Îmbunătățește fermitatea pielii , estompând liniile fine și ridurile din zona feței inferioare și a gâtului",
+                "Redefinește linia maxilarului și a bărbiei , oferindu-ți un contur mai clar și mai armonios",
+                "Reduce aspectul „dublului bărbie” , subțiind vizual zona gâtului și creând impresia unui gât mai lung și mai elegant",
+                "Stimulează circulația sanguină , ceea ce aduce o oxigenare mai bună și o luminozitate naturală a pielii",
+                "Uniformizează textura și culoarea tenului , diminuând porii dilatați și petele pigmentare",
+                "Revitalizează întregul aspect al feței , oferindu-ți o piele mai netedă, mai luminoasă și vizibil întinerită"
+              ]
             }
           ]
         },
@@ -5489,32 +5294,16 @@
               "x": "Beneficiile polinucleotidelor în tratamentele estetice:"
             },
             {
-              "t": "p",
-              "x": "Hidratează intens pielea și susțin refacerea țesuturilor afectate."
-            },
-            {
-              "t": "p",
-              "x": "Stimulează sinteza de colagen și elastină."
-            },
-            {
-              "t": "p",
-              "x": "Reduc vizibil liniile fine și ridurile."
-            },
-            {
-              "t": "p",
-              "x": "Îmbunătățesc elasticitatea și fermitatea pielii."
-            },
-            {
-              "t": "p",
-              "x": "Ajută la refacerea pielii după expunerea la soare sau proceduri agresive."
-            },
-            {
-              "t": "p",
-              "x": "Contribuie la estomparea cicatricilor și a petelor pigmentare."
-            },
-            {
-              "t": "p",
-              "x": "Oferă un efect de revitalizare generală, fără injectare de volum."
+              "t": "ul",
+              "items": [
+                "Hidratează intens pielea și susțin refacerea țesuturilor afectate",
+                "Stimulează sinteza de colagen și elastină",
+                "Reduc vizibil liniile fine și ridurile",
+                "Îmbunătățesc elasticitatea și fermitatea pielii",
+                "Ajută la refacerea pielii după expunerea la soare sau proceduri agresive",
+                "Contribuie la estomparea cicatricilor și a petelor pigmentare",
+                "Oferă un efect de revitalizare generală, fără injectare de volum"
+              ]
             }
           ]
         },
@@ -5531,24 +5320,14 @@
               "x": "Polinucleotidele sunt recomandate pentru:"
             },
             {
-              "t": "p",
-              "x": "Cearcăne închise la culoare și piele subțire sub ochi."
-            },
-            {
-              "t": "p",
-              "x": "Piele lăsată sau lipsită de tonus în jurul ochilor."
-            },
-            {
-              "t": "p",
-              "x": "Riduri fine de tip „laba gâștii”."
-            },
-            {
-              "t": "p",
-              "x": "Deshidratare și aspect obosit al privirii."
-            },
-            {
-              "t": "p",
-              "x": "Estomparea vizibilă a semnelor de îmbătrânire perioculară."
+              "t": "ul",
+              "items": [
+                "Cearcăne închise la culoare și piele subțire sub ochi",
+                "Piele lăsată sau lipsită de tonus în jurul ochilor",
+                "Riduri fine de tip „laba gâștii”",
+                "Deshidratare și aspect obosit al privirii",
+                "Estomparea vizibilă a semnelor de îmbătrânire perioculară"
+              ]
             }
           ]
         },
@@ -6578,28 +6357,15 @@
               "x": "Deși este un tratament sigur și bine tolerat, există situații în care saună cu ozon nu este recomandată sau trebuie efectuată doar cu acordul medicului:"
             },
             {
-              "t": "p",
-              "x": "Sarcină și alăptare – nu se recomandă utilizarea procedurii în această perioadă."
-            },
-            {
-              "t": "p",
-              "x": "Boli cardiovasculare grave – insuficiență cardiacă severă, hipertensiune arterială necontrolată sau tulburări majore de ritm cardiac."
-            },
-            {
-              "t": "p",
-              "x": "Afecțiuni renale sau hepatice severe – pot apărea suprasolicitări suplimentare asupra acestor organe."
-            },
-            {
-              "t": "p",
-              "x": "Tulburări de coagulare sau anemie severă – pot crește riscul de complicații."
-            },
-            {
-              "t": "p",
-              "x": "Infecții acute sau boli contagioase – pentru a evita agravarea stării generale."
-            },
-            {
-              "t": "p",
-              "x": "Alergii la ozon (foarte rare) sau sensibilitate crescută la terapiile similare."
+              "t": "ul",
+              "items": [
+                "Sarcină și alăptare – nu se recomandă utilizarea procedurii în această perioadă",
+                "Boli cardiovasculare grave – insuficiență cardiacă severă, hipertensiune arterială necontrolată sau tulburări majore de ritm cardiac",
+                "Afecțiuni renale sau hepatice severe – pot apărea suprasolicitări suplimentare asupra acestor organe",
+                "Tulburări de coagulare sau anemie severă – pot crește riscul de complicații",
+                "Infecții acute sau boli contagioase – pentru a evita agravarea stării generale",
+                "Alergii la ozon (foarte rare) sau sensibilitate crescută la terapiile similare"
+              ]
             }
           ]
         },
@@ -7338,20 +7104,13 @@
               "x": "Pentru cine este recomandată epilarea definitivă cu laser?"
             },
             {
-              "t": "p",
-              "x": "Dacă te confrunți cu păr nedorit în zone sensibile sau extinse."
-            },
-            {
-              "t": "p",
-              "x": "Dacă ai piele sensibilă și metodele clasice îți provoacă iritații."
-            },
-            {
-              "t": "p",
-              "x": "Dacă îți dorești o soluție de lungă durată, eficientă și fără durere."
-            },
-            {
-              "t": "p",
-              "x": "Dacă vrei să economisești timp și bani pe termen lung."
+              "t": "ul",
+              "items": [
+                "Dacă te confrunți cu păr nedorit în zone sensibile sau extinse",
+                "Dacă ai piele sensibilă și metodele clasice îți provoacă iritații",
+                "Dacă îți dorești o soluție de lungă durată, eficientă și fără durere",
+                "Dacă vrei să economisești timp și bani pe termen lung"
+              ]
             },
             {
               "t": "p",
@@ -7990,32 +7749,16 @@
               "x": "Testul de nutrigenetică este recomandat atunci când vrei să înțelegi cum reacționează corpul tău la alimente, nutrienți, efort fizic sau medicamente, în funcție de profilul tău genetic. Este util în special:"
             },
             {
-              "t": "p",
-              "x": "când vrei să afli ce tip de alimentație se potrivește structurii tale genetice."
-            },
-            {
-              "t": "p",
-              "x": "dacă ai un indice de masă corporală crescut sau dificultăți în menținerea greutății."
-            },
-            {
-              "t": "p",
-              "x": "când suspectezi intoleranțe alimentare (gluten, lactoză, alcool, cofeină)."
-            },
-            {
-              "t": "p",
-              "x": "dacă ai carențe de vitamine și minerale."
-            },
-            {
-              "t": "p",
-              "x": "când faci sport de performanță sau urmezi programe de fitness personalizate."
-            },
-            {
-              "t": "p",
-              "x": "dacă ai nevoie de recomandări clare pentru tratamente eficiente."
-            },
-            {
-              "t": "p",
-              "x": "în sarcină și alăptare, pentru susținerea dezvoltării sănătoase a fătului."
+              "t": "ul",
+              "items": [
+                "când vrei să afli ce tip de alimentație se potrivește structurii tale genetice",
+                "dacă ai un indice de masă corporală crescut sau dificultăți în menținerea greutății",
+                "când suspectezi intoleranțe alimentare (gluten, lactoză, alcool, cofeină)",
+                "dacă ai carențe de vitamine și minerale",
+                "când faci sport de performanță sau urmezi programe de fitness personalizate",
+                "dacă ai nevoie de recomandări clare pentru tratamente eficiente",
+                "în sarcină și alăptare, pentru susținerea dezvoltării sănătoase a fătului"
+              ]
             }
           ]
         },
@@ -8084,24 +7827,14 @@
           "rol": "info",
           "blocuri": [
             {
-              "t": "p",
-              "x": "Evaluarea impactului stilului de viață asupra sănătății celulare."
-            },
-            {
-              "t": "p",
-              "x": "Identificarea timpurie a riscurilor asociate cu îmbătrânirea accelerată."
-            },
-            {
-              "t": "p",
-              "x": "Crearea unui plan personalizat pentru optimizarea sănătății."
-            },
-            {
-              "t": "p",
-              "x": "Monitorizarea eficienței tratamentelor și a schimbărilor din stilul de viață."
-            },
-            {
-              "t": "p",
-              "x": "Stabilirea unui punct de referință pentru evaluări viitoare."
+              "t": "ul",
+              "items": [
+                "Evaluarea impactului stilului de viață asupra sănătății celulare",
+                "Identificarea timpurie a riscurilor asociate cu îmbătrânirea accelerată",
+                "Crearea unui plan personalizat pentru optimizarea sănătății",
+                "Monitorizarea eficienței tratamentelor și a schimbărilor din stilul de viață",
+                "Stabilirea unui punct de referință pentru evaluări viitoare"
+              ]
             },
             {
               "t": "p",

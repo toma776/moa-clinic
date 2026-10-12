@@ -141,13 +141,15 @@
 
 
 
-<section class="sec" style="background:var(--cream)">
-  <div class="wrap pf-two tr-how">
+<section class="sec alt">
+  <div class="wrap tr-split">
     <div class="rv"><span class="eyebrow">Despre consultație</span><h2 class="pf-h2">Despre consultație</h2>
-      <div class="pf-prose"><p>Consultația nutrigenomică la MOA Regenerative by Oxxygene face parte din evaluarea de nutriție antiaging și se bazează pe analiza ADN-ului dvs. pentru a identifica variațiile genetice care pot influența răspunsul organismului la nutriție și stilul de viață. Procesul începe cu colectarea unei mostre de ADN, care poate fi obținută prin intermediul unei simple teste de salivă. Această mostră este apoi trimisă la un laborator de genetică specializat, unde este analizată pentru a identifica variațiile genetice specifice.</p><details class="tr-read"><summary>Citește mai mult</summary><p>Una dintre cele mai puternice caracteristici ale consultației nutrigenomice este abilitatea de a oferi nutriție personalizată bazată pe analiza genetică. Pe baza rezultatelor testelor genetice, un specialist în nutrigenomică identifică variațiile genetice care pot influența nevoile tale nutriționale individuale. Aceasta poate include recomandări privind alegerea alimentelor, proporțiile macronutrienților și necesitățile de vitamine și minerale.</p><p>In final, in cadrul consultației de nutriție antiaging realizată de medicul MOA regenerative by Oxxygene specializat in nutriție personalizată, Dr. Elena Păcuraru, medic primar medicină internă vei primi recomandări complexe pentru nutriția ta viitoare precum și posibile soluții rapide de corectare a deficiențelor prin terapii perfuzabile efectuate in clinica noastră.</p></details></div></div>
+      <div class="pf-prose"><p>Consultația nutrigenomică la MOA Regenerative by Oxxygene face parte din evaluarea de nutriție antiaging și se bazează pe analiza ADN-ului dvs. pentru a identifica variațiile genetice care pot influența răspunsul organismului la nutriție și stilul de viață. Procesul începe cu colectarea unei mostre de ADN, care poate fi obținută prin intermediul unei simple teste de salivă. Această mostră este apoi trimisă la un laborator de genetică specializat, unde este analizată pentru a identifica variațiile genetice specifice.</p><details class="tr-read"><summary>Citește mai mult</summary><p>Una dintre cele mai puternice caracteristici ale consultației nutrigenomice este abilitatea de a oferi nutriție personalizată bazată pe analiza genetică. Pe baza rezultatelor testelor genetice, un specialist în nutrigenomică identifică variațiile genetice care pot influența nevoile tale nutriționale individuale. Aceasta poate include recomandări privind alegerea alimentelor, proporțiile macronutrienților și necesitățile de vitamine și minerale.</p><p>In final, in cadrul consultației de nutriție antiaging realizată de medicul MOA regenerative by Oxxygene specializat in nutriție personalizată, Dr. Elena Păcuraru, medic primar medicină internă vei primi recomandări complexe pentru nutriția ta viitoare precum și posibile soluții rapide de corectare a deficiențelor prin terapii perfuzabile efectuate in clinica noastră.</p><h4>Încrederea se construiește prin siguranță și rezultate vizibile. Alege MOA Clinic pentru o procedură discretă de mărire a penisului, realizată de medici specializați.</h4></details></div></div>
     
   </div>
 </section>
+
+
 
 
 
@@ -170,7 +172,7 @@
   </div>
 </section>
 
-<section class="sec" id="ce-urmeaza" style="background:var(--cream)">
+<section class="sec alt" id="ce-urmeaza">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">După consultație</span><h2 style="margin-top:18px">Ce poate <em>urma</em></h2></div><p class="lede">Tratamentele din aceeași specialitate. Medicul îți spune la consultație dacă și ce ți se potrivește.</p></div>
     <div class="mm-grid pf-serv"><a class="mm-card" href="/nou/tratamente/regenerare/nad/"><b>Terapia NAD+</b><span>Medicină regenerativă</span><em><small>de la</small>600 lei</em></a><a class="mm-card" href="/nou/tratamente/regenerare/glutation/"><b>Perfuzii cu glutation</b><span>Medicină regenerativă</span><em><small>de la</small>220 lei</em></a><a class="mm-card" href="/nou/tratamente/regenerare/autohemoterapie/"><b>Autohemoterapie majoră cu ozon</b><span>Medicină regenerativă</span><em><small>de la</small>300 lei</em></a><a class="mm-card" href="/nou/tratamente/regenerare/sauna-ozon/"><b>Saună cu ozon</b><span>Medicină regenerativă</span><em><small>de la</small>300 lei</em></a><a class="mm-card" href="/nou/tratamente/regenerare/vielight/"><b>Fotobiomodulare Vielight</b><span>Medicină regenerativă</span><em><small>de la</small>150 lei</em></a><a class="mm-card" href="/nou/tratamente/regenerare/tms/"><b>Stimulare magnetică transcraniană (TMS)</b><span>Medicină regenerativă</span><em><small>de la</small>250 lei</em></a><a class="mm-card" href="/nou/tratamente/teste/dna-skin/"><b>DNA Skin</b><span>Teste genetice longevity</span><em>→</em></a><a class="mm-card" href="/nou/tratamente/teste/nutrigenetica/"><b>Nutrigenetică și epigenetică</b><span>Teste genetice longevity</span><em>→</em></a></div>
@@ -188,7 +190,7 @@
   </div>
 </section>
 
-<section class="sec" style="background:var(--cream)">
+<section class="sec alt">
   <div class="wrap tr-related">
     
     <div><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește despre <em>nutriție antiaging / nutrigenomică</em></h2>
@@ -397,6 +399,8 @@
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+  // ?static: totul vizibil de la început (capturi de ecran, audit)
+  if (location.search.includes('static')) document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
 
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);

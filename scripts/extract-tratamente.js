@@ -71,6 +71,13 @@ function blocksOf(seg) {
   const res = [];
   for (let i = 0; i < merged.length; i++) {
     const isItem = (b, last) => b?.t === 'p' && b.x.length <= 220 && (last ? /[;.]$/ : /;$/).test(b.x);
+    // ≥ 3 paragrafe scurte la rând, fiecare o singură frază („Umple ridurile…”, „Remodelează…”) → listă
+    const isLine = (b) => b?.t === 'p' && b.x.length <= 160 && /\.$/.test(b.x) && !/[.!?]\s+\S/.test(b.x.slice(0, -1)) && !/:$/.test(b.x);
+    if (isLine(merged[i]) && isLine(merged[i + 1]) && isLine(merged[i + 2])) {
+      const items = [];
+      while (isLine(merged[i])) items.push(merged[i++].x.replace(/\.$/, ''));
+      i--; res.push({ t: 'ul', items }); continue;
+    }
     if (isItem(merged[i]) && isItem(merged[i + 1], true)) {
       const items = [];
       while (isItem(merged[i])) items.push(clean(merged[i++].x));

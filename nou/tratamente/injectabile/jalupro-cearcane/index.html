@@ -139,7 +139,7 @@
 
 <nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pentru-cine">Pentru cine</a><a href="#cum-decurge">Cum decurge</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a></div></nav>
 
-<section class="sec" id="pentru-cine">
+<section class="sec alt" id="pentru-cine">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Pentru cine</span><h2 style="margin-top:18px">Când este <em>recomandat</em></h2></div><p class="lede">Jalupro Young Eye este un tratament injectabil minim invaziv, special formulat pentru pielea sensibilă din jurul ochilor. Combinația optimă de acid hialuronic și aminoacizi stimulează regenerarea colagenului, îmbunătățește elasticitatea și reface volumul pierdut în șanțul lacrimal, acolo unde se formează cel mai des adânciturile și umbrele neplăcute.</p></div>
     <ul class="tr-checks tr-who"><li>Cearcăne pigmentate ori întunecate</li><li>Aspect „scobit” al ochilor sau șanț lacrimal adâncit</li><li>Piele subțire și lipsită de tonus</li><li>Riduri fine și liniile de expresie din colțul extern al ochilor</li><li>Privire obosită, chiar și după odihnă</li></ul>
@@ -147,7 +147,7 @@
   </div>
 </section>
 
-<section class="sec" style="background:var(--cream)">
+<section class="sec">
   <div class="wrap pf-two tr-how">
     <div class="rv"><span class="eyebrow">Cum acționează</span><h2 class="pf-h2">Ce este și cum acționează</h2>
       <div class="pf-prose"><p>Jalupro Young Eye nu promite rezultate exagerate, ci îmbunătățiri clare și vizibile, care se simt natural și se integrează perfect în fizionomie. Printre cele mai importante beneficii se numără:</p></div></div>
@@ -159,7 +159,7 @@
 
 
 
-<section class="sec" id="cum-decurge">
+<section class="sec alt" id="cum-decurge">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2 style="margin-top:18px">Cum decurge <em>o ședință</em></h2></div><p class="lede">Procedura este una rapidă, bine tolerată și adaptată pentru confortul tău. Totul începe cu o consultație, în care specialistul analizează tipul tău de cearcăne, calitatea pielii și gradul de volum pierdut pentru a stabili exact cantitatea necesară de produs.</p></div>
     <ol class="tr-steps"><li><b>Curățare și dezinfectare a zonei perioculare</b></li><li><p>Aplicarea unei creme anestezice, pentru a reduce orice disconfort.</p></li><li><p>Micro-injectarea Jalupro Young Eye în șanțul lacrimal și în zonele care necesită hidratare și susținere.</p></li><li><b>Masaj ușor pentru a distribui uniform produsul</b></li><li><b>Recomandări post-procedură pentru rezultate optime</b></li></ol>
@@ -176,15 +176,17 @@
 
 
 
-<section class="sec" id="preturi" style="background:var(--cream)">
+
+
+<section class="sec" id="preturi">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Prețuri</span><h2 style="margin-top:18px">Cât <em>costă</em></h2></div><p class="lede">Din lista oficială de prețuri MOA. Zonele și doza le stabilește medicul la consultație.</p></div>
     
-    <table class="tr-prices"><tr><td>Tratament Cearcane Jalupro</td><td>1.200 lei</td></tr><tr><td>1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro</td><td>1.200 lei</td></tr></table>
+    <table class="tr-prices"><tr><td>Tratament Cearcane Jalupro</td><td>1.200 lei</td></tr><tr><td>1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro<small class="tr-psub">Tratamente specializate</small></td><td>1.200 lei</td></tr></table>
   </div>
 </section>
 
-<section class="sec" id="intrebari">
+<section class="sec alt" id="intrebari">
   <div class="wrap pf-two">
     <div class="rv"><span class="eyebrow">Întrebări frecvente</span><h2 class="pf-h2">Ce ne întreabă <em>pacienții</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:0743056605">0743 056 605</a> sau scrie-ne pe WhatsApp.</p></div>
     <div class="tr-faq"><details><summary>Câte ședințe sunt necesare?</summary><div><p>În general, sunt recomandate între 2–3 ședințe, la un interval de 3 săptămâni.</p></div></details><details><summary>Este dureros?</summary><div><p>Procedura este foarte bine tolerată, deoarece se aplică o cremă anestezică cu 45–50 de minute înainte, iar injectarea se face cu ace fine, concepute special pentru zonele sensibile.</p></div></details><details><summary>Pot apărea reacții adverse?</summary><div><p>Cele mai frecvente reacții adverse sunt locale și se manifestă prin roșeață sau ușoare umflături în zona injectării, care se remit de obicei în doar câteva ore.</p></div></details><details class="tr-faq-more"><summary>Vezi încă 1 întrebare</summary><div class="tr-faq"><details><summary>Cât durează efectul?</summary><div><p>Rezultatele pot dura până la un an după efectuarea unui protocol de tratament adaptat nevoilor personale.</p><h4>Recenzii pacienti</h4></div></details></div></details></div>
@@ -198,7 +200,7 @@
   </div>
 </section>
 
-<section class="sec" style="background:var(--cream)">
+<section class="sec alt">
   <div class="wrap tr-related">
     
     <div><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește despre <em>Jalupro Young Eye</em></h2>
@@ -407,6 +409,8 @@
   // apariție la scroll
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+  // ?static: totul vizibil de la început (capturi de ecran, audit)
+  if (location.search.includes('static')) document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
 
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);

@@ -6491,31 +6491,37 @@
         {
           "nume": "Consultație TMS – dr. Adrian Stănescu, medic primar gerontolog, specialist TMS, director medical și coordonator departament TMS",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 350
         },
         {
           "nume": "Ședință TMS durează 20–30 minute în funcție de program",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 250
         },
         {
           "nume": "Consolidare TMS",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 250
         },
         {
           "nume": "Program TMS Depresie – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 1900
         },
         {
           "nume": "Program TMS Burnout – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 1900
         },
         {
           "nume": "Program TMS Anxietate – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
           "categorie": "TMS – Stimulare Magnetică Transcraniană",
+          "subgrup": "ȘEDINȚE TMS",
           "valoare": 1900
         }
       ],
@@ -6682,51 +6688,61 @@
         {
           "nume": "1 mL STYLAGE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1250
         },
         {
           "nume": "1 mL RESTYLANE/JUVÉDERM",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1500
         },
         {
           "nume": "0,55 mL JUVÉDERM ULTRA SMILE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1150
         },
         {
           "nume": "1 mL STYLAGE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
           "valoare": 1400
         },
         {
           "nume": "1 mL RESTYLANE/JUVÉDERM",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
           "valoare": 1500
         },
         {
           "nume": "1 mL STYLAGE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
           "valoare": 1500
         },
         {
           "nume": "1 mL RESTYLANE/JUVÉDERM",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
           "valoare": 1600
         },
         {
           "nume": "1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
           "valoare": 1200
         },
         {
           "nume": "Augmentare peniană – 10 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "AUGMENTARE PENIANĂ",
           "valoare": 4000
         },
         {
           "nume": "Augmentare peniană – 20 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "AUGMENTARE PENIANĂ",
           "valoare": 5500
         }
       ],
@@ -6796,6 +6812,7 @@
         {
           "nume": "1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
           "valoare": 1200
         }
       ],
@@ -6840,16 +6857,19 @@
         {
           "nume": "1 mL STYLAGE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1250
         },
         {
           "nume": "1 mL RESTYLANE/JUVÉDERM",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1500
         },
         {
           "nume": "0,55 mL JUVÉDERM ULTRA SMILE",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1150
         }
       ],
@@ -7490,11 +7510,13 @@
         {
           "nume": "Augmentare peniană – 10 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "AUGMENTARE PENIANĂ",
           "valoare": 4000
         },
         {
           "nume": "Augmentare peniană – 20 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "AUGMENTARE PENIANĂ",
           "valoare": 5500
         }
       ],
@@ -8035,171 +8057,205 @@
         {
           "nume": "OFERTĂ Full Body - 6 zone la alegere",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Oferte",
           "valoare": 999
         },
         {
           "nume": "OFERTĂ Axilă + Inghinal Integral + Linie Bikini + Interfesier",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Oferte",
           "valoare": 350
         },
         {
           "nume": "OFERTĂ Axilă + Gambă + Inghinal Integral + Linie Bikini + Interfesier",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Oferte",
           "valoare": 500
         },
         {
           "nume": "OFERTĂ Picioare integral (coapse+gambe)",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Oferte",
           "valoare": 750
         },
         {
           "nume": "Față",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă facială",
           "valoare": 250
         },
         {
           "nume": "Bărbie / perciuni / mustață",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă facială",
           "valoare": 200
         },
         {
           "nume": "Axile",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 250
         },
         {
           "nume": "Mâini integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 450
         },
         {
           "nume": "Antebrațe / brațe / abdomen",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 350
         },
         {
           "nume": "Linie bikini",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 250
         },
         {
           "nume": "Inghinal Integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 450
         },
         {
           "nume": "Fese",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 250
         },
         {
           "nume": "Gambe / coapse",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 550
         },
         {
           "nume": "Picioare integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 1000
         },
         {
           "nume": "Piept",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 500
         },
         {
           "nume": "Umeri",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 500
         },
         {
           "nume": "Spate integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 1000
         },
         {
           "nume": "OFERTĂ Full Body - 6 zone la alegere",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Oferte",
           "valoare": 2000
         },
         {
           "nume": "OFERTĂ Spate integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Oferte",
           "valoare": 850
         },
         {
           "nume": "OFERTĂ Piept",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Oferte",
           "valoare": 650
         },
         {
           "nume": "Față",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă facială",
           "valoare": 400
         },
         {
           "nume": "Contur barbă",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă facială",
           "valoare": 300
         },
         {
           "nume": "Bărbie / perciuni / mustață",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă facială",
           "valoare": 350
         },
         {
           "nume": "Axile",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 400
         },
         {
           "nume": "Brațe integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 850
         },
         {
           "nume": "Antebrațe / abdomen",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 650
         },
         {
           "nume": "Linie bikini",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 400
         },
         {
           "nume": "Inghinal Integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 850
         },
         {
           "nume": "Fese",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 400
         },
         {
           "nume": "Gambe / coapse",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 1000
         },
         {
           "nume": "Picioare integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 1950
         },
         {
           "nume": "Piept",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 900
         },
         {
           "nume": "Umeri",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 700
         },
         {
           "nume": "Spate integral",
           "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+          "subgrup": "Epilare definitivă corporală",
           "valoare": 1100
         }
       ],
