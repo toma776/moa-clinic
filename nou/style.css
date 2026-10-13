@@ -691,7 +691,7 @@ header.site.hide { transform: translateY(-100%); }
 .tr-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px; min-height: 64px; padding: 16px 0; font: 500 22px/1.25 var(--serif); color: var(--ink); }
 .tr-faq summary::-webkit-details-marker { display: none; }
 .tr-faq summary::after { content: '+'; flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold-2); color: var(--gold); display: grid; place-items: center; font: 300 20px/1 var(--sans); transition: transform .3s var(--ease); }
-.tr-faq details[open] summary::after { transform: rotate(45deg); }
+/* deschisă, întrebarea păstrează plusul (fără rotire în „×”) */
 .tr-faq details > div { padding: 0 0 22px; }
 .tr-faq details p { margin: 0 0 10px; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; }
 .tr-faq .pf-list { margin-bottom: 10px; }
@@ -1384,7 +1384,7 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .ar-toc-m summary small { margin: 0; }
 .ar-toc-m summary span { font-size: 13px; color: var(--muted); }
 .ar-toc-m summary span::after { content: '+'; display: inline-block; margin-left: 10px; font-size: 18px; line-height: 1; color: var(--gold); transition: transform .2s; }
-.ar-toc-m[open] summary span::after { transform: rotate(45deg); }
+/* cuprinsul deschis păstrează plusul, ca la întrebările frecvente */
 .ar-toc-m nav { padding: 0 18px 12px; }
 .ar-toc-m ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: t; }
 .ar-toc-m li { counter-increment: t; padding: 0 !important; }
