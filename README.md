@@ -101,4 +101,6 @@ Pe localhost, scripturile legate de domeniu (CookieYes prin GTM, Pixel Your Site
 Repo-ul e legat de proiectul Vercel **moa-clinic** (echipa DWF): fiecare push pe `main` se publică automat pe **https://moa-clinic.vercel.app** (public).
 Vercel servește proiectul static; `vercel.json` face aceleași redirecționări ca `server.js`: `/` → homepage-ul copiat, `/nou/`, `/wp-content/…`, `/api/…` → fișierele din `data/`, `/manage/…` → panoul.
 
+**Neindexat:** `vercel.json` trimite pe toate adresele antetul `X-Robots-Tag: noindex, nofollow`, ca Google să nu indexeze copia de pe vercel.app (conținut duplicat cu moaclinic.ro, panoul `/manage`). La lansare, pe domeniul real, regula se scoate din `headers`.
+
 Pe Vercel panoul e **doar pentru citire**: salvările (leads, formularul de programare, editarea brandului, validarea întrebărilor, rezolvarea observațiilor, „Rulează analiza acum”) merg doar local, cu `npm start`. Lead-urile nu se publică (`data/leads.json` e în `.gitignore`).
