@@ -420,7 +420,7 @@ ${mobileNav}
         <div><b>Chirurgie</b><span>blefaroplastie, lip lift, dermatochirurgie</span></div>
         <div><b>Regenerare</b><span>terapii IV, ozon, NAD+, TMS</span></div>
       </div>
-      <a class="link-u" href="${esc(ORIGIN)}/terapii-regenerative/">Descoperă programul de longevitate</a>
+      <a class="link-u" href="/nou/longevitate/program/">Descoperă programul de longevitate</a>
     </div>
   </div>
 </section>
