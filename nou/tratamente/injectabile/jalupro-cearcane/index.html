@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#tratamente">Tratamente</a><span>›</span><a href="/nou/#tratamente">Tratamente injectabile</a><span>›</span><span aria-current="page">Jalupro Young Eye</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -137,7 +137,7 @@
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pentru-cine">Pentru cine</a><a href="#cum-decurge">Cum decurge</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a></div></nav>
+<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pentru-cine">Pentru cine</a><a href="#cum-decurge">Cum decurge</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a><a class="tr-toc-cta" href="#programare" data-srv="Jalupro Young Eye">Programează-te</a></div></nav>
 
 <section class="sec alt" id="pentru-cine">
   <div class="wrap">
@@ -150,9 +150,10 @@
 <section class="sec">
   <div class="wrap pf-two tr-how">
     <div class="rv"><span class="eyebrow">Cum acționează</span><h2 class="pf-h2">Ce este și cum acționează</h2>
-      <div class="pf-prose"><p>Jalupro Young Eye este un tratament minim invaziv, creat special pentru zona delicată din jurul ochilor și recunoscut pentru efectul său de rejuvenare profundă și luminozitate naturală.</p><details class="tr-read"><summary>Citește mai mult</summary><p>Jalupro Young Eye nu promite rezultate exagerate, ci îmbunătățiri clare și vizibile, care se simt natural și se integrează perfect în fizionomie. Printre cele mai importante beneficii se numără:</p></details></div></div>
+      <div class="pf-prose"><p>Jalupro Young Eye este un tratament minim invaziv, creat special pentru zona delicată din jurul ochilor și recunoscut pentru efectul său de rejuvenare profundă și luminozitate naturală.</p><button class="tr-more-btn" type="button" aria-expanded="false" aria-controls="tr-more-jalupro-young-eye">Citește mai mult</button></div></div>
     <aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks"><li>Luminozitate imediată în zona ochilor, datorită hidratării profunde</li><li>Reducerea ridurilor fine și netezirea pielii subțiri</li><li>Ameliorarea cearcănelor pigmentate și diminuarea aspectului întunecat</li><li>Corectarea șanțului lacrimal și restabilirea volumului pierdut</li><li>Privire mai odihnită și mai tânără, fără efect de „umflare”</li><li>Rezultate discre­te și naturale, ideale pentru cei care vor un refresh vizibil, dar subtil</li></ul></aside>
   </div>
+  <div class="wrap tr-more pf-prose" id="tr-more-jalupro-young-eye" hidden><p>Jalupro Young Eye nu promite rezultate exagerate, ci îmbunătățiri clare și vizibile, care se simt natural și se integrează perfect în fizionomie. Printre cele mai importante beneficii se numără:</p></div>
 </section>
 
 
@@ -237,11 +238,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

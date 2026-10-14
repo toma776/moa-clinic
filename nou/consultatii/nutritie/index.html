@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/consultatii/">Consultații</a><span>›</span><span aria-current="page">Consultație nutriție antiaging / nutrigenomică</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -144,9 +144,10 @@
 <section class="sec alt">
   <div class="wrap tr-split">
     <div class="rv"><span class="eyebrow">Despre consultație</span><h2 class="pf-h2">Despre consultație</h2>
-      <div class="pf-prose"><p>O investigație genetică de nutrigenomică și un medic specializat în nutriție te vor ajuta șă afli ce poți face ca organismul tău să fie sănătos și să aibă mereu energia necesară unei vieți plenare indiferent în ce punct al existenței tale te afli.</p><details class="tr-read"><summary>Citește mai mult</summary><p>Consultația nutrigenomică la MOA Regenerative by Oxxygene face parte din evaluarea de nutriție antiaging și se bazează pe analiza ADN-ului dvs. pentru a identifica variațiile genetice care pot influența răspunsul organismului la nutriție și stilul de viață. Procesul începe cu colectarea unei mostre de ADN, care poate fi obținută prin intermediul unei simple teste de salivă. Această mostră este apoi trimisă la un laborator de genetică specializat, unde este analizată pentru a identifica variațiile genetice specifice.</p><p>Una dintre cele mai puternice caracteristici ale consultației nutrigenomice este abilitatea de a oferi nutriție personalizată bazată pe analiza genetică. Pe baza rezultatelor testelor genetice, un specialist în nutrigenomică identifică variațiile genetice care pot influența nevoile tale nutriționale individuale. Aceasta poate include recomandări privind alegerea alimentelor, proporțiile macronutrienților și necesitățile de vitamine și minerale.</p><p>În final, în cadrul consultației de nutriție antiaging realizată de medicul MOA regenerative by Oxxygene specializat în nutriție personalizată, Dr. Elena Păcuraru, medic primar medicină internă vei primi recomandări complexe pentru nutriția ta viitoare precum și posibile soluții rapide de corectare a deficiențelor prin terapii perfuzabile efectuate în clinica noastră.</p></details></div></div>
+      <div class="pf-prose"><p>O investigație genetică de nutrigenomică și un medic specializat în nutriție te vor ajuta șă afli ce poți face ca organismul tău să fie sănătos și să aibă mereu energia necesară unei vieți plenare indiferent în ce punct al existenței tale te afli.</p><button class="tr-more-btn" type="button" aria-expanded="false" aria-controls="tr-more-consultatie-nutritie-antiaging-nutrigenomica">Citește mai mult</button></div></div>
     
   </div>
+  <div class="wrap tr-more pf-prose tr-cols" id="tr-more-consultatie-nutritie-antiaging-nutrigenomica" hidden><p>Consultația nutrigenomică la MOA Regenerative by Oxxygene face parte din evaluarea de nutriție antiaging și se bazează pe analiza ADN-ului dvs. pentru a identifica variațiile genetice care pot influența răspunsul organismului la nutriție și stilul de viață. Procesul începe cu colectarea unei mostre de ADN, care poate fi obținută prin intermediul unei simple teste de salivă. Această mostră este apoi trimisă la un laborator de genetică specializat, unde este analizată pentru a identifica variațiile genetice specifice.</p><p>Una dintre cele mai puternice caracteristici ale consultației nutrigenomice este abilitatea de a oferi nutriție personalizată bazată pe analiza genetică. Pe baza rezultatelor testelor genetice, un specialist în nutrigenomică identifică variațiile genetice care pot influența nevoile tale nutriționale individuale. Aceasta poate include recomandări privind alegerea alimentelor, proporțiile macronutrienților și necesitățile de vitamine și minerale.</p><p>În final, în cadrul consultației de nutriție antiaging realizată de medicul MOA regenerative by Oxxygene specializat în nutriție personalizată, Dr. Elena Păcuraru, medic primar medicină internă vei primi recomandări complexe pentru nutriția ta viitoare precum și posibile soluții rapide de corectare a deficiențelor prin terapii perfuzabile efectuate în clinica noastră.</p></div>
 </section>
 
 
@@ -220,11 +221,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

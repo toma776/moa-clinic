@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#tratamente">Tratamente</a><span>›</span><a href="https://moaclinic.ro/laser-terapie/">Tratamente cu aparatură</a><span>›</span><span aria-current="page">Venus Viva – radiofrecvență fracționată</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -137,13 +137,13 @@
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pentru-cine">Pentru cine</a><a href="#cum-decurge">Cum decurge</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a></div></nav>
+<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pentru-cine">Pentru cine</a><a href="#cum-decurge">Cum decurge</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a><a class="tr-toc-cta" href="#programare" data-srv="Venus Viva – radiofrecvență fracționată">Programează-te</a></div></nav>
 
 <section class="sec alt" id="pentru-cine">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Pentru cine</span><h2 style="margin-top:18px">Unde <em>acționează</em></h2></div><p class="lede">Venus Viva este o alegere excelentă dacă îți dorești să îmbunătățești aspectul pielii fără proceduri invazive. Tratamentul este potrivit pentru:</p></div>
     <div class="tr-zones"><div class="tr-zone"><span>01</span><b>Față</b><p>Reducerea ridurilor fine, cicatricilor post-acnee, porilor dilatați și uniformizarea tenului</p></div><div class="tr-zone"><span>02</span><b>Gât</b><p>Fermitate și estomparea liniilor vizibile</p></div><div class="tr-zone"><span>03</span><b>Decolteu</b><p>O piele mai netedă și întinerită</p></div><div class="tr-zone"><span>04</span><b>Mâini</b><p>Reducerea aspectului îmbătrânit și redarea luminozității pielii</p></div><div class="tr-zone"><span>05</span><b>Zone cu cicatrici sau imperfecțiuni</b><p>Indiferent de localizare, pentru îmbunătățirea texturii și aspectului pielii</p></div></div>
-    <details class="tr-read tr-read-wide"><summary>Citește mai mult</summary><div class="pf-prose"><ul class="pf-list"><li>Persoanele care vor să reducă ridurile fine și liniile de expresie.</li><li>Cei care se confruntă cu cicatrici post-acnee sau alte tipuri de cicatrici.</li><li>Persoanele cu pori dilatați sau textură neuniformă a pielii.</li><li>Cei care au roșeață, pete pigmentare sau hiperpigmentări.</li><li>Persoanele care doresc să își îmbunătățească fermitatea și elasticitatea pielii.</li><li>Oricine caută o soluție non-invazivă, cu recuperare minimă și rezultate vizibile.</li><li>Atât femei, cât și bărbați, indiferent de tipul de piele.</li></ul><p>Tratamentul Venus Viva este versatil și poate fi aplicat în mai multe zone, acolo unde pielea are nevoie de fermitate, uniformizare sau corectarea imperfecțiunilor:</p></div></details>
+    <details class="tr-read tr-read-wide"><summary>Citește mai mult</summary><div class="pf-prose tr-cols"><ul class="pf-list"><li>Persoanele care vor să reducă ridurile fine și liniile de expresie.</li><li>Cei care se confruntă cu cicatrici post-acnee sau alte tipuri de cicatrici.</li><li>Persoanele cu pori dilatați sau textură neuniformă a pielii.</li><li>Cei care au roșeață, pete pigmentare sau hiperpigmentări.</li><li>Persoanele care doresc să își îmbunătățească fermitatea și elasticitatea pielii.</li><li>Oricine caută o soluție non-invazivă, cu recuperare minimă și rezultate vizibile.</li><li>Atât femei, cât și bărbați, indiferent de tipul de piele.</li></ul><p>Tratamentul Venus Viva este versatil și poate fi aplicat în mai multe zone, acolo unde pielea are nevoie de fermitate, uniformizare sau corectarea imperfecțiunilor:</p></div></details>
   </div>
 </section>
 
@@ -153,6 +153,7 @@
       <div class="pf-prose"><p>Tehnologia din spatele procedurii se bazează pe radiofrecvență fracționată, care acționează direct în straturile profunde ale pielii, stimulând producția naturală de colagen și elastină. Rezultatul? O piele mai tânără, mai netedă și cu un aspect vizibil întinerit, fără perioadă lungă de recuperare. Prin energia controlată de radiofrecvență, Venus Viva stimulează regenerarea celulară și îmbunătățește circulația locală, ceea ce duce la o piele revitalizată, fermă și radiantă. Indiferent de tipul tău de ten, acest tratament personalizat îți poate oferi rezultate vizibile și de durată, ajutându-te să redescoperi frumusețea naturală.</p></div></div>
     <aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks"><li>Redefinește textura pielii, oferind un aspect mai neted și mai uniform</li><li>Reduce ridurile fine și liniile de expresie</li><li>Diminuează cicatricile post-acnee și alte tipuri de cicatrici vizibile</li><li>Micșorează porii dilatați pentru un ten mai fin</li><li>Ameliorează roșeața și petele pigmentare</li><li>Stimulează producția naturală de colagen și elastină</li><li>Îmbunătățește fermitatea și elasticitatea pielii</li><li>Conferă luminozitate și un aspect întinerit feței</li><li>Procedură non-invazivă, cu recuperare minimă</li><li>Rezultate vizibile și de durată, potrivite pentru toate tipurile de piele</li></ul></aside>
   </div>
+  
 </section>
 
 
@@ -237,11 +238,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

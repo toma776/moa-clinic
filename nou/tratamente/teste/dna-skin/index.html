@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#tratamente">Tratamente</a><span>›</span><a href="/nou/#tratamente">Teste genetice longevity</a><span>›</span><span aria-current="page">DNA Skin</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -147,6 +147,7 @@
       <div class="pf-prose"><p>Fiecare persoană are un profil unic, iar genele tale pot influența totul: de la nivelul de colagen produs, până la sensibilitatea pielii. Aflând aceste informații, poți personaliza complet rutina de îngrijire și prevenție. Nu mai acționezi la întâmplare, ci alegi tratamente, produse și obiceiuri în funcție de ceea ce funcționează cu adevărat pentru tine.</p></div></div>
     
   </div>
+  
 </section>
 
 
@@ -162,7 +163,7 @@
 <section class="sec" id="pe-larg">
   <div class="wrap tr-larg">
     <div class="sec-head rv"><span class="eyebrow">Pe larg</span><h2>Tot ce trebuie <em>să știi</em></h2></div>
-    <div class="tr-faq tr-acc"><details open><summary>De ce să fac testul Skin care DNA?</summary><div class="pf-prose"><p>Majoritatea soluțiilor de îngrijire se bazează pe ceea ce se vede la suprafață. Dar aspectul pielii tale este influențat în profunzime de factori genetici. Testul SkinCareDNA îți oferă informații precise despre cum reacționează pielea ta la îmbătrânire, soare, inflamații sau stres oxidativ. Aflând aceste date, poți construi un plan de îngrijire personalizat, adaptat biologiei tale unice, nu presupunerilor. Este o investiție în prevenție, eficiență și rezultate reale, pe termen lung.</p><p>La MoaClinic, testul SkinCareDNA înseamnă mai mult decât un raport genetic. Este baza unui plan de îngrijire adaptat 100% pielii tale, realizat de specialiști, cu produse și recomandări care chiar funcționează. Fă pasul spre o piele sănătoasă și tânără pentru mai mult timp.</p><h4>Întrebări frecvente despre Skin Care DNA</h4></div></details></div>
+    <div class="tr-faq tr-acc"><details open><summary>De ce să fac testul Skin care DNA?</summary><div class="pf-prose tr-cols"><p>Majoritatea soluțiilor de îngrijire se bazează pe ceea ce se vede la suprafață. Dar aspectul pielii tale este influențat în profunzime de factori genetici. Testul SkinCareDNA îți oferă informații precise despre cum reacționează pielea ta la îmbătrânire, soare, inflamații sau stres oxidativ. Aflând aceste date, poți construi un plan de îngrijire personalizat, adaptat biologiei tale unice, nu presupunerilor. Este o investiție în prevenție, eficiență și rezultate reale, pe termen lung.</p><p>La MoaClinic, testul SkinCareDNA înseamnă mai mult decât un raport genetic. Este baza unui plan de îngrijire adaptat 100% pielii tale, realizat de specialiști, cu produse și recomandări care chiar funcționează. Fă pasul spre o piele sănătoasă și tânără pentru mai mult timp.</p><h4>Întrebări frecvente despre Skin Care DNA</h4></div></details></div>
   </div>
 </section>
 
@@ -217,11 +218,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

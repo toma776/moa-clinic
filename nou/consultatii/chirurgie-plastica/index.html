@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/consultatii/">Consultații</a><span>›</span><span aria-current="page">Consultație chirurgie plastică</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -147,6 +147,7 @@
       <div class="pf-prose"><p>Într-o lume în care aspectul fizic joacă un rol important, obsesia pentru frumusețe și tinerete devine din ce în ce mai prezentă. Cu toate acestea, femeile și bărbații deopotriva doresc rezultate naturale și subtile, care să sublinieze trăsăturile frumoase și să le confere încredere deplină.</p></div></div>
     
   </div>
+  
 </section>
 
 
@@ -226,11 +227,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

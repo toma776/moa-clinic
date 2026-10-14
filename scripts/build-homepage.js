@@ -925,8 +925,37 @@ const sentences = (s) => String(s).match(/[^.!?]+[.!?]+/g) || [s];
 const SALES = /ai ajuns în locul potrivit|vrei să afli|programează-te acum/i;
 const norm = (x) => String(x).normalize('NFD').replace(/[̀-ͯ]/g, '');
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+// curățenie pe textele vechi: paragrafele „• …” consecutive devin listă, rândurile de tip „Full Body 950 Lei (Preț Inițial 2000 Lei)”
+// devin tabel, iar paragrafele/subtitlurile repetate în aceeași secțiune (copiate de două ori pe pagina veche) apar o singură dată
+const PRICE_LINE = /^(.{3,110}?)\s*(\d[\d.]*)\s*(?:lei|ron)\b\s*(?:\(?\s*\(?\s*(.*?)\)?\s*)?$/i;
+function tidyBlocks(bl) {
+  const seen = new Set(), out = [];
+  for (const b of bl) {
+    const key = (b.t === 'p' || b.t === 'h3') ? b.t + ':' + b.x : null;
+    if (key && b.x.length > 3 && seen.has(key)) continue;
+    if (key) seen.add(key);
+    const last = out[out.length - 1];
+    if (b.t === 'p' && /^[•·▪●-]\s+/.test(b.x)) {
+      const item = b.x.replace(/^[•·▪●-]\s+/, '');
+      if (last && last.t === 'ul' && last._bul) last.items.push(item); else out.push({ t: 'ul', items: [item], _bul: true });
+      continue;
+    }
+    const pm = b.t === 'p' && b.x.length < 150 && b.x.replace(/\s*Programeaz\S*\s*$/i, '').match(PRICE_LINE);
+    if (pm) {
+      const extra = (pm[3] || '').replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
+      const init = extra.match(/pre[țt]\s*ini[țt]ial\s*(\d[\d.]*)/i);
+      const row = { n: pm[1].replace(/[\s(–-]+$/, '').trim(), v: +pm[2].replace(/\./g, ''), init: init ? +init[1].replace(/\./g, '') : null, extra: extra.replace(/pre[țt]\s*ini[țt]ial\s*\d[\d.]*\s*(lei|ron)?/i, '').trim() };
+      if (last && last.t === 'ptabel') last.rows.push(row); else out.push({ t: 'ptabel', rows: [row] });
+      continue;
+    }
+    out.push(b);
+  }
+  // un singur rând de preț rămâne paragraf
+  return out.map((b) => (b.t === 'ptabel' && b.rows.length < 3 ? b.rows.map((r) => ({ t: 'p', x: `${r.n} ${r.v} lei${r.extra ? ' (' + r.extra + ')' : ''}` })) : [b])).flat();
+}
 function trBlocks(bl) {
-  return bl.map((b) => {
+  return tidyBlocks(bl).map((b) => {
+    if (b.t === 'ptabel') return `<table class="tr-prices tr-ptab">${b.rows.map((r) => `<tr><td>${esc(r.n)}${r.extra ? `<small class="tr-psub">${esc(r.extra)}</small>` : ''}</td><td>${r.init ? `<s>${lei(r.init)}</s> ` : ''}${lei(r.v)}</td></tr>`).join('')}</table>`;
     if (b.t === 'p') return `<p>${esc(b.x)}</p>`;
     if (b.t === 'h3') return `<h4>${esc(b.x)}</h4>`;
     if (b.t === 'ul') return `<ul class="pf-list">${b.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
@@ -979,7 +1008,9 @@ for (const id of TR_PAGINI) {
   // „cum acționează”: restul textului din „ce este” (+ intro, dacă există „ce este”) + beneficiile care nu sunt listă
   const benList = lists('beneficii'), benBl = B('beneficii'), benH3 = [];
   benBl.forEach((b, i) => { if (b.t === 'h3') benH3.push(b.x.replace(/:$/, '') + (benBl[i + 1]?.t === 'p' ? ' – ' + benBl[i + 1].x : '')); });
-  const benefits = benList.length ? benList : benH3;
+  const CAUTION = /\bnu (se|sunt|este|trebuie|e)\b|contraindic|evitat|acordul|pot (produce|influența|constitui)|prealabil|însărcinate|alăpt/i;
+  const benAll = benList.length ? benList : benH3;
+  const benefits = benAll.filter((x) => !CAUTION.test(x)), cautions = benAll.filter((x) => CAUTION.test(x));
   const benRest = benBl.filter((b, i) => !colon(b) && (benList.length ? b.t !== 'ul' : b.t !== 'h3' && !(b.t === 'p' && benBl[i - 1]?.t === 'h3')));
   const howBl = [
     ...(ledeRest ? [P(ledeRest)] : []),
@@ -1063,6 +1094,7 @@ for (const id of TR_PAGINI) {
   const firstUl = dupaBl.findIndex((b) => b.t === 'ul');
   const dupaRules = firstUl >= 0 ? dupaBl.filter((b, i) => i >= firstUl && !(b.t === 'p' && /^respect/i.test(b.x))) : dupaBl;
   if (dupaRules.length) safeCols.push({ titlu: 'După tratament', blocuri: dupaRules });
+  if (cautions.length) safeCols.push({ titlu: 'De reținut', blocuri: [{ t: 'ul', items: cautions }] });
   const safeIntro = safeLead.find((b) => b.t === 'p')?.x || '';
   const pageUrl = ORIGIN + nod.url;
   const tel = String(D.contact?.telefon || '0743056605').replace(/^\+?40/, '0').replace(/\s/g, '').replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
@@ -1087,7 +1119,7 @@ for (const id of TR_PAGINI) {
   const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], showGal && ['#rezultate', 'Rezultate'],
-    (sec('siguranta').length || sec('dupa').length) && ['#siguranta', 'Siguranță'], info.length && ['#pe-larg', 'Pe larg'], consult && (medici.length || urmeaza.length) && ['#medici', medici.length ? 'Cu cine' : 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
+    safeCols.length && ['#siguranta', 'Siguranță'], info.length && ['#pe-larg', 'Pe larg'], consult && (medici.length || urmeaza.length) && ['#medici', medici.length ? 'Cu cine' : 'Ce urmează'], hasPrices && ['#preturi', 'Prețuri'], t.faq.length && ['#intrebari', 'Întrebări'],
   ].filter(Boolean);
   const docCard = (p) => `<article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
@@ -1106,7 +1138,7 @@ for (const id of TR_PAGINI) {
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body>
-${TOP}<main>
+${TOP}<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb">${crumbs.map(([n, h]) => (h ? `<a href="${esc(h)}">${esc(n)}</a><span>›</span>` : `<span aria-current="page">${esc(n)}</span>`)).join('')}</nav>
 
 <section class="pf-hero tr-hero">
@@ -1122,27 +1154,28 @@ ${TOP}<main>
   </div>
 </section>
 
-${toc.length >= 3 ? `<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}</div></nav>` : ''}
+${toc.length >= 3 ? `<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}<a class="tr-toc-cta" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a></div></nav>` : ''}
 
 ${whoItems.length || whoLede || whoMore.length ? `<section class="sec" id="pentru-cine">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow">Pentru cine</span><h2 style="margin-top:18px">${zoneItems.length ? 'Unde <em>acționează</em>' : 'Când este <em>recomandat</em>'}</h2></div>${whoLede ? `<p class="lede">${esc(whoLede)}</p>` : ''}</div>
     ${whoCards ? `<div class="tr-zones">${zoneCards(whoItems).map((z, i) => `<div class="tr-zone"><span>${String(i + 1).padStart(2, '0')}</span><b>${esc(cap(z.t.replace(/[;.]$/, '')))}</b>${z.d ? `<p>${esc(cap(z.d.replace(/[;.]$/, '')))}</p>` : ''}</div>`).join('')}</div>` : whoItems.length ? `<ul class="tr-checks tr-who">${whoItems.map((x) => `<li>${esc(cap(x.replace(/[;.]$/, '')))}</li>`).join('')}</ul>` : ''}
-    ${whoMore.length ? `<details class="tr-read tr-read-wide"><summary>Citește mai mult</summary><div class="pf-prose">${trBlocks(whoMore)}</div></details>` : ''}
+    ${whoMore.length ? `<details class="tr-read tr-read-wide"><summary>Citește mai mult</summary><div class="pf-prose${trBlocks(whoMore).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}">${trBlocks(whoMore)}</div></details>` : ''}
   </div>
 </section>` : ''}
 
 ${howBl.length || benefits.length ? `<section class="sec">
   <div class="wrap ${benefits.length ? 'pf-two tr-how' : 'tr-split'}">
     <div class="rv"><span class="eyebrow">${consult ? 'Despre consultație' : 'Cum acționează'}</span><h2 class="pf-h2">${esc(((h) => (h.length > 38 ? (consult ? ((x) => (x.length <= 38 ? x : 'Despre consultație'))(h.split(' și ')[0]) : 'Ce este și cum acționează') : h))((sec('ce-este')[0]?.titlu || (consult ? 'Despre consultație' : benefits.length && !howBl.length ? 'De ce să alegi acest tratament' : 'Ce este și cum acționează')).replace(/\?$/, '')))}</h2>
-      ${howBl.length ? `<div class="pf-prose">${trBlocks(howBl.slice(0, 1))}${howBl.length > 1 ? `<details class="tr-read"><summary>Citește mai mult</summary>${trBlocks(howBl.slice(1))}</details>` : ''}</div>` : ''}</div>
+      ${howBl.length ? `<div class="pf-prose">${trBlocks(howBl.slice(0, 1))}${howBl.length > 1 ? `<button class="tr-more-btn" type="button" aria-expanded="false" aria-controls="tr-more-${esc(id)}">Citește mai mult</button>` : ''}</div>` : ''}</div>
     ${benefits.length ? `<aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks">${benefits.map((x) => `<li>${esc(cap(x.replace(/[;.]$/, '')))}</li>`).join('')}</ul></aside>` : ''}
   </div>
+  ${howBl.length > 1 ? `<div class="wrap tr-more pf-prose${trBlocks(howBl.slice(1)).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}" id="tr-more-${esc(id)}" hidden>${trBlocks(howBl.slice(1))}</div>` : ''}
 </section>` : ''}
 
 ${tVids.length && !steps.length ? `<section class="sec" id="video">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">În cabinet</span><h2 style="margin-top:18px">Vezi cum <em>decurge</em></h2></div><p class="lede">${tVids.length === 1 ? 'Un video scurt' : `${tVids.length} video-uri scurte`} din cabinetul MOA.</p></div>
+  <div class="wrap${tVids.length <= 2 ? ' tr-vsolo' : ''}">
+    <div class="sec-head${tVids.length <= 2 ? '' : ' split'} rv"><div><span class="eyebrow">În cabinet</span><h2 style="margin-top:18px">Vezi cum <em>decurge</em></h2></div><p class="lede">${tVids.length === 1 ? 'Un video scurt' : `${tVids.length} video-uri scurte`} din cabinetul MOA: aparatul, procedura și ce simți în timpul ședinței.</p>${tVids.length <= 2 ? '<a class="link-u" href="/nou/video/" style="justify-self:start">Toate video-urile →</a>' : ''}</div>
     <div class="vp-grid tr-vgrid">${vidCards}</div>
   </div>
 </section>` : ''}
@@ -1169,14 +1202,14 @@ ${showGal ? `<section class="sec tr-results" id="rezultate">
 ${safeCols.length ? `<section class="sec safety" id="siguranta">
   <div class="wrap">
     <div class="sec-head split rv"><div><span class="eyebrow light">Siguranță & recuperare</span><h2 style="margin-top:18px">Ce să știi <em>înainte și după</em></h2></div>${safeIntro ? `<p class="lede">${esc(safeIntro)}</p>` : ''}</div>
-    <div class="tr-safe">${safeCols.map((c) => `<div class="tr-safe-col"><h3>${esc(c.titlu)}</h3><div class="tr-dark">${trBlocks(c.blocuri)}</div></div>`).join('')}</div>
+    <div class="tr-safe">${safeCols.map((c) => `<details class="tr-safe-col" open><summary><h3>${esc(c.titlu)}</h3></summary><div class="tr-dark">${trBlocks(c.blocuri)}</div></details>`).join('')}</div>
   </div>
 </section>` : ''}
 
 ${info.length ? `<section class="sec" id="pe-larg">
   <div class="wrap tr-larg">
     <div class="sec-head rv"><span class="eyebrow">Pe larg</span><h2>Tot ce trebuie <em>să știi</em></h2></div>
-    <div class="tr-faq tr-acc">${info.map((x, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(x.titlu)}</summary><div class="pf-prose">${trBlocks(x.blocuri)}</div></details>`).join('')}</div>
+    <div class="tr-faq tr-acc">${info.map((x, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(x.titlu)}</summary><div class="pf-prose${trBlocks(x.blocuri).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}">${trBlocks(x.blocuri)}</div></details>`).join('')}</div>
   </div>
 </section>` : ''}
 
@@ -1227,11 +1260,18 @@ ${asoc.length || arts.length ? `<section class="sec" style="background:var(--cre
 
 ${book}
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;

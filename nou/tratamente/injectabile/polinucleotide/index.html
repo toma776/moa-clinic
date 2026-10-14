@@ -121,7 +121,7 @@
   <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
 </div>
 
-<main>
+<main class="tr-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#tratamente">Tratamente</a><span>›</span><a href="/nou/#tratamente">Tratamente injectabile</a><span>›</span><span aria-current="page">Polinucleotide (Rejuran)</span></nav>
 
 <section class="pf-hero tr-hero">
@@ -137,7 +137,7 @@
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pe-larg">Pe larg</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a></div></nav>
+<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap"><a href="#pe-larg">Pe larg</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a><a class="tr-toc-cta" href="#programare" data-srv="Polinucleotide (Rejuran)">Programează-te</a></div></nav>
 
 
 
@@ -147,6 +147,7 @@
       <div class="pf-prose"><ul class="pf-list"><li>Hidratează intens pielea și susțin refacerea țesuturilor afectate</li><li>Stimulează sinteza de colagen și elastină</li><li>Reduc vizibil liniile fine și ridurile</li><li>Îmbunătățesc elasticitatea și fermitatea pielii</li><li>Ajută la refacerea pielii după expunerea la soare sau proceduri agresive</li><li>Contribuie la estomparea cicatricilor și a petelor pigmentare</li><li>Oferă un efect de revitalizare generală, fără injectare de volum</li></ul></div></div>
     
   </div>
+  
 </section>
 
 
@@ -162,7 +163,7 @@
 <section class="sec" id="pe-larg">
   <div class="wrap tr-larg">
     <div class="sec-head rv"><span class="eyebrow">Pe larg</span><h2>Tot ce trebuie <em>să știi</em></h2></div>
-    <div class="tr-faq tr-acc"><details open><summary>Polinucleotide ochi - scapă de cearcăne în mod delicat și de durată</summary><div class="pf-prose"><p>Zona ochilor este una dintre cele mai sensibile și vizibil afectate de oboseală, stres sau trecerea timpului. Tratamentele cu polinucleotide oferă o soluție sigură și eficientă pentru revitalizarea privirii, fără umflături, vânătăi sau timp de recuperare.</p><p>Polinucleotidele sunt recomandate pentru:</p><ul class="pf-list"><li>Cearcăne închise la culoare și piele subțire sub ochi</li><li>Piele lăsată sau lipsită de tonus în jurul ochilor</li><li>Riduri fine de tip „laba gâștii”</li><li>Deshidratare și aspect obosit al privirii</li><li>Estomparea vizibilă a semnelor de îmbătrânire perioculară</li></ul></div></details><details><summary>Polinucleotide păr - oprește căderea și stimulează creșterea părului</summary><div class="pf-prose"><p>Polinucleotidele nu acționează doar asupra pielii – ele oferă rezultate remarcabile și în tratamentele pentru scalp. Prin stimularea regenerării celulare și îmbunătățirea microcirculației, acest tip de terapie ajută la întărirea rădăcinii firului de păr și reactivarea foliculilor inactivi.</p><p>Polinucleotidele sunt eficiente pentru:</p><p>Căderea difuză sau excesivă a părului (femei și bărbați)</p><p>Păr subțire, fragil, lipsit de densitate</p><p>Scalp sensibil sau iritat, cu tendință la descuamare</p><p>Încetinirea procesului de subțiere a firului de păr</p><p>Susținerea creșterii părului nou, mai sănătos și mai rezistent</p></div></details></div>
+    <div class="tr-faq tr-acc"><details open><summary>Polinucleotide ochi - scapă de cearcăne în mod delicat și de durată</summary><div class="pf-prose tr-cols"><p>Zona ochilor este una dintre cele mai sensibile și vizibil afectate de oboseală, stres sau trecerea timpului. Tratamentele cu polinucleotide oferă o soluție sigură și eficientă pentru revitalizarea privirii, fără umflături, vânătăi sau timp de recuperare.</p><p>Polinucleotidele sunt recomandate pentru:</p><ul class="pf-list"><li>Cearcăne închise la culoare și piele subțire sub ochi</li><li>Piele lăsată sau lipsită de tonus în jurul ochilor</li><li>Riduri fine de tip „laba gâștii”</li><li>Deshidratare și aspect obosit al privirii</li><li>Estomparea vizibilă a semnelor de îmbătrânire perioculară</li></ul></div></details><details><summary>Polinucleotide păr - oprește căderea și stimulează creșterea părului</summary><div class="pf-prose tr-cols"><p>Polinucleotidele nu acționează doar asupra pielii – ele oferă rezultate remarcabile și în tratamentele pentru scalp. Prin stimularea regenerării celulare și îmbunătățirea microcirculației, acest tip de terapie ajută la întărirea rădăcinii firului de păr și reactivarea foliculilor inactivi.</p><p>Polinucleotidele sunt eficiente pentru:</p><p>Căderea difuză sau excesivă a părului (femei și bărbați)</p><p>Păr subțire, fragil, lipsit de densitate</p><p>Scalp sensibil sau iritat, cu tendință la descuamare</p><p>Încetinirea procesului de subțiere a firului de păr</p><p>Susținerea creșterii părului nou, mai sănătos și mai rezistent</p></div></details></div>
   </div>
 </section>
 
@@ -230,11 +231,18 @@
 </section>
 
 <script>
+// pe mobil, coloanele de la „Siguranță” se pliază: prima rămâne deschisă
+if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.tr-safe-col').forEach((d, i) => { if (i) d.open = false; });
+// „Citește mai mult” din „Cum acționează”: textul se deschide pe toată lățimea, sub ambele coloane
+document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('click', () => {
+  const box = document.getElementById(b.getAttribute('aria-controls')); if (!box) return;
+  box.hidden = false; b.setAttribute('aria-expanded', 'true'); b.hidden = true;
+}));
 // cuprinsul: la click, ținta ajunge exact sub cuprins (în jos header-ul se ascunde, în sus reapare); secțiunea curentă e marcată
 (() => {
   const toc = document.querySelector('.tr-toc');
   if (!toc) return;
-  const links = [...toc.querySelectorAll('a')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
+  const links = [...toc.querySelectorAll('a:not(.tr-toc-cta)')], secs = links.map((a) => document.querySelector(a.getAttribute('href')));
   const hdr = document.querySelector('header.site');
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a'); if (!a) return;
