@@ -62,12 +62,13 @@ const TRD = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'da
   const ART = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'articole.json'), 'utf8')).articole; } catch { return {}; } })();
   const { corecteaza } = require('./diacritice')([TRD, ART]);
   for (const id of Object.keys(TRD)) corecteaza(TRD[id]);
-  // și: titlurile/rezumatele articolelor, denumirile prețurilor și ale ofertelor (recenziile rămân cum le-au scris pacienții)
+  // și: titlurile/rezumatele articolelor, denumirile prețurilor și ale ofertelor, profilul medicului și recenziile
   for (const x of D.articole) { x.titlu = corecteaza(x.titlu); x.rezumat = corecteaza(x.rezumat || ''); }
   for (const sv of D.servicii) for (const p of sv.preturi || []) p.nume = corecteaza(p.nume);
   for (const c of D.preturi || []) for (const p of c.servicii || []) if (p && typeof p === 'object') { if (p.nume) p.nume = corecteaza(p.nume); if (p.detalii) p.detalii = corecteaza(p.detalii); }
   for (const o of D.oferte || []) { if (o.nume) o.nume = corecteaza(o.nume); if (o.detalii) o.detalii = corecteaza(o.detalii); }
   for (const p of D.echipa) if (p.profil_detaliat) corecteaza(p.profil_detaliat);
+  for (const r of D.dovezi?.testimoniale || []) r.citat = corecteaza(r.citat);
 }
 const trNode = new Map(); // id serviciu → { nod, cat }
 for (const cat of S.arbore.find((n) => n.url === '/tratamente/').copii) for (const n of cat.copii || []) {

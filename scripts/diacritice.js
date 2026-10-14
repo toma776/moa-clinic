@@ -22,6 +22,7 @@ module.exports = (corpus) => {
     menstruatiei: 'menstruației', sustinuta: 'susținută', corectie: 'corecție', retinut: 'reținut', esuturilor: 'țesuturilor', ombilicala: 'ombilicală',
     garantia: 'garanția', initial: 'inițial', axilara: 'axilară', desfasoara: 'desfășoară', lucreaza: 'lucrează', realizeaza: 'realizează',
     functioneaza: 'funcționează', interna: 'internă', bratelor: 'brațelor', mainilor: 'mâinilor', gat: 'gât',
+    exceptie: 'excepție', exceptional: 'excepțional', revolutionare: 'revoluționare', gasesc: 'găsesc', curatenie: 'curățenie', rabdare: 'răbdare',
   };
   // substantive feminine: rămân articulate (-a), cu excepția contextelor care cer forma nearticulată (-ă)
   const NOUN = new Set('toxina procedura perioada metoda sauna oboseala crema masca elastina medicina estetica genetica clinica zona durata textura structura baza forma plasma boala igiena rutina analiza lumina cauza sarcina sinteza varianta doza expertiza etapa apa gama vizita pauza celulita regula componenta problema molecula coaja luna sala buza axila hiperhidroza nutrigenetica epigenetica nutrigenomica tehnica noua ultima alta sedinta zi buna'.split(' '));
