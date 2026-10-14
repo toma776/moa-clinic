@@ -1516,3 +1516,7 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
   .tr-page .tr-steps li { padding: 14px 0; }
   .tr-page .tr-steps b { font-size: 19px; }
 }
+/* textul deschis cu „Citește mai mult” e o continuare: fără literă inițială mare */
+@supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
+  .tr-more p:first-child::first-letter, .tr-cols p:first-child::first-letter { -webkit-initial-letter: normal; initial-letter: normal; font: inherit; color: inherit; margin: 0; }
+}
