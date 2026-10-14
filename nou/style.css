@@ -207,7 +207,10 @@ header.site { position: sticky; top: 0; z-index: 40; background: rgba(248, 244, 
 .s-item .ico { width: 46px; height: 46px; border: 1px solid var(--gold-2); border-radius: 50%; display: grid; place-items: center; color: var(--gold-soft); }
 .s-item h3 { font-size: 25px; color: #fff; }
 .s-item p { font-size: 14px; color: #b9b0a3; }
-.brands { display: flex; flex-wrap: wrap; gap: 10px 36px; justify-content: center; margin-top: 54px; font: italic 400 22px/1 var(--serif); color: #8f8678; }
+.brands { display: flex; flex-wrap: wrap; gap: 26px 52px; justify-content: center; align-items: center; margin-top: 54px; }
+.brands img { height: var(--h, 24px); width: auto; filter: brightness(0) invert(1); opacity: .5; transition: opacity .3s; }
+.brands img:hover { opacity: .85; }
+@media (max-width: 760px) { .brands { gap: 22px 34px; } .brands img { height: calc(var(--h, 24px) * .8); } }
 
 /* medici */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 28px; }

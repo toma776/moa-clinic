@@ -75,6 +75,13 @@ const artTr = (a) => {
 // articolele care au deja pagină nouă (/nou/<slug-ul actual>/); restul trimit încă la site-ul actual
 const ART_PAGINI = ['glutation-beneficii-si-contraindicatii-ce-este'];
 const artLink = (a) => (ART_PAGINI.includes(a.id) ? '/nou/' + new URL(a.url).pathname.split('/').filter(Boolean).pop() + '/' : a.url);
+// logo-urile oficiale ale mărcilor (nou/media/brands/, descărcate de pe site-urile producătorilor; originalele în src/),
+// afișate monocrom din CSS; înălțimea e potrivită pe logo, ca toate să aibă aceeași greutate vizuală. HArmonyCa nu are logo public.
+const BRANDS = [
+  { n: 'Restylane', f: 'restylane.svg', h: 30 }, { n: 'Juvéderm', f: 'juvederm.svg', h: 24 }, { n: 'Stylage', f: 'stylage.png', h: 19 },
+  { n: 'Sculptra', f: 'sculptra.svg', h: 40 }, { n: 'Profhilo', f: 'profhilo.png', h: 21 }, { n: 'Rejuran', f: 'rejuran.svg', h: 27 },
+  { n: 'Splendor X', f: 'splendorx.png', h: 17 }, { n: 'Venus', f: 'venus.svg', h: 26 },
+];
 const catSlug = (c) => String(c.url || c.nume).split('/').filter(Boolean).pop();
 
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
@@ -430,7 +437,7 @@ ${mobileNav}
       <div class="s-item rv"><span class="ico">${icon.seal}</span><h3>Produse originale</h3><p>Lucrăm cu mărci recunoscute internațional, pe care le vezi și în lista de prețuri.</p></div>
       <div class="s-item rv"><span class="ico">${icon.spark}</span><h3>Doze potrivite</h3><p>Rezultate naturale, construite treptat. Mai puțin, dar exact unde trebuie.</p></div>
     </div>
-    <div class="brands rv" aria-label="Mărci folosite">${['Restylane', 'Juvéderm', 'Stylage', 'Sculptra', 'HArmonyCa', 'Profhilo', 'Rejuran', 'Splendor X', 'Venus'].map((b) => `<span>${b}</span>`).join('')}</div>
+    <div class="brands rv" aria-label="Mărci folosite">${BRANDS.map((b) => `<img src="/nou/media/brands/${b.f}?v=2" alt="${b.n}" style="--h:${b.h}px" loading="lazy">`).join('')}</div>
   </div>
 </section>
 
