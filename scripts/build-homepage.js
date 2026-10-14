@@ -131,7 +131,12 @@ const artTr = (a) => {
   return null;
 };
 // articolele care au deja pagină nouă (/nou/<slug-ul actual>/); restul trimit încă la site-ul actual
-const ART_PAGINI = ['glutation-beneficii-si-contraindicatii-ce-este'];
+// toate articolele cu conținut extras (npm run articole → data/articole.json) au pagină nouă, la slug-ul de pe site-ul actual
+const ART_PAGINI = (() => {
+  let AD = {}; try { AD = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'articole.json'), 'utf8')).articole; } catch {}
+  const REZERVAT = new Set(['tratamente', 'consultatii', 'preturi', 'blog', 'video', 'medici', 'media', 'longevitate']);
+  return D.articole.filter((a) => AD[a.id]?.blocuri?.length && !REZERVAT.has(new URL(a.url).pathname.split('/').filter(Boolean).pop())).map((a) => a.id);
+})();
 const artLink = (a) => (ART_PAGINI.includes(a.id) ? '/nou/' + new URL(a.url).pathname.split('/').filter(Boolean).pop() + '/' : a.url);
 // logo-urile oficiale ale mărcilor (nou/media/brands/, descărcate de pe site-urile producătorilor; originalele în src/),
 // afișate monocrom din CSS; înălțimea e potrivită pe logo, ca toate să aibă aceeași greutate vizuală. HArmonyCa nu are logo public.
@@ -166,6 +171,16 @@ const resized = (src) => {
   const base = path.basename(src).replace(/-scaled(\.\w+)$/, '$1').replace(/\.\w+$/, '');
   const f = fs.existsSync(dir) && fs.readdirSync(dir).find((x) => x.startsWith(base + '-768x'));
   return f ? path.posix.join(path.posix.dirname(src), f) : src;
+};
+// varianta cea mai mare disponibilă local (coperțile de 300px de pe site-ul vechi ar ieși neclare)
+const biggest = (src) => {
+  const dir = path.join(ROOT, 'site', path.dirname(src)); if (!fs.existsSync(dir)) return src;
+  const base = path.basename(src).replace(/-\d+x\d+(?=\.\w+$)/, '').replace(/\.\w+$/, ''), ext = path.extname(src);
+  const sizeRe = /-(\d+)x\d+(?=\.\w+$)/;
+  const opts = fs.readdirSync(dir).filter((x) => x.endsWith(ext) && x.replace(sizeRe, '') === base + ext);
+  const w = (x) => +((x.match(sizeRe) || [])[1] || 9999);
+  const pick = opts.filter((x) => w(x) >= 700 && w(x) <= 1600).sort((a, b) => w(a) - w(b))[0] || opts.sort((a, b) => w(b) - w(a))[0];
+  return pick ? path.posix.join(path.posix.dirname(src), pick) : src;
 };
 // toată echipa (grupul Echipa din entități): fondatorul primul, apoi medicii primari, specialiști, rezidenți, estetică, asistență
 const RANK = { 'Medic primar': 0, 'Medic specialist': 1, 'Medic rezident': 2 };
@@ -1573,7 +1588,7 @@ ${BOTTOM}`;
   const tips = Object.keys(TIP).filter((t) => arts.some((a) => a.tip === t));
   const autor = (a) => team.find((p) => p.nume === a.autor);
   const cover = (a, cls = '') => (BM[a.id]
-    ? `<div class="bl-img ${cls}"><img src="${esc(BM[a.id].img)}" alt="" loading="lazy" width="${BM[a.id].w || 1020}" height="${BM[a.id].h || 571}"></div>`
+    ? `<div class="bl-img ${cls}"><img src="${esc(biggest(BM[a.id].img))}" alt="" loading="lazy" width="${BM[a.id].w || 1020}" height="${BM[a.id].h || 571}"></div>`
     : `<div class="bl-img bl-noimg ${cls}"><span>${esc(TIP[a.tip] || 'Articol')}</span></div>`);
   const meta = (a) => `<span class="bl-meta">${esc(dataRo(a.data))}<i>·</i>${minute(a)} min de citit</span>`;
   // data-cat / data-tr: categoria și tratamentul articolului, pentru etichetele din paginile de articol (/nou/blog/?cat=… / ?tr=…)
@@ -1643,18 +1658,27 @@ ${BOTTOM}`;
 // Deocamdată doar articolele din ART_PAGINI (sus). Adresa păstrează slug-ul de pe site-ul actual.
 {
   const AD = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'articole.json'), 'utf8')).articole; } catch { return {}; } })();
+  // diacriticele lipsă din textele articolelor (aceeași corectură ca la tratamente)
+  { const { corecteaza } = require('./diacritice')([TRD, AD]); for (const k of Object.keys(AD)) corecteaza(AD[k].blocuri); }
   const BM = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'blog-media.json'), 'utf8')); } catch { return {}; } })();
   const LUNI = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'];
   const dataRo = (d) => { const m = String(d || '').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? `${+m[3]} ${LUNI[+m[2] - 1]} ${m[1]}` : ''; };
   const TIP = { tratament: 'Tratamente', ghid: 'Ghid', 'îngrijire': 'Îngrijire', opinii: 'Opinii', 'comparație': 'Comparație' };
   const slugH = (x) => norm(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
   const rez = (a) => String(a.rezumat || '').replace(/\s*(Descoper[ăa]|Programeaz[ăa]-te|Rezerv[ăa]|Afl[ăa] mai multe)[^.]*\.?$/i, '').trim().replace(/([^.!?])$/, '$1.');
+  // rezumatul de sub titlu: dacă cel de pe site-ul vechi e prea scurt sau trunchiat („Russian lips vs butterfly lips -.”), prima frază din text
+  const rezArt = (a, blocks) => { const r = rez(a).replace(/\s*[-–]\s*\.$/, '.').trim(); if (r.replace(/[^\p{L}]/gu, '').length >= 45) return r; const p = blocks.find((b) => b.t === 'p' && b.x.length > 60)?.x || ''; return cutTxt(p, 190); };
   for (const id of ART_PAGINI) {
     const a = D.articole.find((x) => x.id === id), c = AD[id];
     if (!a || !c) { console.warn('  ! articol fără conținut:', id); continue; }
     const slug = new URL(a.url).pathname.split('/').filter(Boolean).pop();
     const blocks = [...c.blocuri];
-    const heroImg = blocks[0]?.t === 'img' ? blocks.shift() : BM[id] ? { src: BM[id].img } : null;
+    const heroImg0 = blocks[0]?.t === 'img' ? blocks.shift() : BM[id] ? { src: BM[id].img } : null;
+    // aceeași fotografie (indiferent de mărime: „x-300x199.avif” = „x.avif”) apare o singură dată: coperta nu se repetă în text
+    const imgBase = (s) => String(s).split('/').pop().replace(/-\d+x\d+(?=\.\w+$)/, '').replace(/-scaled(?=\.\w+$)/, '');
+    const seenImg = new Set(heroImg0 ? [imgBase(heroImg0.src)] : []);
+    for (let i = 0; i < blocks.length; i++) if (blocks[i].t === 'img') { const k = imgBase(blocks[i].src); if (seenImg.has(k)) { blocks.splice(i, 1); i--; } else seenImg.add(k); }
+    const heroImg = heroImg0 ? { ...heroImg0, src: biggest(heroImg0.src) } : null;
     const nota = blocks.length && /^sursa foto/i.test(blocks[blocks.length - 1].x || '') ? blocks.pop().x : '';
     const h2s = blocks.filter((b) => b.t === 'h2').map((b) => ({ x: b.x, id: slugH(b.x) }));
     const minute = Math.max(2, Math.round((a.cuvinte || 0) / 200));
@@ -1666,6 +1690,7 @@ ${BOTTOM}`;
       if (b.t === 'h2') return `<h2 id="${slugH(b.x)}">${esc(b.x)}</h2>`;
       if (b.t === 'h3') return `<h3>${esc(b.x)}</h3>`;
       if (b.t === 'h4') return `<h4>${esc(b.x)}</h4>`;
+      if (b.t === 'p' && /^surs[ăa] (foto|imagine|imagini)?:?|^surs[ăa]:/i.test(b.x) && b.x.length < 120) return `<p class="ar-nota ar-src">${esc(b.x)}</p>`; // „Sursă foto: …” = notă discretă, nu paragraf
       if (b.t === 'p') return `<p${i === 0 ? ' class="ar-first"' : ''}>${esc(b.x)}</p>`;
       if (b.t === 'ul' || b.t === 'ol') return `<${b.t}>${b.items.map((x) => `<li>${esc(x)}</li>`).join('')}</${b.t}>`;
       if (b.t === 'img') return `<figure><img src="${esc(b.src)}" alt="${esc(b.alt || '')}" loading="lazy"></figure>`;
@@ -1688,7 +1713,7 @@ ${BOTTOM}`;
     const tags = [
       { href: `/nou/blog/?tip=${encodeURIComponent(a.tip)}`, x: TIP[a.tip] || a.tip },
       ...(rel ? [
-        { href: `/nou/blog/?cat=${catSlug(rel.l.cat)}`, x: rel.l.cat.nume.replace(/^Tratamente /, '') },
+        { href: `/nou/blog/?cat=${catSlug(rel.l.cat)}`, x: cap(rel.l.cat.nume.replace(/^Tratamente /, '')) },
         { href: `/nou/blog/?tr=${encodeURIComponent(rel.sid)}`, x: rel.l.nod.nume.replace(/\s*\(.*\)$/, '') },
       ] : []),
     ];
@@ -1712,7 +1737,7 @@ ${BOTTOM}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(a.titlu)} | MOA Clinic</title>
-<meta name="description" content="${esc(cutTxt(rez(a), 158))}">
+<meta name="description" content="${esc(cutTxt(rezArt(a, blocks), 158))}">
 <link rel="canonical" href="${esc(pageUrl)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1729,7 +1754,7 @@ ${TOP}<main>
   <div class="wrap ar-narrow">
     <a class="eyebrow ar-tip" href="/nou/blog/?tip=${encodeURIComponent(a.tip)}">${esc(TIP[a.tip] || a.tip)}</a>
     <h1>${esc(a.titlu)}</h1>
-    <p class="lede">${esc(rez(a))}</p>
+    ${rezArt(a, blocks) === rez(a).replace(/\s*[-–]\s*\.$/, '.').trim() ? `<p class="lede">${esc(rezArt(a, blocks))}</p>` : ''}
     <div class="bl-author ar-author">${autor && photos[autor.nume] ? `<img src="${esc(resized(photos[autor.nume]))}" alt="">` : ''}<span><b>${autor?.profil_detaliat ? `<a href="/nou/medici/${esc(autor.id)}/">${esc(a.autor)}</a>` : esc(a.autor)}</b><span class="bl-meta">${esc(autor?.rol || '')}${autor?.rol ? '<i>·</i>' : ''}${esc(dataRo(a.data))}<i>·</i>${minute} min de citit</span></span></div>
   </div>
   ${heroImg ? `<div class="wrap"><figure class="ar-hero"><img src="${esc(heroImg.src)}" alt="${esc(heroImg.alt || a.titlu)}" fetchpriority="high"></figure></div>` : ''}
