@@ -338,7 +338,7 @@ ${mobileNav}
         <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
       </div>
       </div>
-      <p class="lede">Prima clinică Global Antiaging din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar gerontolog format la școala Ana Aslan.</p>
+      <p class="lede">Prima clinică <a class="lede-link" href="/nou/longevitate/program/">Global Antiaging</a> din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar gerontolog format la școala Ana Aslan.</p>
       <div class="hero-proof">
         <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
         <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
