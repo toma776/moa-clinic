@@ -18,6 +18,7 @@ npm start
 - `http://localhost:3100/nou/preturi/` – lista de prețuri: ofertele lunii (clicabile, cu programarea preselectată), căutare, categorii în ordinea drumului pacientului, fiecare preț legat de pagina tratamentului (căutarea: `nou/preturi.js`)
 - `http://localhost:3100/nou/consultatii/` – consultațiile: pagina-hub + cele 4 pagini (antiaging, dermatologie, chirurgie plastică, nutriție), din același șablon ca tratamentele, cu medicii specialității și „ce poate urma”
 - `http://localhost:3100/nou/tratamente/<categorie>/<tratament>/` – cele 31 de pagini de tratament (ex. `/nou/tratamente/injectabile/botox/`), din `npm run tratamente` + `npm run homepage`
+- Textele preluate de pe site-ul vechi sunt corectate la generare: diacriticele lipsă (`scripts/diacritice.js` – dicționar învățat din textele corecte ale site-ului, plus reguli de context) și punctuația (`fixPunct` în `build-homepage.js`). Recenziile Google rămân cum le-au scris pacienții.
 - `http://localhost:3100/nou/` – propunerea de homepage nou (premium), generată din date (`npm run homepage`); formularul trimite lead-uri în panou
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).

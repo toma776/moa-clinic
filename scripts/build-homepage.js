@@ -57,6 +57,18 @@ const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
 // paginile de tratament noi (/nou/tratamente/…), generate pentru tratamentele cu conținut în data/tratamente.json (npm run tratamente)
 const TRD = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'tratamente.json'), 'utf8')).tratamente; } catch { return {}; } })();
+// diacriticele lipsă din textele vechi („si”, „dupa”, „pasi”, „pret” …) – scripts/diacritice.js, învățate din textele corecte ale site-ului
+{
+  const ART = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'articole.json'), 'utf8')).articole; } catch { return {}; } })();
+  const { corecteaza } = require('./diacritice')([TRD, ART]);
+  for (const id of Object.keys(TRD)) corecteaza(TRD[id]);
+  // și: titlurile/rezumatele articolelor, denumirile prețurilor și ale ofertelor (recenziile rămân cum le-au scris pacienții)
+  for (const x of D.articole) { x.titlu = corecteaza(x.titlu); x.rezumat = corecteaza(x.rezumat || ''); }
+  for (const sv of D.servicii) for (const p of sv.preturi || []) p.nume = corecteaza(p.nume);
+  for (const c of D.preturi || []) for (const p of c.servicii || []) if (p && typeof p === 'object') { if (p.nume) p.nume = corecteaza(p.nume); if (p.detalii) p.detalii = corecteaza(p.detalii); }
+  for (const o of D.oferte || []) { if (o.nume) o.nume = corecteaza(o.nume); if (o.detalii) o.detalii = corecteaza(o.detalii); }
+  for (const p of D.echipa) if (p.profil_detaliat) corecteaza(p.profil_detaliat);
+}
 const trNode = new Map(); // id serviciu → { nod, cat }
 for (const cat of S.arbore.find((n) => n.url === '/tratamente/').copii) for (const n of cat.copii || []) {
   const s = D.servicii.find((x) => n.vechi?.[0] && x.url === ORIGIN + n.vechi[0]);
