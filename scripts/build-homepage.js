@@ -456,7 +456,7 @@ ${mobileNav}
     </div>
     <div class="sig-grid">${SIG.map((s) => `
       <a class="sig ${s.wide ? 'wide' : ''} rv" href="${esc(live(s.id))}">
-        <img src="${esc(s.img)}" alt="" loading="lazy">
+        <img src="${esc(s.img)}" alt="${esc(s.titlu)}" loading="lazy">
         <div class="in"><span class="cat">${esc(s.cat)}</span><h3>${esc(s.titlu)}</h3><p>${esc(s.text)}</p>
           <span class="meta"><span>${esc(trNode.get(s.id)?.nod.nume || serv[s.id]?.nume || '')}</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
       </a>`).join('')}
@@ -467,7 +467,7 @@ ${mobileNav}
 
 <section class="sec philosophy">
   <div class="wrap grid">
-    <div class="ph-img rv"><img src="/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg" alt="Dr. Adrian Stănescu, fondatorul MOA Clinic" loading="lazy"></div>
+    <div class="ph-img rv"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="Dr. Adrian Stănescu, fondatorul MOA Clinic" loading="lazy"></div>
     <div class="rv">
       <span class="eyebrow">Global Antiaging</span>
       <h2 style="font-size:clamp(38px,4.6vw,58px);margin-top:22px">Un concept în care vârsta <em style="color:var(--gold)">nu mai contează.</em></h2>
@@ -537,7 +537,7 @@ ${mobileNav}
 </section>
 
 <section class="space" id="despre">
-  <img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA" loading="lazy">
+  <img src="/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.52-1152x1536.jpeg" alt="Cabinetul de terapii perfuzabile al clinicii MOA" loading="lazy">
   <div class="wrap rv">
     <span class="eyebrow light">Clinica</span>
     <h2>Te așteptăm <em style="color:var(--gold-soft)">acasă la MOA.</em></h2>
