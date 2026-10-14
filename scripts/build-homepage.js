@@ -23,6 +23,35 @@ const diacritice = (t) => String(t)
 for (const a of D.articole) a.titlu = diacritice(a.titlu);
 const HOME = fs.readFileSync(path.join(ROOT, 'site', 'index.html'), 'utf8');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+// punctuația din textele preluate de pe site-ul vechi: fără spațiu înainte de . , ; : ! ? (inclusiv „<a>Botox </a> .”)
+// și cu spațiu după ele când lipsește („naturale.De asemenea”, „empatie,si”). Doar în textul paginii – nu în etichete,
+// atribute, <script> sau <style>; adresele (moaclinic.ro, www., e-mail) și „Nd:YAG” rămân neatinse.
+const fixPunct = (html) => {
+  const tok = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/);
+  const INL = /^<\/?(a|em|b|strong|i|span|small|s)\b/i;
+  const isText = (i) => i % 2 === 0;
+  for (let i = 0; i < tok.length; i += 2) {
+    let t = tok[i];
+    if (!t) continue;
+    t = t.replace(/(\S)[ \t\n]+([.,;:!?])(?=[\s"”)»]|$)/g, '$1$2');
+    t = t.replace(/([a-zăâîșțA-ZĂÂÎȘȚ]{2,})([,;:!?])(?=[A-ZĂÂÎȘȚ]?[a-zăâîșț]{2,})/g, '$1$2 ');
+    t = t.replace(/([a-zăâîșț]{2,})\.(?=[A-ZĂÂÎȘȚ][a-zăâîșț]+)/g, '$1. ');
+    t = t.replace(/([a-zăâîșț]{2,})\((?=[a-zăâîșț]{2,})/g, '$1 (').replace(/\)([,;])(?=[a-zăâîșțA-ZĂÂÎȘȚ]{2,})/g, ')$1 ');
+    // textul care începe cu „ .” după un link sau un cuvânt evidențiat: spațiul trece înaintea etichetei
+    if (/^[ \t\n]+[.,;:!?](?=[\s"”)»]|$)/.test(t)) {
+      let j = i - 1; while (j > 0 && INL.test(tok[j]) && !tok[j - 1]) j -= 2;
+      if (j > 0 && INL.test(tok[j])) t = t.replace(/^[ \t\n]+/, '');
+    }
+    // textul dintr-un link care se termină cu spațiu, urmat de punctuație după link
+    if (/[ \t\n]+$/.test(t) && INL.test(tok[i + 1] || '') && /^[.,;:!?](?=[\s"”)»]|$)/.test(tok[i + 2] || '')) t = t.replace(/[ \t\n]+$/, '');
+    tok[i] = t;
+  }
+  return tok.join('');
+};
+// „[email protected]” = adresa ascunsă de Cloudflare pe site-ul vechi, copiată ca atare în texte
+// datele structurate (ld+json) primesc aceeași corectură de spațiu înainte de punctuație
+const writePage = (p, html) => fs.writeFileSync(p, fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
+  .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, j, b) => a + j.replace(/([^\s"]) +([.,;:!?])(?=[\s"]|$)/g, '$1$2') + b));
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
@@ -750,7 +779,7 @@ ${mobileNav}
 `;
 
 fs.mkdirSync(path.join(ROOT, 'nou'), { recursive: true });
-fs.writeFileSync(path.join(ROOT, 'nou', 'index.html'), html);
+writePage(path.join(ROOT, 'nou', 'index.html'), html);
 console.log(`Gata: nou/index.html · ${team.length} oameni în echipă (${doctors.length} cu fotografie) · ${concernZones.reduce((n, z) => n + z.copii.length, 0)} probleme · ${SIG.length} tratamente-semnătură · ${VID.length} video · ${offers.length} oferte · ${reviews.length} recenzii`);
 
 // ---------- paginile de profil ale echipei (/nou/medici/<id>/), din profilurile extrase ----------
@@ -869,7 +898,7 @@ ${arts.length ? `<section class="sec alt" id="articole">
 ${BOOK}${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', 'medici', p.id);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), page);
+  writePage(path.join(dir, 'index.html'), page);
   console.log(`Profil: nou/medici/${p.id}/ · ${timeline.length} repere · ${pr.carti.length} cărți · ${servP.length} servicii · ${allArts.length} articole`);
 }
 
@@ -1217,7 +1246,7 @@ ${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', ...nod.url.split('/').filter(Boolean));
   page = alternateBg(page);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), page);
+  writePage(path.join(dir, 'index.html'), page);
   console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${tVids.length} video · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
 }
 
@@ -1287,7 +1316,7 @@ ${rev.length ? `<section class="sec reviews tr-reviews">
 ${BOOK}${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', 'consultatii');
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), page);
+  writePage(path.join(dir, 'index.html'), page);
   console.log(`Hub: nou/consultatii/ · ${cons.length} consultații`);
 }
 
@@ -1389,7 +1418,7 @@ ${BOOK}
 <script src="/nou/preturi.js" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
+  writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
   console.log(`Prețuri: nou/preturi/ · ${nRows} prețuri · ${D.preturi.length} categorii · ${D.oferte.length} oferte`);
 }
 
@@ -1456,7 +1485,7 @@ ${BOOK}
 </script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'video'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, 'nou', 'video', 'index.html'), page);
+  writePage(path.join(ROOT, 'nou', 'video', 'index.html'), page);
   console.log(`Video: nou/video/ · ${vids.length} video-uri · ${cats.length} categorii · ${Math.round(totalS / 60)} min`);
 }
 
@@ -1537,7 +1566,7 @@ ${BOOK}
 <script src="/nou/blog.js" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'blog'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, 'nou', 'blog', 'index.html'), page);
+  writePage(path.join(ROOT, 'nou', 'blog', 'index.html'), page);
   console.log(`Blog: nou/blog/ · ${arts.length} articole · ${Object.keys(BM).length} cu imagine · cel mai nou: ${feat.titlu}`);
 }
 
@@ -1683,7 +1712,7 @@ ${BOOK}
 ${BOTTOM}`;
     const dir = path.join(ROOT, 'nou', slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), page);
+    writePage(path.join(dir, 'index.html'), page);
     console.log(`Articol: nou/${slug}/ · ${blocks.length} blocuri · ${h2s.length} secțiuni · tratament: ${rel ? rel.l.nod.nume : '–'} · ${related.length} înrudite`);
   }
 }
