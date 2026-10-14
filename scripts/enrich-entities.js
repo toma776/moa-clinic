@@ -304,6 +304,23 @@ D.media = uniq((home?.imagini || []).map((i) => i.src.split('?')[0].replace(/^ht
       folosita: [...(imgUse.get(f) || [])],
     };
   });
+// imaginile noi ale paginilor de tratament și consultație (Unsplash), din entitati/media/imagini/ + credite.json
+{
+  const dir = path.join(ROOT, 'entitati', 'media', 'imagini');
+  let cr = {};
+  try { cr = JSON.parse(fs.readFileSync(path.join(dir, 'credite.json'), 'utf8')); } catch {}
+  // dimensiunile din antetul JPEG (markerul SOF)
+  const jpegSize = (buf) => { for (let i = 2; i < buf.length - 9;) { if (buf[i] !== 0xff) return null; const m = buf[i + 1], len = buf.readUInt16BE(i + 2); if (m >= 0xc0 && m <= 0xc3) return [buf.readUInt16BE(i + 7), buf.readUInt16BE(i + 5)]; i += 2 + len; } return null; };
+  let ST = []; try { const w = (n) => (n || []).flatMap((x) => [x, ...w(x.copii)]); ST = w(JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'structura.json'), 'utf8')).arbore); } catch {}
+  for (const [file, c] of Object.entries(cr)) {
+    const f = '/entitati/media/imagini/' + file, local = path.join(dir, file);
+    if (!fs.existsSync(local)) continue;
+    const buf = fs.readFileSync(local), wh = jpegSize(buf);
+    const pagina = c.pagina.startsWith('consultatii/') ? `/${c.pagina}/` : `/tratamente/${c.pagina}/`;
+    const nume = ST.find((n) => n.url === pagina)?.nume;
+    D.media.push({ id: slug(file), titlu: nume ? `${nume} – imaginea principală` : file, alt: nume ? `${nume} la MOA Clinic` : '', fisier: f, kb: Math.round(buf.length / 1024), dimensiuni: wh ? `${wh[0]}×${wh[1]}` : null, folosita: ['/nou' + pagina], autor: c.autor, sursa: c.sursa, licenta: c.licenta, rol: 'imagine principală' });
+  }
+}
 
 // ---------- video (toate paginile) ----------
 // Fiecare video cu paginile pe care apare și secțiunea (titlul) sub care e pus acum: de acolo știm unde trebuie pus pe site-ul nou.

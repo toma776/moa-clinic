@@ -10,7 +10,7 @@
       "page-sitemap.xml",
       "post-sitemap.xml"
     ],
-    "extras_la": "2026-10-12",
+    "extras_la": "2026-10-14",
     "pagini": 102,
     "metoda": "homepage + /preturi/ + /echipa/ + /abonamente/ + toate paginile din sitemap"
   },
@@ -12088,6 +12088,456 @@
         "/echipa/",
         "/"
       ]
+    },
+    {
+      "id": "antiaging-qv0uzsffbb4-jpg",
+      "titlu": "Consultație antiaging (cu vârsta biologică) – imaginea principală",
+      "alt": "Consultație antiaging (cu vârsta biologică) la MOA Clinic",
+      "fisier": "/entitati/media/imagini/antiaging-qV0uZSffBb4.jpg",
+      "kb": 114,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/consultatii/antiaging/"
+      ],
+      "autor": "Alexander Mass",
+      "sursa": "https://unsplash.com/photos/qV0uZSffBb4",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "chirurgie-plastica-wzv17t-k3k0-jpg",
+      "titlu": "Consultație chirurgie plastică – imaginea principală",
+      "alt": "Consultație chirurgie plastică la MOA Clinic",
+      "fisier": "/entitati/media/imagini/chirurgie-plastica-wzV17t-k3k0.jpg",
+      "kb": 134,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/consultatii/chirurgie-plastica/"
+      ],
+      "autor": "Jonathan Borba",
+      "sursa": "https://unsplash.com/photos/wzV17t-k3k0",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "dermatologie-v40lrmz-fnq-jpg",
+      "titlu": "Consultație dermatologie & dermatoestetică – imaginea principală",
+      "alt": "Consultație dermatologie & dermatoestetică la MOA Clinic",
+      "fisier": "/entitati/media/imagini/dermatologie-v40lRmz-fNQ.jpg",
+      "kb": 94,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/consultatii/dermatologie/"
+      ],
+      "autor": "Trew",
+      "sursa": "https://unsplash.com/photos/v40lRmz-fNQ",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "nutritie-fpktcl74hfs-jpg",
+      "titlu": "Consultație nutriție antiaging / nutrigenomică – imaginea principală",
+      "alt": "Consultație nutriție antiaging / nutrigenomică la MOA Clinic",
+      "fisier": "/entitati/media/imagini/nutritie-FPKtCl74Hfs.jpg",
+      "kb": 151,
+      "dimensiuni": "1100×1383",
+      "folosita": [
+        "/nou/consultatii/nutritie/"
+      ],
+      "autor": "Yilmaz Akin",
+      "sursa": "https://unsplash.com/photos/FPKtCl74Hfs",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "dermalinfusion-obj413v2efu-jpg",
+      "titlu": "Dermalinfusion – imaginea principală",
+      "alt": "Dermalinfusion la MOA Clinic",
+      "fisier": "/entitati/media/imagini/dermalinfusion-ObJ413V2EfU.jpg",
+      "kb": 136,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/aparatura/dermalinfusion/"
+      ],
+      "autor": "Alexander Mass",
+      "sursa": "https://unsplash.com/photos/ObJ413V2EfU",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "epilare-definitiva-a0jyqvtm9m-jpg",
+      "titlu": "Epilare definitivă Splendor X – imaginea principală",
+      "alt": "Epilare definitivă Splendor X la MOA Clinic",
+      "fisier": "/entitati/media/imagini/epilare-definitiva-A0jYQvTm9M.jpg",
+      "kb": 164,
+      "dimensiuni": "1100×1375",
+      "folosita": [
+        "/nou/tratamente/aparatura/epilare-definitiva/"
+      ],
+      "autor": "Farhad Ibrahimzade",
+      "sursa": "https://unsplash.com/photos/_A0jYQvTm9M",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "laser-vascular-rbicmsh0nsk-jpg",
+      "titlu": "Laser vascular – imaginea principală",
+      "alt": "Laser vascular la MOA Clinic",
+      "fisier": "/entitati/media/imagini/laser-vascular-RbIcMsh0NSk.jpg",
+      "kb": 139,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/aparatura/laser-vascular/"
+      ],
+      "autor": "kimia kazemi",
+      "sursa": "https://unsplash.com/photos/RbIcMsh0NSk",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "microneedling-u93ntfwqr9w-jpg",
+      "titlu": "Microneedling Dermapen 4 – imaginea principală",
+      "alt": "Microneedling Dermapen 4 la MOA Clinic",
+      "fisier": "/entitati/media/imagini/microneedling-u93nTfWqR9w.jpg",
+      "kb": 198,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/aparatura/microneedling/"
+      ],
+      "autor": "kimia kazemi",
+      "sursa": "https://unsplash.com/photos/u93nTfWqR9w",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "venus-legacy-v6fpwl6nxkc-jpg",
+      "titlu": "Venus Legacy – lifting & remodelare – imaginea principală",
+      "alt": "Venus Legacy – lifting & remodelare la MOA Clinic",
+      "fisier": "/entitati/media/imagini/venus-legacy-v6fPWL6nXKc.jpg",
+      "kb": 81,
+      "dimensiuni": "1100×733",
+      "folosita": [
+        "/nou/tratamente/aparatura/venus-legacy/"
+      ],
+      "autor": "olga volkovitskaia",
+      "sursa": "https://unsplash.com/photos/v6fPWL6nXKc",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "blefaroplastie-qkrh0znf2ym-jpg",
+      "titlu": "Blefaroplastie – imaginea principală",
+      "alt": "Blefaroplastie la MOA Clinic",
+      "fisier": "/entitati/media/imagini/blefaroplastie-QkrH0znf2yM.jpg",
+      "kb": 244,
+      "dimensiuni": "1100×1956",
+      "folosita": [
+        "/nou/tratamente/chirurgie-dermatologie/blefaroplastie/"
+      ],
+      "autor": "Vitaly Gariev",
+      "sursa": "https://unsplash.com/photos/QkrH0znf2yM",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "eliminare-papiloame-5ky5lpzc44-jpg",
+      "titlu": "Eliminare papiloame – imaginea principală",
+      "alt": "Eliminare papiloame la MOA Clinic",
+      "fisier": "/entitati/media/imagini/eliminare-papiloame-5KY5LPzc44.jpg",
+      "kb": 198,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/chirurgie-dermatologie/eliminare-papiloame/"
+      ],
+      "autor": "Angélica Echeverry",
+      "sursa": "https://unsplash.com/photos/5KY5LP_zc44",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "indepartare-alunite-pndopc-6q-i-jpg",
+      "titlu": "Îndepărtare alunițe (nevi) – imaginea principală",
+      "alt": "Îndepărtare alunițe (nevi) la MOA Clinic",
+      "fisier": "/entitati/media/imagini/indepartare-alunite-PNdOpC-6q-I.jpg",
+      "kb": 63,
+      "dimensiuni": "1100×734",
+      "folosita": [
+        "/nou/tratamente/chirurgie-dermatologie/indepartare-alunite/"
+      ],
+      "autor": "Bermix Studio",
+      "sursa": "https://unsplash.com/photos/PNdOpC-6q-I",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "lip-lift-ivgmpvoi8rk-jpg",
+      "titlu": "Lip lift – imaginea principală",
+      "alt": "Lip lift la MOA Clinic",
+      "fisier": "/entitati/media/imagini/lip-lift-iVGmPVoi8Rk.jpg",
+      "kb": 131,
+      "dimensiuni": "1100×1375",
+      "folosita": [
+        "/nou/tratamente/chirurgie-dermatologie/lip-lift/"
+      ],
+      "autor": "Tony Litvyak",
+      "sursa": "https://unsplash.com/photos/iVGmPVoi8Rk",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "acid-hialuronic-gjhkh-pt99s-jpg",
+      "titlu": "Acid hialuronic – imaginea principală",
+      "alt": "Acid hialuronic la MOA Clinic",
+      "fisier": "/entitati/media/imagini/acid-hialuronic-GjhkH-Pt99s.jpg",
+      "kb": 132,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/injectabile/acid-hialuronic/"
+      ],
+      "autor": "Alexander Mass",
+      "sursa": "https://unsplash.com/photos/GjhkH-Pt99s",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "augmentare-peniana-mxu1spzhq6w-jpg",
+      "titlu": "Augmentare peniană – imaginea principală",
+      "alt": "Augmentare peniană la MOA Clinic",
+      "fisier": "/entitati/media/imagini/augmentare-peniana-mXu1SpzHq6w.jpg",
+      "kb": 89,
+      "dimensiuni": "1100×1649",
+      "folosita": [
+        "/nou/tratamente/injectabile/augmentare-peniana/"
+      ],
+      "autor": "Jeremie Aubut",
+      "sursa": "https://unsplash.com/photos/mXu1SpzHq6w",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "botox-wslalhyhflq-jpg",
+      "titlu": "Toxină botulinică (Botox) – imaginea principală",
+      "alt": "Toxină botulinică (Botox) la MOA Clinic",
+      "fisier": "/entitati/media/imagini/botox-wsLalHyHflQ.jpg",
+      "kb": 138,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/injectabile/botox/"
+      ],
+      "autor": "Studio Michael França",
+      "sursa": "https://unsplash.com/photos/wsLalHyHflQ",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "harmonyca-qlbnvgrjuo-jpg",
+      "titlu": "HArmonyCa – imaginea principală",
+      "alt": "HArmonyCa la MOA Clinic",
+      "fisier": "/entitati/media/imagini/harmonyca-QLbNvgrJuo.jpg",
+      "kb": 160,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/injectabile/harmonyca/"
+      ],
+      "autor": "Alexander Mass",
+      "sursa": "https://unsplash.com/photos/QLbNv_grJuo",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "jalupro-cearcane-fjuo9yrnycq-jpg",
+      "titlu": "Jalupro Young Eye – imaginea principală",
+      "alt": "Jalupro Young Eye la MOA Clinic",
+      "fisier": "/entitati/media/imagini/jalupro-cearcane-FJuO9YRnYcQ.jpg",
+      "kb": 47,
+      "dimensiuni": "1100×733",
+      "folosita": [
+        "/nou/tratamente/injectabile/jalupro-cearcane/"
+      ],
+      "autor": "Look Studio",
+      "sursa": "https://unsplash.com/photos/FJuO9YRnYcQ",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "nefertiti-lift-7yps3czmfrw-jpg",
+      "titlu": "Nefertiti Lift – imaginea principală",
+      "alt": "Nefertiti Lift la MOA Clinic",
+      "fisier": "/entitati/media/imagini/nefertiti-lift-7Yps3czmfRw.jpg",
+      "kb": 104,
+      "dimensiuni": "1100×1649",
+      "folosita": [
+        "/nou/tratamente/injectabile/nefertiti-lift/"
+      ],
+      "autor": "Teslariu Mihai",
+      "sursa": "https://unsplash.com/photos/7Yps3czmfRw",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "polinucleotide-pe9ixuuc6qu-jpg",
+      "titlu": "Polinucleotide (Rejuran) – imaginea principală",
+      "alt": "Polinucleotide (Rejuran) la MOA Clinic",
+      "fisier": "/entitati/media/imagini/polinucleotide-Pe9IXUuC6QU.jpg",
+      "kb": 107,
+      "dimensiuni": "1100×733",
+      "folosita": [
+        "/nou/tratamente/injectabile/polinucleotide/"
+      ],
+      "autor": "Rosa Rafael",
+      "sursa": "https://unsplash.com/photos/Pe9IXUuC6QU",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "prp-7mlpdafxyls-jpg",
+      "titlu": "PRP – terapia vampir – imaginea principală",
+      "alt": "PRP – terapia vampir la MOA Clinic",
+      "fisier": "/entitati/media/imagini/prp-7mlPdAFXyls.jpg",
+      "kb": 137,
+      "dimensiuni": "1100×1647",
+      "folosita": [
+        "/nou/tratamente/injectabile/prp/"
+      ],
+      "autor": "Marco J Haenssgen",
+      "sursa": "https://unsplash.com/photos/7mlPdAFXyls",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "sculptra-arfbd9bn3m-jpg",
+      "titlu": "Sculptra – imaginea principală",
+      "alt": "Sculptra la MOA Clinic",
+      "fisier": "/entitati/media/imagini/sculptra-aRfBd9bn3M.jpg",
+      "kb": 231,
+      "dimensiuni": "1100×1956",
+      "folosita": [
+        "/nou/tratamente/injectabile/sculptra/"
+      ],
+      "autor": "Vitaly Gariev",
+      "sursa": "https://unsplash.com/photos/aRfB_d9bn3M",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "skinbooster-kvilnrogwxk-jpg",
+      "titlu": "Skinbooster Restylane – imaginea principală",
+      "alt": "Skinbooster Restylane la MOA Clinic",
+      "fisier": "/entitati/media/imagini/skinbooster-KVIlNRoGwxk.jpg",
+      "kb": 116,
+      "dimensiuni": "1100×1502",
+      "folosita": [
+        "/nou/tratamente/injectabile/skinbooster/"
+      ],
+      "autor": "Sunny Ng",
+      "sursa": "https://unsplash.com/photos/KVIlNRoGwxk",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "autohemoterapie-qrdtoq4qeh8-jpg",
+      "titlu": "Autohemoterapie majoră cu ozon – imaginea principală",
+      "alt": "Autohemoterapie majoră cu ozon la MOA Clinic",
+      "fisier": "/entitati/media/imagini/autohemoterapie-qrdtoq4qeH8.jpg",
+      "kb": 151,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/regenerare/autohemoterapie/"
+      ],
+      "autor": "kimia kazemi",
+      "sursa": "https://unsplash.com/photos/qrdtoq4qeH8",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "glutation-oiinzhte-jpg",
+      "titlu": "Perfuzii cu glutation – imaginea principală",
+      "alt": "Perfuzii cu glutation la MOA Clinic",
+      "fisier": "/entitati/media/imagini/glutation-oIInZHtE.jpg",
+      "kb": 165,
+      "dimensiuni": "1100×1650",
+      "folosita": [
+        "/nou/tratamente/regenerare/glutation/"
+      ],
+      "autor": "Samuel Ramos",
+      "sursa": "https://unsplash.com/photos/_oII_nZ_HtE",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "nad-sjjgbiy483y-jpg",
+      "titlu": "Terapia NAD+ – imaginea principală",
+      "alt": "Terapia NAD+ la MOA Clinic",
+      "fisier": "/entitati/media/imagini/nad-sJjGbIY483Y.jpg",
+      "kb": 196,
+      "dimensiuni": "1100×1467",
+      "folosita": [
+        "/nou/tratamente/regenerare/nad/"
+      ],
+      "autor": "Giulia Filidei",
+      "sursa": "https://unsplash.com/photos/sJjGbIY483Y",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "sauna-ozon-tvgjf-jd-iu-jpg",
+      "titlu": "Saună cu ozon – imaginea principală",
+      "alt": "Saună cu ozon la MOA Clinic",
+      "fisier": "/entitati/media/imagini/sauna-ozon-tVgjf-Jd-IU.jpg",
+      "kb": 218,
+      "dimensiuni": "1100×1375",
+      "folosita": [
+        "/nou/tratamente/regenerare/sauna-ozon/"
+      ],
+      "autor": "Dominique Rivas",
+      "sursa": "https://unsplash.com/photos/tVgjf-Jd-IU",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "tms-stgbbodewps-jpg",
+      "titlu": "Stimulare magnetică transcraniană (TMS) – imaginea principală",
+      "alt": "Stimulare magnetică transcraniană (TMS) la MOA Clinic",
+      "fisier": "/entitati/media/imagini/tms-StgBbODEWPs.jpg",
+      "kb": 118,
+      "dimensiuni": "1100×1455",
+      "folosita": [
+        "/nou/tratamente/regenerare/tms/"
+      ],
+      "autor": "Europeana",
+      "sursa": "https://unsplash.com/photos/StgBbODEWPs",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "dna-skin-kxwkcae5cpc-jpg",
+      "titlu": "DNA Skin – imaginea principală",
+      "alt": "DNA Skin la MOA Clinic",
+      "fisier": "/entitati/media/imagini/dna-skin-KxwkcAe5Cpc.jpg",
+      "kb": 260,
+      "dimensiuni": "1100×1904",
+      "folosita": [
+        "/nou/tratamente/teste/dna-skin/"
+      ],
+      "autor": "Warren Umoh",
+      "sursa": "https://unsplash.com/photos/KxwkcAe5Cpc",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
+    },
+    {
+      "id": "nutrigenetica-lujzte5sagi-jpg",
+      "titlu": "Nutrigenetică și epigenetică – imaginea principală",
+      "alt": "Nutrigenetică și epigenetică la MOA Clinic",
+      "fisier": "/entitati/media/imagini/nutrigenetica-lUJZTE5SagI.jpg",
+      "kb": 136,
+      "dimensiuni": "1100×1956",
+      "folosita": [
+        "/nou/tratamente/teste/nutrigenetica/"
+      ],
+      "autor": "Анна Ширяева",
+      "sursa": "https://unsplash.com/photos/lUJZTE5SagI",
+      "licenta": "Unsplash License",
+      "rol": "imagine principală"
     }
   ],
   "video": [

@@ -81,6 +81,22 @@ for (const n of consHub?.copii || []) {
   const s = D.servicii.find((x) => n.vechi?.[0] && x.url === ORIGIN + n.vechi[0]);
   if (s && TRD[s.id]) trNode.set(s.id, { nod: n, cat: consHub, consult: true });
 }
+// imaginile principale noi (Unsplash), una pe pagină, fără dubluri: entitati/media/imagini/ + credite.json (autor, sursă, pagina)
+// poziția decupajului pentru fotografiile orizontale, ca fața să rămână în cadru
+const HERO_POS = { 'jalupro-cearcane': '30% 50%', 'polinucleotide': '35% 50%', 'venus-legacy': '30% 50%' };
+const HERO_NOU = (() => {
+  const out = {};
+  try {
+    const cr = JSON.parse(fs.readFileSync(path.join(ROOT, 'entitati', 'media', 'imagini', 'credite.json'), 'utf8'));
+    for (const [file, c] of Object.entries(cr)) {
+      const tail = c.pagina.replace(/^consultatii\//, '');
+      const hit = [...trNode].find(([, l]) => l.nod.url.replace(/\/$/, '').endsWith('/' + tail) && !!l.consult === c.pagina.startsWith('consultatii/'));
+      if (hit) out[hit[0]] = { src: '/entitati/media/imagini/' + file, autor: c.autor, pos: HERO_POS[c.pagina.split('/').pop()] };
+      else console.warn('  ! imagine fără pagină:', c.pagina);
+    }
+  } catch (e) { console.warn('  ! entitati/media/imagini/credite.json:', e.message); }
+  return out;
+})();
 const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile noi care există deja ca pagini
 if (consHub) NOU.add(consHub.url);
 NOU.add('/preturi/');
@@ -1150,7 +1166,7 @@ ${TOP}<main class="tr-page">
       ${facts.length ? `<div class="pf-facts tr-facts">${facts.map((f) => `<div><b>${esc(f.v)}</b><span>${esc(f.l)}</span></div>`).join('')}</div>` : ''}
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a><a class="btn btn-line" href="#preturi">Vezi prețurile</a></div>
     </div>
-    ${t.hero ? `<div class="pf-photo tr-photo"><div class="frame"><img src="${esc(resized(t.hero))}" alt="${esc(nod.nume)} la MOA Clinic" fetchpriority="high"></div>${offer ? `<a class="tr-offer" href="#programare" data-srv="${esc(offerSrv)}" aria-label="Programează-te cu oferta lunii: ${esc(offerName)}, ${lei(offer.pret)}"><small>Oferta lunii · -${offer.discountProcent}%</small><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> ${lei(offer.pret)}</span><i>Programează-te →</i></a>` : ''}</div>` : ''}
+    ${t.hero || HERO_NOU[id] ? `<div class="pf-photo tr-photo"><div class="frame"><img src="${esc(HERO_NOU[id]?.src || resized(t.hero))}" alt="${esc(nod.nume)} la MOA Clinic" fetchpriority="high"${HERO_NOU[id]?.pos ? ` style="object-position:${HERO_NOU[id].pos}"` : ''}></div>${offer ? `<a class="tr-offer" href="#programare" data-srv="${esc(offerSrv)}" aria-label="Programează-te cu oferta lunii: ${esc(offerName)}, ${lei(offer.pret)}"><small>Oferta lunii · -${offer.discountProcent}%</small><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> ${lei(offer.pret)}</span><i>Programează-te →</i></a>` : ''}</div>` : ''}
   </div>
 </section>
 

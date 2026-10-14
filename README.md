@@ -19,6 +19,7 @@ npm start
 - `http://localhost:3100/nou/consultatii/` – consultațiile: pagina-hub + cele 4 pagini (antiaging, dermatologie, chirurgie plastică, nutriție), din același șablon ca tratamentele, cu medicii specialității și „ce poate urma”
 - `http://localhost:3100/nou/tratamente/<categorie>/<tratament>/` – cele 31 de pagini de tratament (ex. `/nou/tratamente/injectabile/botox/`), din `npm run tratamente` + `npm run homepage`
 - Textele preluate de pe site-ul vechi sunt corectate la generare: diacriticele lipsă (`scripts/diacritice.js` – dicționar învățat din textele corecte ale site-ului, plus reguli de context) și punctuația (`fixPunct` în `build-homepage.js`). Corectura se aplică și recenziilor Google (doar diacritice și spații, fără alte schimbări de text).
+- Imaginile principale ale paginilor de tratament și consultație: fotografii Unsplash (una pe pagină, fără dubluri) în `entitati/media/imagini/`, cu autorul și sursa în `credite.json`; apar și în panou la Entități → Media (`npm run enrich`). Decupajul fotografiilor orizontale: `HERO_POS` în build-homepage.js.
 - `http://localhost:3100/nou/` – propunerea de homepage nou (premium), generată din date (`npm run homepage`); formularul trimite lead-uri în panou
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).

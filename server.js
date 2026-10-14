@@ -174,6 +174,8 @@ http.createServer(async (req, res) => {
       const f = safe(path.join(ROOT, 'nou'), url.slice('/nou/'.length) || 'index.html');
       return sendFile(res, f && fs.existsSync(f) && fs.statSync(f).isDirectory() ? path.join(f, 'index.html') : f || '');
     }
+    // imaginile noi (Unsplash) ale paginilor: entitati/media/imagini/
+    if (url.startsWith('/entitati/media/')) return sendFile(res, safe(path.join(ROOT, 'entitati', 'media'), url.slice('/entitati/media/'.length)) || '');
     if (url.startsWith('/manage/assets/')) return sendFile(res, safe(path.join(ROOT, 'manage', 'assets'), url.slice('/manage/assets/'.length)) || '');
     if (url === '/manage' || url.startsWith('/manage/')) return sendFile(res, path.join(ROOT, 'manage', 'index.html'));
     // „/” deschide site-ul nou; copia site-ului vechi rămâne la /vechi/

@@ -206,12 +206,12 @@ function entitySections(D) {
 
   // ---- Media ----
   const M = D.media || [];
-  add('media', 'Imagini', M.length, `<p class="lead">Fișierele folosite pe homepage, cu textul alternativ și paginile pe care mai apar. ${M.filter((m) => !m.alt).length} din ${M.length} nu au alt.</p>
+  add('media', 'Imagini', M.length, `<p class="lead">Fișierele folosite pe homepage și imaginile principale ale paginilor de tratament (${M.filter((m) => m.autor).length}, din Unsplash, în entitati/media/imagini/), cu textul alternativ și paginile pe care apar. ${M.filter((m) => !m.alt).length} din ${M.length} nu au alt.</p>
     <div class="media-grid">${M.map((m) => `<div class="card media-card" data-s>
-      <a href="${esc(SITE + m.fisier)}" target="_blank" rel="noopener"><img src="${esc(m.fisier)}" alt="${esc(m.alt)}" loading="lazy"></a>
+      <a href="${esc(m.fisier.startsWith('/entitati/') ? m.fisier : SITE + m.fisier)}" target="_blank" rel="noopener"><img src="${esc(m.fisier)}" alt="${esc(m.alt)}" loading="lazy"></a>
       <h3 style="overflow-wrap:anywhere">${esc(cut(m.titlu, 60))}</h3>
       <dl class="kv small"><dt>Alt</dt><dd>${m.alt ? esc(m.alt) : '<span class="tag bad">lipsă</span>'}</dd><dt>Fișier</dt><dd>${m.kb != null ? `${m.kb} KB` : '—'}${m.dimensiuni ? ` · ${esc(m.dimensiuni)}` : ''}</dd>
-        <dt>Folosită pe</dt><dd>${m.folosita.map((p) => `<code>${esc(p)}</code>`).join(' ')}</dd></dl></div>`).join('')}</div>`);
+        <dt>Folosită pe</dt><dd>${m.folosita.map((p) => `<code>${esc(p)}</code>`).join(' ')}</dd>${m.autor ? `<dt>Autor</dt><dd>${esc(m.autor)} · <a href="${esc(m.sursa)}" target="_blank" rel="noopener">Unsplash</a></dd>` : ''}</dl></div>`).join('')}</div>`);
 
   const V = D.video || [];
   add('video', 'Video', V.length, `<p class="lead">${V.filter((v) => !v.fundal).length} în conținut, ${V.filter((v) => v.fundal).length} de fundal · ${V.reduce((n, v) => n + (v.mb || 0), 0).toFixed(0)} MB în total${V.some((v) => v.mobil) ? ` · versiunile pentru mobil: <b>${V.reduce((n, v) => n + (v.mobil?.mobil_mb || 0), 0).toFixed(1)} MB</b> (${V.filter((v) => v.mobil).length} video, cu cadru de previzualizare)` : ''}.</p>
@@ -265,7 +265,7 @@ function groupMeta(D) {
     testimoniale: 'Recenziile Google afișate pe homepage, cu medicul menționat.',
     cifre: 'Cifrele și afirmațiile de tip „prima”, „singurul”, „aprobat FDA”, fiecare cu pagina-sursă.',
     intrebari: 'Întrebările din conținutul site-ului, cu răspuns, legate de servicii, glosar și medici. Se validează înainte de folosire.',
-    media: 'Imaginile homepage-ului: fișier, text alternativ, unde mai apar.',
+    media: 'Imaginile homepage-ului și imaginile principale ale tratamentelor: fișier, text alternativ, unde apar, autor.',
     video: 'Video-urile de pe tot site-ul, cu pagina și secțiunea în care apar: unde trebuie puse pe site-ul nou.',
     observatii: 'Problemele de entity SEO găsite pe site, cu verificare pe site-ul live la rezolvare.',
     schema: 'Schema JSON-LD existentă și propunerea MedicalClinic generată din entități.',
