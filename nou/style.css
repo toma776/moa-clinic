@@ -1408,3 +1408,38 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .ar-author > span { min-width: 0; }
 .ar-author .bl-meta { flex-wrap: wrap; row-gap: 2px; }
 .bl-feat[hidden] { display: none; }
+
+/* =====================================================================
+   Lizibilitate pe mobil: pe ecrane mici Montserrat Light (300) e prea subțire, iar textele secundare de 11–13px
+   se citesc greu. Pe mobil: greutate 400 peste tot, textele mici urcă la minimum ~13.5px, griurile mai închise
+   (pe fond deschis) și mai deschise (pe fond închis). Desktopul rămâne neschimbat.
+   ===================================================================== */
+@media (max-width: 760px) {
+  :root { --muted: #625a51; --ink-2: #3f3a35; }
+  body { font-weight: 400; }
+  /* texte secundare mici → minimum 13.5px */
+  .crumbs, .bl-meta, .consent, .consent a, .pr-orow-n small, .o-det, .tr-note, .cs-docs i, .doc span, .r-card .who,
+  .v-card p, .mm-card span, .hero-proof, .tr-zone p, .s-item p, .pf-book p, .pf-note, .ar-rel span, .hs-count { font-size: 13.5px !important; }
+  table td span, .pr-p s, .from, .ar-toc-m summary span { font-size: 13.5px; }
+  .ar-sim i { font-size: 12px; }
+  .doc-chip span { font-size: 13.5px; color: rgba(255, 255, 255, .9); }
+  /* etichete mici, cu majuscule (eyebrow, categorii, „de la”, durate): puțin mai mari */
+  .pr-p small, .pr-sub, .vp-dur, .field label, .off { font-size: 12.5px; }
+  .eyebrow, .bl-body small, .vp-cat, .tag { font-size: 12.5px; }
+  /* pe fonduri închise: griurile mai deschise */
+  footer { color: #c2b9ab; }
+  footer .brand p { color: #c2b9ab; }
+  footer .legal { font-size: 13px; color: #a2998c; }
+  .s-item p, .safety .lede, .book .lede, .pf-book p, .pf-note, .ar-rel span { color: #cfc6b8; }
+  .tr-offer s, .tr-offer-row s { color: #b4ab9e; }
+  /* etichetele cu majuscule de 12px → 12.5px; indicațiile secundare din meniu → 13.5px */
+  footer h4, .off, .mnav-x, .in .cat, .mono small, .tr-read summary, .tr-faq-more > summary, .tr-allprices summary, .swipe-hint, .tr-hint,
+  .quote cite, .tr-offer small, .tr-offer i, .tr-offer-row i, .ar-rel small, .ar-rel i, .ar-sim small, .ar-tags small, .ar-toc-m small, .cs-incl, .space dt,
+  .pr-og, .pr-search span, .pr-cat-h small, .tr-toc a, .hero-top .eyebrow { font-size: 12.5px; }
+  .mrow small, .mm-card small { font-size: 13.5px; }
+  .pr-orow .off, .o-card .off, .tr-offer-row .off, .pr-off .off, .tr-arts small, .pr-search span, .proto, .proto a { font-size: 12.5px; }
+  /* meniul mobil ascuns în dreapta nu mai lărgește pagina */
+  html { overflow-x: clip; }
+  /* butoane și linkuri subliniate: 13.5px */
+  .btn, .link-u { font-size: 13.5px; }
+}
