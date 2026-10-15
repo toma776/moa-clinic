@@ -246,7 +246,8 @@ const vPoster = (v) => VM[v.id]?.poster || '';
 
 // slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
 const HERO_SLIDES = [
-  { src: '/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-1112x1536.jpeg', eticheta: 'Dr. Adrian Stănescu', alt: 'Dr. Adrian Stănescu, medic primar geriatrie-gerontologie, fondatorul MOA Clinic, în cabinetul clinicii' },
+  // mobil: decupaj mai jos, ca fața să rămână în banda de deasupra titlului (nou/media/hero/)
+  { src: '/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-1112x1536.jpeg', mobil: '/nou/media/hero/stanescu-mobil.jpg', eticheta: 'Dr. Adrian Stănescu', alt: 'Dr. Adrian Stănescu, medic primar geriatrie-gerontologie, fondatorul MOA Clinic, în cabinetul clinicii' },
   { src: '/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg', eticheta: 'Recepția', alt: 'Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene' },
   { src: '/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg', eticheta: 'Holul', alt: 'Holul clinicii MOA, cu scara și zona de așteptare' },
   { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.19-768x1024.jpeg', eticheta: 'Salonul de așteptare', alt: 'Salonul de așteptare al clinicii MOA' },
@@ -453,7 +454,7 @@ ${mobileNav}
     <div class="hero-media">
       <div class="frame hs" id="hs" role="region" aria-roledescription="carusel" aria-label="Clinica MOA, în imagini">
         <div class="hs-track">${HERO_SLIDES.map((s, i) => `<figure class="hs-slide ${i ? '' : 'on'}" data-label="${esc(s.eticheta)}" role="group" aria-roledescription="imagine" aria-label="${i + 1} din ${HERO_SLIDES.length}: ${esc(s.eticheta)}" ${i ? 'aria-hidden="true"' : ''}>
-          <img src="${esc(s.src)}" alt="${esc(s.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}></figure>`).join('')}</div>
+          ${s.mobil ? `<picture><source media="(max-width: 760px)" srcset="${esc(s.mobil)}">` : ''}<img src="${esc(s.src)}" alt="${esc(s.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>${s.mobil ? '</picture>' : ''}</figure>`).join('')}</div>
         <div class="hs-bar">
           <span class="hs-label" aria-live="polite">${esc(HERO_SLIDES[0].eticheta)}</span>
           <span class="hs-count"><b>01</b> / ${String(HERO_SLIDES.length).padStart(2, '0')}</span>
