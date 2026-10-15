@@ -641,13 +641,21 @@ ${mobileNav}
 </main>
 
 <footer>
+  <div class="wrap ft-head">
+    <div class="brand"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"><p>Estetică medicală, chirurgie plastică și medicină regenerativă, coordonate de un medic primar geriatrie-gerontologie.</p></div>
+    <dl class="ft-contact">
+      <div><dt>Adresă</dt><dd><a href="https://maps.app.goo.gl/RHMvPm3KMHYY7BEG6" target="_blank" rel="noopener">Str. Ștefan Mihăileanu 35, București</a></dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></dd></div>
+    </dl>
+    <div class="ft-social"><a href="https://www.instagram.com/moaclinic" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/MoaClinicByOxxygene/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a></div>
+  </div>
   <div class="wrap top">
-    <div class="brand"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"><p>Estetică medicală, chirurgie și medicină regenerativă, într-un singur concept: Global Antiaging.</p></div>
     ${S.meniu.footer.map((f) => `<div><h4>${esc(f.titlu)}</h4><ul>${f.linkuri.map((l) => `<li><a href="${esc(/^https?:/.test(l.url) ? l.url : toLive(l.url) || '#')}">${esc(l.nume)}</a></li>`).join('')}</ul></div>`).join('')}
   </div>
   <div class="wrap legal">
     <span>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? ` (CUI ${esc(f.cui)})` : '')).join(' · ')}</span>
-    <span>Str. Ștefan Mihăileanu 35, București · 0743 056 605 · office@moaclinic.ro</span>
+    <span>MOA Regenerative by Oxxygene · parte a grupului medical Oxxygene</span>
   </div>
 </footer>
 
