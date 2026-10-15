@@ -1,3 +1,5 @@
+// de unde a venit lead-ul: campania (utm), site-ul de trimitere sau „direct”, plus pagina de pe care a trimis formularul
+const originLabel = (l) => { const o = l.origine || {}; const camp = [o.utm_source, o.utm_medium, o.utm_campaign].filter(Boolean).join(' / '); const ref = o.referrer ? (() => { try { return new URL(o.referrer).hostname.replace(/^www./, ''); } catch { return o.referrer; } })() : ''; const why = camp || (o.gclid ? 'Google Ads' : o.fbclid ? 'Meta Ads' : ref || (l.origine ? 'direct' : '')); return [why, l.pagina].filter(Boolean).join(' · '); };
 /* LEADS: cereri de programare / contact, salvate în data/leads.json (nu se urcă pe GitHub). */
 const LEAD_STATUS = [
   ['nou', 'Nou', ''], ['contactat', 'Contactat', 'grey'], ['programat', 'Programat', 'warn'],
@@ -40,7 +42,7 @@ routes.leads = function renderLeads() {
         <td><b>${esc(l.nume)}</b>${l.mesaj ? `<div class="muted small">${esc(cut(l.mesaj, 90))}</div>` : ''}${l.note ? `<details class="calif"><summary>Note</summary><div class="small">${esc(l.note)}</div></details>` : ''}</td>
         <td class="small">${l.telefon ? `<a href="tel:${esc(l.telefon.replace(/\s/g, ''))}">${esc(l.telefon)}</a>` : ''}${l.email && l.telefon ? '<br>' : ''}${l.email ? `<a href="mailto:${esc(l.email)}">${esc(l.email)}</a>` : ''}</td>
         <td class="small">${esc(l.serviciu || '—')}${l.medic ? `<div class="muted">${esc(l.medic)}</div>` : ''}${l.valoare ? `<div class="muted">${lei(l.valoare)}</div>` : ''}</td>
-        <td class="small">${esc(l.sursa || '—')}</td>
+        <td class="small">${esc(l.sursa || '—')}${originLabel(l) ? `<div class="muted">${esc(originLabel(l))}</div>` : ''}</td>
         <td><select class="stSel" data-id="${esc(l.id)}" aria-label="Status">${LEAD_STATUS.map(([id, lab]) => `<option value="${id}" ${l.status === id ? 'selected' : ''}>${esc(lab)}</option>`).join('')}</select></td>
         <td style="white-space:nowrap"><button class="sm" data-edit="${esc(l.id)}">Editează</button> <button class="sm danger" data-del="${esc(l.id)}">Șterge</button></td>
       </tr>`).join('') || '<tr><td colspan="7" class="empty">Niciun rezultat pentru filtrele alese.</td></tr>'}</tbody></table></div>`}`;
@@ -51,7 +53,7 @@ routes.leads = function renderLeads() {
   $('#addL').onclick = () => openLead();
   $('#csvL').onclick = () => download('moa-leads.csv', csv(L, [
     ['Data', (l) => l.creat], ['Nume', (l) => l.nume], ['Telefon', (l) => l.telefon], ['Email', (l) => l.email], ['Serviciu', (l) => l.serviciu],
-    ['Medic', (l) => l.medic], ['Valoare RON', (l) => l.valoare], ['Sursa', (l) => l.sursa], ['Status', (l) => statusLabel(l.status)], ['Mesaj', (l) => l.mesaj], ['Note', (l) => l.note]]), 'text/csv;charset=utf-8');
+    ['Medic', (l) => l.medic], ['Valoare RON', (l) => l.valoare], ['Sursa', (l) => l.sursa], ['Origine', (l) => originLabel(l)], ['Pagina', (l) => l.pagina], ['Status', (l) => statusLabel(l.status)], ['Mesaj', (l) => l.mesaj], ['Note', (l) => l.note]]), 'text/csv;charset=utf-8');
   $$('.stSel').forEach((s) => (s.onchange = async () => { const l = L.find((x) => x.id === s.dataset.id); l.status = s.value; l.actualizat = nowLocal(); await saveLeads('Status actualizat'); routes.leads(); }));
   $$('[data-edit]').forEach((b) => (b.onclick = () => openLead(L.find((x) => x.id === b.dataset.edit))));
   $$('[data-del]').forEach((b) => (b.onclick = async () => {

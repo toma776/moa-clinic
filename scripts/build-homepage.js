@@ -21,18 +21,44 @@ const diacritice = (t) => String(t)
   .replace(/[A-Za-zĂÂÎȘȚăâîșț]+(?:-[a-z]+)?/g, (w) => { const r = DIACR[w.toLowerCase()]; if (!r) return w; return w === w.toUpperCase() && w.length > 1 ? r.toUpperCase() : w[0] === w[0].toUpperCase() ? r[0].toUpperCase() + r.slice(1) : r; })
   .replace(/\s+([?!:])/g, '$1');
 for (const a of D.articole) a.titlu = diacritice(a.titlu);
+// A8: entitatea clinicii, definită o singură dată (homepage); toate paginile trimit la ea prin @id #organization.
+// Un singur nume de brand, aceeași cifră de recenzii ca pe pagină, o singură adresă pentru profilul fondatorului.
+// Programul de lucru lipsește intenționat: pe site-ul actual apare în două variante (L–D 09–17 și L–V 09–19) – de confirmat cu clinica.
+const ORG_SCHEMA = (() => {
+  const nR = D.reputatie?.trustindex?.recenzii;
+  return {
+    '@context': 'https://schema.org', '@type': 'MedicalClinic', '@id': `${ORIGIN}/#organization`,
+    name: 'MOA Clinic', alternateName: 'MOA Regenerative by Oxxygene', url: ORIGIN + '/',
+    logo: ORIGIN + '/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg',
+    telephone: '+40743056605', email: 'office@moaclinic.ro',
+    address: { '@type': 'PostalAddress', streetAddress: 'Str. Ștefan Mihăileanu 35', addressLocality: 'București', addressCountry: 'RO' },
+    geo: { '@type': 'GeoCoordinates', latitude: 44.43, longitude: 26.11 },
+    hasMap: 'https://maps.app.goo.gl/RHMvPm3KMHYY7BEG6',
+    medicalSpecialty: ['PlasticSurgery', 'Dermatology', 'Geriatric'],
+    priceRange: '150–8.000 lei',
+    founder: { '@type': 'Person', '@id': `${ORIGIN}/medici/adrian-stanescu/#medic`, name: 'Dr. Adrian Stănescu', jobTitle: 'Medic primar geriatrie și gerontologie', url: `${ORIGIN}/medici/adrian-stanescu/` },
+    parentOrganization: { '@type': 'Organization', name: 'Oxxygene', url: 'https://oxxygene.ro/' },
+    sameAs: ['https://www.instagram.com/moaclinic', 'https://www.facebook.com/MoaClinicByOxxygene/'],
+    ...(nR ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: String(nR), bestRating: '5' } } : {}),
+  };
+})();
 const HOME = fs.readFileSync(path.join(ROOT, 'site', 'index.html'), 'utf8');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 // punctuația din textele preluate de pe site-ul vechi: fără spațiu înainte de . , ; : ! ? (inclusiv „<a>Botox </a> .”)
 // și cu spațiu după ele când lipsește („naturale.De asemenea”, „empatie,si”). Doar în textul paginii – nu în etichete,
 // atribute, <script> sau <style>; adresele (moaclinic.ro, www., e-mail) și „Nd:YAG” rămân neatinse.
+// afirmațiile riscante (Decizia CMR 20/2025) se rescriu în textul paginii, în afara recenziilor (<q>…</q> = citatele pacienților)
+const { curata } = require('./afirmatii');
 const fixPunct = (html) => {
   const tok = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/);
+  let inQ = false;
   const INL = /^<\/?(a|em|b|strong|i|span|small|s)\b/i;
   const isText = (i) => i % 2 === 0;
   for (let i = 0; i < tok.length; i += 2) {
+    if (i > 0) { if (/^<q\b/i.test(tok[i - 1])) inQ = true; else if (/^<\/q>/i.test(tok[i - 1])) inQ = false; }
     let t = tok[i];
     if (!t) continue;
+    if (!inQ) t = curata(t);
     t = t.replace(/(\S)[ \t\n]+([.,;:!?])(?=[\s"”)»]|$)/g, '$1$2');
     t = t.replace(/([a-zăâîșțA-ZĂÂÎȘȚ]{2,})([,;:!?])(?=[A-ZĂÂÎȘȚ]?[a-zăâîșț]{2,})/g, '$1$2 ');
     t = t.replace(/([a-zăâîșț]{2,})\.(?=[A-ZĂÂÎȘȚ][a-zăâîșț]+)/g, '$1. ');
@@ -51,7 +77,11 @@ const fixPunct = (html) => {
 // „[email protected]” = adresa ascunsă de Cloudflare pe site-ul vechi, copiată ca atare în texte
 // datele structurate (ld+json) primesc aceeași corectură de spațiu înainte de punctuație
 const writePage = (p, html) => fs.writeFileSync(p, fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
-  .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, j, b) => a + j.replace(/([^\s"]) +([.,;:!?])(?=[\s"]|$)/g, '$1$2') + b));
+  .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, j, b) => a + j.replace(/([^\s"]) +([.,;:!?])(?=[\s"]|$)/g, '$1$2')
+    .replace(/"(name|description|text|headline|alternateName)":"([^"]*)"/g, (mm, k, v) => `"${k}":"${curata(v)}"`) + b)
+  // titlul și meta-descrierea trec prin aceeași rescriere a afirmațiilor
+  .replace(/(<title>)([^<]*)/, (m, a, v) => a + curata(v))
+  .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v)));
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
@@ -371,17 +401,18 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MOA Clinic · Estetică medicală, chirurgie și longevitate în București</title>
-<meta name="description" content="Prima clinică Global Antiaging din România: tratamente estetice, chirurgie și medicină regenerativă, făcute de medici, în Str. Ștefan Mihăileanu 35, București.">
+<meta name="description" content="Estetică medicală, chirurgie plastică și medicină regenerativă, coordonate de un medic primar geriatrie-gerontologie. Proceduri făcute de medici, în Str. Ștefan Mihăileanu 35, București.">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
 </head>
 <body>
 
 <div class="topbar"><div class="wrap">
   <span class="tb-left">Str. Ștefan Mihăileanu 35, București</span>
-  <span class="tb-right"><a href="tel:+40743056605">0743 056 605</a><a href="https://wa.me/40743056605">WhatsApp</a><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></span>
+  <span class="tb-right"><a href="tel:+40743056605">0743 056 605</a><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></span>
 </div></div>
 
 <header class="site" id="hdr">
@@ -390,6 +421,7 @@ const html = `<!doctype html>
     <nav class="nav" aria-label="Meniu principal"><ul>
       ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#')}">${esc(m.url === '/medici/' ? 'Echipa' : m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
     </ul></nav>
+    <a class="hd-wa" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" aria-label="Scrie-ne pe WhatsApp" data-track="whatsapp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/></svg><span>WhatsApp</span></a>
     <a class="btn btn-gold" href="#programare">Programează-te</a>
     <button class="burger" id="burger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mnav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
   </div>
@@ -411,7 +443,7 @@ ${mobileNav}
         <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
       </div>
       </div>
-      <p class="lede">Prima clinică <a class="lede-link" href="/nou/longevitate/program/">Global Antiaging</a> din România: estetică medicală, chirurgie și regenerare celulară, sub coordonarea <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar gerontolog format la școala Ana Aslan.</p>
+      <p class="lede">Estetică medicală, chirurgie plastică și <a class="lede-link" href="/nou/longevitate/program/">medicină regenerativă (Global Antiaging)</a>, coordonate de <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar geriatrie-gerontologie, format la școala Ana Aslan.</p>
       <div class="hero-proof">
         <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
         <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
@@ -436,10 +468,10 @@ ${mobileNav}
 
 <section class="trust" aria-label="De ce MOA">
   <div class="wrap">
-    <div class="t"><b>Consultație medicală</b><span>înainte de orice procedură</span></div>
-    <div class="t"><b>Medici, nu operatori</b><span>injectabilele sunt făcute de medic</span></div>
-    <div class="t"><b>Aparatură de top</b><span>Splendor X · Venus · Dermapen 4</span></div>
-    <div class="t"><b>Rezultate naturale</b><span>planuri personalizate, fără exces</span></div>
+    <div class="t"><b>Medic primar gerontolog</b><span>coordonator medical, școala Ana Aslan</span></div>
+    <div class="t"><b>Injectabile făcute de medici</b><span>numiți pe pagina fiecărui tratament</span></div>
+    <div class="t"><b>Grupul medical Oxxygene</b><span>clinică și spital privat, Otopeni</span></div>
+    <div class="t"><b>Prețuri publice</b><span>${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri pe site, înainte de programare</span></div>
   </div>
 </section>
 
@@ -588,7 +620,8 @@ ${mobileNav}
         <li><span><b>Te sunăm</b>Confirmăm ora și răspundem la întrebări.</span></li>
         <li><span><b>Consultația</b>Medicul îți face un plan, fără nicio obligație.</span></li>
       </ol>
-      <div class="direct"><a class="btn" href="tel:+40743056605">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605">WhatsApp</a></div>
+      <div class="direct"><a class="btn" href="tel:+40743056605" data-track="telefon">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></div>
+      <p class="direct-note">Preferi discreția? Pe WhatsApp îți răspunde direct recepția clinicii.</p>
     </div>
     <form class="booking rv" id="booking" novalidate>
       <h3>Cere o programare</h3>
@@ -619,7 +652,7 @@ ${mobileNav}
   </div>
 </footer>
 
-<nav class="mbar" aria-label="Acțiuni rapide"><a href="tel:+40743056605">Sună</a><a href="https://wa.me/40743056605">WhatsApp</a><a href="#programare">Programează-te</a></nav>
+<nav class="mbar" aria-label="Acțiuni rapide"><a href="tel:+40743056605" data-track="telefon">Sună</a><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a><a href="#programare">Programează-te</a></nav>
 
 <div class="sheet" id="sheet" hidden>
   <div class="sheet-bg" data-close></div>
@@ -751,6 +784,26 @@ ${mobileNav}
   // ?static: totul vizibil de la început (capturi de ecran, audit)
   if (location.search.includes('static')) document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
 
+  // măsurare: fiecare acțiune importantă ajunge în dataLayer (GTM / GA4 o preiau când se adaugă codul de măsurare)
+  window.dataLayer = window.dataLayer || [];
+  const track = (event, extra = {}) => window.dataLayer.push({ event, pagina: location.pathname, ...extra });
+  // sursa vizitei (UTM, referrer, prima pagină), păstrată pe durata sesiunii și trimisă cu lead-ul
+  const SRC_KEY = 'moa-sursa';
+  let sursaVizita = null;
+  try {
+    const q = new URLSearchParams(location.search);
+    const utm = Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'].filter((k) => q.get(k)).map((k) => [k, q.get(k)]));
+    sursaVizita = JSON.parse(sessionStorage.getItem(SRC_KEY) || 'null');
+    if (!sursaVizita || Object.keys(utm).length) { sursaVizita = { ...utm, referrer: document.referrer && !document.referrer.includes(location.host) ? document.referrer : '', intrare: location.pathname }; sessionStorage.setItem(SRC_KEY, JSON.stringify(sursaVizita)); }
+  } catch {}
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a, button'); if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (href.startsWith('tel:')) track('click_telefon');
+    else if (href.includes('wa.me/')) track('click_whatsapp');
+    else if (href === '#programare' || a.dataset.srv) track('click_programare', { serviciu: a.dataset.srv || '' });
+    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
+  }, true);
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
   document.querySelectorAll('form.booking').forEach((f) => {
@@ -764,8 +817,9 @@ ${mobileNav}
       if (!d.acord) { say('err', 'Bifează acordul pentru a putea fi contactat(ă).'); return; }
       const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
       try {
-        const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: (d.email || '').trim() || undefined, serviciu: d.serviciu || undefined, mesaj: (d.mesaj || '').trim() || undefined, sursa: 'Formular site' }) });
+        const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: (d.email || '').trim() || undefined, serviciu: d.serviciu || undefined, mesaj: (d.mesaj || '').trim() || undefined, sursa: 'Formular site', pagina: location.pathname, origine: sursaVizita || undefined }) });
         if (!r.ok) throw new Error();
+        track('lead_trimis', { serviciu: d.serviciu || '' });
         f.reset(); say('ok', 'Mulțumim! Te sunăm în curând pentru confirmare.');
       } catch { say('err', 'Nu am putut trimite cererea. Sună-ne la 0743 056 605.'); }
       btn.disabled = false;
@@ -1142,6 +1196,12 @@ for (const id of TR_PAGINI) {
       ...(t.faq.length ? [{ '@type': 'FAQPage', mainEntity: t.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.blocuri.map(flat).join(' ') } })) }] : []),
     ],
   };
+  // A2: pe injectabile, medicii care fac procedura, numiți (doar medici; ordinea: primar → specialist → rezident)
+  const GRAD = { 'Medic primar': 0, 'Medic specialist': 1, 'Medic rezident': 2 };
+  const docsInj = cat.url === '/tratamente/injectabile/' ? medici.filter((p) => p.tip === 'Medic').sort((a, b) => (GRAD[a.grad] ?? 9) - (GRAD[b.grad] ?? 9)) : [];
+  // „medici primari și specialiști în chirurgie plastică și dermatologie”
+  const docsSum = (() => { const g = [...new Set(docsInj.map((p) => p.grad).filter(Boolean))].map((x) => ({ 'Medic primar': 'primari', 'Medic specialist': 'specialiști', 'Medic rezident': 'rezidenți' })[x]).filter(Boolean); const sp = [...new Set(docsInj.map((p) => ({ 'Chirurgie plastică': 'chirurgie plastică', 'Dermatovenerologie': 'dermatologie', 'Gerontologie': 'gerontologie' })[p.specialitate] || p.specialitate.toLowerCase()))]; return `medici ${g.length > 1 ? g.slice(0, -1).join(', ') + ' și ' + g.slice(-1) : g[0] || ''} în ${sp.length > 1 ? sp.slice(0, -1).join(', ') + ' și ' + sp.slice(-1) : sp[0]}`; })();
+  const docsBlock = docsInj.length ? `<div class="tr-docs"><span class="tr-docs-ph">${docsInj.slice(0, 4).map((p) => (photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="" loading="lazy">` : `<i>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</i>`)).join('')}</span><span><b>Efectuată exclusiv de medici</b>${docsInj.map((p) => esc(p.nume)).join(', ')}<small>${esc(docsSum)}</small></span></div>` : '';
   const titleHtml = /\(([^)]+)\)$/.test(nod.nume) ? `${esc(nod.nume.replace(/\s*\([^)]+\)$/, ''))} <em>${esc(nod.nume.match(/\(([^)]+)\)$/)[1])}</em>` : esc(nod.nume);
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
   const urmeaza = consult ? [...trNode.entries()].filter(([x, l]) => !l.consult && (serv[x].medici || []).some((n) => (s.medici || []).includes(n))).map(([x]) => serv[x]).slice(0, 9) : [];
@@ -1180,6 +1240,8 @@ ${TOP}<main class="tr-page">
       <p class="lede">${esc(lede)}</p>
       ${facts.length ? `<div class="pf-facts tr-facts">${facts.map((f) => `<div><b>${esc(f.v)}</b><span>${esc(f.l)}</span></div>`).join('')}</div>` : ''}
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a><a class="btn btn-line" href="#preturi">Vezi prețurile</a></div>
+      <a class="tr-wa" href="https://wa.me/40743056605?text=${encodeURIComponent(`Bună ziua! Aș dori informații despre ${nod.nume.replace(/\s*\(.*\)$/, '')}.`)}" data-track="whatsapp">Sau scrie-ne discret pe WhatsApp →</a>
+      ${docsBlock}
     </div>
     ${t.hero || HERO_NOU[id] ? `<div class="pf-photo tr-photo"><div class="frame"><img src="${esc(HERO_NOU[id]?.src || resized(t.hero))}" alt="${esc(nod.nume)} la MOA Clinic" fetchpriority="high"${HERO_NOU[id]?.pos ? ` style="object-position:${HERO_NOU[id].pos}"` : ''}></div>${offer ? `<a class="tr-offer" href="#programare" data-srv="${esc(offerSrv)}" aria-label="Programează-te cu oferta lunii: ${esc(offerName)}, ${lei(offer.pret)}"><small>Oferta lunii · -${offer.discountProcent}%</small><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> ${lei(offer.pret)}</span><i>Programează-te →</i></a>` : ''}</div>` : ''}
   </div>

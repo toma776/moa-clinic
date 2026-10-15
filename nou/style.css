@@ -1520,3 +1520,24 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
   .tr-more p:first-child::first-letter, .tr-cols p:first-child::first-letter { -webkit-initial-letter: normal; initial-letter: normal; font: inherit; color: inherit; margin: 0; }
 }
+
+/* =====================================================================
+   WhatsApp, medicii pe injectabile, fapte verificabile (recomandările din cercetarea de piață)
+   ===================================================================== */
+.hd-wa { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 14px; padding: 0 4px; min-height: 44px; font: 500 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; transition: color .2s; }
+.hd-wa svg { color: #25d366; }
+.hd-wa:hover { color: var(--gold); }
+@media (max-width: 1100px) { .hd-wa { display: none; } }
+.direct-note { margin: 12px 0 0; font-size: 13.5px; color: #b9b0a3; }
+.tr-wa { justify-self: start; font-size: 14px; color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--gold-2); text-underline-offset: 5px; }
+.tr-wa:hover { color: var(--gold); }
+.tr-docs { display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid var(--line); }
+.tr-docs-ph { display: flex; flex: none; }
+.tr-docs-ph img, .tr-docs-ph i { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--ivory); object-fit: cover; object-position: 50% 15%; margin-left: -10px; background: var(--sand); display: grid; place-items: center; font: italic 500 14px/1 var(--serif); color: var(--gold); }
+.tr-docs-ph > :first-child { margin-left: 0; }
+.tr-docs > span:last-child { font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+.tr-docs b { display: block; font: 500 12px/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.tr-docs small { display: block; margin-top: 2px; color: var(--muted); font-size: 12.5px; }
+@media (max-width: 760px) { .tr-page .tr-hero .pf-copy .tr-wa { order: 3; } .tr-page .tr-hero .pf-copy .tr-docs { order: 5; align-items: flex-start; } .tr-docs > span:last-child { font-size: 13.5px; } }
+/* WhatsApp din header: doar iconița sub 1500px, ca meniul să rămână pe un rând */
+@media (max-width: 1499px) { .hd-wa span { display: none; } .hd-wa { margin-right: 6px; } .hd-wa svg { width: 22px; height: 22px; } }

@@ -4,3 +4,5 @@ node_modules/
 Thumbs.db
 # date personale (lead-uri) – doar local
 data/leads.json
+research_notes/
+reports/
