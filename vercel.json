@@ -58,6 +58,10 @@
       "destination": "/nou/blog/index.html"
     },
     {
+      "source": "/nou/longevitate/program",
+      "destination": "/nou/longevitate/program/index.html"
+    },
+    {
       "source": "/nou/:slug",
       "destination": "/nou/:slug/index.html"
     },

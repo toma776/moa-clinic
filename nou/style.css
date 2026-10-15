@@ -1545,3 +1545,37 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .team-grid > .doc { min-width: 0; }
 .doc .tag { display: block; max-width: 100%; overflow-wrap: anywhere; }
 @media (min-width: 1101px) { #echipa .doc .tag { letter-spacing: .14em; } }
+
+/* =====================================================================
+   Hub longevitate /nou/longevitate/program/
+   ===================================================================== */
+.lg-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lg-steps .lg-pret { margin-top: 6px; font: italic 500 20px/1.2 var(--serif); color: var(--gold); }
+.lg-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lg-grid .mm-card { grid-template-rows: auto auto 1fr auto; align-content: start; min-height: 150px; }
+.lg-rol { grid-column: 1 / -1; font: 500 11.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.lg-docs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lg-prose p { font-size: 16.5px; }
+@media (max-width: 1100px) { .lg-steps, .lg-grid, .lg-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .lg-steps, .lg-grid, .lg-docs { grid-template-columns: 1fr; } }
+.cs-nextgrid.lg-grid { display: grid; gap: 10px; }
+.lg-grid .mm-card { grid-template-columns: 1fr auto; padding: 18px; }
+.lg-grid .mm-card b { grid-column: 1 / -1; font-size: 15.5px; }
+.lg-grid .mm-card > span { grid-column: 1 / -1; }
+.lg-grid .mm-card em { grid-column: 1 / -1; grid-row: auto; align-self: end; text-align: left; margin-top: 10px; }
+.lg-grid .lg-rol { grid-column: 1 / -1; }
+.cs-doclist.lg-docs { display: grid; column-gap: 32px; border-top: 0; }
+.cs-doclist.lg-docs li { border-top: 1px solid var(--line); }
+.cs-doclist.lg-docs li > a, .cs-doclist.lg-docs li > div { border-bottom: 0; }
+@media (min-width: 761px) { .cs-doclist.lg-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .lg-steps .lg-pret { grid-column: 2; margin-top: 2px; font-size: 18px; }
+  .cs-nextgrid.lg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .lg-grid .mm-card { padding: 14px; min-height: 0; }
+  .lg-grid .mm-card > span { display: none; }
+  .lg-rol { font-size: 10.5px; letter-spacing: .12em; }
+}
+/* hub longevitate: caseta „De fiecare dată” centrată vertical, cu rânduri mai aerisite */
+.lg-rig { align-items: center; }
+.lg-rig .pf-side .tr-checks { gap: 16px; }
+.lg-rig .pf-side .tr-checks li { line-height: 1.5; }

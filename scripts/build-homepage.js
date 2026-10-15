@@ -1465,6 +1465,118 @@ ${BOOK}${BOTTOM}`;
   console.log(`Hub: nou/consultatii/ · ${cons.length} consultații`);
 }
 
+// ---------- hub-ul de longevitate /nou/longevitate/program/: parcursul evaluare → plan → terapii → reevaluare, condus de gerontolog ----------
+// Formulări fără superlative și fără rezultate promise (Decizia CMR 20/2025); terapiile trimit la paginile lor, cu prețul de la.
+{
+  const consId = [...trNode.entries()].find(([, l]) => l.consult && /antiaging/i.test(l.nod.nume))?.[0];
+  const consNod = consId && trNode.get(consId).nod;
+  const consPret = consId ? minPrice(consId) : null;
+  const consMax = consId ? Math.max(...(serv[consId].preturi || []).map((p) => p.valoare).filter(Boolean)) : null;
+  const ger = team.filter((p) => p.specialitate === 'Gerontologie');
+  const fond = team.find((p) => p.nume.includes('Stănescu'));
+  const ORD = ['terapia-nad', 'glutation', 'autohemoterapia', 'sauna-cu-ozon', 'fotobiomodulare-vielight', 'tms-stimulare-magnetica-transcraniana', 'nutrigenetica-epigenetica', 'skin-care-dna'];
+  const ROL = { 'terapia-nad': 'Energie celulară', glutation: 'Antioxidant', autohemoterapia: 'Ozonoterapie', 'sauna-cu-ozon': 'Ozonoterapie', 'fotobiomodulare-vielight': 'Creier și somn', 'tms-stimulare-magnetica-transcraniana': 'Stres și burnout', 'nutrigenetica-epigenetica': 'Test genetic', 'skin-care-dna': 'Test genetic' };
+  const ter = [...trNode.entries()].filter(([, l]) => !l.consult && /\/tratamente\/(regenerare|teste)\//.test(l.nod.url))
+    .sort((a, b) => ((ORD.indexOf(a[0]) + 1) || 99) - ((ORD.indexOf(b[0]) + 1) || 99));
+  const pageUrl = ORIGIN + '/longevitate/program/';
+  const pasi = [
+    { t: 'Evaluare', d: 'Consultație cu medicul gerontolog: istoric, analize, stil de viață și estimarea vârstei biologice, ca punct de plecare.', p: consPret ? (consMax && consMax !== consPret ? lei(consPret) + ' – ' + lei(consMax) : lei(consPret)) : '' },
+    { t: 'Plan', d: 'Primești un plan scris: ce merită făcut, în ce ordine și ce nu e cazul. Planul poate include doar recomandări de stil de viață.' },
+    { t: 'Terapii', d: 'Dacă sunt indicate: perfuzii, ozonoterapie, fotobiomodulare, TMS sau estetică regenerativă, cu doze și durate stabilite de medic.' },
+    { t: 'Reevaluare', d: 'La 6–12 luni refacem evaluarea și ajustăm planul în funcție de ce s-a schimbat.' },
+  ];
+  const faq = [
+    ['Ce este vârsta biologică?', 'Este o estimare statistică a felului în care îmbătrânește organismul, calculată din analize și măsurători. Nu este un diagnostic, ci un reper pe care îl folosim ca să comparăm evoluția în timp.'],
+    ['Am nevoie de perfuzii ca să încep?', 'Nu. Programul începe întotdeauna cu evaluarea. Multe planuri pornesc doar cu schimbări de alimentație, somn și mișcare; terapiile se adaugă numai dacă medicul le consideră potrivite.'],
+    ['Cine nu ar trebui să facă aceste terapii?', 'Există contraindicații (de exemplu sarcina, anumite boli cardiace, renale sau tratamente în curs). De aceea fiecare terapie se face după consult, într-o unitate medicală, și nu la cerere.'],
+    ['Ce rezultate pot aștepta?', 'Depinde de punctul de plecare. Pentru unele terapii dovezile științifice sunt încă limitate, iar medicul îți spune deschis ce se știe și ce nu. Urmărim schimbările măsurabile la reevaluare, nu promisiuni.'],
+  ];
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'MedicalWebPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Programul Global Antiaging | MOA Clinic', inLanguage: 'ro-RO', ...(fond ? { reviewedBy: { '@id': ORIGIN + '/medici/adrian-stanescu/#medic' } } : {}), publisher: { '@id': ORIGIN + '/#organization' } },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Longevitate', item: ORIGIN + '/longevitate/' }, { '@type': 'ListItem', position: 3, name: 'Programul Global Antiaging', item: pageUrl }] },
+      { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+    ],
+  };
+  const srv = consNod ? consNod.nume : '';
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Longevitate medicală în București – Programul Global Antiaging | MOA Clinic</title>
+<meta name="description" content="Programul Global Antiaging MOA: evaluare cu medic gerontolog și estimarea vârstei biologice, plan personal, terapii regenerative și reevaluare la 6–12 luni${consPret ? `. Consultația de la ${consPret} lei` : ''}.">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main class="tr-page lg-page">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span>Longevitate</span><span>›</span><span aria-current="page">Programul Global Antiaging</span></nav>
+
+<section class="pf-hero tr-hero">
+  <div class="wrap pf-grid">
+    <div class="pf-copy">
+      <span class="eyebrow">Longevitate medicală · Global Antiaging</span>
+      <h1>Longevitate, <em>cu metodă medicală.</em></h1>
+      <p class="lede">Un program care începe cu o evaluare, nu cu o perfuzie. Coordonat de ${fond ? `<a class="lede-link" href="/nou/medici/${esc(fond.id)}/">${esc(fond.nume)}</a>` : 'medicul gerontolog'}, medic primar geriatrie-gerontologie format la școala Ana Aslan, cu o echipă de ${ger.length} medici gerontologi.</p>
+      <div class="pf-facts tr-facts">
+        <div><b>${ger.length} gerontologi</b><span>medici primari și specialiști</span></div>
+        <div><b>${consPret ? lei(consPret) : '—'}</b><span>consultația, cu vârsta biologică</span></div>
+        <div><b>6–12 luni</b><span>până la reevaluare</span></div>
+      </div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(srv)}">Programează evaluarea</a><a class="btn btn-line" href="#parcurs">Cum funcționează</a></div>
+    </div>
+    <div class="pf-photo tr-photo"><div class="frame"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="${esc(fond ? fond.nume : 'Medic gerontolog')}, coordonatorul programului" fetchpriority="high"></div></div>
+  </div>
+</section>
+
+<section class="sec" id="parcurs">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Parcursul</span><h2 style="margin-top:18px">Patru pași, <em>în această ordine.</em></h2></div><p class="lede">Fiecare pas are un medic, un document și un preț cunoscut dinainte. Poți să te oprești după evaluare.</p></div>
+    <ol class="tr-steps lg-steps">${pasi.map((x) => `<li><b>${esc(x.t)}</b><p>${esc(x.d)}</p>${x.p ? `<em class="lg-pret">${esc(x.p)}</em>` : ''}</li>`).join('')}</ol>
+  </div>
+</section>
+
+<section class="sec" id="terapii">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Terapiile din plan</span><h2 style="margin-top:18px">Doar dacă <em>sunt indicate.</em></h2></div><p class="lede">Terapiile de mai jos se fac numai după evaluare, în clinică, sub supravegherea medicului. Pe pagina fiecăreia găsești pentru cine este, pentru cine nu și prețul.</p></div>
+    <div class="cs-nextgrid lg-grid">${ter.map(([id, l]) => `<a class="mm-card" href="${esc(live(id))}"><small class="lg-rol">${esc(ROL[id] || 'Regenerare')}</small><b>${esc(prettyName(l.nod.nume))}</b><span>${esc(l.cat.nume)}</span>${minPrice(id) ? `<em><small>de la</small>${lei(minPrice(id))}</em>` : '<em><small>preț</small>la consultație</em>'}</a>`).join('')}</div>
+  </div>
+</section>
+
+<section class="sec" id="rigoare">
+  <div class="wrap pf-two lg-rig">
+    <div class="rv"><span class="eyebrow">Cum lucrăm</span><h2 class="pf-h2">Ce știm <em>și ce nu.</em></h2>
+      <div class="pf-prose lg-prose" style="margin-top:18px"><p>Longevitatea a devenit un subiect la modă, iar odată cu el au apărut promisiuni greu de susținut. Noi pornim de la ce se poate măsura: analize, evaluarea vârstei biologice, tensiune, compoziție corporală, somn, stres.</p><p>Pentru unele terapii, cum sunt perfuziile cu NAD+, dovezile la oameni sunt încă limitate. Ți-o spunem dinainte, îți explicăm de ce le recomandăm sau nu și urmărim la reevaluare ce s-a schimbat efectiv.</p></div></div>
+    <aside class="pf-side rv"><h3>De fiecare dată</h3><ul class="tr-checks"><li>Consult medical înainte de orice terapie</li><li>Criterii de excludere verificate la fiecare pacient</li><li>Doza și durata stabilite de medic, trecute în plan</li><li>Terapiile se fac în clinică, nu la domiciliu</li><li>Reevaluare la 6–12 luni, cu aceleași măsurători</li></ul></aside>
+  </div>
+</section>
+
+${ger.length ? `<section class="sec" id="medici">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Echipa</span><h2 style="margin-top:18px">Medicii <em>programului</em></h2></div><p class="lede">Medici primari și specialiști în geriatrie și gerontologie, din grupul medical Oxxygene (clinică și spital privat, Otopeni).</p></div>
+    <ul class="cs-doclist lg-docs">${ger.map((p) => `<li>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">` : '<div>'}${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="" loading="lazy">` : `<span class="cs-ini">${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span>`}<span><b>${esc(p.nume)}</b><small>${esc(p.rol)}${p.profil_detaliat ? ' · vezi profilul →' : ''}</small></span>${p.profil_detaliat ? '</a>' : '</div>'}</li>`).join('')}</ul>
+  </div>
+</section>` : ''}
+
+<section class="sec" id="intrebari">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">Întrebări frecvente</span><h2 class="pf-h2">Înainte <em>să începi</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:+40743056605">0743 056 605</a>.</p></div>
+    <div class="tr-faq">${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
+  </div>
+</section>
+
+${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</option>`) : BOOK}${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'longevitate', 'program');
+  fs.mkdirSync(dir, { recursive: true });
+  writePage(path.join(dir, 'index.html'), alternateBg(page));
+  console.log(`Longevitate: nou/longevitate/program/ · ${ter.length} terapii · ${ger.length} gerontologi`);
+}
+
 // ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------
 {
   const PR_GRUPURI = [
