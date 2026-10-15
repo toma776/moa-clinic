@@ -246,6 +246,7 @@ const vPoster = (v) => VM[v.id]?.poster || '';
 
 // slider-ul din hero: aceleași imagini ca în hero-ul site-ului actual, în ordinea unei vizite
 const HERO_SLIDES = [
+  { src: '/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-1112x1536.jpeg', eticheta: 'Dr. Adrian Stănescu', alt: 'Dr. Adrian Stănescu, medic primar geriatrie-gerontologie, fondatorul MOA Clinic, în cabinetul clinicii' },
   { src: '/wp-content/uploads/2024/10/clinica-moa-1-948x1024.jpeg', eticheta: 'Recepția', alt: 'Recepția clinicii MOA, cu logo-ul MOA Regenerative by Oxxygene' },
   { src: '/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg', eticheta: 'Holul', alt: 'Holul clinicii MOA, cu scara și zona de așteptare' },
   { src: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.19-768x1024.jpeg', eticheta: 'Salonul de așteptare', alt: 'Salonul de așteptare al clinicii MOA' },
