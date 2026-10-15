@@ -1613,3 +1613,5 @@ footer .legal { padding: 18px 0 22px; font-size: 11.5px; letter-spacing: .02em; 
   footer .legal { flex-direction: column; gap: 6px; padding-bottom: 90px; }
 }
 @media (min-width: 1101px) { .ft-contact { flex-wrap: nowrap; gap: 36px; } .ft-contact dd { white-space: nowrap; } footer .ft-head { grid-template-columns: minmax(0, 1fr) auto auto; } }
+/* footer: coloanele de linkuri la lățimea conținutului, cu spațiere egală, centrate */
+@media (min-width: 761px) { footer .top { grid-template-columns: repeat(4, max-content); justify-content: center; column-gap: clamp(56px, 8vw, 128px); } }
