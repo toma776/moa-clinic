@@ -1541,3 +1541,7 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 @media (max-width: 760px) { .tr-page .tr-hero .pf-copy .tr-wa { order: 3; } .tr-page .tr-hero .pf-copy .tr-docs { order: 5; align-items: flex-start; } .tr-docs > span:last-child { font-size: 13.5px; } }
 /* WhatsApp din header: doar iconița sub 1500px, ca meniul să rămână pe un rând */
 @media (max-width: 1499px) { .hd-wa span { display: none; } .hd-wa { margin-right: 6px; } .hd-wa svg { width: 22px; height: 22px; } }
+/* echipa: toate cardurile la aceeași lățime – eticheta lungă („Dermatovenerologie”) nu mai lărgește coloana și poza */
+.team-grid > .doc { min-width: 0; }
+.doc .tag { display: block; max-width: 100%; overflow-wrap: anywhere; }
+@media (min-width: 1101px) { #echipa .doc .tag { letter-spacing: .14em; } }
