@@ -1257,7 +1257,7 @@ ${howBl.length || benefits.length ? `<section class="sec">
       ${howBl.length ? `<div class="pf-prose">${trBlocks(howBl.slice(0, 1))}${howBl.length > 1 ? `<button class="tr-more-btn" type="button" aria-expanded="false" aria-controls="tr-more-${esc(id)}">Citește mai mult</button>` : ''}</div>` : ''}</div>
     ${benefits.length ? `<aside class="pf-side rv"><h3>Beneficii</h3><ul class="tr-checks">${benefits.map((x) => `<li>${esc(cap(x.replace(/[;.]$/, '')))}</li>`).join('')}</ul></aside>` : ''}
   </div>
-  ${howBl.length > 1 ? `<div class="wrap tr-more pf-prose${trBlocks(howBl.slice(1)).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}" id="tr-more-${esc(id)}" hidden>${trBlocks(howBl.slice(1))}</div>` : ''}
+  ${howBl.length > 1 ? `<div class="wrap tr-more-txt pf-prose${trBlocks(howBl.slice(1)).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}" id="tr-more-${esc(id)}" hidden>${trBlocks(howBl.slice(1))}</div>` : ''}
 </section>` : ''}
 
 ${tVids.length && !steps.length ? `<section class="sec" id="video">
