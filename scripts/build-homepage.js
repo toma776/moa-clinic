@@ -410,27 +410,52 @@ const PANELS = {
 const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : '')).join('');
 
 // meniul mobil: ecrane pe niveluri
-const mrowLink = (it) => `<a class="mrow" href="${esc(it.href)}"><span><b>${esc(it.nume)}</b>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span>${it.pret != null ? `<em>de la ${lei(it.pret)}</em>` : '<span class="chev">→</span>'}</a>`;
-const mrowGo = (label, sub, screen) => `<button class="mrow" type="button" data-go="${screen}"><span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="chev">›</span></button>`;
+const mrowLink = (it) => `<a class="mrow" href="${esc(it.href)}" data-q="${esc(mmNorm(`${it.nume} ${it.sub || ''}`))}"><span><b>${esc(it.nume)}${POP.has(it.href) ? ' <i class="mm-pop">Cerut des</i>' : ''}</b>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span>${it.pret != null ? `<em><small>de la</small>${lei(it.pret)}</em>` : '<span class="chev">→</span>'}</a>`;
+const mrowGo = (label, sub, screen, n) => `<button class="mrow" type="button" data-go="${screen}"><span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span>${n ? `<span class="ms-n">${n}</span>` : ''}<span class="chev">›</span></button>`;
+// meniul mobil premium: căutare, secțiunile mari cu descriere, „cerute des” cu imagini, contact și recenzii
+const MS_HINT = {
+  'Ce te supără?': 'Pornește de la ce ai observat', 'Tratamente': `${catData.reduce((n, c) => n + c.items.length, 0)} de tratamente, pe categorii`,
+  'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri publice · ofertele lunii`,
+  'Medici': 'Medici primari și specialiști', 'Despre MOA': 'Clinica, tehnologie, recenzii, blog',
+};
+const msCta = `<a class="ms-cta" href="#programare" data-mclose><span><small>Nu știi ce ți se potrivește?</small><b>Programează o consultație</b><em>de la ${lei(minConsult)} · medicul îți face planul</em></span><i>→</i></a>`;
+const msHead = (eyebrow, title) => `<div class="ms-head"><span class="ms-eye">${esc(eyebrow)}</span><h3>${esc(title)}</h3></div>`;
 const screens = [];
-screens.push(`<div class="mscreen on" data-screen="root">${M.map((m, i) => (m.tip === 'link' ? mrowLink({ nume: m.url === '/medici/' ? 'Echipa' : m.nume, href: m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#' }) : mrowGo(m.nume, m.nota ? '' : '', `m${i}`))).join('')}
-  ${mrowLink({ nume: '0743 056 605', sub: 'Sună pentru programare', href: 'tel:+40743056605' })}</div>`);
+screens.push(`<div class="mscreen on" data-screen="root">
+  <label class="ms-search">${searchIco}<input type="search" placeholder="Caută un tratament sau o zonă" aria-label="Caută un tratament sau o zonă" autocomplete="off"></label>
+  <div class="ms-results" hidden><span class="ms-eye ms-rcount"></span><div class="ms-rlist"></div><p class="ms-none" hidden>Nu am găsit nimic. <a href="#programare" data-mclose>Întreabă-ne direct →</a></p></div>
+  <div class="ms-home">
+    <nav class="ms-main" aria-label="Secțiuni">${M.map((m, i) => {
+      const nume = m.url === '/medici/' ? 'Echipa' : m.nume;
+      const inner = `<span class="ms-i">${String(i + 1).padStart(2, '0')}</span><span class="ms-t"><b>${esc(nume)}</b><small>${esc(MS_HINT[m.nume] || '')}</small></span>`;
+      return m.tip === 'link' ? `<a class="ms-big" href="${esc(m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#')}">${inner}<span class="chev">→</span></a>` : `<button class="ms-big" type="button" data-go="m${i}">${inner}<span class="chev">›</span></button>`;
+    }).join('')}</nav>
+    <section class="ms-pop" aria-label="Tratamente cerute des"><span class="ms-eye">Cerute des</span>
+      <div class="ms-rail">${SIG.map((s) => `<a href="${esc(live(s.id))}"><span class="ph"><img data-src="${esc(thumb(s.img, 400))}" alt=""></span><b>${esc((trNode.get(s.id)?.nod.nume || '').replace(/\s*[–(].*$/, ''))}</b>${minPrice(s.id) ? `<em>de la ${lei(minPrice(s.id))}</em>` : ''}</a>`).join('')}</div>
+    </section>
+    <section class="ms-contact">
+      <div class="ms-rating"><b>5.0</b><span><i>★★★★★</i><small>${esc(nReviews)} de recenzii Google · Excelent</small></span></div>
+      <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp"><small>WhatsApp</small><b>Scrie-ne discret</b></a>
+      <a href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener"><small>Adresă</small><b>Str. Ștefan Mihăileanu 35, București</b></a>
+    </section>
+  </div>
+</div>`);
 M.forEach((m, i) => {
   if (m.nume === 'Ce te supără?') {
-    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${zoneData.map((z, j) => mrowGo(z.nume, z.hint, `z${j}`)).join('')}</div>`);
-    zoneData.forEach((z, j) => screens.push(`<div class="mscreen" data-screen="z${j}"><h3>${esc(z.nume)}</h3>${z.items.map(mrowLink).join('')}</div>`));
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Alege zona', m.nume)}${zoneData.map((z, j) => mrowGo(z.nume, z.hint, `z${j}`, z.items.length)).join('')}${msCta}</div>`);
+    zoneData.forEach((z, j) => screens.push(`<div class="mscreen" data-screen="z${j}">${msHead(m.nume, z.nume)}${z.items.map(mrowLink).join('')}${msCta}</div>`));
   } else if (m.nume === 'Tratamente') {
-    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${catData.map((c, j) => mrowGo(c.nume, c.hint, `c${j}`)).join('')}</div>`);
-    catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}"><h3>${esc(c.nume)}</h3>${c.items.map(mrowLink).join('')}</div>`));
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Categorii', m.nume)}${catData.map((c, j) => mrowGo(c.nume, c.hint, `c${j}`, c.items.length)).join('')}${msCta}</div>`);
+    catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}">${msHead(m.nume, c.nume)}${c.items.map(mrowLink).join('')}${msCta}</div>`));
   } else if (m.linkuri) {
-    screens.push(`<div class="mscreen" data-screen="m${i}"><h3>${esc(m.nume)}</h3>${m.linkuri.map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}</div>`);
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(INTRO[m.nume]?.[0] || m.nume, m.nume)}${INTRO[m.nume] ? `<p class="ms-intro">${esc(INTRO[m.nume][1])}</p>` : ''}${m.linkuri.map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   }
 });
 const mobileNav = `
 <div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Meniu" aria-hidden="true">
   <div class="mnav-top"><button class="mnav-back" type="button" id="mback" hidden>‹ Înapoi</button><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic" id="mlogo"><button class="mnav-x" type="button" id="mclose">Închide ✕</button></div>
   <div class="mnav-body">${screens.join('')}</div>
-  <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programează-te</a></div>
+  <div class="mnav-foot"><a class="btn btn-line" href="tel:+40743056605" data-track="telefon">Sună</a><a class="btn btn-gold" href="#programare" data-mclose>Programare</a></div>
 </div>`;
 
 const html = `<!doctype html>
@@ -765,6 +790,7 @@ ${mobileNav}
   };
   const mOpen = (o) => {
     mnav.classList.toggle('open', o); mnav.setAttribute('aria-hidden', !o);
+    if (o) mnav.querySelectorAll('img[data-src]').forEach((im) => { im.src = im.dataset.src; im.removeAttribute('data-src'); });
     document.getElementById('burger').setAttribute('aria-expanded', o);
     document.body.style.overflow = o ? 'hidden' : '';
     if (!o) { stack.length = 1; show(); }
@@ -774,6 +800,23 @@ ${mobileNav}
   back.addEventListener('click', () => { stack.pop(); show(); });
   mnav.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { stack.push(b.dataset.go); show(); }));
   mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mOpen(false)));
+  const msIn = mnav.querySelector('.ms-search input');
+  if (msIn) {
+    const msRes = mnav.querySelector('.ms-results'), msList = msRes.querySelector('.ms-rlist'), msNone = msRes.querySelector('.ms-none'), msCnt = msRes.querySelector('.ms-rcount'), msHome = mnav.querySelector('.ms-home');
+    const msRows = [...mnav.querySelectorAll('.mscreen[data-screen^="z"] a.mrow, .mscreen[data-screen^="c"] a.mrow')];
+    const nzm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    msIn.addEventListener('input', () => {
+      const words = nzm(msIn.value.trim()).split(/\\s+/).filter(Boolean);
+      msRes.hidden = !words.length; msHome.hidden = !!words.length;
+      if (!words.length) return;
+      const seen = new Set();
+      const hits = msRows.filter((r) => words.every((w) => r.dataset.q.includes(w))).filter((r) => { const k = r.getAttribute('href') + '|' + r.querySelector('b').textContent; return !seen.has(k) && seen.add(k); });
+      msList.innerHTML = '';
+      hits.slice(0, 20).forEach((r) => { const c = r.cloneNode(true); c.addEventListener('click', () => mOpen(false)); msList.appendChild(c); });
+      msNone.hidden = hits.length > 0;
+      msCnt.textContent = hits.length ? hits.length + (hits.length === 1 ? ' rezultat' : ' rezultate') : '';
+    });
+  }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(null); mOpen(false); } });
 
   // slider-ul din hero: fade, 5 s, pauză la hover / focus, swipe, săgeți de la tastatură
