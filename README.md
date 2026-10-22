@@ -11,6 +11,7 @@ npm start
 ```
 
 - `http://localhost:3100/` – site-ul nou (același conținut ca `/nou/`); `http://localhost:3100/vechi/` – homepage-ul copiat de pe site-ul actual (HTML + CSS/JS/imagini/fonturi în `site/`)
+- `http://localhost:3100/nou/medici/` – pagina echipei: fondatorul, apoi oamenii pe specialități (gerontologie, chirurgie plastică, dermatologie, estetică, asistență), fiecare specialitate cu consultația de început și tratamentele ei, programare directă la fiecare om; meniul „Echipa” duce aici (`TM` în build-homepage.js)
 - `http://localhost:3100/nou/medici/adrian-stanescu/` – pagina de profil Dr. Adrian Stănescu (din `npm run profiles` + `npm run homepage`)
 - `http://localhost:3100/nou/blog/` – blogul: articolul cel mai nou în față, filtru pe tip, căutare, „Încarcă mai multe”; imaginile din `npm run blog-media` (data/blog-media.json); titlurile corectate automat (diacritice) în build-homepage.js
 - `http://localhost:3100/nou/<slug-articol>/` – paginile noi ale celor 46 de articole (toate articolele cu conținut în `data/articole.json`; `ART_PAGINI` în build-homepage.js): cuprins + tratamentul + articole similare + etichete în dreapta (pe mobil cuprins pliabil și restul după text); conținutul din `npm run articole -- --only <id>` (data/articole.json). Etichetele deschid blogul filtrat: `?tip=`, `?cat=`, `?tr=`

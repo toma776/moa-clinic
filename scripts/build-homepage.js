@@ -132,6 +132,7 @@ const HERO_NOU = (() => {
 const NOU = new Set([...trNode.values()].map((x) => x.nod.url)); // URL-urile noi care există deja ca pagini
 if (consHub) NOU.add(consHub.url);
 NOU.add('/preturi/');
+NOU.add('/medici/');
 NOU.add('/video/');
 NOU.add('/blog/');
 // wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
@@ -386,7 +387,7 @@ const tabbed = (id, title, groups, feat, ph) => `
 const INTRO = {
   'Longevitate': ['Global Antiaging', 'Medicina longevității: îți măsurăm vârsta biologică, apoi medicul gerontolog îți face un plan regenerativ.', 'Vezi programul', '/nou/longevitate/program/'],
   'Prețuri': ['Prețuri transparente', `Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri ale clinicii sunt publice, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
-  'Despre MOA': ['MOA Clinic', 'Estetică medicală, chirurgie și medicină regenerativă, sub același acoperiș, în centrul Bucureștiului.', 'Echipa medicală', '#echipa'],
+  'Despre MOA': ['MOA Clinic', 'Estetică medicală, chirurgie și medicină regenerativă, sub același acoperiș, în centrul Bucureștiului.', 'Echipa medicală', '/nou/medici/'],
 };
 const simple = (id, m, feat) => {
   const [t, p, lt, lh] = INTRO[m.nume] || [m.nume, '', '', ''];
@@ -401,7 +402,7 @@ const simple = (id, m, feat) => {
   </div>`;
 };
 const PANELS = {
-  'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '#echipa'), 'Ex.: riduri, buze, cearcăne…'),
+  'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '/nou/medici/'), 'Ex.: riduri, buze, cearcăne…'),
   'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? mmFeat(thumb('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg', 640), `Oferta lunii · −${topOffer.discountProcent}%`, esc(offerLabel(topOffer.nume)), `<s>${lei(topOffer.pretInitial)}</s> <b>${lei(topOffer.pret)}</b>`, 'Rezervă oferta', '#programare') : '', 'Caută: Botox, Sculptra, PRP…'),
   'Longevitate': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 640), 'Coordonator medical', 'Dr. Adrian Stănescu', 'Medic primar geriatrie-gerontologie, format la școala Ana Aslan.', 'Vezi profilul', '/nou/medici/adrian-stanescu/')),
   'Prețuri': (i, m) => simple(i, m, mmFeat(null, 'Ofertele lunii', 'Pentru luna aceasta', offers.map((o) => `<span class="mm-off"><span>${esc(offerLabel(o.nume))}</span><b>${lei(o.pret)}</b></span>`).join(''), `Toate cele ${D.oferte.length} oferte`, '/nou/preturi/#oferte')),
@@ -428,7 +429,7 @@ screens.push(`<div class="mscreen on" data-screen="root">
     <nav class="ms-main" aria-label="Secțiuni">${M.map((m, i) => {
       const nume = m.url === '/medici/' ? 'Echipa' : m.nume;
       const inner = `<span class="ms-i">${String(i + 1).padStart(2, '0')}</span><span class="ms-t"><b>${esc(nume)}</b><small>${esc(MS_HINT[m.nume] || '')}</small></span>`;
-      return m.tip === 'link' ? `<a class="ms-big" href="${esc(m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#')}">${inner}<span class="chev">→</span></a>` : `<button class="ms-big" type="button" data-go="m${i}">${inner}<span class="chev">›</span></button>`;
+      return m.tip === 'link' ? `<a class="ms-big" href="${esc(m.url === '/medici/' ? '/nou/medici/' : toLive(m.url) || '#')}">${inner}<span class="chev">→</span></a>` : `<button class="ms-big" type="button" data-go="m${i}">${inner}<span class="chev">›</span></button>`;
     }).join('')}</nav>
     <section class="ms-pop" aria-label="Tratamente cerute des"><span class="ms-eye">Cerute des</span>
       <div class="ms-rail">${SIG.map((s) => `<a href="${esc(live(s.id))}"><span class="ph"><img data-src="${esc(thumb(s.img, 400))}" alt=""></span><b>${esc((trNode.get(s.id)?.nod.nume || '').replace(/\s*[–(].*$/, ''))}</b>${minPrice(s.id) ? `<em>de la ${lei(minPrice(s.id))}</em>` : ''}</a>`).join('')}</div>
@@ -484,7 +485,7 @@ ${HERO_SLIDES[0].mobil ? `<link rel="preload" as="image" href="${esc(HERO_SLIDES
   <div class="wrap hd">
     <a class="logo" href="/nou/" aria-label="MOA Clinic – acasă"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"></a>
     <nav class="nav" aria-label="Meniu principal"><ul>
-      ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '#echipa' : toLive(m.url) || '#')}">${esc(m.url === '/medici/' ? 'Echipa' : m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
+      ${M.map((m, i) => `<li>${m.tip === 'link' ? `<a class="nav-btn" href="${esc(m.url === '/medici/' ? '/nou/medici/' : toLive(m.url) || '#')}">${esc(m.url === '/medici/' ? 'Echipa' : m.nume)}</a>` : `<button class="nav-btn" type="button" aria-expanded="false" aria-controls="mm-${i}" data-mm="${i}">${esc(m.nume)} ${chev}</button>`}</li>`).join('')}
     </ul></nav>
     <a class="btn btn-gold" href="#programare">Programează-te</a>
     <button class="burger" id="burger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mnav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
@@ -604,7 +605,7 @@ ${mobileNav}
   <div class="wrap">
     <div class="hp-head rv">
       <div><span class="eyebrow">Echipa MOA</span><h2>Mâini <em>sigure.</em></h2></div>
-      <div class="hp-head-side"><p>Gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente. Știi mereu cine te tratează.</p><div class="hp-arrows"><button type="button" data-rail="-1" aria-label="Înapoi">‹</button><button type="button" data-rail="1" aria-label="Înainte">›</button></div></div>
+      <div class="hp-head-side"><p>Gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente. Știi mereu cine te tratează.</p><a class="link-u" href="/nou/medici/">Toată echipa →</a><div class="hp-arrows"><button type="button" data-rail="-1" aria-label="Înapoi">‹</button><button type="button" data-rail="1" aria-label="Înainte">›</button></div></div>
     </div>
     <div class="hp-rail hp-team">${team.map((p) => `
       <article class="doc${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span></div>`}</div>
@@ -1043,7 +1044,7 @@ for (const p of team.filter((x) => x.profil_detaliat)) {
 </head>
 <body>
 ${TOP}<main>
-<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/#echipa">Echipa</a><span>›</span><span aria-current="page">${esc(p.nume)}</span></nav>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><a href="/nou/medici/">Echipa</a><span>›</span><span aria-current="page">${esc(p.nume)}</span></nav>
 
 <section class="pf-hero">
   <div class="wrap pf-grid">
@@ -1680,6 +1681,145 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
   fs.mkdirSync(dir, { recursive: true });
   writePage(path.join(dir, 'index.html'), alternateBg(page));
   console.log(`Longevitate: nou/longevitate/program/ · ${ter.length} terapii · ${ger.length} gerontologi`);
+}
+
+// ---------- pagina echipei /nou/medici/: fondatorul, apoi oamenii pe specialități, cu consultația și tratamentele fiecărei specialități ----------
+{
+  const ini = (p) => p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join('');
+  const founder = team.find((p) => p.nume.includes('Stănescu'));
+  const fpr = founder?.profil_detaliat;
+  const fPhoto = fpr?.imagine && fs.existsSync(path.join(ROOT, 'site', fpr.imagine)) ? fpr.imagine : founder && photos[founder.nume] ? resized(photos[founder.nume]) : null;
+  const consName = (u) => newName.get(u) || '';
+  const trLinks = (us) => us.map((u) => [toLive(u), newName.get(u)]).filter(([h, n]) => h && h.startsWith('/nou') && n).map(([h, n]) => ({ h, n: prettyName(n) }));
+  const TM = [
+    { id: 'gerontologie', nume: 'Gerontologie & longevitate', spec: ['Gerontologie'], text: 'Evaluează cum îmbătrânește organismul tău și construiesc planul de prevenție: vârsta biologică, terapii regenerative, nutriție.', cons: ['consultatie-antiaging', '/consultatii/antiaging/'], tr: ['/tratamente/regenerare/nad/', '/tratamente/regenerare/glutation/', '/tratamente/regenerare/tms/', '/tratamente/regenerare/sauna-ozon/'] },
+    { id: 'chirurgie-plastica', nume: 'Chirurgie plastică', spec: ['Chirurgie plastică'], text: 'Intervențiile chirurgicale ale clinicii, după o consultație în care discutați așteptările, riscurile și recuperarea.', cons: ['consultatie-chirurgie-plastica', '/consultatii/chirurgie-plastica/'], tr: ['/tratamente/chirurgie-dermatologie/blefaroplastie/', '/tratamente/chirurgie-dermatologie/lip-lift/', '/tratamente/chirurgie-dermatologie/indepartare-alunite/'] },
+    { id: 'dermatologie', nume: 'Dermatologie & dermatoestetică', spec: ['Dermatovenerologie'], text: 'Sănătatea și aspectul pielii: consultul dermatologic, leziunile și tratamentele dermatoestetice.', cons: ['consultatie-dermatoestetica-dermatologie', '/consultatii/dermatologie/'], tr: ['/tratamente/injectabile/botox/', '/tratamente/injectabile/acid-hialuronic/', '/tratamente/chirurgie-dermatologie/eliminare-papiloame/'] },
+    { id: 'estetica', nume: 'Estetică facială și corporală', spec: ['Estetică facială și corporală'], text: 'Tratamentele cu aparatură pentru ten și corp, după protocoalele clinicii.', tr: ['/tratamente/aparatura/venus-legacy/', '/tratamente/aparatura/venus-viva/', '/tratamente/aparatura/dermalinfusion/', '/tratamente/aparatura/epilare-definitiva/'] },
+    { id: 'asistenta', nume: 'Asistență medicală', spec: ['Asistență medicală'], text: 'Te primesc, te pregătesc pentru procedură și sunt alături de tine la fiecare vizită.', tr: [] },
+  ].map((g) => ({ ...g, oameni: team.filter((p) => p !== founder && g.spec.includes(p.specialitate)), links: trLinks(g.tr) })).filter((g) => g.oameni.length);
+  const card = (p, g) => {
+    const srv = g.cons ? `${consName(g.cons[1])} – ${p.nume}` : `Programare – ${p.nume}`;
+    return `<article class="tm-card${p.profil_detaliat ? ' has-profile' : ''}">
+        <div class="tm-ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="tm-mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(ini(p))}</span><small>fotografie în curând</small></div>`}${p.grad ? `<span class="tm-grad">${esc(p.grad.replace(/^Medic\s+/, ''))}</span>` : ''}</div>
+        <h3>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">${esc(p.nume)}</a>` : esc(p.nume)}</h3>
+        <p>${esc(p.rol)}</p>
+        <div class="tm-acts">${p.profil_detaliat ? `<a class="link-u" href="/nou/medici/${esc(p.id)}/">Profilul</a>` : ''}<a class="tm-book" href="#programare" data-srv="${esc(srv)}" aria-label="Programează-te la ${esc(p.nume)}">Programează-te <i aria-hidden="true">→</i></a></div>
+      </article>`;
+  };
+  const grpHtml = TM.map((g, i) => {
+    const pret = g.cons ? minPrice(g.cons[0]) : null;
+    const consHref = g.cons ? toLive(g.cons[1]) : null;
+    return `<section class="tm-grp" id="${g.id}">
+    <div class="wrap tm-grp-in">
+      <div class="tm-grp-h">
+        <span class="tm-num">${String(i + 1).padStart(2, '0')}</span>
+        <h2>${esc(g.nume)}</h2>
+        <p>${esc(g.text)}</p>
+        ${g.links.length ? `<ul class="tm-tr">${g.links.map((l) => `<li><a href="${esc(l.h)}">${esc(l.n)}</a></li>`).join('')}</ul>` : ''}
+        ${consHref ? `<a class="tm-cons" href="${esc(consHref)}"><span><small>Începe cu</small><b>${esc(consName(g.cons[1]))}</b></span>${pret ? `<em>de la ${lei(pret)}</em>` : ''}<i aria-hidden="true">→</i></a>` : ''}
+      </div>
+      <div class="tm-cards">${g.oameni.map((p) => card(p, g)).join('')}</div>
+    </div>
+  </section>`;
+  }).join('');
+  const nMed = team.filter((p) => p.tip === 'Medic').length;
+  const nPrim = team.filter((p) => p.grad === 'Medic primar').length;
+  const nSpec = new Set(team.filter((p) => p.tip === 'Medic').map((p) => p.specialitate)).size;
+  const portrait = (p) => { const m = resized(photos[p.nume]).match(/-(d+)x(d+).w+$/); return !m || +m[2] >= +m[1] * 1.3; };
+  const collage = team.filter((p) => photos[p.nume] && p !== founder && p.tip === 'Medic' && portrait(p)).slice(0, 3);
+  const rev = D.dovezi.testimoniale.find((r) => r.medic && team.some((p) => p.nume === r.medic));
+  const revDoc = rev && team.find((p) => p.nume === rev.medic);
+  const pageUrl = ORIGIN + '/medici/';
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'CollectionPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Echipa MOA Clinic', inLanguage: 'ro-RO', mainEntity: { '@id': pageUrl + '#echipa' } },
+      { '@type': 'ItemList', '@id': pageUrl + '#echipa', name: 'Echipa medicală MOA Clinic', itemListElement: team.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': p.tip === 'Medic' ? ['Person', 'Physician'] : 'Person', name: p.nume, jobTitle: p.rol, ...(photos[p.nume] ? { image: ORIGIN + resized(photos[p.nume]) } : {}), ...(p.profil_detaliat ? { url: `${ORIGIN}/medici/${p.id}/` } : {}), worksFor: { '@id': `${ORIGIN}/#organization` } } })) },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Echipa', item: pageUrl }] },
+    ],
+  };
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echipa MOA Clinic – medici gerontologi, dermatologi și chirurgi plastici | MOA Clinic</title>
+<meta name="description" content="${esc(`Echipa MOA Clinic: ${nMed} medici (gerontologie, chirurgie plastică, dermatologie), specialiști în estetică și asistente, coordonați de Dr. Adrian Stănescu. Află cine te tratează și programează-te direct.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main>
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Echipa</span></nav>
+
+<section class="tm-hero">
+  <div class="wrap tm-hero-in">
+    <div class="tm-hero-t">
+      <span class="eyebrow">Echipa MOA</span>
+      <h1>Oamenii care <em>te tratează</em></h1>
+      <p class="lede">Medici gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente, sub același acoperiș. Știi dinainte cine te consultă și ce face la MOA.</p>
+      <dl class="tm-facts"><div><dt>${nMed}</dt><dd>medici</dd></div><div><dt>${nPrim}</dt><dd>medici primari</dd></div><div><dt>${nSpec}</dt><dd>specialități medicale</dd></div><div><dt>★ 5.0</dt><dd>${esc(nReviews)} recenzii Google</dd></div></dl>
+    </div>
+    <div class="tm-collage" aria-hidden="true">${collage.map((p) => `<img src="${esc(resized(photos[p.nume]))}" alt="" loading="lazy">`).join('')}</div>
+  </div>
+</section>
+
+<nav class="tr-toc tm-toc" aria-label="Specialități"><div class="wrap">${founder ? '<a href="#fondator">Fondator</a>' : ''}${TM.map((g) => `<a href="#${g.id}">${esc(g.nume.split(' & ')[0])}<span>${g.oameni.length}</span></a>`).join('')}<a class="tr-toc-cta" href="#programare">Programează-te</a></div></nav>
+
+${founder ? `<section class="tm-founder" id="fondator">
+  <div class="wrap tm-founder-in">
+    <div class="tm-founder-ph">${fPhoto ? `<img src="${esc(fPhoto)}" alt="${esc(founder.nume)}" loading="lazy">` : ''}</div>
+    <div class="tm-founder-t">
+      <span class="eyebrow">Fondator · medic coordonator</span>
+      <h2>${esc(founder.nume)}</h2>
+      <p class="tm-role">${esc(founder.rol)}</p>
+      ${FOUNDER_QUOTE ? `<blockquote>„${esc(FOUNDER_QUOTE.replace(/^[„"“]|[”"]$/g, ''))}”</blockquote>` : ''}
+      ${fpr?.rezumat ? `<p>${esc(fpr.rezumat)}</p>` : ''}
+      <div class="tm-founder-a">${fpr ? `<a class="btn btn-line" href="/nou/medici/${esc(founder.id)}/">Profilul complet</a>` : ''}<a class="btn btn-gold arrow" href="#programare" data-srv="${esc(`${consName('/consultatii/antiaging/')} – ${founder.nume}`)}">Programează o consultație</a></div>
+    </div>
+  </div>
+</section>` : ''}
+
+${grpHtml}
+
+<section class="tm-how">
+  <div class="wrap">
+    <div class="tm-how-h"><span class="eyebrow">Cum lucrăm</span><h2>Aceeași echipă, <em>de la consultație la control.</em></h2></div>
+    <ol class="tm-how-l">
+      <li><b>Proceduri făcute de medici</b><span>Injectabilele și intervențiile le face medicul, nu un operator. Știi numele lui înainte să vii.</span></li>
+      <li><b>Planul, la consultație</b><span>Medicul îți propune zonele, doza și numărul de ședințe. Prețurile sunt publice, înainte de programare.</span></li>
+      <li><b>Specialități sub același acoperiș</b><span>Gerontologul, dermatologul și chirurgul plastic lucrează împreună când planul tău o cere.</span></li>
+    </ol>
+    ${rev ? `<figure class="tm-rev"><span class="tm-stars" aria-label="5 stele">★★★★★</span><blockquote>„${esc(cutTxt(rev.citat, 240))}”</blockquote><figcaption><b>${esc(rev.persoana)}</b> despre ${revDoc?.profil_detaliat ? `<a href="/nou/medici/${esc(revDoc.id)}/">${esc(rev.medic)}</a>` : esc(rev.medic)} · ${esc(String(rev.platforma).replace(/\s*\(.*\)/, ''))}</figcaption></figure>` : ''}
+  </div>
+</section>
+
+${BOOK}
+<script>
+// cuprinsul specialităților: secțiunea curentă
+(() => {
+  const toc = document.querySelector('.tm-toc'); if (!toc) return;
+  const links = [...toc.querySelectorAll('a[href^="#"]:not(.tr-toc-cta)')];
+  let cur = -1;
+  const spy = () => {
+    const line = toc.getBoundingClientRect().bottom + 40;
+    let i = -1;
+    links.forEach((l, k) => { const s = document.querySelector(l.getAttribute('href')); if (s && s.getBoundingClientRect().top <= line) i = k; });
+    if (i === cur) return; cur = i;
+    links.forEach((l, k) => l.classList.toggle('on', k === i));
+    if (i >= 0) { const l = links[i], w = toc.firstElementChild; w.scrollTo({ left: l.offsetLeft - (w.clientWidth - l.offsetWidth) / 2, behavior: 'smooth' }); }
+  };
+  addEventListener('scroll', spy, { passive: true }); spy();
+})();
+</script>
+${BOTTOM}`;
+  fs.mkdirSync(path.join(ROOT, 'nou', 'medici'), { recursive: true });
+  writePage(path.join(ROOT, 'nou', 'medici', 'index.html'), page);
+  console.log(`Echipa: nou/medici/ · ${team.length} oameni · ${TM.length} specialități · ${collage.length} în colaj`);
 }
 
 // ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------

@@ -47,7 +47,7 @@ function blocks(css) {
   }
   return out.filter((b) => b.trim());
 }
-const CRIT = /\.(topbar|site|hd|logo|nav|nav-btn|btn|burger|mm|mnav|mscreen|mrow|scrim|hero|hs|doc-chip|lede|eyebrow|wrap|frame|pf-|tr-hero|tr-photo|tr-offer|tr-facts|tr-docs|tr-wa|tr-toc|crumbs|ar-hero|ar-head|ar-meta|ar-cover|bl-hero|pr-hero|cs-hero|lg-|rx-trust|rv|mbar|sheet|wl|to-top|link-u|swipe-hint|sr-only|skip|arrow|hp-strip|ar-|sec|alt|tr-split|tr-how|pr-|bl-|vp-|cs-|lg-|sr|team-filter|tabs|v-card|vb|play)/;
+const CRIT = /\.(topbar|site|hd|logo|nav|nav-btn|btn|burger|mm|mnav|mscreen|mrow|scrim|hero|hs|doc-chip|lede|eyebrow|wrap|frame|pf-|tr-hero|tr-photo|tr-offer|tr-facts|tr-docs|tr-wa|tr-toc|crumbs|ar-hero|ar-head|ar-meta|ar-cover|bl-hero|pr-hero|cs-hero|lg-|rx-trust|rv|mbar|sheet|wl|to-top|link-u|swipe-hint|sr-only|skip|arrow|hp-strip|ar-|sec|alt|tr-split|tr-how|pr-|tm-|bl-|vp-|cs-|lg-|sr|team-filter|tabs|v-card|vb|play)/;
 function critical(css) {
   return blocks(css).map((b) => {
     if (/^@(font-face|keyframes|-webkit-keyframes|charset|import)/.test(b)) return b;
