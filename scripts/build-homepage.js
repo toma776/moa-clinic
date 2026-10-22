@@ -348,43 +348,64 @@ const catData = catNodes.map((c) => ({
   href: toLive(c.url) || (c.copii.find((t) => toLive(t.url)) ? toLive(c.copii.find((t) => toLive(t.url)).url) : '#'),
   items: c.copii.map((t) => ({ nume: t.nume, sub: (t.continut?.tehnologii || []).filter((x) => !t.nume.toLowerCase().includes(x.toLowerCase().split(' ')[0])).slice(0, 2).join(' · '), pret: t.continut?.pret_de_la ?? null, href: toLive(t.url) || '#programare' })),
 }));
-const priceEm = (p) => (p != null ? `<em><small>de la</small>${lei(p)}</em>` : '<em>→</em>');
-const card = (it) => `<a class="mm-card" href="${esc(it.href)}"><b>${esc(it.nume)}</b>${it.sub ? `<span>${esc(it.sub)}</span>` : ''}${priceEm(it.pret)}</a>`;
-const feature = (img, title, text, btn, href) => `<aside class="mm-feature">${img ? `<div class="ph"><img src="${esc(img)}" alt="" loading="lazy"></div>` : ''}<h4>${title}</h4><p>${text}</p><a class="btn btn-gold" href="${esc(href)}">${esc(btn)}</a></aside>`;
-const topOffer = offers[0];
+// ---------- mega meniul (desktop): liste editoriale, căutare instant, „cerut des”, card cu imagine, bandă de încredere ----------
+const mmNorm = (x) => String(x).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const POP = new Set(SIG.map((s) => live(s.id)));
 const minConsult = Math.min(...['consultatie-dermatoestetica-dermatologie', 'consultatie-antiaging', 'consultatie-chirurgie-plastica'].map(minPrice).filter(Boolean));
+const topOffer = offers[0];
+const mmRow = (it, cat, num) => `<a class="mm-row" href="${esc(it.href)}" data-q="${esc(mmNorm(`${it.nume} ${it.sub || ''} ${cat || ''}`))}"${cat ? ` data-cat="${esc(cat)}"` : ''}>${num ? `<span class="mm-num">${String(num).padStart(2, '0')}</span>` : ''}<span class="mm-row-t"><b>${esc(it.nume)}${POP.has(it.href) ? ' <i class="mm-pop">Cerut des</i>' : ''}</b>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span>${it.pret != null ? `<em><small>de la</small>${lei(it.pret)}</em>` : '<em class="mm-go" aria-hidden="true">→</em>'}</a>`;
+const mmFeat = (img, eyebrow, title, text, btn, href) => `<aside class="mm-feat">
+        <a class="mm-feat-card${img ? '' : ' mm-feat-dark'}" href="${esc(href)}">${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : ''}<span class="mm-feat-in"><small>${eyebrow}</small><b>${title}</b><span>${text}</span><i>${esc(btn)} →</i></span></a>
+        <div class="mm-quick">
+          <a href="#programare" data-srv=""><span><b>Programează o consultație</b><small>de la ${lei(minConsult)} · medicul îți face planul</small></span><i>→</i></a>
+          <a href="tel:+40743056605" data-track="telefon"><span><b>0743 056 605</b><small>sau scrie-ne pe WhatsApp</small></span><i>→</i></a>
+        </div>
+      </aside>`;
+const mmFoot = `<div class="mm-foot"><div class="wrap"><span>Proceduri făcute de medici</span><span>Prețuri publice, înainte de programare</span><span><b>★ 5.0</b> din ${esc(nReviews)} recenzii Google</span><a href="/nou/preturi/">Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri →</a></div></div>`;
+const searchIco = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>';
 
-// panourile desktop
-const tabbed = (id, title, groups, feat) => `
+const tabbed = (id, title, groups, feat, ph) => `
   <div class="mm" id="mm-${id}" role="region" aria-label="${esc(title)}">
     <div class="wrap mm-in">
-      <div class="mm-side" role="tablist" aria-orientation="vertical"><span class="mm-side-t">${esc(title)}</span>
-        ${groups.map((g, i) => `<button class="mm-tab" type="button" role="tab" aria-selected="${i === 0}" data-pane="${id}-${i}"><b>${esc(g.nume)}</b><small>${esc(g.hint)}</small><i>→</i></button>`).join('')}
+      <div class="mm-side">
+        <label class="mm-search">${searchIco}<input type="search" placeholder="${esc(ph)}" aria-label="${esc(ph)}" autocomplete="off"></label>
+        <span class="mm-side-t">${esc(title)}</span>
+        <div role="tablist" aria-orientation="vertical">${groups.map((g, i) => `<button class="mm-tab" type="button" role="tab" aria-selected="${i === 0}" data-pane="${id}-${i}"><b>${esc(g.nume)}</b><span class="mm-n">${g.items.length}</span></button>`).join('')}</div>
       </div>
       <div class="mm-main">${groups.map((g, i) => `
         <div class="mm-pane" id="pane-${id}-${i}" ${i ? 'hidden' : ''}>
-          <div class="mm-pane-h"><h3>${esc(g.nume)}</h3>${g.href ? `<a href="${esc(g.href)}">Vezi categoria →</a>` : ''}</div>
-          <div class="mm-grid">${g.items.map(card).join('')}</div>
+          <div class="mm-pane-h"><div><h3>${esc(g.nume)}</h3>${g.hint ? `<p>${esc(g.hint)}</p>` : ''}</div>${g.href ? `<a href="${esc(g.href)}">Vezi categoria →</a>` : ''}</div>
+          <div class="mm-list">${g.items.map((it) => mmRow(it, g.nume)).join('')}</div>
         </div>`).join('')}
+        <div class="mm-results" hidden><div class="mm-pane-h"><div><h3>Rezultate</h3><p class="mm-rcount"></p></div></div><div class="mm-list"></div><p class="mm-none" hidden>Nu am găsit nimic. <a href="#programare">Întreabă-ne direct →</a></p></div>
       </div>
       ${feat}
     </div>
+    ${mmFoot}
   </div>`;
-const simple = (id, m, feat) => `
+const INTRO = {
+  'Longevitate': ['Global Antiaging', 'Medicina longevității: îți măsurăm vârsta biologică, apoi medicul gerontolog îți face un plan regenerativ.', 'Vezi programul', '/nou/longevitate/program/'],
+  'Prețuri': ['Prețuri transparente', `Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri ale clinicii sunt publice, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
+  'Despre MOA': ['MOA Clinic', 'Estetică medicală, chirurgie și medicină regenerativă, sub același acoperiș, în centrul Bucureștiului.', 'Echipa medicală', '#echipa'],
+};
+const simple = (id, m, feat) => {
+  const [t, p, lt, lh] = INTRO[m.nume] || [m.nume, '', '', ''];
+  return `
   <div class="mm" id="mm-${id}" role="region" aria-label="${esc(m.nume)}">
     <div class="wrap mm-in simple">
-      <div class="mm-main"><div class="mm-pane-h"><h3>${esc(m.nume)}</h3></div>
-        <div class="mm-grid">${m.linkuri.map((l) => card({ nume: l.nume, sub: LINK_HINT[l.nume] || '', pret: null, href: toLive(l.url) || (l.url === '/clinica/recenzii/' ? '#recenzii' : l.url === '/clinica/' ? '#despre' : '#programare') })).join('')}</div>
-      </div>
+      <div class="mm-intro"><span class="mm-side-t">${esc(m.nume)}</span><h3>${esc(t)}</h3>${p ? `<p>${esc(p)}</p>` : ''}${lt ? `<a class="link-u" href="${esc(lh)}">${esc(lt)} →</a>` : ''}</div>
+      <div class="mm-main"><div class="mm-list mm-list-num">${m.linkuri.map((l, i) => mmRow({ nume: l.nume, sub: LINK_HINT[l.nume] || '', pret: null, href: toLive(l.url) || (l.url === '/clinica/recenzii/' ? '#recenzii' : l.url === '/clinica/' ? '#despre' : '#programare') }, '', i + 1)).join('')}</div></div>
       ${feat}
     </div>
+    ${mmFoot}
   </div>`;
+};
 const PANELS = {
-  'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, feature('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-768x511.jpg', 'Nu știi de unde să începi?', `Programează o consultație: medicul te ascultă și îți propune un plan potrivit. De la ${lei(minConsult)}.`, 'Programează consultația', '#programare')),
-  'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? feature('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-768x512.jpg', 'Oferta lunii', `${esc(offerLabel(topOffer.nume))}: <b>${lei(topOffer.pret)}</b> în loc de ${lei(topOffer.pretInitial)}.`, 'Rezervă oferta', '#programare') : ''),
-  'Longevitate': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 'Global Antiaging', 'Programul coordonat de Dr. Adrian Stănescu, medic primar gerontolog, format la școala Ana Aslan.', 'Programează-te', '#programare')),
-  'Prețuri': (i, m) => simple(i, m, feature(null, 'Ofertele lunii', offers.map((o) => `${esc(offerLabel(o.nume))} · <b>${lei(o.pret)}</b>`).join('<br>'), 'Toate ofertele', '/nou/preturi/#oferte')),
-  'Despre MOA': (i, m) => simple(i, m, feature('/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg', 'Te așteptăm', 'Str. Ștefan Mihăileanu 35, București<br>0743 056 605 · office@moaclinic.ro', 'Vezi pe hartă', D.contact.googleMaps[0])),
+  'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '#echipa'), 'Ex.: riduri, buze, cearcăne…'),
+  'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? mmFeat(thumb('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg', 640), `Oferta lunii · −${topOffer.discountProcent}%`, esc(offerLabel(topOffer.nume)), `<s>${lei(topOffer.pretInitial)}</s> <b>${lei(topOffer.pret)}</b>`, 'Rezervă oferta', '#programare') : '', 'Caută: Botox, Sculptra, PRP…'),
+  'Longevitate': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 640), 'Coordonator medical', 'Dr. Adrian Stănescu', 'Medic primar geriatrie-gerontologie, format la școala Ana Aslan.', 'Vezi profilul', '/nou/medici/adrian-stanescu/')),
+  'Prețuri': (i, m) => simple(i, m, mmFeat(null, 'Ofertele lunii', 'Pentru luna aceasta', offers.map((o) => `<span class="mm-off"><span>${esc(offerLabel(o.nume))}</span><b>${lei(o.pret)}</b></span>`).join(''), `Toate cele ${D.oferte.length} oferte`, '/nou/preturi/#oferte')),
+  'Despre MOA': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg', 640), 'Te așteptăm', 'Str. Ștefan Mihăileanu 35', 'București · 0743 056 605', 'Vezi pe hartă', D.contact.googleMaps[0])),
 };
 const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : '')).join('');
 
@@ -702,12 +723,32 @@ ${mobileNav}
   document.querySelectorAll('.mm a').forEach((a) => a.addEventListener('click', () => setOpen(null)));
   // în panou: zona / categoria se schimbă la hover, focus sau click
   document.querySelectorAll('.mm-tab').forEach((t) => {
-    const show = () => {
+    const show = (e) => {
+      const mmEl = t.closest('.mm'), inp = mmEl.querySelector('.mm-search input');
+      if (inp && inp.value.trim()) { if (e?.type === 'mouseenter') return; inp.value = ''; mmEl.querySelector('.mm-results').hidden = true; }
       const side = t.closest('.mm-side');
       side.querySelectorAll('.mm-tab').forEach((x) => x.setAttribute('aria-selected', x === t));
       t.closest('.mm-in').querySelectorAll('.mm-pane').forEach((p) => (p.hidden = p.id !== 'pane-' + t.dataset.pane));
     };
     t.addEventListener('mouseenter', show); t.addEventListener('focus', show); t.addEventListener('click', show);
+  });
+  // căutarea din mega meniu: caută în toate categoriile panoului (fără diacritice), Enter deschide primul rezultat
+  const nz = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  document.querySelectorAll('.mm-search input').forEach((inp) => {
+    const mmEl = inp.closest('.mm'), res = mmEl.querySelector('.mm-results'), list = res.querySelector('.mm-list'), none = res.querySelector('.mm-none'), cnt = res.querySelector('.mm-rcount');
+    const panes = [...mmEl.querySelectorAll('.mm-pane')], rows = [...mmEl.querySelectorAll('.mm-pane .mm-row')];
+    const run = () => {
+      const words = nz(inp.value.trim()).split(/\\s+/).filter(Boolean);
+      if (!words.length) { res.hidden = true; const cur = mmEl.querySelector('.mm-tab[aria-selected="true"]'); panes.forEach((p) => (p.hidden = p.id !== 'pane-' + cur.dataset.pane)); return; }
+      const seen = new Set();
+      const hits = rows.filter((r) => words.every((w) => r.dataset.q.includes(w))).filter((r) => { const k = r.getAttribute('href') + '|' + r.querySelector('b').textContent; return !seen.has(k) && seen.add(k); });
+      list.innerHTML = '';
+      hits.slice(0, 14).forEach((r) => { const c = r.cloneNode(true); const sm = document.createElement('small'); sm.className = 'mm-cat'; sm.textContent = r.dataset.cat || ''; c.querySelector('.mm-row-t').appendChild(sm); c.addEventListener('click', () => setOpen(null)); list.appendChild(c); });
+      panes.forEach((p) => (p.hidden = true)); res.hidden = false; none.hidden = hits.length > 0;
+      cnt.textContent = hits.length ? hits.length + (hits.length === 1 ? ' tratament' : ' tratamente') + ' pentru „' + inp.value.trim() + '”' : '';
+    };
+    inp.addEventListener('input', run);
+    inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { const a = list.querySelector('a'); if (a && !res.hidden) { e.preventDefault(); location.href = a.href; } } });
   });
 
   // meniu mobil: ecrane pe niveluri, cu „Înapoi”
