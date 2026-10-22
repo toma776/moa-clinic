@@ -1964,3 +1964,77 @@ footer .legal { padding: 18px 0 22px; font-size: 11.5px; letter-spacing: .02em; 
   .hp .book .lede { margin-bottom: 22px; }
 }
 .hp-offbox-h .eyebrow::before { display: none; }
+
+/* =====================================================================
+   Pagini de tratament și consultații compacte (main.tp), în ritmul homepage-ului
+   ===================================================================== */
+.tp .sec { padding: clamp(40px, 4.4vw, 64px) 0; }
+.tp .sec-head { margin-bottom: clamp(20px, 2.4vw, 30px); gap: 12px; }
+.tp .sec-head.split { grid-template-columns: 1.15fr 1fr; gap: 40px; }
+.tp .sec-head h2, .tp .pf-h2 { font-size: clamp(32px, 3.6vw, 48px); font-weight: 400; line-height: 1.08; letter-spacing: -.005em; }
+.tp .sec-head h2 { margin-top: 16px !important; }
+.tp .pf-h2 { margin: 16px 0 20px; }
+.tp .sec-head .lede, .tp .sec-head > p, .tp .sec-head .tr-prose p { font-size: 15.5px; line-height: 1.7; max-width: 50ch; }
+@media (min-width: 1101px) {
+  .tp .pf-grid { padding: clamp(24px, 3vw, 44px) 0 clamp(40px, 4.5vw, 64px); }
+  .tp .pf-copy h1 { font-size: clamp(42px, 4.4vw, 64px); }
+  .tp .tr-photo .frame { aspect-ratio: 5 / 5.4; }
+}
+/* zone și pași mai scunzi */
+.tp .tr-zone { padding: 18px 20px; gap: 4px; }
+.tp .tr-zone span { font-size: 15px; }
+.tp .tr-zone b { font-size: 20px; }
+.tp .tr-zone p { font-size: 13.5px; }
+.tp .tr-steps li { padding-top: 14px; gap: 6px; }
+.tp .tr-steps li::before { font-size: 26px; }
+.tp .tr-steps b { font-size: 19px; }
+.tp .tr-steps p { font-size: 14px; }
+.tp .tr-gallery { grid-auto-columns: minmax(170px, 200px); gap: 12px; }
+.tp .tr-safe h3 { font-size: 21px; }
+.tp .tr-dark li, .tp .tr-dark p { font-size: 14px; }
+/* recenzii: un singur rând, citate scurtate */
+.tp .tr-reviews .r-card { padding: 24px 24px 20px; gap: 14px; }
+.tp .tr-reviews .r-card q { font-size: 17.5px; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.tp .tr-related { gap: clamp(30px, 5vw, 72px); }
+.tp .tr-related > div { min-width: 0; }
+.tp .tr-asoc .mm-card { padding: 14px 18px; }
+/* programare, ca pe homepage */
+.tp .book { padding: clamp(48px, 5vw, 76px) 0; }
+.tp .book h2 { font-size: clamp(32px, 3.6vw, 48px); }
+.tp .book .steps { margin: 26px 0; gap: 14px; }
+.tp form.booking { gap: 16px; padding: clamp(24px, 3vw, 38px); }
+.tp form.booking h3 { font-size: 27px; }
+
+@media (max-width: 760px) {
+  .tp .sec { padding: 38px 0; }
+  .tp .sec-head.split { grid-template-columns: 1fr; gap: 12px; }
+  .tp .sec-head h2, .tp .pf-h2 { font-size: 32px; }
+  /* zonele, pașii și tratamentele asociate devin șine orizontale */
+  .tp .tr-zones { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 66%; gap: 0; background: none; border: 0; border-left: 1px solid var(--line); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; }
+  .tp .tr-zones::-webkit-scrollbar { display: none; }
+  .tp .tr-zone { scroll-snap-align: start; border: 1px solid var(--line); border-left: 0; min-height: 120px; }
+  .tp .tr-steps { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 74%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+  .tp .tr-steps::-webkit-scrollbar { display: none; }
+  .tp .tr-steps li { scroll-snap-align: start; display: grid; grid-template-columns: none; align-content: start; gap: 6px; padding: 14px 0 0; border-top: 1px solid var(--gold-2); }
+  .tp .tr-steps li::before { grid-row: auto; font-size: 26px; }
+  .tp .tr-asoc { display: grid; grid-auto-flow: column; grid-auto-columns: 72%; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+  .tp .tr-asoc::-webkit-scrollbar { display: none; }
+  .tp .tr-asoc > * { scroll-snap-align: start; }
+  .tp .tr-gallery { grid-auto-columns: 46%; }
+  .tp .book { padding: 46px 0; }
+  .tp .book .steps { display: none; }
+  .tp .book .lede { margin-bottom: 22px; }
+}
+@media (max-width: 760px) {
+  /* partea de sus pe mobil: cifrele pe un rând, butoanele alăturate, lista de medici fără nota de jos */
+  .tp .tr-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding-top: 18px; }
+  .tp .tr-facts b { font-size: 21px; margin-bottom: 4px; }
+  .tp .tr-facts span { font-size: 11.5px; }
+  .tp .pf-copy .hero-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tp .pf-copy .hero-cta .btn { padding-inline: 10px; justify-content: center; }
+  .tp .tr-docs small { display: none; }
+}
+@media (max-width: 760px) {
+  .tp .pf-copy .hero-cta .btn { font-size: 11.5px; letter-spacing: .12em; white-space: nowrap; }
+  .tp .pf-copy .hero-cta .btn.arrow::after { display: none; }
+}

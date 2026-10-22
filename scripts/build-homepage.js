@@ -1223,7 +1223,7 @@ for (const id of TR_PAGINI) {
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body>
-${TOP}<main class="tr-page">
+${TOP}<main class="tr-page tp">
 <nav class="wrap crumbs" aria-label="Breadcrumb">${crumbs.map(([n, h]) => (h ? `<a href="${esc(h)}">${esc(n)}</a><span>›</span>` : `<span aria-current="page">${esc(n)}</span>`)).join('')}</nav>
 
 <section class="pf-hero tr-hero">
@@ -1296,7 +1296,7 @@ ${safeCols.length ? `<section class="sec safety" id="siguranta">
 ${info.length ? `<section class="sec" id="pe-larg">
   <div class="wrap tr-larg">
     <div class="sec-head rv"><span class="eyebrow">Pe larg</span><h2>Tot ce trebuie <em>să știi</em></h2></div>
-    <div class="tr-faq tr-acc">${info.map((x, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(x.titlu)}</summary><div class="pf-prose${trBlocks(x.blocuri).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}">${trBlocks(x.blocuri)}</div></details>`).join('')}</div>
+    <div class="tr-faq tr-acc">${info.map((x) => `<details><summary>${esc(x.titlu)}</summary><div class="pf-prose${trBlocks(x.blocuri).replace(/<[^>]+>/g, '').length > 260 ? ' tr-cols' : ''}">${trBlocks(x.blocuri)}</div></details>`).join('')}</div>
   </div>
 </section>` : ''}
 
