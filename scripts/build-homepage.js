@@ -411,7 +411,7 @@ const html = `<!doctype html>
 <link rel="stylesheet" href="/nou/style.css">
 <script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
 </head>
-<body>
+<body class="hp">
 
 <div class="topbar"><div class="wrap">
   <span class="tb-left">Str. Ștefan Mihăileanu 35, București</span>
@@ -468,145 +468,123 @@ ${mobileNav}
   </div>
 </section>
 
-<section class="trust" aria-label="De ce MOA">
+<section class="hp-strip" aria-label="De ce MOA">
   <div class="wrap">
-    <div class="t"><b>Medic primar gerontolog</b><span>coordonator medical, școala Ana Aslan</span></div>
-    <div class="t"><b>Injectabile făcute de medici</b><span>numiți pe pagina fiecărui tratament</span></div>
-    <div class="t"><b>Grupul medical Oxxygene</b><span>clinică și spital privat, Otopeni</span></div>
-    <div class="t"><b>Prețuri publice</b><span>${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri pe site, înainte de programare</span></div>
+    <div><b>Medic primar gerontolog</b><span>coordonator medical, școala Ana Aslan</span></div>
+    <div><b>Injectabile făcute de medici</b><span>numiți pe pagina fiecărui tratament</span></div>
+    <div><b>Grupul medical Oxxygene</b><span>clinică și spital privat, Otopeni</span></div>
+    <div><b>5.0 pe Google</b><span>din ${esc(nReviews)} de recenzii verificate</span></div>
   </div>
 </section>
 
-<section class="sec concerns" id="ce-te-supara">
+<section class="hp-sec" id="ce-te-supara">
   <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow">Ce te supără?</span><h2 style="margin-top:22px">Pornește de la <em>tine</em>, nu de la un tratament.</h2></div>
-      <p class="lede">Spune-ne ce ai observat. Îți arătăm opțiunile potrivite, de la cele mai blânde la cele mai intense – iar medicul alege împreună cu tine.</p>
+    <div class="hp-head rv">
+      <div><span class="eyebrow">Ce te supără?</span><h2>Pornește de la <em>tine</em>, nu de la un tratament.</h2></div>
+      <p>Alege zona. Îți arătăm opțiunile, iar medicul stabilește împreună cu tine planul potrivit.</p>
     </div>
-    <div class="tabs rv" role="tablist">${concernZones.map((z, i) => `<button role="tab" type="button" aria-selected="${i === 0}" data-tab="${i}">${esc(z.nume)}</button>`).join('')}</div>
-    ${concernZones.map((z, i) => `<div class="c-panel" data-panel="${i}" ${i ? 'hidden' : ''}><div class="c-grid">${z.copii.map((c, j) => {
-      const tr = c.tratamente.slice(0, 4);
+    <div class="hp-tabs rv" role="tablist">${concernZones.map((z, i) => `<button role="tab" type="button" aria-selected="${i === 0}" data-tab="${i}">${esc(z.nume)}</button>`).join('')}</div>
+    ${concernZones.map((z, i) => `<div class="hp-rail hp-concerns" data-panel="${i}" ${i ? 'hidden' : ''}>${z.copii.map((c, j) => {
+      const tr = c.tratamente.slice(0, 3);
       const prices = c.tratamente.map((t) => t.pret_de_la).filter((x) => x != null);
       const first = c.tratamente.find((t) => t.url);
-      return `<a class="c-card" href="${esc((first && toLive(first.url)) || '#programare')}">
+      return `<a class="hp-cc" href="${esc((first && toLive(first.url)) || '#programare')}">
         <span class="n">${String(j + 1).padStart(2, '0')}</span>
         <h3>${esc(c.nume)}</h3>
-        <ul>${tr.map((t) => `<li>${esc(cleanName(t))}</li>`).join('')}</ul>
-        <span class="from">${prices.length ? `<span>de la</span><b>${lei(Math.min(...prices))}</b>` : '<span>Începe cu o consultație</span><b>→</b>'}</span>
-      </a>`; }).join('')}</div></div>`).join('')}
+        <p>${tr.map((t) => esc(cleanName(t))).join(' · ')}</p>
+        <span class="from">${prices.length ? `de la <b>${lei(Math.min(...prices))}</b>` : 'începe cu o consultație'}<i>→</i></span>
+      </a>`; }).join('')}</div>`).join('')}
   </div>
 </section>
 
-<section class="sec signature">
+<section class="hp-sec hp-cream">
   <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow">Tratamente-semnătură</span><h2 style="margin-top:22px">Rafinament, <em>nu transformare.</em></h2></div>
-      <p class="lede">Cele mai cerute tratamente ale clinicii, făcute cu produse originale și aparatură medicală de ultimă generație.</p>
+    <div class="hp-head rv">
+      <div><span class="eyebrow">Tratamente-semnătură</span><h2>Rafinament, <em>nu transformare.</em></h2></div>
+      <div class="hp-head-side"><p>Cele mai cerute tratamente ale clinicii, cu produse originale și doze potrivite fiecărui chip.</p><a class="link-u" href="/nou/preturi/">Toate tratamentele și prețurile →</a></div>
     </div>
-    <div class="sig-grid">${SIG.map((s) => `
-      <a class="sig ${s.wide ? 'wide' : ''} rv" href="${esc(live(s.id))}">
+    <div class="hp-rail hp-sig">${SIG.map((s) => `
+      <a class="hp-sg rv" href="${esc(live(s.id))}">
         <img src="${esc(s.img)}" alt="${esc(s.titlu)}" loading="lazy">
         <div class="in"><span class="cat">${esc(s.cat)}</span><h3>${esc(s.titlu)}</h3><p>${esc(s.text)}</p>
-          <span class="meta"><span>${esc(trNode.get(s.id)?.nod.nume || serv[s.id]?.nume || '')}</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
+          <span class="meta"><span>Detalii →</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
       </a>`).join('')}
-    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
 
-<section class="sec philosophy">
-  <div class="wrap grid">
-    <div class="ph-img rv"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="Dr. Adrian Stănescu, fondatorul MOA Clinic" loading="lazy"></div>
-    <div class="rv">
-      <span class="eyebrow">Global Antiaging</span>
-      <h2 style="font-size:clamp(38px,4.6vw,58px);margin-top:22px">Un concept în care vârsta <em style="color:var(--gold)">nu mai contează.</em></h2>
-      ${FOUNDER_QUOTE ? `<blockquote class="quote">„${esc(FOUNDER_QUOTE)}”<cite>Dr. Adrian Stănescu · medic primar gerontolog, fondator</cite></blockquote>` : ''}
-      <p class="lede">MOA unește estetica medicală cu medicina regenerativă: îți măsurăm vârsta biologică, apoi lucrăm deodată la cum arăți și la cum te simți.</p>
-      <div class="pillars">
-        <div><b>Estetică</b><span>injectabile, laser, radiofrecvență</span></div>
-        <div><b>Chirurgie</b><span>blefaroplastie, lip lift, dermatochirurgie</span></div>
-        <div><b>Regenerare</b><span>terapii IV, ozon, NAD+, TMS</span></div>
+<section class="hp-ga">
+  <div class="wrap hp-ga-grid">
+    <div class="hp-ga-img rv"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="Dr. Adrian Stănescu, fondatorul MOA Clinic" loading="lazy"></div>
+    <div class="hp-ga-copy rv">
+      <span class="eyebrow light">Global Antiaging</span>
+      <h2>Un concept în care vârsta <em>nu mai contează.</em></h2>
+      ${FOUNDER_QUOTE ? `<blockquote>„${esc(FOUNDER_QUOTE)}”<cite>Dr. Adrian Stănescu · medic primar gerontolog, fondator</cite></blockquote>` : ''}
+      <p>MOA unește estetica medicală cu medicina regenerativă: îți măsurăm vârsta biologică, apoi lucrăm deodată la cum arăți și la cum te simți.</p>
+      <div class="hp-pillars">
+        <a href="#ce-te-supara"><b>Estetică</b><span>injectabile, laser, radiofrecvență</span></a>
+        <a href="${esc(live('blefaroplastie'))}"><b>Chirurgie</b><span>blefaroplastie, lip lift, dermatochirurgie</span></a>
+        <a href="/nou/longevitate/program/"><b>Regenerare</b><span>terapii IV, ozon, NAD+, TMS</span></a>
       </div>
-      <a class="link-u" href="/nou/longevitate/program/">Descoperă programul de longevitate</a>
+      <a class="btn btn-ghost arrow" href="/nou/longevitate/program/">Programul de longevitate</a>
     </div>
   </div>
-</section>
-
-<section class="sec safety">
-  <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow light">Siguranța ta</span><h2 style="margin-top:22px">Înaintea oricărui rezultat, <em>siguranța.</em></h2></div>
-      <p class="lede">Un tratament de prima clasă începe cu o evaluare medicală corectă și se termină cu un rezultat care arată ca tine.</p>
-    </div>
-    <div class="s-grid">
-      <div class="s-item rv"><span class="ico">${icon.doc}</span><h3>Evaluare medicală</h3><p>Fiecare plan pornește de la o consultație cu medicul: istoric, piele, așteptări, contraindicații.</p></div>
-      <div class="s-item rv"><span class="ico">${icon.shield}</span><h3>Făcut de medici</h3><p>Procedurile injectabile și chirurgicale sunt făcute de medici primari și specialiști, nu de operatori.</p></div>
-      <div class="s-item rv"><span class="ico">${icon.seal}</span><h3>Produse originale</h3><p>Lucrăm cu mărci recunoscute internațional, pe care le vezi și în lista de prețuri.</p></div>
-      <div class="s-item rv"><span class="ico">${icon.spark}</span><h3>Doze potrivite</h3><p>Rezultate naturale, construite treptat. Mai puțin, dar exact unde trebuie.</p></div>
-    </div>
-    <div class="brands rv" aria-label="Mărci folosite">${BRANDS.map((b) => `<img src="/nou/media/brands/${b.f}?v=2" alt="${b.n}" style="--h:${b.h}px" loading="lazy">`).join('')}</div>
+  <div class="wrap hp-safe">
+    <div class="rv"><span class="ico">${icon.doc}</span><span><b>Evaluare medicală</b>istoric, piele, așteptări, contraindicații</span></div>
+    <div class="rv"><span class="ico">${icon.shield}</span><span><b>Făcut de medici</b>primari și specialiști, nu operatori</span></div>
+    <div class="rv"><span class="ico">${icon.seal}</span><span><b>Produse originale</b>mărci pe care le vezi în lista de prețuri</span></div>
+    <div class="rv"><span class="ico">${icon.spark}</span><span><b>Doze potrivite</b>rezultate naturale, construite treptat</span></div>
   </div>
+  <div class="wrap brands" aria-label="Mărci folosite">${BRANDS.map((b) => `<img src="/nou/media/brands/${b.f}?v=2" alt="${b.n}" style="--h:${b.h}px" loading="lazy">`).join('')}</div>
 </section>
 
-<section class="sec" id="echipa">
+<section class="hp-sec" id="echipa">
   <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow">Echipa MOA</span><h2 style="margin-top:22px">Mâini <em>sigure.</em></h2></div>
-      <p class="lede">Medici gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente – o singură echipă, sub același acoperiș. Știi mereu cine te tratează.</p>
+    <div class="hp-head rv">
+      <div><span class="eyebrow">Echipa MOA</span><h2>Mâini <em>sigure.</em></h2></div>
+      <div class="hp-head-side"><p>Gerontologi, dermatologi și chirurgi plastici, alături de specialiști în estetică și asistente. Știi mereu cine te tratează.</p><div class="hp-arrows"><button type="button" data-rail="-1" aria-label="Înapoi">‹</button><button type="button" data-rail="1" aria-label="Înainte">›</button></div></div>
     </div>
-    <div class="team-filter rv" role="tablist" aria-label="Filtrează echipa">${TEAM_GROUPS.map((g, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-team="${g.id}">${esc(g.nume)} <span>${g.id === 'toti' ? team.length : team.filter((p) => p.grup === g.id).length}</span></button>`).join('')}</div>
-    <div class="team-grid">${team.map((p) => `
-      <article class="doc rv${p.profil_detaliat ? ' has-profile' : ''}" data-grup="${p.grup}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span><small>fotografie în curând</small></div>`}</div>
+    <div class="hp-rail hp-team">${team.map((p) => `
+      <article class="doc${p.profil_detaliat ? ' has-profile' : ''}">${p.profil_detaliat ? `<a class="doc-link" href="/nou/medici/${esc(p.id)}/" aria-label="Profilul ${esc(p.nume)}"></a>` : ''}<div class="ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span></div>`}</div>
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`).join('')}
-    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
 
-<section class="sec inroom">
+<section class="hp-sec hp-cream inroom">
   <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow">În cabinet</span><h2 style="margin-top:22px">Vezi cum decurge <em>o ședință.</em></h2></div>
-      <div class="inroom-side"><p class="lede">Fără surprize: înainte să vii, știi exact ce se întâmplă, cât durează și cum te simți.</p><a class="link-u" href="/nou/video/">Toate cele ${VID_ALL.length} video-uri →</a></div>
+    <div class="hp-head rv">
+      <div><span class="eyebrow">În cabinet</span><h2>Vezi cum decurge <em>o ședință.</em></h2></div>
+      <div class="hp-head-side"><p>Înainte să vii, știi ce se întâmplă, cât durează și cum te simți.</p><a class="link-u" href="/nou/video/">Toate cele ${VID_ALL.length} video-uri →</a></div>
     </div>
-    <div class="v-grid">${VID.map((v) => {
+    <div class="hp-rail hp-vid">${VID.map((v) => {
       const p = v.pagini[0];
-      return `<div class="v-card rv"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+      return `<div class="v-card"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
         <h3>${esc(vTitle(v))}</h3><p>${p.serviciu ? `<a href="${esc(live(p.serviciu))}">${esc(trNode.get(p.serviciu)?.nod.nume || serv[p.serviciu]?.nume || '')}</a>` : ''}${vDur(v) ? ` · ${vDur(v)}` : ''}</p></div>`; }).join('')}
-    <p class="swipe-hint" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
   </div>
 </section>
 
-<section class="sec reviews" id="recenzii">
-  <div class="wrap grid">
-    <div class="score rv"><span class="eyebrow">Recenzii Google</span><b>5.0</b><span class="stars">★★★★★</span><p class="lede">Din ${esc(nReviews)} de recenzii verificate, calificativ „Excelent”.</p></div>
-    <div class="r-grid">${reviews.map((r) => `<figure class="r-card rv" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
+<section class="hp-sec" id="recenzii">
+  <div class="wrap hp-rev">
+    <div class="hp-score rv"><span class="eyebrow">Recenzii Google</span><b>5.0</b><span class="stars">★★★★★</span><p>Din ${esc(nReviews)} de recenzii verificate, calificativ „Excelent”.</p></div>
+    <div class="hp-rail hp-quotes">${reviews.map((r) => `<figure class="hp-q"><q>${esc(r.citat)}</q><figcaption><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
   </div>
 </section>
 
-<section class="space" id="despre">
+<section class="hp-visit" id="despre">
   <img src="/wp-content/uploads/2024/10/Clinica-moa-1243x1536.jpeg" alt="Interiorul clinicii MOA" loading="lazy">
-  <div class="wrap rv">
-    <span class="eyebrow light">Clinica</span>
-    <h2>Te așteptăm <em style="color:var(--gold-soft)">acasă la MOA.</em></h2>
-    <p>Un spațiu luminos, liniștit, gândit ca tu să te simți în largul tău de la prima vizită.</p>
-    <dl><dt>Adresă</dt><dd>Str. Ștefan Mihăileanu 35, București</dd><dt>Telefon</dt><dd><a href="tel:+40743056605">0743 056 605</a></dd><dt>Email</dt><dd><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></dd></dl>
-    <div><a class="btn btn-ghost arrow" href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener">Vezi pe hartă</a></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head split rv">
-      <div><span class="eyebrow">Ofertele lunii</span><h2 style="margin-top:22px">Pentru <em>luna aceasta.</em></h2></div>
-      <a class="link-u" href="/nou/preturi/#oferte" style="justify-self:start">Toate cele ${D.oferte.length} oferte →</a>
+  <div class="wrap hp-visit-grid">
+    <div class="rv">
+      <span class="eyebrow light">Clinica</span>
+      <h2>Te așteptăm <em>acasă la MOA.</em></h2>
+      <p>Un spațiu luminos și liniștit, gândit ca să te simți în largul tău de la prima vizită.</p>
+      <dl><dt>Adresă</dt><dd>Str. Ștefan Mihăileanu 35, București</dd><dt>Telefon</dt><dd><a href="tel:+40743056605">0743 056 605</a></dd><dt>Email</dt><dd><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></dd></dl>
+      <a class="btn btn-ghost arrow" href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener">Vezi pe hartă</a>
     </div>
-    <div class="o-grid hp-offers">${offers.map((o) => `
-      <a class="o-card rv" href="#programare" data-srv="${esc(offSrv(o))}"><span class="off">−${o.discountProcent}%</span><span class="eyebrow">${esc(o.grup === 'OFERTELE LUNII' ? 'Oferta lunii' : offerGroup(o.grup))}</span>
-        <h3>${esc(offerLabel(o.nume))}</h3>${o.detalii ? `<small class="o-det">${esc(offerLabel(o.detalii))}</small>` : ''}
-        <div class="price"><b>${lei(o.pret)}</b><s>${lei(o.pretInitial)}</s></div>
-        <span class="link-u" style="justify-self:start;margin-top:6px">Programează-te →</span></a>`).join('')}
+    <div class="hp-offbox rv">
+      <div class="hp-offbox-h"><span class="eyebrow light">Ofertele lunii</span><a href="/nou/preturi/#oferte">Toate cele ${D.oferte.length} →</a></div>
+      ${offers.map((o) => `<a class="hp-of" href="#programare" data-srv="${esc(offSrv(o))}"><span class="g">${esc(o.grup === 'OFERTELE LUNII' ? 'Oferta lunii' : offerGroup(o.grup))}</span><b>${esc(offerLabel(o.nume))}</b><span class="p"><b>${lei(o.pret)}</b><s>${lei(o.pretInitial)}</s><i>−${o.discountProcent}%</i></span></a>`).join('')}
     </div>
   </div>
 </section>
@@ -777,6 +755,12 @@ ${mobileNav}
     document.querySelectorAll('.doc[data-grup]').forEach((d) => (d.hidden = b.dataset.team !== 'toti' && d.dataset.grup !== b.dataset.team));
   }));
 
+  // șine orizontale: săgeți (derulează cu o „pagină”)
+  document.querySelectorAll('[data-rail]').forEach((b) => b.addEventListener('click', () => {
+    const r = b.closest('.hp-sec')?.querySelector('.hp-rail:not([hidden])');
+    if (r) r.scrollBy({ left: Number(b.dataset.rail) * r.clientWidth * 0.8, behavior: 'smooth' });
+  }));
+
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];
   tabs.forEach((t) => t.addEventListener('click', () => {
@@ -812,7 +796,7 @@ ${mobileNav}
     if (href.startsWith('tel:')) track('click_telefon');
     else if (href.includes('wa.me/')) track('click_whatsapp');
     else if (href === '#programare' || a.dataset.srv) track('click_programare', { serviciu: a.dataset.srv || '' });
-    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
+    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
   }, true);
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);

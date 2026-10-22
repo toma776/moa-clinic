@@ -415,6 +415,12 @@ document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('cli
     document.querySelectorAll('.doc[data-grup]').forEach((d) => (d.hidden = b.dataset.team !== 'toti' && d.dataset.grup !== b.dataset.team));
   }));
 
+  // șine orizontale: săgeți (derulează cu o „pagină”)
+  document.querySelectorAll('[data-rail]').forEach((b) => b.addEventListener('click', () => {
+    const r = b.closest('.hp-sec')?.querySelector('.hp-rail:not([hidden])');
+    if (r) r.scrollBy({ left: Number(b.dataset.rail) * r.clientWidth * 0.8, behavior: 'smooth' });
+  }));
+
   // „Ce te supără?” pe zone
   const tabs = [...document.querySelectorAll('[data-tab]')];
   tabs.forEach((t) => t.addEventListener('click', () => {
@@ -450,7 +456,7 @@ document.querySelectorAll('.tr-more-btn').forEach((b) => b.addEventListener('cli
     if (href.startsWith('tel:')) track('click_telefon');
     else if (href.includes('wa.me/')) track('click_whatsapp');
     else if (href === '#programare' || a.dataset.srv) track('click_programare', { serviciu: a.dataset.srv || '' });
-    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
+    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
   }, true);
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
