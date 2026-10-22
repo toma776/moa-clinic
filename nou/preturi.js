@@ -68,8 +68,6 @@
   // ---- acordeonul ----
   all?.addEventListener('click', () => { const open = all.getAttribute('aria-pressed') !== 'true'; cats.forEach((c) => { if (!c.hidden) c.open = open; }); syncAll(); });
   cats.forEach((c) => c.addEventListener('toggle', syncAll));
-  // pe telefon ofertele pornesc închise: lista rămâne un cuprins scurt
-  if (matchMedia('(max-width: 760px)').matches && !location.hash) { const o = document.getElementById('oferte'); if (o) o.open = false; }
   syncAll();
   // salt la o categorie (din cuprins sau dintr-un link #categorie): o deschide și o aduce sub header
   const go = (el) => {
@@ -91,6 +89,28 @@
   const h0 = location.hash.slice(1);
   if (h0 === 'estimator') show('estimator');
   else if (h0 && document.getElementById(h0)?.classList.contains('pr-cat')) requestAnimationFrame(() => go(document.getElementById(h0)));
+
+  // ---- ofertele lunii: câte un tab pe grup, șina se derulează cu săgețile ----
+  const ps = $('.ps');
+  if (ps) {
+    const pt = $$('.ps-tabs [role=tab]', ps);
+    pt.forEach((t, i) => {
+      t.addEventListener('click', () => {
+        pt.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+        const r = $('.ps-panel:not([hidden]) .ps-rail', ps); if (r) r.scrollLeft = 0;
+        track('oferte_tab', { grup: $('b', t).textContent });
+      });
+      t.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const n = pt[(i + (e.key === 'ArrowRight' ? 1 : pt.length - 1)) % pt.length];
+        n.click(); n.focus();
+      });
+    });
+    $$('[data-ps-rail]', ps).forEach((b) => b.addEventListener('click', () => {
+      const r = $('.ps-panel:not([hidden]) .ps-rail', ps);
+      if (r) r.scrollBy({ left: Number(b.dataset.psRail) * r.clientWidth * 0.8, behavior: smooth() });
+    }));
+  }
 
   // ---- cuprinsul lateral: categoria curentă ----
   let cur = null;

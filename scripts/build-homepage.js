@@ -906,7 +906,7 @@ ${mobileNav}
     if (href.startsWith('tel:')) track('click_telefon');
     else if (href.includes('wa.me/')) track('click_whatsapp');
     else if (href === '#programare' || a.dataset.srv) track('click_programare', { serviciu: a.dataset.srv || '' });
-    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
+    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow, .ps-card')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
   }, true);
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
@@ -1870,11 +1870,22 @@ ${BOTTOM}`;
   const offGroups = [...new Set(D.oferte.map((o) => o.grup))];
   const offName = (o) => offerLabel(o.nume);
   const maxDisc = Math.max(0, ...D.oferte.map((o) => o.discountProcent || 0));
-  const offHtml = D.oferte.length ? `<details class="pr-cat pr-offers" id="oferte" data-nume="Ofertele lunii oferte" open>
-      <summary><small>Pentru luna aceasta</small><h2>Ofertele <em>lunii</em></h2><span class="pr-meta"><span>${D.oferte.length} oferte</span>${maxDisc ? `<span>până la <b>−${maxDisc}%</b></span>` : ''}</span>${chev}</summary>
-      <div class="pr-body"><div class="pr-olist">${offGroups.map((g) => `<div class="pr-og-block"><h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3>${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-orow" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}"><span class="pr-orow-n"><b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}</span>${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span></a>`).join('')}</div>`).join('')}</div>
-      <p class="pr-ohint">Alege o ofertă și te sunăm noi pentru programare.</p></div>
-    </details>` : '';
+  // ---------- vitrina ofertelor: câte un tab pentru fiecare grup (ofertele lunii, terapii intravenoase, epilare), carduri pe șină ----------
+  const offTab = (g) => (g === 'OFERTELE LUNII' ? ['Ofertele lunii', 'Estetică și chirurgie'] : /intraven|perfuz/i.test(g) ? ['Terapii intravenoase', 'Perfuzii, by Oxxygene'] : /epilare|splendor/i.test(g) ? ['Epilare definitivă', 'Splendor X'] : [offerGroup(g), 'Oferte']);
+  const offCard = (o) => `<article class="ps-card"><div class="ps-top">${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : '<small>Ofertă</small>'}${o.discountProcent ? `<span class="ps-disc">−${o.discountProcent}%</span>` : ''}</div><h3>${esc(offName(o))}</h3><div class="ps-foot"><span class="ps-price">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<b>${lei(o.pret)}</b></span><span class="ps-act">${wlBtn(`Ofertă: ${offName(o)}`, o.pret, '/nou/preturi/#oferte', true)}<a class="ps-cta" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">Rezervă</a></span></div></article>`;
+  const spotHtml = D.oferte.length ? `<div class="ps" id="oferte">
+  <div class="wrap">
+    <div class="ps-head">
+      <div><span class="eyebrow light">Pentru luna aceasta</span><h2>Ofertele <em>lunii</em></h2><p>${D.oferte.length} oferte${maxDisc ? `, cu până la −${maxDisc}%` : ''}. Alege una și te sunăm noi pentru programare.</p></div>
+      <div class="ps-arrows"><button type="button" data-ps-rail="-1" aria-label="Înapoi">‹</button><button type="button" data-ps-rail="1" aria-label="Înainte">›</button></div>
+    </div>
+    <div class="ps-tabs" role="tablist" aria-label="Grupuri de oferte">${offGroups.map((g, i) => {
+      const os = D.oferte.filter((o) => o.grup === g), [t, sub] = offTab(g), d = Math.max(0, ...os.map((o) => o.discountProcent || 0));
+      return `<button type="button" role="tab" id="ps-t${i}" aria-controls="ps-p${i}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}><b>${esc(t)}</b><small>${esc(sub)} · ${os.length} ${os.length === 1 ? 'ofertă' : 'oferte'}${d ? ` · până la −${d}%` : ''}</small></button>`;
+    }).join('')}</div>
+    ${offGroups.map((g, i) => `<div class="ps-panel" id="ps-p${i}" role="tabpanel" aria-labelledby="ps-t${i}"${i ? ' hidden' : ''}><div class="ps-rail">${D.oferte.filter((o) => o.grup === g).map(offCard).join('')}</div></div>`).join('')}
+  </div>
+</div>` : '';
   const navHtml = `${D.oferte.length ? `<a href="#oferte" class="pr-nav-off">Ofertele lunii<span>${D.oferte.length}</span></a>` : ''}${PR_GRUPURI.map(([g]) => {
     const ks = cats.filter((k) => k.grup === g);
     return ks.length ? `<div class="pr-ng"><small>${esc(g)}</small>${ks.map((k) => `<a href="#${k.id}">${esc(k.nume)}<span>${k.n}</span></a>`).join('')}</div>` : '';
@@ -2009,6 +2020,7 @@ ${TOP}<main>
 </section>
 
 <section class="pr-panel" id="lista" role="tabpanel" aria-labelledby="tab-lista">
+  ${spotHtml}
   <div class="wrap pr-lay">
     <aside class="pr-side">
       <div class="pr-search"><label for="pr-q" class="sr">Caută în prețuri</label><span class="pr-in">${ico.search}<input id="pr-q" type="search" placeholder="Caută un tratament" autocomplete="off" enterkeyhint="search"><button type="button" id="pr-x" aria-label="Șterge căutarea" hidden>✕</button></span></div>
@@ -2016,7 +2028,6 @@ ${TOP}<main>
     </aside>
     <div class="pr-main">
       <div class="pr-tools"><span id="pr-count" aria-live="polite">${nRows} prețuri</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
-      ${offHtml}
       ${catHtml}
       <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
       <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii. Nu știi ce ți se potrivește? <a class="lede-link" href="#estimator">Pornește de la ce te supără</a>.</p>
@@ -2027,7 +2038,7 @@ ${TOP}<main>
 ${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js?v=2" defer></script>
+<script src="/nou/preturi.js?v=3" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
