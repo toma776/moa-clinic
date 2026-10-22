@@ -659,7 +659,7 @@ ${mobileNav}
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
 </div>
-<script src="/nou/wishlist.js?v=1" defer></script>
+<script src="/nou/wishlist.js?v=2" defer></script>
 <script src="/nou/progres.js?v=1" defer></script>
 
 <script>

@@ -2153,3 +2153,4 @@ footer .legal { padding: 18px 0 22px; font-size: 11.5px; letter-spacing: .02em; 
   .to-top { right: 12px; bottom: 70px; }
   .wl-fab { left: auto; right: 68px; bottom: 72px; height: 42px; padding-block: 0; }
 }
+.wl-fab.zero b { background: transparent; border: 1px solid rgba(217, 195, 160, .5); color: var(--gold-soft); }

@@ -42,7 +42,8 @@
 
   const render = () => {
     const n = list.length;
-    fab.hidden = n === 0 && !wrap.classList.contains('open');
+    fab.hidden = wrap.classList.contains('open');
+    fab.classList.toggle('zero', n === 0);
     fab.innerHTML = `<span class="wl-fab-i" aria-hidden="true">♡</span><span>Wishlist</span><b>${n}</b>`;
     fab.setAttribute('aria-label', `Deschide wishlistul (${n} ${n === 1 ? 'tratament' : 'tratamente'})`);
     ul.innerHTML = list.map((x, i) => `<li><span class="wl-n">${x.u ? `<a href="${esc(x.u)}">${esc(x.n)}</a>` : esc(x.n)}</span><span class="wl-p">${x.p != null ? lei(x.p) : 'la consultație'}</span><button type="button" class="wl-rm" data-i="${i}" aria-label="Elimină ${esc(x.n)}">✕</button></li>`).join('');
