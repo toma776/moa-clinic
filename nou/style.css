@@ -1468,15 +1468,15 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .tr-page .tr-reviews .r-card q { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; font-size: 17px; }
 /* textele de sub acordeoane / „Citește mai mult”: pe toată lățimea, pe două coloane când sunt lungi */
 .tr-page .tr-larg .tr-acc details > div { max-width: none; }
-.tr-page .tr-read-wide .pf-prose, .tr-page .tr-more { max-width: none; }
+.tr-page .tr-read-wide .pf-prose, .tr-page .tr-more-txt { max-width: none; }
 .tr-cols { columns: 2; column-gap: clamp(36px, 5vw, 72px); }
 .tr-cols > * { break-inside: avoid; }
 .tr-cols > h4 { break-after: avoid; }
 .tr-cols > h4:first-child, .tr-cols > p:first-child { margin-top: 0; }
 .tr-cols > .tr-prices, .tr-cols > .tr-steps { column-span: all; margin: 10px 0 18px; }
-.tr-more { margin-top: clamp(22px, 2.6vw, 34px); padding-top: clamp(22px, 2.6vw, 30px); border-top: 1px solid var(--line); }
-.tr-more[hidden] { display: none; }
-.tr-more p { color: var(--ink-2); font-size: 16px; margin: 0 0 14px; }
+.tr-more-txt { margin-top: clamp(22px, 2.6vw, 34px); padding-top: clamp(22px, 2.6vw, 30px); border-top: 1px solid var(--line); }
+.tr-more-txt[hidden] { display: none; }
+.tr-more-txt p { color: var(--ink-2); font-size: 16px; margin: 0 0 14px; }
 .tr-more-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 4px; padding: 0; border: 0; background: none; cursor: pointer; font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
 .tr-more-btn::after { content: '+'; font-size: 16px; letter-spacing: 0; }
 .tr-more-btn[hidden] { display: none; }
@@ -1518,7 +1518,7 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 }
 /* textul deschis cu „Citește mai mult” e o continuare: fără literă inițială mare */
 @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
-  .tr-more p:first-child::first-letter, .tr-cols p:first-child::first-letter { -webkit-initial-letter: normal; initial-letter: normal; font: inherit; color: inherit; margin: 0; }
+  .tr-more-txt p:first-child::first-letter, .tr-cols p:first-child::first-letter { -webkit-initial-letter: normal; initial-letter: normal; font: inherit; color: inherit; margin: 0; }
 }
 
 /* =====================================================================
@@ -1579,6 +1579,28 @@ select.flash { outline: 2px solid var(--gold); outline-offset: 3px; transition: 
 .lg-rig { align-items: center; }
 .lg-rig .pf-side .tr-checks { gap: 16px; }
 .lg-rig .pf-side .tr-checks li { line-height: 1.5; }
+/* hub longevitate compact, în ritmul paginilor de tratament (main.tp) */
+.tp.lg-page .lg-prose p { font-size: 15.5px; line-height: 1.7; }
+.tp.lg-page .lg-rig { gap: clamp(30px, 5vw, 72px); }
+.tp.lg-page .lg-rig .pf-side .tr-checks { gap: 12px; }
+.tp.lg-page .lg-grid .mm-card { min-height: 0; padding: 16px 18px; }
+.tp.lg-page .cs-doclist.lg-docs li > a, .tp.lg-page .cs-doclist.lg-docs li > div { padding-block: 12px; }
+@media (max-width: 760px) {
+  .tp.lg-page .tr-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tp.lg-page .lg-steps .lg-pret { grid-column: auto; margin-top: 4px; font-size: 17px; }
+  /* terapiile: șină orizontală pe două rânduri */
+  .tp.lg-page .cs-nextgrid.lg-grid { grid-template-columns: none; grid-template-rows: auto auto; grid-auto-flow: column; grid-auto-columns: 46%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+  .tp.lg-page .cs-nextgrid.lg-grid::-webkit-scrollbar { display: none; }
+  .tp.lg-page .lg-grid .mm-card { scroll-snap-align: start; padding: 14px; }
+  .tp.lg-page .lg-grid .mm-card em { margin-top: 8px; }
+  .tp.lg-page .lg-prose p { font-size: 15px; line-height: 1.65; }
+  .tp.lg-page .lg-prose { margin-top: 12px !important; }
+  .tp.lg-page .lg-rig { gap: 24px; }
+  .tp.lg-page .lg-rig .pf-side { padding: 22px 20px; }
+  .tp.lg-page .lg-rig .pf-side .tr-checks { gap: 10px; }
+  .tp.lg-page .lg-rig .pf-side .tr-checks li { font-size: 14px; }
+  .tp.lg-page .cs-doclist.lg-docs li > a, .tp.lg-page .cs-doclist.lg-docs li > div { padding-block: 10px; }
+}
 
 /* =====================================================================
    Footer compact și mai elegant: logo + contact pe un rând, linkurile mai strânse, linie aurie fină
