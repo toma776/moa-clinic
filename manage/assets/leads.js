@@ -7,6 +7,8 @@ const LEAD_STATUS = [
 ];
 const LEAD_SURSE = ['Formular site', 'Telefon', 'WhatsApp', 'Instagram', 'Facebook', 'Recomandare', 'Altul'];
 const statusLabel = (id) => (LEAD_STATUS.find((s) => s[0] === id) || [id, id])[1];
+// wishlist: tratamentele cerute deodată, fiecare de programat separat
+const wlList = (l) => (l.tratamente?.length ? `<ul class="wl-items">${l.tratamente.map((t) => `<li>${esc(t.nume)}${t.pret != null ? ` <span class="muted">${lei(t.pret)}</span>` : ''}</li>`).join('')}</ul>` : '');
 const leadUI = { q: '', status: '', serviciu: '' };
 
 routes.leads = function renderLeads() {
@@ -41,7 +43,7 @@ routes.leads = function renderLeads() {
         <td class="small muted">${esc(fmtDate(l.creat))}</td>
         <td><b>${esc(l.nume)}</b>${l.mesaj ? `<div class="muted small">${esc(cut(l.mesaj, 90))}</div>` : ''}${l.note ? `<details class="calif"><summary>Note</summary><div class="small">${esc(l.note)}</div></details>` : ''}</td>
         <td class="small">${l.telefon ? `<a href="tel:${esc(l.telefon.replace(/\s/g, ''))}">${esc(l.telefon)}</a>` : ''}${l.email && l.telefon ? '<br>' : ''}${l.email ? `<a href="mailto:${esc(l.email)}">${esc(l.email)}</a>` : ''}</td>
-        <td class="small">${esc(l.serviciu || '—')}${l.medic ? `<div class="muted">${esc(l.medic)}</div>` : ''}${l.valoare ? `<div class="muted">${lei(l.valoare)}</div>` : ''}</td>
+        <td class="small">${esc(l.serviciu || '—')}${wlList(l)}${l.medic ? `<div class="muted">${esc(l.medic)}</div>` : ''}${l.valoare ? `<div class="muted">${lei(l.valoare)}</div>` : ''}</td>
         <td class="small">${esc(l.sursa || '—')}${originLabel(l) ? `<div class="muted">${esc(originLabel(l))}</div>` : ''}</td>
         <td><select class="stSel" data-id="${esc(l.id)}" aria-label="Status">${LEAD_STATUS.map(([id, lab]) => `<option value="${id}" ${l.status === id ? 'selected' : ''}>${esc(lab)}</option>`).join('')}</select></td>
         <td style="white-space:nowrap"><button class="sm" data-edit="${esc(l.id)}">Editează</button> <button class="sm danger" data-del="${esc(l.id)}">Șterge</button></td>
@@ -53,7 +55,7 @@ routes.leads = function renderLeads() {
   $('#addL').onclick = () => openLead();
   $('#csvL').onclick = () => download('moa-leads.csv', csv(L, [
     ['Data', (l) => l.creat], ['Nume', (l) => l.nume], ['Telefon', (l) => l.telefon], ['Email', (l) => l.email], ['Serviciu', (l) => l.serviciu],
-    ['Medic', (l) => l.medic], ['Valoare RON', (l) => l.valoare], ['Sursa', (l) => l.sursa], ['Origine', (l) => originLabel(l)], ['Pagina', (l) => l.pagina], ['Status', (l) => statusLabel(l.status)], ['Mesaj', (l) => l.mesaj], ['Note', (l) => l.note]]), 'text/csv;charset=utf-8');
+    ['Medic', (l) => l.medic], ['Valoare RON', (l) => l.valoare], ['Sursa', (l) => l.sursa], ['Origine', (l) => originLabel(l)], ['Pagina', (l) => l.pagina], ['Status', (l) => statusLabel(l.status)], ['Tratamente (wishlist)', (l) => (l.tratamente || []).map((t) => t.nume + (t.pret != null ? ' – ' + t.pret + ' lei' : '')).join('; ')], ['Mesaj', (l) => l.mesaj], ['Note', (l) => l.note]]), 'text/csv;charset=utf-8');
   $$('.stSel').forEach((s) => (s.onchange = async () => { const l = L.find((x) => x.id === s.dataset.id); l.status = s.value; l.actualizat = nowLocal(); await saveLeads('Status actualizat'); routes.leads(); }));
   $$('[data-edit]').forEach((b) => (b.onclick = () => openLead(L.find((x) => x.id === b.dataset.edit))));
   $$('[data-del]').forEach((b) => (b.onclick = async () => {

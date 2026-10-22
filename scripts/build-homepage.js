@@ -133,6 +133,8 @@ if (consHub) NOU.add(consHub.url);
 NOU.add('/preturi/');
 NOU.add('/video/');
 NOU.add('/blog/');
+// wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
+const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă pe wishlist: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Wishlist' : 'Adaugă pe wishlist'}</span></button>`;
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 // tratamentul (pagina nouă) despre care e un articol: întâi după cuvintele-cheie din titlu, apoi după entitățile articolului
 // (fără cele care apar pe aproape toate articolele – NAD, antioxidanți, numele medicilor – decât dacă nu există altceva)
@@ -657,6 +659,7 @@ ${mobileNav}
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
 </div>
+<script src="/nou/wishlist.js?v=1" defer></script>
 <div class="proto" id="proto">Site nou (propunere) · <a href="/vechi/">vezi site-ul actual</a><button type="button" aria-label="Ascunde eticheta" id="proto-x">✕</button></div>
 
 <script>
@@ -1234,6 +1237,7 @@ ${TOP}<main class="tr-page tp">
       <p class="lede">${esc(lede)}</p>
       ${facts.length ? `<div class="pf-facts tr-facts">${facts.map((f) => `<div><b>${esc(f.v)}</b><span>${esc(f.l)}</span></div>`).join('')}</div>` : ''}
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a><a class="btn btn-line" href="#preturi">Vezi prețurile</a></div>
+      ${wlBtn(nod.nume.replace(/\s*\(.*\)$/, ''), minPrice(id), live(id))}
       <a class="tr-wa" href="https://wa.me/40743056605?text=${encodeURIComponent(`Bună ziua! Aș dori informații despre ${nod.nume.replace(/\s*\(.*\)$/, '')}.`)}" data-track="whatsapp">Sau scrie-ne discret pe WhatsApp →</a>
       ${docsBlock}
     </div>
@@ -1315,7 +1319,7 @@ ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)"
     ${offer ? `<a class="tr-offer-row" href="#programare" data-srv="${esc(offerSrv)}"><span class="off">-${offer.discountProcent}% · oferta lunii</span><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> <em>${lei(offer.pret)}</em></span><i>Programează-te →</i></a>` : ''}
     ${(() => {
       if (!s.preturi.length) return sec('pret').map((x) => trBlocks(x.blocuri)).join('');
-      const rows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9)).map((p) => `<tr><td>${esc(p.nume)}${p.subgrup ? `<small class="tr-psub">${esc(cap(p.subgrup.toLowerCase()))}</small>` : ''}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td></tr>`);
+      const rows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9)).map((p) => `<tr><td>${esc(p.nume)}${p.subgrup ? `<small class="tr-psub">${esc(cap(p.subgrup.toLowerCase()))}</small>` : ''}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td><td class="wl-td">${wlBtn(`${nod.nume.replace(/\s*\(.*\)$/, '')} · ${p.nume}`, p.valoare, live(id), true)}</td></tr>`);
       const N = 5;
       return `<table class="tr-prices">${rows.slice(0, N).join('')}</table>${rows.length > N ? `<details class="tr-allprices"><summary>Vezi toate cele ${rows.length} prețuri</summary><table class="tr-prices">${rows.slice(N).join('')}</table></details>` : ''}`;
     })()}
@@ -1604,7 +1608,7 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
       const href = id && live(id).startsWith('/nou') && id !== top ? live(id) : null;
       const sub = x.subgrup && x.subgrup !== lastSub ? `<h4 class="pr-sub">${esc(cap(x.subgrup.toLowerCase()))}</h4>` : '';
       lastSub = x.subgrup || lastSub;
-      return `${sub}<div class="pr-row"><span class="pr-n">${href ? `<a href="${esc(href)}">${esc(x.nume)}</a>` : esc(x.nume)}</span><span class="pr-ps">${(x.preturi || []).map(priceCell).join('')}</span></div>`;
+      return `${sub}<div class="pr-row"><span class="pr-n">${href ? `<a href="${esc(href)}">${esc(x.nume)}</a>` : esc(x.nume)}</span><span class="pr-ps">${(x.preturi || []).map(priceCell).join('')}</span>${wlBtn(x.nume, (x.preturi || []).find((q) => q.valoare != null)?.valoare, href || topHref || '/nou/preturi/', true)}</div>`;
     }).join('');
     return `<section class="pr-cat" id="${slugPr(nume)}" data-nume="${esc(nume)} ${esc(grup)}">
       <div class="pr-cat-h"><div><small>${esc(grup)}</small><h2>${esc(nume)}</h2></div>${c === 'CONSULTAȚII' && consHub ? '<a class="link-u" href="/nou/consultatii/">Toate consultațiile →</a>' : topHref ? `<a class="link-u" href="${esc(topHref)}">Despre tratament →</a>` : ''}</div>

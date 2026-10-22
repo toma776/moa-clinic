@@ -471,3 +471,5 @@ code { border-radius: 3px; }
 /* descrierea de sub titlu (tot .crumb, dar după h1): text normal, nu etichetă */
 h1 ~ .crumb { font: 400 13px/1.55 var(--sans); letter-spacing: 0; text-transform: none; color: var(--muted); margin: 10px 0 0 !important; max-width: 90ch; }
 aside .logo small { line-height: 1.5; }
+.wl-items { margin: 6px 0 0; padding-left: 16px; display: grid; gap: 3px; }
+.wl-items li { line-height: 1.4; }
