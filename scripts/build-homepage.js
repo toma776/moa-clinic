@@ -7,6 +7,9 @@ const { ORIGIN } = require('./lib');
 
 const ROOT = path.join(__dirname, '..');
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'entitati.json'), 'utf8'));
+// prețurile și ofertele: din lista editabilă din panou (data/preturi.json), dacă există – scripts/preturi.js
+const PRT = require('./preturi');
+PRT.apply(D, PRT.load());
 const S = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'structura.json'), 'utf8'));
 // titlurile articolelor de pe site-ul vechi sunt scrise adesea fără diacritice: le corectez pe cuvinte (cu păstrarea majusculelor)
 const DIACR = {
@@ -1228,7 +1231,7 @@ for (const id of TR_PAGINI) {
   const pret = minPrice(id);
   const kw = [...new Set(norm(`${nod.nume} ${t.h1}`.toLowerCase()).split(/[^a-z]+/).filter((w) => w.length >= 5 && !/^(trata|injec|bucur|terap|consu|proce|facia)/.test(w)).map((w) => w.slice(0, 5)))];
   const kwRe = new RegExp(kw.join('|') || '^$', 'i');
-  const offer = consult ? null : D.oferte.find((o) => o.pret && o.pretInitial && kwRe.test(norm(o.nume)));
+  const offer = consult ? null : D.oferte.find((o) => (o.servicii || []).includes(id)) || D.oferte.find((o) => o.pret && o.pretInitial && kwRe.test(norm(o.nume)));
   // numele ofertei, cu diacritice: numele tratamentului + ce precizează oferta (ex. „3 zone”)
   const offerZone = offer && offer.nume.match(/\d+\s*zon\w*/i);
   // textul cu care oferta ajunge în formular (și în lead): „Oferta lunii: Toxină botulinică · 3 zone – 1.099 lei”
@@ -1824,14 +1827,7 @@ ${BOTTOM}`;
 
 // ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------
 {
-  const PR_GRUPURI = [
-    ['Consultații', [['CONSULTAȚII', 'Consultații']]],
-    ['Injectabile', [['INJECTĂRI TOXINĂ BOTULINICĂ', 'Toxină botulinică (Botox)'], ['INJECTĂRI ACID HIALURONIC', 'Acid hialuronic'], ['REJUVENARE FACIALĂ', 'Rejuvenare facială'], ['TRATAMENT REVITALIZARE PĂR', 'Revitalizare păr']]],
-    ['Aparatură', [['TRATAMENTE ESTETICE VENUS VIVA', 'Venus Viva'], ['LIFTING FACIAL NON INVAZIV VENUS LEGACY', 'Venus Legacy – lifting facial'], ['TRATAMENTE CORPORALE VENUS LEGACY', 'Venus Legacy – corp'], ['EPILARE DEFINITIVA CU SPLENDOR X FEMEI', 'Epilare Splendor X – femei'], ['EPILARE DEFINITIVA CU SPLENDOR X BARBATI', 'Epilare Splendor X – bărbați']]],
-    ['Cosmetică & dermatologie', [['TRATAMENTE COSMETOLOGICE', 'Tratamente cosmetologice'], ['PEELING', 'Peeling'], ['DERMATOLOGIE', 'Dermatologie']]],
-    ['Chirurgie', [['MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ', 'Microchirurgie și chirurgie plastică'], ['ANALIZĂ ANATOMIE PATOLOGICĂ', 'Analize de anatomie patologică']]],
-    ['Regenerare', [['TERAPII INTRAVENOASE', 'Terapii intravenoase'], ['OZONOTERAPIE', 'Ozonoterapie'], ['TMS – Stimulare Magnetică Transcraniană', 'TMS – stimulare magnetică transcraniană'], ['TERAPIA VIELIGHT', 'Terapia Vielight']]],
-  ];
+  const PR_GRUPURI = PRT.PR_GRUPURI.map(([g, cs]) => [g, cs.map((x) => [...x])]);
   const slugPr = (x) => norm(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   // fiecare rând de preț → serviciul (și pagina nouă) căruia îi aparține
   const rowServ = new Map();
@@ -1871,7 +1867,8 @@ ${BOTTOM}`;
   const offName = (o) => offerLabel(o.nume);
   const maxDisc = Math.max(0, ...D.oferte.map((o) => o.discountProcent || 0));
   // ---------- vitrina ofertelor: câte un tab pentru fiecare grup (ofertele lunii, terapii intravenoase, epilare), carduri pe șină ----------
-  const offTab = (g) => (g === 'OFERTELE LUNII' ? ['Ofertele lunii', 'Estetică și chirurgie'] : /intraven|perfuz/i.test(g) ? ['Terapii intravenoase', 'Perfuzii, by Oxxygene'] : /epilare|splendor/i.test(g) ? ['Epilare definitivă', 'Splendor X'] : [offerGroup(g), 'Oferte']);
+  // tab-ul unui grup: numele grupului + categoriile din care vin ofertele lui
+  const offTab = (g) => [g, [...new Set(D.oferte.filter((o) => o.grup === g).map((o) => PRT.catInfo(o.categorie).nume.replace(/\s+[–-]\s+.*/, '')))].slice(0, 2).join(', ')];
   const offCard = (o) => `<article class="ps-card"><div class="ps-top">${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : '<small>Ofertă</small>'}${o.discountProcent ? `<span class="ps-disc">−${o.discountProcent}%</span>` : ''}</div><h3>${esc(offName(o))}</h3><div class="ps-foot"><span class="ps-price">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<b>${lei(o.pret)}</b></span><span class="ps-act">${wlBtn(`Ofertă: ${offName(o)}`, o.pret, '/nou/preturi/#oferte', true)}<a class="ps-cta" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">Rezervă</a></span></div></article>`;
   const spotHtml = D.oferte.length ? `<div class="ps" id="oferte">
   <div class="wrap">

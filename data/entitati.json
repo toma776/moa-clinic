@@ -1846,7 +1846,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1857,7 +1856,6 @@
             {
               "valoare": 2100,
               "moneda": "RON",
-              "text": "2100 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1868,7 +1866,6 @@
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1879,7 +1876,6 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1888,9 +1884,9 @@
           "nume": "Sculptra, o fiolă",
           "preturi": [
             {
-              "valoare": 3000,
+              "valoare": 2500,
               "moneda": "RON",
-              "text": "3000 LEI – ȘEDINȚĂ",
+              "pretInitial": 3000,
               "tip": "ședință"
             }
           ]
@@ -1901,7 +1897,6 @@
             {
               "valoare": 2100,
               "moneda": "RON",
-              "text": "2100 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1912,7 +1907,6 @@
             {
               "valoare": 2200,
               "moneda": "RON",
-              "text": "2200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1923,7 +1917,6 @@
             {
               "valoare": 3750,
               "moneda": "RON",
-              "text": "3750 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -1934,13 +1927,11 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2250,
               "moneda": "RON",
-              "text": "2250 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -1951,13 +1942,11 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -1968,13 +1957,11 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2550,
               "moneda": "RON",
-              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -1985,13 +1972,11 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 7000,
               "moneda": "RON",
-              "text": "7000 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -2002,7 +1987,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2013,7 +1997,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2024,13 +2007,11 @@
             {
               "valoare": 1050,
               "moneda": "RON",
-              "text": "1050 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2800,
               "moneda": "RON",
-              "text": "2800 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2041,13 +2022,11 @@
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 4000,
               "moneda": "RON",
-              "text": "4000 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2058,13 +2037,11 @@
             {
               "valoare": 150,
               "moneda": "RON",
-              "text": "150 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2075,7 +2052,6 @@
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2086,7 +2062,6 @@
             {
               "valoare": 1350,
               "moneda": "RON",
-              "text": "1350 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2097,7 +2072,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2106,9 +2080,9 @@
           "nume": "Rejuran față/gât/decolteu (1 mL)",
           "preturi": [
             {
-              "valoare": 1600,
+              "valoare": 1500,
               "moneda": "RON",
-              "text": "1600 LEI – ȘEDINȚĂ",
+              "pretInitial": 1600,
               "tip": "ședință"
             }
           ]
@@ -2119,7 +2093,6 @@
             {
               "valoare": 2400,
               "moneda": "RON",
-              "text": "2400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2135,7 +2108,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI - ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2146,7 +2118,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI (DE LA 900 LEI) – ȘEDINȚĂ",
               "pretInitial": 900,
               "tip": "ședință"
             }
@@ -2158,7 +2129,6 @@
             {
               "valoare": 999,
               "moneda": "RON",
-              "text": "999 LEI (DE LA 1250 LEI)– ȘEDINȚĂ",
               "pretInitial": 1250,
               "tip": "ședință"
             }
@@ -2170,7 +2140,6 @@
             {
               "valoare": 1099,
               "moneda": "RON",
-              "text": "1099 LEI (DE LA 1500 LEI)– ȘEDINȚĂ",
               "pretInitial": 1500,
               "tip": "ședință"
             }
@@ -2182,7 +2151,6 @@
             {
               "valoare": 1300,
               "moneda": "RON",
-              "text": "1300 LEI (DE LA 1700 LEI)– ȘEDINȚĂ",
               "pretInitial": 1700,
               "tip": "ședință"
             }
@@ -2194,7 +2162,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2205,7 +2172,6 @@
             {
               "valoare": 1450,
               "moneda": "RON",
-              "text": "1450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2216,7 +2182,6 @@
             {
               "valoare": 1800,
               "moneda": "RON",
-              "text": "1800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2227,7 +2192,6 @@
             {
               "valoare": 1199,
               "moneda": "RON",
-              "text": "1199 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2238,7 +2202,6 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2249,7 +2212,6 @@
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2266,7 +2228,6 @@
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI (de la 1400 LEI)",
               "pretInitial": 1400,
               "tip": "preț"
             }
@@ -2279,7 +2240,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2291,7 +2251,6 @@
             {
               "valoare": 1150,
               "moneda": "RON",
-              "text": "1150 LEI",
               "tip": "preț"
             }
           ]
@@ -2303,7 +2262,6 @@
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI",
               "tip": "preț"
             }
           ]
@@ -2315,7 +2273,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2327,7 +2284,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2339,7 +2295,6 @@
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600 LEI",
               "tip": "preț"
             }
           ]
@@ -2351,7 +2306,6 @@
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2363,7 +2317,6 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI",
               "tip": "preț"
             }
           ]
@@ -2375,7 +2328,6 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI",
               "tip": "preț"
             }
           ]
@@ -2385,9 +2337,9 @@
           "subgrup": "AUGMENTARE PENIANĂ",
           "preturi": [
             {
-              "valoare": 4000,
+              "valoare": 3500,
               "moneda": "RON",
-              "text": "4000 LEI – ȘEDINȚĂ",
+              "pretInitial": 4000,
               "tip": "ședință"
             }
           ]
@@ -2399,7 +2351,6 @@
             {
               "valoare": 5500,
               "moneda": "RON",
-              "text": "5500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2415,13 +2366,11 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2550,
               "moneda": "RON",
-              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2432,13 +2381,11 @@
             {
               "valoare": 990,
               "moneda": "RON",
-              "text": "990 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2820,
               "moneda": "RON",
-              "text": "2820 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2449,13 +2396,11 @@
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 3300,
               "moneda": "RON",
-              "text": "3300 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2466,13 +2411,11 @@
             {
               "valoare": 1190,
               "moneda": "RON",
-              "text": "1190 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 3370,
               "moneda": "RON",
-              "text": "3370 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2483,13 +2426,11 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2550,
               "moneda": "RON",
-              "text": "2550 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2500,13 +2441,11 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1950,
               "moneda": "RON",
-              "text": "1950 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2517,13 +2456,11 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1950,
               "moneda": "RON",
-              "text": "1950 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2539,7 +2476,6 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2550,13 +2486,11 @@
             {
               "valoare": 650,
               "moneda": "RON",
-              "text": "650 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1800,
               "moneda": "RON",
-              "text": "1800 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2567,13 +2501,11 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -2589,7 +2521,6 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2600,7 +2531,6 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2611,7 +2541,6 @@
             {
               "valoare": 100,
               "moneda": "RON",
-              "text": "100 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2622,7 +2551,6 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2633,7 +2561,6 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2644,7 +2571,6 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2655,7 +2581,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2666,7 +2591,6 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2677,7 +2601,6 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2688,7 +2611,6 @@
             {
               "valoare": 100,
               "moneda": "RON",
-              "text": "100 LEI",
               "tip": "preț"
             }
           ]
@@ -2699,7 +2621,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2710,7 +2631,6 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -2726,7 +2646,6 @@
             {
               "valoare": 8000,
               "moneda": "RON",
-              "text": "8000 LEI",
               "tip": "preț"
             }
           ]
@@ -2737,7 +2656,6 @@
             {
               "valoare": 8000,
               "moneda": "RON",
-              "text": "8000 LEI",
               "tip": "preț"
             }
           ]
@@ -2748,7 +2666,6 @@
             {
               "valoare": 6000,
               "moneda": "RON",
-              "text": "6000 LEI",
               "tip": "preț"
             }
           ]
@@ -2757,9 +2674,9 @@
           "nume": "Blefaroplastie superioară",
           "preturi": [
             {
-              "valoare": 7000,
+              "valoare": 5000,
               "moneda": "RON",
-              "text": "7000 LEI",
+              "pretInitial": 7000,
               "tip": "preț"
             }
           ]
@@ -2770,7 +2687,6 @@
             {
               "valoare": 8000,
               "moneda": "RON",
-              "text": "8000 LEI",
               "tip": "preț"
             }
           ]
@@ -2781,7 +2697,6 @@
             {
               "valoare": 7000,
               "moneda": "RON",
-              "text": "7000 LEI",
               "tip": "preț"
             }
           ]
@@ -2792,7 +2707,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI / lob",
               "tip": "preț"
             }
           ]
@@ -2803,7 +2717,6 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI",
               "tip": "preț"
             }
           ]
@@ -2814,7 +2727,6 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI",
               "tip": "preț"
             }
           ]
@@ -2825,7 +2737,6 @@
             {
               "valoare": 2500,
               "moneda": "RON",
-              "text": "2500 LEI",
               "tip": "preț"
             }
           ]
@@ -2836,7 +2747,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2847,7 +2757,6 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI",
               "tip": "preț"
             }
           ]
@@ -2858,7 +2767,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI",
               "tip": "preț"
             }
           ]
@@ -2869,7 +2777,6 @@
             {
               "valoare": 5000,
               "moneda": "RON",
-              "text": "5000 LEI",
               "tip": "preț"
             }
           ]
@@ -2880,7 +2787,6 @@
             {
               "valoare": 6000,
               "moneda": "RON",
-              "text": "6000 LEI",
               "tip": "preț"
             }
           ]
@@ -2891,7 +2797,6 @@
             {
               "valoare": 3500,
               "moneda": "RON",
-              "text": "3500 LEI",
               "tip": "preț"
             }
           ]
@@ -2902,7 +2807,6 @@
             {
               "valoare": 4000,
               "moneda": "RON",
-              "text": "4000 LEI",
               "tip": "preț"
             }
           ]
@@ -2913,7 +2817,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI",
               "tip": "preț"
             }
           ]
@@ -2924,7 +2827,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2935,7 +2837,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -2946,7 +2847,6 @@
             {
               "valoare": 750,
               "moneda": "RON",
-              "text": "750 LEI",
               "tip": "preț"
             }
           ]
@@ -2957,7 +2857,6 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI",
               "tip": "preț"
             }
           ]
@@ -2968,7 +2867,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI",
               "tip": "preț"
             }
           ]
@@ -2979,7 +2877,6 @@
             {
               "valoare": 4000,
               "moneda": "RON",
-              "text": "4000 LEI",
               "tip": "preț"
             }
           ]
@@ -2990,7 +2887,6 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI",
               "tip": "preț"
             }
           ]
@@ -3001,7 +2897,6 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI",
               "tip": "preț"
             }
           ]
@@ -3012,7 +2907,6 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI",
               "tip": "preț"
             }
           ]
@@ -3023,7 +2917,6 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI",
               "tip": "preț"
             }
           ]
@@ -3034,7 +2927,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI",
               "tip": "preț"
             }
           ]
@@ -3045,18 +2937,28 @@
       "categorie": "TRATAMENTE COSMETOLOGICE",
       "servicii": [
         {
+          "nume": "Pachet Dermalinfusion + Venus Legacy (facial)",
+          "preturi": [
+            {
+              "valoare": 499,
+              "moneda": "RON",
+              "pretInitial": 900,
+              "tip": "ședință"
+            }
+          ]
+        },
+        {
           "nume": "Tratament DERMALINFUSION Facial",
           "preturi": [
             {
-              "valoare": 600,
+              "valoare": 399,
               "moneda": "RON",
-              "text": "600 LEI – ȘEDINȚĂ",
+              "pretInitial": 600,
               "tip": "ședință"
             },
             {
               "valoare": 1197,
               "moneda": "RON",
-              "text": "1197 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3067,13 +2969,11 @@
             {
               "valoare": 690,
               "moneda": "RON",
-              "text": "690 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1497,
               "moneda": "RON",
-              "text": "1497 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3084,13 +2984,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3101,13 +2999,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3118,13 +3014,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3135,13 +3029,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3152,13 +3044,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3169,13 +3059,11 @@
             {
               "valoare": 550,
               "moneda": "RON",
-              "text": "550 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3186,13 +3074,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3203,13 +3089,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1350,
               "moneda": "RON",
-              "text": "1350 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3220,13 +3104,11 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1650,
               "moneda": "RON",
-              "text": "1650 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3237,13 +3119,11 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1650,
               "moneda": "RON",
-              "text": "1650 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3254,13 +3134,11 @@
             {
               "valoare": 650,
               "moneda": "RON",
-              "text": "650 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1800,
               "moneda": "RON",
-              "text": "1800 LEI – PACHET 3 ȘEDINȚE",
               "tip": "pachet 3 ședințe"
             }
           ]
@@ -3271,13 +3149,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3293,13 +3169,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3310,13 +3184,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1600,
               "moneda": "RON",
-              "text": "1600 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3327,13 +3199,11 @@
             {
               "valoare": 690,
               "moneda": "RON",
-              "text": "690 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2400,
               "moneda": "RON",
-              "text": "2400 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3349,13 +3219,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1200,
               "moneda": "RON",
-              "text": "1200 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3366,13 +3234,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3383,13 +3249,11 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2800,
               "moneda": "RON",
-              "text": "2800 LEI – PACHET 4 ȘEDINȚE",
               "tip": "pachet 4 ședințe"
             }
           ]
@@ -3406,9 +3270,8 @@
             {
               "valoare": 999,
               "moneda": "RON",
-              "text": "999LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 2000
+              "pretInitial": 2000,
+              "tip": "ședință"
             }
           ]
         },
@@ -3419,9 +3282,8 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 700
+              "pretInitial": 700,
+              "tip": "ședință"
             }
           ]
         },
@@ -3432,9 +3294,8 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 1000
+              "pretInitial": 1000,
+              "tip": "ședință"
             }
           ]
         },
@@ -3445,9 +3306,8 @@
             {
               "valoare": 750,
               "moneda": "RON",
-              "text": "750 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 1000
+              "pretInitial": 1000,
+              "tip": "ședință"
             }
           ]
         },
@@ -3458,13 +3318,11 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3476,13 +3334,11 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3494,13 +3350,11 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3512,13 +3366,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2250,
               "moneda": "RON",
-              "text": "2250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3530,13 +3382,11 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1750,
               "moneda": "RON",
-              "text": "1750 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3548,13 +3398,11 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3566,13 +3414,11 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2250,
               "moneda": "RON",
-              "text": "2250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3584,13 +3430,11 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1250,
               "moneda": "RON",
-              "text": "1250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3602,13 +3446,11 @@
             {
               "valoare": 550,
               "moneda": "RON",
-              "text": "550 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2750,
               "moneda": "RON",
-              "text": "2750 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3620,13 +3462,11 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 5000,
               "moneda": "RON",
-              "text": "5000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3638,13 +3478,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2500,
               "moneda": "RON",
-              "text": "2500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3656,13 +3494,11 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2500,
               "moneda": "RON",
-              "text": "2500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3674,13 +3510,11 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 5000,
               "moneda": "RON",
-              "text": "5000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3697,9 +3531,8 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 4000
+              "pretInitial": 4000,
+              "tip": "ședință"
             }
           ]
         },
@@ -3710,9 +3543,8 @@
             {
               "valoare": 850,
               "moneda": "RON",
-              "text": "850 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 1100
+              "pretInitial": 1100,
+              "tip": "ședință"
             }
           ]
         },
@@ -3723,9 +3555,8 @@
             {
               "valoare": 650,
               "moneda": "RON",
-              "text": "650 LEI – ȘEDINȚĂ",
-              "tip": "ședință",
-              "pretInitial": 900
+              "pretInitial": 900,
+              "tip": "ședință"
             }
           ]
         },
@@ -3736,13 +3567,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3754,13 +3583,11 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3772,13 +3599,11 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1750,
               "moneda": "RON",
-              "text": "1750 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3790,13 +3615,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3808,13 +3631,11 @@
             {
               "valoare": 850,
               "moneda": "RON",
-              "text": "850 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 4250,
               "moneda": "RON",
-              "text": "4250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3826,13 +3647,11 @@
             {
               "valoare": 650,
               "moneda": "RON",
-              "text": "650 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 3250,
               "moneda": "RON",
-              "text": "3250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3844,13 +3663,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3862,13 +3679,11 @@
             {
               "valoare": 850,
               "moneda": "RON",
-              "text": "850 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 4250,
               "moneda": "RON",
-              "text": "4250 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3880,13 +3695,11 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3898,13 +3711,11 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 5000,
               "moneda": "RON",
-              "text": "5000 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3916,13 +3727,11 @@
             {
               "valoare": 1950,
               "moneda": "RON",
-              "text": "1950 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 9750,
               "moneda": "RON",
-              "text": "9750 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3934,13 +3743,11 @@
             {
               "valoare": 900,
               "moneda": "RON",
-              "text": "900 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 4500,
               "moneda": "RON",
-              "text": "4500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3952,13 +3759,11 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 3500,
               "moneda": "RON",
-              "text": "3500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3970,13 +3775,11 @@
             {
               "valoare": 1100,
               "moneda": "RON",
-              "text": "1100 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 5500,
               "moneda": "RON",
-              "text": "5500 LEI – PACHET 5+1 GRATUIT",
               "tip": "pachet 5+1 gratuit"
             }
           ]
@@ -3992,13 +3795,11 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2100,
               "moneda": "RON",
-              "text": "2100 LEI – PACHET 2 ȘEDINȚE",
               "tip": "pachet 2 ședințe"
             }
           ]
@@ -4009,13 +3810,11 @@
             {
               "valoare": 2000,
               "moneda": "RON",
-              "text": "2000 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 3100,
               "moneda": "RON",
-              "text": "3100 LEI – PACHET 2 ȘEDINȚE",
               "tip": "pachet 2 ședințe"
             }
           ]
@@ -4026,13 +3825,11 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 1400,
               "moneda": "RON",
-              "text": "1400 LEI – PACHET 2 ȘEDINȚE",
               "tip": "pachet 2 ședințe"
             }
           ]
@@ -4043,13 +3840,11 @@
             {
               "valoare": 1500,
               "moneda": "RON",
-              "text": "1500 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 2600,
               "moneda": "RON",
-              "text": "2600 LEI – PACHET 2 ȘEDINȚE",
               "tip": "pachet 2 ședințe"
             }
           ]
@@ -4060,13 +3855,11 @@
             {
               "valoare": 2800,
               "moneda": "RON",
-              "text": "2800 LEI – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 4800,
               "moneda": "RON",
-              "text": "4800 LEI – PACHET 2 ȘEDINȚE",
               "tip": "pachet 2 ședințe"
             }
           ]
@@ -4077,19 +3870,16 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI (Zonă mică 5 cm2)– ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 650,
               "moneda": "RON",
-              "text": "650 LEI (Zonă medie 10 cm2) – ȘEDINȚĂ",
               "tip": "ședință"
             },
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI (Zonă mare 15 cm2) – ȘEDINȚĂ",
               "tip": "ședință"
             }
           ]
@@ -4105,7 +3895,6 @@
             {
               "valoare": 450,
               "moneda": "RON",
-              "text": "450 LEI",
               "tip": "preț"
             }
           ]
@@ -4116,7 +3905,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI",
               "tip": "preț"
             }
           ]
@@ -4127,7 +3915,6 @@
             {
               "valoare": 700,
               "moneda": "RON",
-              "text": "700 LEI",
               "tip": "preț"
             }
           ]
@@ -4138,7 +3925,6 @@
             {
               "valoare": 150,
               "moneda": "RON",
-              "text": "150 LEI",
               "tip": "preț"
             }
           ]
@@ -4154,7 +3940,6 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI",
               "tip": "preț"
             }
           ]
@@ -4165,7 +3950,6 @@
             {
               "valoare": 2800,
               "moneda": "RON",
-              "text": "2800 LEI",
               "tip": "preț"
             }
           ]
@@ -4176,7 +3960,6 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI",
               "tip": "preț"
             }
           ]
@@ -4187,7 +3970,6 @@
             {
               "valoare": 2800,
               "moneda": "RON",
-              "text": "2800 LEI",
               "tip": "preț"
             }
           ]
@@ -4198,7 +3980,6 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI",
               "tip": "preț"
             }
           ]
@@ -4209,7 +3990,6 @@
             {
               "valoare": 1800,
               "moneda": "RON",
-              "text": "1800 LEI",
               "tip": "preț"
             }
           ]
@@ -4225,7 +4005,6 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI",
               "tip": "preț"
             }
           ]
@@ -4236,7 +4015,6 @@
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI",
               "tip": "preț"
             }
           ]
@@ -4247,7 +4025,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI",
               "tip": "preț"
             }
           ]
@@ -4258,7 +4035,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI",
               "tip": "preț"
             }
           ]
@@ -4269,7 +4045,6 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI",
               "tip": "preț"
             }
           ]
@@ -4280,7 +4055,6 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI",
               "tip": "preț"
             }
           ]
@@ -4297,7 +4071,6 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 RON",
               "tip": "preț"
             }
           ]
@@ -4309,7 +4082,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 RON",
               "tip": "preț"
             }
           ]
@@ -4321,7 +4093,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 RON",
               "tip": "preț"
             }
           ]
@@ -4333,7 +4104,6 @@
             {
               "valoare": 1900,
               "moneda": "RON",
-              "text": "1900 RON",
               "tip": "preț"
             }
           ]
@@ -4345,7 +4115,6 @@
             {
               "valoare": 1900,
               "moneda": "RON",
-              "text": "1900 RON",
               "tip": "preț"
             }
           ]
@@ -4357,7 +4126,6 @@
             {
               "valoare": 1900,
               "moneda": "RON",
-              "text": "1900 RON",
               "tip": "preț"
             }
           ]
@@ -4373,7 +4141,6 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI",
               "tip": "preț"
             }
           ]
@@ -4384,7 +4151,6 @@
             {
               "valoare": 440,
               "moneda": "RON",
-              "text": "440 LEI",
               "tip": "preț"
             }
           ]
@@ -4395,7 +4161,6 @@
             {
               "valoare": 440,
               "moneda": "RON",
-              "text": "440 LEI",
               "tip": "preț"
             }
           ]
@@ -4406,7 +4171,6 @@
             {
               "valoare": 550,
               "moneda": "RON",
-              "text": "550 LEI",
               "tip": "preț"
             }
           ]
@@ -4417,7 +4181,6 @@
             {
               "valoare": 360,
               "moneda": "RON",
-              "text": "360 LEI",
               "tip": "preț"
             }
           ]
@@ -4428,7 +4191,6 @@
             {
               "valoare": 380,
               "moneda": "RON",
-              "text": "380 LEI",
               "tip": "preț"
             }
           ]
@@ -4439,7 +4201,6 @@
             {
               "valoare": 370,
               "moneda": "RON",
-              "text": "370 LEI",
               "tip": "preț"
             }
           ]
@@ -4450,7 +4211,6 @@
             {
               "valoare": 470,
               "moneda": "RON",
-              "text": "470 LEI",
               "tip": "preț"
             }
           ]
@@ -4461,7 +4221,6 @@
             {
               "valoare": 535,
               "moneda": "RON",
-              "text": "535 LEI",
               "tip": "preț"
             }
           ]
@@ -4472,7 +4231,6 @@
             {
               "valoare": 380,
               "moneda": "RON",
-              "text": "380 LEI",
               "tip": "preț"
             }
           ]
@@ -4483,7 +4241,6 @@
             {
               "valoare": 200,
               "moneda": "RON",
-              "text": "200 LEI",
               "tip": "preț"
             }
           ]
@@ -4494,7 +4251,6 @@
             {
               "valoare": 300,
               "moneda": "RON",
-              "text": "300 LEI",
               "tip": "preț"
             }
           ]
@@ -4505,7 +4261,6 @@
             {
               "valoare": 480,
               "moneda": "RON",
-              "text": "480 LEI",
               "tip": "preț"
             }
           ]
@@ -4516,7 +4271,6 @@
             {
               "valoare": 350,
               "moneda": "RON",
-              "text": "350 LEI",
               "tip": "preț"
             }
           ]
@@ -4527,7 +4281,6 @@
             {
               "valoare": 210,
               "moneda": "RON",
-              "text": "210 LEI",
               "tip": "preț"
             }
           ]
@@ -4538,7 +4291,6 @@
             {
               "valoare": 1000,
               "moneda": "RON",
-              "text": "1000 LEI",
               "tip": "preț"
             }
           ]
@@ -4549,7 +4301,6 @@
             {
               "valoare": 190,
               "moneda": "RON",
-              "text": "190 LEI",
               "tip": "preț"
             }
           ]
@@ -4560,7 +4311,6 @@
             {
               "valoare": 250,
               "moneda": "RON",
-              "text": "250 LEI",
               "tip": "preț"
             }
           ]
@@ -4571,7 +4321,6 @@
             {
               "valoare": 180,
               "moneda": "RON",
-              "text": "180 LEI",
               "tip": "preț"
             }
           ]
@@ -4582,7 +4331,6 @@
             {
               "valoare": 480,
               "moneda": "RON",
-              "text": "480 LEI",
               "tip": "preț"
             }
           ]
@@ -4593,7 +4341,6 @@
             {
               "valoare": 230,
               "moneda": "RON",
-              "text": "230 LEI",
               "tip": "preț"
             }
           ]
@@ -4604,7 +4351,7 @@
             {
               "valoare": 600,
               "moneda": "RON",
-              "text": "600 LEI",
+              "pretInitial": 900,
               "tip": "preț"
             }
           ]
@@ -4615,7 +4362,6 @@
             {
               "valoare": 500,
               "moneda": "RON",
-              "text": "500 LEI",
               "tip": "preț"
             }
           ]
@@ -4626,7 +4372,6 @@
             {
               "valoare": 480,
               "moneda": "RON",
-              "text": "480 LEI",
               "tip": "preț"
             }
           ]
@@ -4637,7 +4382,6 @@
             {
               "valoare": 280,
               "moneda": "RON",
-              "text": "280 LEI",
               "tip": "preț"
             }
           ]
@@ -4648,7 +4392,6 @@
             {
               "valoare": 150,
               "moneda": "RON",
-              "text": "150 LEI",
               "tip": "preț"
             }
           ]
@@ -4659,7 +4402,7 @@
             {
               "valoare": 220,
               "moneda": "RON",
-              "text": "220 LEI",
+              "pretInitial": 300,
               "tip": "preț"
             }
           ]
@@ -4670,7 +4413,6 @@
             {
               "valoare": 150,
               "moneda": "RON",
-              "text": "150 LEI",
               "tip": "preț"
             }
           ]
@@ -4681,7 +4423,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI",
               "tip": "preț"
             }
           ]
@@ -4692,7 +4433,6 @@
             {
               "valoare": 800,
               "moneda": "RON",
-              "text": "800 LEI",
               "tip": "preț"
             }
           ]
@@ -4703,7 +4443,6 @@
             {
               "valoare": 750,
               "moneda": "RON",
-              "text": "750 LEI",
               "tip": "preț"
             }
           ]
@@ -4714,7 +4453,6 @@
             {
               "valoare": 750,
               "moneda": "RON",
-              "text": "750 LEI",
               "tip": "preț"
             }
           ]
@@ -4730,13 +4468,11 @@
             {
               "valoare": 150,
               "moneda": "RON",
-              "text": "150 LEI PER SEDINTA",
               "tip": "ședință"
             },
             {
               "valoare": 400,
               "moneda": "RON",
-              "text": "400 LEI PACHET 3 SEDINTE",
               "tip": "pachet 3 sedinte"
             }
           ]
@@ -4746,121 +4482,287 @@
   ],
   "oferte": [
     {
-      "grup": "OFERTELE LUNII",
-      "nume": "TOXINA BOTULINICA 3 ZONE",
-      "detalii": null,
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "nume": "Corecție riduri de expresie: tratament complet, 3 zone- femei",
+      "detalii": "Toxină botulinică (Botox)",
       "pret": 1099,
       "pretInitial": 1500,
       "discountProcent": 27,
-      "moneda": "RON"
+      "moneda": "RON",
+      "servicii": [
+        "injectare-botox"
+      ],
+      "rand": "h2s6k0sk"
     },
     {
-      "grup": "OFERTELE LUNII",
-      "nume": "SCULPTRA 1 Fiola",
-      "detalii": null,
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "nume": "Corecție riduri de expresie: tratament complet, 3 zone- bărbați",
+      "detalii": "Toxină botulinică (Botox)",
+      "pret": 1300,
+      "pretInitial": 1700,
+      "discountProcent": 24,
+      "moneda": "RON",
+      "servicii": [
+        "injectare-botox"
+      ],
+      "rand": "dgmhjzvg"
+    },
+    {
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "nume": "Corecție riduri de expresie: tratament 2 zone",
+      "detalii": "Toxină botulinică (Botox)",
+      "pret": 999,
+      "pretInitial": 1250,
+      "discountProcent": 20,
+      "moneda": "RON",
+      "servicii": [
+        "injectare-botox"
+      ],
+      "rand": "y3ym3gqd"
+    },
+    {
+      "grup": "Injectabile",
+      "categorie": "REJUVENARE FACIALĂ",
+      "nume": "Sculptra, o fiolă",
+      "detalii": "Rejuvenare facială",
       "pret": 2500,
       "pretInitial": 3000,
       "discountProcent": 17,
-      "moneda": "RON"
+      "moneda": "RON",
+      "servicii": [
+        "sculptra"
+      ],
+      "rand": "g2565w24"
     },
     {
-      "grup": "OFERTELE LUNII",
-      "nume": "REJURAN – POLINUCLEOTIDE (1 mL)",
-      "detalii": null,
-      "pret": 1500,
-      "pretInitial": 1600,
-      "discountProcent": 6,
-      "moneda": "RON"
-    },
-    {
-      "grup": "OFERTELE LUNII",
-      "nume": "Blefaroplastie Superioara",
-      "detalii": null,
-      "pret": 5000,
-      "pretInitial": 7000,
-      "discountProcent": 29,
-      "moneda": "RON"
-    },
-    {
-      "grup": "OFERTELE LUNII",
-      "nume": "Pachet Dermalinfusion + Venus Legacy (Facial)",
-      "detalii": "1 SEDINTA",
-      "pret": 499,
-      "pretInitial": 900,
-      "discountProcent": 45,
-      "moneda": "RON"
-    },
-    {
-      "grup": "OFERTELE LUNII",
-      "nume": "1 SEDINTA TRATAMENT DERMALINFUSION (Facial)",
-      "detalii": "1 SEDINTA",
-      "pret": 399,
-      "pretInitial": 600,
-      "discountProcent": 34,
-      "moneda": "RON"
-    },
-    {
-      "grup": "OFERTELE LUNII",
-      "nume": "AUGMENTARE BUZE",
-      "detalii": "Cu Acid Hialuronic 1 mL Stylage",
-      "pret": 1250,
-      "pretInitial": 1400,
-      "discountProcent": 11,
-      "moneda": "RON"
-    },
-    {
-      "grup": "OFERTELE LUNII",
-      "nume": "AUGMENTARE PENIS",
-      "detalii": "Cu Acid Hialuronic 10 mL",
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI ACID HIALURONIC",
+      "nume": "Augmentare peniană – 10 mL acid hialuronic",
+      "detalii": "Acid hialuronic",
       "pret": 3500,
       "pretInitial": 4000,
       "discountProcent": 13,
-      "moneda": "RON"
+      "moneda": "RON",
+      "servicii": [
+        "injectari-acid-hialuronic",
+        "marirea-penisului-acid-hialuronic"
+      ],
+      "rand": "vwv1js6n"
     },
     {
-      "grup": "Terapii intravenoase by Oxxygene",
-      "nume": "GLUTATION THERAPY",
-      "detalii": null,
-      "pret": 220,
-      "pretInitial": 300,
-      "discountProcent": 27,
-      "moneda": "RON"
-    },
-    {
-      "grup": "Terapii intravenoase by Oxxygene",
-      "nume": "NAD+ LONGEVITY BOOST",
-      "detalii": null,
-      "pret": 600,
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "nume": "Corecție riduri de expresie 1 zonă: frunte/ ochi/intre sprâncene",
+      "detalii": "Toxină botulinică (Botox)",
+      "pret": 800,
       "pretInitial": 900,
-      "discountProcent": 33,
-      "moneda": "RON"
+      "discountProcent": 11,
+      "moneda": "RON",
+      "servicii": [
+        "injectare-botox"
+      ],
+      "rand": "0wawbp3c"
     },
     {
-      "grup": "Oferte Epilare Definitiva SplendorX",
-      "nume": "Full Body | 6 zone la alegere",
-      "detalii": null,
+      "grup": "Injectabile",
+      "categorie": "INJECTĂRI ACID HIALURONIC",
+      "nume": "1 mL STYLAGE",
+      "detalii": "Acid hialuronic",
+      "pret": 1250,
+      "pretInitial": 1400,
+      "discountProcent": 11,
+      "moneda": "RON",
+      "servicii": [
+        "injectari-acid-hialuronic",
+        "augmentare-buze"
+      ],
+      "rand": "gwqerl4w"
+    },
+    {
+      "grup": "Injectabile",
+      "categorie": "REJUVENARE FACIALĂ",
+      "nume": "Rejuran față/gât/decolteu (1 mL)",
+      "detalii": "Rejuvenare facială",
+      "pret": 1500,
+      "pretInitial": 1600,
+      "discountProcent": 6,
+      "moneda": "RON",
+      "servicii": [
+        "polinucleotide"
+      ],
+      "rand": "rwfw6oaj"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "nume": "Full Body - 6 zone la alegere",
+      "detalii": "Epilare Splendor X – femei",
       "pret": 999,
       "pretInitial": 2000,
       "discountProcent": 50,
-      "moneda": "RON"
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "okk0wh2p"
     },
     {
-      "grup": "Oferte Epilare Definitiva SplendorX",
-      "nume": "Gambă | Axilă | Inghinal integral | Linie bikini | Interfesier",
-      "detalii": null,
-      "pret": 500,
-      "pretInitial": 1000,
-      "discountProcent": 50,
-      "moneda": "RON"
-    },
-    {
-      "grup": "Oferte Epilare Definitiva SplendorX",
-      "nume": "Axilă | Inghinal integral | Linie bikini | Interfesier",
-      "detalii": null,
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "nume": "Axilă + Inghinal Integral + Linie Bikini + Interfesier",
+      "detalii": "Epilare Splendor X – femei",
       "pret": 350,
       "pretInitial": 700,
       "discountProcent": 50,
-      "moneda": "RON"
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "m86amo5b"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "nume": "Axilă + Gambă + Inghinal Integral + Linie Bikini + Interfesier",
+      "detalii": "Epilare Splendor X – femei",
+      "pret": 500,
+      "pretInitial": 1000,
+      "discountProcent": 50,
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "9xren473"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+      "nume": "Full Body - 6 zone la alegere",
+      "detalii": "Epilare Splendor X – bărbați",
+      "pret": 2000,
+      "pretInitial": 4000,
+      "discountProcent": 50,
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "vk0v4hrm"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+      "nume": "Piept",
+      "detalii": "Epilare Splendor X – bărbați",
+      "pret": 650,
+      "pretInitial": 900,
+      "discountProcent": 28,
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "xbar1a4g"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "nume": "Picioare integral (coapse+gambe)",
+      "detalii": "Epilare Splendor X – femei",
+      "pret": 750,
+      "pretInitial": 1000,
+      "discountProcent": 25,
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "rw8ucwpy"
+    },
+    {
+      "grup": "Aparatură",
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+      "nume": "Spate integral",
+      "detalii": "Epilare Splendor X – bărbați",
+      "pret": 850,
+      "pretInitial": 1100,
+      "discountProcent": 23,
+      "moneda": "RON",
+      "servicii": [
+        "epilare-definitiva-bucuresti"
+      ],
+      "rand": "vumkpfnc"
+    },
+    {
+      "grup": "Cosmetică & dermatologie",
+      "categorie": "TRATAMENTE COSMETOLOGICE",
+      "nume": "Pachet Dermalinfusion + Venus Legacy (facial)",
+      "detalii": "Tratamente cosmetologice",
+      "pret": 499,
+      "pretInitial": 900,
+      "discountProcent": 45,
+      "moneda": "RON",
+      "servicii": [
+        "dermalinfusion",
+        "venus-legacy"
+      ],
+      "rand": "gl9la2s0"
+    },
+    {
+      "grup": "Cosmetică & dermatologie",
+      "categorie": "TRATAMENTE COSMETOLOGICE",
+      "nume": "Tratament DERMALINFUSION Facial · ședință",
+      "detalii": "Tratamente cosmetologice",
+      "pret": 399,
+      "pretInitial": 600,
+      "discountProcent": 34,
+      "moneda": "RON",
+      "servicii": [
+        "dermalinfusion"
+      ],
+      "rand": "6omx73hr"
+    },
+    {
+      "grup": "Chirurgie",
+      "categorie": "MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ",
+      "nume": "Blefaroplastie superioară",
+      "detalii": "Microchirurgie și chirurgie plastică",
+      "pret": 5000,
+      "pretInitial": 7000,
+      "discountProcent": 29,
+      "moneda": "RON",
+      "servicii": [
+        "blefaroplastie"
+      ],
+      "rand": "7la41iyv"
+    },
+    {
+      "grup": "Regenerare",
+      "categorie": "TERAPII INTRAVENOASE",
+      "nume": "MOA LONGEVITY BOOST (conține NAD+)",
+      "detalii": "Terapii intravenoase",
+      "pret": 600,
+      "pretInitial": 900,
+      "discountProcent": 33,
+      "moneda": "RON",
+      "servicii": [
+        "terapia-nad"
+      ],
+      "rand": "8fbke0er"
+    },
+    {
+      "grup": "Regenerare",
+      "categorie": "TERAPII INTRAVENOASE",
+      "nume": "GLUTATION THERAPY",
+      "detalii": "Terapii intravenoase",
+      "pret": 220,
+      "pretInitial": 300,
+      "discountProcent": 27,
+      "moneda": "RON",
+      "servicii": [
+        "glutation"
+      ],
+      "rand": "9qp620iu"
     }
   ],
   "schemaOrg": {
@@ -6635,7 +6537,7 @@
         {
           "nume": "Blefaroplastie superioară",
           "categorie": "MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ",
-          "valoare": 7000
+          "valoare": 5000
         },
         {
           "nume": "Blefaroplastie inferioară",
@@ -6737,7 +6639,7 @@
           "nume": "Augmentare peniană – 10 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
           "subgrup": "AUGMENTARE PENIANĂ",
-          "valoare": 4000
+          "valoare": 3500
         },
         {
           "nume": "Augmentare peniană – 20 mL acid hialuronic",
@@ -6871,6 +6773,30 @@
           "categorie": "INJECTĂRI ACID HIALURONIC",
           "subgrup": "CONTUR BUZE, VOLUM BUZE",
           "valoare": 1150
+        },
+        {
+          "nume": "1 mL STYLAGE",
+          "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "valoare": 1400
+        },
+        {
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "valoare": 1500
+        },
+        {
+          "nume": "1 mL STYLAGE",
+          "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "valoare": 1500
+        },
+        {
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "categorie": "INJECTĂRI ACID HIALURONIC",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "valoare": 1600
         }
       ],
       "surse": [
@@ -7319,7 +7245,7 @@
         {
           "nume": "Sculptra, o fiolă",
           "categorie": "REJUVENARE FACIALĂ",
-          "valoare": 3000
+          "valoare": 2500
         }
       ],
       "surse": [
@@ -7511,7 +7437,7 @@
           "nume": "Augmentare peniană – 10 mL acid hialuronic",
           "categorie": "INJECTĂRI ACID HIALURONIC",
           "subgrup": "AUGMENTARE PENIANĂ",
-          "valoare": 4000
+          "valoare": 3500
         },
         {
           "nume": "Augmentare peniană – 20 mL acid hialuronic",
@@ -7572,7 +7498,7 @@
         {
           "nume": "Rejuran față/gât/decolteu (1 mL)",
           "categorie": "REJUVENARE FACIALĂ",
-          "valoare": 1600
+          "valoare": 1500
         },
         {
           "nume": "Rejuran full face/alte zone (2mL)",
@@ -7729,9 +7655,14 @@
       ],
       "preturi": [
         {
+          "nume": "Pachet Dermalinfusion + Venus Legacy (facial)",
+          "categorie": "TRATAMENTE COSMETOLOGICE",
+          "valoare": 499
+        },
+        {
           "nume": "Tratament DERMALINFUSION Facial",
           "categorie": "TRATAMENTE COSMETOLOGICE",
-          "valoare": 600
+          "valoare": 399
         },
         {
           "nume": "Tratament DERMALINFUSION Față + Gât",
@@ -8320,6 +8251,11 @@
         "Dr. Iulia Nedelcu"
       ],
       "preturi": [
+        {
+          "nume": "Pachet Dermalinfusion + Venus Legacy (facial)",
+          "categorie": "TRATAMENTE COSMETOLOGICE",
+          "valoare": 499
+        },
         {
           "nume": "VENUS LEGACY 1 zonă: Față/gât/Decolteu",
           "categorie": "LIFTING FACIAL NON INVAZIV VENUS LEGACY",

@@ -6,6 +6,7 @@
 //   GET  /api/brand           -> data/brand.json        PUT -> salvează brand book-ul editat în panou
 //   GET  /api/site-health     -> data/site-health.json  POST /api/site-health/ruleaza -> crawl nou + analiză
 //   GET  /api/leads           -> data/leads.json        PUT -> înlocuiește lista · POST -> adaugă un lead · PATCH /api/leads/<id> -> completează
+//   GET  /api/preturi         -> data/preturi.json      PUT -> salvează lista editată în panou, actualizează entitățile (prețuri, oferte) și regenerează site-ul nou
 //   GET  /api/intrebari/status                          PUT {id, status, intrebare?, raspuns?, nota?} -> validarea unei întrebări
 //   GET  /api/observatii/status
 //   POST /api/observatii/verifica   {id, salveaza} -> rulează regula pe site-ul live; dacă trece și salveaza=true, o marchează rezolvată
@@ -29,6 +30,7 @@ const TYPES = {
 const JSON_FILES = {
   '/api/entitati': 'entitati.json', '/api/pages': 'pages.json', '/api/brand': 'brand.json', '/api/site-health': 'site-health.json',
   '/api/intrebari/status': 'intrebari-status.json', '/api/structura': 'structura.json', '/api/observatii/status': 'observatii-status.json', '/api/leads': 'leads.json',
+  '/api/preturi': 'preturi.json',
 };
 
 const readJson = (f, def) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch { return def; } };
@@ -82,6 +84,19 @@ async function api(req, res, url) {
   if (url === '/api/brand' && m === 'PUT') {
     writeJson('brand.json', await body(req));
     return sendJson(res, 200, { ok: true });
+  }
+
+  if (url === '/api/preturi' && m === 'PUT') {
+    const PRT = require('./scripts/preturi');
+    const b = await body(req);
+    if (!Array.isArray(b.categorii)) return sendJson(res, 400, { error: 'aștept { categorii: [...] }' });
+    const P = PRT.normalize(b);
+    PRT.save(P);
+    const D = readJson('entitati.json', null);
+    if (D) writeJson('entitati.json', PRT.apply(D, P));
+    let build = 'ok';
+    try { await run('build-homepage.js'); } catch (e) { build = e.message.slice(0, 400); }
+    return sendJson(res, 200, { ok: true, preturi: P, oferte: PRT.offersOf(P).length, build });
   }
 
   if (url === '/api/leads' && m === 'PUT') {

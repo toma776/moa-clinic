@@ -473,3 +473,44 @@ h1 ~ .crumb { font: 400 13px/1.55 var(--sans); letter-spacing: 0; text-transform
 aside .logo small { line-height: 1.5; }
 .wl-items { margin: 6px 0 0; padding-left: 16px; display: grid; gap: 3px; }
 .wl-items li { line-height: 1.4; }
+
+/* ---------- Prețuri & oferte: editorul listei (manage/assets/preturi.js) ---------- */
+.pe-bar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 0; margin-bottom: 4px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.pe-sp { flex: 1; }
+.pe-noff { font-size: 13px; color: var(--muted); }
+.pe-noff b { color: var(--ok); font-size: 15px; }
+.pe-status { font-size: 12.5px; color: var(--muted); }
+.pe-status.dirty { color: var(--warn); font-weight: 600; }
+.pe-help { font-size: 13px; color: var(--muted); max-width: 900px; margin: 10px 0 14px; }
+.pe-cat { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; }
+.pe-cat > summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; list-style: none; }
+.pe-cat > summary::-webkit-details-marker { display: none; }
+.pe-cat > summary .name { font-weight: 600; }
+.pe-cat[open] > summary { border-bottom: 1px solid var(--line); }
+.pe-row { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(360px, 1.25fr) auto; gap: 10px 16px; align-items: start; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.pe-row:hover { background: var(--panel-2); }
+.pe-name > input { width: 100%; font-weight: 500; }
+.pe-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
+.pe-meta > input { width: 170px; padding: 4px 8px; font-size: 12.5px; }
+.pe-links { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.pe-links select { padding: 3px 6px; font-size: 12px; max-width: 150px; color: var(--muted); }
+.pe-unlink { border: 0; background: none; padding: 0 0 0 4px; color: inherit; font-size: 13px; line-height: 1; }
+.pe-ps { display: grid; gap: 6px; justify-items: start; }
+.pe-p { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pe-p.off { padding: 4px 6px; margin: -4px -6px; border-radius: 8px; background: var(--ok-soft); }
+.pe-tip { width: 140px; padding: 5px 8px; font-size: 12.5px; }
+.pe-txt { width: 200px; padding: 5px 8px; font-size: 12.5px; }
+.pe-lei { position: relative; display: inline-flex; align-items: center; }
+.pe-lei input { width: 96px; padding: 5px 30px 5px 8px; text-align: right; }
+.pe-lei i { position: absolute; right: 8px; font-style: normal; font-size: 11.5px; color: var(--muted); pointer-events: none; }
+.pe-pct input { width: 70px; padding-right: 24px; }
+.pe-fin input { font-weight: 600; color: var(--ok); }
+.pe-arrow { color: var(--muted); }
+.pe-chk { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; cursor: pointer; padding: 0 4px; }
+.pe-x { padding: 2px 7px; }
+.pe-addp { margin-top: 2px; }
+.pe-delr { align-self: start; }
+.pe-catfoot { display: flex; align-items: center; gap: 10px; padding: 10px 16px; }
+.pe-catname { margin-left: auto; width: 320px; max-width: 50%; font-size: 12.5px; color: var(--muted); }
+.pe-addc { margin: 4px 0 20px; }
+@media (max-width: 1100px) { .pe-row { grid-template-columns: 1fr; } .pe-delr { justify-self: start; } }

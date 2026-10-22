@@ -74,6 +74,10 @@
       "destination": "/data/pages.json"
     },
     {
+      "source": "/api/preturi",
+      "destination": "/data/preturi.json"
+    },
+    {
       "source": "/api/brand",
       "destination": "/data/brand.json"
     },

@@ -1,0 +1,3081 @@
+{
+  "actualizat": "2026-10-22T13:11:59",
+  "categorii": [
+    {
+      "categorie": "REJUVENARE FACIALĂ",
+      "servicii": [
+        {
+          "id": "c1jysecd",
+          "nume": "Skin Booster Vital Restylane - 1 ml",
+          "servicii": [
+            "skinbooster-vital"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "a26v6zqy",
+          "nume": "Skin Booster Vital Restylane - 2 ml",
+          "servicii": [
+            "skinbooster-vital"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2100
+            }
+          ]
+        },
+        {
+          "id": "btm6l8ts",
+          "nume": "Tratament Cearcane Jalupro",
+          "servicii": [
+            "jalupro-young-eye"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "h3xdsumw",
+          "nume": "Peeling PRX Plus",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            }
+          ]
+        },
+        {
+          "id": "g2565w24",
+          "nume": "Sculptra, o fiolă",
+          "servicii": [
+            "sculptra"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 3000,
+              "oferta": true,
+              "discountProcent": 17,
+              "pretOferta": 2500
+            }
+          ]
+        },
+        {
+          "id": "kq4ey4tl",
+          "nume": "Profhilo Structura",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2100
+            }
+          ]
+        },
+        {
+          "id": "vozqtl6s",
+          "nume": "Harmonyca 1,25 ml",
+          "servicii": [
+            "harmonyca"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2200
+            }
+          ]
+        },
+        {
+          "id": "f6xrhxjj",
+          "nume": "Harmonyca 2 seringi x 1,25 ml",
+          "servicii": [
+            "harmonyca"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 3750
+            }
+          ]
+        },
+        {
+          "id": "7qiso3gj",
+          "nume": "Aplicare Exosomi dupa tratamentul cu microneedling/ RF",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 800
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2250
+            }
+          ]
+        },
+        {
+          "id": "uv3104lg",
+          "nume": "Aplicare masca Exosomi dupa tratamentul cu microneedling/ RF",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 600
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1600
+            }
+          ]
+        },
+        {
+          "id": "d7l64akv",
+          "nume": "PRP – Terapia Vampir 1 eprubetă (față & gât, decolteu, mâini sau în funcție de nevoile specifice)",
+          "servicii": [
+            "prp-scalp"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2550
+            }
+          ]
+        },
+        {
+          "id": "ptjjs00z",
+          "nume": "PRP (1 flacon) + Microneedling prin Dermapen și substanțe de mezoterapie",
+          "servicii": [
+            "mezoterapie",
+            "prp-scalp",
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2000
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 7000
+            }
+          ]
+        },
+        {
+          "id": "8mkijbu4",
+          "nume": "Microneedling Dermapen față",
+          "servicii": [
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "a6a25iev",
+          "nume": "Microneedling Dermapen față + gât",
+          "servicii": [
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "vljrwkza",
+          "nume": "Microneedling Dermapen și cocktail substanțe nutritive față",
+          "servicii": [
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1050
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2800
+            }
+          ]
+        },
+        {
+          "id": "brf0bemi",
+          "nume": "Microneedling Dermapen și cocktail substanțe nutritive față + gât",
+          "servicii": [
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1400
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 4000
+            }
+          ]
+        },
+        {
+          "id": "nytgfbv8",
+          "nume": "Mască Dermapen cu Cocktail Acid Hialuronic și Vitamine",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 150
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "t3bkjj4y",
+          "nume": "Polinucleotide cu ADN de somon față/gât/decolteu/periocular 1 ședintă Medium",
+          "servicii": [
+            "polinucleotide"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1250
+            }
+          ]
+        },
+        {
+          "id": "zx19sdki",
+          "nume": "Polinucleotide cu ADN de somon față/gât/decolteu/periocular 1 ședintă Strong",
+          "servicii": [
+            "polinucleotide"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1350
+            }
+          ]
+        },
+        {
+          "id": "x66aj2nu",
+          "nume": "Rejuran periocular (1 mL)",
+          "servicii": [
+            "polinucleotide"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "rwfw6oaj",
+          "nume": "Rejuran față/gât/decolteu (1 mL)",
+          "servicii": [
+            "polinucleotide"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1600,
+              "oferta": true,
+              "discountProcent": 6,
+              "pretOferta": 1500
+            }
+          ]
+        },
+        {
+          "id": "qdd818k5",
+          "nume": "Rejuran full face/alte zone (2mL)",
+          "servicii": [
+            "polinucleotide"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "INJECTĂRI TOXINĂ BOTULINICĂ",
+      "servicii": [
+        {
+          "id": "7g9rsp0k",
+          "nume": "Nefertiti Lift",
+          "servicii": [
+            "injectare-botox",
+            "nefertiti-lift"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "0wawbp3c",
+          "nume": "Corecție riduri de expresie 1 zonă: frunte/ ochi/intre sprâncene",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900,
+              "oferta": true,
+              "discountProcent": 11,
+              "pretOferta": 800
+            }
+          ]
+        },
+        {
+          "id": "y3ym3gqd",
+          "nume": "Corecție riduri de expresie: tratament 2 zone",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1250,
+              "oferta": true,
+              "discountProcent": 20,
+              "pretOferta": 999
+            }
+          ]
+        },
+        {
+          "id": "h2s6k0sk",
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone- femei",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500,
+              "oferta": true,
+              "discountProcent": 27,
+              "pretOferta": 1099
+            }
+          ]
+        },
+        {
+          "id": "dgmhjzvg",
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone- bărbați",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1700,
+              "oferta": true,
+              "discountProcent": 24,
+              "pretOferta": 1300
+            }
+          ]
+        },
+        {
+          "id": "d7bp3bfw",
+          "nume": "Corecție riduri de expresie 1 zonă: frunte/ ochi/intre sprâncene cu toxina Azzalure/Vistabel",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "zkhqxjtl",
+          "nume": "Corecție riduri de expresie: tratament 2 zone cu toxina Azzalure/Vistabel",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1450
+            }
+          ]
+        },
+        {
+          "id": "ey3cpdfn",
+          "nume": "Corecție riduri de expresie: tratament complet, 3 zone cu toxina Azzalure/Vistabel",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1800
+            }
+          ]
+        },
+        {
+          "id": "gb94zdk9",
+          "nume": "Baby Botox 3 Zone Vistabel",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1199
+            }
+          ]
+        },
+        {
+          "id": "oh7uu7zu",
+          "nume": "Tratament hiperhidroza/transpirație excesiva cu toxină botulinică (axile/palme/tălpi)",
+          "servicii": [
+            "injectare-botox",
+            "hiperhidroza-axilara"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "0z227t1d",
+          "nume": "Tratament Slimming Face/ Tratament bruxism cu toxină botulinică",
+          "servicii": [
+            "injectare-botox"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "INJECTĂRI ACID HIALURONIC",
+      "servicii": [
+        {
+          "id": "gwqerl4w",
+          "nume": "1 mL STYLAGE",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1400,
+              "oferta": true,
+              "discountProcent": 11,
+              "pretOferta": 1250
+            }
+          ]
+        },
+        {
+          "id": "nqbbqr5o",
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "ch9rf2u0",
+          "nume": "0,55 mL JUVÉDERM ULTRA SMILE",
+          "subgrup": "CONTUR BUZE, VOLUM BUZE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1150
+            }
+          ]
+        },
+        {
+          "id": "znq8vgum",
+          "nume": "1 mL STYLAGE",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1400
+            }
+          ]
+        },
+        {
+          "id": "19gr6zbe",
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "UMPLERE RIDURI FINE SAU NAZOGENIENE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "j61rrfx0",
+          "nume": "1 mL STYLAGE",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "ua9wydzf",
+          "nume": "1 mL RESTYLANE/JUVÉDERM",
+          "subgrup": "UMPLERE RIDURI PROFUNDE/POMEȚI/OBRAJI/CONTUR",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "augmentare-buze"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1600
+            }
+          ]
+        },
+        {
+          "id": "qo78qaod",
+          "nume": "1 mL acid hialuronic pentru tratamentul cearcănelor – Jalupro",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "jalupro-young-eye"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "n4ppd2jy",
+          "nume": "Topire acid hialuronic – hialuronidază – Zona mica (1 flacon)",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 700
+            }
+          ]
+        },
+        {
+          "id": "cjy7og5n",
+          "nume": "Topire acid hialuronic – hialuronidază – Zona mare (2 flacoane)",
+          "subgrup": "TRATAMENTE SPECIALIZATE",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 900
+            }
+          ]
+        },
+        {
+          "id": "vwv1js6n",
+          "nume": "Augmentare peniană – 10 mL acid hialuronic",
+          "subgrup": "AUGMENTARE PENIANĂ",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "marirea-penisului-acid-hialuronic"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 4000,
+              "oferta": true,
+              "discountProcent": 13,
+              "pretOferta": 3500
+            }
+          ]
+        },
+        {
+          "id": "fxbt7huu",
+          "nume": "Augmentare peniană – 20 mL acid hialuronic",
+          "subgrup": "AUGMENTARE PENIANĂ",
+          "servicii": [
+            "injectari-acid-hialuronic",
+            "marirea-penisului-acid-hialuronic"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 5500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENT REVITALIZARE PĂR",
+      "servicii": [
+        {
+          "id": "5r1ssp2f",
+          "nume": "PRP SCALP, 1 eprubetă",
+          "servicii": [
+            "prp-scalp"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2550
+            }
+          ]
+        },
+        {
+          "id": "a75c31jv",
+          "nume": "PRP SCALP, 2 eprubete",
+          "servicii": [
+            "prp-scalp"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 990
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2820
+            }
+          ]
+        },
+        {
+          "id": "3zfacf0u",
+          "nume": "PRP SCALP, 1 eprubetă și Biotina",
+          "servicii": [
+            "prp-scalp"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1200
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 3300
+            }
+          ]
+        },
+        {
+          "id": "lukzqe10",
+          "nume": "Microneedling Dermapen scalp cu exozomi și cocktail de vitamine",
+          "servicii": [
+            "microneedeling"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1190
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 3370
+            }
+          ]
+        },
+        {
+          "id": "jc96jp2a",
+          "nume": "Mezoterapie injectabilă NCTC+ biotină",
+          "servicii": [
+            "mezoterapie"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 2550
+            }
+          ]
+        },
+        {
+          "id": "hzkz9x0f",
+          "nume": "Mezoterapie injectabilă NCTC",
+          "servicii": [
+            "mezoterapie"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1950
+            }
+          ]
+        },
+        {
+          "id": "6utsy7vr",
+          "nume": "Mezoterapie injectabilă cu biotină",
+          "servicii": [
+            "mezoterapie"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1950
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "PEELING",
+      "servicii": [
+        {
+          "id": "var0ptea",
+          "nume": "Peeling PRX Plus",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            }
+          ]
+        },
+        {
+          "id": "co776j0c",
+          "nume": "Peeling anti-acnee + extracții",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 650
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1800
+            }
+          ]
+        },
+        {
+          "id": "alyfa1a6",
+          "nume": "Peeling anti-aging cu metale prețioase/ carbon activ",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "DERMATOLOGIE",
+      "servicii": [
+        {
+          "id": "9b5id8rg",
+          "nume": "Consultație Dermatologie",
+          "servicii": [
+            "consultatie-dermatoestetica-dermatologie"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "klq4iu3i",
+          "nume": "Control Dermatologie (în termen de 30 zile de la consultația inițială)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 200
+            }
+          ]
+        },
+        {
+          "id": "ieezjc3i",
+          "nume": "Dermatoscopie 1 leziune",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 100
+            }
+          ]
+        },
+        {
+          "id": "z61isjqc",
+          "nume": "Dermatoscopie 2 – 4 leziuni",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 200
+            }
+          ]
+        },
+        {
+          "id": "x1xbgohj",
+          "nume": "Dermatoscopie 5 – 10 leziuni",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            }
+          ]
+        },
+        {
+          "id": "5ttqjwdr",
+          "nume": "Dermatoscopie 11 – 20 leziuni",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 600
+            }
+          ]
+        },
+        {
+          "id": "sd987ibb",
+          "nume": "Dermatoscopie 21 – 30 leziuni",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "bsq1yy2r",
+          "nume": "Electrocauterizare (papiloame, condiloame, granulom piogenic, keratoză seboreică, molluscum contagiosum/pendulum, veruci) 1 – 4 leziuni",
+          "servicii": [
+            "eliminare-papiloame"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            }
+          ]
+        },
+        {
+          "id": "9fz54f1w",
+          "nume": "Electrocauterizare (papiloame, condiloame, granulom piogenic, keratoză seboreică, molluscum contagiosum/pendulum, veruci) 5 – 10 leziuni",
+          "servicii": [
+            "eliminare-papiloame"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700
+            }
+          ]
+        },
+        {
+          "id": "nccmwmzy",
+          "nume": "Anestezie locală",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 100
+            }
+          ]
+        },
+        {
+          "id": "pe4cof03",
+          "nume": "Mezoterapie NCTF/cearcăne",
+          "servicii": [
+            "mezoterapie"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "xzgmqt6e",
+          "nume": "Subcizie Cicatrici de Acnee",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "MICRO CHIRURGIE SI CHIRURGIE PLASTICĂ",
+      "servicii": [
+        {
+          "id": "8kbyzrs7",
+          "nume": "Otoplastie (cu anestezie locala)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 8000
+            }
+          ]
+        },
+        {
+          "id": "401wj2en",
+          "nume": "Labioplastie",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 8000
+            }
+          ]
+        },
+        {
+          "id": "t852bwsc",
+          "nume": "Bichectomie",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 6000
+            }
+          ]
+        },
+        {
+          "id": "7la41iyv",
+          "nume": "Blefaroplastie superioară",
+          "servicii": [
+            "blefaroplastie"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 7000,
+              "oferta": true,
+              "discountProcent": 29,
+              "pretOferta": 5000
+            }
+          ]
+        },
+        {
+          "id": "zyt5gqff",
+          "nume": "Blefaroplastie inferioară",
+          "servicii": [
+            "blefaroplastie"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 8000
+            }
+          ]
+        },
+        {
+          "id": "jnuycm0m",
+          "nume": "Lip Lift Lifting bază surerioară",
+          "servicii": [
+            "lip-lifting"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 7000
+            }
+          ]
+        },
+        {
+          "id": "2fi9e2qk",
+          "nume": "Reconstrucție lob ureche",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "x9b5mtuz",
+          "nume": "Excizie leziune cutanata sau de parti moi < 1 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 600
+            }
+          ]
+        },
+        {
+          "id": "cjz67293",
+          "nume": "Excizie leziune cutanata sau de parti moi 2-3 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 900
+            }
+          ]
+        },
+        {
+          "id": "9eqqqr55",
+          "nume": "Excizie leziune cutanata sau de parti moi > 3 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 2500
+            }
+          ]
+        },
+        {
+          "id": "1wzpnxmj",
+          "nume": "Excizie lipom intre 2-4 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "pjwafohj",
+          "nume": "Excizie lipom intre 4-8 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "z7yt9wrm",
+          "nume": "Excizie lipom sub 2 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "95pd5enh",
+          "nume": "Excizie lipom intramuscular",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 5000
+            }
+          ]
+        },
+        {
+          "id": "0d8nar5h",
+          "nume": "Recupa melanom malign si inchidere cu lambou",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 6000
+            }
+          ]
+        },
+        {
+          "id": "4bbdavpq",
+          "nume": "Recupa melanom malign si inchidere prin sutura directa",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 3500
+            }
+          ]
+        },
+        {
+          "id": "yj0ty0f0",
+          "nume": "Biopsie ganglion santinela",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 4000
+            }
+          ]
+        },
+        {
+          "id": "d3q7vpm5",
+          "nume": "Biopsie excizionala <1 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "i5n42vbn",
+          "nume": "Biopsie excizionala 1-2 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "wscseer1",
+          "nume": "Biopsie excizionala >2 cm",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "uc4ejahn",
+          "nume": "Biopsie incizionala",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 750
+            }
+          ]
+        },
+        {
+          "id": "ea5su27f",
+          "nume": "Biopsie punch",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 500
+            }
+          ]
+        },
+        {
+          "id": "ep4r7uw4",
+          "nume": "Indepartare corp strain",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "ylxp0kvh",
+          "nume": "Cura chirurgicala sindrom de canal carpian",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 4000
+            }
+          ]
+        },
+        {
+          "id": "3xnik9am",
+          "nume": "Cura chirurgicala deget in resort",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "95w0jkh2",
+          "nume": "Cura chirugicala maladie Dupuytren / raza",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "rj5ewubr",
+          "nume": "Consultatie chirurgie plastică",
+          "servicii": [
+            "consultatie-chirurgie-plastica"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 400
+            }
+          ]
+        },
+        {
+          "id": "l29bdwvs",
+          "nume": "Control la 6 luni",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 200
+            }
+          ]
+        },
+        {
+          "id": "ywt08ta9",
+          "nume": "Control la mai mult de 1 an",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE COSMETOLOGICE",
+      "servicii": [
+        {
+          "id": "gl9la2s0",
+          "nume": "Pachet Dermalinfusion + Venus Legacy (facial)",
+          "servicii": [
+            "dermalinfusion",
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900,
+              "oferta": true,
+              "discountProcent": 45,
+              "pretOferta": 499
+            }
+          ]
+        },
+        {
+          "id": "6omx73hr",
+          "nume": "Tratament DERMALINFUSION Facial",
+          "servicii": [
+            "dermalinfusion"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 600,
+              "oferta": true,
+              "discountProcent": 34,
+              "pretOferta": 399
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1197
+            }
+          ]
+        },
+        {
+          "id": "v7drhk66",
+          "nume": "Tratament DERMALINFUSION Față + Gât",
+          "servicii": [
+            "dermalinfusion"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 690
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1497
+            }
+          ]
+        },
+        {
+          "id": "ul01ljjy",
+          "nume": "Tratament profesional intens hidratant față - Rehydra",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "k5az3vxr",
+          "nume": "Tratament profesional anti-aging Botox Like Delay Inifinity",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1400
+            }
+          ]
+        },
+        {
+          "id": "vlvdlog6",
+          "nume": "Tratament Profesional Ten Sensibil Emozioni Plus",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1400
+            }
+          ]
+        },
+        {
+          "id": "w8g5khs1",
+          "nume": "Tratament Profesional Depigmentare Bright și Luminozitate",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1600
+            }
+          ]
+        },
+        {
+          "id": "crt3l7n3",
+          "nume": "Tratament profesional anti-aging 75.15",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1600
+            }
+          ]
+        },
+        {
+          "id": "ds6vvbt1",
+          "nume": "Acnee ASA Peel by KLAPP",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 550
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "ayjdssav",
+          "nume": "Calmant Aloe Vera SN",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "f9bxmjh2",
+          "nume": "Gold A Classic",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1350
+            }
+          ]
+        },
+        {
+          "id": "1bllt5hp",
+          "nume": "Caviar Power by KLAPP",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 600
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1650
+            }
+          ]
+        },
+        {
+          "id": "am0m8p9a",
+          "nume": "Diamond Glow by KLAPP",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 600
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1650
+            }
+          ]
+        },
+        {
+          "id": "jir5lc8r",
+          "nume": "Peeling anti-acnee + extracții",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 650
+            },
+            {
+              "tip": "pachet 3 ședințe",
+              "valoare": 1800
+            }
+          ]
+        },
+        {
+          "id": "at0icd89",
+          "nume": "Tratament Bruno Vassari OILY CONTROL",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "LIFTING FACIAL NON INVAZIV VENUS LEGACY",
+      "servicii": [
+        {
+          "id": "6uivce0a",
+          "nume": "VENUS LEGACY 1 zonă: Față/gât/Decolteu",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "93lbhxuh",
+          "nume": "VENUS LEGACY 2 zone: Față+gât/Decolteu",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1600
+            }
+          ]
+        },
+        {
+          "id": "bg6zjibr",
+          "nume": "Venus Legacy 3 zone: Față, gât, Decolteu",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 690
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 2400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE CORPORALE VENUS LEGACY",
+      "servicii": [
+        {
+          "id": "fdyo8og1",
+          "nume": "Zona Mică ( La alegere Brațe /Zona Lombară /Gambe) – 20 min",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1200
+            }
+          ]
+        },
+        {
+          "id": "y0xao291",
+          "nume": "Zonă Medie ( La alegere Abdomen/ Brațe /Zonă Lombară /Gambe) – 30 min",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 1400
+            }
+          ]
+        },
+        {
+          "id": "rsx0je0p",
+          "nume": "Zonă Mare ( La alegere Coapse Față /Spate + Fese / Două zone medii) – 1h",
+          "servicii": [
+            "venus-legacy"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            },
+            {
+              "tip": "pachet 4 ședințe",
+              "valoare": 2800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X FEMEI",
+      "servicii": [
+        {
+          "id": "okk0wh2p",
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2000,
+              "oferta": true,
+              "discountProcent": 50,
+              "pretOferta": 999
+            }
+          ]
+        },
+        {
+          "id": "m86amo5b",
+          "nume": "OFERTĂ Axilă + Inghinal Integral + Linie Bikini + Interfesier",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700,
+              "oferta": true,
+              "discountProcent": 50,
+              "pretOferta": 350
+            }
+          ]
+        },
+        {
+          "id": "9xren473",
+          "nume": "OFERTĂ Axilă + Gambă + Inghinal Integral + Linie Bikini + Interfesier",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000,
+              "oferta": true,
+              "discountProcent": 50,
+              "pretOferta": 500
+            }
+          ]
+        },
+        {
+          "id": "rw8ucwpy",
+          "nume": "OFERTĂ Picioare integral (coapse+gambe)",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000,
+              "oferta": true,
+              "discountProcent": 25,
+              "pretOferta": 750
+            }
+          ]
+        },
+        {
+          "id": "i3s1q2n0",
+          "nume": "Față",
+          "subgrup": "Epilare definitivă facială",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 250
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1250
+            }
+          ]
+        },
+        {
+          "id": "2o5vmox4",
+          "nume": "Bărbie / perciuni / mustață",
+          "subgrup": "Epilare definitivă facială",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 200
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "1hzi165l",
+          "nume": "Axile",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 250
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1250
+            }
+          ]
+        },
+        {
+          "id": "2tzghf9v",
+          "nume": "Mâini integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2250
+            }
+          ]
+        },
+        {
+          "id": "afay9bn1",
+          "nume": "Antebrațe / brațe / abdomen",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 350
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1750
+            }
+          ]
+        },
+        {
+          "id": "mvgwvx2e",
+          "nume": "Linie bikini",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 250
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1250
+            }
+          ]
+        },
+        {
+          "id": "mp5rbngc",
+          "nume": "Inghinal Integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 450
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2250
+            }
+          ]
+        },
+        {
+          "id": "slp63i0y",
+          "nume": "Fese",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 250
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1250
+            }
+          ]
+        },
+        {
+          "id": "mhb25j2d",
+          "nume": "Gambe / coapse",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 550
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2750
+            }
+          ]
+        },
+        {
+          "id": "hrmy5paq",
+          "nume": "Picioare integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 5000
+            }
+          ]
+        },
+        {
+          "id": "p1z842d5",
+          "nume": "Piept",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2500
+            }
+          ]
+        },
+        {
+          "id": "169k4tnf",
+          "nume": "Umeri",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2500
+            }
+          ]
+        },
+        {
+          "id": "8kidgoo5",
+          "nume": "Spate integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 5000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "EPILARE DEFINITIVA CU SPLENDOR X BARBATI",
+      "servicii": [
+        {
+          "id": "vk0v4hrm",
+          "nume": "OFERTĂ Full Body - 6 zone la alegere",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 4000,
+              "oferta": true,
+              "discountProcent": 50,
+              "pretOferta": 2000
+            }
+          ]
+        },
+        {
+          "id": "vumkpfnc",
+          "nume": "OFERTĂ Spate integral",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1100,
+              "oferta": true,
+              "discountProcent": 23,
+              "pretOferta": 850
+            }
+          ]
+        },
+        {
+          "id": "xbar1a4g",
+          "nume": "OFERTĂ Piept",
+          "subgrup": "Oferte",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900,
+              "oferta": true,
+              "discountProcent": 28,
+              "pretOferta": 650
+            }
+          ]
+        },
+        {
+          "id": "h5a4zovf",
+          "nume": "Față",
+          "subgrup": "Epilare definitivă facială",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "t3eaa4t8",
+          "nume": "Contur barbă",
+          "subgrup": "Epilare definitivă facială",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 300
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1500
+            }
+          ]
+        },
+        {
+          "id": "oaes67jd",
+          "nume": "Bărbie / perciuni / mustață",
+          "subgrup": "Epilare definitivă facială",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 350
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 1750
+            }
+          ]
+        },
+        {
+          "id": "o0t9vmqw",
+          "nume": "Axile",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "2fuofmnt",
+          "nume": "Brațe integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 850
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 4250
+            }
+          ]
+        },
+        {
+          "id": "78e4qa8j",
+          "nume": "Antebrațe / abdomen",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 650
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 3250
+            }
+          ]
+        },
+        {
+          "id": "w6avofla",
+          "nume": "Linie bikini",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "07m7wgg5",
+          "nume": "Inghinal Integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 850
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 4250
+            }
+          ]
+        },
+        {
+          "id": "0jhp2kop",
+          "nume": "Fese",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 400
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 2000
+            }
+          ]
+        },
+        {
+          "id": "jj5xjje0",
+          "nume": "Gambe / coapse",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1000
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 5000
+            }
+          ]
+        },
+        {
+          "id": "82nrejb5",
+          "nume": "Picioare integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1950
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 9750
+            }
+          ]
+        },
+        {
+          "id": "uwr381h2",
+          "nume": "Piept",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 900
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 4500
+            }
+          ]
+        },
+        {
+          "id": "yg660edd",
+          "nume": "Umeri",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 700
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 3500
+            }
+          ]
+        },
+        {
+          "id": "zhkz8sf1",
+          "nume": "Spate integral",
+          "subgrup": "Epilare definitivă corporală",
+          "servicii": [
+            "epilare-definitiva-bucuresti"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1100
+            },
+            {
+              "tip": "pachet 5+1 gratuit",
+              "valoare": 5500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TRATAMENTE ESTETICE VENUS VIVA",
+      "servicii": [
+        {
+          "id": "sk54tgau",
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500
+            },
+            {
+              "tip": "pachet 2 ședințe",
+              "valoare": 2100
+            }
+          ]
+        },
+        {
+          "id": "b6kwcvno",
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față și gat",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2000
+            },
+            {
+              "tip": "pachet 2 ședințe",
+              "valoare": 3100
+            }
+          ]
+        },
+        {
+          "id": "dy6c84xq",
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată gat",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 800
+            },
+            {
+              "tip": "pachet 2 ședințe",
+              "valoare": 1400
+            }
+          ]
+        },
+        {
+          "id": "3p64p9gy",
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată decolteu",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 1500
+            },
+            {
+              "tip": "pachet 2 ședințe",
+              "valoare": 2600
+            }
+          ]
+        },
+        {
+          "id": "6xbvb45u",
+          "nume": "Tratament Venus Viva cu Radiofrecvență fracționată față, gat, decolteu",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 2800
+            },
+            {
+              "tip": "pachet 2 ședințe",
+              "valoare": 4800
+            }
+          ]
+        },
+        {
+          "id": "avvx40yy",
+          "nume": "Tratament Venus Viva cu Radiofrecvență pentru cicatrici/vergeturi",
+          "servicii": [
+            "venus-viva"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 500
+            },
+            {
+              "tip": "ședință",
+              "valoare": 650
+            },
+            {
+              "tip": "ședință",
+              "valoare": 800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "ANALIZĂ ANATOMIE PATOLOGICĂ",
+      "servicii": [
+        {
+          "id": "2vnadv45",
+          "nume": "Biopsie prin prelucrare la parafină și dgn. HP-piesă mică sub 4cm/piesă",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 450
+            }
+          ]
+        },
+        {
+          "id": "ykvj7ehn",
+          "nume": "Biopsie prin prelucrare la parafină și dgn. HP-piesă mare peste 4 cm/piesă",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "poryn24j",
+          "nume": "Examen imunohistochimie",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 700
+            }
+          ]
+        },
+        {
+          "id": "tnbsgfvn",
+          "nume": "Interpretare lame biopsie – a 2 a opinie/caz",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "OZONOTERAPIE",
+      "servicii": [
+        {
+          "id": "eh06kilw",
+          "nume": "Autohemoterapia majoră",
+          "servicii": [
+            "autohemoterapia"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "fz9lfrf3",
+          "nume": "Pachet 10 ședințe autohemoterapie majoră",
+          "servicii": [
+            "autohemoterapia"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 2800
+            }
+          ]
+        },
+        {
+          "id": "1uxhursw",
+          "nume": "Saună cu ozon",
+          "servicii": [
+            "sauna-cu-ozon"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "eyrxk8b3",
+          "nume": "Pachet 10 sesiuni saună cu ozon",
+          "servicii": [
+            "sauna-cu-ozon"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 2800
+            }
+          ]
+        },
+        {
+          "id": "62fvym96",
+          "nume": "Insuflație vaginală cu ozon",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 200
+            }
+          ]
+        },
+        {
+          "id": "inwti92h",
+          "nume": "Pachet 10 sesiuni insuflație vaginală cu ozon",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "CONSULTAȚII",
+      "servicii": [
+        {
+          "id": "ny6l2y1h",
+          "nume": "Consultații antiaging medic primar (include determinarea vârstei biologice)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 500
+            }
+          ]
+        },
+        {
+          "id": "bdomy1r7",
+          "nume": "Consultație antiaging medic specialist (include determinarea vârstei biologice)",
+          "servicii": [
+            "consultatie-antiaging"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 400
+            }
+          ]
+        },
+        {
+          "id": "2er2e3ji",
+          "nume": "Consultație ozonoterapie",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        },
+        {
+          "id": "73qy4hzp",
+          "nume": "Consultație terapii i.v. medic specialist (include analiza de sange – PCR – test inflamație)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        },
+        {
+          "id": "mh80lzx7",
+          "nume": "Consultație estetică Medic Specialist Dermatologie",
+          "servicii": [
+            "consultatie-dermatoestetica-dermatologie"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "lnvkm0mi",
+          "nume": "Consultație estetică Medic Primar Chirurgie Plastică",
+          "servicii": [
+            "consultatie-chirurgie-plastica"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 350
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TMS – Stimulare Magnetică Transcraniană",
+      "servicii": [
+        {
+          "id": "4v0u2ewz",
+          "nume": "Consultație TMS – dr. Adrian Stănescu, medic primar gerontolog, specialist TMS, director medical și coordonator departament TMS",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 350
+            }
+          ]
+        },
+        {
+          "id": "xkoyg5jg",
+          "nume": "Ședință TMS durează 20–30 minute în funcție de program",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        },
+        {
+          "id": "dbgs5wnr",
+          "nume": "Consolidare TMS",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        },
+        {
+          "id": "wun6koku",
+          "nume": "Program TMS Depresie – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1900
+            }
+          ]
+        },
+        {
+          "id": "k5aw1ez8",
+          "nume": "Program TMS Burnout – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1900
+            }
+          ]
+        },
+        {
+          "id": "m3tcnutq",
+          "nume": "Program TMS Anxietate – Aprobat FDA Pachet de 10 ședințe TMS + Studiu electrocardiografic (EKG)",
+          "subgrup": "ȘEDINȚE TMS",
+          "servicii": [
+            "tms-stimulare-magnetica-transcraniana"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TERAPII INTRAVENOASE",
+      "servicii": [
+        {
+          "id": "f0ifkqkr",
+          "nume": "MULTIVITAMIN REGENERATIVE",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 350
+            }
+          ]
+        },
+        {
+          "id": "j39q38k0",
+          "nume": "MULTIVAMIN & MINERAL THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 440
+            }
+          ]
+        },
+        {
+          "id": "4la2jyye",
+          "nume": "MOA COCKTAIL ENERGY (CEO)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 440
+            }
+          ]
+        },
+        {
+          "id": "xfstvz4g",
+          "nume": "MOA HEPATOPROTECTOR VITAMIN",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 550
+            }
+          ]
+        },
+        {
+          "id": "7rg29pz3",
+          "nume": "MOA IMUNOPROTECT THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 360
+            }
+          ]
+        },
+        {
+          "id": "yk5z2i6k",
+          "nume": "MOA BURNOUT THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 380
+            }
+          ]
+        },
+        {
+          "id": "i42pepgm",
+          "nume": "MOA ANTIOXIDANT THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 370
+            }
+          ]
+        },
+        {
+          "id": "z3qrcxst",
+          "nume": "MOA ENERGETIC BOOST ANTIOXIDANT",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 470
+            }
+          ]
+        },
+        {
+          "id": "dzjenogu",
+          "nume": "MOA IMUNOBOOST ANTIOXIDANT",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 535
+            }
+          ]
+        },
+        {
+          "id": "w7dr79a8",
+          "nume": "GLUTATION DETOX BOOST",
+          "servicii": [
+            "glutation"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 380
+            }
+          ]
+        },
+        {
+          "id": "w4u3uvpl",
+          "nume": "VITAL VITAMIN C 1,5 g",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 200
+            }
+          ]
+        },
+        {
+          "id": "9ategp9s",
+          "nume": "VITAL VITAMIN C 3 g",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 300
+            }
+          ]
+        },
+        {
+          "id": "ete88oy1",
+          "nume": "VITAL VITAMIN C 7,5 g",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 480
+            }
+          ]
+        },
+        {
+          "id": "h4fm4fug",
+          "nume": "ESSENTIAL AMINOACIDS INFUSION",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 350
+            }
+          ]
+        },
+        {
+          "id": "ghdjtv8b",
+          "nume": "ALPHA LYPOIC ACID ACTION",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 210
+            }
+          ]
+        },
+        {
+          "id": "6ctvjb7m",
+          "nume": "GEROVITAL THERAPY (2 teste + 10 injecții)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 1000
+            }
+          ]
+        },
+        {
+          "id": "eizf3yc7",
+          "nume": "COENZYME Q10 METABOLIC REGENERATIVE",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 190
+            }
+          ]
+        },
+        {
+          "id": "qsy8hjxb",
+          "nume": "ARGININ THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 250
+            }
+          ]
+        },
+        {
+          "id": "osmjuyd9",
+          "nume": "MAGNESIUM ACCES",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 180
+            }
+          ]
+        },
+        {
+          "id": "8ij5b02q",
+          "nume": "VITAMIN C BOOST 7,5 gr.",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 480
+            }
+          ]
+        },
+        {
+          "id": "2oz8a4na",
+          "nume": "ZINC – SULPHATE RESERVOIR",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 230
+            }
+          ]
+        },
+        {
+          "id": "8fbke0er",
+          "nume": "MOA LONGEVITY BOOST (conține NAD+)",
+          "servicii": [
+            "terapia-nad"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 900,
+              "oferta": true,
+              "discountProcent": 33,
+              "pretOferta": 600
+            }
+          ]
+        },
+        {
+          "id": "0s87hw7x",
+          "nume": "PERFECT ANTIOXIDANT (conține Resveratrol)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 500
+            }
+          ]
+        },
+        {
+          "id": "9yp4tac7",
+          "nume": "SUPERMIND (conține Fosfatidilcolină)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 480
+            }
+          ]
+        },
+        {
+          "id": "lnov2d5e",
+          "nume": "PERFECT ACTION (conține Seleniu)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 280
+            }
+          ]
+        },
+        {
+          "id": "z5qdzkru",
+          "nume": "VITAMIN D DEPOT (Tratament injectabil cu vitamina D 3- 100000 U.I.)",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 150
+            }
+          ]
+        },
+        {
+          "id": "9qp620iu",
+          "nume": "GLUTATION THERAPY",
+          "servicii": [
+            "glutation"
+          ],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 300,
+              "oferta": true,
+              "discountProcent": 27,
+              "pretOferta": 220
+            }
+          ]
+        },
+        {
+          "id": "3fecwmei",
+          "nume": "SEROTONINA THERAPY",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 150
+            }
+          ]
+        },
+        {
+          "id": "97k2gvy9",
+          "nume": "BEAUTY ELIXIR BY MOA",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "kox5128r",
+          "nume": "SKIN BRIGHT SHOT BY MOA",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 800
+            }
+          ]
+        },
+        {
+          "id": "s194gy76",
+          "nume": "APHRODITE'S SECRET",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 750
+            }
+          ]
+        },
+        {
+          "id": "od9vqcb9",
+          "nume": "GLOW UP BY MOA",
+          "servicii": [],
+          "preturi": [
+            {
+              "tip": "preț",
+              "valoare": 750
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorie": "TERAPIA VIELIGHT",
+      "servicii": [
+        {
+          "id": "wvhy98j5",
+          "nume": "Terapia Vielight",
+          "servicii": [
+            "fotobiomodulare-vielight"
+          ],
+          "preturi": [
+            {
+              "tip": "ședință",
+              "valoare": 150
+            },
+            {
+              "tip": "pachet 3 sedinte",
+              "valoare": 400
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -149,7 +149,7 @@ function entitySections(D) {
       ${c.servicii.map((s) => `<tr data-s><td>${esc(s.nume)}</td><td class="small muted">${esc(s.subgrup || '')}</td><td class="num">${priceCell(s.preturi)}</td></tr>`).join('')}
       </tbody></table></div></div></details>`;
   }).join(''));
-  add('oferte', 'Ofertele lunii & abonamente', D.oferte.length, `<div class="tbl"><table><thead><tr><th>Ofertă</th><th>Grup</th><th class="num">Preț</th><th class="num">Inițial</th><th class="num">Reducere</th></tr></thead><tbody>
+  add('oferte', 'Ofertele lunii', D.oferte.length, `<div class="tbl"><table><thead><tr><th>Ofertă</th><th>Grup</th><th class="num">Preț</th><th class="num">Inițial</th><th class="num">Reducere</th></tr></thead><tbody>
     ${D.oferte.map((o) => `<tr data-s><td><b>${esc(o.nume)}</b></td><td class="small muted">${esc(o.grup)}</td><td class="num">${lei(o.pret)}</td><td class="num muted">${lei(o.pretInitial)}</td><td class="num">${o.discountProcent != null ? `<span class="tag ok">-${o.discountProcent}%</span>` : '—'}</td></tr>`).join('')}
     </tbody></table></div>`);
 
@@ -259,8 +259,8 @@ function groupMeta(D) {
     tehnologii: 'Aparatele clinicii, cu producătorul și paginile de servicii pe care apar.',
     produse: 'Mărcile terțe (fillere, toxine, cosmetice) menționate pe site.',
     proprii: 'Terapiile intravenoase cu nume de brand MOA.',
-    lista_preturi: 'Toate prețurile de pe /preturi/, pe categorii, cu reducerile.',
-    oferte: 'Ofertele lunii și abonamentele, cu prețul inițial și reducerea.',
+    lista_preturi: 'Lista de prețuri, editabilă: modifici, adaugi sau ștergi prețuri și marchezi ofertele lunii, cu procentul de discount.',
+    oferte: 'Ofertele lunii: adunate automat din toate prețurile marcate ofertă, cu discount, din orice categorie.',
     glosar: 'Termenii medicali pe care pacienții îi caută, cu definiția găsită pe site și paginile unde apar.',
     testimoniale: 'Recenziile Google afișate pe homepage, cu medicul menționat.',
     cifre: 'Cifrele și afirmațiile de tip „prima”, „singurul”, „aprobat FDA”, fiecare cu pagina-sursă.',
@@ -288,7 +288,7 @@ function entityCategories(D) {
       sections: [...new Set(D.servicii.map((s) => s.categorie))].map(srvId) },
     { id: 'tehnologii', icon: 'tehnologii', title: 'Tehnologii & produse', desc: 'Aparatura clinicii, mărcile folosite și produsele proprii MOA.',
       sections: ['tehnologii', 'produse', 'proprii'] },
-    { id: 'preturi', icon: 'preturi', title: 'Prețuri & oferte', desc: 'Lista de prețuri pe categorii și ofertele lunii.',
+    { id: 'preturi', icon: 'preturi', title: 'Prețuri & oferte', desc: 'Lista de prețuri editabilă și ofertele lunii, adunate automat din prețurile cu discount.',
       sections: ['lista_preturi', 'oferte'] },
     { id: 'blog', icon: 'blog', title: 'Blog', desc: 'Articolele din blog, pe tipuri: ghiduri, tratamente, îngrijire, comparații și opinii.',
       sections: ART_TYPES.map(([, slug]) => `art_${slug}`) },
@@ -366,6 +366,8 @@ routes.entitati = function renderEntitati() {
       ${multi ? `<div class="pills">${cat.sections.map((id) => `<a href="/manage/entitati/${cat.id}/${id}" data-cat="${cat.id}/${id}" class="${id === grp ? 'on' : ''}">${esc(S[id].title)}${S[id].count != null ? ` · ${S[id].count}` : ''}</a>`).join('')}</div>` : ''}
       <section id="${s.id}">${s.html}</section>`;
     $('#qg').addEventListener('input', (e) => filterIn($('#view section'), e.target.value.trim().toLowerCase()));
+    // prețurile și ofertele: editorul (manage/assets/preturi.js), cu căutarea lui
+    if ((grp === 'lista_preturi' || grp === 'oferte') && window.mountPreturi) { $('#qg').remove(); mountPreturi($('#view section'), grp); }
   }
 
   $$('#view [data-cat]').forEach((a) => (a.onclick = (e) => { e.preventDefault(); open(a.dataset.cat); }));

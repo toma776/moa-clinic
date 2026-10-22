@@ -25,6 +25,7 @@ npm start
 - `http://localhost:3100/manage` – panoul
   - `/manage/brand` – mini brand book: esență, logo, culori (cu contrast WCAG), tipografie, UI, imagini, voce și CTA-uri, nume, date legale, inconsecvențe. Fiecare secțiune se editează din panou (`data/brand.json`).
   - `/manage/entitati` – entitățile brandului pe 3 niveluri: categorie → grup → entități, fiecare cu paginile pe care apare
+  - `/manage/entitati/preturi/lista_preturi` – lista de prețuri editabilă (`data/preturi.json`, sursa unică): modifici, adaugi sau ștergi prețuri, legi un rând de pagina tratamentului și bifezi „Ofertă” cu procentul de discount (sau prețul redus). **Ofertele lunii** se adună automat din toate prețurile cu discount, din orice categorie (vitrina de pe /preturi/, homepage, pagina tratamentului). „Salvează” scrie lista, actualizează entitățile și regenerează site-ul (doar local, cu `npm start`; pe Vercel panoul e doar citire). Logica: `scripts/preturi.js`; lista inițială: `node scripts/seed-preturi.js`
   - `/manage/sinapse` – graful entităților (d3): ce se leagă de ce și ce e izolat
   - `/manage/structura` – propunerea de structură și meniu pe user journey: 6 etape, meniul (mega-meniu), arborele cu URL-urile noi, șabloane de pagină, 63 de redirecturi 301; articolele de blog își păstrează URL-urile (`npm run structura`)
   - `/manage/leads` – cereri de programare, cu status, serviciu, medic; export CSV
