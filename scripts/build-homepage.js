@@ -543,7 +543,7 @@ ${mobileNav}
   <div class="wrap">
     <div class="hp-head rv">
       <div><span class="eyebrow">Ce te supără?</span><h2>Pornește de la <em>tine</em>, nu de la un tratament.</h2></div>
-      <p>Alege zona. Îți arătăm opțiunile, iar medicul stabilește împreună cu tine planul potrivit.</p>
+      <div class="hp-head-side"><p>Alege zona. Îți arătăm opțiunile, iar medicul stabilește împreună cu tine planul potrivit.</p><a class="link-u" href="/nou/preturi/#estimator">Estimează costul pe siluetă →</a></div>
     </div>
     <div class="hp-tabs rv" role="tablist">${concernZones.map((z, i) => `<button role="tab" type="button" aria-selected="${i === 0}" data-tab="${i}">${esc(z.nume)}</button>`).join('')}</div>
     ${concernZones.map((z, i) => `<div class="hp-rail hp-concerns" data-panel="${i}" ${i ? 'hidden' : ''}>${z.copii.map((c, j) => {
@@ -1700,9 +1700,10 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
   const extra = D.preturi.filter((c) => !known.has(c.categorie)).map((c) => [c.categorie, cap(c.categorie.toLowerCase())]);
   if (extra.length) PR_GRUPURI.push(['Altele', extra]);
   const catOf = new Map(D.preturi.map((c) => [c.categorie, c]));
-  const priceCell = (p) => `<span class="pr-p">${p.tip && p.tip !== 'preț' ? `<small>${esc(cap(p.tip))}</small>` : ''}${p.valoare != null ? `<b>${lei(p.valoare)}</b>` : `<b>${esc(p.text)}</b>`}${p.pretInitial ? `<s>${lei(p.pretInitial)}</s>` : ''}</span>`;
+  const priceCell = (p, multi) => `<span class="pr-p">${p.tip && p.tip !== 'preț' && (multi || p.tip !== 'ședință') ? `<small>${esc(cap(p.tip))}</small>` : ''}${p.valoare != null ? `<b>${lei(p.valoare)}</b>` : `<b>${esc(p.text)}</b>`}${p.pretInitial ? `<s>${lei(p.pretInitial)}</s>` : ''}</span>`;
   let nRows = 0;
-  const catHtml = PR_GRUPURI.map(([grup, cs]) => cs.filter(([c]) => catOf.has(c)).map(([c, nume]) => {
+  const cats = [];
+  PR_GRUPURI.forEach(([grup, cs]) => cs.filter(([c]) => catOf.has(c)).forEach(([c, nume]) => {
     const cat = catOf.get(c);
     const ids = cat.servicii.map((x) => rowServ.get(`${c}|${x.nume}`)).filter(Boolean);
     const top = ids.sort((a, b) => ids.filter((x) => x === b).length - ids.filter((x) => x === a).length)[0];
@@ -1712,23 +1713,116 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
       nRows++;
       const id = rowServ.get(`${c}|${x.nume}`);
       const href = id && live(id).startsWith('/nou') && id !== top ? live(id) : null;
-      const sub = x.subgrup && x.subgrup !== lastSub ? `<h4 class="pr-sub">${esc(cap(x.subgrup.toLowerCase()))}</h4>` : '';
+      const sub = x.subgrup && x.subgrup !== lastSub ? `<h3 class="pr-sub">${esc(cap(x.subgrup.toLowerCase()))}</h3>` : '';
       lastSub = x.subgrup || lastSub;
-      return `${sub}<div class="pr-row"><span class="pr-n">${href ? `<a href="${esc(href)}">${esc(x.nume)}</a>` : esc(x.nume)}</span><span class="pr-ps">${(x.preturi || []).map(priceCell).join('')}</span>${wlBtn(x.nume, (x.preturi || []).find((q) => q.valoare != null)?.valoare, href || topHref || '/nou/preturi/', true)}</div>`;
+      return `${sub}<div class="pr-row"><span class="pr-n">${href ? `<a href="${esc(href)}">${esc(x.nume)}</a>` : esc(x.nume)}</span><span class="pr-ps">${(x.preturi || []).map((p) => priceCell(p, x.preturi.length > 1)).join('')}</span>${wlBtn(x.nume, (x.preturi || []).find((q) => q.valoare != null)?.valoare, href || topHref || '/nou/preturi/', true)}</div>`;
     }).join('');
-    return `<section class="pr-cat" id="${slugPr(nume)}" data-nume="${esc(nume)} ${esc(grup)}">
-      <div class="pr-cat-h"><div><small>${esc(grup)}</small><h2>${esc(nume)}</h2></div>${c === 'CONSULTAȚII' && consHub ? '<a class="link-u" href="/nou/consultatii/">Toate consultațiile →</a>' : topHref ? `<a class="link-u" href="${esc(topHref)}">Despre tratament →</a>` : ''}</div>
-      <div class="pr-rows">${rows}</div>
-    </section>`;
-  }).join('')).join('');
+    const vals = cat.servicii.flatMap((x) => (x.preturi || []).map((p) => p.valoare)).filter((v) => v != null);
+    const link = c === 'CONSULTAȚII' && consHub ? ['/nou/consultatii/', 'Toate consultațiile'] : topHref ? [topHref, 'Despre tratament'] : null;
+    cats.push({ grup, nume, id: slugPr(nume), n: cat.servicii.length, min: vals.length ? Math.min(...vals) : null, rows, link });
+  }));
+  // fiecare categorie = un rând de acordeon: titlul, câte prețuri are și de la cât pornește
+  const chev = '<i class="pr-chev" aria-hidden="true"></i>';
+  const catHtml = cats.map((k) => `<details class="pr-cat" id="${k.id}" data-nume="${esc(k.nume)} ${esc(k.grup)}">
+      <summary><small>${esc(k.grup)}</small><h2>${esc(k.nume)}</h2><span class="pr-meta"><span>${k.n} ${k.n === 1 ? 'preț' : 'prețuri'}</span>${k.min != null ? `<span>de la <b>${lei(k.min)}</b></span>` : ''}</span>${chev}</summary>
+      <div class="pr-body"><div class="pr-rows">${k.rows}</div>${k.link ? `<a class="link-u pr-more" href="${esc(k.link[0])}">${k.link[1]} →</a>` : ''}</div>
+    </details>`).join('');
   const offGroups = [...new Set(D.oferte.map((o) => o.grup))];
   const offName = (o) => offerLabel(o.nume);
-  const offHtml = D.oferte.length ? `<section class="sec pr-offers" id="oferte" style="background:var(--cream)">
-  <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Oferte</span><h2 style="margin-top:18px">Ofertele <em>lunii</em></h2></div><p class="lede">${D.oferte.length} oferte active. Alege una și te sunăm noi pentru programare.</p></div>
-    <div class="pr-olist">${offGroups.map((g) => `<div class="pr-og-block"><h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3>${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-orow" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}"><span class="pr-orow-n"><b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}</span>${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span></a>`).join('')}</div>`).join('')}</div>
+  const maxDisc = Math.max(0, ...D.oferte.map((o) => o.discountProcent || 0));
+  const offHtml = D.oferte.length ? `<details class="pr-cat pr-offers" id="oferte" data-nume="Ofertele lunii oferte" open>
+      <summary><small>Pentru luna aceasta</small><h2>Ofertele <em>lunii</em></h2><span class="pr-meta"><span>${D.oferte.length} oferte</span>${maxDisc ? `<span>până la <b>−${maxDisc}%</b></span>` : ''}</span>${chev}</summary>
+      <div class="pr-body"><div class="pr-olist">${offGroups.map((g) => `<div class="pr-og-block"><h3 class="pr-og">${esc(g === 'OFERTELE LUNII' ? 'Ofertele lunii' : offerGroup(g))}</h3>${D.oferte.filter((o) => o.grup === g).map((o) => `<a class="pr-orow" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}"><span class="pr-orow-n"><b>${esc(offName(o))}</b>${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : ''}</span>${o.discountProcent ? `<span class="off">−${o.discountProcent}%</span>` : ''}<span class="pr-off-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span></a>`).join('')}</div>`).join('')}</div>
+      <p class="pr-ohint">Alege o ofertă și te sunăm noi pentru programare.</p></div>
+    </details>` : '';
+  const navHtml = `${D.oferte.length ? `<a href="#oferte" class="pr-nav-off">Ofertele lunii<span>${D.oferte.length}</span></a>` : ''}${PR_GRUPURI.map(([g]) => {
+    const ks = cats.filter((k) => k.grup === g);
+    return ks.length ? `<div class="pr-ng"><small>${esc(g)}</small>${ks.map((k) => `<a href="#${k.id}">${esc(k.nume)}<span>${k.n}</span></a>`).join('')}</div>` : '';
+  }).join('')}`;
+
+  // ---------- estimatorul: problemele din „Ce te supără?”, așezate pe o siluetă (față / corp) ----------
+  // [vedere, x, y, zonele evidențiate [cx, cy, rx, ry]] în coordonatele desenului (față 300×340, corp 240×520)
+  const EST_POS = {
+    'caderea-parului': ['f', 150, 50, [[150, 44, 74, 22]]],
+    'riduri-de-expresie': ['f', 150, 94, [[150, 96, 54, 18], [88, 142, 9, 15], [212, 142, 9, 15]]],
+    'cearcane-pungi': ['f', 118, 160, [[124, 151, 24, 11], [176, 151, 24, 11]]],
+    'ten-pori-textura': ['f', 104, 196, [[150, 100, 46, 16], [150, 170, 16, 26], [150, 240, 24, 12], [104, 198, 20, 24]]],
+    'riduri-profunde-volum': ['f', 196, 184, [[186, 190, 22, 30], [114, 190, 22, 30]]],
+    buze: ['f', 180, 220, [[150, 213, 30, 13]]],
+    'burnout-anxietate': ['c', 120, 40, [[120, 42, 30, 32]]],
+    'transpiratie': ['c', 160, 136, [[80, 138, 12, 16], [160, 138, 12, 16]]],
+    'alunite-leziuni': ['c', 62, 156, [[64, 156, 15, 34]]],
+    'oboseala-energie': ['c', 120, 160, [[120, 168, 42, 44]]],
+    'imbatranire-interioara': ['c', 120, 228, [[120, 270, 100, 255]]],
+    'vergeturi-cicatrici': ['c', 148, 304, [[147, 306, 19, 38], [120, 226, 32, 18]]],
+    'tonifiere-celulita': ['c', 93, 290, [[94, 292, 21, 44], [146, 292, 21, 44]]],
+    'vase-vizibile': ['c', 96, 424, [[96, 424, 13, 44], [144, 424, 13, 44]]],
+    'par-nedorit': ['c', 146, 456, [[96, 444, 15, 64], [144, 444, 15, 64], [80, 138, 10, 14], [160, 138, 10, 14]]],
+  };
+  const VB = { f: [300, 340], c: [240, 520] };
+  const est = concernZones.flatMap((z) => z.copii.map((c) => {
+    const id = c.url.split('/').filter(Boolean).pop();
+    const [v, x, y, hl] = EST_POS[id] || ['c', 120, 260, []];
+    const g = (c.ghiduri || []).find((a) => toLive(a.url));
+    return { id, zona: z.nume, nume: c.nume, v, x, y, hl,
+      tr: c.tratamente.map((t) => ({ n: cleanName(t), u: (t.url && toLive(t.url)) || '', p: t.pret_de_la ?? null })),
+      ghid: g ? { t: D.articole.find((a) => a.url.endsWith(g.url))?.titlu || g.titlu, u: toLive(g.url) } : null };
+  }));
+  const pct = (n, d) => `${+(n / d * 100).toFixed(2)}%`;
+  const hls = (v) => est.filter((c) => c.v === v).map((c) => `<g class="pr-hl" data-c="${c.id}">${c.hl.map(([cx, cy, rx, ry]) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#prg-${v})"/>`).join('')}</g>`).join('');
+  const hots = (v) => est.filter((c) => c.v === v).map((c) => `<button type="button" class="pr-hot" data-c="${c.id}" style="left:${pct(c.x, VB[v][0])};top:${pct(c.y, VB[v][1])}" aria-pressed="false" aria-label="${esc(c.nume)}"><span class="pr-tip" aria-hidden="true">${esc(c.nume)}</span></button>`).join('');
+  const glow = (v) => `<radialGradient id="prg-${v}"><stop offset="0" stop-color="#b8955f" stop-opacity=".62"/><stop offset=".6" stop-color="#b8955f" stop-opacity=".24"/><stop offset="1" stop-color="#b8955f" stop-opacity="0"/></radialGradient>`;
+  const HEAD = 'M150 38C196 38 224 72 224 124C224 160 218 190 204 214C190 238 170 254 150 254C130 254 110 238 96 214C82 190 76 160 76 124C76 72 104 38 150 38Z';
+  const svgFace = `<svg viewBox="0 0 300 340" aria-hidden="true" focusable="false"><defs>${glow('f')}<linearGradient id="prs-f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f6efe4"/></linearGradient></defs>
+    <path d="${HEAD}" fill="url(#prs-f)"/>
+    <g class="pr-hls">${hls('f')}</g>
+    <g class="pr-line">
+      <path class="soft" d="M150 22C208 22 240 66 240 128C240 180 242 234 258 290M150 22C92 22 60 66 60 128C60 180 58 234 42 290"/>
+      <path d="${HEAD}"/>
+      <path d="M84 112C92 66 126 50 150 50C180 50 210 66 216 112"/>
+      <path d="M77 132C66 128 62 150 70 166C73 172 78 174 82 172M223 132C234 128 238 150 230 166C227 172 222 174 218 172"/>
+      <path d="M106 118C116 110 132 110 140 116M160 116C168 110 184 110 194 118"/>
+      <path d="M108 137C116 129 132 129 140 137C132 142 116 142 108 137ZM160 137C168 129 184 129 192 137C184 142 168 142 160 137Z"/>
+      <path d="M150 142C148 160 145 174 141 184C146 190 154 190 159 184"/>
+      <path d="M128 211C136 205 144 203 150 207C156 203 164 205 172 211C162 223 138 223 128 211ZM128 211C140 214 160 214 172 211"/>
+      <path d="M122 246C124 270 122 286 116 296C90 304 52 312 30 340M178 246C176 270 178 286 184 296C210 304 248 312 270 340"/>
+    </g></svg>`;
+  const HALF = 'M110 84C98 90 80 92 70 98C62 103 59 112 58 126C55 152 52 176 50 200C48 226 44 250 41 272C39 284 38 292 41 298C44 302 49 299 50 292C52 278 56 262 60 248C64 230 68 212 70 196C72 176 76 156 80 136M80 134C84 160 86 180 84 202C82 220 76 238 76 258C76 300 80 350 84 390C86 420 86 460 88 490C88 500 82 506 84 510L104 510C104 500 102 492 102 486C104 450 106 420 106 392C108 350 114 300 120 268M100 97C108 101 114 101 118 100M90 388C94 392 98 392 102 388';
+  const svgBody = `<svg viewBox="0 0 240 520" aria-hidden="true" focusable="false"><defs>${glow('c')}</defs>
+    <ellipse cx="120" cy="44" rx="21" ry="26" fill="#fff"/>
+    <g class="pr-hls">${hls('c')}</g>
+    <g class="pr-line">
+      <ellipse cx="120" cy="44" rx="21" ry="26"/>
+      <path d="M111 69L110 84M129 69L130 84"/>
+      <path d="${HALF}"/><path d="${HALF}" transform="matrix(-1 0 0 1 240 0)"/>
+      <path class="soft" d="M120 104L120 250"/>
+    </g></svg>`;
+  const estZones = concernZones.map((z) => `<div class="pr-czg"><small>${esc(z.nume)}</small><div>${z.copii.map((c) => `<button type="button" class="pr-chip" data-c="${c.url.split('/').filter(Boolean).pop()}" aria-pressed="false">${esc(c.nume)}</button>`).join('')}</div></div>`).join('');
+  const estHtml = `<section class="pr-panel pr-est" id="estimator" role="tabpanel" aria-labelledby="tab-est" hidden>
+  <div class="wrap pr-est-in">
+    <div class="pr-est-h"><span class="eyebrow">Estimator</span><h2>Ce te <em>supără</em>?</h2><p>Alege zona pe siluetă, bifează opțiunile și vezi de la cât pornește planul. Medicul îl confirmă la consultație.</p></div>
+    <div class="pr-fig">
+      <div class="pr-views" role="group" aria-label="Vedere"><button type="button" data-view="f" aria-pressed="true">Față</button><button type="button" data-view="c" aria-pressed="false">Corp</button></div>
+      <div class="pr-stage">
+        <div class="pr-view" data-view="f">${svgFace}${hots('f')}</div>
+        <div class="pr-view" data-view="c" hidden>${svgBody}${hots('c')}</div>
+      </div>
+      <p class="pr-fig-hint">Atinge un punct sau alege din listă</p>
+    </div>
+    <div class="pr-est-side">
+      <div class="pr-cz" role="group" aria-label="Ce te supără"><p class="pr-cz-t">Toate zonele</p>${estZones}</div>
+      <div class="pr-detail" id="est-detail" aria-live="polite"></div>
+      <div class="pr-sumbox" id="est-sum">
+        <div class="pr-sum-h"><span>Estimarea ta <i id="est-n"></i></span><b id="est-total">—</b></div>
+        <p class="pr-sum-empty" id="est-empty">Bifează tratamentele care te interesează. Costul orientativ apare aici.</p>
+        <ul class="pr-sum-l" id="est-list"></ul>
+        <p class="pr-sum-note">Prețuri de pornire, din lista oficială. Zonele, doza și numărul de ședințe le stabilește medicul la consultație (de la ${lei(minConsult)}).</p>
+        <div class="pr-sum-a"><a class="btn btn-gold arrow" href="#programare" id="est-cta" data-srv="">Programează consultația</a><a class="btn btn-line" id="est-wa" href="https://wa.me/40743056605" target="_blank" rel="noopener" data-track="whatsapp">Trimite pe WhatsApp</a></div>
+      </div>
+    </div>
   </div>
-</section>` : '';
+  <script type="application/json" id="est-data">${JSON.stringify(est.map(({ hl, x, y, ...c }) => c)).replace(/</g, '\\u003c')}</script>
+</section>`;
   const pageUrl = ORIGIN + '/preturi/';
   const schema = {
     '@context': 'https://schema.org',
@@ -1738,14 +1832,18 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Prețuri', item: pageUrl }] },
     ],
   };
-  const tocCats = PR_GRUPURI.flatMap(([, cs]) => cs.filter(([c]) => catOf.has(c)).map(([, nume]) => nume));
+  const ico = {
+    list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1" fill="currentColor" stroke="none"/></svg>',
+    body: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.4" r="2.2"/><path d="M6.5 9.6c1.7-1 3.5-1.4 5.5-1.4s3.8.4 5.5 1.4M12 8.2v6.4M9.6 21.5l1.1-6.9h2.6l1.1 6.9M6.5 9.6l-1.2 5.6M17.5 9.6l1.2 5.6"/></svg>',
+    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>',
+  };
   const page = `<!doctype html>
 <html lang="ro">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prețuri MOA Clinic București – lista completă | MOA Clinic</title>
-<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} prețuri în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii.`)}">
+<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} prețuri în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii și un estimator pe zone.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1758,26 +1856,38 @@ ${TOP}<main>
 
 <section class="pr-hero">
   <div class="wrap">
-    <div class="sec-head split"><div><span class="eyebrow">Prețuri</span><h1 style="margin-top:18px">Lista de <em>prețuri</em></h1></div>
-      <p class="lede">${nRows} de prețuri în ${D.preturi.length} categorii, din lista oficială MOA Clinic. Pentru tratamente, medicul stabilește la consultație zonele, doza și numărul de ședințe.</p></div>
-    <div class="pr-search"><label for="pr-q" class="sr">Caută în prețuri</label><span class="pr-in"><input id="pr-q" type="search" placeholder="Caută un tratament – ex. botox, epilare, NAD" autocomplete="off"><button type="button" id="pr-x" aria-label="Șterge căutarea">✕</button></span><span id="pr-count" aria-live="polite">${nRows} prețuri</span></div>
+    <div class="pr-hero-in">
+      <div><span class="eyebrow">Prețuri</span><h1>Prețuri <em>la vedere</em></h1>
+        <p class="lede">Lista oficială MOA Clinic, înainte de programare. Pentru tratamente, medicul stabilește la consultație zonele, doza și numărul de ședințe.</p></div>
+      <dl class="pr-facts"><div><dt>${nRows}</dt><dd>prețuri publice</dd></div>${D.oferte.length ? `<div><dt>${D.oferte.length}</dt><dd>oferte luna asta</dd></div>` : ''}<div><dt>${cats.length}</dt><dd>categorii</dd></div></dl>
+    </div>
+    <div class="pr-switch" role="tablist" aria-label="Cum vrei să vezi prețurile">
+      <button type="button" role="tab" id="tab-lista" aria-controls="lista" aria-selected="true">${ico.list}<span><b>Lista completă</b><small>${nRows} de prețuri în ${cats.length} categorii</small></span></button>
+      <button type="button" role="tab" id="tab-est" aria-controls="estimator" aria-selected="false" tabindex="-1">${ico.body}<span><b>Pornește de la ce te supără <i class="pr-new">Nou</i></b><small>alegi zona pe siluetă, vezi opțiunile și costul</small></span></button>
+    </div>
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Categorii de prețuri"><div class="wrap">${D.oferte.length ? '<a href="#oferte">Oferte</a>' : ''}${tocCats.map((n) => `<a href="#${slugPr(n)}">${esc(n)}</a>`).join('')}</div></nav>
-
-${offHtml}
-
-<section class="sec pr-list">
-  <div class="wrap">
-    ${catHtml}
-    <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
-    <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii.</p>
+<section class="pr-panel" id="lista" role="tabpanel" aria-labelledby="tab-lista">
+  <div class="wrap pr-lay">
+    <aside class="pr-side">
+      <div class="pr-search"><label for="pr-q" class="sr">Caută în prețuri</label><span class="pr-in">${ico.search}<input id="pr-q" type="search" placeholder="Caută un tratament" autocomplete="off" enterkeyhint="search"><button type="button" id="pr-x" aria-label="Șterge căutarea" hidden>✕</button></span></div>
+      <nav class="pr-nav" aria-label="Categorii de prețuri">${navHtml}</nav>
+    </aside>
+    <div class="pr-main">
+      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nRows} prețuri</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
+      ${offHtml}
+      ${catHtml}
+      <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
+      <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii. Nu știi ce ți se potrivește? <a class="lede-link" href="#estimator">Pornește de la ce te supără</a>.</p>
+    </div>
   </div>
 </section>
+
+${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js" defer></script>
+<script src="/nou/preturi.js?v=2" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
