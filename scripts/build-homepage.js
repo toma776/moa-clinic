@@ -199,6 +199,17 @@ const photos = {};
     if (!/placeholder/.test(m[1])) photos[name] = m[1];
   }
 }
+const thumb = (src, w) => {
+  const local = src.startsWith('/wp-content/') ? path.join(ROOT, 'site', src) : path.join(ROOT, src);
+  if (!fs.existsSync(local)) return src;
+  const name = path.basename(src).replace(/\.\w+$/, '') + '-w' + w + '.jpg';
+  const out = path.join(ROOT, 'nou', 'media', 'r', name);
+  if (!fs.existsSync(out)) {
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    try { require('child_process').execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', local, '-vf', `scale='min(${w},iw)':-2`, '-q:v', '4', out]); } catch { return src; }
+  }
+  return '/nou/media/r/' + name;
+};
 const resized = (src) => {
   // varianta de ~768px, dacă există local
   const dir = path.join(ROOT, 'site', path.dirname(src));
@@ -444,7 +455,7 @@ ${mobileNav}
       <div class="hero-top">
       <span class="eyebrow">MOA Regenerative by Oxxygene · București</span>
       <h1>Frumusețea vine din interior. <em>Și se desăvârșește aici.</em></h1>
-      <a class="doc-chip" href="/nou/medici/adrian-stanescu/"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="" width="48" height="48" loading="lazy"><span><b>Dr. Adrian Stănescu</b>medic primar gerontolog · fondator</span></a>
+      <a class="doc-chip" href="/nou/medici/adrian-stanescu/"><img src="${thumb('/wp-content/uploads/2024/09/image00005-682x1024.jpeg', 96)}" alt="" width="48" height="48" loading="lazy"><span><b>Dr. Adrian Stănescu</b>medic primar gerontolog · fondator</span></a>
       <div class="hero-cta">
         <a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>
         <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
@@ -460,7 +471,7 @@ ${mobileNav}
     <div class="hero-media">
       <div class="frame hs" id="hs" role="region" aria-roledescription="carusel" aria-label="Clinica MOA, în imagini">
         <div class="hs-track">${HERO_SLIDES.map((s, i) => `<figure class="hs-slide ${i ? '' : 'on'}" data-label="${esc(s.eticheta)}" role="group" aria-roledescription="imagine" aria-label="${i + 1} din ${HERO_SLIDES.length}: ${esc(s.eticheta)}" ${i ? 'aria-hidden="true"' : ''}>
-          ${s.mobil ? `<picture><source media="(max-width: 760px)" srcset="${esc(s.mobil)}">` : ''}<img src="${esc(s.src)}" alt="${esc(s.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>${s.mobil ? '</picture>' : ''}</figure>`).join('')}</div>
+          ${s.mobil ? `<picture><source media="(max-width: 760px)" srcset="${esc(s.mobil)}">` : ''}<img ${i ? `data-src="${esc(s.src)}"` : `src="${esc(s.src)}"`} alt="${esc(s.alt)}" ${i ? 'decoding="async"' : 'fetchpriority="high"'}>${s.mobil ? '</picture>' : ''}</figure>`).join('')}</div>
         <div class="hs-bar">
           <span class="hs-label" aria-live="polite">${esc(HERO_SLIDES[0].eticheta)}</span>
           <span class="hs-count"><b>01</b> / ${String(HERO_SLIDES.length).padStart(2, '0')}</span>
@@ -510,7 +521,7 @@ ${mobileNav}
     </div>
     <div class="hp-rail hp-sig">${SIG.map((s) => `
       <a class="hp-sg rv" href="${esc(live(s.id))}">
-        <img src="${esc(s.img)}" alt="${esc(s.titlu)}" loading="lazy">
+        <img src="${esc(thumb(s.img, 760))}" alt="${esc(s.titlu)}" loading="lazy">
         <div class="in"><span class="cat">${esc(s.cat)}</span><h3>${esc(s.titlu)}</h3><p>${esc(s.text)}</p>
           <span class="meta"><span>Detalii →</span>${minPrice(s.id) ? `<span>de la <b>${lei(minPrice(s.id))}</b></span>` : ''}</span></div>
       </a>`).join('')}
@@ -733,7 +744,8 @@ ${mobileNav}
     let cur = 0, timer;
     const goTo = (n) => {
       cur = (n + slides.length) % slides.length;
-      slides.forEach((s, i) => { s.classList.toggle('on', i === cur); s.setAttribute('aria-hidden', i !== cur); if (i === cur) s.querySelector('img').loading = 'eager'; });
+      slides.forEach((s, i) => { s.classList.toggle('on', i === cur); s.setAttribute('aria-hidden', i !== cur); });
+      load(cur); load(cur + 1);
       dots.forEach((d, i) => d.classList.toggle('on', i === cur));
       label.textContent = slides[cur].dataset.label;
       count.textContent = String(cur + 1).padStart(2, '0');
@@ -750,7 +762,9 @@ ${mobileNav}
     hs.addEventListener('touchend', (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1)); x0 = null; play(); });
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
     // preîncarcă următoarea imagine
-    const pre2 = () => slides.slice(1, 2).forEach((s) => (s.querySelector('img').loading = 'eager'));
+    // imaginile ascunse se descarcă abia după încărcarea paginii (nu concurează cu prima imagine)
+    function load(n) { const im = slides[(n + slides.length) % slides.length].querySelector('img'); if (im.dataset.src && !im.src) im.src = im.dataset.src; }
+    const pre2 = () => setTimeout(() => load(1), 1500);
     if (document.readyState === 'complete') pre2(); else addEventListener('load', pre2);
     play();
   }
