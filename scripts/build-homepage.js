@@ -100,6 +100,7 @@ const TRD = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'da
   for (const p of D.echipa) if (p.profil_detaliat) corecteaza(p.profil_detaliat);
   for (const r of D.dovezi?.testimoniale || []) r.citat = corecteaza(r.citat);
 }
+const autolink = require('./autolink');
 const trNode = new Map(); // id serviciu → { nod, cat }
 for (const cat of S.arbore.find((n) => n.url === '/tratamente/').copii) for (const n of cat.copii || []) {
   const s = D.servicii.find((x) => n.vechi?.[0] && x.url === ORIGIN + n.vechi[0]);
@@ -1863,13 +1864,17 @@ ${BOTTOM}`;
     for (let i = 0; i < blocks.length; i++) if (blocks[i].t === 'img') { const k = imgBase(blocks[i].src); if (seenImg.has(k)) { blocks.splice(i, 1); i--; } else seenImg.add(k); }
     const heroImg = heroImg0 ? { ...heroImg0, src: biggest(heroImg0.src) } : null;
     const nota = blocks.length && /^sursa foto/i.test(blocks[blocks.length - 1].x || '') ? blocks.pop().x : '';
-    const h2s = blocks.filter((b) => b.t === 'h2').map((b) => ({ x: b.x, id: slugH(b.x) }));
-    const minute = Math.max(2, Math.round((a.cuvinte || 0) / 200));
+    // versiunea structurată și interactivă a articolului, dacă există (scripts/articole-rich/<id>.js); altfel textul extras
+    const richF = path.join(__dirname, 'articole-rich', id + '.js');
+    const RX = fs.existsSync(richF) ? require(richF)({ esc, lei, live, minPrice, serv, trNode, team, photos, resized }) : null;
+    const h2s = RX ? RX.toc : blocks.filter((b) => b.t === 'h2').map((b) => ({ x: b.x, id: slugH(b.x) }));
+    const minute = RX?.minute || Math.max(2, Math.round((a.cuvinte || 0) / 200));
     const autor = team.find((p) => p.nume === a.autor);
     const pr = autor?.profil_detaliat;
     const rel = artTr(a);
     const relCard = rel ? `<a class="ar-rel" href="${esc(live(rel.sid))}"><small>Tratamentul despre care citești</small><b>${esc(rel.l.nod.nume)}</b><span>${esc(rel.l.cat.nume)}</span>${minPrice(rel.sid) ? `<em>de la ${lei(minPrice(rel.sid))}</em>` : ''}<i>Vezi tratamentul →</i></a>` : '';
-    const body = blocks.map((b, i) => {
+    const linkTr = (h) => autolink(h, { live, has: (sid) => trNode.has(sid), nume: [...trNode].map(([k, v]) => [k, v.nod.nume]), rel: rel?.sid });
+    const body = RX ? [linkTr(RX.html)] : blocks.map((b, i) => {
       if (b.t === 'h2') return `<h2 id="${slugH(b.x)}">${esc(b.x)}</h2>`;
       if (b.t === 'h3') return `<h3>${esc(b.x)}</h3>`;
       if (b.t === 'h4') return `<h4>${esc(b.x)}</h4>`;
@@ -1883,7 +1888,8 @@ ${BOTTOM}`;
     });
     // caseta tratamentului, pe mobil după introducere (înaintea primului H2)
     const firstH2 = blocks.findIndex((b) => b.t === 'h2');
-    if (relCard && firstH2 > 0) body.splice(firstH2, 0, `<div class="ar-rel-inline">${relCard}</div>`);
+    if (!RX) { const j = linkTr(body.join('<!--§-->')).split('<!--§-->'); body.splice(0, body.length, ...j); }
+    if (!RX && relCard && firstH2 > 0) body.splice(firstH2, 0, `<div class="ar-rel-inline">${relCard}</div>`);
     const byDate = (p, q) => q.sc - p.sc || String(q.x.data).localeCompare(String(p.x.data));
     // în coloana laterală: articole despre același tratament / tratamente din aceeași categorie
     const similar = D.articole.filter((x) => x.id !== id).map((x) => {
@@ -1912,6 +1918,7 @@ ${BOTTOM}`;
           author: { '@type': 'Person', name: a.autor, ...(autor?.profil_detaliat ? { url: `${ORIGIN}/medici/${autor.id}/`, jobTitle: autor.rol } : {}) },
           publisher: { '@id': `${ORIGIN}/#organization` } },
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: ORIGIN + '/blog/' }, { '@type': 'ListItem', position: 3, name: a.titlu, item: pageUrl }] },
+        ...(RX?.faq ? [{ '@type': 'FAQPage', mainEntity: RX.faq.map(([q, r]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: r } })) }] : []),
       ],
     };
     const page = `<!doctype html>
@@ -1937,16 +1944,17 @@ ${TOP}<main>
   <div class="wrap ar-narrow">
     <a class="eyebrow ar-tip" href="/nou/blog/?tip=${encodeURIComponent(a.tip)}">${esc(TIP[a.tip] || a.tip)}</a>
     <h1>${esc(a.titlu)}</h1>
-    ${rezArt(a, blocks) === rez(a).replace(/\s*[-–]\s*\.$/, '.').trim() ? `<p class="lede">${esc(rezArt(a, blocks))}</p>` : ''}
+    ${RX ? `<p class="lede">${esc(RX.lede)}</p>` : ''}${!RX && rezArt(a, blocks) === rez(a).replace(/\s*[-–]\s*\.$/, '.').trim() ? `<p class="lede">${esc(rezArt(a, blocks))}</p>` : ''}
     <div class="bl-author ar-author">${autor && photos[autor.nume] ? `<img src="${esc(resized(photos[autor.nume]))}" alt="">` : ''}<span><b>${autor?.profil_detaliat ? `<a href="/nou/medici/${esc(autor.id)}/">${esc(a.autor)}</a>` : esc(a.autor)}</b><span class="bl-meta">${esc(autor?.rol || '')}${autor?.rol ? '<i>·</i>' : ''}${esc(dataRo(a.data))}<i>·</i>${minute} min de citit</span></span></div>
+    ${RX?.trust ? `<ul class="rx-trust">${RX.trust.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
   </div>
   ${heroImg ? `<div class="wrap"><figure class="ar-hero"><img src="${esc(heroImg.src)}" alt="${esc(heroImg.alt || a.titlu)}" fetchpriority="high"></figure></div>` : ''}
 </header>
 
 <section class="ar-main">
   <div class="wrap ar-grid">
-    <article class="ar-body">
-      ${tocHtml ? `<details class="ar-toc-m ar-m"><summary><small>Cuprins</small><span>${h2s.length} secțiuni</span></summary><nav aria-label="Cuprins">${tocHtml}</nav></details>` : ''}
+    <article class="ar-body${RX ? ' rx-body' : ''}">
+      ${tocHtml ? `<details class="ar-toc-m ar-m"><summary><small>Cuprins</small><span class="ar-toc-cur">${h2s.length} secțiuni</span></summary><nav aria-label="Cuprins">${tocHtml}</nav></details>` : ''}
       ${body.join('\n      ')}
       ${nota ? `<p class="ar-nota">${esc(nota)}</p>` : ''}
       ${autor ? `<div class="ar-bio">${photos[autor.nume] ? `<img src="${esc(resized(photos[autor.nume]))}" alt="">` : ''}<div><small>Despre autor</small><b>${esc(autor.nume)}</b><p>${esc(cutTxt(pr?.rezumat || autor.rol, 260))}</p>${pr ? `<a class="link-u" href="/nou/medici/${esc(autor.id)}/">Vezi profilul →</a>` : ''}</div></div>` : ''}
@@ -1979,12 +1987,14 @@ ${BOOK}
     bar.style.width = Math.min(100, Math.max(0, (-r.top / Math.max(1, total)) * 100)) + '%';
     let cur = -1; heads.forEach((h, i) => { if (h && h.getBoundingClientRect().top < 160) cur = i; });
     links.forEach((l, i) => l.classList.toggle('on', i === cur));
+    const curEl = document.querySelector('.ar-toc-cur'); if (curEl && cur >= 0 && links[cur]) curEl.textContent = links[cur].textContent;
   };
   addEventListener('scroll', on, { passive: true }); on();
   // pe mobil cuprinsul se închide după alegerea unei secțiuni
   const m = document.querySelector('.ar-toc-m');
   if (m) m.addEventListener('click', (e) => { if (e.target.closest('a')) m.open = false; });
 })();
+${RX?.script || ''}
 </script>
 ${BOTTOM}`;
     const dir = path.join(ROOT, 'nou', slug);
