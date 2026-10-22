@@ -63,8 +63,8 @@ function critical(css) {
 }
 const crit = critical(min);
 const fontCss = fs.readFileSync(path.join(NOU, 'fonts', 'fonts.css'), 'utf8');
-const FONT_HEAD = `<link rel="preload" href="/nou/fonts/CormorantGaramond-3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/nou/fonts/Montserrat-5-latin.woff2" as="font" type="font/woff2" crossorigin>
+const FONT_HEAD = `<link rel="preload" href="/nou/fonts/CormorantGaramond-normal-ro.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/nou/fonts/Montserrat-normal-ro.woff2" as="font" type="font/woff2" crossorigin>
 <style>${minCss(fontCss)}</style>`;
 
 // înlocuiește în <head>: legăturile Google Fonts → fonturile locale; style.css → style.min.css?v=
