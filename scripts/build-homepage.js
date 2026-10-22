@@ -76,12 +76,13 @@ const fixPunct = (html) => {
 };
 // „[email protected]” = adresa ascunsă de Cloudflare pe site-ul vechi, copiată ca atare în texte
 // datele structurate (ld+json) primesc aceeași corectură de spațiu înainte de punctuație
-const writePage = (p, html) => fs.writeFileSync(p, fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
+const { perfHead } = require('./perf');
+const writePage = (p, html) => fs.writeFileSync(p, perfHead(fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
   .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, j, b) => a + j.replace(/([^\s"]) +([.,;:!?])(?=[\s"]|$)/g, '$1$2')
     .replace(/"(name|description|text|headline|alternateName)":"([^"]*)"/g, (mm, k, v) => `"${k}":"${curata(v)}"`) + b)
   // titlul și meta-descrierea trec prin aceeași rescriere a afirmațiilor
   .replace(/(<title>)([^<]*)/, (m, a, v) => a + curata(v))
-  .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v)));
+  .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v))));
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
@@ -411,6 +412,8 @@ const html = `<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/nou/style.css">
+${HERO_SLIDES[0].mobil ? `<link rel="preload" as="image" href="${esc(HERO_SLIDES[0].mobil)}" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="${esc(HERO_SLIDES[0].src)}" media="(min-width: 761px)" fetchpriority="high">` : `<link rel="preload" as="image" href="${esc(HERO_SLIDES[0].src)}" fetchpriority="high">`}
 <script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
 </head>
 <body class="hp">
@@ -561,7 +564,7 @@ ${mobileNav}
     </div>
     <div class="hp-rail hp-vid">${VID.map((v) => {
       const p = v.pagini[0];
-      return `<div class="v-card"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
+      return `<div class="v-card"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` data-poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește video"><span>▶</span></button></div>
         <h3>${esc(vTitle(v))}</h3><p>${p.serviciu ? `<a href="${esc(live(p.serviciu))}">${esc(trNode.get(p.serviciu)?.nod.nume || serv[p.serviciu]?.nume || '')}</a>` : ''}${vDur(v) ? ` · ${vDur(v)}` : ''}</p></div>`; }).join('')}
     </div>
   </div>
@@ -747,7 +750,8 @@ ${mobileNav}
     hs.addEventListener('touchend', (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1)); x0 = null; play(); });
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
     // preîncarcă următoarea imagine
-    slides.slice(1, 2).forEach((s) => (s.querySelector('img').loading = 'eager'));
+    const pre2 = () => slides.slice(1, 2).forEach((s) => (s.querySelector('img').loading = 'eager'));
+    if (document.readyState === 'complete') pre2(); else addEventListener('load', pre2);
     play();
   }
 
@@ -770,6 +774,10 @@ ${mobileNav}
     tabs.forEach((x) => x.setAttribute('aria-selected', x === t));
     document.querySelectorAll('[data-panel]').forEach((p) => (p.hidden = p.dataset.panel !== t.dataset.tab));
   }));
+
+  // posterele video: abia când se apropie de ecran
+  const vio = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.poster = e.target.dataset.poster; vio.unobserve(e.target); } }), { rootMargin: '400px' });
+  document.querySelectorAll('video[data-poster]').forEach((v) => vio.observe(v));
 
   // video: se încarcă doar la click
   document.querySelectorAll('.v-card').forEach((c) => c.querySelector('.play').addEventListener('click', () => { const v = c.querySelector('video'); c.classList.add('playing'); v.controls = true; v.play(); }));
@@ -1203,7 +1211,7 @@ for (const id of TR_PAGINI) {
   const book = BOOK.split(`<option>${nod.nume}</option>`).join(`<option selected>${nod.nume}</option>`);
   const urmeaza = consult ? [...trNode.entries()].filter(([x, l]) => !l.consult && (serv[x].medici || []).some((n) => (s.medici || []).includes(n))).map(([x]) => serv[x]).slice(0, 9) : [];
   const tVids = VID_ALL.filter((v) => v.pagini.some((p) => p.serviciu === id));
-  const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
+  const vidCards = tVids.map((v) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` data-poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div><h3>${esc(vTitle(v))}</h3></div>`).join('');
   const vidBlock = tVids.length ? `<div class="tr-videos"><div class="tr-vh"><span class="eyebrow">Video din cabinet</span><a class="link-u" href="/nou/video/">Toate video-urile →</a></div><div class="vp-grid tr-vgrid">${vidCards}</div></div>` : '';
   const toc = [
     (whoItems.length || whoLede || whoMore.length) && ['#pentru-cine', 'Pentru cine'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], showGal && ['#rezultate', 'Rezultate'],
@@ -1723,7 +1731,7 @@ ${TOP}<main>
       <p class="lede">${vids.length} video-uri scurte din cabinetele MOA, ${Math.round(totalS / 60)} minute în total. Înainte să vii, știi cum arată clinica, aparatura și o ședință.</p></div>
     <div class="team-filter vp-filter" role="tablist" aria-label="Filtrează după categorie"><button type="button" class="on" data-vcat="">Toate · ${vids.length}</button>${cats.map((c) => `<button type="button" data-vcat="${esc(c)}">${esc(cap(c.replace(/^Tratamente /, '').replace(/^cu /, '')))} · ${vids.filter((x) => x.cat === c).length}</button>`).join('')}</div>
     <h2 class="sr">Toate video-urile</h2>
-    <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
+    <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` data-poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
       <small class="vp-cat">${esc(cap(cat.replace(/^Tratamente (cu )?/, '')))}</small><h3>${esc(vTitle(v))}</h3>${nume ? `<p>${href ? `<a href="${esc(href)}">${esc(nume)} →</a>` : esc(nume)}</p>` : ''}</div>`).join('')}</div>
   </div>
 </section>
