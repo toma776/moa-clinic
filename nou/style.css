@@ -3199,3 +3199,34 @@ footer.f .f-reach a:hover { color: #fff; }
   .bl-tools > * { min-width: 0; }
 }
 @media (max-width: 760px) { .th-page .pf-photo img { object-position: 50% 62%; } }
+
+/* prețuri: căutarea de deasupra listei – text + categorie + tratament / zonă; stă în grila listei, pe toată lățimea */
+.pr-side { grid-template-rows: minmax(0, 1fr); }
+.pr-finder.pr-search { grid-column: 1 / -1; position: static; margin: 0 0 clamp(28px, 3.5vw, 44px); padding: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; display: grid; grid-template-columns: minmax(0, 1.7fr) repeat(2, minmax(0, 1fr)); gap: 18px; }
+.pr-finder label { display: block; margin-bottom: 9px; font: 400 14px/1.2 var(--sans); color: var(--ink); }
+.pr-finder input, .pr-finder select { width: 100%; height: 54px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font: 400 15.5px/1 var(--sans); color: var(--ink); outline: none; transition: border-color .2s, box-shadow .2s; }
+.pr-finder input { padding: 0 44px 0 46px; }
+.pr-finder select { padding: 0 44px 0 18px; appearance: none; -webkit-appearance: none; cursor: pointer; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23574a3e' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 18px center; text-overflow: ellipsis; }
+.pr-finder input:focus, .pr-finder select:focus { border-color: var(--gold-2); box-shadow: 0 0 0 4px rgba(184, 149, 95, .15); }
+.pr-finder .pr-in > svg { left: 18px; }
+.pr-tools .pr-reset { margin-right: auto; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font: inherit; letter-spacing: .12em; color: var(--gold); cursor: pointer; }
+.pr-tools .pr-reset:hover { border-color: var(--gold-2); color: var(--ink); }
+.pr-tools .pr-reset[hidden] { display: none; }
+/* telefon / tabletă: formularul se desface în grila listei, ca rândul de căutare să rămână lipit sus pe toată lista */
+@media (max-width: 960px) {
+  .pr-lay { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+  .pr-lay > *, .pr-side > * { grid-column: 1 / -1; }
+  .pr-finder.pr-search { display: contents; }
+  .pr-finder > div:not(.pf-q) { grid-column: auto; margin: 14px 0 24px; }
+  .pr-finder .pf-q { grid-column: 1 / -1; position: sticky; top: var(--hd-h, 0px); z-index: 20; margin: 0 -24px; padding: 10px 24px; background: rgba(248, 244, 238, .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: top .32s var(--ease); }
+  .pr-finder .pf-q label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .pr-tools .pr-reset { padding: 7px 10px; white-space: nowrap; }
+}
+@media (max-width: 760px) {
+  .pr-finder .pf-q { margin: 0 -16px; padding: 10px 16px; }
+  .pr-finder > div:not(.pf-q) { margin: 8px 0 20px; }
+  .pr-finder label { font-size: 13px; margin-bottom: 7px; }
+  .pr-finder input, .pr-finder select { height: 50px; font-size: 16px; }
+  .pr-finder select { padding: 0 34px 0 14px; background-position: right 13px center; }
+}
+@media (max-width: 760px) { .pr-tools .pr-reset span { display: none; } }

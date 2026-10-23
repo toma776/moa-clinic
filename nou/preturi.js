@@ -33,10 +33,26 @@
   const toTabs = () => { const s = $('.pr-switch'); scrollTo({ top: s.getBoundingClientRect().top + scrollY - (hdr?.offsetHeight || 0) - 12, behavior: smooth() }); };
 
   // ---- lista: căutare ----
-  const q = $('#pr-q'), qx = $('#pr-x'), empty = $('#pr-empty'), count = $('#pr-count'), all = $('#pr-all');
+  const q = $('#pr-q'), qx = $('#pr-x'), selG = $('#pr-g'), selT = $('#pr-t'), empty = $('#pr-empty'), count = $('#pr-count'), all = $('#pr-all');
   const cats = $$('.pr-cat');
   const navLinks = $$('.pr-nav a');
-  const rows = $$('.pr-row, .pr-orow').map((r) => ({ r, t: norm(r.textContent + ' ' + r.closest('.pr-cat').dataset.nume) }));
+  // grupa fiecărei categorii, din cuprinsul lateral (Injectabile, Aparatură…)
+  const grupOf = {};
+  $$('.pr-ng').forEach((g) => $$('a', g).forEach((a) => { grupOf[a.hash.slice(1)] = $('small', g).textContent; }));
+  // textul căutat: rândul + subtitlul de deasupra („Contur buze, volum buze”) + categoria
+  const subOf = (r) => { let el = r.previousElementSibling; while (el && !el.classList.contains('pr-sub')) el = el.previousElementSibling; return el ? el.textContent : ''; };
+  const rows = $$('.pr-row, .pr-orow').map((r) => { const c = r.closest('.pr-cat'); return { r, c: c.id, g: grupOf[c.id], t: norm(r.textContent + ' ' + subOf(r) + ' ' + c.dataset.nume) }; });
+  // tratament / zonă: doar opțiunile din categoria aleasă (refăcute, nu ascunse – Safari pe iOS ignoră <option hidden>)
+  const allT = selT ? $$('optgroup', selT).map((og) => ({ g: og.label, o: $$('option', og).map((o) => [o.value, o.textContent]) })) : [];
+  // pe telefon listele sunt înguste: prima opțiune devine doar „Toate”
+  const mic = matchMedia('(max-width: 760px)');
+  const fillT = () => {
+    const g = selG.value, keep = selT.value;
+    const list = allT.filter((x) => !g || x.g === g);
+    selG.options[0].text = mic.matches ? 'Toate' : 'Toate categoriile';
+    selT.innerHTML = '<option value="">' + (mic.matches ? 'Toate' : g ? 'Toate din ' + esc(g.toLowerCase()) : 'Toate tratamentele') + '</option>' + list.map((x) => (g ? '' : '<optgroup label="' + esc(x.g) + '">') + x.o.map(([v, t]) => '<option value="' + v + '">' + esc(t) + '</option>').join('') + (g ? '' : '</optgroup>')).join('');
+    selT.value = list.some((x) => x.o.some(([v]) => v === keep)) ? keep : '';
+  };
   const total = $$('.pr-row').length;
   let before = null; // categoriile deschise înainte de căutare, refăcute când se golește căutarea
   const syncAll = () => {
@@ -46,23 +62,34 @@
   };
   const filter = () => {
     const words = norm(q.value).split(/\s+/).filter(Boolean);
-    if (words.length && !before) before = new Set(cats.filter((c) => c.open));
+    const g = selG?.value || '', tc = selT?.value || '', on = words.length || g || tc;
+    if (on && !before) before = new Set(cats.filter((c) => c.open));
     let n = 0;
-    rows.forEach(({ r, t }) => { const ok = words.every((w) => t.includes(w)); r.hidden = !ok; if (ok && r.classList.contains('pr-row')) n++; });
-    cats.forEach((c) => { const any = !!c.querySelector('.pr-row:not([hidden]), .pr-orow:not([hidden])'); c.hidden = !any; if (words.length) c.open = any; });
+    rows.forEach(({ r, t, c, g: rg }) => { const ok = words.every((w) => t.includes(w)) && (!g || rg === g) && (!tc || c === tc); r.hidden = !ok; if (ok && r.classList.contains('pr-row')) n++; });
+    cats.forEach((c) => { const any = !!c.querySelector('.pr-row:not([hidden]), .pr-orow:not([hidden])'); c.hidden = !any; if (on) c.open = any; });
     $$('.pr-sub').forEach((h) => { let el = h.nextElementSibling, any = false; while (el && !el.classList.contains('pr-sub')) { if (el.classList.contains('pr-row') && !el.hidden) any = true; el = el.nextElementSibling; } h.hidden = !any; });
     $$('.pr-og-block').forEach((b) => { b.hidden = !b.querySelector('.pr-orow:not([hidden])'); });
     navLinks.forEach((l) => { l.hidden = !!document.getElementById(l.hash.slice(1))?.hidden; });
     $$('.pr-ng').forEach((g) => { g.hidden = !g.querySelector('a:not([hidden])'); });
-    if (!words.length && before) { cats.forEach((c) => { c.open = before.has(c); }); before = null; }
+    if (!on && before) { cats.forEach((c) => { c.open = before.has(c); }); before = null; }
     empty.hidden = cats.some((c) => !c.hidden);
     const de = (x) => (x % 100 === 0 && x > 0) || x % 100 >= 20 ? 'de ' : ''; // „212 servicii”, „220 de servicii”
-    count.textContent = words.length ? `${n} din ${total} ${de(total)}servicii` : `${total} ${de(total)}servicii`;
+    count.textContent = on ? `${n} din ${total} ${de(total)}servicii` : `${total} ${de(total)}servicii`;
     qx.hidden = !q.value;
+    if (reset) reset.hidden = !on;
     syncAll();
   };
+  const reset = $('#pr-reset');
+  reset?.addEventListener('click', () => { q.value = ''; selG.value = ''; fillT(); filter(); q.focus({ preventScroll: true }); });
+  if (selT) { fillT(); mic.addEventListener('change', fillT); }
   let tq;
   q?.addEventListener('input', () => { filter(); clearTimeout(tq); tq = setTimeout(() => q.value.trim() && track('preturi_cautare', { termen: q.value.trim() }), 1200); });
+  selG?.addEventListener('change', () => { fillT(); filter(); track('preturi_categorie', { categorie: selG.value }); });
+  selT?.addEventListener('change', () => {
+    // tratamentul ales fixează și categoria lui
+    if (selT.value && grupOf[selT.value] !== selG.value) { selG.value = grupOf[selT.value]; fillT(); }
+    filter(); track('preturi_tratament', { tratament: selT.value });
+  });
   q?.addEventListener('keydown', (e) => { if (e.key === 'Escape' && q.value) { q.value = ''; filter(); } });
   qx?.addEventListener('click', () => { q.value = ''; filter(); q.focus(); });
 
@@ -76,7 +103,7 @@
     el.open = true;
     const y = el.getBoundingClientRect().top + scrollY, down = y > scrollY;
     if (down) hdr?.classList.add('hide');
-    const bar = matchMedia('(max-width: 960px)').matches ? $('.pr-search').offsetHeight : 0;
+    const bar = matchMedia('(max-width: 960px)').matches ? $('.pf-q')?.offsetHeight || 0 : 0; // câmpul de căutare lipicios de pe telefon
     scrollTo({ top: y - bar - (down ? 0 : hdr?.offsetHeight || 0) - 8, behavior: smooth() });
   };
   document.addEventListener('click', (e) => {

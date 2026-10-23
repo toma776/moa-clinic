@@ -2413,6 +2413,13 @@ ${BOTTOM}`;
     const ks = cats.filter((k) => k.grup === g);
     return ks.length ? `<div class="pr-ng"><small>${esc(g)}</small>${ks.map((k) => `<a href="#${k.id}">${esc(k.nume)}<span>${k.n}</span></a>`).join('')}</div>` : '';
   }).join('')}`;
+  // căutarea de deasupra listei: text + categorie + tratament / zonă (lista de tratamente se restrânge după categorie, în preturi.js)
+  const grupe = PR_GRUPURI.map(([g]) => g).filter((g) => cats.some((k) => k.grup === g));
+  const finderHtml = () => `<form class="pr-finder pr-search" role="search" onsubmit="return false">
+    <div class="pf-q"><label for="pr-q">Ce preț cauți?</label><span class="pr-in">${ico.search}<input id="pr-q" type="search" placeholder="Ex. botox, epilare, PRP…" autocomplete="off" enterkeyhint="search"><button type="button" id="pr-x" aria-label="Șterge căutarea" hidden>✕</button></span></div>
+    <div><label for="pr-g">Categorie</label><select id="pr-g"><option value="">Toate categoriile</option>${grupe.map((g) => `<option>${esc(g)}</option>`).join('')}</select></div>
+    <div><label for="pr-t">Tratament / zonă</label><select id="pr-t"><option value="">Toate tratamentele</option>${grupe.map((g) => `<optgroup label="${esc(g)}">${cats.filter((k) => k.grup === g).map((k) => `<option value="${k.id}">${esc(k.nume)}</option>`).join('')}</optgroup>`).join('')}</select></div>
+  </form>`;
 
   // ---------- estimatorul: problemele din „Ce te supără?”, așezate pe o siluetă (față / corp) ----------
   // [vedere, x, y, zonele evidențiate [cx, cy, rx, ry]] în coordonatele desenului (față 300×340, corp 240×520)
@@ -2545,12 +2552,12 @@ ${TOP}<main>
 <section class="pr-panel" id="lista" role="tabpanel" aria-labelledby="tab-lista">
   ${spotHtml}
   <div class="wrap pr-lay">
+    ${finderHtml()}
     <aside class="pr-side">
-      <div class="pr-search"><label for="pr-q" class="sr">Caută în prețuri</label><span class="pr-in">${ico.search}<input id="pr-q" type="search" placeholder="Caută un tratament" autocomplete="off" enterkeyhint="search"><button type="button" id="pr-x" aria-label="Șterge căutarea" hidden>✕</button></span></div>
       <nav class="pr-nav" aria-label="Categorii de prețuri">${navHtml}</nav>
     </aside>
     <div class="pr-main">
-      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nDe(nRows, 'servicii')}</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
+      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nDe(nRows, 'servicii')}</span><button type="button" class="pr-reset" id="pr-reset" hidden>Resetează<span> filtrele</span> ✕</button><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
       ${catHtml}
       <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
       <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii. Nu știi ce ți se potrivește? <a class="lede-link" href="#estimator">Pornește de la ce te supără</a>.</p>
@@ -2561,7 +2568,7 @@ ${TOP}<main>
 ${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js?v=5" defer></script>
+<script src="/nou/preturi.js?v=7" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
