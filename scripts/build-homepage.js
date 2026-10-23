@@ -1823,7 +1823,11 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
         <div class="tm-ph">${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="${esc(p.nume)}" loading="lazy">` : `<div class="tm-mono" role="img" aria-label="${esc(p.nume)} – fotografie în curând"><span>${esc(ini(p))}</span><small>fotografie în curând</small></div>`}${p.grad ? `<span class="tm-grad">${esc(p.grad.replace(/^Medic\s+/, ''))}</span>` : ''}</div>
         <h3>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">${esc(p.nume)}</a>` : esc(p.nume)}</h3>
         <p>${esc(p.rol)}</p>
-        <div class="tm-acts">${p.profil_detaliat ? `<a class="link-u" href="/nou/medici/${esc(p.id)}/">Profilul</a>` : ''}<a class="tm-book" href="#programare" data-srv="${esc(srv)}" aria-label="Programează-te la ${esc(p.nume)}">Programează-te <i aria-hidden="true">→</i></a></div>
+        ${(() => {
+          // asistentele nu au programare proprie: fără butonul „Programează-te”
+          const acts = `${p.profil_detaliat ? `<a class="link-u" href="/nou/medici/${esc(p.id)}/">Profilul</a>` : ''}${p.specialitate === 'Asistență medicală' ? '' : `<a class="tm-book" href="#programare" data-srv="${esc(srv)}" aria-label="Programează-te la ${esc(p.nume)}">Programează-te <i aria-hidden="true">→</i></a>`}`;
+          return acts ? `<div class="tm-acts">${acts}</div>` : '';
+        })()}
       </article>`;
   };
   const grpHtml = TM.map((g, i) => {
