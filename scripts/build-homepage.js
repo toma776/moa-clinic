@@ -531,7 +531,7 @@ screens.push(`<div class="mscreen on" data-screen="root">
       <div class="ms-rail">${SIG.map((s) => `<a href="${esc(live(s.id))}"><span class="ph"><img data-src="${esc(thumb(s.img, 400))}" alt=""></span><b>${esc((trNode.get(s.id)?.nod.nume || '').replace(/\s*[–(].*$/, ''))}</b>${minPrice(s.id) ? `<em>de la ${lei(minPrice(s.id))}</em>` : ''}</a>`).join('')}</div>
     </section>
     <section class="ms-contact">
-      <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp"><small>WhatsApp</small><b>Scrie-ne discret</b></a>
+      <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp"><small>WhatsApp</small><b>Scrie-ne un mesaj</b></a>
       <a href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener"><small>Adresă</small><b>Str. Ștefan Mihăileanu 35, București</b></a>
     </section>
   </div>
@@ -769,7 +769,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
       <p class="lede">Lăsați-ne numele și telefonul. Vă sunăm noi, ca să găsim împreună ora și tratamentul potrivite.</p>
       <ol class="bk-steps"><li><b>01</b>Ne lăsați datele</li><li><b>02</b>Vă sunăm pentru confirmare</li><li><b>03</b>Consultația, fără obligații</li></ol>
       <div class="direct bk-btns"><a class="btn" href="tel:+40743056605" data-track="telefon">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></div>
-      <p class="bk-direct">Preferați să vorbim direct? <a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp, discret</a></p>
+      <p class="bk-direct">Preferați să vorbim direct? <a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></p>
     </div>
     <form class="booking bk-form rv" id="booking" novalidate>
       <div class="row2">
@@ -810,7 +810,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
       <h4>Vizită</h4>
       <address>Str. Ștefan Mihăileanu 35<br>Sector 2, București</address>
       <a class="f-map" href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener">Indicații pe hartă →</a>
-      <ul class="f-reach"><li><small>Telefon</small><a href="tel:+40743056605" data-track="telefon">0743 056 605</a></li><li><small>WhatsApp</small><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">Scrie-ne discret</a></li><li><small>Email</small><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></li></ul>
+      <ul class="f-reach"><li><small>Telefon</small><a href="tel:+40743056605" data-track="telefon">0743 056 605</a></li><li><small>WhatsApp</small><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">Scrie-ne un mesaj</a></li><li><small>Email</small><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></li></ul>
     </div>
   </div>
   <div class="wrap f-bot">
@@ -1703,7 +1703,7 @@ ${TOP}<main class="tr-page tp">
       ${facts.length ? `<div class="pf-facts tr-facts">${facts.map((f) => `<div><b>${esc(f.v)}</b><span>${esc(f.l)}</span></div>`).join('')}</div>` : ''}
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a><a class="btn btn-line" href="#preturi">Vezi prețurile</a></div>
       ${wlBtn(nod.nume.replace(/\s*\(.*\)$/, ''), minPrice(id), live(id))}
-      <a class="tr-wa" href="https://wa.me/40743056605?text=${encodeURIComponent(`Bună ziua! Aș dori informații despre ${nod.nume.replace(/\s*\(.*\)$/, '')}.`)}" data-track="whatsapp">Sau scrie-ne discret pe WhatsApp →</a>
+      <a class="tr-wa" href="https://wa.me/40743056605?text=${encodeURIComponent(`Bună ziua! Aș dori informații despre ${nod.nume.replace(/\s*\(.*\)$/, '')}.`)}" data-track="whatsapp">Sau scrie-ne pe WhatsApp →</a>
       ${docsBlock}
     </div>
     ${t.hero || HERO_NOU[id] ? `<div class="pf-photo tr-photo"><div class="frame"><img src="${esc(HERO_NOU[id]?.src || resized(t.hero))}" alt="${esc(nod.nume)} la MOA Clinic" fetchpriority="high"${HERO_NOU[id]?.pos ? ` style="object-position:${HERO_NOU[id].pos}"` : ''}></div>${offer ? `<a class="tr-offer" href="#programare" data-srv="${esc(offerSrv)}" aria-label="Programează-te cu oferta lunii: ${esc(offerName)}, ${lei(offer.pret)}"><small>Oferta lunii · -${offer.discountProcent}%</small><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> ${lei(offer.pret)}</span><i>Programează-te →</i></a>` : ''}</div>` : ''}
