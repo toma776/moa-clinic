@@ -143,7 +143,7 @@ NOU.add('/video/');
 NOU.add('/blog/');
 NOU.add('/clinica/tehnologie/');
 // wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
-const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă în lista mea: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Lista mea' : 'Adaugă în listă'}</span></button>`;
+const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă pe wishlist: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Wishlist' : 'Adaugă pe wishlist'}</span></button>`;
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 // tratamentul (pagina nouă) despre care e un articol: întâi după cuvintele-cheie din titlu, apoi după entitățile articolului
 // (fără cele care apar pe aproape toate articolele – NAD, antioxidanți, numele medicilor – decât dacă nu există altceva)
@@ -839,7 +839,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
 </div>
-<script src="/nou/wishlist.js?v=3" defer></script>
+<script src="/nou/wishlist.js?v=4" defer></script>
 <script src="/nou/progres.js?v=2" defer></script>
 
 <script>

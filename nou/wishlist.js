@@ -21,7 +21,7 @@
   wrap.className = 'wl'; wrap.hidden = true;
   wrap.innerHTML = `<div class="wl-bg" data-wl-close></div>
   <div class="wl-in" role="dialog" aria-modal="true" aria-labelledby="wl-t">
-    <div class="wl-head"><div><span class="wl-eye">Lista mea</span><h3 id="wl-t">Tratamentele tale</h3></div><button type="button" class="wl-x" data-wl-close aria-label="Închide">✕</button></div>
+    <div class="wl-head"><div><span class="wl-eye">Wishlist</span><h3 id="wl-t">Tratamentele tale</h3></div><button type="button" class="wl-x" data-wl-close aria-label="Închide">✕</button></div>
     <p class="wl-sub">Adaugă tot ce îți dorești, apoi trimite lista o singură dată. Te sunăm noi și programăm fiecare tratament, în ordinea potrivită.</p>
     <ul class="wl-list"></ul>
     <div class="wl-total"></div>
@@ -32,10 +32,10 @@
       </div>
       <div class="field"><label for="wl-msg">Mesaj (opțional)</label><textarea id="wl-msg" name="mesaj" rows="2" placeholder="Ex.: prefer dimineața, aș vrea totul în aceeași zi"></textarea></div>
       <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="https://moaclinic.ro/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
-      <button class="btn btn-gold arrow" type="submit">Trimite lista</button>
+      <button class="btn btn-gold arrow" type="submit">Trimite wishlistul</button>
       <p class="form-msg" role="status" aria-live="polite"></p>
     </form>
-    <div class="wl-empty"><p>Lista e goală.</p><p class="wl-sub">Pe paginile de tratament și în lista de prețuri găsești eticheta <b>+ Adaugă în listă</b>.</p><a class="link-u" href="/nou/preturi/">Vezi prețurile →</a></div>
+    <div class="wl-empty"><p>Lista e goală.</p><p class="wl-sub">Pe paginile de tratament și în lista de prețuri găsești eticheta <b>+ Adaugă pe wishlist</b>.</p><a class="link-u" href="/nou/preturi/">Vezi prețurile →</a></div>
   </div>`;
   document.body.appendChild(wrap);
   const ul = wrap.querySelector('.wl-list'), tot = wrap.querySelector('.wl-total'), form = wrap.querySelector('.wl-form'), msg = form.querySelector('.form-msg');
@@ -44,8 +44,8 @@
     const n = list.length;
     fab.hidden = wrap.classList.contains('open') || n === 0; // apare doar după primul tratament adăugat
     fab.classList.toggle('zero', n === 0);
-    fab.innerHTML = `<span class="wl-fab-i" aria-hidden="true">♡</span><span>Lista mea</span><b>${n}</b>`;
-    fab.setAttribute('aria-label', `Deschide lista mea (${n} ${n === 1 ? 'tratament' : 'tratamente'})`);
+    fab.innerHTML = `<span class="wl-fab-i" aria-hidden="true">♡</span><span>Wishlist</span><b>${n}</b>`;
+    fab.setAttribute('aria-label', `Deschide wishlistul (${n} ${n === 1 ? 'tratament' : 'tratamente'})`);
     ul.innerHTML = list.map((x, i) => `<li><span class="wl-n">${x.u ? `<a href="${esc(x.u)}">${esc(x.n)}</a>` : esc(x.n)}</span><span class="wl-p">${x.p != null ? lei(x.p) : 'la consultație'}</span><button type="button" class="wl-rm" data-i="${i}" aria-label="Elimină ${esc(x.n)}">✕</button></li>`).join('');
     const sum = list.reduce((s, x) => s + (x.p || 0), 0);
     tot.innerHTML = n ? `<span>${n} ${n === 1 ? 'tratament' : 'tratamente'}</span><span>Total orientativ <b>${lei(sum)}</b></span>` : '';
@@ -58,7 +58,7 @@
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on);
       const sp = b.querySelector('span'), ic = b.querySelector('i');
-      if (sp) sp.textContent = on ? 'În listă' : b.classList.contains('wl-ico') ? 'Lista mea' : 'Adaugă în listă';
+      if (sp) sp.textContent = on ? 'Pe wishlist' : b.classList.contains('wl-ico') ? 'Wishlist' : 'Adaugă pe wishlist';
       if (ic) ic.textContent = on ? '✓' : '+';
     });
   };
