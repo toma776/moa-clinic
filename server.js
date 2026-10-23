@@ -61,6 +61,29 @@ function body(req) {
 function run(script) {
   return new Promise((ok, err) => execFile(process.execPath, [path.join(ROOT, 'scripts', script)], { cwd: ROOT, timeout: 10 * 60e3 }, (e, out, stderr) => (e ? err(new Error(stderr || e.message)) : ok(out))));
 }
+
+// Salvările din panoul local pleacă singure în GitHub (și de acolo pe Vercel): commit doar cu fișierele de date atinse,
+// pull --rebase, push. Paginile le regenerează build-ul Vercel. Oprit cu MOA_AUTOPUSH=0. Lead-urile nu trec niciodată pe aici.
+const AUTOPUSH = process.env.MOA_AUTOPUSH !== '0';
+const git = (args) => new Promise((ok, err) => execFile('git', args, { cwd: ROOT, timeout: 90e3 }, (e, out, stderr) => (e ? err(new Error((stderr || e.message).trim())) : ok(out))));
+let gitQueue = Promise.resolve();
+function publish(files, message) {
+  const job = gitQueue.then(async () => {
+    if (!AUTOPUSH) return 'dezactivat';
+    files = files.map((f) => 'data/' + f);
+    if (!(await git(['status', '--porcelain', '--', ...files])).trim()) return 'nimic nou';
+    await git(['add', '--', ...files]);
+    await git(['commit', '-q', '-m', message, '--', ...files]);
+    try { await git(['pull', '-q', '--rebase', '--autostash']); } catch (e) {
+      await git(['rebase', '--abort']).catch(() => {});
+      throw new Error('nu am putut aduce ultimele modificări din GitHub (conflict?). Commitul e local; rulează git pull. ' + e.message);
+    }
+    await git(['push', '-q']);
+    return 'trimis';
+  });
+  gitQueue = job.catch(() => {});
+  return job.catch((e) => { console.error('  ! git:', e.message); return 'eroare: ' + e.message.slice(0, 300); });
+}
 // Previne ieșirea din directorul permis (../).
 function safe(base, rel) {
   const p = path.normalize(path.join(base, rel));
@@ -83,7 +106,7 @@ async function api(req, res, url) {
 
   if (url === '/api/brand' && m === 'PUT') {
     writeJson('brand.json', await body(req));
-    return sendJson(res, 200, { ok: true });
+    return sendJson(res, 200, { ok: true, git: await publish(['brand.json'], 'Panou local: brand book actualizat') });
   }
 
   if (url === '/api/preturi' && m === 'PUT') {
@@ -96,7 +119,9 @@ async function api(req, res, url) {
     if (D) writeJson('entitati.json', PRT.apply(D, P));
     let build = 'ok';
     try { await run('build-homepage.js'); } catch (e) { build = e.message.slice(0, 400); }
-    return sendJson(res, 200, { ok: true, preturi: P, oferte: PRT.offersOf(P).length, build });
+    const oferte = PRT.offersOf(P).length;
+    const gitSt = await publish(['preturi.json', 'entitati.json'], `Panou local: lista de prețuri actualizată (${oferte} oferte)`);
+    return sendJson(res, 200, { ok: true, preturi: P, oferte, build, git: gitSt });
   }
 
   if (url === '/api/entitati-editari' && m === 'PUT') {
@@ -111,7 +136,8 @@ async function api(req, res, url) {
     writeJson('entitati.json', D);
     let build = 'ok';
     try { await run('build-homepage.js'); } catch (e) { build = e.message.slice(0, 400); }
-    return sendJson(res, 200, { ok: true, grupuri, build });
+    const gitSt = await publish(['entitati.json', 'entitati-editari.json'], `Panou local: entități actualizate (${grupuri.join(', ')})`);
+    return sendJson(res, 200, { ok: true, grupuri, build, git: gitSt });
   }
 
   if (url === '/api/leads' && m === 'PUT') {
@@ -145,7 +171,7 @@ async function api(req, res, url) {
     const st = readJson('intrebari-status.json', {});
     st[id] = { status, intrebare: intrebare || '', raspuns: raspuns || '', nota: nota || '', verificat_la: now() };
     writeJson('intrebari-status.json', st);
-    return sendJson(res, 200, { ok: true });
+    return sendJson(res, 200, { ok: true, git: await publish(['intrebari-status.json'], `Panou local: întrebare ${status}`) });
   }
 
   if (url.startsWith('/api/observatii/') && m === 'POST') {
@@ -162,6 +188,7 @@ async function api(req, res, url) {
           st[obs.id] = { status: 'rezolvat', metoda: 'verificat pe site', verificat_la: out.verificat_la, detalii: r.detalii };
           writeJson('observatii-status.json', st);
           out.salvat = true;
+          out.git = await publish(['observatii-status.json'], `Panou local: observație rezolvată (${obs.id})`);
         }
         return sendJson(res, 200, out);
       } catch (e) {
@@ -171,12 +198,12 @@ async function api(req, res, url) {
     if (act === 'confirma') {
       st[obs.id] = { status: 'rezolvat', metoda: 'confirmat manual', verificat_la: now(), nota: b.nota || '' };
       writeJson('observatii-status.json', st);
-      return sendJson(res, 200, { ok: true });
+      return sendJson(res, 200, { ok: true, git: await publish(['observatii-status.json'], `Panou local: observație confirmată (${obs.id})`) });
     }
     if (act === 'redeschide') {
       delete st[obs.id];
       writeJson('observatii-status.json', st);
-      return sendJson(res, 200, { ok: true });
+      return sendJson(res, 200, { ok: true, git: await publish(['observatii-status.json'], `Panou local: observație redeschisă (${obs.id})`) });
     }
   }
 

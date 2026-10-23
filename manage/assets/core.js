@@ -21,10 +21,16 @@ const src = (list) => {
   return `<details class="src"><summary>${plural(L.length, 'pagină', 'pagini')}</summary>${L.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(shortUrl(u))}</a>`).join('')}</details>`;
 };
 
+// panoul local trimite singur salvările în Git (server.js › publish): a doua notificare spune cum a mers
+const gitNote = (st) => {
+  if (!st || st === 'nimic nou' || st === 'dezactivat') return;
+  if (st.startsWith('eroare')) console.error('git:', st);
+  setTimeout(() => toast(st === 'trimis' ? 'Trimis în Git · Vercel publică în ~1–2 minute' : 'Salvat local, dar nu a plecat în Git: ' + st.replace(/^eroare: /, '')), 2400);
+};
 const api = {
   get: (u) => fetch(u, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
   send: (u, method, body) => fetch(u, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body, null, 2) })
-    .then(async (r) => { const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || 'HTTP ' + r.status); return j; }),
+    .then(async (r) => { const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || 'HTTP ' + r.status); gitNote(j.git); return j; }),
 };
 
 const store = { entitati: null, pages: null, leads: [], brand: null, health: null, qStatus: {}, obsStatus: {} };
