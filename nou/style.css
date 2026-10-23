@@ -2968,7 +2968,7 @@ footer.f .f-reach a:hover { color: #fff; }
   .t2-docs-list li > a, .t2-docs-list li > div { padding: 9px 0; }
   .t2-docs-list b { font-size: 16px; }
   .t2-fisa dd { font-size: 14.5px; }
-  .t2 .tr-related .tr-arts { display: none; }
+  .t2 .tr-related:has(.tr-asoc) .t2-blog { display: none; }
 }
 @media (max-width: 760px) {
   .t2 .sec { padding: 30px 0; }

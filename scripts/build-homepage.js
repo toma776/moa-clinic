@@ -1182,7 +1182,7 @@ ${BOOK}${BOTTOM}`;
 // Se generează toate tratamentele din structură care au conținut extras (trNode, definit sus); restul linkurilor duc la paginile actuale.
 const TR_PAGINI = [...trNode.keys()];
 // șablonul v2 (compact): paginile pe care e activ și, opțional, fraza de beneficiu din hero (altfel prima frază din text)
-const TPL2 = new Set(['injectare-botox']);
+const TPL2 = 'toate'; // toate tratamentele (consultațiile rămân pe șablonul lor); sau un Set cu id-uri, pentru probă
 const TR_PROMISE = {
   'injectare-botox': 'Relaxează mușchii care formează ridurile de expresie: pielea devine mai netedă, fără să-ți afecteze expresivitatea feței.',
 };
@@ -1312,7 +1312,8 @@ for (const id of TR_PAGINI) {
   const offerName = offer && (offerZone ? `${nod.nume.replace(/\s*\(.*\)$/, '')} · ${offerZone[0].toLowerCase()}` : offerLabel(offer.nume));
   const offerSrv = offer ? `Oferta lunii: ${offerName} – ${lei(offer.pret)}` : '';
   const facts = [
-    pret && { v: lei(pret), l: consult ? 'consultația' : 'de la, pe zonă' },
+    // „pe zonă” doar unde prețul cel mai mic chiar e pe zonă (ex. Botox: „1 zonă”)
+    pret && { v: lei(pret), l: consult ? 'consultația' : /\bzon[ăae]/i.test(s.preturi.find((p) => p.valoare === pret)?.nume || '') ? 'de la, pe zonă' : 'preț de la' },
     consult && s.specialitate && { v: s.specialitate, l: 'medic specialist sau primar' },
     mRez && { v: mRez[1].replace(/\s*[–-]\s*/, '–'), l: 'până la primele efecte' },
     mDur && { v: `${mDur[1]}–${mDur[2]} luni`, l: 'cât durează efectul' },
@@ -1397,7 +1398,7 @@ for (const id of TR_PAGINI) {
         <span class="tag">${esc(p.specialitate)}</span><h3>${esc(p.nume)}</h3><span>${esc(p.rol)}</span>${p.profil_detaliat ? '<span class="doc-more">Vezi profilul →</span>' : ''}</article>`;
 
   // ---------- șablonul v2 (compact, orientat pe decizie): deocamdată doar pe paginile din TPL2 ----------
-  if (TPL2.has(id)) {
+  if (TPL2 === 'toate' ? !consult : TPL2.has(id)) {
     const medDocs = medici.filter((p) => p.tip === 'Medic').sort((a, b) => (GRAD[a.grad] ?? 9) - (GRAD[b.grad] ?? 9));
     const gradTxt2 = (() => { const g = [...new Set(medDocs.map((p) => ({ 'Medic primar': 'primari', 'Medic specialist': 'specialiști', 'Medic rezident': 'rezidenți' })[p.grad]).filter(Boolean))]; return g.length > 1 ? g.slice(0, -1).join(', ') + ' și ' + g.slice(-1) : g[0] || ''; })();
     const ini = (n) => n.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join('');
@@ -1415,7 +1416,9 @@ for (const id of TR_PAGINI) {
       fara && ['Recuperare', 'fără timp de recuperare'],
       pret && ['Preț', `de la ${lei(pret)}${offer ? ` · ofertă ${lei(offer.pret)}` : ''}`],
       contra.length && ['Nu e pentru', contra.slice(0, 3).map((x) => x.replace(/[;.]$/, '').toLowerCase()).join('; ')],
+      medDocs.length && ['Efectuat de', `${medDocs.length === 1 ? medDocs[0].nume : `${medDocs.length} medici ${gradTxt2}`}`],
     ].filter(Boolean);
+    const showFisa = fisa.length >= 2;
     const revMatch = revs.filter((r) => r.citat.length > 25).slice(0, 2);
     const priceRows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9));
     const pRow = (p) => `<tr><td>${esc(p.nume)}${p.subgrup ? `<small class="tr-psub">${esc(cap(p.subgrup.toLowerCase()))}</small>` : ''}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td><td class="wl-td">${wlBtn(`${nod.nume.replace(/\s*\(.*\)$/, '')} · ${p.nume}`, p.valoare, live(id), true)}</td></tr>`;
@@ -1429,10 +1432,12 @@ for (const id of TR_PAGINI) {
       showGal && paras('rezultate').length && ['Despre rezultate', trBlocks(paras('rezultate').map(P))],
       ...info.map((x) => [x.titlu, trBlocks(x.blocuri)]),
       safeIntro && ['Siguranță', `<p>${esc(safeIntro)}</p>`],
+      // textul despre preț (ce influențează costul etc.), când prețurile vin din lista oficială; altfel e deja în secțiunea de prețuri
+      s.preturi.length && B('pret').some((b) => b.t !== 'tabel') && ['Despre preț', trBlocks(B('pret').filter((b) => b.t !== 'tabel'))],
       // paragrafele din „după tratament” care nu sunt reguli (introducerea și încheierea), ca să nu se piardă
       dupaBl.some((b) => b.t === 'p' && !dupaRules.includes(b)) && ['Recomandări după tratament', trBlocks(dupaBl.filter((b) => b.t === 'p' && !dupaRules.includes(b)))],
     ].filter(Boolean);
-    const toc2 = [['#pe-scurt', 'Pe scurt'], showGal && ['#rezultate', 'Rezultate'], steps.length && ['#cum-decurge', 'Cum decurge'], hasPrices && ['#preturi', 'Prețuri'], medDocs.length && ['#medici', 'Medici'], qa.length && ['#intrebari', 'Întrebări']].filter(Boolean);
+    const toc2 = [showFisa && ['#pe-scurt', 'Pe scurt'], showGal && ['#rezultate', 'Rezultate'], steps.length && ['#cum-decurge', 'Cum decurge'], tVids.length && !steps.length && ['#video', 'Video'], hasPrices && ['#preturi', 'Prețuri'], medDocs.length && ['#medici', 'Medici'], qa.length && ['#intrebari', 'Întrebări']].filter(Boolean);
     const acc = (items, cls = '') => `<div class="tr-faq ${cls}">${items.map(([q, a]) => `<details><summary>${esc(q)}</summary><div class="pf-prose">${a}</div></details>`).join('')}</div>`;
     let page2 = `<!doctype html>
 <html lang="ro">
@@ -1463,21 +1468,20 @@ ${TOP}<main class="tr-page tp t2">
       <div class="t2-proof">
         ${medDocs.length ? `<a class="t2-docs" href="#medici"><span class="t2-ava">${medDocs.slice(0, 3).map(ava).join('')}</span><span><b>${medDocs.length} ${medDocs.length === 1 ? 'medic' : 'medici'}</b><small>${esc(gradTxt2)}</small></span></a>` : ''}
         <a class="t2-rate" href="#recenzii"><b>★ 5.0</b><span><small>${esc(nReviews)} de recenzii Google</small></span></a>
-        ${wlBtn(nod.nume.replace(/\s*\(.*\)$/, ''), minPrice(id), live(id), true)}
       </div>
     </div>
     ${t.hero || HERO_NOU[id] ? `<div class="t2-photo"><img src="${esc(HERO_NOU[id]?.src || resized(t.hero))}" alt="${esc(nod.nume)} la MOA Clinic" fetchpriority="high"${HERO_NOU[id]?.pos ? ` style="object-position:${HERO_NOU[id].pos}"` : ''}></div>` : ''}
   </div>
 </section>
 
-<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc2.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}<a class="tr-toc-cta" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a></div></nav>
+${toc2.length >= 3 ? `<nav class="tr-toc" aria-label="Pe această pagină"><div class="wrap">${toc2.map(([h, n]) => `<a href="${h}">${n}</a>`).join('')}<a class="tr-toc-cta" href="#programare" data-srv="${esc(nod.nume)}">Programează-te</a></div></nav>` : ''}
 
-<section class="sec" id="pe-scurt">
+${showFisa ? `<section class="sec" id="pe-scurt">
   <div class="wrap t2-brief">
     <div class="rv"><span class="eyebrow">Pe scurt</span><h2>Ce trebuie <em>să știi</em></h2><p class="lede">Esențialul, din textul medicului. Detaliile complete sunt mai jos, la „Pe larg”.</p></div>
     <dl class="t2-fisa rv">${fisa.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
   </div>
-</section>
+</section>` : ''}
 
 ${showGal ? `<section class="sec tr-results" id="rezultate">
   <div class="wrap">
@@ -1495,9 +1499,16 @@ ${whoItems.length ? `<section class="sec" id="pentru-cine">
 
 ${steps.length ? `<section class="sec" id="cum-decurge">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2>Cum decurge <em>o ședință</em></h2></div>${stepsLede ? `<p class="lede">${esc(stepsLede)}</p>` : ''}</div>
+    <div class="sec-head split rv"><div><span class="eyebrow">Pas cu pas</span><h2>Cum decurge <em>${cat.url === '/tratamente/chirurgie-dermatologie/' ? 'procedura' : 'o ședință'}</em></h2></div>${stepsLede ? `<p class="lede">${esc(stepsLede)}</p>` : ''}</div>
     <ol class="tr-steps">${steps.map((x) => `<li>${x.titlu ? `<b>${esc(cap(x.titlu.replace(/[;.]$/, '')))}</b>` : ''}${x.text ? `<p>${esc(x.text)}</p>` : ''}</li>`).join('')}</ol>
     ${vidBlock}
+  </div>
+</section>` : ''}
+
+${tVids.length && !steps.length ? `<section class="sec" id="video">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">În cabinet</span><h2>Vezi cum <em>decurge</em></h2></div><p class="lede">${tVids.length === 1 ? 'Un video scurt' : `${tVids.length} video-uri scurte`} din cabinetul MOA.</p></div>
+    <div class="vp-grid tr-vgrid">${vidCards}</div>
   </div>
 </section>` : ''}
 
@@ -1511,16 +1522,16 @@ ${hasPrices ? `<section class="sec" id="preturi">
   </div>
 </section>` : ''}
 
-${medDocs.length ? `<section class="sec" id="medici">
-  <div class="wrap t2-who">
+<section class="sec" id="${medDocs.length ? 'medici' : 'recenzii-sec'}">
+  ${medDocs.length ? `<div class="wrap t2-who">
     <div class="rv"><span class="eyebrow">Cine te tratează</span><h2>Medicii <em>tratamentului</em></h2><p class="lede">${medDocs.length} ${medDocs.length === 1 ? 'medic' : 'medici'} ${esc(gradTxt2)}. Alegi medicul la programare sau îți recomandăm noi.</p><a class="link-u" href="/nou/medici/">Toată echipa →</a></div>
     <ul class="t2-docs-list">${medDocs.slice(0, 6).map((p) => `<li>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">` : '<div>'}<span class="t2-ava">${ava(p)}</span><span><b>${esc(p.nume)}</b><small>${esc(p.rol)}</small></span>${p.profil_detaliat ? '</a>' : '</div>'}</li>`).join('')}</ul>
-  </div>
+  </div>` : `<div class="wrap"><div class="sec-head rv"><span class="eyebrow">Recenzii Google</span><h2>Ce spun <em>pacienții</em></h2></div></div>`}
   <div class="wrap t2-revs" id="recenzii">
     ${revMatch.length ? revMatch.map((r) => `<figure class="t2-rev"><q>${esc(r.citat)}</q><figcaption><b>${esc(r.persoana)}</b> · recenzie Google</figcaption></figure>`).join('') : ''}
     <a class="t2-rev t2-rev-sum" href="/nou/#recenzii"><b>★ 5.0</b><span>din ${esc(nReviews)} de recenzii verificate pe Google</span><i>Citește recenziile →</i></a>
   </div>
-</section>` : ''}
+</section>
 
 ${qa.length ? `<section class="sec" id="intrebari">
   <div class="wrap pf-two">
@@ -1540,7 +1551,7 @@ ${asoc.length || arts.length ? `<section class="sec">
   <div class="wrap tr-related">
     ${asoc.length ? `<div><span class="eyebrow">Se combină cu</span><h2 class="pf-h2">Tratamente <em>asociate</em></h2>
     <div class="tr-asoc">${asoc.map((x) => `<a class="mm-card" href="${esc(trHref(x.id))}"><b>${esc(prettyName(trNode.get(x.id)?.nod.nume || x.nume))}</b><span>${esc(trNode.get(x.id)?.cat.nume || prettyName(x.categorie))}</span>${minPrice(x.id) ? `<em><small>de la</small>${lei(minPrice(x.id))}</em>` : '<em>→</em>'}</a>`).join('')}</div></div>` : ''}
-    ${arts.length ? `<div><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește <em>mai mult</em></h2>
+    ${arts.length ? `<div class="t2-blog"><span class="eyebrow">Din blog</span><h2 class="pf-h2">Citește <em>mai mult</em></h2>
     <ul class="tr-arts">${arts.slice(0, 3).map((a) => `<li><a href="${esc(artLink(a))}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul></div>` : ''}
   </div>
 </section>` : ''}
