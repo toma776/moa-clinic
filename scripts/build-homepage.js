@@ -714,32 +714,30 @@ ${mobileNav}
   </div>
 </section>
 
-<section class="sec book" id="programare">
-  <div class="wrap grid">
-    <div class="rv">
+<section class="sec book book2" id="programare">
+  <div class="wrap bk-in">
+    <div class="bk-txt rv">
       <span class="eyebrow light">Programare</span>
-      <h2 style="margin-top:22px">Primul pas e <em style="color:var(--gold-soft)">o discuție.</em></h2>
-      <p class="lede">Lasă-ne numele și telefonul. Te sunăm noi, ca să găsim împreună ora potrivită și tratamentul potrivit.</p>
-      <ol class="steps">
-        <li><span><b>Ne lași datele</b>Durează sub un minut.</span></li>
-        <li><span><b>Te sunăm</b>Confirmăm ora și răspundem la întrebări.</span></li>
-        <li><span><b>Consultația</b>Medicul îți face un plan, fără nicio obligație.</span></li>
-      </ol>
-      <div class="direct"><a class="btn" href="tel:+40743056605" data-track="telefon">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></div>
-      <p class="direct-note">Preferi discreția? Pe WhatsApp îți răspunde direct recepția clinicii.</p>
+      <h2>Primul pas e <em>o discuție.</em></h2>
+      <p class="lede">Lăsați-ne numele și telefonul. Vă sunăm noi, ca să găsim împreună ora și tratamentul potrivite.</p>
+      <ol class="bk-steps"><li><b>01</b>Ne lăsați datele</li><li><b>02</b>Vă sunăm pentru confirmare</li><li><b>03</b>Consultația, fără obligații</li></ol>
+      <div class="direct bk-btns"><a class="btn" href="tel:+40743056605" data-track="telefon">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></div>
+      <p class="bk-direct">Preferați să vorbim direct? <a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp, discret</a></p>
     </div>
-    <form class="booking rv" id="booking" novalidate>
-      <h3>Cere o programare</h3>
+    <form class="booking bk-form rv" id="booking" novalidate>
       <div class="row2">
-        <div class="field"><label for="f-nume">Nume</label><input id="f-nume" name="nume" autocomplete="name" required></div>
+        <div class="field"><label for="f-nume">Nume și prenume</label><input id="f-nume" name="nume" autocomplete="name" required></div>
         <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
       </div>
-      <div class="field"><label for="f-email">Email (opțional)</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
-      <div class="field"><label for="f-srv">Ce te interesează?</label>
+      <div class="field"><label for="f-srv">Ce vă interesează?</label>
         <select id="f-srv" name="serviciu">${SRV_OPTIONS}</select></div>
-      <div class="field"><label for="f-msg">Mesaj (opțional)</label><textarea id="f-msg" name="mesaj" rows="2"></textarea></div>
+      <fieldset class="bk-pref"><legend>Cum preferați să vă contactăm?</legend><label><input type="checkbox" name="contact" value="Telefon" checked><span>Telefon</span></label><label><input type="checkbox" name="contact" value="WhatsApp"><span>WhatsApp</span></label><label><input type="checkbox" name="contact" value="E-mail"><span>E-mail</span></label></fieldset>
+      <details class="bk-more"><summary>+ Adăugați e-mail sau un mesaj (opțional)</summary>
+        <div class="field bk-email"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
+        <div class="field"><label for="f-msg">Mesaj</label><textarea id="f-msg" name="mesaj" rows="2"></textarea></div>
+      </details>
       <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
-      <button class="btn btn-gold arrow" type="submit" style="justify-self:start">Trimite cererea</button>
+      <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
       <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -782,11 +780,13 @@ ${mobileNav}
   <form class="sheet-in booking" id="sheet-form" role="dialog" aria-modal="true" aria-labelledby="sheet-t" novalidate>
     <span class="sheet-grip" aria-hidden="true"></span>
     <button class="sheet-x" type="button" data-close aria-label="Închide">✕</button>
-    <h3 id="sheet-t">Cere o programare</h3>
-    <p class="sheet-sub">Lasă numele și telefonul. Te sunăm noi pentru confirmare.</p>
-    <div class="field"><label for="s-nume">Nume</label><input id="s-nume" name="nume" autocomplete="name" required></div>
+    <h3 id="sheet-t">Cereți o programare</h3>
+    <p class="sheet-sub">Lăsați numele și telefonul. Vă sunăm noi pentru confirmare.</p>
+    <div class="field"><label for="s-nume">Nume și prenume</label><input id="s-nume" name="nume" autocomplete="name" required></div>
     <div class="field"><label for="s-tel">Telefon</label><input id="s-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
-    <div class="field"><label for="s-srv">Ce te interesează?</label><select id="s-srv" name="serviciu">${SRV_OPTIONS}</select></div>
+    <div class="field"><label for="s-srv">Ce vă interesează?</label><select id="s-srv" name="serviciu">${SRV_OPTIONS}</select></div>
+    <fieldset class="bk-pref"><legend>Cum preferați să vă contactăm?</legend><label><input type="checkbox" name="contact" value="Telefon" checked><span>Telefon</span></label><label><input type="checkbox" name="contact" value="WhatsApp"><span>WhatsApp</span></label><label><input type="checkbox" name="contact" value="E-mail"><span>E-mail</span></label></fieldset>
+    <div class="field bk-email" hidden><label for="s-email">E-mail</label><input id="s-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
     <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
     <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
     <p class="form-msg" role="status" aria-live="polite"></p>
@@ -985,19 +985,28 @@ ${mobileNav}
   document.querySelectorAll('form.booking').forEach((f) => {
     const msg = f.querySelector('.form-msg');
     const say = (cls, t) => { msg.className = 'form-msg ' + cls; msg.textContent = t; };
+    // „E-mail” bifat la preferința de contact: câmpul de e-mail apare (din „Adaugă e-mail…” sau ascuns) și devine obligatoriu
+    const em = f.querySelector('input[name=contact][value="E-mail"]'), emBox = f.querySelector('.bk-email');
+    if (em && emBox) em.addEventListener('change', () => {
+      if (!em.checked) { if (emBox.hasAttribute('hidden') || emBox.dataset.shown) { emBox.hidden = true; delete emBox.dataset.shown; } return; }
+      const det = emBox.closest('details'); if (det) det.open = true; else { emBox.hidden = false; emBox.dataset.shown = '1'; }
+      emBox.querySelector('input').focus();
+    });
     f.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const d = Object.fromEntries(new FormData(f));
-      if (!(d.nume || '').trim()) { say('err', 'Completează numele.'); f.nume.focus(); return; }
+      const fd = new FormData(f), d = Object.fromEntries(fd), contact = fd.getAll('contact');
+      if (!(d.nume || '').trim()) { say('err', 'Completați numele și prenumele.'); f.nume.focus(); return; }
       if (!telOk(d.telefon || '')) { say('err', 'Numărul de telefon pare incomplet (ex. 0743 056 605).'); f.telefon.focus(); return; }
-      if (!d.acord) { say('err', 'Bifează acordul pentru a putea fi contactat(ă).'); return; }
+      if (f.querySelector('.bk-pref') && !contact.length) { say('err', 'Alegeți cum preferați să vă contactăm.'); return; }
+      if (contact.includes('E-mail') && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test((d.email || '').trim())) { say('err', 'Completați adresa de e-mail, ca să vă putem contacta pe e-mail.'); f.email?.focus(); return; }
+      if (!d.acord) { say('err', 'Bifați acordul pentru a putea fi contactat(ă).'); return; }
       const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
       try {
-        const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: (d.email || '').trim() || undefined, serviciu: d.serviciu || undefined, mesaj: (d.mesaj || '').trim() || undefined, sursa: 'Formular site', pagina: location.pathname, origine: sursaVizita || undefined }) });
+        const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nume: d.nume.trim(), telefon: d.telefon.trim(), email: (d.email || '').trim() || undefined, serviciu: d.serviciu || undefined, contact: contact.join(', ') || undefined, mesaj: (d.mesaj || '').trim() || undefined, sursa: 'Formular site', pagina: location.pathname, origine: sursaVizita || undefined }) });
         if (!r.ok) throw new Error();
         track('lead_trimis', { serviciu: d.serviciu || '' });
-        f.reset(); say('ok', 'Mulțumim! Te sunăm în curând pentru confirmare.');
-      } catch { say('err', 'Nu am putut trimite cererea. Sună-ne la 0743 056 605.'); }
+        f.reset(); say('ok', contact.length && !contact.includes('Telefon') ? 'Mulțumim! Vă contactăm în curând pe ' + contact.join(' sau ').replace('E-mail', 'e-mail') + ' pentru confirmare.' : 'Mulțumim! Vă sunăm în curând pentru confirmare.');
+      } catch { say('err', 'Nu am putut trimite cererea. Sunați-ne la 0743 056 605.'); }
       btn.disabled = false;
     });
   });
@@ -1061,7 +1070,7 @@ console.log(`Gata: nou/index.html · ${team.length} oameni în echipă (${doctor
 const sliceBetween = (a, b) => html.slice(html.indexOf(a), html.indexOf(b, html.indexOf(a)));
 const toHome = (s) => s.replace(/href="#(ce-te-supara|echipa|recenzii|despre)"/g, 'href="/nou/#$1"');
 const TOP = toHome(sliceBetween('<div class="topbar">', '<main>'));
-const BOOK = sliceBetween('<section class="sec book" id="programare">', '</main>');
+const BOOK = sliceBetween('<section class="sec book book2" id="programare">', '</main>');
 const BOTTOM = toHome(html.slice(html.indexOf('</main>')));
 const fmtPer = (x) => String(x || '').replace(/^din\s+/i, '').replace(/\s*până în prezent/, ' – prezent');
 const cutTxt = (s, n) => { s = String(s || ''); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };

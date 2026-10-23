@@ -2988,3 +2988,52 @@ footer.f .f-reach a:hover { color: #fff; }
 }
 .t2-brief h2, .t2-price h2, .t2-who h2 { font-size: clamp(32px, 3.6vw, 48px); font-weight: 400; line-height: 1.08; }
 @media (max-width: 760px) { .t2-brief h2, .t2-price h2, .t2-who h2 { font-size: 29px; } }
+
+/* =====================================================================
+   Programarea compactă (section.book2): o singură bandă, formular scurt, email și mesaj la cerere
+   ===================================================================== */
+.book.book2 { padding: clamp(44px, 4.6vw, 68px) 0; }
+.bk-in { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.book2 h2 { margin: 14px 0 0; font-size: clamp(32px, 3.4vw, 46px); color: #fff; }
+.book2 h2 em { color: var(--gold-soft); }
+.book2 .lede { margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #b9b0a3; max-width: 44ch; }
+.bk-steps { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.bk-steps li { display: flex; align-items: baseline; gap: 8px; font-size: 13px; color: #d9d0c2; }
+.bk-steps b { font: italic 400 17px/1 var(--serif); color: var(--gold-soft); }
+.bk-direct { margin: 20px 0 0; font-size: 13.5px; color: #a39a8c; }
+.bk-direct a { color: #fff; border-bottom: 1px solid rgba(217, 195, 160, .45); }
+.bk-direct a:hover { color: var(--gold-soft); }
+.book2 form.bk-form { gap: 14px; padding: clamp(22px, 2.6vw, 32px); }
+.book2 form.bk-form .btn { justify-self: start; }
+.bk-more summary { cursor: pointer; list-style: none; font-size: 13px; color: var(--gold); }
+.bk-more summary::-webkit-details-marker { display: none; }
+.bk-more[open] summary { margin-bottom: 12px; }
+.bk-more[open] { display: grid; gap: 12px; }
+@media (max-width: 1100px) { .bk-in { grid-template-columns: 1fr; gap: 26px; } }
+@media (max-width: 760px) {
+  .book.book2 { padding: 36px 0 40px; }
+  .book2 h2 { font-size: 31px; }
+  .bk-steps { display: none; }
+  .bk-direct { margin-top: 14px; }
+  .book2 form.bk-form { padding: 20px 18px; }
+  .book2 form.bk-form .row2 { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .book2 form.bk-form .btn { justify-self: stretch; justify-content: center; }
+}
+/* programare: preferința de contact (bife), butoanele mari doar pe desktop, rândul de text doar pe mobil */
+.bk-pref { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.bk-pref legend { width: 100%; padding: 0; margin-bottom: 8px; font: 500 11px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.bk-pref label { position: relative; cursor: pointer; }
+.bk-pref input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bk-pref span { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px 9px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; color: var(--ink-2); background: #fff; transition: border-color .2s, background .2s, color .2s; }
+.bk-pref span::before { content: ''; width: 14px; height: 14px; border: 1px solid var(--gold-2); border-radius: 3px; background: #fff center / 10px no-repeat; flex: none; }
+.bk-pref input:checked + span { border-color: var(--gold); background: rgba(148, 117, 71, .08); color: var(--ink); }
+.bk-pref input:checked + span::before { background-color: var(--gold); border-color: var(--gold); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.bk-pref input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.bk-btns { margin-top: 22px; }
+.book2 .bk-direct { display: none; }
+@media (max-width: 760px) {
+  .bk-btns { display: none; }
+  .book2 .bk-direct { display: block; }
+  .bk-pref { gap: 8px; }
+  .bk-pref span { padding: 9px 12px 9px 10px; font-size: 13px; }
+}
