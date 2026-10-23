@@ -88,6 +88,7 @@ const writePage = (p, html) => fs.writeFileSync(p, perfHead(fixPunct(html.replac
   // titlul și meta-descrierea trec prin aceeași rescriere a afirmațiilor
   .replace(/(<title>)([^<]*)/, (m, a, v) => a + curata(v))
   .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v))));
+const nDe = (n, w) => `${n} ${n % 100 === 0 && n > 0 || n % 100 >= 20 ? 'de ' : ''}${w}`; // „212 servicii”, „220 de servicii”
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
@@ -337,10 +338,10 @@ const LINK_HINT = {
   'Ce este Global Antiaging': 'Conceptul MOA, explicat simplu', 'Consultația antiaging': `Cu medicul gerontolog${minPrice('consultatie-antiaging') ? ` · de la ${lei(minPrice('consultatie-antiaging'))}` : ''}`,
   'Vârsta biologică': 'Cât de tânăr e, de fapt, organismul tău', 'Teste genetice': 'DNA Skin, nutrigenetică și epigenetică',
   'Terapii intravenoase': 'NAD+, glutation, vitamine', 'TMS pentru burnout': 'Stimulare magnetică transcraniană',
-  'Toate prețurile': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} servicii, pe categorii`, 'Ofertele lunii': `${D.oferte.length} oferte active`,
+  'Toate prețurile': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} servicii, pe categorii`, 'Ofertele lunii': `${nDe(D.oferte.length, 'oferte')} active`,
   'Consultații': `Primul pas · de la ${lei(Math.min(...['consultatie-dermatoestetica-dermatologie', 'consultatie-antiaging', 'consultatie-chirurgie-plastica'].map(minPrice).filter(Boolean)))}`,
   'Clinica și conceptul': 'Povestea MOA și fondatorul ei', 'Tehnologie': 'Splendor X, Venus Viva, Venus Legacy, Dermapen 4',
-  'Recenzii & rezultate': 'Experiențele pacienților', 'Blog': `${D.articole.length} articole despre tratamente`,
+  'Recenzii & rezultate': 'Experiențele pacienților', 'Blog': `${nDe(D.articole.length, 'articole')} despre tratamente`,
   'Întrebări frecvente': 'Răspunsuri scurte, înainte să vii', 'Contact': 'Str. Ștefan Mihăileanu 35, București',
 };
 const zoneData = concernZones.map((z) => ({
@@ -404,7 +405,7 @@ const tabbed = (id, title, groups, feat, ph) => `
   </div>`;
 const INTRO = {
   'Longevitate': ['Global Antiaging', 'Medicina longevității: îți măsurăm vârsta biologică, apoi medicul gerontolog îți face un plan regenerativ.', 'Vezi programul', '/nou/longevitate/program/'],
-  'Prețuri': ['Prețuri transparente', `Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de servicii ale clinicii au prețul afișat, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
+  'Prețuri': ['Prețuri transparente', `Toate cele ${nDe(D.preturi.reduce((n, c) => n + c.servicii.length, 0), 'servicii')} ale clinicii au prețul afișat, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
   'Despre MOA': ['MOA Clinic', 'Estetică medicală, chirurgie și medicină regenerativă, sub același acoperiș, în centrul Bucureștiului.', 'Echipa medicală', '/nou/medici/'],
 };
 const simple = (id, m, feat) => {
@@ -446,11 +447,11 @@ const offersPanel = (id) => {
       </div>
       <div class="mm-main">${tabs.map((t, k) => `
         <div class="mm-pane" id="pane-${id}-${k}" ${k ? 'hidden' : ''}>
-          <div class="mm-pane-h"><div><h3>${esc(t.g)}</h3><p>${t.all ? `${D.oferte.length} oferte, iată cele mai mari reduceri` : `${t.os.length} ${t.os.length === 1 ? 'ofertă' : 'oferte'}`}${offMax(t.os) ? ` · până la −${offMax(t.os)}%` : ''}</p></div><a href="/nou/preturi/#oferte">Toate ofertele →</a></div>
+          <div class="mm-pane-h"><div><h3>${esc(t.g)}</h3><p>${t.all ? `${nDe(D.oferte.length, 'oferte')}, iată cele mai mari reduceri` : `${t.os.length} ${t.os.length === 1 ? 'ofertă' : 'oferte'}`}${offMax(t.os) ? ` · până la −${offMax(t.os)}%` : ''}</p></div><a href="/nou/preturi/#oferte">Toate ofertele →</a></div>
           <div class="mm-offgrid">${t.os.slice(0, 3).map(offCardMm).join('')}</div>
         </div>`).join('')}
       </div>
-      ${mmFeat(null, 'Pentru luna aceasta', `Până la −${offMax(D.oferte)}%`, `${D.oferte.length} oferte active, în ${offGrp.length} categorii. Prețurile sunt publice, înainte de programare.`, 'Vezi toate ofertele', '/nou/preturi/#oferte')}
+      ${mmFeat(null, 'Pentru luna aceasta', `Până la −${offMax(D.oferte)}%`, `${nDe(D.oferte.length, 'oferte')} active, în ${offGrp.length} categorii. Prețurile sunt publice, înainte de programare.`, 'Vezi toate ofertele', '/nou/preturi/#oferte')}
     </div>
     ${mmFoot}
   </div>`;
@@ -511,7 +512,7 @@ const mrowGo = (label, sub, screen, n) => `<button class="mrow" type="button" da
 // meniul mobil premium: căutare, secțiunile mari cu descriere, „cerute des” cu imagini, contact și recenzii
 const MS_HINT = {
   'Ce te supără?': 'Pornește de la ce ai observat', 'Tratamente': `${catData.reduce((n, c) => n + c.items.length, 0)} de tratamente, pe categorii`,
-  'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de servicii, cu preț afișat · ofertele lunii`,
+  'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${nDe(D.preturi.reduce((n, c) => n + c.servicii.length, 0), 'servicii')}, cu preț afișat · ofertele lunii`,
   'Medici': 'Medici primari și specialiști', 'Echipa': 'Medici primari și specialiști, pe specialități', 'Consultații': `Primul pas, cu medicul specialității · de la ${lei(minConsult)}`, 'Despre MOA': 'Clinica, tehnologie, blog',
 };
 const msCta = `<a class="ms-cta" href="#programare" data-mclose><span><small>Nu știi ce ți se potrivește?</small><b>Programează o consultație</b><em>de la ${lei(minConsult)} · medicul îți face planul</em></span><i>→</i></a>`;
@@ -549,7 +550,7 @@ M.forEach((m, i) => {
     catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}">${msHead(m.nume, c.nume)}${c.items.map(mrowLink).join('')}${msCta}</div>`));
   } else if (m.nume === 'Prețuri' && D.oferte.length) {
     // pe mobil, ofertele lunii direct în ecranul Prețuri, apoi linkurile
-    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(`Până la −${offMax(D.oferte)}% luna aceasta`, 'Ofertele lunii')}<div class="ms-offs">${offBest.map((o) => `<a class="mrow ms-off" href="#programare" data-srv="${esc(offSrv(o))}" data-mclose><span><b>${esc(offerLabel(o.nume))}</b><small>${esc(o.detalii || o.grup)}${o.pretInitial ? ` · <s>${lei(o.pretInitial)}</s>` : ''}</small></span><em>${o.discountProcent ? `<small>−${o.discountProcent}%</small>` : ''}${lei(o.pret)}</em></a>`).join('')}</div>${mrowLink({ nume: `Toate cele ${D.oferte.length} oferte`, sub: 'pe categorii, cu prețul vechi și cel nou', href: '/nou/preturi/#oferte' })}<span class="ms-eye ms-sep">Prețuri</span>${m.linkuri.filter((l) => l.nume !== 'Ofertele lunii').map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(`Până la −${offMax(D.oferte)}% luna aceasta`, 'Ofertele lunii')}<div class="ms-offs">${offBest.map((o) => `<a class="mrow ms-off" href="#programare" data-srv="${esc(offSrv(o))}" data-mclose><span><b>${esc(offerLabel(o.nume))}</b><small>${esc(o.detalii || o.grup)}${o.pretInitial ? ` · <s>${lei(o.pretInitial)}</s>` : ''}</small></span><em>${o.discountProcent ? `<small>−${o.discountProcent}%</small>` : ''}${lei(o.pret)}</em></a>`).join('')}</div>${mrowLink({ nume: `Toate cele ${nDe(D.oferte.length, 'oferte')}`, sub: 'pe categorii, cu prețul vechi și cel nou', href: '/nou/preturi/#oferte' })}<span class="ms-eye ms-sep">Prețuri</span>${m.linkuri.filter((l) => l.nume !== 'Ofertele lunii').map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   } else if (m.linkuri) {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(INTRO[m.nume]?.[0] || m.nume, m.nume)}${INTRO[m.nume] ? `<p class="ms-intro">${esc(INTRO[m.nume][1])}</p>` : ''}${m.linkuri.filter((l) => SHOW_REVIEWS || !/recenzii/i.test(l.nume)).map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   }
@@ -619,7 +620,7 @@ ${mobileNav}
       <p class="lede">Estetică medicală, chirurgie plastică și <a class="lede-link" href="/nou/longevitate/program/">medicină regenerativă (Global Antiaging)</a>, coordonate de <a class="lede-link" href="/nou/medici/adrian-stanescu/">Dr. Adrian Stănescu</a>, medic primar geriatrie-gerontologie, format la școala Ana Aslan.</p>
       <div class="hero-proof">
         <div><b>${D.echipa.filter((p) => p.tip === 'Medic').length} medici</b>primari, specialiști și rezidenți</div>
-        <div><b>${D.servicii.length} tratamente</b>estetice, chirurgicale și regenerative</div>
+        <div><b>${nDe(D.servicii.length, 'tratamente')}</b>estetice, chirurgicale și regenerative</div>
         <div><b>3 specialități</b>gerontologie, dermatologie, chirurgie plastică</div>
       </div>
     </div>
@@ -794,7 +795,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   <div class="wrap f-trust">
     ${SHOW_REVIEWS ? `<a href="/nou/#recenzii"><b>★ 5.0</b><span>${esc(nReviews)} de recenzii Google</span></a>` : ''}
     <a href="/nou/medici/"><b>${team.filter((p) => /^Dr\./.test(p.nume)).length} medici</b><span>primari, specialiști și rezidenți</span></a>
-    <a href="/nou/preturi/"><b>${nPreturi} de servicii</b><span>cu prețul afișat, înainte de programare</span></a>
+    <a href="/nou/preturi/"><b>${nDe(nPreturi, 'servicii')}</b><span>cu prețul afișat, înainte de programare</span></a>
     <a href="/nou/consultatii/"><b>de la ${lei(minConsult)}</b><span>prima consultație</span></a>
     <span><b>Grupul Oxxygene</b><span>clinici și spital privat</span></span>
   </div>
@@ -1181,7 +1182,7 @@ ${TOP}<main>
       <p class="lede">${esc(pr.rezumat || '')}</p>
       ${pr.citat ? `<blockquote class="pf-hq">„${esc(pr.citat)}”</blockquote>` : ''}
       <div class="pf-facts">${pr.cifre.map((c) => `<div><b>${esc(c.valoare)}</b><span>${esc(c.eticheta)}</span></div>`).join('')}</div>
-      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează-te</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează-te</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${nDe(allArts.length, 'articole')}</a>` : ''}</div>
     </div>
     ${photo ? `<div class="pf-photo"><div class="frame"><img src="${esc(photo)}" alt="${esc(p.nume)}" fetchpriority="high"></div></div>` : ''}
   </div>
@@ -1218,7 +1219,7 @@ document.querySelectorAll('.pf-tabs button').forEach((b) => b.addEventListener('
 
 ${arts.length ? `<section class="sec alt" id="articole">
   <div class="wrap pf-arts">
-    <div><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${allArts.length} articole pe blogul clinicii.</p>
+    <div><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${nDe(allArts.length, 'articole')} pe blogul clinicii.</p>
       <a class="link-u" href="${esc(pr.url)}">Toate cele ${allArts.length} de articole →</a></div>
     <ul class="tr-arts">${arts.slice(0, 3).map((a) => `<li><a href="${esc(artLink(a))}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul>
   </div>
@@ -1228,7 +1229,7 @@ ${BOOK}${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', 'medici', p.id);
   fs.mkdirSync(dir, { recursive: true });
   writePage(path.join(dir, 'index.html'), page);
-  console.log(`Profil: nou/medici/${p.id}/ · ${timeline.length} repere · ${pr.carti.length} cărți · ${servP.length} servicii · ${allArts.length} articole`);
+  console.log(`Profil: nou/medici/${p.id}/ · ${timeline.length} repere · ${pr.carti.length} cărți · ${servP.length} servicii · ${nDe(allArts.length, 'articole')}`);
 }
 
 // ---------- paginile de tratament (/nou/tratamente/<categorie>/<tratament>/), din data/tratamente.json ----------
@@ -1603,7 +1604,7 @@ ${hasPrices ? `<section class="sec" id="preturi">
     <div class="rv"><span class="eyebrow">Prețuri</span><h2>Cât <em>costă</em></h2><p class="lede">Din lista oficială MOA. Zonele și doza le stabilește medicul la consultație.</p></div>
     <div>
       ${offer ? `<a class="tr-offer-row" href="#programare" data-srv="${esc(offerSrv)}"><span class="off">-${offer.discountProcent}% · oferta lunii</span><b>${esc(offerName)}</b><span><s>${lei(offer.pretInitial)}</s> <em>${lei(offer.pret)}</em></span><i>Rezervă oferta →</i></a>` : ''}
-      ${priceRows.length ? `<table class="tr-prices">${priceRows.slice(0, 3).map(pRow).join('')}</table>${priceRows.length > 3 ? `<details class="tr-allprices"><summary>Vezi toate cele ${priceRows.length} prețuri</summary><table class="tr-prices">${priceRows.slice(3).map(pRow).join('')}</table></details>` : ''}` : sec('pret').map((x) => trBlocks(x.blocuri)).join('')}
+      ${priceRows.length ? `<table class="tr-prices">${priceRows.slice(0, 3).map(pRow).join('')}</table>${priceRows.length > 3 ? `<details class="tr-allprices"><summary>Vezi toate cele ${nDe(priceRows.length, 'prețuri')}</summary><table class="tr-prices">${priceRows.slice(3).map(pRow).join('')}</table></details>` : ''}` : sec('pret').map((x) => trBlocks(x.blocuri)).join('')}
     </div>
   </div>
 </section>` : ''}
@@ -1785,7 +1786,7 @@ ${hasPrices ? `<section class="sec" id="preturi" style="background:var(--cream)"
       if (!s.preturi.length) return sec('pret').map((x) => trBlocks(x.blocuri)).join('');
       const rows = [...s.preturi].sort((a, b) => (a.valoare ?? 1e9) - (b.valoare ?? 1e9)).map((p) => `<tr><td>${esc(p.nume)}${p.subgrup ? `<small class="tr-psub">${esc(cap(p.subgrup.toLowerCase()))}</small>` : ''}</td><td>${p.valoare != null ? lei(p.valoare) : 'la consultație'}</td><td class="wl-td">${wlBtn(`${nod.nume.replace(/\s*\(.*\)$/, '')} · ${p.nume}`, p.valoare, live(id), true)}</td></tr>`);
       const N = 5;
-      return `<table class="tr-prices">${rows.slice(0, N).join('')}</table>${rows.length > N ? `<details class="tr-allprices"><summary>Vezi toate cele ${rows.length} prețuri</summary><table class="tr-prices">${rows.slice(N).join('')}</table></details>` : ''}`;
+      return `<table class="tr-prices">${rows.slice(0, N).join('')}</table>${rows.length > N ? `<details class="tr-allprices"><summary>Vezi toate cele ${nDe(rows.length, 'prețuri')}</summary><table class="tr-prices">${rows.slice(N).join('')}</table></details>` : ''}`;
     })()}
   </div>
 </section>` : ''}
@@ -1855,7 +1856,7 @@ ${BOTTOM}`;
   page = alternateBg(page);
   fs.mkdirSync(dir, { recursive: true });
   writePage(path.join(dir, 'index.html'), page);
-  console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${tVids.length} video · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${arts.length} articole`);
+  console.log(`${consult ? 'Consultație' : 'Tratament'}: nou${nod.url} · ${facts.length} repere · ${whoItems.length} pentru cine · ${steps.length} pași · ${tVids.length} video · ${t.galerie.length} înainte/după · ${medici.length} medici · ${s.preturi.length} prețuri · ${t.faq.length} întrebări · ${rev.length} recenzii · ${asoc.length} asociate · ${nDe(arts.length, 'articole')}`);
 }
 
 // ---------- pagina-hub /nou/consultatii/: cele patru consultații, cu medicul, prețul și ce urmează ----------
@@ -2300,7 +2301,7 @@ ${TOP}<main class="tr-page tp th-page">
       <p class="lede">Aparatele pe care le folosim zilnic în clinică, explicate simplu: cum funcționează, pentru ce tratamente le folosim și cât costă. Aparatul îl alege medicul, după consultație, nu invers.</p>
       <div class="pf-facts tr-facts">
         <div><b>${TH.length} tehnologii</b><span>laser, radiofrecvență, piele, regenerare</span></div>
-        <div><b>${TH.reduce((n, t) => n + t.tr.length, 0)} tratamente</b><span>cu pagina și prețul lor</span></div>
+        <div><b>${nDe(TH.reduce((n, t) => n + t.tr.length, 0), 'tratamente')}</b><span>cu pagina și prețul lor</span></div>
         <div><b>de la ${lei(minAll)}</b><span>o ședință</span></div>
       </div>
       <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează-te</a><a class="btn btn-line" href="#aparate">Vezi aparatele</a></div>
@@ -2385,7 +2386,7 @@ ${BOTTOM}`;
   // fiecare categorie = un rând de acordeon: titlul, câte prețuri are și de la cât pornește
   const chev = '<i class="pr-chev" aria-hidden="true"></i>';
   const catHtml = cats.map((k) => `<details class="pr-cat" id="${k.id}" data-nume="${esc(k.nume)} ${esc(k.grup)}">
-      <summary><small>${esc(k.grup)}</small><h2>${esc(k.nume)}</h2><span class="pr-meta"><span>${k.n} ${k.n === 1 ? 'preț' : 'prețuri'}</span>${k.min != null ? `<span>de la <b>${lei(k.min)}</b></span>` : ''}</span>${chev}</summary>
+      <summary><small>${esc(k.grup)}</small><h2>${esc(k.nume)}</h2><span class="pr-meta"><span>${k.n === 1 ? '1 preț' : nDe(k.n, 'prețuri')}</span>${k.min != null ? `<span>de la <b>${lei(k.min)}</b></span>` : ''}</span>${chev}</summary>
       <div class="pr-body"><div class="pr-rows">${k.rows}</div>${k.link ? `<a class="link-u pr-more" href="${esc(k.link[0])}">${k.link[1]} →</a>` : ''}</div>
     </details>`).join('');
   const offGroups = [...new Set(D.oferte.map((o) => o.grup))];
@@ -2398,7 +2399,7 @@ ${BOTTOM}`;
   const spotHtml = D.oferte.length ? `<div class="ps" id="oferte">
   <div class="wrap">
     <div class="ps-head">
-      <div><span class="eyebrow light">Pentru luna aceasta</span><h2>Ofertele <em>lunii</em></h2><p>${D.oferte.length} oferte${maxDisc ? `, cu până la −${maxDisc}%` : ''}. Alege una și te sunăm noi pentru programare.</p></div>
+      <div><span class="eyebrow light">Pentru luna aceasta</span><h2>Ofertele <em>lunii</em></h2><p>${nDe(D.oferte.length, 'oferte')}${maxDisc ? `, cu până la −${maxDisc}%` : ''}. Alege una și te sunăm noi pentru programare.</p></div>
       <div class="ps-arrows"><button type="button" data-ps-rail="-1" aria-label="Înapoi">‹</button><button type="button" data-ps-rail="1" aria-label="Înainte">›</button></div>
     </div>
     <div class="ps-tabs" role="tablist" aria-label="Grupuri de oferte">${offGroups.map((g, i) => {
@@ -2516,7 +2517,7 @@ ${BOTTOM}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prețuri MOA Clinic București – lista completă | MOA Clinic</title>
-<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} de servicii în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii și un estimator pe zone.`)}">
+<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nDe(nRows, 'servicii')} în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii și un estimator pe zone.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -2532,10 +2533,10 @@ ${TOP}<main>
     <div class="pr-hero-in">
       <div><span class="eyebrow">Prețuri</span><h1>Prețuri <em>la vedere</em></h1>
         <p class="lede">Lista oficială MOA Clinic, înainte de programare. Pentru tratamente, medicul stabilește la consultație zonele, doza și numărul de ședințe.</p></div>
-      <dl class="pr-facts"><div><dt>${nRows}</dt><dd>servicii, cu preț afișat</dd></div>${D.oferte.length ? `<div><dt>${D.oferte.length}</dt><dd>oferte luna asta</dd></div>` : ''}<div><dt>${cats.length}</dt><dd>categorii</dd></div></dl>
+      <dl class="pr-facts"><div><dt>${nRows}</dt><dd>servicii, cu preț afișat</dd></div>${D.oferte.length ? `<div><dt>${D.oferte.length}</dt><dd>${D.oferte.length % 100 >= 20 || D.oferte.length % 100 === 0 ? 'de ' : ''}oferte luna asta</dd></div>` : ''}<div><dt>${cats.length}</dt><dd>categorii</dd></div></dl>
     </div>
     <div class="pr-switch" role="tablist" aria-label="Cum vrei să vezi prețurile">
-      <button type="button" role="tab" id="tab-lista" aria-controls="lista" aria-selected="true">${ico.list}<span><b>Lista completă</b><small>${nRows} de servicii în ${cats.length} categorii</small></span></button>
+      <button type="button" role="tab" id="tab-lista" aria-controls="lista" aria-selected="true">${ico.list}<span><b>Lista completă</b><small>${nDe(nRows, 'servicii')} în ${cats.length} categorii</small></span></button>
       <button type="button" role="tab" id="tab-est" aria-controls="estimator" aria-selected="false" tabindex="-1">${ico.body}<span><b>Pornește de la ce te supără <i class="pr-new">Nou</i></b><small>alegi zona pe siluetă, vezi opțiunile și costul</small></span></button>
     </div>
   </div>
@@ -2549,7 +2550,7 @@ ${TOP}<main>
       <nav class="pr-nav" aria-label="Categorii de prețuri">${navHtml}</nav>
     </aside>
     <div class="pr-main">
-      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nRows} de servicii</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
+      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nDe(nRows, 'servicii')}</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
       ${catHtml}
       <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
       <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii. Nu știi ce ți se potrivește? <a class="lede-link" href="#estimator">Pornește de la ce te supără</a>.</p>
@@ -2560,11 +2561,11 @@ ${TOP}<main>
 ${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js?v=4" defer></script>
+<script src="/nou/preturi.js?v=5" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
-  console.log(`Prețuri: nou/preturi/ · ${nRows} prețuri · ${D.preturi.length} categorii · ${D.oferte.length} oferte`);
+  console.log(`Prețuri: nou/preturi/ · ${nRows} prețuri · ${D.preturi.length} categorii · ${nDe(D.oferte.length, 'oferte')}`);
 }
 
 // ---------- pagina /nou/video/: toate video-urile din cabinet, pe categorii de tratament ----------
@@ -2595,7 +2596,7 @@ ${BOTTOM}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Video din cabinet – cum decurg tratamentele | MOA Clinic</title>
-<meta name="description" content="${esc(`${vids.length} video-uri scurte din cabinetele MOA Clinic: ${[...new Set(vids.map((x) => x.nume))].slice(0, 6).join(', ')} și altele.`)}">
+<meta name="description" content="${esc(`${nDe(vids.length, 'video-uri')} scurte din cabinetele MOA Clinic: ${[...new Set(vids.map((x) => x.nume))].slice(0, 6).join(', ')} și altele.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -2609,7 +2610,7 @@ ${TOP}<main>
 <section class="sec vp-sec">
   <div class="wrap">
     <div class="sec-head split"><div><span class="eyebrow">În cabinet</span><h1 style="margin-top:18px">Vezi cum <em>lucrăm.</em></h1></div>
-      <p class="lede">${vids.length} video-uri scurte din cabinetele MOA, ${Math.round(totalS / 60)} minute în total. Înainte să vii, știi cum arată clinica, aparatura și o ședință.</p></div>
+      <p class="lede">${nDe(vids.length, 'video-uri')} scurte din cabinetele MOA, ${Math.round(totalS / 60)} minute în total. Înainte să vii, știi cum arată clinica, aparatura și o ședință.</p></div>
     <div class="team-filter vp-filter" role="tablist" aria-label="Filtrează după categorie"><button type="button" class="on" data-vcat="">Toate · ${vids.length}</button>${cats.map((c) => `<button type="button" data-vcat="${esc(c)}">${esc(cap(c.replace(/^Tratamente /, '').replace(/^cu /, '')))} · ${vids.filter((x) => x.cat === c).length}</button>`).join('')}</div>
     <h2 class="sr">Toate video-urile</h2>
     <div class="vp-grid">${vids.map(({ v, cat, nume, href }) => `<div class="v-card vp-card${VM[v.id]?.orientare === 'orizontal' ? ' wide' : ''}" data-vcat="${esc(cat)}"><div class="vb"><video src="${esc(vSrc(v))}" preload="none" playsinline${vPoster(v) ? ` data-poster="${esc(vPoster(v))}"` : ''}></video><button class="play" type="button" aria-label="Pornește: ${esc(vTitle(v))}"><span>▶</span></button>${vDur(v) ? `<i class="vp-dur">${vDur(v)}</i>` : ''}</div>
@@ -2631,7 +2632,7 @@ ${BOOK}
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'video'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'video', 'index.html'), page);
-  console.log(`Video: nou/video/ · ${vids.length} video-uri · ${cats.length} categorii · ${Math.round(totalS / 60)} min`);
+  console.log(`Video: nou/video/ · ${nDe(vids.length, 'video-uri')} · ${cats.length} categorii · ${Math.round(totalS / 60)} min`);
 }
 
 // ---------- pagina /nou/blog/: articolele (rămân la URL-urile actuale), cu filtru, căutare și articolul cel mai nou în față ----------
@@ -2670,7 +2671,7 @@ ${BOTTOM}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blog – ghiduri despre tratamente, îngrijire și longevitate | MOA Clinic</title>
-<meta name="description" content="${esc(`${arts.length} articole despre tratamente estetice, îngrijire și longevitate, scrise de Dr. Adrian Stănescu, medic primar gerontolog, fondatorul MOA Clinic.`)}">
+<meta name="description" content="${esc(`${nDe(arts.length, 'articole')} despre tratamente estetice, îngrijire și longevitate, scrise de Dr. Adrian Stănescu, medic primar gerontolog, fondatorul MOA Clinic.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -2712,7 +2713,7 @@ ${BOOK}
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'blog'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'blog', 'index.html'), page);
-  console.log(`Blog: nou/blog/ · ${arts.length} articole · ${Object.keys(BM).length} cu imagine · cel mai nou: ${feat.titlu}`);
+  console.log(`Blog: nou/blog/ · ${nDe(arts.length, 'articole')} · ${Object.keys(BM).length} cu imagine · cel mai nou: ${feat.titlu}`);
 }
 
 // ---------- pagina de articol (/nou/<slug-ul actual>/), din data/articole.json ----------

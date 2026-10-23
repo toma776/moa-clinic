@@ -56,7 +56,8 @@
     $$('.pr-ng').forEach((g) => { g.hidden = !g.querySelector('a:not([hidden])'); });
     if (!words.length && before) { cats.forEach((c) => { c.open = before.has(c); }); before = null; }
     empty.hidden = cats.some((c) => !c.hidden);
-    count.textContent = words.length ? `${n} din ${total} de servicii` : `${total} de servicii`;
+    const de = (x) => (x % 100 === 0 && x > 0) || x % 100 >= 20 ? 'de ' : ''; // „212 servicii”, „220 de servicii”
+    count.textContent = words.length ? `${n} din ${total} ${de(total)}servicii` : `${total} ${de(total)}servicii`;
     qx.hidden = !q.value;
     syncAll();
   };
