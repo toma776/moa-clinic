@@ -508,6 +508,12 @@ M.forEach((m, i) => {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(INTRO[m.nume]?.[0] || m.nume, m.nume)}${INTRO[m.nume] ? `<p class="ms-intro">${esc(INTRO[m.nume][1])}</p>` : ''}${m.linkuri.map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   }
 });
+// footer: coloanele de linkuri, doar spre pagini care există (pe mobil devin acordeoane)
+const FOOT_COLS = [
+  { t: 'Tratamente', l: catData.filter((c) => c.href && c.href !== '#').map((c) => [c.nume, c.href]) },
+  { t: 'Pacienți', l: [['Consultații', '/nou/consultatii/'], ['Cum decurge o consultație', '/nou/consultatii/#cum-decurge'], ['Prețuri', '/nou/preturi/'], ['Ofertele lunii', '/nou/preturi/#oferte'], ['Estimator de cost', '/nou/preturi/#estimator'], ['Programare', '#programare']] },
+  { t: 'Clinica', l: [['Echipa medicală', '/nou/medici/'], ['Tehnologie', '/nou/clinica/tehnologie/'], ['Longevitate', '/nou/longevitate/program/'], ['Recenzii', '/nou/#recenzii'], ['Video din cabinet', '/nou/video/'], ['Blog', '/nou/blog/']] },
+];
 const mobileNav = `
 <div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Meniu" aria-hidden="true">
   <div class="mnav-top"><button class="mnav-back" type="button" id="mback" hidden>‹ Înapoi</button><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic" id="mlogo"><button class="mnav-x" type="button" id="mclose">Închide ✕</button></div>
@@ -740,23 +746,33 @@ ${mobileNav}
 </section>
 </main>
 
-<footer>
-  <div class="wrap ft-head">
-    <div class="brand"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic"><p>Estetică medicală, chirurgie plastică și medicină regenerativă, coordonate de un medic primar geriatrie-gerontologie.</p></div>
-    <dl class="ft-contact">
-      <div><dt>Adresă</dt><dd><a href="https://maps.app.goo.gl/RHMvPm3KMHYY7BEG6" target="_blank" rel="noopener">Str. Ștefan Mihăileanu 35, București</a></dd></div>
-      <div><dt>Telefon</dt><dd><a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></dd></div>
-      <div><dt>Email</dt><dd><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></dd></div>
-    </dl>
-    <div class="ft-social"><a href="https://www.instagram.com/moaclinic" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/MoaClinicByOxxygene/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a></div>
+<footer class="f">
+  <div class="wrap f-trust">
+    <a href="/nou/#recenzii"><b>★ 5.0</b><span>${esc(nReviews)} de recenzii Google</span></a>
+    <a href="/nou/medici/"><b>${team.filter((p) => /^Dr\./.test(p.nume)).length} medici</b><span>primari, specialiști și rezidenți</span></a>
+    <a href="/nou/preturi/"><b>${nPreturi} de prețuri</b><span>publice, înainte de programare</span></a>
+    <a href="/nou/consultatii/"><b>de la ${lei(minConsult)}</b><span>prima consultație</span></a>
+    <span><b>Grupul Oxxygene</b><span>clinici și spital privat</span></span>
   </div>
-  <div class="wrap top">
-    ${S.meniu.footer.map((f) => `<div><h4>${esc(f.titlu)}</h4><ul>${f.linkuri.map((l) => `<li><a href="${esc(/^https?:/.test(l.url) ? l.url : toLive(l.url) || '#')}">${esc(l.nume)}</a></li>`).join('')}</ul></div>`).join('')}
+  <div class="wrap f-grid">
+    <div class="f-brand">
+      <a href="/nou/" aria-label="MOA Clinic – acasă"><img src="/wp-content/uploads/2024/09/Logo-moa-alb-complet.svg" alt="MOA Clinic" loading="lazy"></a>
+      <p>Estetică medicală, chirurgie plastică și medicină regenerativă, coordonate de un medic primar geriatrie-gerontologie.</p>
+      <div class="f-social"><a href="https://www.instagram.com/moaclinic" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/MoaClinicByOxxygene/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a></div>
+    </div>
+    ${FOOT_COLS.map((c) => `<details class="f-col"><summary>${esc(c.t)}</summary><ul>${c.l.map(([n, h]) => `<li><a href="${esc(h)}">${esc(n)}</a></li>`).join('')}</ul></details>`).join('')}
+    <div class="f-visit">
+      <h4>Vizită</h4>
+      <address>Str. Ștefan Mihăileanu 35<br>Sector 2, București</address>
+      <a class="f-map" href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener">Indicații pe hartă →</a>
+      <ul class="f-reach"><li><small>Telefon</small><a href="tel:+40743056605" data-track="telefon">0743 056 605</a></li><li><small>WhatsApp</small><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">Scrie-ne discret</a></li><li><small>Email</small><a href="mailto:office@moaclinic.ro">office@moaclinic.ro</a></li></ul>
+    </div>
   </div>
-  <div class="wrap legal">
-    <span>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? ` (CUI ${esc(f.cui)})` : '')).join(' · ')}</span>
-    <span>MOA Regenerative by Oxxygene · parte a grupului medical Oxxygene</span>
+  <div class="wrap f-bot">
+    <p>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? `, CUI ${esc(f.cui)}` : '') + (f.registru ? `, ${esc(f.registru)}` : '')).join(' · ')} · parte a grupului medical Oxxygene</p>
+    <nav aria-label="Legal"><a href="${esc(toLive('/documente-legale/') || 'https://moaclinic.ro/documente-legale-clinica-moa/')}">Documente legale și confidențialitate</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
   </div>
+  <script>document.querySelectorAll('.f-col').forEach((d) => { d.open = matchMedia('(min-width: 761px)').matches; });</script>
 </footer>
 
 <nav class="mbar" aria-label="Acțiuni rapide"><a href="tel:+40743056605" data-track="telefon">Sună</a><a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a><a href="#programare">Programează-te</a></nav>
