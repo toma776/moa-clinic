@@ -2728,3 +2728,12 @@ body:has(.mnav.open) .wl-fab, body:has(.mnav.open) .to-top, body:has(.mnav.open)
   .th-tx { padding: 18px 18px 14px; }
   .th-tx h3 { font-size: 26px; }
 }
+
+/* mega meniu: Consultații – punctele de încredere din coloana de intro */
+.mm-checks { list-style: none; margin: 4px 0 18px; padding: 0; display: grid; gap: 8px; }
+.mm-checks li { position: relative; padding-left: 22px; font-size: 13.5px; color: var(--ink-2); }
+.mm-checks li::before { content: ''; position: absolute; left: 2px; top: .45em; width: 9px; height: 5px; border-left: 1.4px solid var(--gold); border-bottom: 1.4px solid var(--gold); transform: rotate(-45deg); }
+/* meniul principal are 7 butoane (cu Consultații): etichetele pe un rând, spațiere mai strânsă pe ecranele mai înguste */
+.nav-btn { white-space: nowrap; }
+@media (max-width: 1440px) { .nav-btn { padding-inline: clamp(7px, .75vw, 12px); letter-spacing: .08em; } .nav-btn::after { left: clamp(7px, .75vw, 12px); right: clamp(7px, .75vw, 12px); } }
+@media (max-width: 1240px) { .nav-btn { font-size: 12px; letter-spacing: .06em; gap: 5px; } .hd > .btn { padding-inline: 16px; } }

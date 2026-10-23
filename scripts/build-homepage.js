@@ -323,8 +323,9 @@ const icon = {
   spark: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg>',
 };
 
-// meniul, din structură (cu destinațiile actuale)
-const M = S.meniu.principal;
+// meniul, din structură (cu destinațiile actuale); Consultații primește buton propriu, între „Ce te supără?” și „Tratamente”
+const M = [...S.meniu.principal];
+if (consHub && !M.some((m) => m.nume === 'Consultații')) M.splice(Math.max(0, M.findIndex((m) => m.nume === 'Tratamente')), 0, { nume: 'Consultații', url: consHub.url, tip: 'mega' });
 const chev = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>';
 const catNodes = S.arbore.find((n) => n.url === '/tratamente/').copii;
 const ZONE_HINT = { 'Față': 'Riduri, volum, buze, cearcăne, ten', 'Corp': 'Epilare, tonifiere, vergeturi, transpirație', 'Păr & piele': 'Căderea părului, alunițe, leziuni', 'Sănătate & longevitate': 'Energie, burnout, antiaging din interior' };
@@ -353,6 +354,13 @@ const catData = catNodes.map((c) => ({
   href: toLive(c.url) || (c.copii.find((t) => toLive(t.url)) ? toLive(c.copii.find((t) => toLive(t.url)).url) : '#'),
   items: c.copii.map((t) => ({ nume: t.nume, sub: (t.continut?.tehnologii || []).filter((x) => !t.nume.toLowerCase().includes(x.toLowerCase().split(' ')[0])).slice(0, 2).join(' · '), pret: t.continut?.pret_de_la ?? null, href: toLive(t.url) || '#programare' })),
 }));
+// consultațiile, pentru meniu: specialitatea, medicii și prețul de la
+const consData = [...trNode.entries()].filter(([, l]) => l.consult).map(([id, l]) => {
+  const med = serv[id]?.medici || [], m = l.nod.nume.match(/^Consultație\s+(.*?)(?:\s*\((.+)\))?$/i);
+  const nume = m ? m[1].charAt(0).toUpperCase() + m[1].slice(1) : l.nod.nume;
+  const sub = [m?.[2] ? m[2].charAt(0).toUpperCase() + m[2].slice(1) : serv[id]?.specialitate !== nume ? serv[id]?.specialitate : '', med.length === 1 ? med[0] : med.length ? `${med.length} medici` : ''].filter(Boolean).join(' · ');
+  return { nume, sub, pret: minPrice(id), href: live(id) };
+});
 // ---------- mega meniul (desktop): liste editoriale, căutare instant, „cerut des”, card cu imagine, bandă de încredere ----------
 const mmNorm = (x) => String(x).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const POP = new Set(SIG.map((s) => live(s.id)));
@@ -405,7 +413,19 @@ const simple = (id, m, feat) => {
     ${mmFoot}
   </div>`;
 };
+const consPanel = (id) => `
+  <div class="mm" id="mm-${id}" role="region" aria-label="Consultații">
+    <div class="wrap mm-in simple">
+      <div class="mm-intro"><span class="mm-side-t">Consultații</span><h3>Primul pas e o consultație</h3><p>Cu medicul specialității, înainte de orice tratament: afli ce ți se potrivește, ce nu și cât costă.</p>
+        <ul class="mm-checks"><li>Medici primari și specialiști</li><li>Recomandări clare, cu prețuri</li><li>Fără obligația unui tratament</li></ul>
+        <a class="link-u" href="/nou/consultatii/">Toate consultațiile →</a></div>
+      <div class="mm-main"><div class="mm-list mm-list-num">${consData.map((c, i) => mmRow(c, 'Consultații', i + 1)).join('')}${mmRow({ nume: 'Toate consultațiile', sub: 'Cum alegi, ce include, ce urmează', pret: null, href: '/nou/consultatii/' }, '', consData.length + 1)}</div></div>
+      ${mmFeat(thumb('/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.20-2-768x1024.jpeg', 640), `De la ${lei(minConsult)}`, 'Nu știi de unde să începi?', 'Spune-ne ce te supără și te îndrumăm spre medicul și consultația potrivite.', 'Vezi consultațiile', '/nou/consultatii/')}
+    </div>
+    ${mmFoot}
+  </div>`;
 const PANELS = {
+  'Consultații': (i) => consPanel(i),
   'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '/nou/medici/'), 'Ex.: riduri, buze, cearcăne…'),
   'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? mmFeat(thumb('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg', 640), `Oferta lunii · −${topOffer.discountProcent}%`, esc(offerLabel(topOffer.nume)), `<s>${lei(topOffer.pretInitial)}</s> <b>${lei(topOffer.pret)}</b>`, 'Rezervă oferta', '#programare') : '', 'Caută: Botox, Sculptra, PRP…'),
   'Longevitate': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 640), 'Coordonator medical', 'Dr. Adrian Stănescu', 'Medic primar geriatrie-gerontologie, format la școala Ana Aslan.', 'Vezi profilul', '/nou/medici/adrian-stanescu/')),
@@ -421,7 +441,7 @@ const mrowGo = (label, sub, screen, n) => `<button class="mrow" type="button" da
 const MS_HINT = {
   'Ce te supără?': 'Pornește de la ce ai observat', 'Tratamente': `${catData.reduce((n, c) => n + c.items.length, 0)} de tratamente, pe categorii`,
   'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri publice · ofertele lunii`,
-  'Medici': 'Medici primari și specialiști', 'Despre MOA': 'Clinica, tehnologie, recenzii, blog',
+  'Medici': 'Medici primari și specialiști', 'Consultații': `Primul pas, cu medicul specialității · de la ${lei(minConsult)}`, 'Despre MOA': 'Clinica, tehnologie, recenzii, blog',
 };
 const msCta = `<a class="ms-cta" href="#programare" data-mclose><span><small>Nu știi ce ți se potrivește?</small><b>Programează o consultație</b><em>de la ${lei(minConsult)} · medicul îți face planul</em></span><i>→</i></a>`;
 const msHead = (eyebrow, title) => `<div class="ms-head"><span class="ms-eye">${esc(eyebrow)}</span><h3>${esc(title)}</h3></div>`;
@@ -449,6 +469,8 @@ M.forEach((m, i) => {
   if (m.nume === 'Ce te supără?') {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Alege zona', m.nume)}${zoneData.map((z, j) => mrowGo(z.nume, z.hint, `z${j}`, z.items.length)).join('')}${msCta}</div>`);
     zoneData.forEach((z, j) => screens.push(`<div class="mscreen" data-screen="z${j}">${msHead(m.nume, z.nume)}${z.items.map(mrowLink).join('')}${msCta}</div>`));
+  } else if (m.nume === 'Consultații') {
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Primul pas', m.nume)}<p class="ms-intro">Cu medicul specialității, înainte de orice tratament: afli ce ți se potrivește, ce nu și cât costă.</p>${consData.map(mrowLink).join('')}${mrowLink({ nume: 'Toate consultațiile', sub: 'Cum alegi, ce include, ce urmează', href: '/nou/consultatii/' })}${msCta}</div>`);
   } else if (m.nume === 'Tratamente') {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Categorii', m.nume)}${catData.map((c, j) => mrowGo(c.nume, c.hint, `c${j}`, c.items.length)).join('')}${msCta}</div>`);
     catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}">${msHead(m.nume, c.nume)}${c.items.map(mrowLink).join('')}${msCta}</div>`));
