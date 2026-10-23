@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/build-homepage.js && node scripts/perf.js",
+  "outputDirectory": ".",
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 30,
+      "includeFiles": "data/{preturi,brand,intrebari-status,observatii-status}.json"
+    }
+  },
   "trailingSlash": false,
   "redirects": [
     {
@@ -74,28 +82,12 @@
       "destination": "/data/pages.json"
     },
     {
-      "source": "/api/preturi",
-      "destination": "/data/preturi.json"
-    },
-    {
-      "source": "/api/brand",
-      "destination": "/data/brand.json"
-    },
-    {
       "source": "/api/site-health",
       "destination": "/data/site-health.json"
     },
     {
       "source": "/api/structura",
       "destination": "/data/structura.json"
-    },
-    {
-      "source": "/api/intrebari/status",
-      "destination": "/data/intrebari-status.json"
-    },
-    {
-      "source": "/api/observatii/status",
-      "destination": "/data/observatii-status.json"
     },
     {
       "source": "/api/leads",

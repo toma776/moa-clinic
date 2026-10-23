@@ -1,8 +1,7 @@
 /* PREȚURI & OFERTE (Entități › Prețuri & oferte): lista de prețuri editabilă (data/preturi.json).
    Un preț marcat „Ofertă”, cu procent de discount, apare automat în Ofertele lunii de pe site, indiferent de categorie.
-   Salvarea (doar local, cu npm start) scrie lista, actualizează entitățile și regenerează site-ul nou. */
+   Salvarea scrie lista și actualizează entitățile: local regenerează site-ul pe loc, pe Vercel face un commit și site-ul se publică după build. */
 (() => {
-  const LOCAL = /^(localhost|127\.|\[::1\]|0\.0\.0\.0)/.test(location.hostname);
   const TIPURI = ['preț', 'ședință', 'pachet 3 ședințe', 'pachet 4 ședințe', 'pachet 5+1 gratuit', 'pachet 2 ședințe'];
   const prettyCat = (c) => (c && c === c.toUpperCase() ? c[0] + c.slice(1).toLowerCase() : c || '');
   const uid = () => Math.random().toString(36).slice(2, 10);
@@ -20,9 +19,9 @@
   const status = () => {
     const el = $('#pe-status', root); if (!el) return;
     const d = isDirty();
-    el.textContent = !LOCAL ? 'Doar citire: editarea merge local (npm start)' : d ? 'Modificări nesalvate' : 'Totul e salvat';
+    el.textContent = d ? 'Modificări nesalvate' : 'Totul e salvat';
     el.className = 'pe-status' + (d ? ' dirty' : '');
-    $('#pe-save', root).disabled = !d || !LOCAL;
+    $('#pe-save', root).disabled = !d;
     $('#pe-undo', root).disabled = !d;
     $('#pe-noff', root).textContent = offers().length;
   };
@@ -92,7 +91,6 @@
       ${mode === 'lista_preturi' ? `<p class="pe-help">Bifează <b>Ofertă</b> la un preț și scrie procentul de discount (sau direct prețul redus): prețul apare tăiat în listă și intră automat în <b>Ofertele lunii</b> pe site – pagina de prețuri, homepage și pagina tratamentului legat. Debifezi și oferta dispare.</p>` : '<p class="pe-help">Ofertele se adună automat din toate prețurile marcate „Ofertă”, din orice categorie. Aici poți schimba procentul sau scoate o ofertă; restul se editează în Lista de prețuri.</p>'}
       <datalist id="pe-tipuri">${TIPURI.map((t) => `<option value="${esc(t)}">`).join('')}</datalist>
       <div id="pe-body">${mode === 'lista_preturi' ? renderList() : renderOffers()}</div>`;
-    if (!LOCAL) $$('input, select, button[data-act]', root).forEach((el) => { if (el.id !== 'pe-q') el.disabled = true; });
     status();
     scrollTo(0, keepY);
   }
@@ -114,7 +112,7 @@
       if (f === 'discountProcent' || f === 'valoare') { if (p.discountProcent) { p.pretOferta = offPrice(p.valoare, p.discountProcent); if (fin) fin.value = p.pretOferta; } }
       if (f === 'pretOferta' && p.pretOferta) { p.discountProcent = offPct(p.valoare, p.pretOferta); if (pct) pct.value = p.discountProcent; }
     }
-    const chk = $('[data-f="oferta"]', box); if (chk) chk.disabled = !p.valoare || !LOCAL;
+    const chk = $('[data-f="oferta"]', box); if (chk) chk.disabled = !p.valoare;
     status();
   }
 
@@ -159,7 +157,7 @@
       P = r.preturi; saved = JSON.stringify(P);
       store.entitati = await api.get('/api/entitati') || store.entitati;
       render();
-      toast(r.build === 'ok' ? `Salvat · ${r.oferte} oferte pe site · site regenerat` : 'Salvat, dar regenerarea site-ului a eșuat');
+      toast(r.publicare ? `Salvat · ${r.oferte} oferte · site-ul se publică ${r.publicare}` : r.build === 'ok' ? `Salvat · ${r.oferte} oferte pe site · site regenerat` : 'Salvat, dar regenerarea site-ului a eșuat');
       if (r.build !== 'ok') console.error(r.build);
     } catch (err) { toast('Nu s-a putut salva: ' + err.message); btn.disabled = false; btn.textContent = 'Salvează și regenerează site-ul'; }
   }
