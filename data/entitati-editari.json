@@ -13,7 +13,199 @@
         "retea": "Facebook",
         "url": "https://www.facebook.com/MoaClinicByOxxygene/"
       }
-    ]
+    ],
+    "dovezi": {
+      "testimoniale": [
+        {
+          "persoana": "Andreea Radu",
+          "citat": "Am avut o experiență excelentă cu doamna doctor Iulia Nedelcu. Este un medic foarte atent și răbdător, care explică totul clar și te face să te simți în siguranță. Întreaga echipă este prietenoasă, iar clinica este curată și bine organizată. Recomand cu încredere pentru profesionalism și grijă față de pacient.",
+          "medic": "Dr. Iulia Nedelcu",
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Alina Floroiu",
+          "citat": "Excelenta. Personal de exceptie. Medici de exceptie.Terapii revolutionare. Locul unde cele mai ascunse probleme isi gasesc rezolvarea.",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "cristiana toma",
+          "citat": "Totul a fost perfect!",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Martionmytwo Water",
+          "citat": "Injecting NAD+ is feeling very nice",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Cost Cristina",
+          "citat": "Recomand cu drag clinica MOA! Curatenie, rabdare si profesionalism!",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Cristina Loghin",
+          "citat": "Profesionalism, empatie,si personal foarte amabil",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Emil Ranca",
+          "citat": "Exceptional, profesionalism, empatie si tot ce-ți dorești pe linie de tratament. Mulțumesc 🤩",
+          "medic": null,
+          "platforma": "Google (prin Trustindex)",
+          "sursa": "https://moaclinic.ro/"
+        },
+        {
+          "persoana": "Ana Voicu",
+          "citat": "I went to Moa Clinic for botox and for the dermalinfusion treatment. The clinic was super beautiful and clean, the staff and doctors very welcoming and competent. Both treatments were amazing and effective, I can’t wait to come back and try more of the treatments they offer!",
+          "medic": "",
+          "platforma": "Google",
+          "sursa": "https://moaclinic.ro/"
+        }
+      ],
+      "cifre": [
+        {
+          "valoare": "91",
+          "eticheta": "recenzii Google, calificativ „EXCELENT” (widget Trustindex)",
+          "tip": "cifră",
+          "surse": [
+            "https://moaclinic.ro/adevarul-despre-glutation/",
+            "https://moaclinic.ro/alunite-rosii/",
+            "https://moaclinic.ro/blefaroplastie/",
+            "https://moaclinic.ro/ce-nu-e-permis-dupa-injectarea-cu-botox/",
+            "https://moaclinic.ro/cea-mai-buna-toxina-botulinica/",
+            "https://moaclinic.ro/consultatii/",
+            "https://moaclinic.ro/consultatii/consultatie-antiaging/",
+            "https://moaclinic.ro/de-ce-nu-imi-tine-acidul-hialuronic-2/",
+            "https://moaclinic.ro/dermalinfusion/",
+            "https://moaclinic.ro/efecte-botox/",
+            "https://moaclinic.ro/eliminare-papiloame/",
+            "https://moaclinic.ro/epilare-definitiva-pareri/",
+            "https://moaclinic.ro/epilat-interfesier-ce-inseamna/",
+            "https://moaclinic.ro/forme-de-buze-cu-acid-hialuronic/",
+            "https://moaclinic.ro/fotobiomodulare-vielight/",
+            "https://moaclinic.ro/glutation/",
+            "https://moaclinic.ro/",
+            "https://moaclinic.ro/jalupro-young-eye/",
+            "https://moaclinic.ro/laser-terapie/",
+            "https://moaclinic.ro/laser-terapie/epilare-definitiva-bucuresti/",
+            "https://moaclinic.ro/laser-terapie/laser-vascular/",
+            "https://moaclinic.ro/ozonoterapie/",
+            "https://moaclinic.ro/ozonoterapie/autohemoterapia/",
+            "https://moaclinic.ro/ozonoterapie/sauna-cu-ozon/",
+            "https://moaclinic.ro/prima-injectare-cu-acid-hialuronic-in-buze/",
+            "https://moaclinic.ro/proceduri-microchirurgicale/",
+            "https://moaclinic.ro/proceduri-minim-invazive/",
+            "https://moaclinic.ro/proceduri-minim-invazive/augmentare-buze/",
+            "https://moaclinic.ro/proceduri-minim-invazive/harmonyca/",
+            "https://moaclinic.ro/proceduri-minim-invazive/hiperhidroza-axilara/",
+            "https://moaclinic.ro/proceduri-minim-invazive/injectare-botox/",
+            "https://moaclinic.ro/proceduri-minim-invazive/injectari-acid-hialuronic/",
+            "https://moaclinic.ro/proceduri-minim-invazive/marirea-penisului-acid-hialuronic/",
+            "https://moaclinic.ro/proceduri-minim-invazive/mezoterapie/",
+            "https://moaclinic.ro/proceduri-minim-invazive/nefertiti-lift/",
+            "https://moaclinic.ro/proceduri-minim-invazive/polinucleotide/",
+            "https://moaclinic.ro/proceduri-minim-invazive/prp-scalp/",
+            "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+            "https://moaclinic.ro/proceduri-minim-invazive/skinbooster-vital/",
+            "https://moaclinic.ro/rejuvenare-faciala/",
+            "https://moaclinic.ro/rejuvenare-faciala/lip-lifting/",
+            "https://moaclinic.ro/rejuvenare-faciala/venus-viva/",
+            "https://moaclinic.ro/riduri-de-expresie/",
+            "https://moaclinic.ro/riduri-frunte/",
+            "https://moaclinic.ro/riduri-laba-gastei/",
+            "https://moaclinic.ro/riduri-marioneta/",
+            "https://moaclinic.ro/riduri/",
+            "https://moaclinic.ro/russian-lips-vs-butterfly-lips/",
+            "https://moaclinic.ro/terapia-nad/",
+            "https://moaclinic.ro/teste-genetice-longevity/",
+            "https://moaclinic.ro/teste-genetice-longevity/nutrigenetica-epigenetica/",
+            "https://moaclinic.ro/teste-genetice-longevity/skin-care-dna/",
+            "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
+            "https://moaclinic.ro/tratamente-corporale/",
+            "https://moaclinic.ro/tratamente-cosmetologice/",
+            "https://moaclinic.ro/tratamente-regenerative-perfuzabile/",
+            "https://moaclinic.ro/unde-se-pune-botox/",
+            "https://moaclinic.ro/venus-legacy/",
+            "https://moaclinic.ro/vergeturi-pe-sani-2/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "5.0",
+          "eticheta": "rating declarat în schema (60 recenzii) – diferă de widget",
+          "tip": "cifră",
+          "surse": [
+            "https://moaclinic.ro/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "25+ ani",
+          "eticheta": "de când Dr. Adrian Stănescu urmărește conceptul MOA („un vis de peste 25 de ani”)",
+          "tip": "cifră",
+          "surse": [
+            "https://moaclinic.ro/",
+            "https://moaclinic.ro/unde-se-pune-botox/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "Prima",
+          "eticheta": "clinică Global Antiaging din România",
+          "tip": "afirmație",
+          "surse": [
+            "https://moaclinic.ro/",
+            "https://moaclinic.ro/unde-se-pune-botox/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "755 + 1064 nm",
+          "eticheta": "Splendor X: „singurul laser din lume” care emite simultan ambele lungimi de undă",
+          "tip": "afirmație",
+          "surse": [
+            "https://moaclinic.ro/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "FDA",
+          "eticheta": "aprobare menționată pentru Sculptra și pentru programele TMS",
+          "tip": "afirmație",
+          "surse": [
+            "https://moaclinic.ro/cea-mai-buna-toxina-botulinica/",
+            "https://moaclinic.ro/hialuronidaza/",
+            "https://moaclinic.ro/",
+            "https://moaclinic.ro/preturi/",
+            "https://moaclinic.ro/proceduri-minim-invazive/sculptra/",
+            "https://moaclinic.ro/tms-stimulare-magnetica-transcraniana/",
+            "https://moaclinic.ro/tratament-burnout-tms/"
+          ],
+          "verificat": true
+        },
+        {
+          "valoare": "12",
+          "eticheta": "oameni în echipă (homepage + /echipa/)",
+          "tip": "cifră",
+          "surse": [
+            "https://moaclinic.ro/",
+            "https://moaclinic.ro/echipa/"
+          ],
+          "verificat": true
+        }
+      ]
+    }
   },
-  "actualizat": "2026-10-23T08:41:52"
+  "actualizat": "2026-10-23T09:13:33"
 }
