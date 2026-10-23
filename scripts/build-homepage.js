@@ -1185,6 +1185,37 @@ const TR_PAGINI = [...trNode.keys()];
 const TPL2 = 'toate'; // toate tratamentele (consultațiile rămân pe șablonul lor); sau un Set cu id-uri, pentru probă
 const TR_PROMISE = {
   'injectare-botox': 'Relaxează mușchii care formează ridurile de expresie: pielea devine mai netedă, fără să-ți afecteze expresivitatea feței.',
+  // scrise din textul fiecărui tratament, fără superlative și fără rezultate promise (Decizia CMR 20/2025)
+  'injectari-acid-hialuronic': 'Redă volumul și hidratarea pierdute: estompează ridurile și conturează natural buzele, pomeții, cearcănele sau linia mandibulei.',
+  'augmentare-buze': 'Buze cu mai mult volum și un contur mai bine definit, cu acid hialuronic dozat de medic, pentru un efect natural, fără rigiditate.',
+  'sculptra': 'Stimulează producția naturală de colagen: volumul pierdut revine treptat, ridurile adânci se estompează, iar rezultatul rămâne subtil.',
+  'harmonyca': 'Acid hialuronic și hidroxiapatită de calciu într-un singur tratament: volum în pomeți, un contur mai definit și o piele mai fermă.',
+  'skinbooster-vital': 'Microinjecții fine cu acid hialuronic care hidratează pielea în profunzime: ten mai luminos și mai neted, fără volum adăugat.',
+  'polinucleotide': 'Polinucleotidele stimulează producția de colagen și refac bariera pielii, pentru un ten mai ferm și cu aspect mai sănătos.',
+  'jalupro-young-eye': 'Pentru zona ochilor: hidratează pielea subțire, atenuează cearcănele pigmentate și ridurile fine, ca privirea să pară mai odihnită.',
+  'nefertiti-lift': 'Relaxează mușchii care trag conturul feței în jos, pentru o linie a mandibulei mai definită și un gât cu aspect mai ferm.',
+  'mezoterapie': 'Microinjecții cu acid hialuronic, vitamine și antioxidanți, pentru o piele hidratată, revitalizată și mai tonifiată.',
+  'prp-scalp': 'Plasmă bogată în trombocite, obținută din propriul sânge și injectată în scalp, pentru a activa foliculii afectați de căderea părului.',
+  'hiperhidroza-axilara': 'Injecții fine cu toxină botulinică în zona axilară, pentru reducerea transpirației excesive, într-o procedură de 20–40 de minute.',
+  'marirea-penisului-acid-hialuronic': 'Acid hialuronic injectat de medic pentru creșterea circumferinței, într-o procedură minim invazivă, fără intervenție chirurgicală.',
+  'epilare-definitiva-bucuresti': 'Laserul Splendor X, cu două lungimi de undă, reduce părul nedorit, cu setări adaptate nuanței pielii, culorii și densității firului.',
+  'laser-vascular': 'Impulsuri laser direcționate pe vasele vizibile, pentru capilare dilatate, pete roșii și venule; îți reiei activitățile în aceeași zi.',
+  'venus-viva': 'Radiofrecvență fracționată pentru o piele mai fermă și mai uniformă: ridurile fine, cicatricile post-acnee și porii dilatați se atenuează.',
+  'venus-legacy': 'Radiofrecvență multipolară și câmpuri electromagnetice pulsate, pentru remodelare corporală, celulită atenuată și o piele mai fermă.',
+  'dermalinfusion': 'Curăță, exfoliază și hidratează pielea în aceeași ședință, cu seruri alese pentru tenul tău: piele mai netedă și mai luminoasă.',
+  'microneedeling': 'Microace fine stimulează refacerea pielii, pentru riduri și cicatrici atenuate, pori mai fini și un ton mai uniform.',
+  'blefaroplastie': 'Îndepărtează excesul de piele și grăsime de pe pleoape, pentru o privire mai deschisă și un aspect mai puțin obosit.',
+  'lip-lifting': 'Corectează buza superioară alungită sau lăsată, pentru un contur mai bine definit și un zâmbet mai armonios.',
+  'nevi-pigmentari': 'Medicul dermatolog evaluează alunița cu dermatoscopul și alege metoda potrivită de îndepărtare, din motive estetice sau medicale.',
+  'eliminare-papiloame': 'Papiloamele sunt îndepărtate după evaluarea medicului, cu metoda potrivită fiecărui caz și un timp de recuperare scurt.',
+  'terapia-nad': 'Perfuzii cu NAD+ pentru susținerea regenerării celulare, ca parte a unui plan de longevitate stabilit de medic după evaluare.',
+  'glutation': 'Glutationul, antioxidant produs natural de organism, administrat prin perfuzie pentru protecția celulelor împotriva stresului oxidativ.',
+  'autohemoterapia': 'O cantitate mică din sângele tău, îmbogățită cu oxigen și ozon într-un circuit steril, reintrodusă pentru a susține imunitatea.',
+  'sauna-cu-ozon': 'Căldură umedă la aproximativ 40°C, combinată cu ozon, pentru circulație, oxigenarea țesuturilor și detoxifiere.',
+  'fotobiomodulare-vielight': 'Lumină roșie și aproape-infraroșie, aplicată neinvaziv, pentru a susține regenerarea celulelor și un somn mai odihnitor.',
+  'tms-stimulare-magnetica-transcraniana': 'Impulsuri magnetice aplicate neinvaziv pe zonele creierului implicate în dispoziție și stres, ca terapie pentru burnout sau anxietate.',
+  'skin-care-dna': 'Un test genetic care arată cum răspunde pielea ta la îmbătrânire, soare, inflamație și stres, ca îngrijirea să fie aleasă pe măsură.',
+  'nutrigenetica-epigenetica': 'Testul arată cum reacționează corpul tău la alimente, nutrienți și efort, în funcție de profilul genetic, pentru o nutriție personalizată.',
 };
 const trHref = live;
 const sentences = (s) => String(s).match(/[^.!?]+[.!?]+/g) || [s];
