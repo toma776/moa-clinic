@@ -99,6 +99,21 @@ async function api(req, res, url) {
     return sendJson(res, 200, { ok: true, preturi: P, oferte: PRT.offersOf(P).length, build });
   }
 
+  if (url === '/api/entitati-editari' && m === 'PUT') {
+    const ED = require('./scripts/editari');
+    const { valori } = await body(req);
+    if (!valori || typeof valori !== 'object') return sendJson(res, 400, { error: 'aștept { valori: { grup: valoare } }' });
+    const D = readJson('entitati.json', null);
+    if (!D) return sendJson(res, 404, { error: 'lipsește entitati.json' });
+    const E = ED.load();
+    const grupuri = ED.merge(D, E, valori, require('./scripts/preturi').load());
+    ED.save(E);
+    writeJson('entitati.json', D);
+    let build = 'ok';
+    try { await run('build-homepage.js'); } catch (e) { build = e.message.slice(0, 400); }
+    return sendJson(res, 200, { ok: true, grupuri, build });
+  }
+
   if (url === '/api/leads' && m === 'PUT') {
     const list = await body(req);
     if (!Array.isArray(list)) return sendJson(res, 400, { error: 'aștept o listă' });

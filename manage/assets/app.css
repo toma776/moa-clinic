@@ -514,3 +514,41 @@ aside .logo small { line-height: 1.5; }
 .pe-catname { margin-left: auto; width: 320px; max-width: 50%; font-size: 12.5px; color: var(--muted); }
 .pe-addc { margin: 4px 0 20px; }
 @media (max-width: 1100px) { .pe-row { grid-template-columns: 1fr; } .pe-delr { justify-self: start; } }
+
+/* editorul de entități (manage/assets/editor.js) */
+.head .ee-open { flex: none; }
+dialog.ee-dlg { width: min(1180px, calc(100vw - 32px)); height: min(860px, calc(100vh - 32px)); overflow: hidden; }
+dialog.ee-dlg form { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: 0; }
+.ee-head { padding: 18px 20px 0; border-bottom: 1px solid var(--line); }
+.ee-head h2 { margin: 0 0 2px; }
+.ee-head p { margin: 0 0 12px; }
+.ee-tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: thin; }
+.ee-tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 8px 12px; color: var(--muted); font-weight: 600; white-space: nowrap; cursor: pointer; }
+.ee-tabs button span { font-weight: 400; opacity: .7; }
+.ee-tabs button i { color: var(--accent); font-style: normal; }
+.ee-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.ee-body { overflow: hidden; min-height: 0; }
+.ee-one { height: 100%; overflow-y: auto; padding: 18px 20px; }
+.ee-split { display: grid; grid-template-columns: 290px minmax(0, 1fr); height: 100%; min-height: 0; }
+.ee-list { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 8px; padding: 14px; border-right: 1px solid var(--line); background: var(--panel-2); min-height: 0; }
+.ee-list input { width: 100%; }
+.ee-items { overflow-y: auto; display: grid; align-content: start; gap: 2px; min-height: 0; }
+.ee-items button { text-align: left; border: 0; border-radius: 6px; background: none; padding: 7px 9px; font-size: 13px; color: var(--ink); cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ee-items button:hover { background: var(--accent-soft); }
+.ee-items button.on { background: var(--accent); color: var(--accent-ink); }
+.ee-addbtn { width: 100%; }
+.ee-item { overflow-y: auto; padding: 16px 20px 20px; min-height: 0; }
+.ee-item-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.ee-item-h b { font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ee-del { color: var(--bad); }
+.ee-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.ee-fields .ee-wide, .ee-fields .be-obj { grid-column: 1 / -1; }
+.ee-json { font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.ee-bad { border-color: var(--bad) !important; outline: 1px solid var(--bad); }
+dialog.ee-dlg .be-actions { position: static; margin: 0; padding: 12px 20px; align-items: center; }
+dialog.ee-dlg .be-actions .err { margin: 0 auto 0 0; }
+@media (max-width: 760px) {
+  .ee-split { grid-template-columns: 1fr; grid-template-rows: 200px minmax(0, 1fr); }
+  .ee-list { border-right: 0; border-bottom: 1px solid var(--line); }
+  .ee-fields { grid-template-columns: 1fr; }
+}

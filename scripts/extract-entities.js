@@ -471,6 +471,7 @@ async function main() {
   };
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
+  require('./editari').apply(data); // editările din panou rămân peste ce s-a extras
   fs.writeFileSync(OUT, JSON.stringify(data, null, 2));
   const n = (x) => (Array.isArray(x) ? x.length : 0);
   console.log(`Gata: ${path.relative(process.cwd(), OUT)}`);

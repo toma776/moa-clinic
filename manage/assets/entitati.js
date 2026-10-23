@@ -345,7 +345,7 @@ routes.entitati = function renderEntitati() {
     $('#view').innerHTML = `
       <div class="head"><div>
         <div class="crumb"><a href="/manage/entitati" data-cat="">← Toate categoriile</a> · manage › entități › ${esc(cat.title)}</div>
-        <h1><span class="cat-ico">${icon(cat.icon)}</span>${esc(cat.title)}</h1></div></div>
+        <h1><span class="cat-ico">${icon(cat.icon)}</span>${esc(cat.title)}</h1></div>${window.entEditBtn ? entEditBtn(cat.id) : ''}</div>
       <p class="lead">${esc(cat.desc)}</p>
       <div class="pills">${CATS.map((c) => `<a href="/manage/entitati/${c.id}" data-cat="${c.id}" class="${c.id === cat.id ? 'on' : ''}">${esc(c.title)}${total(c) ? ` · ${total(c)}` : ''}</a>`).join('')}</div>
       <div class="cats">${cat.sections.map((id) => { const s = S[id]; return `
@@ -360,7 +360,7 @@ routes.entitati = function renderEntitati() {
       <div class="head"><div>
         <div class="crumb">${multi ? `<a href="/manage/entitati/${cat.id}" data-cat="${cat.id}">← ${esc(cat.title)}</a> · <a href="/manage/entitati" data-cat="">entități</a> › ${esc(cat.title)} › ${esc(s.title)}` : `<a href="/manage/entitati" data-cat="">← Toate categoriile</a> · entități › ${esc(cat.title)}`}</div>
         <h1><span class="cat-ico">${icon(cat.icon)}</span>${esc(s.title)}${s.count != null ? ` <span class="muted" style="font-weight:400;font-size:16px">${s.count}</span>` : ''}</h1></div>
-        <input type="search" id="qg" placeholder="Filtrează…" aria-label="Filtrează">
+        <input type="search" id="qg" placeholder="Filtrează…" aria-label="Filtrează">${window.entEditBtn ? entEditBtn(cat.id) : ''}
       </div>
       ${G[grp] && !/^srv_|^spec_/.test(grp) ? `<p class="lead">${esc(G[grp])}</p>` : ''}
       ${multi ? `<div class="pills">${cat.sections.map((id) => `<a href="/manage/entitati/${cat.id}/${id}" data-cat="${cat.id}/${id}" class="${id === grp ? 'on' : ''}">${esc(S[id].title)}${S[id].count != null ? ` · ${S[id].count}` : ''}</a>`).join('')}</div>` : ''}

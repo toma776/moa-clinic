@@ -504,7 +504,8 @@ D.pagini_legale_utile = PAGES.pages
   .map((p) => ({ nume: (p.h1 || p.title.split('|')[0]).trim(), url: p.url }));
 
 D.meta = { ...D.meta, extras_la: new Date().toISOString().slice(0, 10), pagini: SRC.length, metoda: 'homepage + /preturi/ + /echipa/ + /abonamente/ + toate paginile din sitemap' };
-// prețurile și ofertele editate în panou (data/preturi.json) au întâietate față de cele extrase de pe site
+// editările din panou (data/entitati-editari.json), apoi prețurile din editorul lor
+require('./editari').apply(D);
 { const PRT = require('./preturi'); PRT.apply(D, PRT.load()); }
 fs.writeFileSync(FILE, JSON.stringify(D, null, 2));
 console.log(`Gata: ${servicii.length} servicii · ${D.articole.length} articole · ${D.glosar.length} termeni · ${D.intrebari.length} întrebări · ${D.media.length} imagini · ${D.brand.fapte_site.length} fapte · ${OBS.length} observații · ${D.legal.firme.length} firme`);
