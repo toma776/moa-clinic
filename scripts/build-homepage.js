@@ -325,6 +325,8 @@ const icon = {
 
 // meniul, din structură (cu destinațiile actuale); Consultații primește buton propriu, între „Ce te supără?” și „Tratamente”
 const M = [...S.meniu.principal];
+// Echipa: din link simplu devine mega-meniu
+M.forEach((m, k) => { if (m.url === '/medici/') M[k] = { ...m, nume: 'Echipa', tip: 'mega' }; });
 if (consHub && !M.some((m) => m.nume === 'Consultații')) M.splice(Math.max(0, M.findIndex((m) => m.nume === 'Tratamente')), 0, { nume: 'Consultații', url: consHub.url, tip: 'mega' });
 const chev = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>';
 const catNodes = S.arbore.find((n) => n.url === '/tratamente/').copii;
@@ -451,8 +453,48 @@ const offersPanel = (id) => {
     ${mmFoot}
   </div>`;
 };
+// Echipa: specialitățile ca tab-uri, medicii cu fotografie și grad, fondatorul în card; doar medicii și specialistul în estetică (fără asistente)
+const GRAD_ORD = { 'Medic primar': 0, 'Medic specialist': 1, 'Medic rezident': 2 };
+const docShort = (p) => p.grad || p.rol;
+const TEAM_MM = [
+  { nume: 'Gerontologie & longevitate', id: 'gerontologie', spec: 'Gerontologie', cons: 'consultatie-antiaging', hint: 'Vârsta biologică, prevenție și terapii regenerative.' },
+  { nume: 'Chirurgie plastică', id: 'chirurgie-plastica', spec: 'Chirurgie plastică', cons: 'consultatie-chirurgie-plastica', hint: 'Pleoape, buze și conturul feței, după o consultație.' },
+  { nume: 'Dermatologie & dermatoestetică', id: 'dermatologie', spec: 'Dermatovenerologie', cons: 'consultatie-dermatoestetica-dermatologie', hint: 'Sănătatea pielii, alunițe și tratamente dermatoestetice.' },
+  { nume: 'Estetică facială și corporală', id: 'estetica', spec: 'Estetică facială și corporală', hint: 'Tratamente cu aparatură pentru ten și corp.' },
+].map((g) => ({ ...g, oameni: team.filter((p) => p.specialitate === g.spec).sort((a, b) => (GRAD_ORD[a.grad] ?? 9) - (GRAD_ORD[b.grad] ?? 9)) })).filter((g) => g.oameni.length);
+const teamDocs = team.filter((p) => p.tip === 'Medic').sort((a, b) => (GRAD_ORD[a.grad] ?? 9) - (GRAD_ORD[b.grad] ?? 9));
+const nPrimari = teamDocs.filter((p) => p.grad === 'Medic primar').length;
+const founderMM = team.find((p) => p.nume.includes('Stănescu'));
+const docHref = (p, g) => (p.profil_detaliat ? `/nou/medici/${p.id}/` : `/nou/medici/#${g ? g.id : (TEAM_MM.find((x) => x.spec === p.specialitate)?.id || '')}`);
+const docIni = (p) => p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join('');
+const mmDoc = (p, g) => `<a class="mm-doc" href="${esc(docHref(p, g))}" data-q="${esc(mmNorm(`${p.nume} ${p.rol} ${p.specialitate}`))}"><span class="mm-doc-ph">${photos[p.nume] ? `<img src="${esc(thumb(photos[p.nume], 160))}" alt="" loading="lazy">` : `<i>${esc(docIni(p))}</i>`}</span><span><b>${esc(p.nume)}</b><small>${esc(docShort(p))}${g || p.tip !== 'Medic' ? '' : ` · ${esc(p.specialitate)}`}</small></span></a>`;
+const teamPanel = (id) => {
+  const tabs = [{ nume: 'Toată echipa', oameni: [...teamDocs, ...team.filter((p) => p.tip !== 'Medic' && p.specialitate !== 'Asistență medicală')], hint: `${teamDocs.length} medici: ${nPrimari} primari, ceilalți specialiști și rezidenți, alături de specialistul în estetică.` }, ...TEAM_MM];
+  return `
+  <div class="mm" id="mm-${id}" role="region" aria-label="Echipa medicală">
+    <div class="wrap mm-in mm-in-team">
+      <div class="mm-side">
+        <span class="mm-side-t">Echipa medicală</span>
+        <div role="tablist" aria-orientation="vertical">${tabs.map((t, k) => `<button class="mm-tab" type="button" role="tab" aria-selected="${k === 0}" data-pane="${id}-${k}"><b>${esc(t.nume)}</b><span class="mm-n">${t.oameni.length}</span></button>`).join('')}</div>
+        <dl class="mm-team-stats"><div><dt>${teamDocs.length}</dt><dd>medici</dd></div><div><dt>${nPrimari}</dt><dd>medici primari</dd></div><div><dt>25+</dt><dd>ani, fondatorul</dd></div><div><dt>5.0</dt><dd>${esc(nReviews)} recenzii</dd></div></dl>
+      </div>
+      <div class="mm-main">${tabs.map((t, k) => {
+        const pret = t.cons ? minPrice(t.cons) : null;
+        return `
+        <div class="mm-pane" id="pane-${id}-${k}" ${k ? 'hidden' : ''}>
+          <div class="mm-pane-h"><div><h3>${esc(t.nume)}</h3><p>${esc(t.hint)}</p></div>${t.cons ? `<a href="${esc(live(t.cons))}">Consultație${pret ? ` de la ${lei(pret)}` : ''} →</a>` : '<a href="/nou/medici/">Toată echipa →</a>'}</div>
+          <div class="mm-docs">${t.oameni.map((p) => mmDoc(p, k ? t : null)).join('')}</div>
+        </div>`;
+      }).join('')}
+      </div>
+      ${founderMM ? mmFeat(thumb('/wp-content/uploads/2024/09/image00005-682x1024.jpeg', 640), 'Fondator · coordonator medical', esc(founderMM.nume), 'Medic primar geriatrie-gerontologie, peste 25 de ani de experiență, format la Institutul „Ana Aslan”. Director medical Oxxygene din 2008.', 'Vezi profilul', `/nou/medici/${founderMM.id}/`) : ''}
+    </div>
+    ${mmFoot}
+  </div>`;
+};
 const PANELS = {
   'Consultații': (i) => consPanel(i),
+  'Echipa': (i) => teamPanel(i),
   'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '/nou/medici/'), 'Ex.: riduri, buze, cearcăne…'),
   'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? mmFeat(thumb('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg', 640), `Oferta lunii · −${topOffer.discountProcent}%`, esc(offerLabel(topOffer.nume)), `<s>${lei(topOffer.pretInitial)}</s> <b>${lei(topOffer.pret)}</b>`, 'Rezervă oferta', '#programare') : '', 'Caută: Botox, Sculptra, PRP…'),
   'Longevitate': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 640), 'Coordonator medical', 'Dr. Adrian Stănescu', 'Medic primar geriatrie-gerontologie, format la școala Ana Aslan.', 'Vezi profilul', '/nou/medici/adrian-stanescu/')),
@@ -468,7 +510,7 @@ const mrowGo = (label, sub, screen, n) => `<button class="mrow" type="button" da
 const MS_HINT = {
   'Ce te supără?': 'Pornește de la ce ai observat', 'Tratamente': `${catData.reduce((n, c) => n + c.items.length, 0)} de tratamente, pe categorii`,
   'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri publice · ofertele lunii`,
-  'Medici': 'Medici primari și specialiști', 'Consultații': `Primul pas, cu medicul specialității · de la ${lei(minConsult)}`, 'Despre MOA': 'Clinica, tehnologie, recenzii, blog',
+  'Medici': 'Medici primari și specialiști', 'Echipa': 'Medici primari și specialiști, pe specialități', 'Consultații': `Primul pas, cu medicul specialității · de la ${lei(minConsult)}`, 'Despre MOA': 'Clinica, tehnologie, recenzii, blog',
 };
 const msCta = `<a class="ms-cta" href="#programare" data-mclose><span><small>Nu știi ce ți se potrivește?</small><b>Programează o consultație</b><em>de la ${lei(minConsult)} · medicul îți face planul</em></span><i>→</i></a>`;
 const msHead = (eyebrow, title) => `<div class="ms-head"><span class="ms-eye">${esc(eyebrow)}</span><h3>${esc(title)}</h3></div>`;
@@ -496,6 +538,9 @@ M.forEach((m, i) => {
   if (m.nume === 'Ce te supără?') {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Alege zona', m.nume)}${zoneData.map((z, j) => mrowGo(z.nume, z.hint, `z${j}`, z.items.length)).join('')}${msCta}</div>`);
     zoneData.forEach((z, j) => screens.push(`<div class="mscreen" data-screen="z${j}">${msHead(m.nume, z.nume)}${z.items.map(mrowLink).join('')}${msCta}</div>`));
+  } else if (m.nume === 'Echipa') {
+    const msDoc = (p) => `<a class="mrow ms-doc" href="${esc(docHref(p))}"><span class="ms-doc-ph">${photos[p.nume] ? `<img data-src="${esc(thumb(photos[p.nume], 160))}" alt="">` : `<i>${esc(docIni(p))}</i>`}</span><span><b>${esc(p.nume)}</b><small>${esc(docShort(p))}</small></span><span class="chev">→</span></a>`;
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Echipa medicală', 'Echipa')}<p class="ms-intro">${teamDocs.length} medici, dintre care ${nPrimari} medici primari, coordonați de ${esc(founderMM?.nume || 'medicul fondator')}, cu peste 25 de ani de experiență.</p>${TEAM_MM.map((g) => `<span class="ms-eye ms-sep">${esc(g.nume)}</span>${g.oameni.map(msDoc).join('')}`).join('')}${mrowLink({ nume: 'Toată echipa', sub: 'Specialități, consultații și cum lucrăm', href: '/nou/medici/' })}${msCta}</div>`);
   } else if (m.nume === 'Consultații') {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Primul pas', m.nume)}<p class="ms-intro">Cu medicul specialității, înainte de orice tratament: afli ce ți se potrivește, ce nu și cât costă.</p>${consData.map(mrowLink).join('')}${mrowLink({ nume: 'Toate consultațiile', sub: 'Cum alegi, ce include, ce urmează', href: '/nou/consultatii/' })}${msCta}</div>`);
   } else if (m.nume === 'Tratamente') {
