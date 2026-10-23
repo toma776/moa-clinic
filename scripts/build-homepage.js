@@ -404,7 +404,7 @@ const tabbed = (id, title, groups, feat, ph) => `
   </div>`;
 const INTRO = {
   'Longevitate': ['Global Antiaging', 'Medicina longevității: îți măsurăm vârsta biologică, apoi medicul gerontolog îți face un plan regenerativ.', 'Vezi programul', '/nou/longevitate/program/'],
-  'Prețuri': ['Prețuri transparente', `Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri ale clinicii sunt publice, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
+  'Prețuri': ['Prețuri transparente', `Toate cele ${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de servicii ale clinicii au prețul afișat, înainte de programare.`, 'Toate prețurile', '/nou/preturi/'],
   'Despre MOA': ['MOA Clinic', 'Estetică medicală, chirurgie și medicină regenerativă, sub același acoperiș, în centrul Bucureștiului.', 'Echipa medicală', '/nou/medici/'],
 };
 const simple = (id, m, feat) => {
@@ -511,7 +511,7 @@ const mrowGo = (label, sub, screen, n) => `<button class="mrow" type="button" da
 // meniul mobil premium: căutare, secțiunile mari cu descriere, „cerute des” cu imagini, contact și recenzii
 const MS_HINT = {
   'Ce te supără?': 'Pornește de la ce ai observat', 'Tratamente': `${catData.reduce((n, c) => n + c.items.length, 0)} de tratamente, pe categorii`,
-  'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de prețuri publice · ofertele lunii`,
+  'Longevitate': 'Global Antiaging și terapii regenerative', 'Prețuri': `${D.preturi.reduce((n, c) => n + c.servicii.length, 0)} de servicii, cu preț afișat · ofertele lunii`,
   'Medici': 'Medici primari și specialiști', 'Echipa': 'Medici primari și specialiști, pe specialități', 'Consultații': `Primul pas, cu medicul specialității · de la ${lei(minConsult)}`, 'Despre MOA': 'Clinica, tehnologie, blog',
 };
 const msCta = `<a class="ms-cta" href="#programare" data-mclose><span><small>Nu știi ce ți se potrivește?</small><b>Programează o consultație</b><em>de la ${lei(minConsult)} · medicul îți face planul</em></span><i>→</i></a>`;
@@ -794,7 +794,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   <div class="wrap f-trust">
     ${SHOW_REVIEWS ? `<a href="/nou/#recenzii"><b>★ 5.0</b><span>${esc(nReviews)} de recenzii Google</span></a>` : ''}
     <a href="/nou/medici/"><b>${team.filter((p) => /^Dr\./.test(p.nume)).length} medici</b><span>primari, specialiști și rezidenți</span></a>
-    <a href="/nou/preturi/"><b>${nPreturi} de prețuri</b><span>publice, înainte de programare</span></a>
+    <a href="/nou/preturi/"><b>${nPreturi} de servicii</b><span>cu prețul afișat, înainte de programare</span></a>
     <a href="/nou/consultatii/"><b>de la ${lei(minConsult)}</b><span>prima consultație</span></a>
     <span><b>Grupul Oxxygene</b><span>clinici și spital privat</span></span>
   </div>
@@ -2516,7 +2516,7 @@ ${BOTTOM}`;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prețuri MOA Clinic București – lista completă | MOA Clinic</title>
-<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} prețuri în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii și un estimator pe zone.`)}">
+<meta name="description" content="${esc(`Lista de prețuri MOA Clinic: ${nRows} de servicii în ${D.preturi.length} categorii – consultații, toxină botulinică, acid hialuronic, epilare Splendor X, Venus Viva, terapii intravenoase și altele. Plus ofertele lunii și un estimator pe zone.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -2532,10 +2532,10 @@ ${TOP}<main>
     <div class="pr-hero-in">
       <div><span class="eyebrow">Prețuri</span><h1>Prețuri <em>la vedere</em></h1>
         <p class="lede">Lista oficială MOA Clinic, înainte de programare. Pentru tratamente, medicul stabilește la consultație zonele, doza și numărul de ședințe.</p></div>
-      <dl class="pr-facts"><div><dt>${nRows}</dt><dd>prețuri publice</dd></div>${D.oferte.length ? `<div><dt>${D.oferte.length}</dt><dd>oferte luna asta</dd></div>` : ''}<div><dt>${cats.length}</dt><dd>categorii</dd></div></dl>
+      <dl class="pr-facts"><div><dt>${nRows}</dt><dd>servicii, cu preț afișat</dd></div>${D.oferte.length ? `<div><dt>${D.oferte.length}</dt><dd>oferte luna asta</dd></div>` : ''}<div><dt>${cats.length}</dt><dd>categorii</dd></div></dl>
     </div>
     <div class="pr-switch" role="tablist" aria-label="Cum vrei să vezi prețurile">
-      <button type="button" role="tab" id="tab-lista" aria-controls="lista" aria-selected="true">${ico.list}<span><b>Lista completă</b><small>${nRows} de prețuri în ${cats.length} categorii</small></span></button>
+      <button type="button" role="tab" id="tab-lista" aria-controls="lista" aria-selected="true">${ico.list}<span><b>Lista completă</b><small>${nRows} de servicii în ${cats.length} categorii</small></span></button>
       <button type="button" role="tab" id="tab-est" aria-controls="estimator" aria-selected="false" tabindex="-1">${ico.body}<span><b>Pornește de la ce te supără <i class="pr-new">Nou</i></b><small>alegi zona pe siluetă, vezi opțiunile și costul</small></span></button>
     </div>
   </div>
@@ -2549,7 +2549,7 @@ ${TOP}<main>
       <nav class="pr-nav" aria-label="Categorii de prețuri">${navHtml}</nav>
     </aside>
     <div class="pr-main">
-      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nRows} prețuri</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
+      <div class="pr-tools"><span id="pr-count" aria-live="polite">${nRows} de servicii</span><button type="button" class="pr-all" id="pr-all" aria-pressed="false">Deschide toate</button></div>
       ${catHtml}
       <p class="pr-empty" id="pr-empty" hidden>Nu am găsit niciun preț. Încearcă alt cuvânt sau <a class="lede-link" href="#programare">întreabă-ne direct</a>.</p>
       <p class="pr-note">Prețurile sunt în lei, din lista oficială a clinicii. Nu știi ce ți se potrivește? <a class="lede-link" href="#estimator">Pornește de la ce te supără</a>.</p>
@@ -2560,7 +2560,7 @@ ${TOP}<main>
 ${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js?v=3" defer></script>
+<script src="/nou/preturi.js?v=4" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);

@@ -56,7 +56,7 @@
     $$('.pr-ng').forEach((g) => { g.hidden = !g.querySelector('a:not([hidden])'); });
     if (!words.length && before) { cats.forEach((c) => { c.open = before.has(c); }); before = null; }
     empty.hidden = cats.some((c) => !c.hidden);
-    count.textContent = words.length ? `${n} din ${total} prețuri` : `${total} prețuri`;
+    count.textContent = words.length ? `${n} din ${total} de servicii` : `${total} de servicii`;
     qx.hidden = !q.value;
     syncAll();
   };
