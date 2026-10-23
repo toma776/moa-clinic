@@ -42,7 +42,7 @@
 
   const render = () => {
     const n = list.length;
-    fab.hidden = wrap.classList.contains('open') || n === 0; // apare doar după primul tratament adăugat
+    fab.hidden = wrap.classList.contains('open');
     fab.classList.toggle('zero', n === 0);
     fab.innerHTML = `<span class="wl-fab-i" aria-hidden="true">♡</span><span>Wishlist</span><b>${n}</b>`;
     fab.setAttribute('aria-label', `Deschide wishlistul (${n} ${n === 1 ? 'tratament' : 'tratamente'})`);
