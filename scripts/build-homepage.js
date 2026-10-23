@@ -138,6 +138,7 @@ NOU.add('/preturi/');
 NOU.add('/medici/');
 NOU.add('/video/');
 NOU.add('/blog/');
+NOU.add('/clinica/tehnologie/');
 // wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
 const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă pe wishlist: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Wishlist' : 'Adaugă pe wishlist'}</span></button>`;
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
@@ -1823,6 +1824,126 @@ ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'medici'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'medici', 'index.html'), page);
   console.log(`Echipa: nou/medici/ · ${team.length} oameni · ${TM.length} specialități · ${collage.length} în colaj`);
+}
+
+// ---------- pagina /nou/clinica/tehnologie/: aparatura clinicii, pe domenii, fiecare cu tratamentele și prețul „de la” ----------
+// Descrieri despre cum funcționează aparatul, fără superlative și fără rezultate promise; tratamentele trimit la paginile lor.
+{
+  const TH = [
+    { n: 'Splendor X', dom: 'Laser', tip: 'Laser Alexandrite 755 nm + Nd:YAG 1064 nm', d: 'Două lungimi de undă emise împreună, în același impuls (tehnologia BLEND X). Lumina e absorbită de pigmentul firului de păr sau de vasul de sânge și le încălzește țintit, cu pielea răcită în timpul tratamentului.', s: ['epilare-definitiva-bucuresti', 'laser-vascular'] },
+    { n: 'Venus Viva', dom: 'Radiofrecvență', img: '/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-768x1024.jpeg', real: true, tip: 'Radiofrecvență fracționată (NanoFractional RF)', d: 'Microelectrozi transmit căldură în piele în puncte foarte mici, iar țesutul dintre ele rămâne intact, ca pielea să se refacă mai repede. Se folosește pentru textură, pori, cicatrici și riduri fine.', s: ['venus-viva'] },
+    { n: 'Venus Legacy', dom: 'Radiofrecvență', tip: 'Radiofrecvență multipolară + câmpuri electromagnetice pulsate (PEMF)', d: 'Încălzește uniform straturile profunde ale pielii, pe față sau pe corp, combinat cu câmpuri electromagnetice pulsate. Pe corp lucrează și cu vacuum. Procedură neinvazivă, fără timp de recuperare.', s: ['venus-legacy'] },
+    { n: 'Dermalinfusion', dom: 'Piele', tip: 'Exfoliere, extracție și infuzare într-o singură trecere', d: 'Un vârf diamantat exfoliază, vacuumul curăță porii, iar în același timp pielea primește un ser ales pentru tipul ei. Un tratament de ten, fără ace și fără timp de recuperare.', s: ['dermalinfusion'] },
+    { n: 'Dermapen 4', dom: 'Piele', tip: 'Microneedling cu adâncime reglabilă', d: 'Ace foarte fine creează micro-canale în piele, la adâncimea aleasă de specialist pentru fiecare zonă. Pielea își activează refacerea, iar serurile aplicate pătrund mai bine.', s: ['microneedeling', 'mezoterapie'] },
+    { n: 'Vielight', dom: 'Regenerare', tip: 'Fotobiomodulare cu lumină în infraroșu apropiat', d: 'Un dispozitiv purtat pe cap emite lumină în infraroșu apropiat, fără căldură și fără contact cu ace sau curent. Face parte din planurile de longevitate stabilite de medic.', s: ['fotobiomodulare-vielight'] },
+    { n: 'TMS', dom: 'Regenerare', tip: 'Stimulare magnetică transcraniană', d: 'Impulsuri magnetice aplicate pe o zonă a scalpului, fără anestezie; ești treaz pe tot parcursul ședinței și îți reiei activitatea imediat. Indicația și protocolul le stabilește medicul.', s: ['tms-stimulare-magnetica-transcraniana'] },
+    { n: 'Sauna cu ozon', dom: 'Regenerare', tip: 'Căldură umedă la aproximativ 40°C, cu ozon medical', d: 'Spre deosebire de sauna obișnuită, căldura e umedă și temperatura mai mică, iar capul rămâne în afara cabinei. Se face după consult, ca parte dintr-un plan regenerativ.', s: ['sauna-cu-ozon'] },
+  ].map((t) => {
+    const tr = t.s.filter((id) => trNode.has(id)).map((id) => ({ id, nume: prettyName(trNode.get(id).nod.nume), href: live(id), pret: minPrice(id) }));
+    const img = t.img ? resized(t.img) : tr.map((x) => HERO_NOU[x.id]?.src || (TRD[x.id]?.hero ? resized(TRD[x.id].hero) : null)).find(Boolean) || null;
+    return { ...t, tr, img, pos: !t.img && tr[0] ? HERO_NOU[tr[0].id]?.pos : null, min: tr.some((x) => x.pret != null) ? Math.min(...tr.filter((x) => x.pret != null).map((x) => x.pret)) : null };
+  });
+  const DOM = [...new Set(TH.map((t) => t.dom))];
+  const minAll = Math.min(...TH.filter((t) => t.min != null).map((t) => t.min));
+  const slug = (x) => norm(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const pageUrl = ORIGIN + '/clinica/tehnologie/';
+  const faq = [
+    ['Trebuie să știu dinainte ce aparat mi se potrivește?', 'Nu. Pornești de la ce te supără, iar la consultație medicul îți spune dacă un aparat e potrivit pentru tine, cu ce alternative și câte ședințe ar fi nevoie.'],
+    ['Cine lucrează cu aparatele?', 'Medicii și specialiștii clinicii, instruiți pe aparatul respectiv. Parametrii se aleg pentru fiecare pacient, în funcție de tipul de piele, zonă și istoric.'],
+    ['Pot face mai multe tratamente cu aparatură în aceeași perioadă?', 'Uneori da, alteori trebuie păstrat un interval între ele. Ordinea și pauzele le stabilește medicul în planul tău, ca tratamentele să nu se încurce între ele.'],
+    ['Cât costă?', `Fiecare tratament are prețul „de la” pe pagina lui, iar lista completă este pe pagina de prețuri. Prețul final depinde de zonă și de numărul de ședințe, stabilite la consultație.`],
+  ];
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'MedicalWebPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Tehnologie | MOA Clinic', inLanguage: 'ro-RO', about: TH.map((t) => ({ '@type': 'MedicalDevice', name: t.n, description: t.tip })), publisher: { '@id': ORIGIN + '/#organization' } },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Clinica', item: ORIGIN + '/clinica/' }, { '@type': 'ListItem', position: 3, name: 'Tehnologie', item: pageUrl }] },
+      { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+    ],
+  };
+  const card = (t) => `<article class="th-card rv" id="${slug(t.n)}" data-th="${esc(t.dom)}">
+      <div class="th-ph">${t.img ? `<img src="${esc(t.img)}" alt="${esc(t.real ? `Cabinetul de tratamente cu radiofrecvență al MOA Clinic` : `${t.tr[0]?.nume || t.n} la MOA Clinic`)}" loading="lazy"${t.pos ? ` style="object-position:${t.pos}"` : ''}>` : ''}${t.real ? '<small class="th-real">Din cabinet</small>' : ''}</div>
+      <div class="th-tx">
+        <small class="th-dom">${esc(t.dom)}</small>
+        <h3>${esc(t.n)}</h3>
+        <p class="th-tip">${esc(t.tip)}</p>
+        <p>${esc(t.d)}</p>
+        ${t.tr.length ? `<ul class="th-tr">${t.tr.map((x) => `<li><a href="${esc(x.href)}"><span>${esc(x.nume)}</span>${x.pret != null ? `<em><small>de la</small> ${lei(x.pret)}</em>` : ''}</a></li>`).join('')}</ul>` : ''}
+      </div>
+    </article>`;
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tehnologie și aparatură – Splendor X, Venus Viva, Venus Legacy | MOA Clinic</title>
+<meta name="description" content="Aparatura MOA Clinic: ${esc(TH.map((t) => t.n).join(', '))}. Pentru fiecare: cum funcționează, pentru ce tratamente o folosim și prețul de la.">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main class="tr-page tp th-page">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span>Despre MOA</span><span>›</span><span aria-current="page">Tehnologie</span></nav>
+
+<section class="pf-hero tr-hero">
+  <div class="wrap pf-grid">
+    <div class="pf-copy">
+      <span class="eyebrow">Despre MOA · Tehnologie</span>
+      <h1>Aparatura, <em>pe înțelesul tău.</em></h1>
+      <p class="lede">Aparatele pe care le folosim zilnic în clinică, explicate simplu: cum funcționează, pentru ce tratamente le folosim și cât costă. Aparatul îl alege medicul, după consultație, nu invers.</p>
+      <div class="pf-facts tr-facts">
+        <div><b>${TH.length} tehnologii</b><span>laser, radiofrecvență, piele, regenerare</span></div>
+        <div><b>${TH.reduce((n, t) => n + t.tr.length, 0)} tratamente</b><span>cu pagina și prețul lor</span></div>
+        <div><b>de la ${lei(minAll)}</b><span>o ședință</span></div>
+      </div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează o consultație</a><a class="btn btn-line" href="#aparate">Vezi aparatele</a></div>
+    </div>
+    <div class="pf-photo tr-photo"><div class="frame"><img src="${esc(resized('/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-1-768x1024.jpeg'))}" alt="Laserul Splendor X în cabinetul MOA Clinic" fetchpriority="high"></div></div>
+  </div>
+</section>
+
+<section class="sec" id="aparate">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Aparatele</span><h2>Ce folosim <em>și pentru ce.</em></h2></div><p class="lede">Alege un domeniu sau mergi direct la tratament: pe pagina fiecăruia găsești pentru cine este, cum decurge și prețul.</p></div>
+    <div class="th-chips" role="group" aria-label="Filtrează după domeniu"><button type="button" data-th-f="*" aria-pressed="true">Toate<span>${TH.length}</span></button>${DOM.map((d) => `<button type="button" data-th-f="${esc(d)}" aria-pressed="false">${esc(d)}<span>${TH.filter((t) => t.dom === d).length}</span></button>`).join('')}</div>
+    <div class="th-grid">${TH.map(card).join('')}</div>
+  </div>
+</section>
+
+<section class="sec" id="cum-lucram">
+  <div class="wrap pf-two lg-rig">
+    <div class="rv"><span class="eyebrow">Cum lucrăm</span><h2 class="pf-h2">Aparatul vine <em>după consultație.</em></h2>
+      <div class="pf-prose lg-prose" style="margin-top:18px"><p>Un aparat bun nu înlocuiește evaluarea. Înainte de prima ședință, medicul îți vede pielea sau istoricul, îți spune dacă tratamentul ți se potrivește și ce poți aștepta realist.</p><p>Parametrii nu sunt aceiași pentru toți: se aleg în funcție de tipul de piele, de zonă și de ce a funcționat sau nu până acum. Iar dacă un aparat nu e potrivit pentru tine, îți spunem.</p></div></div>
+    <aside class="pf-side rv"><h3>La fiecare tratament</h3><ul class="tr-checks"><li>Consult înainte de prima ședință</li><li>Parametri aleși pentru pielea și zona ta</li><li>Test pe o zonă mică, acolo unde e cazul</li><li>Numărul de ședințe și intervalul, trecute în plan</li><li>Recomandări scrise pentru după tratament</li></ul></aside>
+  </div>
+</section>
+
+<section class="sec" id="intrebari">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">Întrebări frecvente</span><h2 class="pf-h2">Despre <em>aparatură</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:+40743056605">0743 056 605</a> sau vezi <a class="lede-link" href="/nou/preturi/">toate prețurile</a>.</p></div>
+    <div class="tr-faq">${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
+  </div>
+</section>
+
+${BOOK}
+<script>
+// filtrul pe domenii
+(() => {
+  const bs = [...document.querySelectorAll('[data-th-f]')], cs = [...document.querySelectorAll('.th-card')];
+  bs.forEach((b) => b.addEventListener('click', () => {
+    bs.forEach((x) => x.setAttribute('aria-pressed', x === b));
+    cs.forEach((c) => { c.hidden = b.dataset.thF !== '*' && c.dataset.th !== b.dataset.thF; });
+  }));
+})();
+</script>
+${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'clinica', 'tehnologie');
+  fs.mkdirSync(dir, { recursive: true });
+  writePage(path.join(dir, 'index.html'), alternateBg(page));
+  console.log(`Tehnologie: nou/clinica/tehnologie/ · ${TH.length} aparate · ${TH.reduce((n, t) => n + t.tr.length, 0)} tratamente legate`);
 }
 
 // ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------
