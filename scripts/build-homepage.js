@@ -303,7 +303,7 @@ const offSrv = (o) => `Ofertă: ${offerLabel(o.nume)} – ${lei(o.pret)}`;
 // eticheta grupului de oferte, curățată: „Oferte Epilare Definitiva SplendorX” → „Epilare definitivă Splendor X”
 const offerGroup = (g) => String(g).replace(/^Oferte\s+/i, '').replace(/Definitiva/i, 'definitivă').replace(/SplendorX/i, 'Splendor X');
 // numele ofertelor din lista clinicii: cuvintele scrise integral cu majuscule devin litere mici (fără acronime), diacriticele lipsă se completează
-const OFF_ACR = /^(NAD\+?|PRP|TMS|DNA|IV)$/;
+const OFF_ACR = /^[(]?(NAD\+?|PRP|TMS|DNA|IV|MOA)[),.]?$/;
 const OFF_DIACR = { toxina: 'toxină', botulinica: 'botulinică', fiola: 'fiolă', superioara: 'superioară', sedinta: 'ședință', sedinte: 'ședințe', penis: 'peniană', therapy: 'therapy' };
 const offerLabel = (x) => {
   if (!x) return '';
@@ -424,12 +424,39 @@ const consPanel = (id) => `
     </div>
     ${mmFoot}
   </div>`;
+// Prețuri: vitrina ofertelor lunii – tab-uri pe grupuri (Toate = cele mai mari reduceri, câte una din fiecare grup pe rând), carduri cu reducerea
+const offGrp = [...new Set(D.oferte.map((o) => o.grup))].map((g) => ({ g, os: D.oferte.filter((o) => o.grup === g).sort((a, b) => b.discountProcent - a.discountProcent) }));
+const offBest = (() => { const out = [], q = offGrp.map((x) => [...x.os]); while (out.length < 6 && q.some((x) => x.length)) q.forEach((x) => { if (x.length && out.length < 6) out.push(x.shift()); }); return out.sort((a, b) => b.discountProcent - a.discountProcent); })();
+const offMax = (os) => Math.max(0, ...os.map((o) => o.discountProcent || 0));
+const offCardMm = (o) => `<a class="mm-offc" href="#programare" data-srv="${esc(offSrv(o))}" data-q="${esc(mmNorm(`${o.nume} ${o.detalii || ''} ${o.grup}`))}"><span class="mm-offc-top"><small>${esc(o.detalii || o.grup)}</small>${o.discountProcent ? `<i>−${o.discountProcent}%</i>` : ''}</span><b>${esc(offerLabel(o.nume))}</b><span class="mm-offc-p">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<em>${lei(o.pret)}</em></span></a>`;
+const nPreturi = D.preturi.reduce((n, c) => n + c.servicii.length, 0);
+const offersPanel = (id) => {
+  const tabs = [{ g: 'Cele mai mari reduceri', os: offBest, all: true }, ...offGrp];
+  return `
+  <div class="mm" id="mm-${id}" role="region" aria-label="Prețuri și ofertele lunii">
+    <div class="wrap mm-in mm-in-off">
+      <div class="mm-side">
+        <span class="mm-side-t">Ofertele lunii</span>
+        <div role="tablist" aria-orientation="vertical">${tabs.map((t, k) => `<button class="mm-tab" type="button" role="tab" aria-selected="${k === 0}" data-pane="${id}-${k}"><b>${esc(t.all ? 'Toate ofertele' : t.g)}</b><span class="mm-n">${t.all ? D.oferte.length : t.os.length}</span></button>`).join('')}</div>
+        <div class="mm-side-links"><a href="/nou/preturi/"><b>Toate prețurile</b><small>${nPreturi} de prețuri publice</small></a><a href="/nou/preturi/#estimator"><b>Pornește de la ce te supără</b><small>alegi zona, vezi costul</small></a><a href="/nou/consultatii/"><b>Consultații</b><small>de la ${lei(minConsult)}</small></a></div>
+      </div>
+      <div class="mm-main">${tabs.map((t, k) => `
+        <div class="mm-pane" id="pane-${id}-${k}" ${k ? 'hidden' : ''}>
+          <div class="mm-pane-h"><div><h3>${esc(t.g)}</h3><p>${t.all ? `${D.oferte.length} oferte, iată cele mai mari reduceri` : `${t.os.length} ${t.os.length === 1 ? 'ofertă' : 'oferte'}`}${offMax(t.os) ? ` · până la −${offMax(t.os)}%` : ''} · alege una și te sunăm pentru programare</p></div><a href="/nou/preturi/#oferte">Toate ofertele →</a></div>
+          <div class="mm-offgrid">${t.os.slice(0, 6).map(offCardMm).join('')}</div>
+        </div>`).join('')}
+      </div>
+      ${mmFeat(null, 'Pentru luna aceasta', `Până la −${offMax(D.oferte)}%`, `${D.oferte.length} oferte active, în ${offGrp.length} categorii. Prețurile sunt publice, înainte de programare.`, 'Vezi toate ofertele', '/nou/preturi/#oferte')}
+    </div>
+    ${mmFoot}
+  </div>`;
+};
 const PANELS = {
   'Consultații': (i) => consPanel(i),
   'Ce te supără?': (i) => tabbed(i, 'Alege zona', zoneData, mmFeat(thumb('/wp-content/uploads/2024/08/karelys-ruiz-PqyzuzFiQfY-unsplash-1024x681.jpg', 640), 'Echipa MOA', 'Medici care te ascultă', 'Gerontologi, dermatologi și chirurgi plastici, sub același acoperiș. Știi mereu cine te tratează.', 'Cunoaște echipa', '/nou/medici/'), 'Ex.: riduri, buze, cearcăne…'),
   'Tratamente': (i) => tabbed(i, 'Categorii', catData, topOffer ? mmFeat(thumb('/wp-content/uploads/2024/08/look-studio-HtXyytr9304-unsplash-1536x1024.jpg', 640), `Oferta lunii · −${topOffer.discountProcent}%`, esc(offerLabel(topOffer.nume)), `<s>${lei(topOffer.pretInitial)}</s> <b>${lei(topOffer.pret)}</b>`, 'Rezervă oferta', '#programare') : '', 'Caută: Botox, Sculptra, PRP…'),
   'Longevitate': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Dr.-Adrian-Stanescu-768x1060.jpeg', 640), 'Coordonator medical', 'Dr. Adrian Stănescu', 'Medic primar geriatrie-gerontologie, format la școala Ana Aslan.', 'Vezi profilul', '/nou/medici/adrian-stanescu/')),
-  'Prețuri': (i, m) => simple(i, m, mmFeat(null, 'Ofertele lunii', 'Pentru luna aceasta', offers.map((o) => `<span class="mm-off"><span>${esc(offerLabel(o.nume))}</span><b>${lei(o.pret)}</b></span>`).join(''), `Toate cele ${D.oferte.length} oferte`, '/nou/preturi/#oferte')),
+  'Prețuri': (i, m) => (D.oferte.length ? offersPanel(i) : simple(i, m, '')),
   'Despre MOA': (i, m) => simple(i, m, mmFeat(thumb('/wp-content/uploads/2024/10/Clinica-moa-768x949.jpeg', 640), 'Te așteptăm', 'Str. Ștefan Mihăileanu 35', 'București · 0743 056 605', 'Vezi pe hartă', D.contact.googleMaps[0])),
 };
 const panelsHtml = M.map((m, i) => (PANELS[m.nume] ? PANELS[m.nume](i, m) : '')).join('');
@@ -474,6 +501,9 @@ M.forEach((m, i) => {
   } else if (m.nume === 'Tratamente') {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead('Categorii', m.nume)}${catData.map((c, j) => mrowGo(c.nume, c.hint, `c${j}`, c.items.length)).join('')}${msCta}</div>`);
     catData.forEach((c, j) => screens.push(`<div class="mscreen" data-screen="c${j}">${msHead(m.nume, c.nume)}${c.items.map(mrowLink).join('')}${msCta}</div>`));
+  } else if (m.nume === 'Prețuri' && D.oferte.length) {
+    // pe mobil, ofertele lunii direct în ecranul Prețuri, apoi linkurile
+    screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(`Până la −${offMax(D.oferte)}% luna aceasta`, 'Ofertele lunii')}<div class="ms-offs">${offBest.map((o) => `<a class="mrow ms-off" href="#programare" data-srv="${esc(offSrv(o))}" data-mclose><span><b>${esc(offerLabel(o.nume))}</b><small>${esc(o.detalii || o.grup)}${o.pretInitial ? ` · <s>${lei(o.pretInitial)}</s>` : ''}</small></span><em>${o.discountProcent ? `<small>−${o.discountProcent}%</small>` : ''}${lei(o.pret)}</em></a>`).join('')}</div>${mrowLink({ nume: `Toate cele ${D.oferte.length} oferte`, sub: 'pe categorii, cu prețul vechi și cel nou', href: '/nou/preturi/#oferte' })}<span class="ms-eye ms-sep">Prețuri</span>${m.linkuri.filter((l) => l.nume !== 'Ofertele lunii').map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   } else if (m.linkuri) {
     screens.push(`<div class="mscreen" data-screen="m${i}">${msHead(INTRO[m.nume]?.[0] || m.nume, m.nume)}${INTRO[m.nume] ? `<p class="ms-intro">${esc(INTRO[m.nume][1])}</p>` : ''}${m.linkuri.map((l) => mrowLink({ nume: l.nume, sub: LINK_HINT[l.nume] || '', href: toLive(l.url) || '#programare' })).join('')}${msCta}</div>`);
   }
@@ -932,7 +962,7 @@ ${mobileNav}
     if (href.startsWith('tel:')) track('click_telefon');
     else if (href.includes('wa.me/')) track('click_whatsapp');
     else if (href === '#programare' || a.dataset.srv) track('click_programare', { serviciu: a.dataset.srv || '' });
-    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow, .ps-card')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
+    if (a.closest('.tr-offer, .tr-offer-row, .o-card, .hp-of, .pr-off, .pr-orow, .ps-card, .mm-offc, .ms-off')) track('click_oferta', { oferta: a.dataset.srv || a.textContent.trim().slice(0, 80) });
   }, true);
   // formulare -> lead în panou (POST /api/leads): formularul din pagină și cel din panoul de jos (mobil)
   const telOk = (t) => t.replace(/[\\s.()-]/g, '').replace(/^[+]?40/, '0').match(/^0[0-9]{9}$/);
