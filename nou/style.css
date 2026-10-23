@@ -2870,3 +2870,121 @@ footer.f .f-reach a:hover { color: #fff; }
   footer.f .f-col a { padding: 9px 0; font-size: 14.5px; }
   .f-bot { flex-direction: column; align-items: flex-start; padding: 18px 0 96px; }
 }
+
+/* =====================================================================
+   Șablonul de tratament v2 (main.t2): hero compact orientat pe decizie, „pe scurt”, preț și medici mai sus,
+   întrebări + siguranță într-un acordeon, textul lung pliat în „Pe larg”
+   ===================================================================== */
+.t2-hero { padding: clamp(10px, 1.6vw, 22px) 0 clamp(32px, 4vw, 56px); }
+.t2-hero-in { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.t2-copy { display: grid; justify-items: start; gap: 0; }
+.t2-offer { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 7px 14px 7px 7px; border: 1px solid rgba(148, 117, 71, .35); border-radius: 999px; background: rgba(255, 255, 255, .6); font-size: 13px; color: var(--ink-2); transition: border-color .25s, background .25s; }
+.t2-offer:hover { border-color: var(--gold); background: #fff; }
+.t2-offer i { font: 600 11.5px/1 var(--sans); font-style: normal; color: #fff; background: var(--gold); padding: 6px 8px; border-radius: 999px; }
+.t2-offer b { font-weight: 500; color: var(--ink); }
+.t2-offer s { color: var(--muted); }
+.t2-offer em { font-style: normal; color: var(--gold); }
+.t2 .t2-copy h1 { margin: 14px 0 0; font-size: clamp(44px, 4.6vw, 68px); }
+.t2-promise { margin: 18px 0 0; max-width: 46ch; font: 400 clamp(19px, 1.6vw, 22px)/1.45 var(--serif); color: var(--ink-2); }
+.t2-facts { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 100%; margin: 26px 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.t2-facts > div { display: grid; gap: 3px; padding: 14px 14px 12px 0; }
+.t2-facts > div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+.t2-facts b { font: 400 22px/1.1 var(--serif); color: var(--ink); }
+.t2-facts span { font-size: 12px; line-height: 1.35; color: var(--muted); }
+.t2-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.t2-proof { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 22px; }
+.t2-docs, .t2-rate { display: inline-flex; align-items: center; gap: 10px; }
+.t2-docs b, .t2-rate b { display: block; font: 500 14px/1.2 var(--sans); color: var(--ink); }
+.t2-docs small, .t2-rate small { display: block; font-size: 12px; color: var(--muted); }
+.t2-docs:hover b, .t2-rate:hover b { color: var(--gold); }
+.t2-ava { display: inline-flex; flex: none; }
+.t2-ava img, .t2-ava i { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ivory); background: var(--sand); display: grid; place-items: center; font: 500 11px/1 var(--sans); font-style: normal; color: var(--ink-2); }
+.t2-ava > * + * { margin-left: -10px; }
+.t2-rate b { color: var(--gold); }
+.t2-photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 2px; }
+.t2-photo img { width: 100%; height: 100%; object-fit: cover; }
+/* pe scurt */
+.t2-brief { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.t2-brief h2, .t2-price h2, .t2-who h2 { margin: 14px 0 0; }
+.t2-brief .lede, .t2-price .lede, .t2-who .lede { margin-top: 14px; font-size: 15.5px; line-height: 1.7; }
+.t2-fisa { margin: 0; display: grid; border-top: 1px solid var(--line); }
+.t2-fisa > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.t2-fisa dt { font: 500 11px/1.5 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.t2-fisa dd { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink); }
+/* prețuri, medici */
+.t2-price, .t2-who { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.t2-price .tr-offer-row { margin-bottom: 14px; }
+.t2-who .link-u { display: inline-block; margin-top: 16px; }
+.t2-docs-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+.t2-docs-list li > a, .t2-docs-list li > div { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.t2-docs-list .t2-ava img, .t2-docs-list .t2-ava i { width: 48px; height: 48px; border: 0; font-size: 13px; }
+.t2-docs-list b { display: block; font: 500 17px/1.2 var(--serif); color: var(--ink); }
+.t2-docs-list small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.t2-docs-list a:hover b { color: var(--gold); }
+.t2-revs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: clamp(26px, 3vw, 40px); }
+.t2-rev { margin: 0; padding: 22px 24px; background: rgba(255, 255, 255, .6); border: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
+.t2-rev q { font: italic 400 18px/1.45 var(--serif); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.t2-rev figcaption { font-size: 12px; letter-spacing: .08em; color: var(--muted); }
+.t2-rev figcaption b { color: var(--ink-2); font-weight: 500; }
+.t2-rev-sum { background: var(--night); border-color: var(--night); color: #fff; align-content: center; }
+.t2-rev-sum b { font: 400 34px/1 var(--serif); color: var(--gold-soft); }
+.t2-rev-sum span { font-size: 13.5px; color: #c9c0b2; }
+.t2-rev-sum i { font-style: normal; font: 500 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); }
+.t2 .tr-larg .tr-acc details > div { columns: 1; }
+@media (max-width: 1100px) {
+  .t2-hero-in { grid-template-columns: 1fr; }
+  .t2-photo { aspect-ratio: 16 / 9; max-height: 440px; width: 100%; }
+  .t2-brief, .t2-price, .t2-who { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (max-width: 760px) {
+  /* firimituri scurte: doar „‹ categoria” */
+  .t2 .crumbs { font-size: 12.5px; padding-block: 10px; }
+  .t2 .crumbs > :not(:nth-last-child(3)) { display: none; }
+  .t2 .crumbs > :nth-last-child(3)::before { content: '‹ '; }
+  .t2-hero { padding-top: 0; }
+  .t2-photo { aspect-ratio: 16 / 10; order: 2; margin: 0 -16px; border-radius: 0; }
+  .t2-offer { margin-bottom: 16px; font-size: 12.5px; }
+  .t2 .t2-copy h1 { font-size: 40px; margin-top: 10px; }
+  .t2-promise { font-size: 18.5px; margin-top: 12px; }
+  .t2-facts { margin-top: 18px; }
+  .t2-facts > div { padding: 12px 8px 10px 0; }
+  .t2-facts > div + div { padding-left: 10px; }
+  .t2-facts b { font-size: 18px; }
+  .t2-facts span { font-size: 11.5px; }
+  .t2-cta { display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-top: 18px; }
+  .t2-cta .btn { justify-content: center; padding: 15px 10px; font-size: 12px; }
+  .t2-proof { width: 100%; justify-content: space-between; gap: 12px; margin-top: 18px; padding-bottom: 4px; }
+  .t2-proof .wl-ico span { display: none; }
+  .t2-fisa > div { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+  .t2-docs-list { grid-template-columns: 1fr; }
+  .t2-revs { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+  .t2-revs::-webkit-scrollbar { display: none; }
+  .t2-rev { scroll-snap-align: start; padding: 18px; }
+  .t2-rev q { font-size: 16.5px; }
+}
+@media (max-width: 760px) {
+  .t2-docs-list li:nth-child(n+5) { display: none; }
+  .t2-docs-list .t2-ava img, .t2-docs-list .t2-ava i { width: 40px; height: 40px; }
+  .t2-docs-list li > a, .t2-docs-list li > div { padding: 9px 0; }
+  .t2-docs-list b { font-size: 16px; }
+  .t2-fisa dd { font-size: 14.5px; }
+  .t2 .tr-related .tr-arts { display: none; }
+}
+@media (max-width: 760px) {
+  .t2 .sec { padding: 30px 0; }
+  .t2 .sec-head { margin-bottom: 16px; }
+  .t2 .sec-head h2, .t2 .t2-brief h2, .t2 .t2-price h2, .t2 .t2-who h2, .t2 .pf-h2 { font-size: 29px; margin-top: 10px !important; }
+  .t2-brief .lede, .t2-price .lede, .t2-who .lede, .t2 #rezultate .lede, .t2 #cum-decurge .lede { display: none; }
+  .t2-brief, .t2-price, .t2-who { gap: 16px; }
+  /* „pe scurt” pe două coloane */
+  .t2-fisa { grid-template-columns: 1fr 1fr; column-gap: 16px; }
+  .t2-fisa > div { padding: 10px 0; }
+  .t2-fisa > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .t2-fisa dt { font-size: 10px; letter-spacing: .14em; }
+  .t2-fisa dd { font-size: 14px; line-height: 1.45; }
+  .t2-who .link-u { margin-top: 8px; }
+  .t2-revs { margin-top: 18px; }
+  .t2 .tr-offer-row { padding: 14px 16px; }
+}
+.t2-brief h2, .t2-price h2, .t2-who h2 { font-size: clamp(32px, 3.6vw, 48px); font-weight: 400; line-height: 1.08; }
+@media (max-width: 760px) { .t2-brief h2, .t2-price h2, .t2-who h2 { font-size: 29px; } }
