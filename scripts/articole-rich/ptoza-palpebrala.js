@@ -130,7 +130,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Pleoapa căzută nu este doar un detaliu: poate fi un semnal al corpului, o sursă de disconfort sau o piedică pentru vedere. Contează să alegi tratamentul potrivit situației tale, iar asta se poate stabili doar printr-un consult în care medicul îți examinează ochii.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

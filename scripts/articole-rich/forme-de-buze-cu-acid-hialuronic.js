@@ -101,7 +101,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Forma potrivită este cea care te pune în valoare și în care te recunoști. Dacă te gândești la o augmentare, primul pas este o discuție cu medicul, în care alegeți împreună ce ți se potrivește.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

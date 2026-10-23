@@ -120,7 +120,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Nu există un tratament-minune pentru riduri, ci un plan gândit pentru tine, care ține cont de cauză, nu doar de linia de la suprafață. Poți începe cu pași mici, cu o rutină corectă acasă, sau cu o discuție cu medicul.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

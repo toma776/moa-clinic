@@ -137,7 +137,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Glutationul nu este o soluție rapidă care rezolvă totul, dar poate susține organismul când este folosit corect, în contextul potrivit. Dacă te gândești la o perfuzie, primul pas este o discuție cu medicul.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

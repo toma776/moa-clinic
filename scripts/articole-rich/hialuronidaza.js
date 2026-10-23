@@ -104,7 +104,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Un filler care nu arată cum ți-ai dorit poate fi corectat. Primul pas este să afli exact ce se întâmplă în zona respectivă, iar decizia de dizolvare, corecție sau pauză se ia împreună cu medicul.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

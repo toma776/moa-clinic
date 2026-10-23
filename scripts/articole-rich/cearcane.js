@@ -134,7 +134,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Cearcănele și pungile sub ochi sunt o problemă reală, dar abordabilă. Cu o înțelegere corectă a cauzelor, o rutină adaptată și, când e nevoie, sprijinul unui medic, aspectul zonei ochilor se poate îmbunătăți. Nu există soluții instantanee, dar există pași care au sens pentru situația ta.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

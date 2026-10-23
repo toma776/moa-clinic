@@ -84,7 +84,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
   <div class="rx-check-prog"><i></i></div>
   <ol class="rx-qs">${intrebariCheck.map(([q, why], i) => `<li data-q="${i}"${i ? ' hidden' : ''}><p class="rx-q"><small>Întrebarea ${i + 1} din ${intrebariCheck.length}</small>${esc(q)}</p><div class="rx-ans"><button type="button" data-a="da">Da</button><button type="button" data-a="nu">Nu</button></div><p class="rx-why2" hidden>${esc(why)}</p></li>`).join('')}</ol>
   <div class="rx-res" data-res="da" hidden><b>Nu amâna evaluarea.</b><p>Ai răspuns „da” la cel puțin o întrebare. Medicul verifică unde s-a acumulat acidul, dacă a migrat și ce soluție ți se potrivește: dizolvare, corecție fină sau o pauză.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează evaluarea${dermPret ? ` · ${lei(dermPret)}` : ''}</a></div>
-  <div class="rx-res" data-res="nu" hidden><b>Poți lăsa buzele să se așeze.</b><p>Imperfecțiunile din primele zile nu înseamnă un rezultat final nereușit. Dacă după ce inflamația scade forma tot nu te reprezintă, o evaluare îți arată ce opțiuni ai.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează un consult</a></div>
+  <div class="rx-res" data-res="nu" hidden><b>Poți lăsa buzele să se așeze.</b><p>Imperfecțiunile din primele zile nu înseamnă un rezultat final nereușit. Dacă după ce inflamația scade forma tot nu te reprezintă, o evaluare îți arată ce opțiuni ai.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează-te</a></div>
   <button type="button" class="rx-reset" hidden>Reia verificarea</button>
 </div>
 

@@ -96,7 +96,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
   <div class="rx-check-prog"><i></i></div>
   <ol class="rx-qs">${intrebariCheck.map(([q, why], i) => `<li data-q="${i}"${i ? ' hidden' : ''}><p class="rx-q"><small>Întrebarea ${i + 1} din ${intrebariCheck.length}</small>${esc(q)}</p><div class="rx-ans"><button type="button" data-a="da">Da</button><button type="button" data-a="nu">Nu</button></div><p class="rx-why2" hidden>${esc(why)}</p></li>`).join('')}</ol>
   <div class="rx-res" data-res="da" hidden><b>E momentul pentru un consult dermatologic.</b><p>Ai răspuns „da” la cel puțin o întrebare. Medicul caută cauza reală a uscăciunii și îți recomandă un tratament potrivit, mai ales dacă îngrijirea obișnuită nu a ajutat.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează consultul${dermPret ? ` · ${lei(dermPret)}` : ''}</a></div>
-  <div class="rx-res" data-res="nu" hidden><b>Îngrijirea de acasă e un bun început.</b><p>Alege un balsam potrivit, hidratează-te și evită iritanții. Dacă în câteva săptămâni buzele nu își revin, programează un consult dermatologic.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează un consult</a></div>
+  <div class="rx-res" data-res="nu" hidden><b>Îngrijirea de acasă e un bun început.</b><p>Alege un balsam potrivit, hidratează-te și evită iritanții. Dacă în câteva săptămâni buzele nu își revin, programează un consult dermatologic.</p><a class="btn btn-gold" href="#programare" data-srv="${esc(dermNume)}">Programează-te</a></div>
   <button type="button" class="rx-reset" hidden>Reia verificarea</button>
 </div>
 
@@ -123,7 +123,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Buzele uscate pot reflecta stilul de viață, hidratarea, vremea sau un dezechilibru intern. Cu o rutină corectă și produse potrivite, de obicei se ameliorează. Când uscăciunea persistă, doare sau vine cu alte simptome, consultul medical te ajută să afli cauza.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(dermNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(dermNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

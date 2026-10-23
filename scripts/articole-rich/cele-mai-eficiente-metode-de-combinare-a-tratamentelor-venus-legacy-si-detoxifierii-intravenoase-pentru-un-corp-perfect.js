@@ -102,7 +102,7 @@ ${id('venus-legacy') ? `<p><a class="link-u" href="${esc(live('venus-legacy'))}"
 
 <div class="rx-end">
   <p>Venus Legacy lucrează asupra pielii și a conturului, iar detoxifierea intravenoasă susține organismul din interior. Împreună, într-un plan stabilit de medic și cu obiceiuri sănătoase, pot contribui la schimbarea pe care o urmărești.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

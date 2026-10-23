@@ -111,7 +111,7 @@ module.exports = ({ esc, lei, live, minPrice, serv, trNode, team, photos, resize
 
 <div class="rx-end">
   <p>Terapia cu NAD perfuzabil nu este o soluție miraculoasă, dar poate fi un sprijin când corpul are nevoie de mai multă energie, de claritate mentală sau de un impuls în recuperare. Contează să fie recomandată corect și adaptată stării tale, iar primul pas este o discuție cu medicul.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `

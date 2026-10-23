@@ -140,7 +140,7 @@ NOU.add('/video/');
 NOU.add('/blog/');
 NOU.add('/clinica/tehnologie/');
 // wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
-const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă pe wishlist: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Wishlist' : 'Adaugă pe wishlist'}</span></button>`;
+const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă în lista mea: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Lista mea' : 'Adaugă în listă'}</span></button>`;
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
 // tratamentul (pagina nouă) despre care e un articol: întâi după cuvintele-cheie din titlu, apoi după entitățile articolului
 // (fără cele care apar pe aproape toate articolele – NAD, antioxidanți, numele medicilor – decât dacă nu există altceva)
@@ -566,7 +566,7 @@ ${mobileNav}
       <h1>Frumusețea vine din interior. <em>Și se desăvârșește aici.</em></h1>
       <a class="doc-chip" href="/nou/medici/adrian-stanescu/"><img src="${thumb('/wp-content/uploads/2024/09/image00005-682x1024.jpeg', 96)}" alt="" width="48" height="48" loading="lazy"><span><b>Dr. Adrian Stănescu</b>medic primar gerontolog · fondator</span></a>
       <div class="hero-cta">
-        <a class="btn btn-gold arrow" href="#programare">Programează o consultație</a>
+        <a class="btn btn-gold arrow" href="#programare">Programează-te</a>
         <a class="btn btn-line" href="#ce-te-supara">Ce te supără?</a>
       </div>
       </div>
@@ -792,8 +792,8 @@ ${mobileNav}
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
 </div>
-<script src="/nou/wishlist.js?v=2" defer></script>
-<script src="/nou/progres.js?v=1" defer></script>
+<script src="/nou/wishlist.js?v=3" defer></script>
+<script src="/nou/progres.js?v=2" defer></script>
 
 <script>
 (() => {
@@ -1135,7 +1135,7 @@ ${TOP}<main>
       <p class="lede">${esc(pr.rezumat || '')}</p>
       ${pr.citat ? `<blockquote class="pf-hq">„${esc(pr.citat)}”</blockquote>` : ''}
       <div class="pf-facts">${pr.cifre.map((c) => `<div><b>${esc(c.valoare)}</b><span>${esc(c.eticheta)}</span></div>`).join('')}</div>
-      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează o consultație</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(p.specialitate === 'Gerontologie' ? 'Consultație antiaging (cu vârsta biologică)' : p.specialitate === 'Chirurgie plastică' ? 'Consultație chirurgie plastică' : p.specialitate === 'Dermatovenerologie' ? 'Consultație dermatologie & dermatoestetică' : '')}">Programează-te</a>${allArts.length ? `<a class="btn btn-line" href="#articole">${allArts.length} articole</a>` : ''}</div>
     </div>
     ${photo ? `<div class="pf-photo"><div class="frame"><img src="${esc(photo)}" alt="${esc(p.nume)}" fetchpriority="high"></div></div>` : ''}
   </div>
@@ -1992,7 +1992,7 @@ ${TOP}<main class="tr-page lg-page">
         <div><b>${consPret ? lei(consPret) : '—'}</b><span>consultația, cu vârsta biologică</span></div>
         <div><b>6–12 luni</b><span>până la reevaluare</span></div>
       </div>
-      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(srv)}">Programează evaluarea</a><a class="btn btn-line" href="#parcurs">Cum funcționează</a></div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(srv)}">Programează-te</a><a class="btn btn-line" href="#parcurs">Cum funcționează</a></div>
     </div>
     <div class="pf-photo tr-photo"><div class="frame"><img src="/wp-content/uploads/2024/09/image00005-682x1024.jpeg" alt="${esc(fond ? fond.nume : 'Medic gerontolog')}, coordonatorul programului" fetchpriority="high"></div></div>
   </div>
@@ -2141,7 +2141,7 @@ ${founder ? `<section class="tm-founder" id="fondator">
       <p class="tm-role">${esc(founder.rol)}</p>
       ${FOUNDER_QUOTE ? `<blockquote>„${esc(FOUNDER_QUOTE.replace(/^[„"“]|[”"]$/g, ''))}”</blockquote>` : ''}
       ${fpr?.rezumat ? `<p>${esc(fpr.rezumat)}</p>` : ''}
-      <div class="tm-founder-a">${fpr ? `<a class="btn btn-line" href="/nou/medici/${esc(founder.id)}/">Profilul complet</a>` : ''}<a class="btn btn-gold arrow" href="#programare" data-srv="${esc(`${consName('/consultatii/antiaging/')} – ${founder.nume}`)}">Programează o consultație</a></div>
+      <div class="tm-founder-a">${fpr ? `<a class="btn btn-line" href="/nou/medici/${esc(founder.id)}/">Profilul complet</a>` : ''}<a class="btn btn-gold arrow" href="#programare" data-srv="${esc(`${consName('/consultatii/antiaging/')} – ${founder.nume}`)}">Programează-te</a></div>
     </div>
   </div>
 </section>` : ''}
@@ -2257,7 +2257,7 @@ ${TOP}<main class="tr-page tp th-page">
         <div><b>${TH.reduce((n, t) => n + t.tr.length, 0)} tratamente</b><span>cu pagina și prețul lor</span></div>
         <div><b>de la ${lei(minAll)}</b><span>o ședință</span></div>
       </div>
-      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează o consultație</a><a class="btn btn-line" href="#aparate">Vezi aparatele</a></div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează-te</a><a class="btn btn-line" href="#aparate">Vezi aparatele</a></div>
     </div>
     <div class="pf-photo tr-photo"><div class="frame"><img src="${esc(resized('/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-09-at-13.59.51-1-768x1024.jpeg'))}" alt="Laserul Splendor X în cabinetul MOA Clinic" fetchpriority="high"></div></div>
   </div>
@@ -2348,7 +2348,7 @@ ${BOTTOM}`;
   // ---------- vitrina ofertelor: câte un tab pentru fiecare grup (ofertele lunii, terapii intravenoase, epilare), carduri pe șină ----------
   // tab-ul unui grup: numele grupului + categoriile din care vin ofertele lui
   const offTab = (g) => [g, [...new Set(D.oferte.filter((o) => o.grup === g).map((o) => PRT.catInfo(o.categorie).nume.replace(/\s+[–-]\s+.*/, '')))].slice(0, 2).join(', ')];
-  const offCard = (o) => `<article class="ps-card"><div class="ps-top">${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : '<small>Ofertă</small>'}${o.discountProcent ? `<span class="ps-disc">−${o.discountProcent}%</span>` : ''}</div><h3>${esc(offName(o))}</h3><div class="ps-foot"><span class="ps-price">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<b>${lei(o.pret)}</b></span><span class="ps-act">${wlBtn(`Ofertă: ${offName(o)}`, o.pret, '/nou/preturi/#oferte', true)}<a class="ps-cta" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">Rezervă</a></span></div></article>`;
+  const offCard = (o) => `<article class="ps-card"><div class="ps-top">${o.detalii ? `<small>${esc(offerLabel(o.detalii))}</small>` : '<small>Ofertă</small>'}${o.discountProcent ? `<span class="ps-disc">−${o.discountProcent}%</span>` : ''}</div><h3>${esc(offName(o))}</h3><div class="ps-foot"><span class="ps-price">${o.pretInitial ? `<s>${lei(o.pretInitial)}</s>` : ''}<b>${lei(o.pret)}</b></span><span class="ps-act">${wlBtn(`Ofertă: ${offName(o)}`, o.pret, '/nou/preturi/#oferte', true)}<a class="ps-cta" href="#programare" data-srv="${esc(`Ofertă: ${offName(o)} – ${lei(o.pret)}`)}">Rezervă oferta</a></span></div></article>`;
   const spotHtml = D.oferte.length ? `<div class="ps" id="oferte">
   <div class="wrap">
     <div class="ps-head">
@@ -2444,7 +2444,7 @@ ${BOTTOM}`;
         <p class="pr-sum-empty" id="est-empty">Bifează tratamentele care te interesează. Costul orientativ apare aici.</p>
         <ul class="pr-sum-l" id="est-list"></ul>
         <p class="pr-sum-note">Prețuri de pornire, din lista oficială. Zonele, doza și numărul de ședințe le stabilește medicul la consultație (de la ${lei(minConsult)}).</p>
-        <div class="pr-sum-a"><a class="btn btn-gold arrow" href="#programare" id="est-cta" data-srv="">Programează consultația</a><a class="btn btn-line" id="est-wa" href="https://wa.me/40743056605" target="_blank" rel="noopener" data-track="whatsapp">Trimite pe WhatsApp</a></div>
+        <div class="pr-sum-a"><a class="btn btn-gold arrow" href="#programare" id="est-cta" data-srv="">Programează-te</a><a class="btn btn-line" id="est-wa" href="https://wa.me/40743056605" target="_blank" rel="noopener" data-track="whatsapp">Trimite pe WhatsApp</a></div>
       </div>
     </div>
   </div>
@@ -2721,6 +2721,12 @@ ${BOTTOM}`;
     const firstH2 = blocks.findIndex((b) => b.t === 'h2');
     if (!RX) { const j = linkTr(body.join('<!--§-->')).split('<!--§-->'); body.splice(0, body.length, ...j); }
     if (!RX && relCard && firstH2 > 0) body.splice(firstH2, 0, `<div class="ar-rel-inline">${relCard}</div>`);
+    // programare la mijlocul articolului (înaintea secțiunii din mijloc), pe lângă cea de la final: articolele sunt lungi
+    {
+      const midCta = `<aside class="ar-mid"><div><small>${rel ? 'Vrei părerea unui medic despre' : 'Vrei părerea unui medic?'}</small><b>${rel ? esc(prettyName(rel.l.nod.nume)) : 'O consultație îți spune ce ți se potrivește'}</b><span>Medicul îți spune ce ți se potrivește, ce nu și cât costă, înainte de orice tratament.</span></div><div class="ar-mid-a"><a class="btn btn-gold" href="#programare" data-srv="${esc(rel ? rel.l.nod.nume : '')}">Programează-te</a>${rel ? `<a class="link-u" href="${esc(live(rel.sid))}">${minPrice(rel.sid) ? `De la ${lei(minPrice(rel.sid))} · detalii` : 'Detalii despre tratament'} →</a>` : ''}</div></aside>`;
+      const all = body.join('<!--§-->'), at = [...all.matchAll(/<h2[\s>]/g)].map((m) => m.index);
+      if (at.length >= 3) { const k = at[Math.floor(at.length / 2)]; body.splice(0, body.length, ...(all.slice(0, k) + midCta + all.slice(k)).split('<!--§-->')); }
+    }
     const byDate = (p, q) => q.sc - p.sc || String(q.x.data).localeCompare(String(p.x.data));
     // în coloana laterală: articole despre același tratament / tratamente din aceeași categorie
     const similar = D.articole.filter((x) => x.id !== id).map((x) => {

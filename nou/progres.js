@@ -12,7 +12,7 @@
     const max = document.documentElement.scrollHeight - innerHeight;
     const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
     bar.style.strokeDashoffset = C * (1 - p);
-    b.classList.toggle('on', scrollY > innerHeight * 0.6);
+    b.classList.toggle('on', scrollY > innerHeight * 2.5);
     b.setAttribute('aria-label', `Înapoi sus (ai parcurs ${Math.round(p * 100)}% din pagină)`);
   };
   addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });

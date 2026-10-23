@@ -116,7 +116,7 @@ ${rutina.map((r) => `  <li><label><input type="checkbox"> ${esc(r)}</label></li>
 
 <div class="rx-end">
   <p>Porii dilatați nu pot fi șterși, dar aspectul lor se poate îmbunătăți prin echilibru: o rutină constantă acasă, un stil de viață sănătos și, când e nevoie, tratamente alese de medic pentru tenul tău.</p>
-  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează un consult</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
+  <div class="rx-end-cta"><a class="btn btn-gold arrow" href="#programare" data-srv="${esc(consultNume)}">Programează-te</a><a class="btn btn-line" href="tel:+40743056605">Sună: 0743 056 605</a></div>
 </div>`;
 
   const script = `
