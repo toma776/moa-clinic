@@ -3105,3 +3105,75 @@ footer.f .f-reach a:hover { color: #fff; }
 .ms-doc-ph { flex: none; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: var(--sand); display: grid; place-items: center; }
 .ms-doc-ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
 .ms-doc-ph i { font: 500 13px/1 var(--serif); font-style: normal; color: var(--ink-2); }
+
+/* =====================================================================
+   Mega-meniu compact: două coloane (fără cardul cu imagine), liste pe trei coloane, tab-uri și titluri mai mici,
+   banda de jos cu ce ne diferențiază + un singur buton
+   ===================================================================== */
+.mm-in, .mm-in.simple { grid-template-columns: 230px minmax(0, 1fr); padding: 22px 0 20px; min-height: 0; }
+.mm-side, .mm-intro { padding-right: 24px; }
+.mm-main, .mm-in.simple .mm-main { padding: 0 0 0 30px; }
+.mm-side-t { margin-bottom: 6px; }
+.mm-tab { padding: 6px 0 6px 14px; }
+.mm-tab b { font-size: 17.5px; }
+.mm-search { padding-bottom: 8px; margin-bottom: 12px; }
+.mm-pane-h { margin-bottom: 4px; padding-bottom: 10px; }
+.mm-pane-h h3 { font-size: 24px; }
+.mm-pane-h p { font-size: 12.5px; margin-top: 3px; }
+.mm .mm-list, .mm .mm-list-num { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 26px; }
+.mm-row { padding: 9px 0; }
+.mm-row b { font-size: 14px; }
+.mm-row small { font-size: 11.5px; }
+.mm-list-num .mm-row { padding: 11px 0; }
+.mm-intro { gap: 8px; }
+.mm-intro h3 { font-size: 25px; }
+.mm-intro p { font-size: 13px; line-height: 1.55; }
+/* prețuri: carduri de ofertă mai scunde, câte 3 pe rând */
+.mm-offgrid { gap: 8px; }
+.mm-offc { min-height: 0; padding: 11px 14px 10px; gap: 5px; }
+.mm-offc b { font-size: 15.5px; }
+.mm-offc-p em { font-size: 18px; }
+/* echipa: medicii pe 3 coloane, fondatorul compact sub tab-uri */
+.mm-docs { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 20px; }
+.mm-doc { padding: 7px 0; gap: 10px; }
+.mm-doc-ph { width: 40px; height: 40px; }
+.mm-doc b { font-size: 15px; }
+.mm-doc small { font-size: 11.5px; margin-top: 1px; }
+.mm-founder { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.mm-founder small { display: block; font: 500 10.5px/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.mm-founder b { display: block; font: 500 15.5px/1.2 var(--serif); color: var(--ink); margin: 2px 0; }
+.mm-founder em { display: block; font-style: normal; font-size: 11.5px; line-height: 1.35; color: var(--muted); }
+.mm-founder:hover b { color: var(--gold); }
+/* banda de jos */
+.mm-foot .wrap { gap: 22px; padding: 10px 0; font-size: 12px; letter-spacing: .02em; }
+.mm-foot a { padding: 9px 16px; border: 1px solid var(--gold-2); border-radius: 2px; letter-spacing: .12em; white-space: nowrap; transition: background .25s, color .25s; }
+.mm-foot a:hover { background: var(--gold); color: #fff; }
+@media (max-width: 1240px) {
+  .mm .mm-list, .mm .mm-list-num, .mm-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mm-foot span:nth-of-type(4) { display: none; }
+}
+.mm-tab { padding: 5px 0 5px 14px; }
+.mm-tab b { font-size: 16.5px; }
+.mm-search { margin-bottom: 8px; }
+.mm-in:not(.simple):not(.mm-in-off):not(.mm-in-team) .mm-list { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 22px; }
+.mm-foot .wrap { padding: 7px 0; }
+.mm-foot a { padding: 7px 14px; }
+.mm-founder { margin-top: 10px; padding-top: 10px; }
+@media (max-width: 1240px) { .mm-in:not(.simple):not(.mm-in-off):not(.mm-in-team) .mm-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.mm-in:not(.simple):not(.mm-in-off):not(.mm-in-team) .mm-list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 26px; }
+.mm-pane .mm-row .mm-row-t > small { display: none; }
+.mm-pane .mm-row { padding: 8px 0; }
+.mm-results .mm-row .mm-row-t > small { display: block; }
+.mm-founder { margin-top: 8px; padding-top: 10px; }
+.mm-founder .mm-doc-ph { width: 38px; height: 38px; }
+.mm-in-team .mm-side-t { margin-bottom: 2px; }
+.mm-foot span { white-space: nowrap; }
+@media (max-width: 1380px) { .mm-foot span:nth-of-type(4) { display: none; } }
+@media (max-width: 1180px) { .mm-foot span:nth-of-type(3) { display: none; } }
+.mm-foot .wrap { overflow: hidden; gap: 18px; }
+.mm-foot span::before { margin-right: 8px; }
+@media (max-width: 1380px) { .mm-foot span:nth-of-type(4) { display: inline; } .mm-foot span:nth-of-type(3) { display: none; } }
+@media (max-width: 1240px) { .mm-foot span:nth-of-type(4) { display: none; } }
+/* banda de încredere din footer: 4 elemente (fără recenzii) */
+.f-trust { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 760px) { .f-trust { grid-template-columns: 1fr 1fr; } .f-trust > :last-child { grid-column: auto; } .f-trust > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
