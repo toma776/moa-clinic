@@ -1543,7 +1543,33 @@ if (consHub) {
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Consultații', item: pageUrl }] },
     ],
   };
-  const rev = D.dovezi.testimoniale.filter((r) => r.citat.length > 25).slice(0, 12);
+  // recenziile care vorbesc despre medic și consultație, primele
+  const aboutDoc = (r) => /\b(dr\.?|doctor|doamna doctor|medic|explic|consult|răbd|atent)/i.test(r.citat);
+  const rev = D.dovezi.testimoniale.filter((r) => r.citat.length > 25).sort((a, b) => aboutDoc(b) - aboutDoc(a)).slice(0, 12);
+  // medicii consultațiilor: primarii întâi, apoi specialiștii; fiecare cu consultațiile pe care le face
+  const gradRank = (p) => (/primar/i.test(p.grad || p.rol) ? 0 : /specialist/i.test(p.grad || p.rol) ? 1 : 2);
+  const meds = [...new Set(cons.flatMap((c) => c.med))].sort((a, b) => gradRank(a) - gradRank(b));
+  const cap1 = (x) => x.charAt(0).toUpperCase() + x.slice(1);
+  const medCons = (p) => cons.filter((c) => c.med.includes(p)).map((c) => cap1(c.nod.nume.replace(/^Consultație\s*/i, '').replace(/\s*\(.*\)$/, ''))).join(' · ');
+  const nGrad = [0, 1, 2].map((g) => meds.filter((p) => gradRank(p) === g).length);
+  const gradTxt = [[nGrad[0], 'primar', 'primari'], [nGrad[1], 'specialist', 'specialiști'], [nGrad[2], 'rezident', 'rezidenți']].filter(([n]) => n).map(([n, a, b]) => `${n} ${n === 1 ? a : b}`).join(', ');
+  const fondCs = team.find((p) => p.nume.includes('Stănescu'));
+  // traseul: formulat din textele clinicii (paginile de tratament și articolele), fără durate sau politici nespuse acolo
+  const pasi = [
+    ['Programarea', 'Ne lași numele și telefonul sau suni la 0743 056 605. Te sunăm să confirmăm ora și, dacă nu știi cu ce consultație să începi, te îndrumăm spre medicul potrivit.'],
+    ['Consultația', 'Medicul specialității ascultă ce te supără, îți vede istoricul medical și tratamentele în curs, apoi te examinează. Unde e cazul: dermatoscopie pentru alunițe, fotografii de pornire, analize sau evaluarea vârstei biologice.'],
+    ['Recomandările', 'Afli ce ți se potrivește și ce nu, ce poți aștepta realist, ce riscuri există și cât costă, înainte de orice tratament. Fără promisiuni exagerate.'],
+    ['Tratamentul', 'Dacă alegi să continui, tratamentul urmează planul stabilit: zonele, dozele și numărul de ședințe. Unele proceduri cer pregătire sau analize înainte, iar medicul ți le spune de la consultație.'],
+    ['Controlul', 'Revii la intervalul recomandat de medic, ca să urmărim evoluția și să ajustăm planul. De exemplu, după toxina botulinică, de regulă la 4–6 luni.'],
+  ];
+  const faq = [
+    ['Cu ce consultație să încep?', 'Pentru piele, alunițe, riduri sau ten, cu consultația de dermatologie și dermatoestetică. Pentru pleoape, buze sau intervenții chirurgicale, cu chirurgia plastică. Pentru energie, analize și îmbătrânirea din interior, cu consultația antiaging. Dacă nu știi, sună-ne și te îndrumăm.'],
+    ['Ce primesc după consultație?', 'Recomandările medicului: ce tratament ți se potrivește, cu ce alternative, câte ședințe ar fi nevoie și cât costă. La consultația antiaging, medicul face un plan personalizat pe baza analizelor și a vârstei biologice.'],
+    ['Sunt obligat(ă) să fac tratamentul după consultație?', 'Nu. Consultația te ajută să decizi informat; dacă și când începi un tratament e alegerea ta.'],
+    ['Ce să-i spun medicului?', 'Afecțiunile și tratamentele pe care le ai, alergiile, procedurile estetice făcute înainte și ce te deranjează, de fapt. Pentru consultația de nutriție poți fi rugat(ă) să completezi un chestionar despre dietă și istoricul medical.'],
+    ['Cât costă?', `Consultațiile pornesc de la ${lei(minConsult)}; prețul fiecăreia e pe pagina ei și în lista de prețuri. Costul tratamentelor recomandate îl afli la consultație, înainte să decizi.`],
+  ];
+  schema['@graph'].push({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
   const page = `<!doctype html>
 <html lang="ro">
 <head>
@@ -1558,13 +1584,19 @@ if (consHub) {
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body>
-${TOP}<main>
+${TOP}<main class="tp cs-page">
 <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Consultații</span></nav>
 
 <section class="sec cs-hero">
   <div class="wrap">
     <div class="sec-head split"><div><span class="eyebrow">Consultații</span><h1 style="margin-top:18px">Primul pas e <em>o consultație.</em></h1></div>
       <p class="lede">Fiecare consultație se face cu medicul specialității. Afli ce ți se potrivește înainte de orice tratament${minConsult ? `, de la ${lei(minConsult)}` : ''}.</p></div>
+    <div class="cs-trust">
+      <div><b>${meds.length} medici</b><span>${gradTxt}</span></div>
+      <div><b>★ 5.0</b><span>din ${esc(nReviews)} de recenzii Google</span></div>
+      <div><b>Grupul Oxxygene</b><span>clinici și spital privat</span></div>
+      <div><b>de la ${lei(minConsult)}</b><span>prețuri publice, înainte de programare</span></div>
+    </div>
     <div class="cs-grid">${cons.map((c) => `<article class="cs-card">
       <span class="eyebrow">${esc(c.s.specialitate || '')}</span>
       <h2><a href="/nou${esc(c.nod.url)}">${esc(c.nod.nume.replace(/^Consultație\s*/i, (m) => m).replace(/\s*\(([^)]+)\)$/, ''))}</a></h2>
@@ -1576,12 +1608,20 @@ ${TOP}<main>
   </div>
 </section>
 
-<section class="sec" style="background:var(--cream)">
+<section class="sec" id="cum-decurge" style="background:var(--cream)">
   <div class="wrap">
-    <div class="sec-head split rv"><div><span class="eyebrow">Cum alegi</span><h2 style="margin-top:18px">Nu știi cu care <em>să începi?</em></h2></div><p class="lede">Lasă-ne numărul și te sunăm noi, ca să alegem împreună consultația potrivită.</p></div>
-    <table class="tr-prices cs-table">${cons.map((c) => `<tr><td><b>${esc(c.nod.nume)}</b><span>${esc(c.s.specialitate || '')}${c.med.length ? ` · ${c.med.length === 1 ? esc(c.med[0].nume) : `${c.med.length} medici`}` : ''}</span></td><td>${c.pret ? lei(c.pret) : '—'}</td></tr>`).join('')}</table>
+    <div class="sec-head split rv"><div><span class="eyebrow">Cum decurge</span><h2 style="margin-top:18px">De la programare <em>la control.</em></h2></div><p class="lede">Cinci pași, fiecare cu un medic care îți explică ce urmează. Poți să te oprești după consultație.</p></div>
+    <ol class="cs-path">${pasi.map(([t, d], i) => `<li class="rv"><span class="cs-path-n">${String(i + 1).padStart(2, '0')}</span><b>${esc(t)}</b><p>${esc(d)}</p></li>`).join('')}</ol>
+    <div class="cs-tell rv"><b>Spune-i medicului</b><ul><li>afecțiunile și tratamentele în curs</li><li>alergiile</li><li>procedurile estetice făcute înainte</li><li>ce te deranjează și ce aștepți</li></ul></div>
   </div>
 </section>
+
+${meds.length ? `<section class="sec" id="medici">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Medicii</span><h2 style="margin-top:18px">Cine te <em>consultă.</em></h2></div><p class="lede">${fondCs ? `Coordonare medicală: <a class="lede-link" href="/nou/medici/${esc(fondCs.id)}/">${esc(fondCs.nume)}</a>, medic primar geriatrie-gerontologie, format la Institutul „Ana Aslan” și director medical al Spitalului și Clinicilor Oxxygene din 2008.` : 'Medici primari și specialiști, din grupul medical Oxxygene.'}</p></div>
+    <ul class="cs-doclist lg-docs">${meds.map((p) => `<li>${p.profil_detaliat ? `<a href="/nou/medici/${esc(p.id)}/">` : '<div>'}${photos[p.nume] ? `<img src="${esc(resized(photos[p.nume]))}" alt="" loading="lazy">` : `<span class="cs-ini">${esc(p.nume.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join(''))}</span>`}<span><b>${esc(p.nume)}</b><small>${esc(p.rol)} · ${esc(medCons(p))}${p.profil_detaliat ? ' · vezi profilul →' : ''}</small></span>${p.profil_detaliat ? '</a>' : '</div>'}</li>`).join('')}</ul>
+  </div>
+</section>` : ''}
 
 ${rev.length ? `<section class="sec reviews tr-reviews">
   <div class="wrap">
@@ -1589,6 +1629,13 @@ ${rev.length ? `<section class="sec reviews tr-reviews">
     <div class="r-grid tr-rev-row" tabindex="0" role="region" aria-label="Recenzii">${rev.map((r) => `<figure class="r-card" style="margin:0"><q>${esc(r.citat)}</q><figcaption class="who"><b>${esc(r.persoana)}</b> · Google</figcaption></figure>`).join('')}</div>
   </div>
 </section>` : ''}
+
+<section class="sec" id="intrebari" style="background:var(--cream)">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">Întrebări frecvente</span><h2 class="pf-h2">Înainte <em>de consultație</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:+40743056605">0743 056 605</a>.</p></div>
+    <div class="tr-faq">${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
+  </div>
+</section>
 
 ${BOOK}${BOTTOM}`;
   const dir = path.join(ROOT, 'nou', 'consultatii');
