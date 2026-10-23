@@ -1623,7 +1623,7 @@ ${medDocs.length || SHOW_REVIEWS ? `<section class="sec" id="${medDocs.length ? 
 ${qa.length ? `<section class="sec" id="intrebari">
   <div class="wrap pf-two">
     <div class="rv"><span class="eyebrow">Întrebări și siguranță</span><h2 class="pf-h2">Înainte <em>să te programezi</em></h2><p class="lede" style="margin-top:14px">Nu găsești răspunsul? Sună-ne la <a class="lede-link" href="tel:${esc(String(tel).replace(/\s/g, ''))}">${esc(tel)}</a> sau scrie-ne pe WhatsApp.</p></div>
-    ${acc(qa.slice(0, 5))}${qa.length > 5 ? `<details class="tr-faq-more"><summary>Vezi încă ${qa.length - 5} ${qa.length - 5 === 1 ? 'întrebare' : 'întrebări'}</summary>${acc(qa.slice(5))}</details>` : ''}
+    <div>${acc(qa.slice(0, 5))}${qa.length > 5 ? `<details class="tr-faq-more"><summary>Vezi încă ${qa.length - 5} ${qa.length - 5 === 1 ? 'întrebare' : 'întrebări'}</summary>${acc(qa.slice(5))}</details>` : ''}</div>
   </div>
 </section>` : ''}
 
