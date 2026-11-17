@@ -3275,3 +3275,14 @@ body:has(.wa-fab) .to-top { bottom: 88px; }
 @media (max-width: 760px) { .wa-fab { display: none; } body:has(.wa-fab) .to-top { bottom: 70px; } }
 @media print { .wa-fab { display: none !important; } }
 body:has(.mnav.open) .wa-fab, body:has(.wl.open) .wa-fab { display: none; }
+
+/* hartă site: coloane de liste, articolele pe toată lățimea */
+.hs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; margin-top: clamp(28px, 4vw, 48px); }
+.hs-col h2 { font: 400 26px/1.15 var(--serif); margin: 0 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.hs-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.hs-col a { display: block; padding: 6px 0; font: 400 15px/1.4 var(--sans); color: var(--ink); text-decoration: none; }
+.hs-col a:hover { color: var(--gold); }
+.hs-wide { grid-column: 1 / -1; }
+.hs-wide ul { columns: 3 280px; column-gap: 48px; display: block; }
+@media (max-width: 960px) { .hs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .hs-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; } }

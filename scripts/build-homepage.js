@@ -574,7 +574,7 @@ M.forEach((m, i) => {
 const FOOT_COLS = [
   { t: 'Tratamente', l: catData.filter((c) => c.href && c.href !== '#').map((c) => [c.nume, c.href]) },
   { t: 'Pacienți', l: [['Consultații', '/nou/consultatii/'], ['Cum decurge o consultație', '/nou/consultatii/#cum-decurge'], ['Prețuri', '/nou/preturi/'], ['Ofertele lunii', '/nou/preturi/#oferte'], ['Estimator de cost', '/nou/preturi/#estimator'], ['Programare', '#programare']] },
-  { t: 'Clinica', l: [['Echipa medicală', '/nou/medici/'], ['Tehnologie', '/nou/clinica/tehnologie/'], ['Longevitate', '/nou/longevitate/program/'], ...(SHOW_REVIEWS ? [['Recenzii', '/nou/#recenzii']] : []), ['Video din cabinet', '/nou/video/'], ['Blog', '/nou/blog/']] },
+  { t: 'Clinica', l: [['Echipa medicală', '/nou/medici/'], ['Tehnologie', '/nou/clinica/tehnologie/'], ['Longevitate', '/nou/longevitate/program/'], ...(SHOW_REVIEWS ? [['Recenzii', '/nou/#recenzii']] : []), ['Video din cabinet', '/nou/video/'], ['Blog', '/nou/blog/'], ['Contact', '/nou/contact/'], ['Hartă site', '/nou/harta-site/']] },
 ];
 const mobileNav = `
 <div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Meniu" aria-hidden="true">
@@ -830,7 +830,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   </div>
   <div class="wrap f-bot">
     <p>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? `, CUI ${esc(f.cui)}` : '') + (f.registru ? `, ${esc(f.registru)}` : '')).join(' · ')} · parte a grupului medical Oxxygene</p>
-    <nav aria-label="Legal"><a href="/nou/documente-legale/">Documente legale și confidențialitate</a><a href="/nou/sitemap.xml">Hartă site</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
+    <nav aria-label="Legal"><a href="/nou/documente-legale/">Documente legale și confidențialitate</a><a href="/nou/harta-site/">Hartă site</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
   </div>
   <script>document.querySelectorAll('.f-col').forEach((d) => { d.open = matchMedia('(min-width: 761px)').matches; });</script>
 </footer>
@@ -3165,4 +3165,55 @@ ${BOOK}
 ${BOTTOM}`;
   fs.writeFileSync(path.join(ROOT, '404.html'), perfHead(page));
   console.log('404: /404.html');
+}
+
+// ---------- pagina /nou/harta-site/: toate paginile site-ului, grupate, pentru vizitatori (sitemap.xml rămâne pentru motoarele de căutare) ----------
+// Se construiește la final, din paginile deja scrise: titlul fiecăreia e H1-ul ei.
+{
+  const files = [];
+  (function walk(d) { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name); if (f.isDirectory() && !/^(media|fonts|harta-site)$/.test(f.name)) walk(p); else if (f.name === 'index.html') files.push(p); } })(path.join(ROOT, 'nou'));
+  const items = files.map((f) => {
+    const h = fs.readFileSync(f, 'utf8');
+    const rel = path.relative(path.join(ROOT, 'nou'), path.dirname(f)).split(path.sep).filter(Boolean).join('/');
+    // numele paginii: ultimul element din breadcrumb (H1-urile sunt titluri editoriale); la articole, H1-ul
+    const txt = (x) => (x || '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+    const crumb = txt((h.match(/<span aria-current="page">([\s\S]*?)<\/span>/) || [])[1]);
+    const isArt = rel !== 'blog' && /"@type":"BlogPosting"/.test(h);
+    const h1 = isArt || !crumb ? txt((h.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1]) : crumb;
+    return { href: `/nou/${rel ? rel + '/' : ''}`, rel, nume: rel ? h1 : 'Prima pagină', art: isArt };
+  });
+  const grup = (x) => (!x.rel ? 'Principale'
+    : x.art ? 'Articole'
+    : /^tratamente\/[^/]+$/.test(x.rel) ? 'Categorii de tratamente'
+    : x.rel.startsWith('tratamente/') ? 'Tratamente'
+    : x.rel.startsWith('consultatii') ? 'Consultații'
+    : x.rel.startsWith('medici/') ? 'Echipa medicală'
+    : 'Principale');
+  const ORD = ['Principale', 'Consultații', 'Categorii de tratamente', 'Tratamente', 'Echipa medicală', 'Articole'];
+  const by = (g) => items.filter((x) => grup(x) === g).sort((a, b) => (!a.rel ? -1 : !b.rel ? 1 : a.nume.localeCompare(b.nume, 'ro')));
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hartă site | MOA Clinic</title>
+<meta name="description" content="Toate paginile MOA Clinic într-un singur loc: consultații, tratamente pe categorii, prețuri, echipa medicală, articole, contact și documente legale.">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+</head>
+<body>
+${TOP}<main class="tr-page tp">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Hartă site</span></nav>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head split"><div><span class="eyebrow">Hartă site</span><h1 class="ct-h1">Toate <em>paginile.</em></h1></div><p class="lede">${nDe(items.length + 1, 'pagini')}, grupate. Pentru motoarele de căutare există și <a class="lede-link" href="/nou/sitemap.xml">sitemap.xml</a>.</p></div>
+    <div class="hs-grid">${ORD.map((g) => { const xs = by(g); if (g === 'Principale') xs.push({ href: '/nou/harta-site/', nume: 'Hartă site' }); return xs.length ? `<div class="hs-col${g === 'Articole' ? ' hs-wide' : ''}"><h2>${esc(g)}</h2><ul>${xs.map((x) => `<li><a href="${esc(x.href)}">${esc(x.nume)}</a></li>`).join('')}</ul></div>` : ''; }).join('')}</div>
+  </div>
+</section>
+${BOTTOM}`;
+  fs.mkdirSync(path.join(ROOT, 'nou', 'harta-site'), { recursive: true });
+  writePage(path.join(ROOT, 'nou', 'harta-site', 'index.html'), page);
+  console.log(`Hartă site: nou/harta-site/ · ${items.length + 1} pagini`);
 }
