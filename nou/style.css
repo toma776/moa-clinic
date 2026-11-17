@@ -3230,3 +3230,38 @@ footer.f .f-reach a:hover { color: #fff; }
   .pr-finder select { padding: 0 34px 0 14px; background-position: right 13px center; }
 }
 @media (max-width: 760px) { .pr-tools .pr-reset span { display: none; } }
+
+/* paginile de categorie: cardurile de tratament (stilul de la Tehnologie) cu prețul și linkul jos */
+.ch-page .th-card h3 a { color: inherit; text-decoration: none; }
+.ch-page .th-card h3 a:hover { color: var(--gold); }
+.ch-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.ch-foot span { font: 500 17px/1 var(--serif); color: var(--ink); }
+.ch-foot span small { font: 400 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.ch-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 20px; }
+
+/* contact */
+.ct-h1 { font: 400 clamp(38px, 5vw, 64px)/1.04 var(--serif); margin: 18px 0 0; }
+.ct-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(28px, 4vw, 48px); }
+.ct-card { display: flex; flex-direction: column; gap: 8px; padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s; }
+a.ct-card:hover { border-color: var(--gold-2); transform: translateY(-2px); }
+.ct-card small { font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.ct-card b { font: 500 22px/1.2 var(--serif); overflow-wrap: anywhere; }
+.ct-card span, .ct-card address { font: 400 14px/1.5 var(--sans); color: var(--muted); font-style: normal; }
+.ct-visit address { font: 500 20px/1.35 var(--serif); color: var(--ink); }
+.ct-visit .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 960px) { .ct-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .ct-grid { grid-template-columns: minmax(0, 1fr); } .ct-card { padding: 20px; } }
+
+/* documente legale: cuprins lipicios în stânga, textul în dreapta */
+.ld-lay { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.ld-toc { position: sticky; top: calc(var(--hd-h, 0px) + 24px); }
+.ld-toc .ct-h1 { font-size: clamp(34px, 3.4vw, 46px); }
+.ld-upd { margin: 14px 0 22px; font: 400 13px/1.4 var(--sans); color: var(--muted); }
+.ld-toc nav { display: grid; border-left: 1px solid var(--line); }
+.ld-toc nav a { padding: 9px 0 9px 16px; font: 400 14px/1.35 var(--sans); color: var(--ink); text-decoration: none; }
+.ld-toc nav a:hover { color: var(--gold); }
+.ld-body { max-width: 760px; }
+.ld-body h2 { font: 400 clamp(26px, 2.6vw, 34px)/1.15 var(--serif); margin: 48px 0 16px; scroll-margin-top: calc(var(--hd-h, 0px) + 24px); }
+.ld-body h2:first-child { margin-top: 0; }
+@media (max-width: 960px) { .ld-lay { grid-template-columns: minmax(0, 1fr); } .ld-toc { position: static; } }
+@media (min-width: 961px) { .ch-page [id] > .pf-two > .rv:first-child { position: sticky; top: calc(var(--hd-h, 0px) + 24px); align-self: start; } }

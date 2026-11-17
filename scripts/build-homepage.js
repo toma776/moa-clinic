@@ -142,6 +142,14 @@ NOU.add('/medici/');
 NOU.add('/video/');
 NOU.add('/blog/');
 NOU.add('/clinica/tehnologie/');
+// paginile de categorie (/nou/tratamente/<categorie>/), Contact și Documente legale – generate mai jos
+const CAT_HUBS = S.arbore.find((n) => n.url === '/tratamente/').copii.filter((c) => c.copii?.length);
+CAT_HUBS.forEach((c) => NOU.add(c.url));
+NOU.add('/contact/');
+NOU.add('/documente-legale/');
+// subpaginile încă neconstruite (Terapii intravenoase, Tratamente faciale, Peeling) trimit la secțiunea lor din pagina categoriei
+const parentHub = new Map();
+CAT_HUBS.forEach((c) => c.copii.forEach((k) => parentHub.set(k.url, c.url)));
 // wishlist: eticheta discretă care pune un tratament / un rând de preț în lista pacientei (nou/wishlist.js)
 const wlBtn = (n, p, u, ico) => `<button type="button" class="wl-add${ico ? ' wl-ico' : ''}" data-wl="${esc(JSON.stringify({ n, p: p ?? null, u: u || '' }))}" aria-pressed="false" aria-label="Adaugă pe wishlist: ${esc(n)}"><i aria-hidden="true">+</i><span>${ico ? 'Wishlist' : 'Adaugă pe wishlist'}</span></button>`;
 const live = (id) => (trNode.has(id) ? '/nou' + trNode.get(id).nod.url : serv[id]?.url || ORIGIN);
@@ -194,7 +202,7 @@ const newToOld = new Map();
 (function walk(ns) { for (const n of ns) { if (n.url && n.vechi?.[0]) newToOld.set(n.url, ORIGIN + n.vechi[0]); if (n.copii) walk(n.copii); } })(S.arbore);
 // paginile noi care stau la altă adresă decât cea din structură (hub-ul de longevitate e /longevitate/program/)
 const NOU_ALIAS = { '/longevitate/': '/nou/longevitate/program/' };
-const toLive = (u) => NOU_ALIAS[u] || (NOU.has(u) ? '/nou' + u : newToOld.get(u) || null);
+const toLive = (u) => NOU_ALIAS[u] || (NOU.has(u) ? '/nou' + u : parentHub.has(u) ? `/nou${parentHub.get(u)}#${u.split('/').filter(Boolean).pop()}` : newToOld.get(u) || null);
 const newName = new Map();
 (function walk(ns) { for (const n of ns) { if (n.url) newName.set(n.url, n.nume); if (n.copii) walk(n.copii); } })(S.arbore);
 const cleanName = (t) => (t.url && newName.get(t.url)) || t.nume.replace(/s+(în|in) Bucure[sș]ti$/i, '');
@@ -785,7 +793,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
         <div class="field bk-email"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
         <div class="field"><label for="f-msg">Mesaj</label><textarea id="f-msg" name="mesaj" rows="2"></textarea></div>
       </details>
-      <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
+      <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
       <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
       <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
     </form>
@@ -817,7 +825,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   </div>
   <div class="wrap f-bot">
     <p>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? `, CUI ${esc(f.cui)}` : '') + (f.registru ? `, ${esc(f.registru)}` : '')).join(' · ')} · parte a grupului medical Oxxygene</p>
-    <nav aria-label="Legal"><a href="${esc(toLive('/documente-legale/') || 'https://moaclinic.ro/documente-legale-clinica-moa/')}">Documente legale și confidențialitate</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
+    <nav aria-label="Legal"><a href="/nou/documente-legale/">Documente legale și confidențialitate</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
   </div>
   <script>document.querySelectorAll('.f-col').forEach((d) => { d.open = matchMedia('(min-width: 761px)').matches; });</script>
 </footer>
@@ -836,7 +844,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
     <div class="field"><label for="s-srv">Ce vă interesează?</label><select id="s-srv" name="serviciu">${SRV_OPTIONS}</select></div>
     <fieldset class="bk-pref"><legend>Cum preferați să vă contactăm?</legend><label><input type="checkbox" name="contact" value="Telefon" checked><span>Telefon</span></label><label><input type="checkbox" name="contact" value="WhatsApp"><span>WhatsApp</span></label><label><input type="checkbox" name="contact" value="E-mail"><span>E-mail</span></label></fieldset>
     <div class="field bk-email" hidden><label for="s-email">E-mail</label><input id="s-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
-    <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="${esc(ORIGIN)}/documente-legale-clinica-moa/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
+    <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
     <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
@@ -2351,6 +2359,221 @@ ${BOTTOM}`;
   fs.mkdirSync(dir, { recursive: true });
   writePage(path.join(dir, 'index.html'), alternateBg(page));
   console.log(`Tehnologie: nou/clinica/tehnologie/ · ${TH.length} aparate · ${TH.reduce((n, t) => n + t.tr.length, 0)} tratamente legate`);
+}
+
+// ---------- paginile de categorie /nou/tratamente/<categorie>/: tratamentele categoriei, cu fraza de beneficiu și prețul „de la” ----------
+// Subpaginile încă neconstruite (Terapii intravenoase, Tratamente faciale, Peeling) apar ca secțiuni cu prețurile lor din listă.
+{
+  const PRICE_ONLY = {
+    '/tratamente/regenerare/terapii-iv/': { cat: 'TERAPII INTRAVENOASE', pr: 'terapii-intravenoase', ghid: ['/nou/terapii-intravenoase/', 'Ghid: terapii intravenoase, beneficii și tipuri'], d: 'Perfuzii cu vitamine, minerale și antioxidanți, alese de medic după consult și analize.' },
+    '/tratamente/cosmetica/tratamente-faciale/': { cat: 'TRATAMENTE COSMETOLOGICE', pr: 'tratamente-cosmetologice', d: 'Curățare, hidratare și îngrijire profesională a tenului, făcute de specialiștii clinicii.' },
+    '/tratamente/cosmetica/peeling/': { cat: 'PEELING', pr: 'peeling', d: 'Exfoliere chimică controlată, aleasă după tipul de ten și sezon.' },
+  };
+  const pageOf = (url) => [...trNode].find(([, l]) => l.nod.url === url && !l.consult);
+  const em = (s) => { const w = s.split(' '); return w.length > 1 ? `${esc(w[0])} <em>${esc(w.slice(1).join(' '))}</em>` : `<em>${esc(s)}</em>`; };
+  for (const c of CAT_HUBS) {
+    const slug = c.url.split('/').filter(Boolean).pop();
+    const items = c.copii.map((k) => {
+      const hit = pageOf(k.url);
+      if (hit) {
+        const [id] = hit, t = TRD[id];
+        return { id, nume: prettyName(k.nume), href: live(id), pret: minPrice(id), d: TR_PROMISE[id] || '', img: HERO_NOU[id]?.src || (t?.hero ? resized(t.hero) : null), pos: HERO_NOU[id]?.pos };
+      }
+      const po = PRICE_ONLY[k.url];
+      const pc = po && D.preturi.find((x) => x.categorie === po.cat);
+      if (!pc) return null;
+      const rows = pc.servicii.map((s) => ({ n: s.nume, p: (s.preturi || []).map((x) => x.valoare).filter((v) => v != null) })).filter((r) => r.p.length);
+      return { anchor: k.url.split('/').filter(Boolean).pop(), nume: prettyName(k.nume), d: po.d, rows, pr: po.pr, ghid: po.ghid, pret: Math.min(...rows.flatMap((r) => r.p)) };
+    }).filter(Boolean);
+    const cards = items.filter((x) => x.href), lists = items.filter((x) => x.rows);
+    const prices = items.map((x) => x.pret).filter((x) => x != null);
+    const nTr = cards.length + lists.reduce((n, x) => n + x.rows.length, 0);
+    const heroImg = cards.find((x) => x.img);
+    const pageUrl = ORIGIN + c.url;
+    const schema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'CollectionPage', '@id': pageUrl + '#webpage', url: pageUrl, name: `${c.nume} | MOA Clinic`, inLanguage: 'ro-RO', publisher: { '@id': ORIGIN + '/#organization' },
+          mainEntity: { '@type': 'ItemList', itemListElement: cards.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.nume, url: ORIGIN + x.href.replace(/^\/nou/, '') })) } },
+        { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Tratamente', item: ORIGIN + '/tratamente/' }, { '@type': 'ListItem', position: 3, name: c.nume, item: pageUrl }] },
+      ],
+    };
+    const card = (x) => `<article class="th-card rv">
+      <a class="th-ph" href="${esc(x.href)}" tabindex="-1" aria-hidden="true">${x.img ? `<img src="${esc(x.img)}" alt="" loading="lazy"${x.pos ? ` style="object-position:${x.pos}"` : ''}>` : ''}</a>
+      <div class="th-tx">
+        <h3><a href="${esc(x.href)}">${esc(x.nume)}</a></h3>
+        ${x.d ? `<p>${esc(x.d)}</p>` : ''}
+        <p class="ch-foot">${x.pret != null ? `<span><small>de la</small> ${lei(x.pret)}</span>` : '<span>preț la consultație</span>'}<a class="link-u" href="${esc(x.href)}">Detalii →</a></p>
+      </div>
+    </article>`;
+    const list = (x) => `<section class="sec" id="${esc(x.anchor)}">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">${esc(c.nume)}</span><h2 class="pf-h2">${em(x.nume)}</h2><p class="lede" style="margin-top:14px">${esc(x.d)} Medicul îți recomandă varianta potrivită la consultație.</p>
+      <p class="ch-links"><a class="link-u" href="/nou/preturi/#${esc(x.pr)}">Vezi în lista de prețuri →</a>${x.ghid ? `<a class="link-u" href="${esc(x.ghid[0])}">${esc(x.ghid[1])} →</a>` : ''}</p></div>
+    <div><table class="tr-prices">${x.rows.map((r) => `<tr><td>${esc(r.n)}</td><td>${r.p.length > 1 ? `de la ${lei(Math.min(...r.p))}` : lei(r.p[0])}</td></tr>`).join('')}</table></div>
+  </div>
+</section>`;
+    const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(c.nume)} în București – tratamente și prețuri | MOA Clinic</title>
+<meta name="description" content="${esc(`${c.desc} ${nDe(nTr, 'tratamente')} la MOA Clinic${prices.length ? `, de la ${lei(Math.min(...prices))}` : ''}: ${items.slice(0, 4).map((x) => x.nume).join(', ')}.`)}">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main class="tr-page tp th-page ch-page">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span>Tratamente</span><span>›</span><span aria-current="page">${esc(c.nume)}</span></nav>
+
+<section class="pf-hero tr-hero">
+  <div class="wrap pf-grid">
+    <div class="pf-copy">
+      <span class="eyebrow">Tratamente</span>
+      <h1>${em(c.nume)}</h1>
+      <p class="lede">${esc(c.desc)} Tratamentul potrivit îl alegi împreună cu medicul, după consultație.</p>
+      <div class="pf-facts tr-facts">
+        <div><b>${nDe(nTr, nTr === 1 ? 'tratament' : 'tratamente')}</b><span>cu prețul afișat</span></div>
+        ${prices.length ? `<div><b>de la ${lei(Math.min(...prices))}</b><span>o ședință</span></div>` : ''}
+        <div><b>Consult</b><span>înainte de primul tratament</span></div>
+      </div>
+      <div class="hero-cta"><a class="btn btn-gold arrow" href="#programare">Programează-te</a><a class="btn btn-line" href="#${cards.length ? 'tratamente' : lists[0]?.anchor}">Vezi tratamentele</a></div>
+    </div>
+    ${heroImg ? `<div class="pf-photo tr-photo"><div class="frame"><img src="${esc(heroImg.img)}" alt="${esc(heroImg.nume)} la MOA Clinic" fetchpriority="high"${heroImg.pos ? ` style="object-position:${heroImg.pos}"` : ''}></div></div>` : ''}
+  </div>
+</section>
+
+${cards.length ? `<section class="sec" id="tratamente">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">${esc(c.nume)}</span><h2>Tratamentele <em>din categorie</em></h2></div><p class="lede">Pe pagina fiecărui tratament găsești pentru cine este, cum decurge, câte ședințe sunt de obicei și toate prețurile.</p></div>
+    <div class="th-grid">${cards.map(card).join('')}</div>
+  </div>
+</section>` : ''}
+${lists.map(list).join('\n')}
+
+<section class="sec" id="alege">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">Nu știi ce ți se potrivește?</span><h2 class="pf-h2">Pornește de la <em>ce te supără.</em></h2><p class="lede" style="margin-top:14px">Spune-ne ce ai observat, iar la consultație medicul îți explică opțiunile, ce poți aștepta realist și cât costă.</p></div>
+    <aside class="pf-side rv"><h3>Două căi rapide</h3><ul class="tr-checks"><li><a class="lede-link" href="/nou/consultatii/">Consultațiile clinicii</a>, cu medicul potrivit</li><li><a class="lede-link" href="/nou/preturi/#estimator">Estimatorul pe siluetă</a>: alegi zona, vezi opțiunile și costul</li><li><a class="lede-link" href="/nou/preturi/">Lista completă de prețuri</a></li></ul></aside>
+  </div>
+</section>
+
+${BOOK}
+${BOTTOM}`;
+    const dir = path.join(ROOT, 'nou', ...c.url.split('/').filter(Boolean));
+    fs.mkdirSync(dir, { recursive: true });
+    writePage(path.join(dir, 'index.html'), alternateBg(page));
+    console.log(`Categorie: nou${c.url} · ${cards.length} pagini de tratament${lists.length ? ` + ${lists.length} liste de prețuri` : ''}`);
+  }
+}
+
+// ---------- pagina /nou/contact/: adresa, telefon, WhatsApp, e-mail, hartă (link, fără hartă încorporată – fără cookie-uri terțe) ----------
+{
+  const pageUrl = ORIGIN + '/contact/';
+  const wa = `https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}`;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'ContactPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Contact | MOA Clinic', inLanguage: 'ro-RO', about: { '@id': ORIGIN + '/#organization' } },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Contact', item: pageUrl }] },
+    ],
+  };
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Str. Ștefan Mihăileanu 35, București | MOA Clinic</title>
+<meta name="description" content="Contact MOA Clinic: Str. Ștefan Mihăileanu 35, Sector 2, București. Telefon 0743 056 605, WhatsApp, e-mail office@moaclinic.ro. Programează-te online.">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main class="tr-page tp ct-page">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Contact</span></nav>
+
+<section class="sec ct-hero">
+  <div class="wrap">
+    <div class="sec-head split rv"><div><span class="eyebrow">Contact</span><h1 class="ct-h1">Vino să <em>ne cunoști.</em></h1></div><p class="lede">Pentru programări, întrebări despre tratamente sau prețuri ne găsești la telefon, pe WhatsApp, pe e-mail sau direct în clinică.</p></div>
+    <div class="ct-grid">
+      <div class="ct-card ct-visit"><small>Adresa</small><address>Str. Ștefan Mihăileanu 35<br>Sector 2, București</address><a class="btn btn-line arrow" href="${esc(D.contact.googleMaps[0])}" target="_blank" rel="noopener">Vezi pe hartă</a></div>
+      <a class="ct-card" href="tel:+40743056605" data-track="telefon"><small>Telefon</small><b>0743 056 605</b><span>Programări și informații</span></a>
+      <a class="ct-card" href="${esc(wa)}" data-track="whatsapp"><small>WhatsApp</small><b>Scrie-ne un mesaj</b><span>Pentru programări și întrebări rapide</span></a>
+      <a class="ct-card" href="mailto:office@moaclinic.ro"><small>E-mail</small><b>office@moaclinic.ro</b><span>Pentru documente, colaborări și întrebări</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="inainte">
+  <div class="wrap pf-two">
+    <div class="rv"><span class="eyebrow">Înainte să vii</span><h2 class="pf-h2">Prima vizită, <em>pe scurt.</em></h2><p class="lede" style="margin-top:14px">Primul pas este, de obicei, o consultație: medicul te ascultă, te evaluează și îți explică opțiunile și prețul, înainte de orice tratament.</p></div>
+    <aside class="pf-side rv"><h3>Utile</h3><ul class="tr-checks"><li><a class="lede-link" href="/nou/consultatii/">Consultațiile</a> și cum decurg</li><li><a class="lede-link" href="/nou/preturi/">Prețurile</a>, afișate înainte de programare</li><li><a class="lede-link" href="/nou/medici/">Echipa medicală</a></li></ul></aside>
+  </div>
+</section>
+
+${BOOK}
+${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'contact');
+  fs.mkdirSync(dir, { recursive: true });
+  writePage(path.join(dir, 'index.html'), alternateBg(page));
+  console.log('Contact: nou/contact/');
+}
+
+// ---------- pagina /nou/documente-legale/: textul documentelor legale de pe site-ul actual, neschimbat, doar așezat pe secțiuni ----------
+// Sursa: source/site/documente-legale-clinica-moa.json. Textul îl modifică doar clinica (sau juristul ei), nu generatorul.
+{
+  const src = JSON.parse(fs.readFileSync(path.join(ROOT, 'source', 'site', 'documente-legale-clinica-moa.json'), 'utf8'));
+  const txt = src.text.replace(/^Documente legale Clinica MOA\s*/, '');
+  // secțiunile, după titlurile de pe pagina actuală; apoi frazele, ca paragrafe
+  const heads = src.titluri.filter((h) => h.n === 2).map((h) => h.t);
+  const parts = heads.map((h, i) => { const a = txt.indexOf(h) + h.length, b = i + 1 < heads.length ? txt.indexOf(heads[i + 1]) : txt.length; return { h, body: txt.slice(a, b).trim() }; });
+  const para = (s) => s
+    .replace(/\s(\d\. (?:Start Clinic|MOA Estetic))/g, '\n$1')
+    .replace(/\s(Punct de lucru:|CUI:|Nr\. înregistrare|Telefon:|Email:|Date colectate:|Scopul colectării|Baza legală:|Durata stocării:|Drepturile pacienților:|Protecția datelor:|Prin accesarea|Utilizatorii pot|Continuarea navigării|Ele nu înlocuiesc|Pentru orice problemă)/g, '\n$1')
+    .split('\n').map((l) => l.trim()).filter(Boolean);
+  const fmtDate = (d) => new Date(d).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
+  const pageUrl = ORIGIN + '/documente-legale/';
+  const schema = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'WebPage', '@id': pageUrl + '#webpage', url: pageUrl, name: 'Documente legale | MOA Clinic', inLanguage: 'ro-RO', dateModified: src.modificat },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Acasă', item: ORIGIN + '/' }, { '@type': 'ListItem', position: 2, name: 'Documente legale', item: pageUrl }] },
+  ] };
+  const id = (h) => norm(h.replace(/^\d+\.\s*/, '')).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documente legale – termeni, confidențialitate, cookies | MOA Clinic</title>
+<meta name="description" content="Termeni și condiții, politica de confidențialitate (GDPR), politica de cookies și disclaimerul medical MOA Clinic.">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body>
+${TOP}<main class="tr-page tp lg-page">
+<nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/nou/">Acasă</a><span>›</span><span aria-current="page">Documente legale</span></nav>
+
+<section class="sec">
+  <div class="wrap ld-lay">
+    <aside class="ld-toc"><span class="eyebrow">Documente legale</span><h1 class="ct-h1">Documente <em>legale</em></h1><p class="ld-upd">Actualizat: ${esc(fmtDate(src.modificat))}</p>
+      <nav aria-label="Cuprins">${parts.map((p) => `<a href="#${id(p.h)}">${esc(p.h)}</a>`).join('')}</nav></aside>
+    <div class="ld-body pf-prose">${parts.map((p) => `<h2 id="${id(p.h)}">${esc(p.h)}</h2>${para(p.body).map((l) => `<p>${esc(l)}</p>`).join('')}`).join('\n')}</div>
+  </div>
+</section>
+${BOTTOM}`;
+  const dir = path.join(ROOT, 'nou', 'documente-legale');
+  fs.mkdirSync(dir, { recursive: true });
+  writePage(path.join(dir, 'index.html'), page);
+  console.log(`Documente legale: nou/documente-legale/ · ${parts.length} secțiuni`);
 }
 
 // ---------- pagina de prețuri /nou/preturi/: lista oficială, pe categorii în ordinea drumului pacientului ----------
