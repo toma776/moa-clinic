@@ -82,12 +82,13 @@ const fixPunct = (html) => {
 // „[email protected]” = adresa ascunsă de Cloudflare pe site-ul vechi, copiată ca atare în texte
 // datele structurate (ld+json) primesc aceeași corectură de spațiu înainte de punctuație
 const { perfHead } = require('./perf');
-const writePage = (p, html) => fs.writeFileSync(p, perfHead(fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
+const { seo } = require('./seo'); // canonical, Open Graph, meta fără diacritice, #organization, .md, webp
+const writePage = (p, html) => fs.writeFileSync(p, seo(perfHead(fixPunct(html.replace(/\[email(?:&#160;|&nbsp;|\s)protected\]/g, 'office@moaclinic.ro'))
   .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, j, b) => a + j.replace(/([^\s"]) +([.,;:!?])(?=[\s"]|$)/g, '$1$2')
     .replace(/"(name|description|text|headline|alternateName)":"([^"]*)"/g, (mm, k, v) => `"${k}":"${curata(v)}"`) + b)
   // titlul și meta-descrierea trec prin aceeași rescriere a afirmațiilor
   .replace(/(<title>)([^<]*)/, (m, a, v) => a + curata(v))
-  .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v))));
+  .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v))), p, ORG_SCHEMA));
 const nDe = (n, w) => `${n} ${n % 100 === 0 && n > 0 || n % 100 >= 20 ? 'de ' : ''}${w}`; // „212 servicii”, „220 de servicii”
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
@@ -781,19 +782,19 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
       <div class="direct bk-btns"><a class="btn" href="tel:+40743056605" data-track="telefon">Sună: 0743 056 605</a><a class="btn" href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></div>
       <p class="bk-direct">Preferați să vorbim direct? <a href="tel:+40743056605" data-track="telefon">0743 056 605</a> · <a href="https://wa.me/40743056605?text=${encodeURIComponent('Bună ziua! Aș dori o programare la MOA Clinic.')}" data-track="whatsapp">WhatsApp</a></p>
     </div>
-    <form class="booking bk-form rv" id="booking" novalidate>
+    <form class="booking bk-form rv" id="booking" novalidate toolname="programeaza_consultatie" tooldescription="Trimite o cerere de programare la MOA Clinic (București): nume, telefon, serviciul dorit și canalul preferat de contact. Clinica sună sau scrie înapoi pentru confirmarea orei.">
       <div class="row2">
-        <div class="field"><label for="f-nume">Nume și prenume</label><input id="f-nume" name="nume" autocomplete="name" required></div>
-        <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="f-nume">Nume și prenume</label><input id="f-nume" name="nume" autocomplete="name" toolparamdescription="Numele și prenumele pacientului" required></div>
+        <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" toolparamdescription="Numărul de telefon la care clinica poate suna, format românesc (07xx xxx xxx)" inputmode="tel" autocomplete="tel" required></div>
       </div>
       <div class="field"><label for="f-srv">Ce vă interesează?</label>
-        <select id="f-srv" name="serviciu">${SRV_OPTIONS}</select></div>
+        <select id="f-srv" name="serviciu" toolparamdescription="Consultația sau tratamentul dorit; poate rămâne necompletat dacă pacientul nu știe încă">${SRV_OPTIONS}</select></div>
       <fieldset class="bk-pref"><legend>Cum preferați să vă contactăm?</legend><label><input type="checkbox" name="contact" value="Telefon" checked><span>Telefon</span></label><label><input type="checkbox" name="contact" value="WhatsApp"><span>WhatsApp</span></label><label><input type="checkbox" name="contact" value="E-mail"><span>E-mail</span></label></fieldset>
       <details class="bk-more"><summary>+ Adăugați e-mail sau un mesaj (opțional)</summary>
-        <div class="field bk-email"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
-        <div class="field"><label for="f-msg">Mesaj</label><textarea id="f-msg" name="mesaj" rows="2"></textarea></div>
+        <div class="field bk-email"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" toolparamdescription="Adresa de e-mail, obligatorie doar dacă e bifat contactul pe e-mail" inputmode="email" autocomplete="email"></div>
+        <div class="field"><label for="f-msg">Mesaj</label><textarea id="f-msg" name="mesaj" rows="2" toolparamdescription="Detalii opționale: ce te supără, întrebări, intervalul orar preferat"></textarea></div>
       </details>
-      <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
+      <label class="consent"><input type="checkbox" name="acord" required toolparamdescription="Acordul pacientului de a fi contactat pentru programare; trebuie bifat de pacient"><span>Sunt de acord să fiu contactat(ă) de MOA Clinic pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
       <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
       <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
     </form>
@@ -825,7 +826,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   </div>
   <div class="wrap f-bot">
     <p>© ${new Date().getFullYear()} MOA Clinic · ${legal.map((f) => esc(f.nume) + (f.cui ? `, CUI ${esc(f.cui)}` : '') + (f.registru ? `, ${esc(f.registru)}` : '')).join(' · ')} · parte a grupului medical Oxxygene</p>
-    <nav aria-label="Legal"><a href="/nou/documente-legale/">Documente legale și confidențialitate</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
+    <nav aria-label="Legal"><a href="/nou/documente-legale/">Documente legale și confidențialitate</a><a href="/nou/sitemap.xml">Hartă site</a><a href="https://anpc.ro/sal/" target="_blank" rel="noopener">ANPC – SAL</a><a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="noopener">SOL – litigii online</a></nav>
   </div>
   <script>document.querySelectorAll('.f-col').forEach((d) => { d.open = matchMedia('(min-width: 761px)').matches; });</script>
 </footer>
@@ -834,17 +835,17 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
 
 <div class="sheet" id="sheet" hidden>
   <div class="sheet-bg" data-close></div>
-  <form class="sheet-in booking" id="sheet-form" role="dialog" aria-modal="true" aria-labelledby="sheet-t" novalidate>
+  <form class="sheet-in booking" id="sheet-form" role="dialog" aria-modal="true" aria-labelledby="sheet-t" novalidate toolname="programeaza_consultatie_rapid" tooldescription="Trimite o cerere de programare la MOA Clinic (București): nume, telefon, serviciul dorit și canalul preferat de contact. Clinica sună sau scrie înapoi pentru confirmarea orei.">
     <span class="sheet-grip" aria-hidden="true"></span>
     <button class="sheet-x" type="button" data-close aria-label="Închide">✕</button>
     <h3 id="sheet-t">Cereți o programare</h3>
     <p class="sheet-sub">Lăsați numele și telefonul. Vă sunăm noi pentru confirmare.</p>
-    <div class="field"><label for="s-nume">Nume și prenume</label><input id="s-nume" name="nume" autocomplete="name" required></div>
-    <div class="field"><label for="s-tel">Telefon</label><input id="s-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" required></div>
-    <div class="field"><label for="s-srv">Ce vă interesează?</label><select id="s-srv" name="serviciu">${SRV_OPTIONS}</select></div>
+    <div class="field"><label for="s-nume">Nume și prenume</label><input id="s-nume" name="nume" autocomplete="name" toolparamdescription="Numele și prenumele pacientului" required></div>
+    <div class="field"><label for="s-tel">Telefon</label><input id="s-tel" name="telefon" type="tel" toolparamdescription="Numărul de telefon la care clinica poate suna, format românesc (07xx xxx xxx)" inputmode="tel" autocomplete="tel" required></div>
+    <div class="field"><label for="s-srv">Ce vă interesează?</label><select id="s-srv" name="serviciu" toolparamdescription="Consultația sau tratamentul dorit; poate rămâne necompletat dacă pacientul nu știe încă">${SRV_OPTIONS}</select></div>
     <fieldset class="bk-pref"><legend>Cum preferați să vă contactăm?</legend><label><input type="checkbox" name="contact" value="Telefon" checked><span>Telefon</span></label><label><input type="checkbox" name="contact" value="WhatsApp"><span>WhatsApp</span></label><label><input type="checkbox" name="contact" value="E-mail"><span>E-mail</span></label></fieldset>
-    <div class="field bk-email" hidden><label for="s-email">E-mail</label><input id="s-email" name="email" type="email" inputmode="email" autocomplete="email"></div>
-    <label class="consent"><input type="checkbox" name="acord" required><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
+    <div class="field bk-email" hidden><label for="s-email">E-mail</label><input id="s-email" name="email" type="email" toolparamdescription="Adresa de e-mail, obligatorie doar dacă e bifat contactul pe e-mail" inputmode="email" autocomplete="email"></div>
+    <label class="consent"><input type="checkbox" name="acord" required toolparamdescription="Acordul pacientului de a fi contactat pentru programare; trebuie bifat de pacient"><span>Sunt de acord să fiu contactat(ă) pentru programare, conform <a href="/nou/documente-legale/" style="text-decoration:underline">politicii de confidențialitate</a>.</span></label>
     <button class="btn btn-gold arrow" type="submit">Trimite cererea</button>
     <p class="form-msg" role="status" aria-live="polite"></p>
   </form>
@@ -2793,7 +2794,7 @@ ${TOP}<main>
 ${estHtml}
 
 ${BOOK}
-<script src="/nou/preturi.js?v=7" defer></script>
+<script src="/nou/preturi.js?v=8" defer></script>
 ${BOTTOM}`;
   fs.mkdirSync(path.join(ROOT, 'nou', 'preturi'), { recursive: true });
   writePage(path.join(ROOT, 'nou', 'preturi', 'index.html'), page);
@@ -3118,4 +3119,33 @@ ${BOTTOM}`;
     writePage(path.join(dir, 'index.html'), page);
     console.log(`Articol: nou/${slug}/ · ${blocks.length} blocuri · ${h2s.length} secțiuni · tratament: ${rel ? rel.l.nod.nume : '–'} · ${related.length} înrudite`);
   }
+}
+
+// ---------- pagina 404 (/404.html, servită de Vercel cu status 404): noindex, fără canonical, cu drumurile cele mai folosite ----------
+{
+  const page = `<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina nu a fost gasita | MOA Clinic</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nou/style.css">
+</head>
+<body>
+${TOP}<main class="tr-page tp">
+<section class="sec">
+  <div class="wrap pf-two">
+    <div><span class="eyebrow">Eroare 404</span><h1 class="ct-h1">Pagina nu <em>mai este aici.</em></h1><p class="lede" style="margin-top:18px">Adresa poate fi veche sau greșită. Te ajutăm să găsești ce cauți.</p>
+      <div class="hero-cta" style="margin-top:28px"><a class="btn btn-gold arrow" href="/nou/">Prima pagină</a><a class="btn btn-line" href="/nou/preturi/">Prețuri</a></div></div>
+    <aside class="pf-side"><h3>Cele mai căutate</h3><ul class="tr-checks"><li><a class="lede-link" href="/nou/consultatii/">Consultații</a></li><li><a class="lede-link" href="/nou/tratamente/injectabile/">Tratamente injectabile</a></li><li><a class="lede-link" href="/nou/longevitate/program/">Programul de longevitate</a></li><li><a class="lede-link" href="/nou/medici/">Echipa medicală</a></li><li><a class="lede-link" href="/nou/contact/">Contact</a></li></ul></aside>
+  </div>
+</section>
+${BOOK}
+${BOTTOM}`;
+  fs.writeFileSync(path.join(ROOT, '404.html'), perfHead(page));
+  console.log('404: /404.html');
 }

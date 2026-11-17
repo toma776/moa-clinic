@@ -13,12 +13,13 @@
     "health": "node scripts/site-health.js",
     "sync": "npm run mirror && npm run crawl && npm run extract && npm run profiles && npm run enrich && npm run tratamente && npm run brand && npm run health && npm run structura && npm run homepage",
     "structura": "node scripts/build-structura.js",
-    "homepage": "node scripts/build-homepage.js",
+    "homepage": "node scripts/build-homepage.js && node scripts/perf.js && node scripts/seo-files.js",
     "profiles": "node scripts/extract-profiles.js",
     "video": "node scripts/build-video.js",
     "tratamente": "node scripts/extract-tratamente.js",
     "blog-media": "node scripts/blog-media.js",
-    "articole": "node scripts/extract-articole.js"
+    "articole": "node scripts/extract-articole.js",
+    "webp": "node scripts/webp.js"
   },
   "engines": {
     "node": ">=18"

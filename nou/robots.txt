@@ -1,0 +1,24 @@
+# MOA Clinic – robots.txt de producție (moaclinic.ro)
+User-agent: *
+Disallow: /manage/
+Disallow: /api/
+Disallow: /data/
+Disallow: /vechi
+
+# Crawlere AI (GEO) – permise
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://moaclinic.ro/sitemap.xml

@@ -156,6 +156,24 @@
   };
   addEventListener('scroll', spy, { passive: true }); spy();
 
+  // ---- WebMCP: asistenții AI din browser pot căuta în listă și primesc rezultatele ca date (fără click prin interfață) ----
+  const mc = document.modelContext || navigator.modelContext;
+  if (mc?.registerTool) {
+    try {
+      mc.registerTool({
+        name: 'cauta_preturi',
+        description: 'Caută în lista oficială de prețuri MOA Clinic (București) și întoarce serviciile găsite, cu categoria și prețul în lei.',
+        inputSchema: { type: 'object', properties: { cuvant: { type: 'string', description: 'Tratamentul, zona sau produsul căutat, de exemplu „botox”, „epilare axile”, „PRP”' } }, required: ['cuvant'] },
+        execute: async ({ cuvant }) => {
+          const words = norm(String(cuvant || '')).split(/\s+/).filter(Boolean);
+          const hits = rows.filter(({ r, t }) => r.classList.contains('pr-row') && words.every((w) => t.includes(w))).slice(0, 25)
+            .map(({ r }) => ({ serviciu: $('.pr-n', r)?.textContent.trim(), categorie: r.closest('.pr-cat').dataset.nume, pret: $('.pr-ps', r)?.textContent.replace(/\s+/g, ' ').trim() }));
+          return { content: [{ type: 'text', text: JSON.stringify({ rezultate: hits, total: hits.length, nota: 'Prețuri orientative; prețul final îl stabilește medicul la consultație.' }) }] };
+        },
+      });
+    } catch (e) { /* standard în schimbare: dacă API-ul diferă, pagina funcționează normal */ }
+  }
+
   // ---- estimatorul ----
   const est = $('#estimator'), dataEl = $('#est-data');
   if (!est || !dataEl) return;
