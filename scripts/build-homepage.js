@@ -192,7 +192,9 @@ const catSlug = (c) => String(c.url || c.nume).split('/').filter(Boolean).pop();
 // URL nou -> pagina nouă dacă e generată, altfel URL-ul actual (din arborele structurii), ca linkurile să meargă pe site-ul de azi
 const newToOld = new Map();
 (function walk(ns) { for (const n of ns) { if (n.url && n.vechi?.[0]) newToOld.set(n.url, ORIGIN + n.vechi[0]); if (n.copii) walk(n.copii); } })(S.arbore);
-const toLive = (u) => (NOU.has(u) ? '/nou' + u : newToOld.get(u) || null);
+// paginile noi care stau la altă adresă decât cea din structură (hub-ul de longevitate e /longevitate/program/)
+const NOU_ALIAS = { '/longevitate/': '/nou/longevitate/program/' };
+const toLive = (u) => NOU_ALIAS[u] || (NOU.has(u) ? '/nou' + u : newToOld.get(u) || null);
 const newName = new Map();
 (function walk(ns) { for (const n of ns) { if (n.url) newName.set(n.url, n.nume); if (n.copii) walk(n.copii); } })(S.arbore);
 const cleanName = (t) => (t.url && newName.get(t.url)) || t.nume.replace(/s+(în|in) Bucure[sș]ti$/i, '');
@@ -1220,7 +1222,7 @@ document.querySelectorAll('.pf-tabs button').forEach((b) => b.addEventListener('
 ${arts.length ? `<section class="sec alt" id="articole">
   <div class="wrap pf-arts">
     <div><span class="eyebrow">Articole</span><h2 class="pf-h2">Articolele <em>sale</em></h2><p class="cs-sub">${nDe(allArts.length, 'articole')} pe blogul clinicii.</p>
-      <a class="link-u" href="${esc(pr.url)}">Toate cele ${allArts.length} de articole →</a></div>
+      <a class="link-u" href="/nou/blog/">Toate cele ${nDe(allArts.length, 'articole')} →</a></div>
     <ul class="tr-arts">${arts.slice(0, 3).map((a) => `<li><a href="${esc(artLink(a))}"><small>${esc(a.tip)}</small><span>${esc(a.titlu)}</span></a></li>`).join('')}</ul>
   </div>
 </section>` : ''}
