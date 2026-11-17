@@ -850,7 +850,7 @@ ${SHOW_REVIEWS ? `<section class="hp-sec" id="recenzii">
   </form>
 </div>
 <script src="/nou/wishlist.js?v=5" defer></script>
-<script src="/nou/progres.js?v=2" defer></script>
+<script src="/nou/progres.js?v=3" defer></script>
 
 <script>
 (() => {
