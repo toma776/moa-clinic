@@ -1,5 +1,5 @@
 ---
-title: "Consultatie chirurgie plastica in Bucuresti – de la 350 lei | MOA Clinic"
+title: "Consultatie chirurgie plastica in Bucuresti – de la 350 lei"
 description: "In cadrul Conceptului MOA Regenerative by Oxxygene un rol important il are transformarea prin microchirurgie estetica realizata cu aparatura de inalta…"
 url: https://moaclinic.ro/consultatii/chirurgie-plastica/
 lang: ro

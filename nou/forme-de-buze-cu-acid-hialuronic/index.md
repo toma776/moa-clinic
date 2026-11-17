@@ -1,5 +1,5 @@
 ---
-title: "Forme de buze cu acid hialuronic: ce nu ti-a spus nimeni | MOA Clinic"
+title: "Forme de buze cu acid hialuronic: ce nu ti-a spus nimeni"
 description: "Te-ai intrebat vreodata cum ar fi sa-ti privesti buzele in oglinda si sa vezi o versiune a ta, dar mai seducatoare si mai plina de viata? Buzele tale pot…"
 url: https://moaclinic.ro/forme-de-buze-cu-acid-hialuronic/
 lang: ro

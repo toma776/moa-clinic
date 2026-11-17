@@ -1,5 +1,5 @@
 ---
-title: "Cea mai buna toxina botulinica: rezultate dupa 6 luni de studiu | MOA Clinic"
+title: "Toxina botulinica: rezultate dupa 6 luni de studiu"
 description: "Alege cea mai buna toxina botulinica pentru rezultate naturale si de durata! Afla ce varianta se potriveste nevoilor tale si ce trebuie sa stii inainte."
 url: https://moaclinic.ro/cea-mai-buna-toxina-botulinica/
 lang: ro

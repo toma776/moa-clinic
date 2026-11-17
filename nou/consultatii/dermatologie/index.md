@@ -1,5 +1,5 @@
 ---
-title: "Consultatie dermatologie & dermatoestetica in Bucuresti – de la 300 lei | MOA Clinic"
+title: "Consultatie dermatologie Bucuresti – de la 300 lei"
 description: "MOA Regenerative by Oxxygene isi doreste ca pielea ta sa fie in primul rand sanatoasa si pentru asta este obligatorie evaluarea dermatologica efectuata de…"
 url: https://moaclinic.ro/consultatii/dermatologie/
 lang: ro

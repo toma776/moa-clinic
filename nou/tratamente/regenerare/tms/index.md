@@ -1,5 +1,5 @@
 ---
-title: "Stimulare magnetica transcraniana (TMS) in Bucuresti – de la 250 lei | MOA Clinic"
+title: "Stimulare magnetica transcraniana Bucuresti – de la 250 lei"
 description: "Impulsuri magnetice aplicate neinvaziv pe zonele creierului implicate in dispozitie si stres, ca terapie pentru burnout sau anxietate. Stimularea magnetica…"
 url: https://moaclinic.ro/tratamente/regenerare/tms/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Fotobiomodulare Vielight in Bucuresti – de la 150 lei | MOA Clinic"
+title: "Fotobiomodulare Vielight in Bucuresti – de la 150 lei"
 description: "Lumina rosie si aproape-infrarosie, aplicata neinvaziv, pentru a sustine regenerarea celulelor si un somn mai odihnitor. Terapia de fotobiomodulare cu…"
 url: https://moaclinic.ro/tratamente/regenerare/vielight/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Adevarul despre glutation: ce nu ti-a spus nimeni pana acum | MOA Clinic"
+title: "Adevarul despre glutation: ce nu ti-a spus nimeni pana acum"
 description: "Glutationul – antioxidantul „maestru” produs natural de organism, esential pentru detoxifiere, imunitate si protectia celulara."
 url: https://moaclinic.ro/adevarul-despre-glutation/
 lang: ro

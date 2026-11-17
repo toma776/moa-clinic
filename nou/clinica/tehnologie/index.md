@@ -1,5 +1,5 @@
 ---
-title: "Tehnologie si aparatura – Splendor X, Venus Viva, Venus Legacy | MOA Clinic"
+title: "Aparatura MOA Clinic – Splendor X, Venus Viva, Venus Legacy"
 description: "Aparatura MOA Clinic: Splendor X, Venus Viva, Venus Legacy, Dermalinfusion, Dermapen 4, Vielight, TMS, Sauna cu ozon. Pentru fiecare: cum functioneaza, pentru…"
 url: https://moaclinic.ro/clinica/tehnologie/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Hialuronidaza – Ce este si cum ajuta in tratamentele estetice | MOA Clinic"
+title: "Hialuronidaza: ce este si cum se foloseste in estetica"
 description: "Afla ce este hialuronidaza si cum se foloseste in estetica. Descopera beneficiile si aplicarile acesteia in tratamentele de corectare a dermalelor. Citeste…"
 url: https://moaclinic.ro/hialuronidaza/
 lang: ro

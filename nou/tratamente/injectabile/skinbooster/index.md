@@ -1,5 +1,5 @@
 ---
-title: "Skinbooster Restylane in Bucuresti – de la 1500 lei | MOA Clinic"
+title: "Skinbooster Restylane in Bucuresti – de la 1500 lei"
 description: "Microinjectii fine cu acid hialuronic care hidrateaza pielea in profunzime: ten mai luminos si mai neted, fara volum adaugat. Skinboosterul Vital este un…"
 url: https://moaclinic.ro/tratamente/injectabile/skinbooster/
 lang: ro

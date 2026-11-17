@@ -1,6 +1,6 @@
 ---
-title: "Riduri in jurul gurii – cauze si tratamente eficiente | MOA Clinic"
-description: "Afla de ce apar ridurile in jurul gurii si cum le poti estompa."
+title: "Riduri in jurul gurii – cauze si tratamente eficiente"
+description: "De ce apar ridurile din jurul gurii, ce obiceiuri zilnice le adancesc, cum le previi si ce tratamente se folosesc cand sunt deja vizibile. Cu o verificare…"
 url: https://moaclinic.ro/riduri-in-jurul-gurii/
 lang: ro
 updated: 2026-02-24

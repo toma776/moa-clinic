@@ -1,5 +1,5 @@
 ---
-title: "Botox pentru transpiratie in Bucuresti – de la 2000 lei | MOA Clinic"
+title: "Botox pentru transpiratie in Bucuresti – de la 2000 lei"
 description: "Injectii fine cu toxina botulinica in zona axilara, pentru reducerea transpiratiei excesive, intr-o procedura de 20–40 de minute. Tratamentul cu toxina…"
 url: https://moaclinic.ro/tratamente/injectabile/botox-hiperhidroza/
 lang: ro

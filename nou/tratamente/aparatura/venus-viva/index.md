@@ -1,5 +1,5 @@
 ---
-title: "Venus Viva – radiofrecventa fractionata in Bucuresti – de la 500 lei | MOA Clinic"
+title: "Venus Viva Bucuresti – de la 500 lei"
 description: "Radiofrecventa fractionata pentru o piele mai ferma si mai uniforma: ridurile fine, cicatricile post-acnee si porii dilatati se atenueaza. Venus Viva este…"
 url: https://moaclinic.ro/tratamente/aparatura/venus-viva/
 lang: ro

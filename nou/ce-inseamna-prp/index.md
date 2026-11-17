@@ -1,6 +1,6 @@
 ---
 title: "Ce inseamna PRP si beneficiile tratamentului | MOA Clinic"
-description: "Afla ce inseamna PRP si cum functioneaza tratamentul."
+description: "Ce inseamna PRP, cum se obtine plasma bogata in trombocite si la ce se foloseste, de la caderea parului la calitatea pielii. Cu beneficiile, efectele…"
 url: https://moaclinic.ro/ce-inseamna-prp/
 lang: ro
 updated: 2026-03-19

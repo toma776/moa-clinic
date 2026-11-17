@@ -1,5 +1,5 @@
 ---
-title: "Riduri pe gat tratament cu botox: ce trebuie sa stii | MOA Clinic"
+title: "Riduri pe gat tratament cu botox: ce trebuie sa stii"
 description: "Afla cum functioneaza tratamentul cu botox pentru riduri pe gat, cat dureaza efectele si cand este recomandat."
 url: https://moaclinic.ro/riduri-pe-gat-tratament-cu-botox/
 lang: ro

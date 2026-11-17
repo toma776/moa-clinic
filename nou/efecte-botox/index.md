@@ -1,5 +1,5 @@
 ---
-title: "Efecte botox: ghidul complet explicat de medici specialisti | MOA Clinic"
+title: "Efecte botox: ghidul complet explicat de medici specialisti"
 description: "Descopera efectele Botox! Afla cum iti poate netezi ridurile si reda un aspect intinerit pielii. Intra acum pentru detalii!"
 url: https://moaclinic.ro/efecte-botox/
 lang: ro

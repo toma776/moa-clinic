@@ -1,5 +1,5 @@
 ---
-title: "Beneficiile uimitoare ale saunei cu ozon pentru antiaging-ul intern | MOA Clinic"
+title: "Sauna cu ozon: beneficii pentru antiaging-ul intern"
 description: "Bine ai venit in lumea saunei cu ozon la terapiile antiaging intern in clinica MOA regenerative by Oxxygene,, un adevarat paradis al sanatatii si bunastarii!"
 url: https://moaclinic.ro/beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Consultatie antiaging (cu varsta biologica) in Bucuresti – de la 400 lei | MOA Clinic"
+title: "Consultatie antiaging Bucuresti – de la 400 lei"
 description: "Antiaging nu inseamna oprirea timpului, ci sustinerea corpului si a mintii pentru a imbatrani frumos, sanatos si armonios. Prin evaluari personalizate si…"
 url: https://moaclinic.ro/consultatii/antiaging/
 lang: ro

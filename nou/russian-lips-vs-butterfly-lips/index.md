@@ -1,5 +1,5 @@
 ---
-title: "Russian lips: tot ce trebuie sa stii inainte de procedura | MOA Clinic"
+title: "Russian lips: tot ce trebuie sa stii inainte de procedura"
 description: "Te gandesti sa-ti redefinesti buzele, sa le oferi acel contur senzual si un volum plin de farmec, dar gandul la ace sau la posibile efecte secundare te tine…"
 url: https://moaclinic.ro/russian-lips-vs-butterfly-lips/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "PRP – terapia vampir in Bucuresti – de la 900 lei | MOA Clinic"
+title: "PRP – terapia vampir Bucuresti – de la 900 lei | MOA Clinic"
 description: "Plasma bogata in trombocite, obtinuta din propriul sange si injectata in scalp, pentru a activa foliculii afectati de caderea parului. Terapia PRP este…"
 url: https://moaclinic.ro/tratamente/injectabile/prp/
 lang: ro

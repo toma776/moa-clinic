@@ -1,5 +1,5 @@
 ---
-title: "Microneedling Dermapen 4 in Bucuresti – de la 800 lei | MOA Clinic"
+title: "Microneedling Dermapen 4 in Bucuresti – de la 800 lei"
 description: "Microace fine stimuleaza refacerea pielii, pentru riduri si cicatrici atenuate, pori mai fini si un ton mai uniform. Daca iti doresti o piele mai ferma, mai…"
 url: https://moaclinic.ro/tratamente/aparatura/microneedling/
 lang: ro

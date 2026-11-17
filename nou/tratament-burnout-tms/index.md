@@ -1,5 +1,5 @@
 ---
-title: "Tratament burnout TMS: Solutie moderna pentru stres si epuizare | MOA Clinic"
+title: "Tratament burnout cu TMS, pentru stres si epuizare"
 description: "Ti se intampla frecvent in ultima perioada sa te simti abatut, iritat, presat de deadline-uri tot mai stranse si taskuri cat mai multe?"
 url: https://moaclinic.ro/tratament-burnout-tms/
 lang: ro

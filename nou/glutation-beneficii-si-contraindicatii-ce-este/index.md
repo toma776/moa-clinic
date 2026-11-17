@@ -1,5 +1,5 @@
 ---
-title: "Glutation: Ce este, beneficii si contraindicatii | MOA Clinic"
+title: "Glutation: Ce este, beneficii si contraindicatii"
 description: "Afla ce este glutation, ce beneficii are, ce contraindicatii exista si unde se gaseste."
 url: https://moaclinic.ro/glutation-beneficii-si-contraindicatii-ce-este/
 lang: ro

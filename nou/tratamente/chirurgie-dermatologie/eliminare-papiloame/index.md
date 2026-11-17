@@ -1,5 +1,5 @@
 ---
-title: "Eliminare papiloame in Bucuresti – de la 450 lei | MOA Clinic"
+title: "Eliminare papiloame Bucuresti – de la 450 lei | MOA Clinic"
 description: "Papiloamele sunt indepartate dupa evaluarea medicului, cu metoda potrivita fiecarui caz si un timp de recuperare scurt. Papiloamele sunt mici excrescente…"
 url: https://moaclinic.ro/tratamente/chirurgie-dermatologie/eliminare-papiloame/
 lang: ro

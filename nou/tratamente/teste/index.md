@@ -1,5 +1,5 @@
 ---
-title: "Teste genetice longevity in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Teste genetice longevity in Bucuresti – preturi | MOA Clinic"
 description: "Ce spun genele tale despre piele, nutritie si imbatranire. 2 tratamente la MOA Clinic: DNA Skin, Nutrigenetica si epigenetica."
 url: https://moaclinic.ro/tratamente/teste/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Prima injectare cu acid hialuronic in buze: Ghid 2026 | MOA Clinic"
+title: "Prima injectare cu acid hialuronic in buze: Ghid 2026"
 description: "Prima injectare cu acid hialuronic in buze - afla ce trebuie sa stii! Procedura, efecte, ingrijire si sfaturi pentru un rezultat natural si armonios."
 url: https://moaclinic.ro/prima-injectare-cu-acid-hialuronic-in-buze/
 lang: ro

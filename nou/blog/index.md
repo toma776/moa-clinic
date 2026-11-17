@@ -1,5 +1,5 @@
 ---
-title: "Blog – ghiduri despre tratamente, ingrijire si longevitate | MOA Clinic"
+title: "Blog MOA Clinic – tratamente, ingrijire si longevitate"
 description: "46 de articole despre tratamente estetice, ingrijire si longevitate, scrise de Dr. Adrian Stanescu, medic primar gerontolog, fondatorul MOA Clinic."
 url: https://moaclinic.ro/blog/
 lang: ro

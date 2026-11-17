@@ -1,5 +1,5 @@
 ---
-title: "Cum sa-ti imbunatatesti sanatatea si bunastarea cu un tratament regenerativ perfuzabil cu glutation | MOA Clinic"
+title: "Perfuzii cu glutation: beneficii si cum se fac"
 description: "In ziua de astazi, este din ce in ce mai important sa ne concentram asupra sanatatii si bunastarii noastre. Si ce mod mai bun de a face acest lucru decat…"
 url: https://moaclinic.ro/cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation/
 lang: ro

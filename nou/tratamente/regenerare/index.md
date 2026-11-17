@@ -1,5 +1,5 @@
 ---
-title: "Medicina regenerativa in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Medicina regenerativa in Bucuresti – preturi | MOA Clinic"
 description: "Terapii care lucreaza din interior: energie, imunitate, detox, echilibru. 38 de tratamente la MOA Clinic, de la 150 lei: Terapii intravenoase (perfuzii)…"
 url: https://moaclinic.ro/tratamente/regenerare/
 lang: ro

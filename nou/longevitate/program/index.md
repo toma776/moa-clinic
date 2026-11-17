@@ -1,5 +1,5 @@
 ---
-title: "Longevitate medicala in Bucuresti – Programul Global Antiaging | MOA Clinic"
+title: "Longevitate in Bucuresti – Global Antiaging | MOA Clinic"
 description: "Programul Global Antiaging MOA: evaluare cu medic gerontolog si estimarea varstei biologice, plan personal, terapii regenerative si reevaluare la 6–12 luni.…"
 url: https://moaclinic.ro/longevitate/program/
 lang: ro

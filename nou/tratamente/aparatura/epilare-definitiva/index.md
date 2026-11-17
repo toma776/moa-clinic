@@ -1,5 +1,5 @@
 ---
-title: "Epilare definitiva Splendor X in Bucuresti – de la 200 lei | MOA Clinic"
+title: "Epilare definitiva Splendor X in Bucuresti – de la 200 lei"
 description: "Laserul Splendor X, cu doua lungimi de unda, reduce parul nedorit, cu setari adaptate nuantei pielii, culorii si densitatii firului. Tehnologia Splendor X…"
 url: https://moaclinic.ro/tratamente/aparatura/epilare-definitiva/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Recuperare dupa Dermapen – Ce trebuie sa stii pentru o vindecare rapida | MOA Clinic"
+title: "Recuperare dupa Dermapen: ce trebuie sa stii"
 description: "Afla cum sa te recuperezi eficient dupa un tratament Dermapen. Urmeaza sfaturile noastre pentru o recuperare rapida si un ten perfect. Citeste acum!"
 url: https://moaclinic.ro/recuperare-dupa-dermapen/
 lang: ro

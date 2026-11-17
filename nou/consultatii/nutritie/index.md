@@ -1,5 +1,5 @@
 ---
-title: "Consultatie nutritie antiaging / nutrigenomica in Bucuresti | MOA Clinic"
+title: "Consultatie nutritie antiaging in Bucuresti | MOA Clinic"
 description: "Nutritia antiaging la MOA Regenerative by Oxxygene este un element important al procesului de mentinere a tineretii in corpul nostru."
 url: https://moaclinic.ro/consultatii/nutritie/
 lang: ro

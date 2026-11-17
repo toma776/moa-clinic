@@ -1,5 +1,5 @@
 ---
-title: "Autohemoterapie majora cu ozon in Bucuresti – de la 300 lei | MOA Clinic"
+title: "Autohemoterapie majora cu ozon in Bucuresti – de la 300 lei"
 description: "O cantitate mica din sangele tau, imbogatita cu oxigen si ozon intr-un circuit steril, reintrodusa pentru a sustine imunitatea. Autohemoterapia majora este…"
 url: https://moaclinic.ro/tratamente/regenerare/autohemoterapie/
 lang: ro

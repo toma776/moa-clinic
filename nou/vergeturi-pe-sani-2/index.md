@@ -1,5 +1,5 @@
 ---
-title: "Vergeturi pe sani – Cauze, tratamente si metode de preventie | MOA Clinic"
+title: "Vergeturi pe sani – Cauze, tratamente si metode de preventie"
 description: "Vergeturi pe sani – apar din cauza intinderii rapide a pielii, in pubertate, sarcina sau fluctuatii de greutate."
 url: https://moaclinic.ro/vergeturi-pe-sani-2/
 lang: ro

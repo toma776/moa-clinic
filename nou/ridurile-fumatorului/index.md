@@ -1,6 +1,6 @@
 ---
-title: "Ridurile fumatorului – Solutii de tratament pentru un ten neted si tineresc | MOA Clinic"
-description: "Afla cum sa reduci ridurile fumatorului cu tratamente eficiente."
+title: "Ridurile fumatorului: cauze si optiuni de tratament"
+description: "De ce apar liniile verticale de deasupra buzei, ce tratamente le pot atenua si ce poti face acasa ca sa le previi. Cu optiunile explicate pe scurt si pasii…"
 url: https://moaclinic.ro/ridurile-fumatorului/
 lang: ro
 updated: 2026-02-24

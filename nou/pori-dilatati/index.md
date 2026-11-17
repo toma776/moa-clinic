@@ -1,5 +1,5 @@
 ---
-title: "Pori dilatati – Cauze si solutii pentru un ten neted | MOA Clinic"
+title: "Pori dilatati – Cauze si solutii pentru un ten neted"
 description: "Descopera cauzele porilor dilatati si cum sa ii reduci. Afla cele mai bune solutii si tratamente pentru un ten uniform si sanatos."
 url: https://moaclinic.ro/pori-dilatati/
 lang: ro

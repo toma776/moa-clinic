@@ -1,5 +1,5 @@
 ---
-title: "Documente legale – termeni, confidentialitate, cookies | MOA Clinic"
+title: "Documente legale – termeni, GDPR, cookies | MOA Clinic"
 description: "Termeni si conditii, politica de confidentialitate (GDPR), politica de cookies si disclaimerul medical MOA Clinic."
 url: https://moaclinic.ro/documente-legale/
 lang: ro

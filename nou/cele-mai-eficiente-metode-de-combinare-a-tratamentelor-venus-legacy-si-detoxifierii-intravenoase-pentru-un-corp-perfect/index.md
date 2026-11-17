@@ -1,5 +1,5 @@
 ---
-title: "Cele mai eficiente metode de combinare a tratamentelor Venus Legacy si detoxifierii intravenoase pentru un corp perfect | MOA Clinic"
+title: "Venus Legacy si detoxifiere intravenoasa: cum se combina"
 description: "MOA Regenerative by Oxxygene combina inovativ terapiile corporale si faciale cu detoxul celular!"
 url: https://moaclinic.ro/cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect/
 lang: ro

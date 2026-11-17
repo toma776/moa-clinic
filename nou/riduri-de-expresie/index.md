@@ -1,5 +1,5 @@
 ---
-title: "Riduri de expresie: cauze, preventie si tratamente eficiente | MOA Clinic"
+title: "Riduri de expresie: cauze, preventie si tratamente eficiente"
 description: "Redu riduri de expresie si reda prospetimea tenului. Alege tratamente care intineresc vizibil pielea!"
 url: https://moaclinic.ro/riduri-de-expresie/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Cearcane si pungi sub ochi: tratamente eficiente | MOA Clinic"
+title: "Cearcane si pungi sub ochi: tratamente eficiente"
 description: "Trateaza cearcanele si pungile sub ochi cu mezoterapie NCTF, PRP sau acid hialuronic. Rezultate vizibile rapid!"
 url: https://moaclinic.ro/cearcane/
 lang: ro

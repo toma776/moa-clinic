@@ -1,5 +1,5 @@
 ---
-title: "Chirurgie & dermatologie in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Chirurgie & dermatologie in Bucuresti – preturi | MOA Clinic"
 description: "Interventii mici, cu anestezie locala, si dermatologie medicala. 4 tratamente la MOA Clinic, de la 450 lei: Blefaroplastie, Lip lift, Indepartare alunite…"
 url: https://moaclinic.ro/tratamente/chirurgie-dermatologie/
 lang: ro

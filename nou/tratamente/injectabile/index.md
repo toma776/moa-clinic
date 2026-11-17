@@ -1,5 +1,5 @@
 ---
-title: "Tratamente injectabile in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Tratamente injectabile in Bucuresti – preturi | MOA Clinic"
 description: "Riduri, volum, buze, hidratare – fara bisturiu, cu revenire rapida. 13 tratamente la MOA Clinic, de la 700 lei: Toxina botulinica (Botox), Acid hialuronic…"
 url: https://moaclinic.ro/tratamente/injectabile/
 lang: ro

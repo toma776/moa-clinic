@@ -1,5 +1,5 @@
 ---
-title: "Terapii intravenoase beneficii si tipuri de tratamente IV | MOA Clinic"
+title: "Terapii intravenoase beneficii si tipuri de tratamente IV"
 description: "Afla ce sunt terapiile intravenoase, cand se recomanda si ce beneficii aduc pentru sanatate si vitalitate."
 url: https://moaclinic.ro/terapii-intravenoase/
 lang: ro

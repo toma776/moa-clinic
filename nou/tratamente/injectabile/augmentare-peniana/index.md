@@ -1,5 +1,5 @@
 ---
-title: "Augmentare peniana in Bucuresti – de la 3500 lei | MOA Clinic"
+title: "Augmentare peniana Bucuresti – de la 3500 lei | MOA Clinic"
 description: "Acid hialuronic injectat de medic pentru cresterea circumferintei, intr-o procedura minim invaziva, fara interventie chirurgicala. Marirea penisului cu acid…"
 url: https://moaclinic.ro/tratamente/injectabile/augmentare-peniana/
 lang: ro

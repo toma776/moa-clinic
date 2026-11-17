@@ -1,6 +1,6 @@
 ---
-title: "Riduri intre sprancene cauze si tratamente eficiente | MOA Clinic"
-description: "Afla de ce apar ridurile intre sprancene si cum le poti estompa."
+title: "Riduri intre sprancene cauze si tratamente eficiente"
+description: "Ce sunt ridurile glabelare, cum iti dai seama daca sunt dinamice sau statice si ce tratamente, ingrediente si obiceiuri ajuta. Cu o verificare rapida a…"
 url: https://moaclinic.ro/riduri-intre-sprancene/
 lang: ro
 updated: 2026-02-24

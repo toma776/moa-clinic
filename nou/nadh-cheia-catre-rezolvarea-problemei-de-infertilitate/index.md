@@ -1,5 +1,5 @@
 ---
-title: "NADH – Cheia catre rezolvarea problemei de infertilitate | MOA Clinic"
+title: "NADH – Cheia catre rezolvarea problemei de infertilitate"
 description: "Infertilitatea este o problema de sanatate din ce in ce mai impovaratoare, fiind diagnosticata in aproape 10% din cupluri, la fel de des la barbati si femei."
 url: https://moaclinic.ro/nadh-cheia-catre-rezolvarea-problemei-de-infertilitate/
 lang: ro

@@ -1,5 +1,5 @@
 ---
-title: "Tratamente cu aparatura in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Tratamente cu aparatura in Bucuresti – preturi | MOA Clinic"
 description: "Laser, radiofrecventa si microneedling, cu aparate de generatie noua. 6 tratamente la MOA Clinic, de la 200 lei: Epilare definitiva Splendor X, Laser…"
 url: https://moaclinic.ro/tratamente/aparatura/
 lang: ro

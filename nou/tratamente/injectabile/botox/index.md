@@ -1,5 +1,5 @@
 ---
-title: "Toxina botulinica (Botox) in Bucuresti – de la 800 lei | MOA Clinic"
+title: "Toxina botulinica (Botox) in Bucuresti – de la 800 lei"
 description: "Relaxeaza muschii care formeaza ridurile de expresie: pielea devine mai neteda, fara sa-ti afecteze expresivitatea fetei. Toxina botulinica, cunoscuta sub…"
 url: https://moaclinic.ro/tratamente/injectabile/botox/
 lang: ro

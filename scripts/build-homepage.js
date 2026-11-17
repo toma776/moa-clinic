@@ -91,6 +91,10 @@ const writePage = (p, html) => fs.writeFileSync(p, seo(perfHead(fixPunct(html.re
   .replace(/(<meta name="description" content=")([^"]*)/, (m, a, v) => a + curata(v))), p, ORG_SCHEMA));
 const nDe = (n, w) => `${n} ${n % 100 === 0 && n > 0 || n % 100 >= 20 ? 'de ' : ''}${w}`; // „212 servicii”, „220 de servicii”
 const lei = (n) => `${Number(n).toLocaleString('ro-RO')} lei`;
+// <title> de cel mult 60 de caractere (cât afișează Google): prima variantă care încape, de la cea mai completă la cea mai scurtă
+const fitTitle = (...v) => v.find((t) => t.length <= 60) || v[v.length - 1];
+// numele scurt: fără paranteză și fără precizarea de după „ – ”, „ & ”, „ / ”
+const shortName = (n) => n.replace(/\s*\(.*?\)/g, '').split(/\s+[–&/]\s+/)[0].trim();
 const serv = Object.fromEntries(D.servicii.map((s) => [s.id, s]));
 const minPrice = (id) => { const v = (serv[id]?.preturi || []).map((p) => p.valoare).filter((x) => x != null); return v.length ? Math.min(...v) : null; };
 // paginile de tratament noi (/nou/tratamente/…), generate pentru tratamentele cu conținut în data/tratamente.json (npm run tratamente)
@@ -584,7 +588,7 @@ const html = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MOA Clinic · Estetică medicală, chirurgie și longevitate în București</title>
+<title>MOA Clinic – estetică, chirurgie și longevitate, București</title>
 <meta name="description" content="Estetică medicală, chirurgie plastică și medicină regenerativă, coordonate de un medic primar geriatrie-gerontologie. Proceduri făcute de medici, în Str. Ștefan Mihăileanu 35, București.">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1173,7 +1177,7 @@ for (const p of team.filter((x) => x.profil_detaliat)) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(p.nume)} – ${esc(p.rol)} | MOA Clinic</title>
+<title>${esc(fitTitle(`${p.nume} – ${p.rol} | MOA Clinic`, `${p.nume} – ${p.rol}`, `${p.nume} | MOA Clinic`))}</title>
 <meta name="description" content="${esc(cutTxt(pr.rezumat || p.rol, 158))}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1542,7 +1546,7 @@ for (const id of TR_PAGINI) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(nod.nume)} în București${pret ? ` – de la ${pret} lei` : ''} | MOA Clinic</title>
+<title>${esc(fitTitle(...(pret ? [`${nod.nume} în București – de la ${pret} lei | MOA Clinic`, `${nod.nume} București – de la ${pret} lei | MOA Clinic`, `${nod.nume} în București – de la ${pret} lei`, `${nod.nume} București – de la ${pret} lei`, `${shortName(nod.nume)} București – de la ${pret} lei`, `${shortName(nod.nume)} – de la ${pret} lei`] : [`${nod.nume} în București | MOA Clinic`, `${nod.nume} București | MOA Clinic`, `${shortName(nod.nume)} în București | MOA Clinic`, `${shortName(nod.nume)} | MOA Clinic`])))}</title>
 <meta name="description" content="${esc(cutTxt(`${promise} ${restLede}`, 158))}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1693,7 +1697,7 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(nod.nume)} în București${pret ? ` – de la ${pret} lei` : ''} | MOA Clinic</title>
+<title>${esc(fitTitle(...(pret ? [`${nod.nume} în București – de la ${pret} lei | MOA Clinic`, `${nod.nume} București – de la ${pret} lei | MOA Clinic`, `${nod.nume} în București – de la ${pret} lei`, `${nod.nume} București – de la ${pret} lei`, `${shortName(nod.nume)} București – de la ${pret} lei`, `${shortName(nod.nume)} – de la ${pret} lei`] : [`${nod.nume} în București | MOA Clinic`, `${nod.nume} București | MOA Clinic`, `${shortName(nod.nume)} în București | MOA Clinic`, `${shortName(nod.nume)} | MOA Clinic`])))}</title>
 <meta name="description" content="${esc(cutTxt(lede, 158))}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2027,7 +2031,7 @@ ${BOOK}${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Longevitate medicală în București – Programul Global Antiaging | MOA Clinic</title>
+<title>Longevitate în București – Global Antiaging | MOA Clinic</title>
 <meta name="description" content="Programul Global Antiaging MOA: evaluare cu medic gerontolog și estimarea vârstei biologice, plan personal, terapii regenerative și reevaluare la 6–12 luni${consPret ? `. Consultația de la ${consPret} lei` : ''}.">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2164,7 +2168,7 @@ ${srv ? BOOK.split(`<option>${srv}</option>`).join(`<option selected>${srv}</opt
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Echipa MOA Clinic – medici gerontologi, dermatologi și chirurgi plastici | MOA Clinic</title>
+<title>Medici MOA Clinic – gerontologi, dermatologi, chirurgi</title>
 <meta name="description" content="${esc(`Echipa MOA Clinic: ${nMed} medici (gerontologie, chirurgie plastică, dermatologie), specialiști în estetică și asistente, coordonați de Dr. Adrian Stănescu. Află cine te tratează și programează-te direct.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2292,7 +2296,7 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tehnologie și aparatură – Splendor X, Venus Viva, Venus Legacy | MOA Clinic</title>
+<title>Aparatura MOA Clinic – Splendor X, Venus Viva, Venus Legacy</title>
 <meta name="description" content="Aparatura MOA Clinic: ${esc(TH.map((t) => t.n).join(', '))}. Pentru fiecare: cum funcționează, pentru ce tratamente o folosim și prețul de la.">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2419,7 +2423,7 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(c.nume)} în București – tratamente și prețuri | MOA Clinic</title>
+<title>${esc(fitTitle(`${c.nume} în București – tratamente și prețuri | MOA Clinic`, `${c.nume} în București – prețuri | MOA Clinic`, `${c.nume} în București – prețuri`, `${c.nume} București | MOA Clinic`))}</title>
 <meta name="description" content="${esc(`${c.desc} ${nDe(nTr, 'tratamente')} la MOA Clinic${prices.length ? `, de la ${lei(Math.min(...prices))}` : ''}: ${items.slice(0, 4).map((x) => x.nume).join(', ')}.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2551,7 +2555,7 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Documente legale – termeni, confidențialitate, cookies | MOA Clinic</title>
+<title>Documente legale – termeni, GDPR, cookies | MOA Clinic</title>
 <meta name="description" content="Termeni și condiții, politica de confidențialitate (GDPR), politica de cookies și disclaimerul medical MOA Clinic.">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2903,7 +2907,7 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog – ghiduri despre tratamente, îngrijire și longevitate | MOA Clinic</title>
+<title>Blog MOA Clinic – tratamente, îngrijire și longevitate</title>
 <meta name="description" content="${esc(`${nDe(arts.length, 'articole')} despre tratamente estetice, îngrijire și longevitate, scrise de Dr. Adrian Stănescu, medic primar gerontolog, fondatorul MOA Clinic.`)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2962,6 +2966,19 @@ ${BOTTOM}`;
   const slugH = (x) => norm(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
   const rez = (a) => String(a.rezumat || '').replace(/\s*(Descoper[ăa]|Programeaz[ăa]-te|Rezerv[ăa]|Afl[ăa] mai multe)[^.]*\.?$/i, '').trim().replace(/([^.!?])$/, '$1.');
   // rezumatul de sub titlu: dacă cel de pe site-ul vechi e prea scurt sau trunchiat („Russian lips vs butterfly lips -.”), prima frază din text
+  // titlurile SEO (<title>) pentru articolele al căror titlu depășește 60 de caractere; H1-ul rămâne titlul articolului
+  const ART_TITLU_SEO = {
+    'cele-mai-eficiente-metode-de-combinare-a-tratamentelor-venus-legacy-si-detoxifierii-intravenoase-pentru-un-corp-perfect': 'Venus Legacy și detoxifiere intravenoasă: cum se combină',
+    'tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale': 'Consultația nutrigenomică: ce află medicul din genele tale',
+    'cum-sa-ti-imbunatatesti-sanatatea-si-bunastarea-cu-un-tratament-regenerativ-perfuzabil-cu-glutation': 'Perfuzii cu glutation: beneficii și cum se fac',
+    'ridurile-fumatorului': 'Ridurile fumătorului: cauze și opțiuni de tratament',
+    'recuperare-dupa-dermapen': 'Recuperare după Dermapen: ce trebuie să știi',
+    'beneficiile-uimitoare-ale-saunei-cu-ozon-pentru-antiaging-ul-intern': 'Sauna cu ozon: beneficii pentru antiaging-ul intern',
+    'cea-mai-buna-toxina-botulinica': 'Toxina botulinică: rezultate după 6 luni de studiu',
+    'tratament-burnout-tms': 'Tratament burnout cu TMS, pentru stres și epuizare',
+    'hialuronidaza': 'Hialuronidaza: ce este și cum se folosește în estetică',
+    'ptoza-palpebrala': 'Ptoza palpebrală: cauze, tratament și operație',
+  };
   const rezArt = (a, blocks) => { const r = rez(a).replace(/\s*[-–]\s*\.$/, '.').trim(); if (r.replace(/[^\p{L}]/gu, '').length >= 45) return r; const p = blocks.find((b) => b.t === 'p' && b.x.length > 60)?.x || ''; return cutTxt(p, 190); };
   for (const id of ART_PAGINI) {
     const a = D.articole.find((x) => x.id === id), c = AD[id];
@@ -3043,8 +3060,8 @@ ${BOTTOM}`;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(a.titlu)} | MOA Clinic</title>
-<meta name="description" content="${esc(cutTxt(rezArt(a, blocks), 158))}">
+<title>${esc(fitTitle(`${a.titlu} | MOA Clinic`, a.titlu, ART_TITLU_SEO[slug] || a.titlu))}</title>
+<meta name="description" content="${esc(cutTxt(rezArt(a, blocks).length >= 70 ? rezArt(a, blocks) : RX?.lede || rezArt(a, blocks), 158))}">
 <link rel="canonical" href="${esc(pageUrl)}">
 <link rel="icon" href="/wp-content/uploads/2024/09/cropped-Instagram-logo-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

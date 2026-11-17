@@ -1,5 +1,5 @@
 ---
-title: "Ptoza palpebrala: cauze, tratament si operatie pleoape cazute | MOA Clinic"
+title: "Ptoza palpebrala: cauze, tratament si operatie"
 description: "Afla ce este ptoza palpebrala, care sunt cauzele si ce tratament pentru pleoape cazute exista."
 url: https://moaclinic.ro/ptoza-palpebrala/
 lang: ro

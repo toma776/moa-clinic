@@ -1,5 +1,5 @@
 ---
-title: "Polinucleotide (Rejuran) in Bucuresti – de la 1250 lei | MOA Clinic"
+title: "Polinucleotide (Rejuran) in Bucuresti – de la 1250 lei"
 description: "Polinucleotidele stimuleaza productia de colagen si refac bariera pielii, pentru un ten mai ferm si cu aspect mai sanatos. Polinucleotidele sunt fragmente…"
 url: https://moaclinic.ro/tratamente/injectabile/polinucleotide/
 lang: ro

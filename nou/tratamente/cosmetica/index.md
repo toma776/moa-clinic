@@ -1,5 +1,5 @@
 ---
-title: "Tratamente faciale cosmetice in Bucuresti – tratamente si preturi | MOA Clinic"
+title: "Tratamente faciale cosmetice in Bucuresti – preturi"
 description: "Curatare, hidratare, peeling si tratamente profesionale pentru ten. 18 tratamente la MOA Clinic, de la 399 lei: Tratamente faciale profesionale, Peeling…"
 url: https://moaclinic.ro/tratamente/cosmetica/
 lang: ro

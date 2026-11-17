@@ -1,5 +1,5 @@
 ---
-title: "Riduri pe frunte? Secretele expertilor anti-aging | MOA Clinic"
+title: "Riduri pe frunte? Secretele expertilor anti-aging"
 description: "Riduri pe frunte – linii de expresie cauzate de miscari faciale repetate, stres sau imbatranire. Afla metode eficiente de prevenire si tratament!"
 url: https://moaclinic.ro/riduri-frunte/
 lang: ro

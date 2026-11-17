@@ -1,6 +1,6 @@
 ---
 title: "Epilare definitiva pareri reale de la clienti | MOA Clinic"
-description: "Citeste epilare definitiva pareri si afla daca merita investitia."
+description: "Ce ne-au povestit clientii despre epilarea cu laser: de ce au ales-o, ce au observat dupa cateva sedinte, ce greseli sa eviti si cand merita. Cu o…"
 url: https://moaclinic.ro/epilare-definitiva-pareri/
 lang: ro
 updated: 2026-02-09

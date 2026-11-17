@@ -1,5 +1,5 @@
 ---
-title: "Tot ce trebuie sa stii despre consultarea nutrigenomica: descopera secretele genetice ale sanatatii tale! | MOA Clinic"
+title: "Consultatia nutrigenomica: ce afla medicul din genele tale"
 description: "Descopera cum consultarea nutrigenomica poate revela secretele genetice ale sanatatii tale! In era tehnologiei, cercetarile recente demonstreaza ca ADN-ul…"
 url: https://moaclinic.ro/tot-ce-trebuie-sa-stii-despre-consultarea-nutrigenomica-descopera-secretele-genetice-ale-sanatatii-tale/
 lang: ro

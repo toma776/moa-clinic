@@ -1,5 +1,5 @@
 ---
-title: "Riduri laba gastei? Secretele expertilor anti-aging | MOA Clinic"
+title: "Riduri laba gastei? Secretele expertilor anti-aging"
 description: "Te deranjeaza ridurile fine din coltul ochilor care par sa apara tot mai des, mai ales cand zambesti? Nu esti singura. Asa-numitele „laba gastei” sunt…"
 url: https://moaclinic.ro/riduri-laba-gastei/
 lang: ro

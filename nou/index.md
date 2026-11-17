@@ -1,5 +1,5 @@
 ---
-title: "MOA Clinic · Estetica medicala, chirurgie si longevitate in Bucuresti"
+title: "MOA Clinic – estetica, chirurgie si longevitate, Bucuresti"
 description: "Estetica medicala, chirurgie plastica si medicina regenerativa, coordonate de un medic primar geriatrie-gerontologie. Proceduri facute de medici, in Str.…"
 url: https://moaclinic.ro/
 lang: ro

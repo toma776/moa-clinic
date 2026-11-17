@@ -1,5 +1,5 @@
 ---
-title: "Echipa MOA Clinic – medici gerontologi, dermatologi si chirurgi plastici | MOA Clinic"
+title: "Medici MOA Clinic – gerontologi, dermatologi, chirurgi"
 description: "Echipa MOA Clinic: 9 medici (gerontologie, chirurgie plastica, dermatologie), specialisti in estetica si asistente, coordonati de Dr. Adrian Stanescu. Afla…"
 url: https://moaclinic.ro/medici/
 lang: ro

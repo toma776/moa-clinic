@@ -1,5 +1,5 @@
 ---
-title: "Venus Legacy – lifting & remodelare in Bucuresti – de la 400 lei | MOA Clinic"
+title: "Venus Legacy Bucuresti – de la 400 lei"
 description: "Radiofrecventa multipolara si campuri electromagnetice pulsate, pentru remodelare corporala, celulita atenuata si o piele mai ferma. Venus Legacy este o…"
 url: https://moaclinic.ro/tratamente/aparatura/venus-legacy/
 lang: ro

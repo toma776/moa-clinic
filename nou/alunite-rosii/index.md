@@ -1,5 +1,5 @@
 ---
-title: "Alunite rosii – Cum sa le identifici pe cele periculoase | MOA Clinic"
+title: "Alunite rosii – Cum sa le identifici pe cele periculoase"
 description: "Alunite rosii - Afla cauzele, simptomele si optiunile de tratament disponibile."
 url: https://moaclinic.ro/alunite-rosii/
 lang: ro

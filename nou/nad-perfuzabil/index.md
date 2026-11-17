@@ -1,5 +1,5 @@
 ---
-title: "NAD perfuzabil – informatii si beneficii terapie | MOA Clinic"
+title: "NAD perfuzabil – informatii si beneficii terapie"
 description: "NAD perfuzabil: afla cum functioneaza, beneficii si riscuri; programeaza consultatia si incepe terapia acum."
 url: https://moaclinic.ro/nad-perfuzabil/
 lang: ro

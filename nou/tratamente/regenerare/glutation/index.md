@@ -1,5 +1,5 @@
 ---
-title: "Perfuzii cu glutation in Bucuresti – de la 220 lei | MOA Clinic"
+title: "Perfuzii cu glutation Bucuresti – de la 220 lei | MOA Clinic"
 description: "Glutationul, antioxidant produs natural de organism, administrat prin perfuzie pentru protectia celulelor impotriva stresului oxidativ. Glutationul este un…"
 url: https://moaclinic.ro/tratamente/regenerare/glutation/
 lang: ro
