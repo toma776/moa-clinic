@@ -14,6 +14,11 @@
       "source": "/manage/legaturi",
       "destination": "/manage/sinapse",
       "permanent": false
+    },
+    {
+      "source": "/manage/legaturi/",
+      "destination": "/manage/sinapse/",
+      "permanent": false
     }
   ],
   "rewrites": [
@@ -163,6 +168,10 @@
     },
     {
       "source": "/manage/",
+      "destination": "/manage/index.html"
+    },
+    {
+      "source": "/manage/:path*/",
       "destination": "/manage/index.html"
     },
     {
