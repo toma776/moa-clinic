@@ -26,6 +26,10 @@
       "destination": "/site/index.html"
     },
     {
+      "source": "/vechi/",
+      "destination": "/site/index.html"
+    },
+    {
       "source": "/wp-content/:path*",
       "destination": "/site/wp-content/:path*"
     },
@@ -38,7 +42,15 @@
       "destination": "/nou/index.html"
     },
     {
+      "source": "/nou/",
+      "destination": "/nou/index.html"
+    },
+    {
       "source": "/nou/medici/:id",
+      "destination": "/nou/medici/:id/index.html"
+    },
+    {
+      "source": "/nou/medici/:id/",
       "destination": "/nou/medici/:id/index.html"
     },
     {
@@ -46,7 +58,15 @@
       "destination": "/nou/tratamente/:cat/:id/index.html"
     },
     {
+      "source": "/nou/tratamente/:cat/:id/",
+      "destination": "/nou/tratamente/:cat/:id/index.html"
+    },
+    {
       "source": "/nou/consultatii",
+      "destination": "/nou/consultatii/index.html"
+    },
+    {
+      "source": "/nou/consultatii/",
       "destination": "/nou/consultatii/index.html"
     },
     {
@@ -54,7 +74,15 @@
       "destination": "/nou/consultatii/:id/index.html"
     },
     {
+      "source": "/nou/consultatii/:id/",
+      "destination": "/nou/consultatii/:id/index.html"
+    },
+    {
       "source": "/nou/preturi",
+      "destination": "/nou/preturi/index.html"
+    },
+    {
+      "source": "/nou/preturi/",
       "destination": "/nou/preturi/index.html"
     },
     {
@@ -62,7 +90,15 @@
       "destination": "/nou/video/index.html"
     },
     {
+      "source": "/nou/video/",
+      "destination": "/nou/video/index.html"
+    },
+    {
       "source": "/nou/blog",
+      "destination": "/nou/blog/index.html"
+    },
+    {
+      "source": "/nou/blog/",
       "destination": "/nou/blog/index.html"
     },
     {
@@ -70,7 +106,15 @@
       "destination": "/nou/longevitate/program/index.html"
     },
     {
+      "source": "/nou/longevitate/program/",
+      "destination": "/nou/longevitate/program/index.html"
+    },
+    {
       "source": "/nou/:slug",
+      "destination": "/nou/:slug/index.html"
+    },
+    {
+      "source": "/nou/:slug/",
       "destination": "/nou/:slug/index.html"
     },
     {
@@ -78,7 +122,15 @@
       "destination": "/data/entitati.json"
     },
     {
+      "source": "/api/entitati/",
+      "destination": "/data/entitati.json"
+    },
+    {
       "source": "/api/pages",
+      "destination": "/data/pages.json"
+    },
+    {
+      "source": "/api/pages/",
       "destination": "/data/pages.json"
     },
     {
@@ -86,7 +138,15 @@
       "destination": "/data/site-health.json"
     },
     {
+      "source": "/api/site-health/",
+      "destination": "/data/site-health.json"
+    },
+    {
       "source": "/api/structura",
+      "destination": "/data/structura.json"
+    },
+    {
+      "source": "/api/structura/",
       "destination": "/data/structura.json"
     },
     {
@@ -94,7 +154,15 @@
       "destination": "/data/leads-public.json"
     },
     {
+      "source": "/api/leads/",
+      "destination": "/data/leads-public.json"
+    },
+    {
       "source": "/manage",
+      "destination": "/manage/index.html"
+    },
+    {
+      "source": "/manage/",
       "destination": "/manage/index.html"
     },
     {
